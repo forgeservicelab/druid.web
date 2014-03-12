@@ -1,0 +1,12 @@
+name = forge_web_wysiwyg
+core = 7.x
+package = forgeweb
+dependencies[] = ckeditor
+dependencies[] = edit
+dependencies[] = features
+dependencies[] = filter
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[features_api][] = api:2
+features[filter][] = filtered_html

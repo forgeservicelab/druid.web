@@ -1,0 +1,62 @@
+<?php
+/**
+ * @file
+ * Code for the FORGE WEB wizard feature.
+ */
+
+include_once 'forge_web_wizard.features.inc';
+/**
+ * 
+ * Implements hook_form_alter 
+ */
+function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
+  /*
+   * Replace [nid:xx] in webform markup type components
+   */
+  if($form_id === 'webform_client_form_4') {
+    foreach ($form['submitted'] as $key => $compo) {
+      if ($compo['#type'] == 'fieldset') {
+        // if component type is a fieldset lets loop again. 
+        // TODO: maybe we need recursive function for this if there is a fieldsets inside a fieldsets
+        foreach ($compo as $sub_key => $sub_compo) {
+          if ($sub_compo['#type'] === 'markup' && strstr($sub_compo['#markup'],'[nid:')) {
+            $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+            $callback = '_forge_web_wizard_embed_filter_replace';
+            $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#value']);
+            if ($replacement) {
+              $form['submitted'][$key][$sub_key]['#markup'] = $replacement;
+            }
+          }
+        }
+      }
+      // if component typeis markup and if there is [nid:xx] lets replace it
+      elseif ($compo['#type'] == 'markup' && strstr($compo['#markup'],'[nid:')) {
+        $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+        $callback = '_forge_web_wizard_embed_filter_replace';
+        $replacement = preg_replace_callback($pattern, $callback, $compo['#value']);
+        if($replacement) {
+          $form['submitted'][$key]['#markup'] = $replacement;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * function converts [nid:xxx] with node summary and link to node
+ * @param $match
+ *   $match[1] contains the nid
+ * @return
+ *   What ever the ylex_node_embed returns for that node type
+ */
+function _forge_web_wizard_embed_filter_replace($match) {
+  if (is_numeric($match[1]) && $node = node_load($match[1])) {
+    $body = field_get_items('node', $node, 'body');
+    $summary = $body[0]['summary'];
+    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid).'</p>';
+    return $summary;
+  }
+  else {
+    return '';
+  }
+}
