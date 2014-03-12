@@ -17,14 +17,18 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     foreach ($form['submitted'] as $key => $compo) {
       if ($compo['#type'] == 'fieldset') {
         // if component type is a fieldset lets loop again. 
-        // TODO: maybe we need recursive function for this if there is a fieldsets inside a fieldsets
-        foreach ($compo as $sub_key => $sub_compo) {
-          if ($sub_compo['#type'] === 'markup' && strstr($sub_compo['#markup'],'[nid:')) {
-            $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
-            $callback = '_forge_web_wizard_embed_filter_replace';
-            $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#value']);
-            if ($replacement) {
-              $form['submitted'][$key][$sub_key]['#markup'] = $replacement;
+        // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
+        if(is_array($compo)) {
+          foreach ($compo as $sub_key => $sub_compo) {
+            if(is_array($sub_compo)) {
+              if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#markup'],'[nid:')) {
+                $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+                $callback = '_forge_web_wizard_embed_filter_replace';
+                $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#value']);
+                if ($replacement) {
+                  $form['submitted'][$key][$sub_key]['#markup'] = $replacement;
+                }
+              }
             }
           }
         }
@@ -47,7 +51,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
  * @param $match
  *   $match[1] contains the nid
  * @return
- *   What ever the ylex_node_embed returns for that node type
+ *   String
  */
 function _forge_web_wizard_embed_filter_replace($match) {
   if (is_numeric($match[1]) && $node = node_load($match[1])) {
