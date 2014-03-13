@@ -85,7 +85,7 @@ function forge_web_wizard_menu() {
 function forge_web_wizard_confirmation($nid, $sid) {
   // Get the submission array
   $submission = webform_menu_submission_load($sid, $nid);
-  dsm($submission);
+  //dsm($submission);
   
   // 'role selection' is key 1
   if(!empty($submission->data[1]['value'][0])) {
@@ -101,7 +101,7 @@ function forge_web_wizard_confirmation($nid, $sid) {
   
   if(is_numeric($nid)) {
     $node = node_load($nid);
-    dsm($node);
+    //dsm($node);
     $field_values = field_get_items('node', $node, $field_name);
     $pdf_id = $field_values[0]['value'];
     if(!empty($cloud_computing_field_name)) {
