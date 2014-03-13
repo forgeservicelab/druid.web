@@ -1,7 +1,8 @@
 name = Forge landing pages
 core = 7.x
-package = Features
+package = forgeweb
 dependencies[] = context
+dependencies[] = twitter_block
 dependencies[] = views
 features[context][] = sitewide
 features[ctools][] = context:context:3

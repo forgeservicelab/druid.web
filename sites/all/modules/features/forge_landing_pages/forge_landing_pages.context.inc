@@ -32,6 +32,12 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
+        'twitter_block-1' => array(
+          'module' => 'twitter_block',
+          'delta' => '1',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
