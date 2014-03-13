@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge translation feature.
+ */
+
+include_once 'forge_translation.features.inc';
