@@ -21,5 +21,4 @@ features[variable][] = entity_translation_settings_node__page
 features[variable][] = entity_translation_settings_taxonomy_term__taxonomy_term
 features[variable][] = entity_translation_shared_labels
 features[variable][] = entity_translation_workflow_enabled
-features[variable][] = language_content_type_news
 features[variable][] = translation_language_type
