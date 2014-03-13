@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge social media feature.
+ */
+
+include_once 'forge_social_media.features.inc';
