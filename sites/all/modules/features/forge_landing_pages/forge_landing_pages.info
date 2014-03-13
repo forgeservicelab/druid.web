@@ -1,0 +1,11 @@
+name = Forge landing pages
+core = 7.x
+package = Features
+dependencies[] = context
+dependencies[] = views
+features[context][] = sitewide
+features[ctools][] = context:context:3
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = news_about_forge
+features_exclude[dependencies][ctools] = ctools
