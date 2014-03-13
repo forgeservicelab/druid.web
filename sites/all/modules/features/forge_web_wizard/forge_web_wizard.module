@@ -5,6 +5,7 @@
  */
 
 include_once 'forge_web_wizard.features.inc';
+
 /**
  * 
  * Implements hook_form_alter 
@@ -63,4 +64,57 @@ function _forge_web_wizard_embed_filter_replace($match) {
   else {
     return '';
   }
+}
+
+/**
+ * 
+ * Implements hook_menu 
+ */
+function forge_web_wizard_menu() {
+  $items['become-a-partner/confirmation/%/%'] = array(
+    'page callback' => 'forge_web_wizard_confirmation',
+    'page arguments' => array(2, 3),
+    'access arguments' => array("access content"),
+    'type' => MENU_CALLBACK,
+    'title' => 'Confirmation',
+  );
+  
+  return $items;
+}
+
+function forge_web_wizard_confirmation($nid, $sid) {
+  // Get the submission array
+  $submission = webform_menu_submission_load($sid, $nid);
+  //dsm($submission);
+  
+  // 'role selection' is key 1
+  if(!empty($submission->data[1]['value'][0])) {
+    $value = $submission->data[1]['value'][0];
+    $field_name = 'field_'.strtolower($value);
+  }
+  
+  // 'I need cloud computing...' is key 11
+  if(!empty($submission->data[11]['value'][0])) {
+    $value = $submission->data[11]['value'][0];
+    $cloud_computing_field_name = 'field_'.strtolower($value);
+  }
+  
+  if(is_numeric($nid)) {
+    $node = node_load($nid);
+    //dsm($node);
+    $field_values = field_get_items('node', $node, $field_name);
+    $pdf_id = $field_values[0]['value'];
+    if(!empty($cloud_computing_field_name)) {
+      $cloud_computing_values = field_get_items('node', $node, $cloud_computing_field_name);
+      $cloud_computing_pdf_id = $cloud_computing_values[0]['value'];
+    }
+  }
+  
+  if(!empty($cloud_computing_field_name)) {
+    $cloud_computing_link = l(t('Download Cloud Computing contract'), 'fillpdf&fid='.$cloud_computing_pdf_id.'&webform[nid]='.$nid.'&webform[sid]='.$sid);
+    $output = $cloud_computing_link.'<br/>';
+  }
+  
+  $output .= l(t('Download Contract'), 'fillpdf&fid='.$pdf_id.'&webform[nid]='.$nid.'&webform[sid]='.$sid); 
+  return $output;
 }
