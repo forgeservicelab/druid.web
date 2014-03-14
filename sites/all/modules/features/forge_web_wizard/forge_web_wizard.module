@@ -14,7 +14,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   /*
    * Replace [nid:xx] in webform markup type components
    */
-  if($form_id === 'webform_client_form_4') {
+  if(strstr($form_id, 'webform_client_form')) {
     foreach ($form['submitted'] as $key => $compo) {
       if ($compo['#type'] == 'fieldset') {
         // if component type is a fieldset lets loop again. 
@@ -62,7 +62,7 @@ function _forge_web_wizard_embed_filter_replace($match) {
     return $summary;
   }
   else {
-    return '';
+    return t('Content not found.');
   }
 }
 
