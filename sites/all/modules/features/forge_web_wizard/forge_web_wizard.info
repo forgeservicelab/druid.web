@@ -7,6 +7,7 @@ dependencies[] = forge_web_page
 dependencies[] = number
 dependencies[] = strongarm
 dependencies[] = text
+dependencies[] = token
 dependencies[] = uuid_features
 dependencies[] = webform
 dependencies[] = webform_conditional
