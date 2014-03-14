@@ -83,6 +83,7 @@ function forge_web_wizard_menu() {
 }
 
 function forge_web_wizard_confirmation($nid, $sid) {
+  $output = '';  
   // Get the submission array
   $submission = webform_menu_submission_load($sid, $nid);
   //dsm($submission);
@@ -111,10 +112,9 @@ function forge_web_wizard_confirmation($nid, $sid) {
   }
   
   if(!empty($cloud_computing_field_name)) {
-    $cloud_computing_link = l(t('Download Cloud Computing contract'), 'fillpdf&fid='.$cloud_computing_pdf_id.'&webform[nid]='.$nid.'&webform[sid]='.$sid);
+    $cloud_computing_link = l(t('Download Cloud Computing contract'),  'fillpdf', array('query' => array('fid' => $cloud_computing_pdf_id, 'webform[nid]' => $nid, 'webform[sid]' => $sid)));
     $output = $cloud_computing_link.'<br/>';
   }
-  
-  $output .= l(t('Download Contract'), 'fillpdf&fid='.$pdf_id.'&webform[nid]='.$nid.'&webform[sid]='.$sid); 
+  $output .= l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $pdf_id, 'webform[nid]' => $nid, 'webform[sid]' => $sid))); 
   return $output;
 }
