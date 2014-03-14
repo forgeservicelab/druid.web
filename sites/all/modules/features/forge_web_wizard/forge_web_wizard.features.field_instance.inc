@@ -120,18 +120,9 @@ function forge_web_wizard_field_default_field_instances() {
     'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'edit' => array(
-            'editor' => 'form',
-          ),
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'teaser' => array(
@@ -169,18 +160,9 @@ function forge_web_wizard_field_default_field_instances() {
     'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'edit' => array(
-            'editor' => 'form',
-          ),
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'teaser' => array(
@@ -218,18 +200,9 @@ function forge_web_wizard_field_default_field_instances() {
     'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'edit' => array(
-            'editor' => 'form',
-          ),
-          'prefix_suffix' => TRUE,
-          'scale' => 0,
-          'thousand_separator' => ' ',
-        ),
-        'type' => 'number_integer',
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(

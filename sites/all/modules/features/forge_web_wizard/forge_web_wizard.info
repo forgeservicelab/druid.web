@@ -31,6 +31,7 @@ features[variable][] = comment_form_location_forge_role_information
 features[variable][] = comment_preview_forge_role_information
 features[variable][] = comment_subject_field_forge_role_information
 features[variable][] = field_bundle_settings_node__webform
+features[variable][] = fillpdf_service
 features[variable][] = language_content_type_forge_role_information
 features[variable][] = menu_options_forge_role_information
 features[variable][] = menu_parent_forge_role_information
