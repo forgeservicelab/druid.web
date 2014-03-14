@@ -220,7 +220,7 @@ function forge_web_wizard_uuid_features_default_content() {
   'field_sda' => array(
     'und' => array(
       0 => array(
-        'value' => 13,
+        'value' => 15,
       ),
     ),
   ),
@@ -461,34 +461,6 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 7,
         'page_num' => 1,
       ),
-      91 => array(
-        'nid' => 4,
-        'cid' => 91,
-        'pid' => 12,
-        'form_key' => 'fsl_fpa_cra_2',
-        'name' => 'I need cloud computing capasity',
-        'type' => 'select',
-        'value' => '',
-        'extra' => array(
-          'items' => 'fsl_fpa_cra|I need cloud computing capasity',
-          'multiple' => 1,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => 0,
-        'weight' => 8,
-        'page_num' => 1,
-      ),
       14 => array(
         'nid' => 4,
         'cid' => 14,
@@ -532,34 +504,6 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
         'mandatory' => 0,
         'weight' => 7,
-        'page_num' => 1,
-      ),
-      11 => array(
-        'nid' => 4,
-        'cid' => 11,
-        'pid' => 14,
-        'form_key' => 'fsl_fpa_cra',
-        'name' => 'I need cloud computing capasity',
-        'type' => 'select',
-        'value' => '',
-        'extra' => array(
-          'items' => 'fsl_fpa_cra|I need cloud computing capasity',
-          'multiple' => 1,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => 0,
-        'weight' => 8,
         'page_num' => 1,
       ),
       16 => array(
@@ -607,6 +551,38 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 7,
         'page_num' => 1,
       ),
+      91 => array(
+        'nid' => 4,
+        'cid' => 91,
+        'pid' => 0,
+        'form_key' => 'fsl_fpa_cra_2',
+        'name' => 'I need cloud computing capasity',
+        'type' => 'select',
+        'value' => '',
+        'extra' => array(
+          'items' => 'fsl_fpa_cra|I need cloud computing capasity',
+          'multiple' => 1,
+          'title_display' => 'none',
+          'private' => 0,
+          'aslist' => 0,
+          'optrand' => 0,
+          'webform_conditional_field_value' => 'partner_fsl_fpa
+fsl_fpa_cra',
+          'webform_conditional_cid' => 1,
+          'webform_conditional_operator' => '=',
+          'other_option' => NULL,
+          'other_text' => 'Other...',
+          'description' => '',
+          'custom_keys' => FALSE,
+          'options_source' => '',
+          'conditional_component' => '',
+          'conditional_operator' => '=',
+          'conditional_values' => '',
+        ),
+        'mandatory' => 0,
+        'weight' => 17,
+        'page_num' => 1,
+      ),
       4 => array(
         'nid' => 4,
         'cid' => 4,
@@ -616,15 +592,15 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'type' => 'pagebreak',
         'value' => '',
         'extra' => array(
-          'next_page_label' => 'Continue',
-          'prev_page_label' => 'Back',
+          'next_page_label' => 'Continue >',
+          'prev_page_label' => '< Back',
           'conditional_component' => 1,
           'conditional_operator' => '!=',
           'conditional_values' => 'subcontractor',
           'private' => 0,
         ),
         'mandatory' => 0,
-        'weight' => 17,
+        'weight' => 18,
         'page_num' => 2,
       ),
       3 => array(
@@ -636,7 +612,8 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'type' => 'markup',
         'value' => '<p>Preview contracts for FORGE Service developer or fill in the application.</p>
 
-<p><a href="http://local.forge-web.fi:8082/fillpdf?fid=1&amp;sample=true">Contract</a></p>
+<p><a href="http://local.forge-web.fi:8082/fillpdf?fid=15&amp;sample=true">Service Developer Contract</a><br />
+<a href="#">Forge ServeLab TC</a></p>
 ',
         'extra' => array(
           'conditional_component' => 1,
@@ -646,7 +623,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
           'private' => 0,
         ),
         'mandatory' => 0,
-        'weight' => 18,
+        'weight' => 19,
         'page_num' => 2,
       ),
       5 => array(
@@ -654,36 +631,18 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'cid' => 5,
         'pid' => 0,
         'form_key' => 'offer_api_software_datasets_tools_contract_page',
-        'name' => 'I want to offer APIs, software, datasets or tools contract page',
+        'name' => 'Partner contract page',
         'type' => 'markup',
-        'value' => '<p>Preview contracts for <strong>the particular partner</strong> or fill in the application.</p>
+        'value' => '<p>Preview contracts for Partner or fill in the application.</p>
 
-<p><a href="http://local.forge-web.fi:8082/fillpdf?fid=1&amp;sample=true">Contract</a></p>
+<p><a href="#">Partner Contract</a><br />
+<a href="#">Forge ServeLab TC</a></p>
 ',
         'extra' => array(
           'conditional_component' => 1,
           'conditional_operator' => '=',
-          'conditional_values' => 'partner_fsl_fpa',
-          'format' => 'filtered_html',
-          'private' => 0,
-        ),
-        'mandatory' => 0,
-        'weight' => 19,
-        'page_num' => 2,
-      ),
-      20 => array(
-        'nid' => 4,
-        'cid' => 20,
-        'pid' => 0,
-        'form_key' => 'subcontractor_contract_page',
-        'name' => '|I am a subcontractor of an organization that develops services in FORGE contract page',
-        'type' => 'markup',
-        'value' => '<p>Maybe some text here...</p>
-',
-        'extra' => array(
-          'conditional_component' => 1,
-          'conditional_operator' => '=',
-          'conditional_values' => 'subcontractor',
+          'conditional_values' => 'partner_fsl_fpa
+fsl_fpa_cra',
           'format' => 'filtered_html',
           'private' => 0,
         ),
@@ -691,21 +650,21 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 20,
         'page_num' => 2,
       ),
-      19 => array(
+      92 => array(
         'nid' => 4,
-        'cid' => 19,
+        'cid' => 92,
         'pid' => 0,
-        'form_key' => 'offer_expertise_digital_service_contract_page',
-        'name' => '|I want to offer my expertise in digital service creation contract page',
+        'form_key' => 'offer_api_software_datasets_tools_cra_contract_page',
+        'name' => 'I want to offer APIs, software, datasets or tools CRA contract page',
         'type' => 'markup',
-        'value' => '<p>Preview contracts for <strong>digital service expert</strong> or fill in the application.</p>
-
-<p><a href="http://local.forge-web.fi:8082/fillpdf?fid=1&amp;sample=true">Contract</a></p>
+        'value' => '<p><a href="#">Partner addendum for computing capacity Contract</a></p>
 ',
         'extra' => array(
-          'conditional_component' => 1,
+          'conditional_component' => 91,
           'conditional_operator' => '=',
-          'conditional_values' => 'expertise_digital_service',
+          'conditional_values' => 'partner_fsl_fpa
+fsl_fpa_cra
+',
           'format' => 'filtered_html',
           'private' => 0,
         ),
@@ -722,8 +681,8 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'type' => 'pagebreak',
         'value' => '',
         'extra' => array(
-          'next_page_label' => 'Fill in the application now',
-          'prev_page_label' => 'Back',
+          'next_page_label' => 'Fill in the application now >',
+          'prev_page_label' => '< Back',
           'conditional_component' => 1,
           'conditional_operator' => '=',
           'conditional_values' => 'SDA',
@@ -762,6 +721,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Name and Business ID of each of the service developer(s) to be added.',
           'title_display' => 'before',
           'private' => 0,
           'disabled' => 0,
@@ -772,7 +732,6 @@ subcontractor|I am a subcontractor of an organization that develops services in 
           'maxlength' => '',
           'field_prefix' => '',
           'field_suffix' => '',
-          'description' => '',
           'attributes' => array(),
           'conditional_values' => '',
         ),
@@ -1569,12 +1528,13 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'type' => 'pagebreak',
         'value' => '',
         'extra' => array(
-          'prev_page_label' => 'Back',
+          'next_page_label' => 'Next >',
+          'prev_page_label' => '< Back',
           'conditional_component' => 1,
           'conditional_operator' => '=',
-          'conditional_values' => 'partner_fsl_fpa',
+          'conditional_values' => 'partner_fsl_fpa
+fsl_fpa_cra',
           'private' => 0,
-          'next_page_label' => '',
         ),
         'mandatory' => 0,
         'weight' => 34,
@@ -1954,11 +1914,11 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'value' => '<h2>Partner addendum for computing capacity</h2>
 ',
         'extra' => array(
-          'conditional_component' => 1,
+          'conditional_component' => 91,
           'conditional_operator' => '=',
+          'conditional_values' => 'fsl_fpa_cra',
           'format' => 'filtered_html',
           'private' => 0,
-          'conditional_values' => '',
         ),
         'mandatory' => 0,
         'weight' => 42,
