@@ -2,6 +2,7 @@ name = forge_web_base
 core = 7.x
 package = forgeweb
 dependencies[] = ctools
+dependencies[] = diff
 dependencies[] = features
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1

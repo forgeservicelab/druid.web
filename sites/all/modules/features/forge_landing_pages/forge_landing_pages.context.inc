@@ -38,6 +38,18 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'facebook_pull-facebook_pull_default' => array(
+          'module' => 'facebook_pull',
+          'delta' => 'facebook_pull_default',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'locale-language_content' => array(
+          'module' => 'locale',
+          'delta' => 'language_content',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
