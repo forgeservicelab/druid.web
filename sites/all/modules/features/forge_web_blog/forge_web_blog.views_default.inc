@@ -404,22 +404,24 @@ function forge_web_blog_views_default_views() {
   $handler->display->display_options['relationships']['field_blog_target_id']['field'] = 'field_blog_target_id';
   $handler->display->display_options['relationships']['field_blog_target_id']['relationship'] = 'nid';
   $handler->display->display_options['relationships']['field_blog_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_blog_node']['id'] = 'reverse_field_blog_node';
+  $handler->display->display_options['relationships']['reverse_field_blog_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_blog_node']['field'] = 'reverse_field_blog_node';
+  $handler->display->display_options['relationships']['reverse_field_blog_node']['relationship'] = 'field_blog_target_id';
+  $handler->display->display_options['relationships']['reverse_field_blog_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_blog_target_id';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['default_argument_skip_url'] = TRUE;
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_blog_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-  $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
-    'blog' => 'blog',
-  );
   $translatables['blog_latest_comments_'] = array(
     t('Master'),
     t('Latest comments '),
@@ -437,6 +439,7 @@ function forge_web_blog_views_default_views() {
     t('Latest comments on this blog'),
     t('Blog-post latest comments'),
     t('Content entity referenced from field_blog'),
+    t('Content referencing Content from field_blog'),
   );
   $export['blog_latest_comments_'] = $view;
 
