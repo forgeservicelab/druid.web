@@ -25,7 +25,7 @@ function forge_translation_strongarm() {
     'comment' => 'comment',
     'node' => 'node',
     'taxonomy_term' => 'taxonomy_term',
-    'user' => 0,
+    'user' => 'user',
   );
   $export['entity_translation_entity_types'] = $strongarm;
 

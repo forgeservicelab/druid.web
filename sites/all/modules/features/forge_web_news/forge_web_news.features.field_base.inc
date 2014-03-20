@@ -13,7 +13,7 @@ function forge_web_news_field_default_field_bases() {
   // Exported field_base: 'field_images_for_content'
   $field_bases['field_images_for_content'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_images_for_content',
@@ -46,7 +46,7 @@ function forge_web_news_field_default_field_bases() {
   // Exported field_base: 'field_main_images'
   $field_bases['field_main_images'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_main_images',
