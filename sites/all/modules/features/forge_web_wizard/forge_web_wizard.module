@@ -15,8 +15,9 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
    * Replace [nid:xx] in webform markup type components
    */
   if(strstr($form_id, 'webform_client_form')) {
+    drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
     foreach ($form['submitted'] as $key => $compo) {
-      if ($compo['#type'] == 'fieldset') {
+      if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
         // if component type is a fieldset lets loop again. 
         // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
         if(is_array($compo)) {
@@ -35,7 +36,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         }
       }
       // if component typeis markup and if there is [nid:xx] lets replace it
-      elseif ($compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[nid:')) {
+      elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[nid:')) {
         $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
         $callback = '_forge_web_wizard_embed_filter_replace';
         $replacement = preg_replace_callback($pattern, $callback, $compo['#webform_component']['value']);
@@ -83,30 +84,32 @@ function forge_web_wizard_menu() {
 }
 
 function forge_web_wizard_confirmation($nid, $sid) {
-  $output = '';  
+  $output = '';
+  $pdf_id = '';
   // Get the submission array
   $submission = webform_menu_submission_load($sid, $nid);
   //dsm($submission);
-  
   // 'role selection' is key 1
-  if(!empty($submission->data[1]['value'][0])) {
-    $value = $submission->data[1]['value'][0];
+  if(!empty($submission->data[1][0])) {
+    $value = $submission->data[1][0];
     $field_name = 'field_'.strtolower($value);
   }
-  
   // 'I need cloud computing...' is key 11
-  if(!empty($submission->data[11]['value'][0])) {
-    $value = $submission->data[11]['value'][0];
+  if(!empty($submission->data[2][0])) {
+    $value = $submission->data[2][0];
     $cloud_computing_field_name = 'field_'.strtolower($value);
   }
   
   if(is_numeric($nid)) {
     $node = node_load($nid);
     //dsm($node);
-    $field_values = field_get_items('node', $node, $field_name);
+    if(!empty($field_name)) {
+      $field_values = field_get_items('node', $node, $field_name);
+    }
+    
     $pdf_id = $field_values[0]['value'];
     if(!empty($cloud_computing_field_name)) {
-      $cloud_computing_values = field_get_items('node', $node, $cloud_computing_field_name);
+      //$cloud_computing_values = field_get_items('node', $node, $cloud_computing_field_name);
       $cloud_computing_pdf_id = $cloud_computing_values[0]['value'];
     }
   }
@@ -117,4 +120,54 @@ function forge_web_wizard_confirmation($nid, $sid) {
   }
   $output .= l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $pdf_id, 'webform[nid]' => $nid, 'webform[sid]' => $sid))); 
   return $output;
+}
+
+/**
+ * Implements hook_fillpdf_merge_fields_alter_alter().
+ * alter is twice because fillpdf has drupal_alter('fillpdf_merge_fields_alter' so we need two alters :)
+ */
+function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
+  dsm($fields);
+  $key = _forge_web_wizard_search_for_key('parties_involved_business_id', $context['webforms'][0]['webform']->webform['components']); 
+  $parties_involved = _forge_web_wizard_recursive_array_search($key, $context['webforms'][0]['submission']->wfm_data[$key]);
+  dsm($parties_involved);
+  $i = 1;
+  foreach ($parties_involved as $key => $value) {
+    $fields['Business ID '.$i] = $value;
+    $i++;
+  }
+  /*
+  if(!empty($context['webforms'][0]['submission']['wfm_data'])) {
+    $wfm_data = $context['webforms'][0]['submission']['wfm_data'];
+    //dsm();
+  }
+  */
+}
+
+/*
+ * helper for hook_fillpdf_merge_fields_alter_alter()
+ */
+function _forge_web_wizard_search_for_key($value, $array) {
+  foreach ($array as $key => $val) {
+    if ($val['form_key'] === $value) {
+      return $key;
+    }
+  }
+  return null;
+}
+
+/*
+ * recursive helper
+ */
+function _forge_web_wizard_recursive_array_search($needle, $haystack) { 
+  static $return_arr;
+  foreach($haystack as $key => $value) {
+    if($needle === $key) {
+      $return_arr[] = $haystack[$key][0];
+    }
+    elseif(is_array($value)){
+      _forge_web_wizard_recursive_array_search($needle, $value);
+    }
+  }
+  return $return_arr;
 }

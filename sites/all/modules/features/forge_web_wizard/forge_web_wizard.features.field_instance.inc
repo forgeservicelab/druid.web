@@ -47,6 +47,7 @@ function forge_web_wizard_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -98,6 +99,7 @@ function forge_web_wizard_field_default_field_instances() {
     'required' => FALSE,
     'settings' => array(
       'display_summary' => TRUE,
+      'entity_translation_sync' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -137,6 +139,7 @@ function forge_web_wizard_field_default_field_instances() {
     'label' => 'Partner addendum for computing capacity (FSL FPA CRA) PDF',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -148,7 +151,7 @@ function forge_web_wizard_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -177,6 +180,7 @@ function forge_web_wizard_field_default_field_instances() {
     'label' => 'Partner (FSL FPA) PDF',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -188,7 +192,7 @@ function forge_web_wizard_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -217,6 +221,7 @@ function forge_web_wizard_field_default_field_instances() {
     'label' => 'Service development (SDA) PDF',
     'required' => 0,
     'settings' => array(
+      'entity_translation_sync' => FALSE,
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -228,7 +233,7 @@ function forge_web_wizard_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
