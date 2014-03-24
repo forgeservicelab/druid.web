@@ -160,7 +160,6 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
       }
       $i++;
     }
-    dsm($fields);
   }
   
   /*
