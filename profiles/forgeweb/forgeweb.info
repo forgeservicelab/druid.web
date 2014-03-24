@@ -1,4 +1,4 @@
-name = Forge.web
+name = forgeweb
 description = Custom forgeweb installation profile
 version = VERSION
 core = 7.x
