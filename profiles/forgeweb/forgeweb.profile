@@ -49,7 +49,6 @@ function forgeweb_pick_features_form($form, &$form_state, &$install_state) {
   $form['features'] = array(
     '#tree' => TRUE,
   );
-  echo '<pre>'; var_dump($form_state);
   foreach ($features as $name => $feature) {
     $form['features'][$name] = array(
       '#type' => 'fieldset',
