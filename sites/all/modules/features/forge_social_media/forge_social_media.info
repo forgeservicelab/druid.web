@@ -1,5 +1,8 @@
 name = Forge social media
 description = Feature for social media share and feeds
+forge_web[selectable_feature] = 1
+forge_web[title] = Social media feature
+forge_web[description] = Module to create social media share features
 core = 7.x
 package = forgeweb
 dependencies[] = ctools

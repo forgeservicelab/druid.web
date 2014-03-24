@@ -1,5 +1,8 @@
 name = Forge landing pages
 core = 7.x
+forge_web[selectable_feature] = 1
+forge_web[title] = Landing page feature
+forge_web[description] = Module to create needed landing pages
 package = forgeweb
 dependencies[] = context
 dependencies[] = facebook_pull

@@ -25,3 +25,6 @@ features[variable][] = menu_parent_page
 features[variable][] = node_options_page
 features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
+forge_web[selectable_feature] = 1
+forge_web[title] = Basic Page feature
+forge_web[description] = Feature to add functionality for basic pages

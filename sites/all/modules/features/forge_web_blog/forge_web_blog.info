@@ -100,3 +100,6 @@ features_exclude[dependencies][features] = features
 features_exclude[dependencies][image] = image
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][strongarm] = strongarm
+forge_web[selectable_feature] = 1
+forge_web[title] = Blog module
+forge_web[description] = Module to create blog and pages for blog

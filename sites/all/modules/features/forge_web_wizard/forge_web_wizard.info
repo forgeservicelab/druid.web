@@ -49,3 +49,6 @@ features[variable][] = node_preview_forge_role_information
 features[variable][] = node_submitted_forge_role_information
 features_exclude[field_base][body] = body
 project path = sites/all/modules/features
+forge_web[selectable_feature] = 1
+forge_web[title] = Wizard feature
+forge_web[description] = Settings, variables and modules needed to create registration wizard
