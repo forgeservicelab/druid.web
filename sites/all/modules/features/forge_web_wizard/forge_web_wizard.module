@@ -127,15 +127,42 @@ function forge_web_wizard_confirmation($nid, $sid) {
  * alter is twice because fillpdf has drupal_alter('fillpdf_merge_fields_alter' so we need two alters :)
  */
 function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
-  dsm($fields);
-  $key = _forge_web_wizard_search_for_key('parties_involved_business_id', $context['webforms'][0]['webform']->webform['components']); 
-  $parties_involved = _forge_web_wizard_recursive_array_search($key, $context['webforms'][0]['submission']->wfm_data[$key]);
-  dsm($parties_involved);
-  $i = 1;
-  foreach ($parties_involved as $key => $value) {
-    $fields['Business ID '.$i] = $value;
-    $i++;
+  /*
+   * Mapped array:
+   * array(
+   *  'FIELD_KEY_FROM_WEBFORM' => 'FIELD NAME TO MAP IN PDF'
+   *  'FIELD_KEY_FROM_WEBFORM' => array(
+   *    'FIELD NAME TO MAP IN PDF 1'
+   *    'FIELD NAME TO MAP IN PDF 2'
+   *    ......
+   * )
+   */
+  $mapped_fields = array(
+    'parties_involved_business_id' => 'Business ID',
+    'parties_involved_company_name' => array(
+      'Organization name',
+      'Signature name'
+    )
+  );
+  foreach($mapped_fields as $field_key => $field_value) {
+    $component_key = _forge_web_wizard_search_for_key($field_key, $context['webforms'][0]['webform']->webform['components']); 
+    //dsm($context['webforms'][0]['submission']->wfm_data[$component_key]);
+    $multiple_fields = _forge_web_wizard_recursive_array_search($component_key, $context['webforms'][0]['submission']->wfm_data[$component_key]);
+    $i = 1;
+    foreach ($multiple_fields as $key => $value) {
+      if(is_array($field_value)) {
+        foreach ($field_value as $sub_key => $sub_value) {
+          $fields[$sub_value.' '.$i] = $value;
+        }
+      }
+      else {
+        $fields[$field_value.' '.$i] = $value;
+      }
+      $i++;
+    }
+    dsm($fields);
   }
+  
   /*
   if(!empty($context['webforms'][0]['submission']['wfm_data'])) {
     $wfm_data = $context['webforms'][0]['submission']['wfm_data'];
@@ -146,6 +173,7 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
 
 /*
  * helper for hook_fillpdf_merge_fields_alter_alter()
+ * Search key from given array
  */
 function _forge_web_wizard_search_for_key($value, $array) {
   foreach ($array as $key => $val) {
@@ -158,15 +186,15 @@ function _forge_web_wizard_search_for_key($value, $array) {
 
 /*
  * recursive helper
+ * recursive walk throught array
  */
-function _forge_web_wizard_recursive_array_search($needle, $haystack) { 
-  static $return_arr;
+function _forge_web_wizard_recursive_array_search($needle, $haystack, $return_arr = array()) { 
   foreach($haystack as $key => $value) {
     if($needle === $key) {
       $return_arr[] = $haystack[$key][0];
     }
-    elseif(is_array($value)){
-      _forge_web_wizard_recursive_array_search($needle, $value);
+    if(is_array($value)){
+      $return_arr = _forge_web_wizard_recursive_array_search($needle, $value, $return_arr);
     }
   }
   return $return_arr;
