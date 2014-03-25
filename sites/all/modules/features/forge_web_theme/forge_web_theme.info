@@ -7,3 +7,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = admin_theme
 features[variable][] = theme_forgeweb_settings
+forge_web[selectable_feature] = 1
+forge_web[title] = Theme feature
+forge_web[description] = Feature to store theme variables
