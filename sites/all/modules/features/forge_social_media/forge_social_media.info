@@ -1,8 +1,5 @@
 name = Forge social media
 description = Feature for social media share and feeds
-forge_web[selectable_feature] = 1
-forge_web[title] = Social media feature
-forge_web[description] = Module to create social media share features
 core = 7.x
 package = forgeweb
 dependencies[] = ctools
@@ -34,3 +31,6 @@ features[variable][] = easy_social_twitter_account_related
 features[variable][] = easy_social_twitter_account_via
 features[variable][] = easy_social_twitter_count_show
 features[variable][] = easy_social_webform_enable
+forge_web[selectable_feature] = 1
+forge_web[title] = Social media feature
+forge_web[description] = Module to create social media share features

@@ -1,9 +1,10 @@
 name = Forge web theme
 core = 7.x
 package = forgeweb
+dependencies[] = context
+dependencies[] = context_omega
 dependencies[] = ctools
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = admin_theme
-features[variable][] = theme_forgeweb_settings

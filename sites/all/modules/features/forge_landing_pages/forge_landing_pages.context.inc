@@ -26,16 +26,22 @@ function forge_landing_pages_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'locale-language_content' => array(
+          'module' => 'locale',
+          'delta' => 'language_content',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '0',
+        ),
         'views-news_about_forge-block' => array(
           'module' => 'views',
           'delta' => 'news_about_forge-block',
           'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
-        'twitter_block-1' => array(
-          'module' => 'twitter_block',
-          'delta' => '1',
-          'region' => 'sidebar_second',
           'weight' => '-10',
         ),
         'facebook_pull-facebook_pull_default' => array(
@@ -43,12 +49,6 @@ function forge_landing_pages_context_default_contexts() {
           'delta' => 'facebook_pull_default',
           'region' => 'sidebar_second',
           'weight' => '-9',
-        ),
-        'locale-language_content' => array(
-          'module' => 'locale',
-          'delta' => 'language_content',
-          'region' => 'header',
-          'weight' => '-10',
         ),
       ),
     ),
