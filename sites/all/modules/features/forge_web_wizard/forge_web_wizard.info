@@ -6,6 +6,7 @@ dependencies[] = clientside_validation_webform
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = fillpdf
 dependencies[] = forge_web_page
 dependencies[] = number
 dependencies[] = strongarm
