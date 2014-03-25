@@ -141,7 +141,8 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
     'parties_involved_business_id' => 'Business ID',
     'parties_involved_company_name' => array(
       'Organization name',
-      'Signature name'
+      'Signature name',
+      'Developer name'
     )
   );
   foreach($mapped_fields as $field_key => $field_value) {

@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Forge Web wizard install/schema hooks.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function forge_web_wizard_install() {
+  /*
+   *  Insert Fill PDF templates (forms) and mappings for them.
+   */
+  if(!module_exists('fillpdf')) {
+    return;
+  }
+  
+  $mask = '/\.pdf$/';
+  $templates_dir = drupal_get_path('module', 'forge_web_wizard').'/fillpdf/pdf_templates';
+  $mappings_dir = drupal_get_path('module', 'forge_web_wizard').'/fillpdf/field_mappings';
+  $pdf_files = file_scan_directory($templates_dir, $mask);
+  $dest_dir = file_build_uri('fillpdf');
+  if(!is_dir($dest_dir)) {
+    if(!drupal_mkdir($dest_dir)) {
+      watchdog('Forge web wizard', 'Can not create folder %dest.', array('%dest' => $dest_dir), WATCHDOG_ERROR);
+    }
+  }
+  $error = false;
+  foreach($pdf_files as $file) {
+    $file->filepath = $file->uri;
+    $file->filemime = file_get_mimetype($file->uri);
+    $file->filesize = filesize($file->uri);
+    $file->uid = 1;
+    $file->status = FILE_STATUS_PERMANENT;
+    $file->display = 1;
+    $file->description = '';
+    if(!$file = file_copy($file, $dest_dir.'/'.$file->filename)) {
+      $error = true;
+    }
+    else {
+      // insert file to fillpdf forms
+      db_insert('fillpdf_forms')
+        ->fields(array(
+          'fid' => $file->fid,
+          'title' => $file->filename,
+          'url' => $file->uri,
+        ))
+        ->execute();
+      //
+      fillpdf_parse_pdf($file->fid);
+      // mapping for pdfs
+      $pdf_form = new stdClass();
+      $pdf_form->fid = $file->fid;
+      $mapping_file_contents = file_get_contents($mappings_dir.'/'.basename($file->filename, ".pdf").'.json');
+      $mappings = json_decode($mapping_file_contents, TRUE);
+      fillpdf_import_mappings($pdf_form, $mappings);
+    }
+  }
+  if($error) {
+    watchdog('Forge web wizard', 'Can not copy files to %dest folder.', array('%dest' => $dest_dir), WATCHDOG_ERROR);
+  }
+}
