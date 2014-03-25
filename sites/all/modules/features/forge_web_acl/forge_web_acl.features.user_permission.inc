@@ -318,27 +318,21 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create forge_role_information content'.
   $permissions['create forge_role_information content'] = array(
     'name' => 'create forge_role_information content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'create news content'.
   $permissions['create news content'] = array(
     'name' => 'create news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -387,18 +381,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any news content'.
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -414,27 +404,21 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own forge_role_information content'.
   $permissions['delete own forge_role_information content'] = array(
     'name' => 'delete own forge_role_information content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own news content'.
   $permissions['delete own news content'] = array(
     'name' => 'delete own news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -485,18 +469,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any news content'.
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -519,27 +499,21 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own forge_role_information content'.
   $permissions['edit own forge_role_information content'] = array(
     'name' => 'edit own forge_role_information content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own news content'.
   $permissions['edit own news content'] = array(
     'name' => 'edit own news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
