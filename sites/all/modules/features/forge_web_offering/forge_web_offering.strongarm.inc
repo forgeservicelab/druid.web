@@ -111,6 +111,32 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_access_offering';
+  $strongarm->value = array(
+    'view_own' => array(),
+    'view' => array(
+      0 => 4,
+    ),
+  );
+  $export['content_access_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_access_service_offering';
+  $strongarm->value = array(
+    'view_own' => array(
+      0 => 4,
+    ),
+    'view' => array(
+      0 => 4,
+    ),
+  );
+  $export['content_access_service_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__offering';
   $strongarm->value = array(
     'view_modes' => array(),

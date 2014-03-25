@@ -4,6 +4,7 @@ package = forgeweb
 dependencies[] = context
 dependencies[] = fe_block
 dependencies[] = locale
+dependencies[] = menu
 dependencies[] = twitter_block
 dependencies[] = views
 features[context][] = sitewide
