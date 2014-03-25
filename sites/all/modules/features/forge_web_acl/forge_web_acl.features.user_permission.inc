@@ -41,10 +41,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -62,9 +59,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -113,11 +108,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
@@ -145,10 +136,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer comments'.
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
-    'roles' => array(
-      'Blogger' => 'Blogger',
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -330,7 +318,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create forge_role_information content'.
   $permissions['create forge_role_information content'] = array(
     'name' => 'create forge_role_information content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -424,7 +414,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own forge_role_information content'.
   $permissions['delete own forge_role_information content'] = array(
     'name' => 'delete own forge_role_information content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -527,7 +519,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own forge_role_information content'.
   $permissions['edit own forge_role_information content'] = array(
     'name' => 'edit own forge_role_information content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -587,10 +581,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'post comments'.
   $permissions['post comments'] = array(
     'name' => 'post comments',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -640,15 +631,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
-  // Exported permission: 'translate comment entities'.
-  $permissions['translate comment entities'] = array(
-    'name' => 'translate comment entities',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: 'translate interface'.
   $permissions['translate interface'] = array(
     'name' => 'translate interface',
@@ -659,15 +641,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'translate node entities'.
   $permissions['translate node entities'] = array(
     'name' => 'translate node entities',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
-  // Exported permission: 'translate taxonomy_term entities'.
-  $permissions['translate taxonomy_term entities'] = array(
-    'name' => 'translate taxonomy_term entities',
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
@@ -685,7 +658,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'filter',
@@ -695,7 +667,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'node',
@@ -714,7 +685,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'system',

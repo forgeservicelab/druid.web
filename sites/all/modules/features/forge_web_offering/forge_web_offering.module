@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web offering feature.
+ */
+
+include_once 'forge_web_offering.features.inc';
