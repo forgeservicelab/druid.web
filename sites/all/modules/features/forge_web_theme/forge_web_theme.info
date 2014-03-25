@@ -1,4 +1,4 @@
-name = forge_web_theme
+name = Forge web theme
 core = 7.x
 package = forgeweb
 dependencies[] = ctools
