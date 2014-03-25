@@ -107,3 +107,6 @@ features[variable][] = node_preview_offering
 features[variable][] = node_preview_service_offering
 features[variable][] = node_submitted_offering
 features[variable][] = node_submitted_service_offering
+forge_web[selectable_feature] = 1
+forge_web[title] = Offering feature
+forge_web[description] = Feature to create offerings
