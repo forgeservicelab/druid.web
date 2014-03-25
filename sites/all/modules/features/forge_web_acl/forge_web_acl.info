@@ -8,6 +8,7 @@ dependencies[] = admin_menu
 dependencies[] = block
 dependencies[] = ckeditor
 dependencies[] = comment
+dependencies[] = content_access
 dependencies[] = context_ui
 dependencies[] = contextual
 dependencies[] = easy_social
