@@ -15,6 +15,10 @@ function forge_web_wizard_install() {
   if(!module_exists('fillpdf')) {
     return;
   }
+  if(!fillpdf_pdftk_check(fillpdf_pdftk_path())) {
+    drupal_set_message(t('Locally-installed pdftk is not properly installed and Fill PDF mappings aborted. See instruction here https://drupal.org/node/1431610#pdftk'));
+    return;
+  }
   // set first fillpdf_service variable as 'pdftk' because features do it too late for this install
   variable_set('fillpdf_service', 'pdftk');
   
