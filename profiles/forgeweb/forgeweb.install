@@ -103,7 +103,6 @@ function forgeweb_install() {
 function _forgeweb_set_up_theme() {
   $theme = 'forgeweb';
   theme_enable(array($theme));
-  // TODO, ENABLE OMEGA AFTER TEROS CONFIGURATION
   variable_set('theme_default', $theme);
   theme_disable(array('responsive_bartik', 'bartik'));
 }
