@@ -84,10 +84,10 @@ function forge_web_page_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '3',
         ),
       ),
       'display' => array(),
