@@ -14,7 +14,7 @@ function forge_web_offering_menu_default_menu_links() {
   $menu_links['menu-forge-member-navigation_add-product-offering:node/add/offering'] = array(
     'menu_name' => 'menu-forge-member-navigation',
     'link_path' => 'node/add/offering',
-    'router_path' => 'node/add/offering',
+    'router_path' => 'node/add',
     'link_title' => 'Add product offering',
     'options' => array(
       'attributes' => array(
@@ -34,7 +34,7 @@ function forge_web_offering_menu_default_menu_links() {
   $menu_links['menu-forge-member-navigation_add-service-offering:node/add/service-offering'] = array(
     'menu_name' => 'menu-forge-member-navigation',
     'link_path' => 'node/add/service-offering',
-    'router_path' => 'node/add/service-offering',
+    'router_path' => 'node/add',
     'link_title' => 'Add service offering',
     'options' => array(
       'attributes' => array(
