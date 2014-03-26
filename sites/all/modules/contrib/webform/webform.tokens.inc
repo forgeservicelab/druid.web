@@ -64,8 +64,6 @@ function webform_tokens($type, $tokens, array $data = array(), array $options = 
   }
   $sanitize = !empty($options['sanitize']);
   // Webform tokens (caching globally).
-  dsm('tokens');
-  dsm($tokens);
   if ($type == 'submission' && !empty($data['webform-submission'])) {
     // Prepare all the submission data that we will likely need more than once.
     $submission = $data['webform-submission'];
