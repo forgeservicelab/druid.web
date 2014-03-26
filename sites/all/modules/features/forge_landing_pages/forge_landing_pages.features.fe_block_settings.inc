@@ -21,10 +21,10 @@ function forge_landing_pages_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'forgeweb' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'forgeweb',
         'weight' => 0,
       ),
     ),
@@ -41,10 +41,10 @@ function forge_landing_pages_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'forgeweb' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
+        'theme' => 'forgeweb',
         'weight' => 0,
       ),
     ),

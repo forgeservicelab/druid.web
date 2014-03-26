@@ -1,7 +1,7 @@
 // Import external libraries.
 @import "compass";
 @import "breakpoint";
-@import "singularitygs";
+@import "susy";
 @import "toolkit-no-css";
 
 // Import variables, abstractions, base styles and components using globbing.
@@ -17,6 +17,155 @@
 // output any styles themselves: Importing them multiple times to resolve
 // dependencies shouldn't be a problem.
 @import "variables/**/*";
-@import "abstractions/**/*";
 @import "base/**/*";
 @import "components/**/*";
+
+// Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
+$tab: 44em 12; // At 44em use 12 columns.
+$desk: 70em 16; // At 70em use 16 columns.
+
+.l-region,
+.l-branding,
+.l-content {
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+
+// Logo container
+
+.site-name {
+  line-height: 0;
+  margin: 0;
+  @include at-breakpoint($desk) {
+    margin-top: 2em;
+  }
+  a {
+    background: url('../images/logo_en_mobile.png') no-repeat 0 0 transparent;
+    background-size: auto 200px;
+    display: inline-block;
+    height: 200px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 80px;
+    @include at-breakpoint($tab) {
+      background: url('../images/logo_en.png') no-repeat 0 0 transparent;
+      background-size: auto 467px;
+      height: 467px;
+      width: 187px;
+    }
+  }
+}
+
+html[lang=fi] {
+  .site-name a {
+    background-image: url('../images/logo_fi_mobile.png');
+    background-size: auto 200px;
+    @include at-breakpoint($tab) {
+      background-image: url('../images/logo_fi.png');
+      background-size: auto 467px;
+    }
+  }
+}
+
+
+// Logo retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (min-resolution: 192dpi) {
+  .site-name a {
+    background-image: url('../images/logo_en_mobile_retina.png');
+    @include at-breakpoint($tab) {
+      background-image: url('../images/logo_en_retina.png');
+    }
+  }
+
+  html[lang=fi] {
+    .site-name a {
+      background-image: url('../images/logo_fi_mobile_retina.png');
+      @include at-breakpoint($tab) {
+        background-image: url('../images/logo_fi_retina.png');
+      }
+    }
+  }
+}
+
+
+// Site slogan
+
+.site-slogan {
+  font-size: 2.9em;
+  margin: 0 auto 0.3em;
+  max-width: 9em;
+  @include at-breakpoint($tab) {
+    font-size: 4.5em;
+    margin-bottom: 0.2em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 6.4em;
+    max-width: 100%;
+    text-align: left;
+  }
+}
+
+
+// Front page title
+
+.site-title {
+  font-size: 1em;
+  font-weight: normal;
+  margin: 0 auto;
+  max-width: 27em;
+  @include at-breakpoint($tab) {
+    font-size: 1.54em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 2.2em;
+    text-align: left;
+  }
+}
+
+
+// Front page content
+
+.front .l-content-wrapper article {
+  font-size: 1em;
+  line-height: 1.2em;
+  margin: 0 auto;
+  max-width: 23.9em;
+  text-align: left;
+  @include at-breakpoint($tab) {
+    font-size: 1.1em;
+    max-width: 33.5em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 1.667em;
+    max-width: 100%;
+  }
+}
+
+// General styles
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &.active {
+    color: $active-link-color;
+  }
+}
+
+.block--locale-language-content {
+  font-size: 1.3em;
+  padding: 1em 0;
+  text-align: right;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+  }
+}
