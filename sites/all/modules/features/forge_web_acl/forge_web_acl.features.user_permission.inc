@@ -41,10 +41,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -62,9 +59,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -113,11 +108,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access user profiles'.
   $permissions['access user profiles'] = array(
     'name' => 'access user profiles',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'user',
   );
 
@@ -145,10 +136,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer comments'.
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
-    'roles' => array(
-      'Blogger' => 'Blogger',
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -337,18 +325,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create news content'.
   $permissions['create news content'] = array(
     'name' => 'create news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -397,18 +381,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any news content'.
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -431,18 +411,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own news content'.
   $permissions['delete own news content'] = array(
     'name' => 'delete own news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -493,18 +469,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any news content'.
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -534,18 +506,14 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own news content'.
   $permissions['edit own news content'] = array(
     'name' => 'edit own news content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -587,10 +555,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'post comments'.
   $permissions['post comments'] = array(
     'name' => 'post comments',
-    'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'comment',
   );
 
@@ -640,15 +605,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
-  // Exported permission: 'translate comment entities'.
-  $permissions['translate comment entities'] = array(
-    'name' => 'translate comment entities',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
   // Exported permission: 'translate interface'.
   $permissions['translate interface'] = array(
     'name' => 'translate interface',
@@ -659,15 +615,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'translate node entities'.
   $permissions['translate node entities'] = array(
     'name' => 'translate node entities',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'entity_translation',
-  );
-
-  // Exported permission: 'translate taxonomy_term entities'.
-  $permissions['translate taxonomy_term entities'] = array(
-    'name' => 'translate taxonomy_term entities',
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
@@ -685,7 +632,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'filter',
@@ -695,7 +641,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'node',
@@ -714,7 +659,6 @@ function forge_web_acl_user_default_permissions() {
   $permissions['view the administration theme'] = array(
     'name' => 'view the administration theme',
     'roles' => array(
-      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
     ),
     'module' => 'system',
