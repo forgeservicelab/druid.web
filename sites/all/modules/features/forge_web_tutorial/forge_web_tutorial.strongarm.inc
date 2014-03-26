@@ -158,48 +158,9 @@ function forge_web_tutorial_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_tutorial';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
-  $export['menu_options_tutorial'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_tutorial';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_tutorial'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_tutorial';
-  $strongarm->value = array(
-    0 => 'status',
-  );
-  $export['node_options_tutorial'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_tutorial';
-  $strongarm->value = '1';
-  $export['node_preview_tutorial'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_tutorial';
   $strongarm->value = 0;
   $export['node_submitted_tutorial'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'save_continue_tutorial';
-  $strongarm->value = 'Save and add fields';
-  $export['save_continue_tutorial'] = $strongarm;
 
   return $export;
 }
