@@ -13,6 +13,13 @@ function forge_web_tutorial_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_tutorial';
+  $strongarm->value = 'edit-diff';
+  $export['additional_settings__active_tab_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_tutorial';
   $strongarm->value = 0;
   $export['comment_anonymous_tutorial'] = $strongarm;
@@ -58,6 +65,68 @@ function forge_web_tutorial_strongarm() {
   $strongarm->name = 'comment_tutorial';
   $strongarm->value = '1';
   $export['comment_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_access_tutorial';
+  $strongarm->value = array(
+    'view_own' => array(
+      0 => 2,
+      1 => 4,
+      2 => 3,
+      3 => 5,
+    ),
+    'view' => array(
+      0 => 2,
+      1 => 4,
+      2 => 3,
+      3 => 5,
+    ),
+  );
+  $export['content_access_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_tutorial';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_tutorial';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_tutorial';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_tutorial';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_hide_translation_links_tutorial';
+  $strongarm->value = 0;
+  $export['entity_translation_hide_translation_links_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_tutorial';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_tutorial'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -124,6 +193,13 @@ function forge_web_tutorial_strongarm() {
   $strongarm->name = 'node_submitted_tutorial';
   $strongarm->value = 0;
   $export['node_submitted_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'save_continue_tutorial';
+  $strongarm->value = 'Save and add fields';
+  $export['save_continue_tutorial'] = $strongarm;
 
   return $export;
 }
