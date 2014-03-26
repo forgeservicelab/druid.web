@@ -13,9 +13,7 @@ function forge_web_blog_user_default_permissions() {
   // Exported permission: 'create blog content'.
   $permissions['create blog content'] = array(
     'name' => 'create blog content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -24,7 +22,6 @@ function forge_web_blog_user_default_permissions() {
     'name' => 'create blog_post content',
     'roles' => array(
       'Blogger' => 'Blogger',
-      'Content admin' => 'Content admin',
     ),
     'module' => 'node',
   );
@@ -32,27 +29,21 @@ function forge_web_blog_user_default_permissions() {
   // Exported permission: 'delete any blog content'.
   $permissions['delete any blog content'] = array(
     'name' => 'delete any blog content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any blog_post content'.
   $permissions['delete any blog_post content'] = array(
     'name' => 'delete any blog_post content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own blog content'.
   $permissions['delete own blog content'] = array(
     'name' => 'delete own blog content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -61,7 +52,6 @@ function forge_web_blog_user_default_permissions() {
     'name' => 'delete own blog_post content',
     'roles' => array(
       'Blogger' => 'Blogger',
-      'Content admin' => 'Content admin',
     ),
     'module' => 'node',
   );
@@ -76,27 +66,21 @@ function forge_web_blog_user_default_permissions() {
   // Exported permission: 'edit any blog content'.
   $permissions['edit any blog content'] = array(
     'name' => 'edit any blog content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any blog_post content'.
   $permissions['edit any blog_post content'] = array(
     'name' => 'edit any blog_post content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own blog content'.
   $permissions['edit own blog content'] = array(
     'name' => 'edit own blog content',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -105,7 +89,6 @@ function forge_web_blog_user_default_permissions() {
     'name' => 'edit own blog_post content',
     'roles' => array(
       'Blogger' => 'Blogger',
-      'Content admin' => 'Content admin',
     ),
     'module' => 'node',
   );
