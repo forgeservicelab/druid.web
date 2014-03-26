@@ -1,6 +1,7 @@
 name = forge_web_base
 core = 7.x
 package = forgeweb
+dependencies[] = auto_nodetitle
 dependencies[] = ctools
 dependencies[] = diff
 dependencies[] = features
