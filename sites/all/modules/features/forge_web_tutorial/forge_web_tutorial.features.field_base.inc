@@ -10,6 +10,40 @@
 function forge_web_tutorial_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_attachments'
+  $field_bases['field_attachments'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_attachments',
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
   // Exported field_base: 'field_free_text'
   $field_bases['field_free_text'] = array(
     'active' => 1,
@@ -39,109 +73,35 @@ function forge_web_tutorial_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_tags_1'
-  $field_bases['field_tags_1'] = array(
+  // Exported field_base: 'field_link_to_video'
+  $field_bases['field_link_to_video'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_tags_1',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
+    'field_name' => 'field_link_to_video',
+    'foreign keys' => array(),
+    'indexes' => array(),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'link',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'tags',
-          'parent' => 0,
-        ),
+      'attributes' => array(
+        'class' => '',
+        'rel' => '',
+        'target' => 'default',
       ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_tags_2'
-  $field_bases['field_tags_2'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tags_2',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'tags',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
-  );
-
-  // Exported field_base: 'field_tags_3'
-  $field_bases['field_tags_3'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_tags_3',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'taxonomy',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'tags',
-          'parent' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 1,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'link_field',
   );
 
   // Exported field_base: 'field_tutorial_title'

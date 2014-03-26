@@ -71,7 +71,7 @@ function forge_web_tutorial_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(),

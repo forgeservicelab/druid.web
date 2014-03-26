@@ -10,6 +10,67 @@
 function forge_web_tutorial_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-tutorial-field_attachments'
+  $field_instances['node-tutorial-field_attachments'] = array(
+    'bundle' => 'tutorial',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(
+          'edit' => array(
+            'editor' => 'form',
+          ),
+        ),
+        'type' => 'file_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attachments',
+    'label' => 'Attachments',
+    'required' => 1,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-tutorial-field_free_text'
   $field_instances['node-tutorial-field_free_text'] = array(
     'bundle' => 'tutorial',
@@ -51,12 +112,12 @@ function forge_web_tutorial_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance: 'node-tutorial-field_tags_1'
-  $field_instances['node-tutorial-field_tags_1'] = array(
+  // Exported field_instance: 'node-tutorial-field_link_to_video'
+  $field_instances['node-tutorial-field_link_to_video'] = array(
     'bundle' => 'tutorial',
     'default_value' => NULL,
     'deleted' => 0,
@@ -64,14 +125,14 @@ function forge_web_tutorial_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
+        'module' => 'link',
         'settings' => array(
           'edit' => array(
             'editor' => 'form',
           ),
         ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 2,
+        'type' => 'link_default',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -81,109 +142,36 @@ function forge_web_tutorial_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_tags_1',
-    'label' => 'Tags 1',
+    'field_name' => 'field_link_to_video',
+    'label' => 'Link to video',
     'required' => 1,
     'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
       'user_register_form' => FALSE,
+      'validate_url' => 1,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-tutorial-field_tags_2'
-  $field_instances['node-tutorial-field_tags_2'] = array(
-    'bundle' => 'tutorial',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'edit' => array(
-            'editor' => 'form',
-          ),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags_2',
-    'label' => 'Tags 2',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
+      'module' => 'link',
       'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-tutorial-field_tags_3'
-  $field_instances['node-tutorial-field_tags_3'] = array(
-    'bundle' => 'tutorial',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(
-          'edit' => array(
-            'editor' => 'form',
-          ),
-        ),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_tags_3',
-    'label' => 'Tags 3',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'taxonomy',
-      'settings' => array(
-        'autocomplete_path' => 'taxonomy/autocomplete',
-        'size' => 60,
-      ),
-      'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'type' => 'link_field',
+      'weight' => 4,
     ),
   );
 
@@ -228,16 +216,15 @@ function forge_web_tutorial_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attachments');
   t('Free text');
-  t('Tags 1');
-  t('Tags 2');
-  t('Tags 3');
+  t('Link to video');
   t('Tutorial title');
 
   return $field_instances;
