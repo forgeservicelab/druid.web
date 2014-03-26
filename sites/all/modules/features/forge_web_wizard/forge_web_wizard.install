@@ -15,11 +15,17 @@ function forge_web_wizard_install() {
   if(!module_exists('fillpdf')) {
     return;
   }
+  // set first fillpdf_service variable as 'pdftk' because features do it too late for this install
+  variable_set('fillpdf_service', 'pdftk');
   
+  // scan template directory
   $mask = '/\.pdf$/';
-  $templates_dir = drupal_get_path('module', 'forge_web_wizard').'/fillpdf/pdf_templates';
-  $mappings_dir = drupal_get_path('module', 'forge_web_wizard').'/fillpdf/field_mappings';
+  $module_path = drupal_get_path('module', 'forge_web_wizard');
+  $templates_dir = $module_path.'/fillpdf/pdf_templates';
   $pdf_files = file_scan_directory($templates_dir, $mask);
+  $mappings_dir = $module_path.'/fillpdf/field_mappings';
+  
+  // set folder under public:// for fillpdf templates
   $dest_dir = file_build_uri('fillpdf');
   if(!is_dir($dest_dir)) {
     if(!drupal_mkdir($dest_dir)) {
@@ -47,14 +53,23 @@ function forge_web_wizard_install() {
           'url' => $file->uri,
         ))
         ->execute();
-      //
+      // we need to parse pdf for mapping
       fillpdf_parse_pdf($file->fid);
-      // mapping for pdfs
-      $pdf_form = new stdClass();
-      $pdf_form->fid = $file->fid;
-      $mapping_file_contents = file_get_contents($mappings_dir.'/'.basename($file->filename, ".pdf").'.json');
-      $mappings = json_decode($mapping_file_contents, TRUE);
-      fillpdf_import_mappings($pdf_form, $mappings);
+      
+      // get json format file contents for pdf mappings
+      // In field_mappings folder there should be .json file named in the same manner as pdf template
+      $mapping_file = basename($file->filename, ".pdf").'.json';
+      if(is_file($mappings_dir.'/'.$mapping_file)) {
+        $mapping_file_contents = file_get_contents($mappings_dir.'/'.$mapping_file);
+        $mappings = json_decode($mapping_file_contents, TRUE);
+        // we need init object for fillpdf_import_mappings
+        $pdf_form = new stdClass();
+        $pdf_form->fid = $file->fid;
+        fillpdf_import_mappings($pdf_form, $mappings);
+      }
+      else {
+        watchdog('Forge web wizard', 'Can not found file %file for fillpdf mapping in %folder.', array('%file' => $mapping_file, '%folder' => $mappings_dir), WATCHDOG_ERROR);
+      }
     }
   }
   if($error) {
