@@ -1,10 +1,12 @@
-name = forge_web_base
+name = Forge web base
 core = 7.x
 package = forgeweb
 dependencies[] = auto_nodetitle
 dependencies[] = ctools
 dependencies[] = diff
 dependencies[] = features
+dependencies[] = fivestar
+dependencies[] = link
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
