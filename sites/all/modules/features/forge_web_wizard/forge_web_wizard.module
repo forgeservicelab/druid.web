@@ -128,9 +128,13 @@ function forge_web_wizard_confirmation($nid, $sid) {
  */
 function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
   /*
+   * We need to map multiple fields here because there is no token support yet
+   * in wfm module.
+   * 
    * Mapped array:
    * array(
    *  'FIELD_KEY_FROM_WEBFORM' => 'FIELD NAME TO MAP IN PDF'
+   *  // if you need to map one webform field to many pdf fields use:
    *  'FIELD_KEY_FROM_WEBFORM' => array(
    *    'FIELD NAME TO MAP IN PDF 1'
    *    'FIELD NAME TO MAP IN PDF 2'
@@ -140,14 +144,14 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
   $mapped_fields = array(
     'parties_involved_business_id' => 'Business ID',
     'parties_involved_company_name' => array(
-      'Organization name',
+      'Developer name',
       'Signature name',
-      'Developer name'
-    )
+    ),
+    'subcontractor_organization_name' => 'Organization name',
+    'subcontractor_business_id' => 'Consultant business ID'
   );
   foreach($mapped_fields as $field_key => $field_value) {
     $component_key = _forge_web_wizard_search_for_key($field_key, $context['webforms'][0]['webform']->webform['components']); 
-    //dsm($context['webforms'][0]['submission']->wfm_data[$component_key]);
     $multiple_fields = _forge_web_wizard_recursive_array_search($component_key, $context['webforms'][0]['submission']->wfm_data[$component_key]);
     $i = 1;
     foreach ($multiple_fields as $key => $value) {
@@ -163,12 +167,6 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
     }
   }
   
-  /*
-  if(!empty($context['webforms'][0]['submission']['wfm_data'])) {
-    $wfm_data = $context['webforms'][0]['submission']['wfm_data'];
-    //dsm();
-  }
-  */
 }
 
 /*
