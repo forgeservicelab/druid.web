@@ -59,7 +59,7 @@ function forge_web_page_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
@@ -104,7 +104,7 @@ function forge_web_page_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 1,
     ),
   );
 
