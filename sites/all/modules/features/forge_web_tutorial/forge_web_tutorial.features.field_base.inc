@@ -13,10 +13,13 @@ function forge_web_tutorial_field_default_field_bases() {
   // Exported field_base: 'field_attachments'
   $field_bases['field_attachments'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attachments',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -76,10 +79,13 @@ function forge_web_tutorial_field_default_field_bases() {
   // Exported field_base: 'field_link_to_video'
   $field_bases['field_link_to_video'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_link_to_video',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -137,10 +143,13 @@ function forge_web_tutorial_field_default_field_bases() {
   // Exported field_base: 'field_tools'
   $field_bases['field_tools'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_tools',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
