@@ -38,7 +38,6 @@ features[variable][] = pathauto_taxonomy_term_category_pattern
 features[variable][] = pathauto_taxonomy_term_pattern
 features[variable][] = pathauto_taxonomy_term_tags_offerings_pattern
 features[variable][] = pathauto_taxonomy_term_tags_pattern
-features[variable][] = pathauto_user_pattern
 forge_web[selectable_feature] = 1
 forge_web[title] = Base features
 forge_web[description] = Module to install modules and settings required to run forgeweb
