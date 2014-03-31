@@ -190,5 +190,19 @@ function forge_web_tutorial_strongarm() {
   $strongarm->value = '';
   $export['pathauto_node_tutorial_und_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_sys_urllist';
+  $strongarm->value = 0;
+  $export['print_display_sys_urllist'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_html_sendtoprinter';
+  $strongarm->value = 0;
+  $export['print_html_sendtoprinter'] = $strongarm;
+
   return $export;
 }

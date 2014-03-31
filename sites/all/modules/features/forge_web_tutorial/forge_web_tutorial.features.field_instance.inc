@@ -42,7 +42,7 @@ function forge_web_tutorial_field_default_field_instances() {
       'description_field' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
-      'file_extensions' => 'txt',
+      'file_extensions' => 'txt pdf png jpg',
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
