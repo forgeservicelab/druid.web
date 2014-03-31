@@ -63,3 +63,6 @@ features_exclude[variable][menu_parent_tutorial] = menu_parent_tutorial
 features_exclude[variable][node_options_tutorial] = node_options_tutorial
 features_exclude[variable][node_preview_tutorial] = node_preview_tutorial
 features_exclude[dependencies][node_export_features] = node_export_features
+forge_web[selectable_feature] = 1
+forge_web[title] = Basic Page tutorial
+forge_web[description] = Tutorial content type, needed menus and content
