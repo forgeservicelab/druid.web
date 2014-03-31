@@ -12,7 +12,6 @@ dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = features_default_export_path
-features[variable][] = pathauto_forum_pattern
 features[variable][] = pathauto_node_forge_role_information_en_pattern
 features[variable][] = pathauto_node_forge_role_information_fi_pattern
 features[variable][] = pathauto_node_forge_role_information_pattern
