@@ -9,6 +9,7 @@ dependencies[] = fivestar
 dependencies[] = link
 dependencies[] = pathauto
 dependencies[] = strongarm
+features[ctools][] = multifield:multifield:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = features_default_export_path
