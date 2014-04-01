@@ -7,6 +7,7 @@ dependencies[] = diff
 dependencies[] = features
 dependencies[] = fivestar
 dependencies[] = link
+dependencies[] = multifield
 dependencies[] = pathauto
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
