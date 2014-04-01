@@ -8,6 +8,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = file
 dependencies[] = fivestar
+dependencies[] = forge_web_base
 dependencies[] = image
 dependencies[] = link
 dependencies[] = list
