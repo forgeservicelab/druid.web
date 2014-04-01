@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web tutorial feature.
+ */
+
+include_once 'forge_web_tutorial.features.inc';

@@ -24,6 +24,7 @@ features[fe_block_settings][] = views-news_about_forge-block
 features[features_api][] = api:2
 features[node_export_features][] = 5155b18c-e2ed-4b34-8cd9-ddc6ab871368
 features[variable][] = site_frontpage
+features[variable][] = site_slogan
 features[views_view][] = news_about_forge
 features_exclude[dependencies][ctools] = ctools
 forge_web[selectable_feature] = 1
