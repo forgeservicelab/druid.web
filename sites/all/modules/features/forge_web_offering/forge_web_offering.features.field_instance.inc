@@ -10,178 +10,6 @@
 function forge_web_offering_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'multifield-terms_and_conditions_1-field_attachment'
-  $field_instances['multifield-terms_and_conditions_1-field_attachment'] = array(
-    'bundle' => 'terms_and_conditions_1',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_attachment',
-    'label' => 'Attachment',
-    'required' => 1,
-    'settings' => array(
-      'description_field' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'txt pdf jpg',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'icon_link' => 0,
-          'image' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'multifield-terms_and_conditions_1-field_lisensing_and_pricing_term'
-  $field_instances['multifield-terms_and_conditions_1-field_lisensing_and_pricing_term'] = array(
-    'bundle' => 'terms_and_conditions_1',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_lisensing_and_pricing_term',
-    'label' => 'Lisensing and pricing terms',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'multifield-terms_and_conditions_2-field_attachment'
-  $field_instances['multifield-terms_and_conditions_2-field_attachment'] = array(
-    'bundle' => 'terms_and_conditions_2',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_attachment',
-    'label' => 'Attachment',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'txt pdf jpg',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'icon_link' => 0,
-          'image' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'multifield-terms_and_conditions_2-field_lisensing_and_pricing_term'
-  $field_instances['multifield-terms_and_conditions_2-field_lisensing_and_pricing_term'] = array(
-    'bundle' => 'terms_and_conditions_2',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'multifield',
-    'field_name' => 'field_lisensing_and_pricing_term',
-    'label' => 'Lisensing and pricing terms',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-offering-field_available_support'
   $field_instances['node-offering-field_available_support'] = array(
     'bundle' => 'offering',
@@ -2070,7 +1898,6 @@ function forge_web_offering_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Attachment');
   t('Available support');
   t('Brief overview description');
   t('Cancellation / refund policy');
@@ -2085,7 +1912,6 @@ function forge_web_offering_field_default_field_instances() {
   t('Licensing and pricing');
   t('Licensing and pricing information of the asset/service for Forge Affiliates when they use it outside FORGE.');
   t('Licensing and pricing terms of the asset/service for FORGE Affiliates when yhey use it outside FORGE.');
-  t('Lisensing and pricing terms');
   t('Live demo url');
   t('Logo');
   t('Main principle is that a service provider ensures the maturity level of his offering and indicates it clearly in offering description for potential customers.');
