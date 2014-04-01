@@ -3,11 +3,6 @@
     <div class="l-navigation-wrapper">
       <?php print render($page['navigation']); ?>
     </div>
-    <?php if ($page['highlighted']): ?>
-      <div class="l-highlighted">
-        <?php print render($page['highlighted']); ?>
-      </div>
-    <?php endif; ?>
   </header>
 
   <div class="l-main">
@@ -46,6 +41,18 @@
     </div>
   </div>
   
+  <?php if ($page['highlighted']): ?>
+    <div class="l-highlighted">
+      <?php print render($page['highlighted']); ?>
+    </div>
+  <?php endif; ?>
+  
+  <?php if ($page['middle_content']): ?>
+    <div class="l-middle_content">
+      <?php print render($page['middle_content']); ?>
+    </div>
+  <?php endif; ?>
+  
   <?php if ($page['after_content']): ?>
     <div class="l-after_content">
       <?php print render($page['after_content']); ?>
@@ -53,6 +60,9 @@
   <?php endif; ?>
   
   <footer class="l-footer" role="contentinfo">
-    <?php print render($page['footer']); ?>
+    <div class="l-footer-wrapper">
+      <?php print render($page['footer_left']); ?>
+      <?php print render($page['footer_right']); ?>
+    </div>
   </footer>
 </div>

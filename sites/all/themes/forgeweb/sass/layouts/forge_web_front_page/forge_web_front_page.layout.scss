@@ -30,18 +30,30 @@ $desk: 70em 16; // At 70em use 16 columns.
   margin-bottom: $vert-spacing-unit / 3;
 }
 
-.l-region--highlighted {
-  margin-bottom: $vert-spacing-unit;
-}
-
 .l-branding {
   margin: $vert-spacing-unit / 8 0;
+}
+
+.l-highlighted,
+.l-middle_content,
+.l-after_content {
+  padding: $vert-spacing-unit / 8 0;
+  .l-region {
+     @include container;
+   }
+}
+
+.l-footer {
+  .l-footer-wrapper {
+    @include container;  // Define these elements as the grid containers.
+  }
 }
 
 @include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
   .l-content {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
     margin-top: $vert-spacing-unit / 2;
+    margin-bottom: $vert-spacing-unit / 2;
   }
   
   .l-content-wrapper {
@@ -53,6 +65,27 @@ $desk: 70em 16; // At 70em use 16 columns.
     margin: 0;
   }
   
+  .l-highlighted,
+  .l-middle_content,
+  .l-after_content {
+    padding: $vert-spacing-unit / 4 0;
+    .l-region {
+       @include set-container-width;
+     }
+  }
+  
+  .l-footer {
+    .l-footer-wrapper {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      .l-region--footer-left {
+        @include span-columns(6, 12); // Span 6 out of 12 columns.
+      }
+      .l-region--footer-right {
+        @include span-columns(6 omega, 12); // Span 6 out of 12 columns.
+      }
+    }
+  }
+  
   .l-region--navigation {
     clear: both;
   }
@@ -62,6 +95,7 @@ $desk: 70em 16; // At 70em use 16 columns.
   .l-content {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
     margin-top: $vert-spacing-unit;
+    margin-bottom: $vert-spacing-unit;
   }
 
   .l-branding {
@@ -70,5 +104,26 @@ $desk: 70em 16; // At 70em use 16 columns.
   
   .l-content-wrapper {
     @include span-columns(10, 16); // Span 10 out of 12 columns.
+  }
+  
+  .l-highlighted,
+  .l-middle_content,
+  .l-after_content {
+    padding: $vert-spacing-unit 0;
+    .l-region {
+     @include set-container-width;
+    }
+  }
+  
+  .l-footer {
+    .l-footer-wrapper {
+      max-width: 1280px;
+       .l-region--footer-left {
+         @include span-columns(9, 16); // Span 11 out of 16 columns.
+       }
+       .l-region--footer-right {
+         @include span-columns(7 omega, 16); // Span 5 out of 16 columns.
+       }
+    }
   }
 }
