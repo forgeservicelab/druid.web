@@ -12,7 +12,8 @@ regions[help]           = Help
 regions[content]        = Content
 regions[sidebar_first]  = First sidebar
 regions[sidebar_second] = Second sidebar
-regions[footer]         = Footer
+regions[footer_left]    = Footer left
+regions[footer_right]   = Footer right
 
 ; Stylesheets
 stylesheets[all][] = css/layouts/forge_web/forge_web.layout.css

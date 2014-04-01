@@ -49,6 +49,9 @@
   </div>
 
   <footer class="l-footer" role="contentinfo">
-    <?php print render($page['footer']); ?>
+    <div class="l-footer-wrapper">
+      <?php print render($page['footer_left']); ?>
+      <?php print render($page['footer_right']); ?>
+    </div>
   </footer>
 </div>

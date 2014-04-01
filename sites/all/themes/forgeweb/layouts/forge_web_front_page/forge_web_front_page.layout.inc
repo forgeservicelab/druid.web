@@ -5,10 +5,12 @@ template = forge-web-front-page-layout
 
 ; Regions
 regions[navigation]     = Navigation bar
-regions[highlighted]    = Highlighted
 regions[content]        = Content
+regions[highlighted]    = Highlighted
+regions[middle_content] = Middle content
 regions[after_content]  = After content
-regions[footer]         = Footer
+regions[footer_left]    = Footer left
+regions[footer_right]   = Footer right
 
 ; Stylesheets
 stylesheets[all][] = css/layouts/forge_web_front_page/forge_web_front_page.layout.css

@@ -24,6 +24,7 @@
 $tab: 44em 12; // At 44em use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
 
+
 .l-region,
 .l-branding,
 .l-content {
@@ -73,7 +74,10 @@ html[lang=fi] {
 // Logo retina styles
 
 @media
-only screen and (-webkit-min-device-pixel-ratio: 2), 
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .site-name a {
     background-image: url('../images/logo_en_mobile_retina.png');
@@ -96,17 +100,194 @@ only screen and (min-resolution: 192dpi) {
 // Site slogan
 
 .site-slogan {
-  font-size: 2.9em;
+  font-size: 2.8em;
   margin: 0 auto 0.3em;
-  max-width: 9em;
+  max-width: 8.8em;
+  text-align: left;
   @include at-breakpoint($tab) {
-    font-size: 4.5em;
+    font-size: 4.3em;
     margin-bottom: 0.2em;
   }
   @include at-breakpoint($desk) {
-    font-size: 6.4em;
+    font-size: 6.2em;
     max-width: 100%;
-    text-align: left;
+  }
+}
+
+
+// Footer styles
+
+.l-footer {
+  font-weight: 200;
+  background-color: $footer-bg;
+  color: $footer-color;
+  overflow: hidden;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  @include at-breakpoint($desk) {
+    padding-bottom: 60px;
+    padding-top: 40px;
+  }
+  .google-maps,
+  .facebook,
+  .twitter,
+  .linkedin {
+    background: url('../images/icons_sprite_mobile.png') no-repeat right 0 transparent;
+    background-size: 46px auto;
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    @include at-breakpoint($desk) {
+      background-image: url('../images/icons_sprite.png');
+      background-size: 83px auto;
+    }
+  }
+  .google-maps {
+    height: 41px;
+    margin-top: -10px;
+    padding-left: 10px;
+    vertical-align: middle;
+    width: 70px;
+    &:before {
+      background-color: #fff;
+      content: "";
+      display: block;
+      height: 31px;
+      margin-top: 10px;
+      width: 1px;
+      @include at-breakpoint($desk) {
+        height: 50px;
+        margin-top: 23px;
+      }
+    }
+    @include at-breakpoint($desk) {
+      height: 73px;
+      margin-top: -20px;
+      width: 113px;
+    }
+  }
+  .facebook,
+  .twitter,
+  .linkedin {
+    margin-right: 20px;
+    @include at-breakpoint($desk) {
+      margin-right: 40px;
+    }
+  }
+  .facebook {
+    background-position: 0 -45px;
+    height: 22px;
+    width: 13px;
+    @include at-breakpoint($desk) {
+      background-position: 0 -83px;
+      height: 40px;
+      width: 23px;
+    }
+  }
+  .twitter {
+    background-position: 0 -73px;
+    height: 20px;
+    margin-bottom: 1px;
+    width: 25px;
+    @include at-breakpoint($desk) {
+      background-position: 0 -132px;
+      height: 36px;
+      margin-bottom: 3px;
+      width: 46px;
+    }
+  }
+  .linkedin {
+    background-position: 0 -98px;
+    height: 21px;
+    margin-bottom: 2px;
+    margin-right: 0;
+    width: 21px;
+    @include at-breakpoint($desk) {
+      background-position: 0 -178px;
+      height: 36px;
+      margin-bottom: 1px;
+      width: 38px;
+    }
+  }
+  .block {
+    .block__title {
+      display: none;
+    }
+    @include at-breakpoint($tab) {
+      text-align: left;
+    }
+  }
+  .l-region--footer-left {
+    margin-bottom: 3em;
+    @include at-breakpoint($tab) {
+      margin-bottom: 0;
+    }
+    .block__content {
+      > *:first-child {
+        background: url('../images/footer_logo_mobile.png') no-repeat top center transparent;
+        background-size: auto 60px;
+        font-size: 1.2em;
+        margin-top: 0;
+        padding-top: 70px;
+        text-align: center;
+        @include at-breakpoint($desk) {
+          background-image: url('../images/footer_logo.png');
+          background-position: left center;
+          background-size: auto 135px;
+          font-size: 1.9em;
+          height: 135px;
+          line-height: 135px;
+          padding-left: 155px;
+          padding-top: 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .l-region--footer-right {
+    font-size: 1.2em;
+    @include at-breakpoint($desk) {
+      font-size: 1.9em;
+      line-height: 3em;
+      padding-top: 10px;
+    }
+    > *:first-child {
+      @include at-breakpoint($tab) {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+
+// Footer retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .l-footer {
+    .google-maps,
+    .facebook,
+    .twitter,
+    .linkedin {
+      background-image: url('../images/icons_sprite.png');
+      @include at-breakpoint($desk) {
+        background-image: url('../images/icons_sprite_retina.png');
+      }
+    }
+    .l-region--footer-left {
+      .block__content {
+        > *:first-child {
+          background-image: url('../images/footer_logo_mobile_retina.png');
+          @include at-breakpoint($desk) {
+            background-image: url('../images/footer_logo_retina.png');
+          }
+        }
+      }
+    }
   }
 }
 
@@ -134,17 +315,159 @@ only screen and (min-resolution: 192dpi) {
   font-size: 1em;
   line-height: 1.2em;
   margin: 0 auto;
-  max-width: 23.9em;
+  max-width: 24.6em;
   text-align: left;
   @include at-breakpoint($tab) {
     font-size: 1.1em;
-    max-width: 33.5em;
+    max-width: 34.5em;
   }
   @include at-breakpoint($desk) {
     font-size: 1.667em;
     max-width: 100%;
   }
 }
+
+
+// Front page highlighted area
+
+.front .l-highlighted {
+  background-color: #000;
+  @include at-breakpoint($desk) {
+    .l-region--highlighted {
+      position: relative;
+      &:after {
+        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
+        background: url('../images/large_flowers.png') no-repeat center center transparent;
+        background-size: 100% 1182px;
+        height: 1182px;
+        left: -590px;
+        position: absolute;
+        width: 535px;
+      }
+    }
+  }
+  .block {
+    background-color: #fff;
+    padding: 4em 3em;
+  }
+}
+
+
+// Front page highlighted area retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .front .l-highlighted {
+    @include at-breakpoint($desk) {
+      .l-region--highlighted {
+        &:after {
+          background-image: url('../images/large_flowers_retina.png');
+        }
+      }
+    }
+  }
+}
+
+
+// Front page after content area
+
+.front .l-after_content {
+  border-top: 80px solid #3f6d00;
+}
+
+
+// Front page middle content area
+
+.front .l-middle_content {
+  @include at-breakpoint($desk) {
+    .l-region--middle-content {
+      position: relative;
+      &:after {
+        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
+        background: url('../images/multiple_flowers.png') no-repeat center center transparent;
+        background-size: 100% 380px;
+        height: 380px;
+        left: -620px;
+        position: absolute;
+        width: 567px;
+      }
+    }
+  }
+  .block {
+    background-color: #fff;
+    padding: 1em 0;
+  }
+}
+
+
+// Front page middle content area retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .front .l-middle_content {
+    @include at-breakpoint($desk) {
+      .l-region--middle-content {
+        &:after {
+          background-image: url('../images/multiple_flowers_retina.png');
+        }
+      }
+    }
+  }
+}
+
+
+// Front page after content area
+
+.front .l-after_content {
+  @include at-breakpoint($desk) {
+    background: url('../images/vertical_flowers.png') no-repeat left 300px transparent;
+    background-size: auto 385px;
+    overflow: hidden;
+    position: relative;
+    &:after {
+      background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
+      background-size: auto 385px;
+      content: "";
+      display: block;
+      height: 385px;
+      position: absolute;
+      right: 0;
+      top: 1100px;
+      width: 649px;
+      z-index: -1;
+    }
+    .l-region {
+      background-color: rgba(255,255,255,1);
+    }
+  }
+}
+
+// Front page after content area retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .front .l-after_content {
+    @include at-breakpoint($desk) {
+      background-image: url('../images/vertical_flowers_retina.png');
+      &:after {
+        background-image: url('../images/vertical_flowers_right_retina.png');
+      }
+    }
+  }
+}
+
 
 // General styles
 
@@ -159,7 +482,7 @@ a {
 .block--locale-language-content {
   font-size: 1.3em;
   padding: 1em 0;
-  text-align: right;
+  text-align: center;
   ul {
     margin: 0;
     padding: 0;
