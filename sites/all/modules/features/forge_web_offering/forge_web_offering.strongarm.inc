@@ -48,6 +48,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_product_family';
+  $strongarm->value = 0;
+  $export['comment_anonymous_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_service_offering';
   $strongarm->value = 0;
   $export['comment_anonymous_service_offering'] = $strongarm;
@@ -58,6 +65,13 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'comment_default_mode_offering';
   $strongarm->value = 1;
   $export['comment_default_mode_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_product_family';
+  $strongarm->value = 1;
+  $export['comment_default_mode_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -76,6 +90,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_product_family';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_per_page_service_offering';
   $strongarm->value = '50';
   $export['comment_default_per_page_service_offering'] = $strongarm;
@@ -90,6 +111,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_product_family';
+  $strongarm->value = 1;
+  $export['comment_form_location_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_service_offering';
   $strongarm->value = 1;
   $export['comment_form_location_service_offering'] = $strongarm;
@@ -98,7 +126,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_offering';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['comment_offering'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -111,9 +139,23 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_product_family';
+  $strongarm->value = '1';
+  $export['comment_preview_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_service_offering';
   $strongarm->value = '1';
   $export['comment_preview_service_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_product_family';
+  $strongarm->value = '1';
+  $export['comment_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -128,6 +170,13 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'comment_subject_field_offering';
   $strongarm->value = 1;
   $export['comment_subject_field_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_product_family';
+  $strongarm->value = 1;
+  $export['comment_subject_field_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -173,11 +222,37 @@ function forge_web_offering_strongarm() {
         'title' => array(
           'weight' => '1',
         ),
+        'path' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__product_family';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '3',
+        ),
+        'language' => array(
+          'weight' => '2',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -192,6 +267,9 @@ function forge_web_offering_strongarm() {
         ),
         'language' => array(
           'weight' => '3',
+        ),
+        'path' => array(
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -209,6 +287,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_product_family';
+  $strongarm->value = '4';
+  $export['language_content_type_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_service_offering';
   $strongarm->value = '4';
   $export['language_content_type_service_offering'] = $strongarm;
@@ -219,6 +304,13 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'menu_options_offering';
   $strongarm->value = array();
   $export['menu_options_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_product_family';
+  $strongarm->value = array();
+  $export['menu_options_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -239,6 +331,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_product_family';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_service_offering';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_service_offering'] = $strongarm;
@@ -251,6 +350,15 @@ function forge_web_offering_strongarm() {
     0 => 'status',
   );
   $export['node_options_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_product_family';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -272,6 +380,13 @@ function forge_web_offering_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_product_family';
+  $strongarm->value = '1';
+  $export['node_preview_product_family'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_service_offering';
   $strongarm->value = '1';
   $export['node_preview_service_offering'] = $strongarm;
@@ -282,6 +397,13 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'node_submitted_offering';
   $strongarm->value = 0;
   $export['node_submitted_offering'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_product_family';
+  $strongarm->value = 0;
+  $export['node_submitted_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
