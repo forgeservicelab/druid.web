@@ -52,7 +52,6 @@ function forge_landing_pages_views_default_views() {
   $handler->display->display_options['fields']['field_news_body']['field'] = 'field_news_body';
   $handler->display->display_options['fields']['field_news_body']['label'] = '';
   $handler->display->display_options['fields']['field_news_body']['alter']['max_length'] = '75';
-  $handler->display->display_options['fields']['field_news_body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_news_body']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';

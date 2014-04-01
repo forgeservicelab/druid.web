@@ -64,6 +64,18 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'content',
           'weight' => '0',
         ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'footer_left',
+          'weight' => '-10',
+        ),
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'footer_right',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
