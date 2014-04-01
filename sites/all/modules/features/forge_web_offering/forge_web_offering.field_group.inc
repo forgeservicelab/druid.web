@@ -23,9 +23,9 @@ function forge_web_offering_field_group_info() {
     'label' => 'Group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_intro',
+      0 => 'group_community',
       1 => 'group_info',
-      2 => 'group_community',
+      2 => 'group_intro',
       3 => 'group_video',
     ),
     'format_type' => 'tabs',
@@ -51,9 +51,10 @@ function forge_web_offering_field_group_info() {
     'label' => 'Group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_intro',
+      0 => 'group_community',
       1 => 'group_info',
-      2 => 'group_community',
+      2 => 'group_intro',
+      3 => 'group_video',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -133,10 +134,19 @@ function forge_web_offering_field_group_info() {
     'label' => 'Info',
     'weight' => '2',
     'children' => array(
-      0 => 'field_brief_overview_description',
-      1 => 'field_detailed_description',
-      2 => 'field_experimental',
-      3 => 'field_available_support',
+      0 => 'field_available_support',
+      1 => 'field_brief_overview_description',
+      2 => 'field_contact_information',
+      3 => 'field_detailed_description',
+      4 => 'field_experimental',
+      5 => 'field_more_information',
+      6 => 'field_live_demo_url',
+      7 => 'field_show_live_url_for_everyone',
+      8 => 'field_pricing_information',
+      9 => 'field_cancellation_refund_policy',
+      10 => 'field_geographical_coverage',
+      11 => 'field_lis_and_price',
+      12 => 'field_lic_and_price2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -164,9 +174,13 @@ function forge_web_offering_field_group_info() {
     'weight' => '15',
     'children' => array(
       0 => 'field_brief_overview_description',
-      1 => 'field_detailed_description',
-      2 => 'field_experimental',
-      3 => 'field_available_support',
+      1 => 'field_contact_information',
+      2 => 'field_detailed_description',
+      3 => 'field_more_information',
+      4 => 'field_live_demo_url',
+      5 => 'field_pricing_information',
+      6 => 'field_cancellation_refund_policy',
+      7 => 'field_geographical_coverage',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -194,16 +208,14 @@ function forge_web_offering_field_group_info() {
     'label' => 'Intro',
     'weight' => '1',
     'children' => array(
-      0 => 'field_logo',
-      1 => 'field_category',
-      2 => 'field_oneliner',
-      3 => 'field_offering_tags',
-      4 => 'field_version',
+      0 => 'field_category',
+      1 => 'field_logo',
+      2 => 'field_offering_tags',
+      3 => 'field_offering_title',
+      4 => 'field_oneliner',
       5 => 'field_organizer',
-      6 => 'field_contact_information',
-      7 => 'field_more_information',
-      8 => 'field_offering_title',
-      9 => 'title',
+      6 => 'field_collection',
+      7 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -230,17 +242,14 @@ function forge_web_offering_field_group_info() {
     'label' => 'Intro',
     'weight' => '14',
     'children' => array(
-      0 => 'field_offering_title',
-      1 => 'field_version',
+      0 => 'field_category',
+      1 => 'field_logo',
       2 => 'field_offering_tags',
-      3 => 'field_logo',
-      4 => 'field_organizer',
-      5 => 'field_category',
-      6 => 'field_contact_information',
-      7 => 'field_oneliner',
-      8 => 'field_more_information',
-      9 => 'title',
-      10 => 'language',
+      3 => 'field_offering_title',
+      4 => 'field_oneliner',
+      5 => 'field_organizer',
+      6 => 'field_collection',
+      7 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -281,6 +290,34 @@ function forge_web_offering_field_group_info() {
     ),
   );
   $export['group_video|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_video|node|service_offering|form';
+  $field_group->group_name = 'group_video';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'service_offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Video',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_upload_video',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-video field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_video|node|service_offering|form'] = $field_group;
 
   return $export;
 }

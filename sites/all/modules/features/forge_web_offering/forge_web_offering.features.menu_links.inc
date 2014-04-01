@@ -27,7 +27,7 @@ function forge_web_offering_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -49,
     'customized' => 1,
   );
   // Exported menu link: menu-forge-member-navigation_add-service-offering:node/add/service-offering
@@ -47,7 +47,7 @@ function forge_web_offering_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -48,
     'customized' => 1,
   );
   // Translatables
