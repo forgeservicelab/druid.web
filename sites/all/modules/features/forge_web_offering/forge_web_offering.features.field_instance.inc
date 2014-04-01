@@ -451,86 +451,6 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-offering-field_lic_and_price2'
-  $field_instances['node-offering-field_lic_and_price2'] = array(
-    'bundle' => 'offering',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Licensing and pricing terms of the asset/service for FORGE Affiliates when yhey use it outside FORGE.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'multifield',
-        'settings' => array(
-          'view_mode' => 'default',
-        ),
-        'type' => 'multifield_default',
-        'weight' => 25,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lic_and_price2',
-    'label' => 'Licensing and pricing',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'multifield',
-      'settings' => array(),
-      'type' => 'multifield_default',
-      'weight' => 14,
-    ),
-  );
-
-  // Exported field_instance: 'node-offering-field_lis_and_price'
-  $field_instances['node-offering-field_lis_and_price'] = array(
-    'bundle' => 'offering',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Licensing and pricing information of the asset/service for Forge Affiliates when they use it outside FORGE.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'multifield',
-        'settings' => array(
-          'view_mode' => 'default',
-        ),
-        'type' => 'multifield_default',
-        'weight' => 24,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lis_and_price',
-    'label' => 'Licensing and pricing',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'multifield',
-      'settings' => array(),
-      'type' => 'multifield_default',
-      'weight' => 13,
-    ),
-  );
-
   // Exported field_instance: 'node-offering-field_live_demo_url'
   $field_instances['node-offering-field_live_demo_url'] = array(
     'bundle' => 'offering',
@@ -1408,46 +1328,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offering-field_lis_and_price'
-  $field_instances['node-service_offering-field_lis_and_price'] = array(
-    'bundle' => 'service_offering',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'multifield',
-        'settings' => array(
-          'view_mode' => 'default',
-        ),
-        'type' => 'multifield_default',
-        'weight' => 21,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_lis_and_price',
-    'label' => 'Licensing and pricing',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'multifield',
-      'settings' => array(),
-      'type' => 'multifield_default',
-      'weight' => 43,
-    ),
-  );
-
+  
   // Exported field_instance: 'node-service_offering-field_live_demo_url'
   $field_instances['node-service_offering-field_live_demo_url'] = array(
     'bundle' => 'service_offering',
