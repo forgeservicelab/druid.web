@@ -145,6 +145,8 @@ function forge_web_offering_field_group_info() {
       8 => 'field_pricing_information',
       9 => 'field_cancellation_refund_policy',
       10 => 'field_geographical_coverage',
+      11 => 'field_lis_and_price',
+      12 => 'field_lic_and_price2',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
