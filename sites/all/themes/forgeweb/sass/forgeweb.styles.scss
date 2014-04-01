@@ -25,7 +25,6 @@ $tab: 44em 12; // At 44em use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
 
 
-.l-region,
 .l-branding,
 .l-content {
   margin: 0 auto;
@@ -111,6 +110,126 @@ only screen and (min-resolution: 192dpi) {
   @include at-breakpoint($desk) {
     font-size: 6.2em;
     max-width: 100%;
+  }
+}
+
+
+// Navigation styles
+
+.l-navigation-wrapper {
+  @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.06));
+  
+  background-color: $menu-bg;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  ul {
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    li {
+      display: inline-block;
+      height: 100px;
+      line-height: 40px;
+      list-style-image: none;
+      list-style-type: none;
+      margin-right: 40px;
+      padding: 30px 0;
+      vertical-align: bottom;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        display: block;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        &:hover {
+          color: $active-link-color;
+        }
+      }
+      ul {
+        background-color: $secondary-menu-bg;
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 100px;
+        width: 100%;
+        &:hover {
+          display: block;
+        }
+        a {
+          color: $secondary-menu-link-color;
+        }
+      }
+      &:hover {
+        &.expanded > a {
+          position: relative;
+          &:after {
+            background: url('../images/menu_active.png') no-repeat 0 0 transparent;
+            background-size: 103px auto;
+            bottom: -42px;
+            content:"";
+            height: 12px;
+            left: 50%;
+            margin-left: -51px;
+            position: absolute;
+            width: 103px;
+            z-index: 100;
+          }
+        }
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  // Log in menu styles
+  .block--menu-menu-log-in-menu {
+    padding-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    ul {
+      li {
+        margin-right: 0;
+        a:after {
+          color: #000;
+          content: "/";
+          padding: 0 2px 0 5px;
+        }
+        &.last a:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+
+// Navigation retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .l-navigation-wrapper {
+    ul {
+      li {
+        &:hover {
+          &.expanded > a {
+            &:after {
+              background-image: url('../images/menu_active_retina.png');
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -294,16 +413,16 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page title
 
-.site-title {
-  font-size: 1em;
+.front .field--name-field-page-title {
+  font-size: 1.15em;
   font-weight: normal;
   margin: 0 auto;
   max-width: 27em;
   @include at-breakpoint($tab) {
-    font-size: 1.54em;
+    font-size: 1.65em;
   }
   @include at-breakpoint($desk) {
-    font-size: 2.2em;
+    font-size: 1.55em;
     text-align: left;
   }
 }

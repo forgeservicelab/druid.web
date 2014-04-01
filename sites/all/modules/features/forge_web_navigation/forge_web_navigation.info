@@ -1,0 +1,15 @@
+name = Forge web navigation
+description = This feature adds navigation for the website
+core = 7.x
+package = forgeweb
+version = 7.x-1.0
+project = forge_web_navigation
+dependencies[] = fe_block
+dependencies[] = features
+dependencies[] = menu
+features[fe_block_settings][] = menu-menu-log-in-menu
+features[fe_block_settings][] = system-main-menu
+features[features_api][] = api:2
+features[menu_custom][] = main-menu
+features[menu_custom][] = menu-log-in-menu
+project path = sites/all/modules/features

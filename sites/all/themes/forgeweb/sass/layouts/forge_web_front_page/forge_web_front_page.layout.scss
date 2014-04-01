@@ -94,7 +94,7 @@ $desk: 70em 16; // At 70em use 16 columns.
 @include at-breakpoint($desk) {
   .l-content {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
-    margin-top: $vert-spacing-unit;
+    margin-top: $vert-spacing-unit * 2;
     margin-bottom: $vert-spacing-unit;
   }
 
