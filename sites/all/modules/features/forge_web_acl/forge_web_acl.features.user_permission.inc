@@ -70,13 +70,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'contextual',
   );
 
-  // Exported permission: 'access in-place editing'.
-  $permissions['access in-place editing'] = array(
-    'name' => 'access in-place editing',
-    'roles' => array(),
-    'module' => 'edit',
-  );
-
   // Exported permission: 'access own webform results'.
   $permissions['access own webform results'] = array(
     'name' => 'access own webform results',
