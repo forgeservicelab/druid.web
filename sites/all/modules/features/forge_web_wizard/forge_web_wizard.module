@@ -415,10 +415,10 @@ function _forge_web_wizard_set_redirect_for_role_selection($role) {
    subcontractor|I am a subcontractor of an organization that develops services in FORGE
   */
   if($role == 'SDA') {
-   $redir = 'become-a-partner/service-development-contract';
+   $redir = 'wizard/service-development-contract';
   }
   elseif($role == 'partner_fsl_fpa' || $role == 'fsl_fpa_cra') {
-   $redir = 'become-a-patrner/forge-service-lab-partner-contract';
+   $redir = 'wizard/forge-service-lab-partner-contract';
   }
   return $redir;
 }
