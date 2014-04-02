@@ -26,7 +26,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
       // no needed custom code here ATM
     }
     elseif($form['submitted']['contract']['#value'] == 'wizard_first_step') {
-      // wizard first step form redirects to become-a-partner/registration/%/%
+      // wizard first step form redirects to wizard/registration/%/%
       // it's defined in webform settings
       // see this module hook_menu
       /*
@@ -70,7 +70,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     $form['#submit'][] = 'forge_web_wizard_user_registration_submit';
     module_load_include('inc', 'webform', 'includes/webform.submissions');
     
-    // user registration form is on become-a-partner/registration/%/% page
+    // user registration form is on wizard/registration/%/% page
     // see this module hook_menu
     $nid = arg(2);
     $sid = arg(3);
@@ -135,35 +135,35 @@ function forge_web_wizard_menu() {
     'description' => 'Global configuration of Forge web wizard functionality.',
     'type' => MENU_NORMAL_ITEM,
   );
-  $items['become-a-partner/confirmation/%/%'] = array(
+  $items['wizard/confirmation/%/%'] = array(
     'page callback' => 'forge_web_wizard_confirmation',
     'page arguments' => array(2, 3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Confirmation',
   );
-  $items['become-a-partner/partner-contract-submit/%/%'] = array(
+  $items['wizard/partner-contract-submit/%/%'] = array(
     'page callback' => 'forge_web_wizard_partner_contract_submit',
     'page arguments' => array(2,3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Registration',
   );
-  $items['become-a-partner/sda-contract-submit/%/%'] = array(
+  $items['wizard/sda-contract-submit/%/%'] = array(
     'page callback' => 'forge_web_wizard_sda_contract_submit',
     'page arguments' => array(2,3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Registration',
   );
-  $items['become-a-partner/cra-contract-submit/%/%'] = array(
+  $items['wizard/cra-contract-submit/%/%'] = array(
     'page callback' => 'forge_web_wizard_cra_contract_submit',
     'page arguments' => array(2,3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Registration',
   );
-  $items['become-a-partner/registration/%/%'] = array(
+  $items['wizard/registration/%/%'] = array(
     'page callback' => 'forge_web_wizard_registration',
     'page arguments' => array(2,3),
     'access arguments' => array("access content"),
@@ -226,7 +226,7 @@ function forge_web_wizard_partner_contract_submit($nid, $sid) {
     drupal_goto('wizard/partner-addendum-computing-capacity-contract');
   }
   else {
-    drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+    drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
   }
 }
 
@@ -240,7 +240,7 @@ function forge_web_wizard_sda_contract_submit($nid, $sid) {
   // save temporary user data to session
   $_SESSION['forge_web_wizard_sda_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
   
-  drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+  drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
 
 /*
@@ -253,7 +253,7 @@ function forge_web_wizard_cra_contract_submit($nid, $sid) {
   // save temporary user data to session
   $_SESSION['forge_web_wizard_cra_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
   
-  drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+  drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
 
 /*
@@ -293,6 +293,13 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $output = '';
   $pdf_id = '';
   global $user;
+  $node = node_load($nid);
+  
+  // access check
+  if(!webform_confirmation_page_access($node)) {
+    return drupal_access_denied();
+  }
+  
   if($_SESSION['forge_web_wizard_sda_contract_'.$user->id]) {
     $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->id];
     $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
