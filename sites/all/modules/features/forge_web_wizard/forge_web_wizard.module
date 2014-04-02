@@ -223,7 +223,7 @@ function forge_web_wizard_partner_contract_submit($nid, $sid) {
   // we need this for next step of wizard if user has selected computing capasity
   $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
   if($need_cloud_computing_capasity->data == 'cra') {
-    drupal_goto('become-a-partner/partner-addendum-for-computing-capacity-contract');
+    drupal_goto('wizard/partner-addendum-computing-capacity-contract');
   }
   else {
     drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
