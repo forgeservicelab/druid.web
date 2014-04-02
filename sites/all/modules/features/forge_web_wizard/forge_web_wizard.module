@@ -17,25 +17,20 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     // we have four different wizard forms. We only know each webform components.
     // there is added 'contract' field as component in all wizard webforms
     if ($form['submitted']['contract']['#value'] == 'partner_contract') {
-      // set value for webform component "I need cloud computing capasity" if user has selected it
-      // we need this for next step of wizard if user has selected computing capasity
-      $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
-      if($need_cloud_computing_capasity->data == 'CRA') {
-        $form['#node']->webform['redirect_url'] = 'become-a-patrner/partner-addendum-for-computing-capacity-contract';
-      } 
+      // no needed custom code here ATM
     }
     elseif($form['submitted']['contract']['#value'] == 'sda_contract') {
-      // no needed redirects here ATM
+      // no needed custom code here ATM
     }
     elseif($form['submitted']['contract']['#value'] == 'computing_capasity_contract') {
-      // no needed redirects here ATM
+      // no needed custom code here ATM
     }
     elseif($form['submitted']['contract']['#value'] == 'wizard_first_step') {
       // wizard first step form redirects to become-a-partner/registration/%/%
       // it's defined in webform settings
       // see this module hook_menu
       /*
-      * Replace [nid:xx] in webform markup type components
+      * Replace [nid:xx] in webform markup components
       */
       foreach ($form['submitted'] as $key => $compo) {
         if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
@@ -88,8 +83,8 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         '#value' => $submission->data[5][0]
       );
       $need_computing_capasity = FALSE;
-      if($submission->data[15][0] == 'fsl_fpa_cra') {
-        $need_computing_capasity = 'CRA';
+      if($submission->data[14][0]) {
+        $need_computing_capasity = $submission->data[14][0];
       }
       $form['forge_web_need_cloud_computing_capasity'] = array(
         '#type' => 'value', 
@@ -131,12 +126,42 @@ function _forge_web_wizard_embed_filter_replace($match) {
  * Implements hook_menu 
  */
 function forge_web_wizard_menu() {
+  $items['admin/config/media/forge-web-wizard'] = array(
+    'title' => 'Forge web wizard settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('forge_web_wizard_admin_settings'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'description' => 'Global configuration of Forge web wizard functionality.',
+    'type' => MENU_NORMAL_ITEM,
+  );
   $items['become-a-partner/confirmation/%/%'] = array(
     'page callback' => 'forge_web_wizard_confirmation',
     'page arguments' => array(2, 3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Confirmation',
+  );
+  $items['become-a-partner/partner-contract-submit/%/%'] = array(
+    'page callback' => 'forge_web_wizard_partner_contract_submit',
+    'page arguments' => array(2,3),
+    'access arguments' => array("access content"),
+    'type' => MENU_CALLBACK,
+    'title' => 'Registration',
+  );
+  $items['become-a-partner/sda-contract-submit/%/%'] = array(
+    'page callback' => 'forge_web_wizard_sda_contract_submit',
+    'page arguments' => array(2,3),
+    'access arguments' => array("access content"),
+    'type' => MENU_CALLBACK,
+    'title' => 'Registration',
+  );
+  $items['become-a-partner/cra-contract-submit/%/%'] = array(
+    'page callback' => 'forge_web_wizard_cra_contract_submit',
+    'page arguments' => array(2,3),
+    'access arguments' => array("access content"),
+    'type' => MENU_CALLBACK,
+    'title' => 'Registration',
   );
   $items['become-a-partner/registration/%/%'] = array(
     'page callback' => 'forge_web_wizard_registration',
@@ -146,6 +171,28 @@ function forge_web_wizard_menu() {
     'title' => 'Registration',
   );
   return $items;
+}
+
+function forge_web_wizard_admin_settings() {
+  $form['forge_web_wizard_sda_pdf_id']  = array(
+    '#type' => 'textfield',
+    '#title' => t('SDA contract PDF file ID'),
+    '#default_value' => variable_get('forge_web_wizard_sda_pdf_id'),
+    '#description' => t(''),
+  );
+  $form['forge_web_wizard_partner_pdf_id']  = array(
+    '#type' => 'textfield',
+    '#title' => t('Partner contract PDF file ID'),
+    '#default_value' => variable_get('forge_web_wizard_partner_pdf_id'),
+    '#description' => t(''),
+  );
+  $form['forge_web_wizard_cra_pdf_id']  = array(
+    '#type' => 'textfield',
+    '#title' => t('CRA PDF file ID'),
+    '#default_value' => variable_get('forge_web_wizard_cra_pdf_id'),
+    '#description' => t(''),
+  );
+  return system_settings_form($form);
 }
 
 /*
@@ -158,13 +205,61 @@ function forge_web_wizard_user_profile_submit($form, &$form_state) {
   // get wizard role selection from cache
   $role = _forge_web_wizard_get_cached_user_data($user);
   $redir = _forge_web_wizard_set_redirect_for_role_selection($role->data);
-  // clear user cached data because we don't need it anymore
-  cache_clear_all('forge_web_wizard_user_data_'.$user->uid.':role', 'cache');
-  cache_clear_all('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', 'cache');
+  
   drupal_goto($redir);
   
 }
 
+/*
+ * submit callback for _partner_contract_submit to save session data
+ * and redirect user ro right place
+ */
+function forge_web_wizard_partner_contract_submit($nid, $sid) {
+  global $user;
+  
+  // save temporary user data to session
+  $_SESSION['forge_web_wizard_partner_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  // set value for webform component "I need cloud computing capasity" if user has selected it
+  // we need this for next step of wizard if user has selected computing capasity
+  $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
+  if($need_cloud_computing_capasity->data == 'cra') {
+    drupal_goto('become-a-partner/partner-addendum-for-computing-capacity-contract');
+  }
+  else {
+    drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+  }
+}
+
+/*
+ * submit callback for _partner_contract_submit to save session data
+ * and redirect user ro right place
+ */
+function forge_web_wizard_sda_contract_submit($nid, $sid) {
+  global $user;
+  
+  // save temporary user data to session
+  $_SESSION['forge_web_wizard_sda_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  
+  drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+}
+
+/*
+ * submit callback for _partner_contract_submit to save session data
+ * and redirect user ro right place
+ */
+function forge_web_wizard_cra_contract_submit($nid, $sid) {
+  global $user;
+  
+  // save temporary user data to session
+  $_SESSION['forge_web_wizard_cra_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  
+  drupal_goto('become-a-partner/confirmation/'.$nid.'/'.$sid);
+}
+
+/*
+ * menu callback
+ * print only registaration form
+ */
 function forge_web_wizard_registration($nid, $sid) {
   $form = drupal_get_form('user_register_form'); 
   return drupal_render($form);
@@ -172,7 +267,7 @@ function forge_web_wizard_registration($nid, $sid) {
 
 /*
  * wizard registration submit
- * handle 
+ * handle wizard first step user data saving
  */
 function forge_web_wizard_user_registration_submit($form, &$form_state) {
   if(!empty($form_state['values']['uid'])) {
@@ -181,7 +276,7 @@ function forge_web_wizard_user_registration_submit($form, &$form_state) {
     
     $role = $form_state['values']['forge_web_role'];
     $need_cloud_computing_capasity = $form_state['values']['forge_web_need_cloud_computing_capasity'];
-    // set role selection to cache because we need that data only during wizard
+    // set role selection to cache because we need that data after user has clicked link in e-mail
     cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
     cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
     
@@ -191,41 +286,48 @@ function forge_web_wizard_user_registration_submit($form, &$form_state) {
   
 }
 
+/*
+ * wizard confirmation menu callback
+ */
 function forge_web_wizard_confirmation($nid, $sid) {
   $output = '';
   $pdf_id = '';
-  // Get the submission array
-  $submission = webform_menu_submission_load($sid, $nid);
-  
-  // 'role selection' is key 1
-  if(!empty($submission->data[1][0])) {
-    $value = $submission->data[1][0];
-    $field_name = 'field_'.strtolower($value);
+  global $user;
+  if($_SESSION['forge_web_wizard_sda_contract_'.$user->id]) {
+    $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->id];
+    $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
+    // unset session data because we don't need it anymore
+    unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   }
-  // 'I need cloud computing...' is key 2
-  if(!empty($submission->data[15][0])) {
-    $value = $submission->data[15][0];
-    $cloud_computing_field_name = 'field_'.strtolower($value);
+  if($_SESSION['forge_web_wizard_partner_contract_'.$user->id]) {
+    $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->id];
+    $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
+    // unset session data because we don't need it anymore
+    unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
   }
-  
-  if(is_numeric($nid)) {
-    $node = node_load($nid);
-    if(!empty($field_name)) {
-      $field_values = field_get_items('node', $node, $field_name);
-    }
-    
-    $pdf_id = $field_values[0]['value'];
-    if(!empty($cloud_computing_field_name)) {
-      //$cloud_computing_values = field_get_items('node', $node, $cloud_computing_field_name);
-      $cloud_computing_pdf_id = $cloud_computing_values[0]['value'];
-    }
+  if($_SESSION['forge_web_wizard_cra_contract_'.$user->id]) {
+    $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->id];
+    $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
+    // unset session data because we don't need it anymore
+    unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
   }
   
-  if(!empty($cloud_computing_field_name)) {
-    $cloud_computing_link = l(t('Download Cloud Computing contract'),  'fillpdf', array('query' => array('fid' => $cloud_computing_pdf_id, 'webform[nid]' => $nid, 'webform[sid]' => $sid)));
-    $output = $cloud_computing_link.'<br/>';
+  // clear temporary cache data also which were used in wizard only
+  cache_clear_all('forge_web_wizard_user_data_'.$user->uid.':role', 'cache');
+  cache_clear_all('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', 'cache');
+  
+  if(!empty($partner_pdf_id)) {
+    $partner_link = l(t('Download Forge Partner contract'),  'fillpdf', array('query' => array('fid' => $partner_pdf_id, 'webform[nid]' => $partner_user_data['nid'], 'webform[sid]' => $partner_user_data['sid'])));
+    $output = $partner_link.'<br/>';
   }
-  $output .= l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $pdf_id, 'webform[nid]' => $nid, 'webform[sid]' => $sid))); 
+  if(!empty($cra_pdf_id)) {
+    $cloud_computing_link = l(t('Download Cloud Computing contract'),  'fillpdf', array('query' => array('fid' => $cra_pdf_id, 'webform[nid]' => $cra_user_data['nid'], 'webform[sid]' => $cra_user_data['sid'])));
+    $output .= $cloud_computing_link.'<br/>';
+  }
+  if(!empty($sda_pdf_id)) {
+    $sda_link = l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $cra_user_data['sid']))); 
+    $output .= $sda_link.'<br/>';
+  }
   return $output;
 }
 
@@ -307,10 +409,10 @@ function _forge_web_wizard_recursive_array_search($needle, $haystack, $return_ar
 
 function _forge_web_wizard_set_redirect_for_role_selection($role) {
   /*
-  * SDA|I want to develop a world-class digital service
-     partner_fsl_fpa|I want to offer APIs, software, datasets or tools
-     fsl_fpa_cra|I want to offer my expertise in digital service creation
-     subcontractor|I am a subcontractor of an organization that develops services in FORGE
+   SDA|I want to develop a world-class digital service
+   partner_fsl_fpa|I want to offer APIs, software, datasets or tools
+   fsl_fpa_cra|I want to offer my expertise in digital service creation
+   subcontractor|I am a subcontractor of an organization that develops services in FORGE
   */
   if($role == 'SDA') {
    $redir = 'become-a-partner/service-development-contract';
@@ -323,5 +425,4 @@ function _forge_web_wizard_set_redirect_for_role_selection($role) {
 
 function _forge_web_wizard_get_cached_user_data($user) {
   return cache_get('forge_web_wizard_user_data_'.$user->uid.':role');
-  
 }
