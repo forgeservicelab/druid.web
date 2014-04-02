@@ -197,6 +197,27 @@ function forge_web_wizard_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_cra_pdf_id';
+  $strongarm->value = '2';
+  $export['forge_web_wizard_cra_pdf_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_partner_pdf_id';
+  $strongarm->value = '1';
+  $export['forge_web_wizard_partner_pdf_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_sda_pdf_id';
+  $strongarm->value = '3';
+  $export['forge_web_wizard_sda_pdf_id'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_forge_role_information';
   $strongarm->value = '1';
   $export['language_content_type_forge_role_information'] = $strongarm;
@@ -301,7 +322,7 @@ function forge_web_wizard_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_webform';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['webform_node_webform'] = $strongarm;
 
   return $export;
