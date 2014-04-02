@@ -459,6 +459,7 @@ only screen and (min-resolution: 192dpi) {
   }
   .l-region--footer-right {
     font-size: 1.2em;
+    text-align: center;
     @include at-breakpoint($desk) {
       font-size: 1.9em;
       line-height: 3em;
