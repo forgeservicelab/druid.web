@@ -23,6 +23,7 @@ $container-width: 1090px;
 
 // Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
 $tab: 44em 12; // At 44em use 12 columns.
+$mobile_nav: 801px 12; // At 801px use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
 
 .l-content {
@@ -52,7 +53,7 @@ $desk: 70em 16; // At 70em use 16 columns.
 @include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
   .l-content {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
-    margin-top: $vert-spacing-unit / 2;
+    margin-top: ($vert-spacing-unit / 2)  * 2 - 70px;
     margin-bottom: $vert-spacing-unit / 2;
   }
   
@@ -88,6 +89,12 @@ $desk: 70em 16; // At 70em use 16 columns.
   
   .l-region--navigation {
     clear: both;
+  }
+}
+
+@include at-breakpoint($mobile_nav) {
+  .l-content {
+    margin-top: ($vert-spacing-unit / 2)  * 2;
   }
 }
 

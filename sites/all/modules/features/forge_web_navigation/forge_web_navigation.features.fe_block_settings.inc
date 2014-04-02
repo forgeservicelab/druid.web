@@ -32,6 +32,26 @@ function forge_web_navigation_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['menu_block-1'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 1,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'forgeweb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'forgeweb',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => 0,
+  );
+
   $export['system-main-menu'] = array(
     'cache' => -1,
     'custom' => 0,

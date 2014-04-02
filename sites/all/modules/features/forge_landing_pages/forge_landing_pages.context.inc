@@ -52,9 +52,9 @@ function forge_landing_pages_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'system-main-menu' => array(
-          'module' => 'system',
-          'delta' => 'main-menu',
+        'menu_block-1' => array(
+          'module' => 'menu_block',
+          'delta' => '1',
           'region' => 'navigation',
           'weight' => '-10',
         ),
