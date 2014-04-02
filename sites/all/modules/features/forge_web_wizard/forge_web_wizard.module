@@ -293,12 +293,6 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $output = '';
   $pdf_id = '';
   global $user;
-  $node = node_load($nid);
-  
-  // access check
-  if(!webform_confirmation_page_access($node)) {
-    return drupal_access_denied();
-  }
   
   if($_SESSION['forge_web_wizard_sda_contract_'.$user->id]) {
     $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->id];
