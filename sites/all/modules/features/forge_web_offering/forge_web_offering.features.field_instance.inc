@@ -1320,7 +1320,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 39,
     ),
   );
 
@@ -1445,7 +1445,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 38,
     ),
   );
 
@@ -1584,7 +1584,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 40,
     ),
   );
 
@@ -1972,6 +1972,50 @@ function forge_web_offering_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-service_offering-field_terms_and_conditions'
+  $field_instances['node-service_offering-field_terms_and_conditions'] = array(
+    'bundle' => 'service_offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_terms_and_conditions',
+    'label' => 'Terms and conditions',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 37,
     ),
   );
 
