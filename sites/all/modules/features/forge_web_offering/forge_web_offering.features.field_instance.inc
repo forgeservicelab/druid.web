@@ -1328,7 +1328,6 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
-  
   // Exported field_instance: 'node-service_offering-field_live_demo_url'
   $field_instances['node-service_offering-field_live_demo_url'] = array(
     'bundle' => 'service_offering',
@@ -1790,9 +1789,6 @@ function forge_web_offering_field_default_field_instances() {
   t('Experimental');
   t('Geographical coverage');
   t('If you have showcases to demonstrate what can be done with your offering.');
-  t('Licensing and pricing');
-  t('Licensing and pricing information of the asset/service for Forge Affiliates when they use it outside FORGE.');
-  t('Licensing and pricing terms of the asset/service for FORGE Affiliates when yhey use it outside FORGE.');
   t('Live demo url');
   t('Logo');
   t('Main principle is that a service provider ensures the maturity level of his offering and indicates it clearly in offering description for potential customers.');
