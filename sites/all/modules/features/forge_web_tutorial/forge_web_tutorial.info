@@ -61,7 +61,6 @@ features[variable][] = print_html_link_pos
 features[variable][] = print_html_link_teaser
 features[variable][] = print_html_link_use_alias
 features[variable][] = print_html_new_window
-features[variable][] = print_html_node_link_pages
 features[variable][] = print_html_node_link_visibility
 features[variable][] = print_html_sendtoprinter
 features[variable][] = print_html_show_link

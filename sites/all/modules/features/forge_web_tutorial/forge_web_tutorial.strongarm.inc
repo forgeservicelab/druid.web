@@ -247,13 +247,6 @@ function forge_web_tutorial_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_html_node_link_pages';
-  $strongarm->value = 'tutorial/*';
-  $export['print_html_node_link_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'print_html_node_link_visibility';
   $strongarm->value = '1';
   $export['print_html_node_link_visibility'] = $strongarm;

@@ -10,6 +10,178 @@
 function forge_web_offering_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_terms_and_conditions-field_attachment_t_and_c'
+  $field_instances['field_collection_item-field_terms_and_conditions-field_attachment_t_and_c'] = array(
+    'bundle' => 'field_terms_and_conditions',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_attachment_t_and_c',
+    'label' => 'Attachment',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt pdf doc docx',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_terms_and_conditions-field_text_for_terms_and_conditi'
+  $field_instances['field_collection_item-field_terms_and_conditions-field_text_for_terms_and_conditi'] = array(
+    'bundle' => 'field_terms_and_conditions',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_text_for_terms_and_conditi',
+    'label' => 'Text for terms and conditions',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_terms_and_conditions_outsi-field_attachment_t_and_c2'
+  $field_instances['field_collection_item-field_terms_and_conditions_outsi-field_attachment_t_and_c2'] = array(
+    'bundle' => 'field_terms_and_conditions_outsi',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_attachment_t_and_c2',
+    'label' => 'Attachment',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_terms_and_conditions_outsi-field_text_for_terms_and_condit2'
+  $field_instances['field_collection_item-field_terms_and_conditions_outsi-field_text_for_terms_and_condit2'] = array(
+    'bundle' => 'field_terms_and_conditions_outsi',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_text_for_terms_and_condit2',
+    'label' => 'Text for terms and conditions outside FORGE',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-offering-field_available_support'
   $field_instances['node-offering-field_available_support'] = array(
     'bundle' => 'offering',
@@ -880,6 +1052,94 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-offering-field_terms_and_conditions'
+  $field_instances['node-offering-field_terms_and_conditions'] = array(
+    'bundle' => 'offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_terms_and_conditions',
+    'label' => 'Terms and conditions',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-offering-field_terms_and_conditions_outsi'
+  $field_instances['node-offering-field_terms_and_conditions_outsi'] = array(
+    'bundle' => 'offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_terms_and_conditions_outsi',
+    'label' => 'Terms and conditions outside FORGE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-offering-field_upload_video'
   $field_instances['node-offering-field_upload_video'] = array(
     'bundle' => 'offering',
@@ -1060,7 +1320,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 38,
+      'weight' => 39,
     ),
   );
 
@@ -1185,7 +1445,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 37,
+      'weight' => 38,
     ),
   );
 
@@ -1324,7 +1584,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 39,
+      'weight' => 40,
     ),
   );
 
@@ -1715,6 +1975,50 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-service_offering-field_terms_and_conditions'
+  $field_instances['node-service_offering-field_terms_and_conditions'] = array(
+    'bundle' => 'service_offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 21,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_terms_and_conditions',
+    'label' => 'Terms and conditions',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 37,
+    ),
+  );
+
   // Exported field_instance: 'node-service_offering-field_upload_video'
   $field_instances['node-service_offering-field_upload_video'] = array(
     'bundle' => 'service_offering',
@@ -1778,6 +2082,7 @@ function forge_web_offering_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Attachment');
   t('Available support');
   t('Brief overview description');
   t('Cancellation / refund policy');
@@ -1803,6 +2108,10 @@ function forge_web_offering_field_default_field_instances() {
   t('Provider');
   t('Show live URL for everyone');
   t('Tags');
+  t('Terms and conditions');
+  t('Terms and conditions outside FORGE');
+  t('Text for terms and conditions');
+  t('Text for terms and conditions outside FORGE');
   t('Upload video');
   t('What is your offering and why is it great?');
 
