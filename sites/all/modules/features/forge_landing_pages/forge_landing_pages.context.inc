@@ -52,11 +52,17 @@ function forge_landing_pages_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'locale-language_content' => array(
-          'module' => 'locale',
-          'delta' => 'language_content',
+        'menu_block-1' => array(
+          'module' => 'menu_block',
+          'delta' => '1',
           'region' => 'navigation',
-          'weight' => '0',
+          'weight' => '-10',
+        ),
+        'menu-menu-log-in-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-log-in-menu',
+          'region' => 'navigation',
+          'weight' => '-9',
         ),
         'system-main' => array(
           'module' => 'system',
@@ -64,15 +70,15 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'content',
           'weight' => '0',
         ),
-        'block-3' => array(
+        'block-1' => array(
           'module' => 'block',
-          'delta' => '3',
+          'delta' => '1',
           'region' => 'footer_left',
           'weight' => '-10',
         ),
-        'block-4' => array(
+        'block-2' => array(
           'module' => 'block',
-          'delta' => '4',
+          'delta' => '2',
           'region' => 'footer_right',
           'weight' => '-10',
         ),

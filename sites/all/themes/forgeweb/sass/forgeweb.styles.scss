@@ -22,10 +22,10 @@
 
 // Susy Media Layouts @see http://susy.oddbird.net/guides/reference/#ref-media-layouts
 $tab: 44em 12; // At 44em use 12 columns.
+$mobile_nav: 801px 12; // At 801px use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
 
 
-.l-region,
 .l-branding,
 .l-content {
   margin: 0 auto;
@@ -111,6 +111,219 @@ only screen and (min-resolution: 192dpi) {
   @include at-breakpoint($desk) {
     font-size: 6.2em;
     max-width: 100%;
+  }
+}
+
+
+// Navigation styles
+
+.l-navigation-wrapper {
+  @include at-breakpoint($mobile_nav) {
+    @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.06));
+
+    background-color: $menu-bg;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .responsive-menus.responsified {
+    padding-top: 70px;
+    &.absolute .responsive-menus-simple {
+      @include border-radius(0);
+      @include box-shadow(0 0 0 transparent);
+      
+      background-color: #000;
+      border-left: 5px solid #fff;
+      top: 10px;
+      li {
+        background: url('../images/mobile_menu_bg.png') no-repeat left 10px transparent;
+        padding-left: 20px;
+        padding-right: 70px;
+        width: auto;
+        a {
+          border-bottom: 0 none;
+          font-size: 1.4em;
+        }
+        li {
+          background: none;
+          display: none;
+          padding: 0;
+          a {
+            font-weight: 200;
+            padding-left: 5%;
+            padding-top: 0;
+            text-transform: none;
+          }
+        }
+        &.active {
+          background: none #fff;
+          a {
+            color: $link-color;
+            &.active {
+              color: $active-link-color;
+            }
+          }
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+    span.toggler {
+      @include border-radius(0);
+      @include box-shadow(0 0 0 transparent);
+      
+      background: url('../images/mobile_nav.png') no-repeat 12px -37px $active-link-color;
+      background-size: 37px auto;
+      height: 60px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      text-indent: -9999px;
+      top: 20px;
+      width: 60px;
+      z-index: 1000;
+    }
+    &.responsive-toggled {
+      span.toggler {
+        background-position: 20px 12px;
+        border: 0 none;
+      }
+    }
+  }
+  @include at-breakpoint($mobile_nav) {
+    ul {
+      height: 80px;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      text-align: center;
+      @include at-breakpoint($desk) {
+        height: 100px;
+      }
+      li {
+        display: inline-block;
+        height: 80px;
+        line-height: 20px;
+        list-style-image: none;
+        list-style-type: none;
+        margin-right: 10px;
+        padding: 30px 0;
+        vertical-align: bottom;
+        @include at-breakpoint($desk) {
+          height: 100px;
+          line-height: 40px;
+          margin-right: 40px;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          display: block;
+          font-size: 1.15em;
+          text-transform: uppercase;
+          @include at-breakpoint($desk) {
+            font-size: 1.5em;
+          }
+          &:hover {
+            color: $active-link-color;
+          }
+        }
+        ul {
+          background-color: $secondary-menu-bg;
+          display: none;
+          left: 0;
+          position: absolute;
+          top: 80px;
+          width: 100%;
+          @include at-breakpoint($desk) {
+            top: 100px;
+          }
+          &:hover {
+            display: block;
+          }
+          a {
+            color: $secondary-menu-link-color;
+          }
+        }
+        &:hover {
+          &.expanded > a {
+            position: relative;
+            &:after {
+              background: url('../images/menu_active.png') no-repeat 0 0 transparent;
+              background-size: 103px auto;
+              bottom: -42px;
+              content:"";
+              height: 12px;
+              left: 50%;
+              margin-left: -51px;
+              position: absolute;
+              width: 103px;
+              z-index: 100;
+            }
+          }
+          ul {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+  
+  // Log in menu styles
+  .block--menu-menu-log-in-menu {
+    display: none;
+    padding-right: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @include at-breakpoint($mobile_nav) {
+      display: block;
+    }
+    ul {
+      li {
+        margin-right: 0;
+        a:after {
+          color: #000;
+          content: "/";
+          padding: 0 2px 0 5px;
+        }
+        &.last a:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+
+// Navigation retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .l-navigation-wrapper {
+    .responsive-menus.responsified {
+      span.toggler {
+        background-image: url('../images/mobile_nav_retina.png');
+      }
+    }
+    ul {
+      li {
+        &:hover {
+          &.expanded > a {
+            &:after {
+              background-image: url('../images/menu_active_retina.png');
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -246,6 +459,7 @@ only screen and (min-resolution: 192dpi) {
   }
   .l-region--footer-right {
     font-size: 1.2em;
+    text-align: center;
     @include at-breakpoint($desk) {
       font-size: 1.9em;
       line-height: 3em;
@@ -294,16 +508,16 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page title
 
-.site-title {
-  font-size: 1em;
+.front .field--name-field-page-title {
+  font-size: 1.15em;
   font-weight: normal;
   margin: 0 auto;
   max-width: 27em;
   @include at-breakpoint($tab) {
-    font-size: 1.54em;
+    font-size: 1.65em;
   }
   @include at-breakpoint($desk) {
-    font-size: 2.2em;
+    font-size: 1.55em;
     text-align: left;
   }
 }
