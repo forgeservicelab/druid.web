@@ -1,0 +1,12 @@
+name = Forge web LDAP
+description = Feature for LDAP and CAS
+core = 7.x
+package = forgeweb
+dependencies[] = cas
+dependencies[] = cas_attributes
+dependencies[] = cas_ldap
+dependencies[] = ctools
+dependencies[] = ldap_servers
+features[ctools][] = ldap_servers:ldap_servers:1
+features[features_api][] = api:2
+features[ldap_servers][] = forge_server
