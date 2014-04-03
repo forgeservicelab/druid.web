@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Forge Web wizard install/schema hooks.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function forge_web_wizard_install() {
+  /*
+   *  Insert Fill PDF templates (forms) and mappings for them.
+   */
+  if(!module_exists('fillpdf')) {
+    return;
+  }
+  if(!fillpdf_pdftk_check(fillpdf_pdftk_path())) {
+    drupal_set_message(t('Locally-installed pdftk is not properly installed and Fill PDF mappings aborted. See instruction here https://drupal.org/node/1431610#pdftk'));
+    return;
+  }
+  // set first fillpdf_service variable as 'pdftk' because features do it too late for this install
+  variable_set('fillpdf_service', 'pdftk');
+  
+  // scan template directory
+  $mask = '/\.pdf$/';
+  $module_path = drupal_get_path('module', 'forge_web_wizard');
+  $templates_dir = $module_path.'/fillpdf/pdf_templates';
+  $pdf_files = file_scan_directory($templates_dir, $mask);
+  $mappings_dir = $module_path.'/fillpdf/field_mappings';
+  
+  // set folder under public:// for fillpdf templates
+  $dest_dir = file_build_uri('fillpdf');
+  if(!is_dir($dest_dir)) {
+    if(!drupal_mkdir($dest_dir)) {
+      watchdog('Forge web wizard', 'Can not create folder %dest.', array('%dest' => $dest_dir), WATCHDOG_ERROR);
+    }
+  }
+  $error = false;
+  foreach($pdf_files as $file) {
+    $file->filepath = $file->uri;
+    $file->filemime = file_get_mimetype($file->uri);
+    $file->filesize = filesize($file->uri);
+    $file->uid = 1;
+    $file->status = FILE_STATUS_PERMANENT;
+    $file->display = 1;
+    $file->description = '';
+    if(!$file = file_copy($file, $dest_dir.'/'.$file->filename)) {
+      $error = true;
+    }
+    else {
+      // insert file to fillpdf forms
+      db_insert('fillpdf_forms')
+        ->fields(array(
+          'fid' => $file->fid,
+          'title' => $file->filename,
+          'url' => $file->uri,
+        ))
+        ->execute();
+      // we need to parse pdf for mapping
+      fillpdf_parse_pdf($file->fid);
+      
+      // get json format file contents for pdf mappings
+      // In field_mappings folder there should be .json file named in the same manner as pdf template
+      $mapping_file = basename($file->filename, ".pdf").'.json';
+      if(is_file($mappings_dir.'/'.$mapping_file)) {
+        $mapping_file_contents = file_get_contents($mappings_dir.'/'.$mapping_file);
+        $mappings = json_decode($mapping_file_contents, TRUE);
+        // we need init object for fillpdf_import_mappings
+        $pdf_form = new stdClass();
+        $pdf_form->fid = $file->fid;
+        fillpdf_import_mappings($pdf_form, $mappings);
+      }
+      else {
+        watchdog('Forge web wizard', 'Can not found file %file for fillpdf mapping in %folder.', array('%file' => $mapping_file, '%folder' => $mappings_dir), WATCHDOG_ERROR);
+      }
+    }
+  }
+  if($error) {
+    watchdog('Forge web wizard', 'Can not copy files to %dest folder.', array('%dest' => $dest_dir), WATCHDOG_ERROR);
+  }
+}
