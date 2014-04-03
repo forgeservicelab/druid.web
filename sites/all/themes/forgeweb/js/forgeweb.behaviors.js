@@ -42,12 +42,19 @@
   // Navigation functionality
   Drupal.behaviors.showSubNavigation = {
     attach: function (context, settings) {
-      $('#block-menu-block-1 ul li').hover(function(){
-        $(this).find('ul').slideDown('fast', 'swing');
+      $('#block-menu-block-1 .responsive-menus:not(.responsified)  ul li').hoverIntent({
+        over: startHover,
+        out: endHover,
+        timeout: 280
       });
-      $('#block-menu-block-1 ul li').mouseleave(function(){
-        $(this).find('ul').slideUp('fast', 'swing');
-      });
+
+      function startHover(e){
+        $(this).find('> ul').slideDown('fast');
+      }
+
+      function endHover(e){
+        $(this).find('> ul').slideUp('fast');
+      }
     }
   }
    
