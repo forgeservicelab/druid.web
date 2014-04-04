@@ -7,6 +7,67 @@
 include_once 'forge_web_wizard.features.inc';
 
 /**
+* Implements hook_token_info().
+*/
+function forge_web_wizard_token_info() {
+  $info['tokens']['current-user']['fillpdf_link'] = array(
+    'name' => t('Fillpdf link'),
+    'description' => t('Returns the fillpdf link.'),
+  );
+  return $info;
+}
+
+/**
+* Implements hook_tokens().
+*/
+function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  global $user;
+  $replacements = array();
+  
+  if ($type == 'current-user') {
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'fillpdf_link':
+          if($_SESSION['forge_web_wizard_sda_contract_'.$user->uid]) {
+            $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
+            $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
+            // unset session data because we don't need it anymore
+            //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
+          }
+          dsm($_SESSION);
+          if($_SESSION['forge_web_wizard_partner_contract_'.$user->uid]) {
+            dsm('sdf');
+            $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
+            $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
+            // unset session data because we don't need it anymore
+            //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
+          }
+          if($_SESSION['forge_web_wizard_cra_contract_'.$user->uid]) {
+            $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
+            $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
+            // unset session data because we don't need it anymore
+            //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
+          }
+          dsm($partner_pdf_id);
+          if(!empty($partner_pdf_id)) {
+            $url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE);
+          }
+          if(!empty($cra_pdf_id)) {
+            $url .= fillpdf_pdf_link($cra_pdf_id, NULL, array(array('nid'=> $cra_user_data['nid'], 'sid'=> $cra_user_data['sid'])), $sample = FALSE);
+          }
+          if(!empty($sda_pdf_id)) {
+            $url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE);
+          }
+          dsm($url);
+          $replacements[$original] = $url;
+          break;
+      }
+     }
+  }
+  return $replacements;
+}
+
+/**
  * 
  * Implements hook_form_alter 
  */
@@ -192,6 +253,36 @@ function forge_web_wizard_admin_settings() {
     '#default_value' => variable_get('forge_web_wizard_cra_pdf_id'),
     '#description' => t(''),
   );
+  $form['email_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Confirmation e-mail settings'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#description' => t('Settings for confirmation e-mail after user has submitted contract form. All fields have token support.'),
+  );
+  $form['email_settings']['forge_web_wizard_email_to']  = array(
+    '#type' => 'textfield',
+    '#title' => t('Email to'),
+    '#default_value' => variable_get('forge_web_wizard_email_to'),
+    '#description' => t('E-mail address where to send confirmation e-mail. Comma separated list if there is more than one e-mail address.'),
+  );
+  $form['email_settings']['forge_web_wizard_email_subject']  = array(
+    '#type' => 'textfield',
+    '#title' => t('Email subject'),
+    '#default_value' => variable_get('forge_web_wizard_email_subject'),
+    '#description' => t(''),
+  );
+  $form['email_settings']['forge_web_wizard_email_body'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Email body'),
+    '#default_value' => variable_get('forge_web_wizard_email_body'),
+    '#rows' => 30,
+    '#description' => t('Confirmatiion email body.'),
+  );
+  $form['email_settings']['token_help'] = array(
+    '#theme' => 'token_tree',
+    '#token_types' => array('node', 'comment', 'term', 'vocabulary', 'user'),
+  );
   return system_settings_form($form);
 }
 
@@ -216,9 +307,9 @@ function forge_web_wizard_user_profile_submit($form, &$form_state) {
  */
 function forge_web_wizard_partner_contract_submit($nid, $sid) {
   global $user;
-  
+  dsm($user);
   // save temporary user data to session
-  $_SESSION['forge_web_wizard_partner_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  $_SESSION['forge_web_wizard_partner_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
   // set value for webform component "I need cloud computing capasity" if user has selected it
   // we need this for next step of wizard if user has selected computing capasity
   $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
@@ -238,7 +329,7 @@ function forge_web_wizard_sda_contract_submit($nid, $sid) {
   global $user;
   
   // save temporary user data to session
-  $_SESSION['forge_web_wizard_sda_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  $_SESSION['forge_web_wizard_sda_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
   
   drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
@@ -251,7 +342,7 @@ function forge_web_wizard_cra_contract_submit($nid, $sid) {
   global $user;
   
   // save temporary user data to session
-  $_SESSION['forge_web_wizard_cra_contract_'.$user->id] = array('nid' => $nid, 'sid' => $sid);
+  $_SESSION['forge_web_wizard_cra_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
   
   drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
@@ -294,23 +385,23 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $pdf_id = '';
   global $user;
   
-  if($_SESSION['forge_web_wizard_sda_contract_'.$user->id]) {
-    $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->id];
+  if($_SESSION['forge_web_wizard_sda_contract_'.$user->uid]) {
+    $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
     $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
     // unset session data because we don't need it anymore
-    unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
+    //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   }
-  if($_SESSION['forge_web_wizard_partner_contract_'.$user->id]) {
-    $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->id];
+  if($_SESSION['forge_web_wizard_partner_contract_'.$user->uid]) {
+    $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
     $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
     // unset session data because we don't need it anymore
-    unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
+    //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
   }
-  if($_SESSION['forge_web_wizard_cra_contract_'.$user->id]) {
-    $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->id];
+  if($_SESSION['forge_web_wizard_cra_contract_'.$user->uid]) {
+    $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
     $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
     // unset session data because we don't need it anymore
-    unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
+    //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
   }
   
   // clear temporary cache data also which were used in wizard only
@@ -329,7 +420,31 @@ function forge_web_wizard_confirmation($nid, $sid) {
     $sda_link = l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $cra_user_data['sid']))); 
     $output .= $sda_link.'<br/>';
   }
+  $token_data['user'] = $user;
+  $token_data['current-user'] = $user;
+  $to = token_replace(variable_get('forge_web_wizard_email_to', ''), $token_data, array('clear' => true)) ;
+  $body = variable_get('forge_web_wizard_email_body', '');
+  $subject = variable_get('forge_web_wizard_email_subject', '');
+  
+  drupal_mail('forge_web_wizard', 'key', $to, $user-language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  
   return $output;
+}
+
+function forge_web_wizard_mail($key, &$message, $params) {
+  global $user;
+  
+  $token_data['user'] = $user;
+  $token_data['current-user'] = $user;
+  if (isset($params['subject'])) {
+    $message['subject'] = token_replace($params['subject'], $token_data, array('clear' => true));
+  }
+  if (isset($params['body'])) {
+    $message['body'][] = token_replace($params['body'], $token_data, array('clear' => true));
+  }
+  if (isset($params['attachment'])) {
+    $message['params']['attachments'][] = $params['attachment'];
+  }
 }
 
 /**
