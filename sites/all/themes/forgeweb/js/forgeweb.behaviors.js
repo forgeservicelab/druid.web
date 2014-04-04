@@ -38,21 +38,45 @@
    *   Drupal.settings directly you should use this because of potential
    *   modifications made by the Ajax callback that also produced 'context'.
    */
-  Drupal.behaviors.forgewebExampleBehavior = {
+   
+  // Navigation functionality
+  Drupal.behaviors.showSubNavigation = {
     attach: function (context, settings) {
-      // By using the 'context' variable we make sure that our code only runs on
-      // the relevant HTML. Furthermore, by using jQuery.once() we make sure that
-      // we don't run the same piece of code for an HTML snippet that we already
-      // processed previously. By using .once('foo') all processed elements will
-      // get tagged with a 'foo-processed' class, causing all future invocations
-      // of this behavior to ignore them.
-      $('.some-selector', context).once('foo', function () {
-        // Now, we are invoking the previously declared theme function using two
-        // settings as arguments.
-        var $anchor = Drupal.theme('forgewebExampleButton', settings.myExampleLinkPath, settings.myExampleLinkTitle);
+      $('#block-menu-block-1 .responsive-menus:not(.responsified)  ul li').hoverIntent({
+        over: startHover,
+        out: endHover,
+        timeout: 280
+      });
 
-        // The anchor is then appended to the current element.
-        $anchor.appendTo(this);
+      function startHover(e){
+        $(this).find('> ul').slideDown('fast');
+      }
+
+      function endHover(e){
+        $(this).find('> ul').slideUp('fast');
+      }
+    }
+  }
+   
+  // FAQ page scroll to clicked item
+  Drupal.behaviors.scrollToFaqQuestion = {
+    attach: function (context, settings) {
+      $('#block-views-faq-block').once('scrollToFaqQuestion', function () {
+
+        var $tabs = $(this).find('div.view-content');
+        var scrollToTab = function(el, offset) {
+          $('html, body').animate({
+            scrollTop: el.offset().top - offset
+          }, 500);
+        };
+
+        // Scroll to active tab on accordionchange event
+        $tabs.bind('accordionchange', function(event, ui) {
+          if (ui.newHeader.length > 0) {
+            scrollToTab(ui.newHeader, 200);
+          }
+        });
+
       });
     }
   };

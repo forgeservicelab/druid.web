@@ -113,13 +113,24 @@ $desk: 70em 16; // At 70em use 16 columns.
     @include span-columns(10, 16); // Span 10 out of 12 columns.
   }
   
-  .l-highlighted,
-  .l-middle_content,
-  .l-after_content {
+  .l-highlighted {
+    margin-bottom: $vert-spacing-unit;
     padding: $vert-spacing-unit 0;
     .l-region {
      @include set-container-width;
     }
+  }
+  
+  .l-middle_content,
+  .l-after_content {
+    padding: 0 0 $vert-spacing-unit 0;
+    .l-region {
+     @include set-container-width;
+    }
+  }
+  
+  .l-after_content {
+    padding: $vert-spacing-unit 0;
   }
   
   .l-footer {
