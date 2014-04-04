@@ -48,13 +48,13 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
           }
           $url = '';
           if(!empty($partner_pdf_id)) {
-            $url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE);
+            $url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE).'<br/>';
           }
           if(!empty($cra_pdf_id)) {
-            $url .= fillpdf_pdf_link($cra_pdf_id, NULL, array(array('nid'=> $cra_user_data['nid'], 'sid'=> $cra_user_data['sid'])), $sample = FALSE);
+            $url .= fillpdf_pdf_link($cra_pdf_id, NULL, array(array('nid'=> $cra_user_data['nid'], 'sid'=> $cra_user_data['sid'])), $sample = FALSE).'<br/>';
           }
           if(!empty($sda_pdf_id)) {
-            $url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE);
+            $url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE).'<br/>';
           }
           $replacements[$original] = $url;
           break;
