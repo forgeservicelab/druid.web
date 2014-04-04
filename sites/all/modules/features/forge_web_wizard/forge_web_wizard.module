@@ -335,6 +335,22 @@ function forge_web_wizard_cra_contract_submit($nid, $sid) {
  * print only registaration form
  */
 function forge_web_wizard_registration($nid, $sid) {
+  global $user;
+  if(!user_is_anonymous()) {
+    module_load_include('inc', 'webform', 'includes/webform.submissions');
+    $submission = webform_get_submission($nid, $sid);
+    
+    // TODO: is there better way to get value?
+    $role = $submission->data[5][0];
+    $redir = _forge_web_wizard_set_redirect_for_role_selection($role);
+    // TODO: is there better way to get value?
+    $need_cloud_computing_capasity = $submission->data[14][0];
+    // set role selection to cache because we need that data after user has clicked link in e-mail
+    cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
+    cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
+    
+    drupal_goto($redir);
+  }
   $form = drupal_get_form('user_register_form'); 
   return drupal_render($form);
 }
@@ -354,8 +370,8 @@ function forge_web_wizard_user_registration_submit($form, &$form_state) {
     cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
     cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
     
-    $user->field_role[$user->language][]['value'] = $role;
-    user_save($user);
+    //$user->field_role[$user->language][]['value'] = $role;
+    //user_save($user);
   }
   
 }
@@ -412,6 +428,10 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $from = '';
   
   drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  // unset session data because we don't need it anymore
+  unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   
   return $output;
 }
