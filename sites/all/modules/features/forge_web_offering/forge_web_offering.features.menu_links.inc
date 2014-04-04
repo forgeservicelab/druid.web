@@ -10,6 +10,26 @@
 function forge_web_offering_menu_default_menu_links() {
   $menu_links = array();
 
+  // Exported menu link: menu-forge-member-navigation_add-product-collection:node/add/product-family
+  $menu_links['menu-forge-member-navigation_add-product-collection:node/add/product-family'] = array(
+    'menu_name' => 'menu-forge-member-navigation',
+    'link_path' => 'node/add/product-family',
+    'router_path' => 'node/add/product-family',
+    'link_title' => 'Add product collection',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'menu-forge-member-navigation_add-product-collection:node/add/product-family',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: menu-forge-member-navigation_add-product-offering:node/add/offering
   $menu_links['menu-forge-member-navigation_add-product-offering:node/add/offering'] = array(
     'menu_name' => 'menu-forge-member-navigation',
@@ -52,6 +72,7 @@ function forge_web_offering_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add product collection');
   t('Add product offering');
   t('Add service offering');
 
