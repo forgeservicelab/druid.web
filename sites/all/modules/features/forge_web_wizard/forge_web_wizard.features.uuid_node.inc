@@ -90,10 +90,10 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 11,
+    'nid' => 1,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
-    'redirect_url' => 'become-a-partner/cra-contract-submit/[node:nid]/[submission:sid]',
+    'redirect_url' => 'wizard/cra-contract-submit/[node:nid]/[submission:sid]',
     'status' => 1,
     'block' => 0,
     'allow_draft' => 0,
@@ -125,7 +125,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       35 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 35,
         'pid' => 0,
         'form_key' => 'contract',
@@ -143,7 +143,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       15 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 15,
         'pid' => 0,
         'form_key' => 'computing_capacity_organization_name',
@@ -175,7 +175,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       16 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 16,
         'pid' => 0,
         'form_key' => 'computing_capacity_business_id',
@@ -207,7 +207,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       17 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 17,
         'pid' => 0,
         'form_key' => 'computing_capacity_forge_partner_agreement_date',
@@ -232,7 +232,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       18 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 18,
         'pid' => 0,
         'form_key' => 'computing_capacity_administrative_contract',
@@ -256,7 +256,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       19 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 19,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_name',
@@ -288,7 +288,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       20 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 20,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_title',
@@ -320,7 +320,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       21 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 21,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_mobile_sms_capable',
@@ -352,7 +352,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       22 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 22,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_email',
@@ -384,7 +384,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       23 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 23,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_other_means_of_contact',
@@ -416,7 +416,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       24 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 24,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_invoicing_address',
@@ -448,7 +448,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       25 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 25,
         'pid' => 0,
         'form_key' => 'technical_contact',
@@ -472,7 +472,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       26 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 26,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_name',
@@ -504,7 +504,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       27 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 27,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_title',
@@ -536,7 +536,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       28 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 28,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_mobile_sms_capable',
@@ -568,7 +568,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       29 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 29,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_email',
@@ -597,7 +597,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       30 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 30,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_other_means_of_contact',
@@ -629,7 +629,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       31 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 31,
         'pid' => 0,
         'form_key' => 'annual_service_fee',
@@ -653,7 +653,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       32 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 32,
         'pid' => 31,
         'form_key' => 'annual_service_fee_cost_of_cra',
@@ -691,7 +691,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       33 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 33,
         'pid' => 31,
         'form_key' => 'annual_service_fee_total_amount_in_euros',
@@ -729,7 +729,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       34 => array(
-        'nid' => 11,
+        'nid' => 1,
         'cid' => 34,
         'pid' => 0,
         'form_key' => 'expiration',
@@ -775,7 +775,7 @@ function forge_web_wizard_uuid_features_default_content() {
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-31 15:29:44 +0300',
 );
   $nodes[] = array(
@@ -876,10 +876,10 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 1,
+    'nid' => 2,
     'confirmation' => '',
     'confirmation_format' => 'plain_text',
-    'redirect_url' => 'become-a-partner/sda-contract-submit/[node:nid]/[submission:sid]',
+    'redirect_url' => 'wizard/sda-contract-submit/[node:nid]/[submission:sid]',
     'status' => 1,
     'block' => 0,
     'allow_draft' => 1,
@@ -912,7 +912,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       83 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 83,
         'pid' => 0,
         'form_key' => 'contract',
@@ -930,7 +930,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       20 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'parties_involved',
@@ -953,7 +953,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       23 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 23,
         'pid' => 20,
         'form_key' => 'company_information',
@@ -976,7 +976,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       21 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 21,
         'pid' => 23,
         'form_key' => 'parties_involved_company_name',
@@ -1007,7 +1007,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       22 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 22,
         'pid' => 23,
         'form_key' => 'parties_involved_business_id',
@@ -1038,7 +1038,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       24 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 24,
         'pid' => 0,
         'form_key' => 'description_of_developed_service',
@@ -1061,7 +1061,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       25 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 25,
         'pid' => 24,
         'form_key' => 'desc_of_developer_service_name_of_the_project',
@@ -1092,7 +1092,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       26 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 26,
         'pid' => 24,
         'form_key' => 'desc_of_developer_service_concise_description_of_the_service_developed',
@@ -1121,7 +1121,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       27 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 27,
         'pid' => 0,
         'form_key' => 'administrative_contact',
@@ -1144,7 +1144,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       28 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 28,
         'pid' => 27,
         'form_key' => 'administrative_contact_name',
@@ -1175,7 +1175,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       29 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 29,
         'pid' => 27,
         'form_key' => 'administrative_contact_title',
@@ -1206,7 +1206,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       30 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 30,
         'pid' => 27,
         'form_key' => 'administrative_contact_mobile_sms_capable',
@@ -1237,7 +1237,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       31 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 31,
         'pid' => 27,
         'form_key' => 'administrative_contact_email',
@@ -1265,7 +1265,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       32 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 32,
         'pid' => 27,
         'form_key' => 'administrative_contact_other_means_of_contact',
@@ -1296,7 +1296,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       33 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 33,
         'pid' => 27,
         'form_key' => 'administrative_contact_invoicing_address',
@@ -1327,7 +1327,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       34 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 34,
         'pid' => 0,
         'form_key' => 'technical_contact',
@@ -1350,7 +1350,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       35 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 35,
         'pid' => 34,
         'form_key' => 'technical_contact_name',
@@ -1381,7 +1381,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       36 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 36,
         'pid' => 34,
         'form_key' => 'technical_contact_title',
@@ -1412,7 +1412,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       37 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 37,
         'pid' => 34,
         'form_key' => 'technical_contact_mobile_sms_capable',
@@ -1443,7 +1443,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       82 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 82,
         'pid' => 34,
         'form_key' => 'technical_contact_email',
@@ -1472,7 +1472,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       39 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 39,
         'pid' => 34,
         'form_key' => 'technical_contact_other_means_of_contact',
@@ -1503,7 +1503,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       40 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 40,
         'pid' => 0,
         'form_key' => 'the_service_developers_plans_to_use_the_following_sub_contractors_or_consultants',
@@ -1527,7 +1527,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       41 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 41,
         'pid' => 40,
         'form_key' => 'subcontractor_organization_name',
@@ -1558,7 +1558,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       42 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 42,
         'pid' => 40,
         'form_key' => 'subcontractor_business_id',
@@ -1589,7 +1589,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       43 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 43,
         'pid' => 0,
         'form_key' => 'other_contract_information',
@@ -1612,7 +1612,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       44 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 44,
         'pid' => 43,
         'form_key' => 'the_value_of_development_project',
@@ -1649,7 +1649,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       45 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 45,
         'pid' => 43,
         'form_key' => 'digile_service_fee',
@@ -1687,7 +1687,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       46 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 46,
         'pid' => 43,
         'form_key' => 'the_service_fee_is_due_payable_within',
@@ -1724,7 +1724,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       47 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 47,
         'pid' => 43,
         'form_key' => 'contract_termination',
@@ -1761,7 +1761,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       48 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 48,
         'pid' => 0,
         'form_key' => 'notices_to_service_developers',
@@ -1784,7 +1784,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       49 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 49,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_organization_name',
@@ -1815,7 +1815,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       50 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 50,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_attn',
@@ -1846,7 +1846,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       51 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 51,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_address',
@@ -1885,7 +1885,7 @@ function forge_web_wizard_uuid_features_default_content() {
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-19 09:37:57 +0200',
 );
   $nodes[] = array(
@@ -1968,10 +1968,10 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 6,
+    'nid' => 3,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
-    'redirect_url' => 'become-a-partner/registration/[node:nid]/[submission:sid]',
+    'redirect_url' => 'wizard/registration/[node:nid]/[submission:sid]',
     'status' => 1,
     'block' => 0,
     'allow_draft' => 0,
@@ -2013,7 +2013,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       17 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 17,
         'pid' => 0,
         'form_key' => 'contract',
@@ -2031,7 +2031,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 4,
         'pid' => 0,
         'form_key' => 'intro_text',
@@ -2053,7 +2053,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       5 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 5,
         'pid' => 0,
         'form_key' => 'role',
@@ -2085,7 +2085,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       6 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 6,
         'pid' => 0,
         'form_key' => 'i_want_to_develop_a_world_class_digital_service',
@@ -2109,7 +2109,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       7 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 7,
         'pid' => 6,
         'form_key' => 'sda_short_description',
@@ -2126,7 +2126,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       8 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 8,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_apis_software_datasets_or_tools',
@@ -2150,7 +2150,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       9 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 9,
         'pid' => 8,
         'form_key' => 'partner_fsl_fpa_short_description',
@@ -2167,7 +2167,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       10 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 10,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_my_expertise_in_digital_service_creation',
@@ -2191,7 +2191,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       11 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 11,
         'pid' => 10,
         'form_key' => 'fsl_fpa_cra_short_description',
@@ -2208,7 +2208,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       12 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 12,
         'pid' => 0,
         'form_key' => 'i_am_a_subcontractor_of_an_organization_that_develops_services_in_forge',
@@ -2232,7 +2232,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       13 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 13,
         'pid' => 12,
         'form_key' => 'subcontractor_short_description',
@@ -2249,7 +2249,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       14 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 14,
         'pid' => 0,
         'form_key' => 'i_need_cloud_computing_capasity',
@@ -2278,7 +2278,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       2 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 2,
         'pid' => 0,
         'form_key' => 'step_1',
@@ -2296,7 +2296,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       3 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 3,
         'pid' => 0,
         'form_key' => 'i_want_to_develop_a_world_class_digital_service_contract_info',
@@ -2317,7 +2317,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       15 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 15,
         'pid' => 0,
         'form_key' => 'partner_contract_information',
@@ -2338,7 +2338,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       16 => array(
-        'nid' => 6,
+        'nid' => 3,
         'cid' => 16,
         'pid' => 0,
         'form_key' => 'fsl_fpa_cra_contract_link',
@@ -2358,7 +2358,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     ),
     'conditionals' => array(
       0 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 0,
         'andor' => NULL,
         'action' => 'show',
@@ -2367,7 +2367,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -1,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 0,
             'rid' => 0,
             'source_type' => 'component',
@@ -2378,7 +2378,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       1 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 1,
         'andor' => NULL,
         'action' => 'show',
@@ -2387,7 +2387,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 0,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 1,
             'rid' => 0,
             'source_type' => 'component',
@@ -2398,7 +2398,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       2 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 2,
         'andor' => NULL,
         'action' => 'show',
@@ -2407,7 +2407,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 1,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 2,
             'rid' => 0,
             'source_type' => 'component',
@@ -2418,7 +2418,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       3 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 3,
         'andor' => NULL,
         'action' => 'show',
@@ -2427,7 +2427,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 2,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 3,
             'rid' => 0,
             'source_type' => 'component',
@@ -2438,7 +2438,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       4 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 4,
         'andor' => 'or',
         'action' => 'show',
@@ -2447,7 +2447,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 3,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 4,
             'rid' => 0,
             'source_type' => 'component',
@@ -2456,7 +2456,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
             'value' => 'partner_fsl_fpa',
           ),
           1 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 4,
             'rid' => 1,
             'source_type' => 'component',
@@ -2467,7 +2467,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       5 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 5,
         'andor' => NULL,
         'action' => 'show',
@@ -2476,7 +2476,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 4,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 5,
             'rid' => 0,
             'source_type' => 'component',
@@ -2487,7 +2487,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       6 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 6,
         'andor' => 'or',
         'action' => 'show',
@@ -2496,7 +2496,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 5,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 6,
             'rid' => 0,
             'source_type' => 'component',
@@ -2505,7 +2505,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
             'value' => 'partner_fsl_fpa',
           ),
           1 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 6,
             'rid' => 1,
             'source_type' => 'component',
@@ -2516,7 +2516,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       7 => array(
-        'nid' => 6,
+        'nid' => 3,
         'rgid' => 7,
         'andor' => NULL,
         'action' => 'show',
@@ -2525,7 +2525,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 6,
         'rules' => array(
           0 => array(
-            'nid' => 6,
+            'nid' => 3,
             'rgid' => 7,
             'rid' => 0,
             'source_type' => 'component',
@@ -2543,7 +2543,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-27 17:06:04 +0200',
 );
   $nodes[] = array(
@@ -2642,7 +2642,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-12 11:16:21 +0200',
 );
   $nodes[] = array(
@@ -2741,7 +2741,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-12 11:25:12 +0200',
 );
   $nodes[] = array(
@@ -2840,7 +2840,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-11 11:36:13 +0200',
 );
   $nodes[] = array(
@@ -2923,10 +2923,10 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 12,
+    'nid' => 7,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
-    'redirect_url' => 'become-a-partner/partner-contract-submit/[node:nid]/[submission:sid]',
+    'redirect_url' => 'wizard/partner-contract-submit/[node:nid]/[submission:sid]',
     'status' => 1,
     'block' => 0,
     'allow_draft' => 0,
@@ -2958,7 +2958,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     'emails' => array(),
     'components' => array(
       1 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 1,
         'pid' => 0,
         'form_key' => 'partner_organization_name',
@@ -2990,7 +2990,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       2 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 2,
         'pid' => 0,
         'form_key' => 'partner_business_id',
@@ -3022,7 +3022,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       3 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 3,
         'pid' => 0,
         'form_key' => 'partner_offering_description',
@@ -3052,7 +3052,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 4,
         'pid' => 0,
         'form_key' => 'cost_payment',
@@ -3076,7 +3076,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       5 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 5,
         'pid' => 4,
         'form_key' => 'cost_payment_service_fee_in_euros',
@@ -3108,7 +3108,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       6 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 6,
         'pid' => 4,
         'form_key' => 'due_payable_in_number_of_days',
@@ -3140,7 +3140,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       7 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 7,
         'pid' => 0,
         'form_key' => 'duration_of_contract',
@@ -3172,7 +3172,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       8 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 8,
         'pid' => 0,
         'form_key' => 'notices_to_partner',
@@ -3196,7 +3196,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       9 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 9,
         'pid' => 8,
         'form_key' => 'notices_to_partner_organization_name',
@@ -3228,7 +3228,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       10 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 10,
         'pid' => 8,
         'form_key' => 'notices_to_partner_attn',
@@ -3260,7 +3260,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       11 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 11,
         'pid' => 8,
         'form_key' => 'notices_to_partner_address',
@@ -3292,7 +3292,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       12 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 12,
         'pid' => 0,
         'form_key' => 'contract',
@@ -3310,7 +3310,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       13 => array(
-        'nid' => 12,
+        'nid' => 7,
         'cid' => 13,
         'pid' => 0,
         'form_key' => 'i_need_cloud_computing_capasity',
@@ -3336,7 +3336,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-04-01 13:42:21 +0300',
 );
   $nodes[] = array(
@@ -3435,7 +3435,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'comment_count' => 0,
   'name' => 'admin',
   'picture' => 0,
-  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
+  'data' => 'b:0;',
   'date' => '2014-03-12 11:21:45 +0200',
 );
   return $nodes;
