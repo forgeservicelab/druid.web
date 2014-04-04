@@ -80,7 +80,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access own webform submissions'.
   $permissions['access own webform submissions'] = array(
     'name' => 'access own webform submissions',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'webform',
   );
 
@@ -550,6 +552,15 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'post comments',
     'roles' => array(),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'publish own pdfs'.
+  $permissions['publish own pdfs'] = array(
+    'name' => 'publish own pdfs',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'fillpdf',
   );
 
   // Exported permission: 'revert revisions'.
