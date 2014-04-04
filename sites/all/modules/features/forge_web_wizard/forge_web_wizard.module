@@ -28,27 +28,25 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'fillpdf_link':
-          if($_SESSION['forge_web_wizard_sda_contract_'.$user->uid]) {
+          if(!empty($_SESSION['forge_web_wizard_sda_contract_'.$user->uid])) {
             $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
             $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
             // unset session data because we don't need it anymore
             //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
           }
-          dsm($_SESSION);
-          if($_SESSION['forge_web_wizard_partner_contract_'.$user->uid]) {
-            dsm('sdf');
+          if(!empty($_SESSION['forge_web_wizard_partner_contract_'.$user->uid])) {
             $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
             $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
             // unset session data because we don't need it anymore
             //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
           }
-          if($_SESSION['forge_web_wizard_cra_contract_'.$user->uid]) {
+          if(!empty($_SESSION['forge_web_wizard_cra_contract_'.$user->uid])) {
             $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
             $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
             // unset session data because we don't need it anymore
             //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
           }
-          dsm($partner_pdf_id);
+          $url = '';
           if(!empty($partner_pdf_id)) {
             $url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE);
           }
@@ -58,7 +56,6 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
           if(!empty($sda_pdf_id)) {
             $url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE);
           }
-          dsm($url);
           $replacements[$original] = $url;
           break;
       }
@@ -75,51 +72,38 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if(strstr($form_id, 'webform_client_form')) {
     drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
-    // we have four different wizard forms. We only know each webform components.
-    // there is added 'contract' field as component in all wizard webforms
-    if ($form['submitted']['contract']['#value'] == 'partner_contract') {
-      // no needed custom code here ATM
-    }
-    elseif($form['submitted']['contract']['#value'] == 'sda_contract') {
-      // no needed custom code here ATM
-    }
-    elseif($form['submitted']['contract']['#value'] == 'computing_capasity_contract') {
-      // no needed custom code here ATM
-    }
-    elseif($form['submitted']['contract']['#value'] == 'wizard_first_step') {
-      // wizard first step form redirects to wizard/registration/%/%
-      // it's defined in webform settings
-      // see this module hook_menu
-      /*
-      * Replace [nid:xx] in webform markup components
-      */
-      foreach ($form['submitted'] as $key => $compo) {
-        if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
-          // if component type is a fieldset lets loop again. 
-          // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
-          if(is_array($compo)) {
-            foreach ($compo as $sub_key => $sub_compo) {
-              if(is_array($sub_compo)) {
-                if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#webform_component']['value'],'[nid:')) {
-                  $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
-                  $callback = '_forge_web_wizard_embed_filter_replace';
-                  $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#webform_component']['value']);
-                  if ($replacement) {
-                    $form['submitted'][$key][$sub_key]['#markup'] = $replacement;
-                  }
+    // wizard first step form redirects to wizard/registration/%/%
+    // it's defined in webform settings
+    // see this module hook_menu
+    /*
+    * Replace [nid:xx] in webform markup components
+    */
+    foreach ($form['submitted'] as $key => $compo) {
+      if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
+        // if component type is a fieldset lets loop again. 
+        // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
+        if(is_array($compo)) {
+          foreach ($compo as $sub_key => $sub_compo) {
+            if(is_array($sub_compo)) {
+              if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#webform_component']['value'],'[nid:')) {
+                $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+                $callback = '_forge_web_wizard_embed_filter_replace';
+                $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#webform_component']['value']);
+                if ($replacement) {
+                  $form['submitted'][$key][$sub_key]['#markup'] = $replacement;
                 }
               }
             }
           }
         }
-        // if component typeis markup and if there is [nid:xx] lets replace it
-        elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[nid:')) {
-          $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
-          $callback = '_forge_web_wizard_embed_filter_replace';
-          $replacement = preg_replace_callback($pattern, $callback, $compo['#webform_component']['value']);
-          if($replacement) {
-            $form['submitted'][$key]['#markup'] = $replacement;
-          }
+      }
+      // if component typeis markup and if there is [nid:xx] lets replace it
+      elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[nid:')) {
+        $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+        $callback = '_forge_web_wizard_embed_filter_replace';
+        $replacement = preg_replace_callback($pattern, $callback, $compo['#webform_component']['value']);
+        if($replacement) {
+          $form['submitted'][$key]['#markup'] = $replacement;
         }
       }
     }
@@ -292,7 +276,7 @@ function forge_web_wizard_admin_settings() {
 function forge_web_wizard_user_profile_submit($form, &$form_state) {
   global $user;
   
-  $role = $user->field_role[$user->language][0]['value'];
+  //$role = $user->field_role[$user->language][0]['value'];
   // get wizard role selection from cache
   $role = _forge_web_wizard_get_cached_user_data($user);
   $redir = _forge_web_wizard_set_redirect_for_role_selection($role->data);
@@ -307,7 +291,6 @@ function forge_web_wizard_user_profile_submit($form, &$form_state) {
  */
 function forge_web_wizard_partner_contract_submit($nid, $sid) {
   global $user;
-  dsm($user);
   // save temporary user data to session
   $_SESSION['forge_web_wizard_partner_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
   // set value for webform component "I need cloud computing capasity" if user has selected it
@@ -385,19 +368,19 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $pdf_id = '';
   global $user;
   
-  if($_SESSION['forge_web_wizard_sda_contract_'.$user->uid]) {
+  if(!empty($_SESSION['forge_web_wizard_sda_contract_'.$user->uid])) {
     $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
     $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
     // unset session data because we don't need it anymore
     //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   }
-  if($_SESSION['forge_web_wizard_partner_contract_'.$user->uid]) {
+  if(!empty($_SESSION['forge_web_wizard_partner_contract_'.$user->uid])) {
     $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
     $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
     // unset session data because we don't need it anymore
     //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
   }
-  if($_SESSION['forge_web_wizard_cra_contract_'.$user->uid]) {
+  if(!empty($_SESSION['forge_web_wizard_cra_contract_'.$user->uid])) {
     $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
     $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
     // unset session data because we don't need it anymore
@@ -417,7 +400,7 @@ function forge_web_wizard_confirmation($nid, $sid) {
     $output .= $cloud_computing_link.'<br/>';
   }
   if(!empty($sda_pdf_id)) {
-    $sda_link = l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $cra_user_data['sid']))); 
+    $sda_link = l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $sda_user_data['sid']))); 
     $output .= $sda_link.'<br/>';
   }
   $token_data['user'] = $user;
@@ -425,8 +408,10 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $to = token_replace(variable_get('forge_web_wizard_email_to', ''), $token_data, array('clear' => true)) ;
   $body = variable_get('forge_web_wizard_email_body', '');
   $subject = variable_get('forge_web_wizard_email_subject', '');
+  $attachment = '';
+  $from = '';
   
-  drupal_mail('forge_web_wizard', 'key', $to, $user-language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
   
   return $output;
 }

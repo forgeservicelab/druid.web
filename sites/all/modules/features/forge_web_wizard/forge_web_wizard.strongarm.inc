@@ -204,6 +204,30 @@ function forge_web_wizard_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_email_body';
+  $strongarm->value = 'Contract link:
+[current-user:fillpdf_link]
+
+And additional information here...';
+  $export['forge_web_wizard_email_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_email_subject';
+  $strongarm->value = 'Contract confirmation';
+  $export['forge_web_wizard_email_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'forge_web_wizard_email_to';
+  $strongarm->value = '[current-user:mail]';
+  $export['forge_web_wizard_email_to'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_partner_pdf_id';
   $strongarm->value = '1';
   $export['forge_web_wizard_partner_pdf_id'] = $strongarm;
