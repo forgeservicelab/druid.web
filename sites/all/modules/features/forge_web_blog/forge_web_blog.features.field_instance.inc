@@ -285,6 +285,94 @@ function forge_web_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-blog_post-field_blog_post_liftup_video'
+  $field_instances['node-blog_post-field_blog_post_liftup_video'] = array(
+    'bundle' => 'blog_post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Paste here youtube or vimeo URL.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_blog_post_liftup_video',
+    'label' => 'Liftup video',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'description_length' => 128,
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog_post-field_blog_post_video'
+  $field_instances['node-blog_post-field_blog_post_video'] = array(
+    'bundle' => 'blog_post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Paste here youtube or vimeo URL.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_blog_post_video',
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'description_length' => 128,
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-blog_post-field_images_for_content'
   $field_instances['node-blog_post-field_images_for_content'] = array(
     'bundle' => 'blog_post',
@@ -580,8 +668,11 @@ function forge_web_blog_field_default_field_instances() {
   t('Images for content');
   t('Liftup image');
   t('Liftup text');
+  t('Liftup video');
   t('Main images');
+  t('Paste here youtube or vimeo URL.');
   t('Tags');
+  t('Video');
   t('Write here a short description of the blog post you are writing. This text is shown on the blog post listing page.');
 
   return $field_instances;
