@@ -105,5 +105,41 @@ function forge_web_news_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_news_liftup_video'
+  $field_bases['field_news_liftup_video'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_news_liftup_video',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'video_embed_field',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'video_embed_field',
+  );
+
+  // Exported field_base: 'field_news_video'
+  $field_bases['field_news_video'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_news_video',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'video_embed_field',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'video_embed_field',
+  );
+
   return $field_bases;
 }
