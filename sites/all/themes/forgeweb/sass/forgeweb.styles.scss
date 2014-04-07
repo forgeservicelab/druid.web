@@ -551,8 +551,17 @@ only screen and (min-resolution: 192dpi) {
 
 .front .l-highlighted {
   background-color: #000;
-  @include at-breakpoint($desk) {
-    .l-region--highlighted {
+  .l-region--highlighted {
+    background: url('../images/decoration_edge_up.png') repeat-x -2px 0 transparent;
+    background-size: auto 12px;
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 12px 0 0;
+    @include at-breakpoint($tab) {
+      max-width: 885px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 1070px;
       position: relative;
       &:after {
         bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
@@ -564,13 +573,92 @@ only screen and (min-resolution: 192dpi) {
         width: 535px;
       }
     }
-  }
-  .block {
-    background-color: #fff;
-    padding: 4em 3em;
+    > .block {
+      background: url('../images/decoration_edge_down.png') repeat-x -2px bottom transparent;
+      background-size: auto 12px;
+      padding: 0 0 12px;
+      > div {
+        background-color: #fff;
+        @include at-breakpoint($tab) {
+          padding-right: 15px;
+        }
+        > * {
+          @include at-breakpoint($tab) {
+            background: url('../images/four_flowers.png') no-repeat right bottom transparent;
+            background-size: 282px auto;
+            min-height: 400px;
+            padding-right: 25em;
+          }
+        }
+      }
+    }
   }
 }
 
+.flexslider {
+  @include border-radius(0);
+  @include box-shadow(0 0 0 transparent);
+  
+  background: #fff;
+  border: 0 none;
+  margin: 0 auto;
+  padding: 4em 3em;
+  position: relative;
+  @include at-breakpoint($tab) {
+    margin: 0;
+    min-height: 400px;
+  }
+  .flex-control-nav {
+    bottom: 10px;
+    left: 0;
+  }
+  .flex-direction-nav {
+    a {
+      background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
+      background-size: 13px auto;
+      display: block;
+      font-size: 0;
+      height: 26px;
+      margin-top: -13px;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 13px;
+      &:before {
+        display: none;
+      }
+      &.flex-prev {
+        background-image: url('../images/icon_accordion_invert.png');
+      }
+    }
+  }
+}
+
+.liftup-title {
+  font-size: 1.2em;
+  font-weight: 200;
+  margin: 0 0 1em;
+  text-transform: none;
+  @include at-breakpoint($tab) {
+    font-size: 1.5em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 2em;
+  }
+}
+
+.field--name-field-liftup-body {
+  font-size: 1.5em;
+  font-weight: 200;
+  @include at-breakpoint($tab) {
+    font-size: 2em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 3em;
+  }
+  p {
+    margin: 0 0 1em;
+  }
+}
 
 // Front page highlighted area retina styles
 
@@ -581,10 +669,21 @@ only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .front .l-highlighted {
-    @include at-breakpoint($desk) {
-      .l-region--highlighted {
-        &:after {
+    .l-region--highlighted {
+      background-image: url('../images/decoration_edge_up_retina.png');
+      &:after {
+        @include at-breakpoint($tab) {
           background-image: url('../images/large_flowers_retina.png');
+        }
+      }
+      > .block {
+        background-image: url('../images/decoration_edge_down_retina.png');
+        > div {
+          > * {
+            @include at-breakpoint($tab) {
+              background-image: url('../images/four_flowers_retina.png');
+            }
+          }
         }
       }
     }
