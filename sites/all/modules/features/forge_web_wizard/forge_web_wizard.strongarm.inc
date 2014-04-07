@@ -332,6 +332,27 @@ And additional information here...';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_forge_role_information_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_forge_role_information_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_forge_role_information_fi_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_forge_role_information_fi_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_forge_role_information_pattern';
+  $strongarm->value = 'role-information/[node:title]';
+  $export['pathauto_node_forge_role_information_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_webform_pattern';
   $strongarm->value = 'wizard/[node:title]';
   $export['pathauto_node_webform_pattern'] = $strongarm;
