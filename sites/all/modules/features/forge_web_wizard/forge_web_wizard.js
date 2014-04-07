@@ -12,6 +12,15 @@ Drupal.behaviors.myBehavior = {
       calculated_value = Math.round(val*0.05);
       $("#edit-submitted-other-contract-information-digile-service-fee").val(calculated_value);
     });
+    $("input[name$='submitted[role]']").click(function() {
+      val = $(this).val();
+      if(val == 'subcontractor') {
+        $(".form-submit").attr("disabled", "disabled");  
+      }
+      else {
+        $(".form-submit").removeAttr("disabled");
+      }
+    });
   }
 };
 })(jQuery);
