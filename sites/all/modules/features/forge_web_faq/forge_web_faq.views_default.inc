@@ -43,7 +43,7 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['style_options']['autoheight'] = 0;
   $handler->display->display_options['style_options']['disableifone'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Question */
+  /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
   $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
