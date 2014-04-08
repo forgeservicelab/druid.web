@@ -694,13 +694,6 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Front page after content area
-
-.front .l-after_content {
-  border-top: 80px solid #3f6d00;
-}
-
-
 // Front page middle content area
 
 .front .l-middle_content {
@@ -748,6 +741,7 @@ only screen and (min-resolution: 192dpi) {
 // Front page after content area
 
 .front .l-after_content {
+  border-top: 80px solid #3f6d00;
   @include at-breakpoint($desk) {
     background: url('../images/vertical_flowers.png') no-repeat left 300px transparent;
     background-size: auto 385px;
@@ -766,10 +760,11 @@ only screen and (min-resolution: 192dpi) {
       z-index: -1;
     }
     .l-region {
-      background-color: rgba(255,255,255,1);
+      background-color: rgba(255,255,255,0.9);
     }
   }
 }
+
 
 // Front page after content area retina styles
 
@@ -784,6 +779,102 @@ only screen and (min-resolution: 192dpi) {
       background-image: url('../images/vertical_flowers_retina.png');
       &:after {
         background-image: url('../images/vertical_flowers_right_retina.png');
+      }
+    }
+  }
+}
+
+
+// Feed block styles
+
+.block--views-feed-block {
+  margin: 0 auto;
+  max-width: 24.6em;
+  @include at-breakpoint($tab) {
+    max-width: 67em;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  .block__title {
+    font-size: 2.5em;
+    margin: 0 auto 0.5em;
+    text-transform: none;
+    @include at-breakpoint($tab) {
+      font-size: 4em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 6em;
+    }
+  }
+  .view {
+    text-align: center;
+    .view-content {
+      text-align: left;
+    }
+  }
+  .views-row {
+    margin: 0 0 7em;
+    .node__title {
+      font-size: 1.2em;
+      font-weight: 200;
+      text-transform: none;
+      @include at-breakpoint($tab) {
+        font-size: 1.8em;
+      }
+      @include at-breakpoint($tab) {
+        font-size: 2.2em;
+      }
+    }
+    .field--type-text-long {
+      font-weight: 200;
+      img {
+        height: auto !important;
+      }
+    }
+    .field--type-video-embed-field {
+      max-width: 480px;
+    }
+    
+    .field--type-video-embed-field,
+    .field--name-field-main-images {
+      margin: 1.5em 0;
+      .field__item {
+        line-height: 0;
+      }
+    }
+    .field--name-field-link {
+      margin: 1.5em 0;
+      word-break: break-all;
+      @include at-breakpoint($tab) {
+        font-size: 1.2em;
+      }
+    }
+    .field--name-field-tags {
+      margin: 1.5em 0;
+      .field__label {
+        font-weight: normal;
+      }
+      .field__items {
+        .field__item {
+          display: inline-block;
+          margin-right: 5px;
+          &:after {
+            content: ",";
+          }
+          &:last-child {
+            &:after {
+              content: "";
+            }
+          }
+        }
+      }
+    }
+    
+    .easy_social_box {
+      margin: 1.5em 0;
+      .easy_social-widget {
+        margin-right: 1em;
       }
     }
   }
@@ -1000,6 +1091,29 @@ a {
     li {
       display: inline-block;
       text-transform: uppercase;
+    }
+  }
+}
+
+.more-link {
+  display: inline-block;
+  margin-bottom: 2em;
+  @include at-breakpoint($tab) {
+    float: left;
+    font-size: 1.5em;
+  }
+  @include at-breakpoint($desk) {
+    margin-bottom: 0;
+  }
+  a {
+    background-color: $link-color;
+    color: #FFFFFF;
+    display: block;
+    padding: 1em 2em;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      background-color: darken($link-color, 10%);
     }
   }
 }
