@@ -14,8 +14,29 @@ function forge_web_tutorial_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_tutorial';
-  $strongarm->value = 'edit-menu';
+  $strongarm->value = 'edit-auto-nodetitle';
   $export['additional_settings__active_tab_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_tutorial';
+  $strongarm->value = '[node:field_tutorial_title]';
+  $export['ant_pattern_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_tutorial';
+  $strongarm->value = 0;
+  $export['ant_php_tutorial'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_tutorial';
+  $strongarm->value = '1';
+  $export['ant_tutorial'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
