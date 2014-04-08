@@ -161,6 +161,50 @@ function forge_web_partners_and_people_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-partners_and_people-field_partner_or_people'
+  $field_instances['node-partners_and_people-field_partner_or_people'] = array(
+    'bundle' => 'partners_and_people',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_partner_or_people',
+    'label' => 'Partner or people',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-partners_and_people-field_partners_and_peoples_title'
   $field_instances['node-partners_and_people-field_partners_and_peoples_title'] = array(
     'bundle' => 'partners_and_people',
@@ -313,6 +357,7 @@ function forge_web_partners_and_people_field_default_field_instances() {
   t('Body');
   t('Large image');
   t('Long description');
+  t('Partner or people');
   t('Partners and peoples title');
   t('Short description');
   t('Small image');
