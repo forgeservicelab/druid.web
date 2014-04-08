@@ -26,6 +26,12 @@ function forge_web_news_field_default_field_instances() {
         'type' => 'image',
         'weight' => 3,
       ),
+      'liftup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -67,7 +73,178 @@ function forge_web_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -2,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_liftup_body'
+  $field_instances['node-news-field_liftup_body'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you want to add liftup that has text, add the desired text here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_body',
+    'label' => 'Liftup body',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_liftup_image'
+  $field_instances['node-news-field_liftup_image'] = array(
+    'bundle' => 'news',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 6,
+      ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'liftup_image',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_image',
+    'label' => 'Liftup image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_flexslider_full' => 0,
+          'image_flexslider_thumbnail' => 0,
+          'image_large' => 0,
+          'image_medium' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'large',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_liftup_title'
+  $field_instances['node-news-field_liftup_title'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you want liftup to have a title, add it here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 5,
+      ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_title',
+    'label' => 'Liftup title',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
     ),
   );
 
@@ -86,6 +263,12 @@ function forge_web_news_field_default_field_instances() {
         ),
         'type' => 'image',
         'weight' => 1,
+      ),
+      'liftup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -128,7 +311,7 @@ function forge_web_news_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => -3,
+      'weight' => 2,
     ),
   );
 
@@ -145,6 +328,12 @@ function forge_web_news_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
+      ),
+      'liftup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -169,7 +358,7 @@ function forge_web_news_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => -4,
+      'weight' => 3,
     ),
   );
 
@@ -190,6 +379,17 @@ function forge_web_news_field_default_field_instances() {
         ),
         'type' => 'video_embed_field',
         'weight' => 5,
+      ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'module' => 'video_embed_field',
+        'settings' => array(
+          'description' => 1,
+          'description_position' => 'bottom',
+          'video_style' => 'normal',
+        ),
+        'type' => 'video_embed_field',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -213,7 +413,7 @@ function forge_web_news_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 32,
+      'weight' => 11,
     ),
   );
 
@@ -234,6 +434,12 @@ function forge_web_news_field_default_field_instances() {
         ),
         'type' => 'video_embed_field',
         'weight' => 4,
+      ),
+      'liftup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -257,16 +463,69 @@ function forge_web_news_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 31,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_page_title'
+  $field_instances['node-news-field_page_title'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'liftup' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_page_title',
+    'label' => 'Page title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('If you want liftup to have a title, add it here.');
+  t('If you want to add liftup that has text, add the desired text here.');
   t('Images for content');
+  t('Liftup body');
+  t('Liftup image');
+  t('Liftup title');
   t('Liftup video');
   t('Main images');
   t('News body');
+  t('Page title');
   t('Paste youtube or vimeo URL here.');
   t('Video');
 

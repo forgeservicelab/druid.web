@@ -197,11 +197,20 @@ function forge_web_blog_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'liftup' => array(
+        'custom_settings' => TRUE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'path' => array(
           'weight' => '8',

@@ -62,7 +62,7 @@ function forge_web_blog_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
   $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
-  /* Field: User: Description */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_description']['id'] = 'field_user_description';
   $handler->display->display_options['fields']['field_user_description']['table'] = 'field_data_field_user_description';
   $handler->display->display_options['fields']['field_user_description']['field'] = 'field_user_description';

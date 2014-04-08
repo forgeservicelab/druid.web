@@ -17,7 +17,14 @@ function forge_web_blog_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_blog',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -53,7 +60,14 @@ function forge_web_blog_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_blog_authors',
-    'foreign keys' => array(),
+    'foreign keys' => array(
+      'users' => array(
+        'columns' => array(
+          'target_id' => 'uid',
+        ),
+        'table' => 'users',
+      ),
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
