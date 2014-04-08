@@ -85,8 +85,9 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         if(is_array($compo)) {
           foreach ($compo as $sub_key => $sub_compo) {
             if(is_array($sub_compo)) {
-              if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#webform_component']['value'],'[nid:')) {
-                $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+              if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#webform_component']['value'],'[path]')) {
+                //$pattern = '/\[path:([.*][^|]*?)?\]/im';
+                $pattern = '#\[path]((?:[^[]|\[(?!/?path])|(?R))+)\[/path]#';
                 $callback = '_forge_web_wizard_embed_filter_replace';
                 $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#webform_component']['value']);
                 if ($replacement) {
@@ -98,8 +99,8 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         }
       }
       // if component typeis markup and if there is [nid:xx] lets replace it
-      elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[nid:')) {
-        $pattern = '/\[nid:([0-9][^|]*?)?\]/im';
+      elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[path]')) {
+        $pattern = '#\[path]((?:[^[]|\[(?!/?path])|(?R))+)\[/path]#';
         $callback = '_forge_web_wizard_embed_filter_replace';
         $replacement = preg_replace_callback($pattern, $callback, $compo['#webform_component']['value']);
         if($replacement) {
@@ -155,15 +156,28 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
  *   String
  */
 function _forge_web_wizard_embed_filter_replace($match) {
-  if (is_numeric($match[1]) && $node = node_load($match[1])) {
-    $body = field_get_items('node', $node, 'body');
+  if (!empty($match[1])) {
+    $path = $match[1];
+    $normal_path = drupal_get_normal_path($path);
+    if(!empty($normal_path)) {
+      $node_path_arr = explode('/', $normal_path);
+      $nid = $node_path_arr[1];
+      if(is_numeric($nid)) {
+        $node = node_load($nid);
+      }
+    }
+    if(is_object($node)) {
+      $body = field_get_items('node', $node, 'body');
+    }
     $summary = $body[0]['summary'];
     $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid).'</p>';
     return $summary;
   }
   else {
-    return t('Content not found. (ID:'.$match[1].')');
+    return t('Content not found. (PATH:'.$match[1].')');
   }
+   
+   
 }
 
 /**
@@ -341,17 +355,22 @@ function forge_web_wizard_registration($nid, $sid) {
     $submission = webform_get_submission($nid, $sid);
     
     // TODO: is there better way to get value?
-    $role = $submission->data[5][0];
-    $redir = _forge_web_wizard_set_redirect_for_role_selection($role);
+    // data index 5 = role selection webform component
+    if(!empty($submission->data[5][0])) {
+      $role = $submission->data[5][0];
+      // set role selection to cache because we need that data after user has clicked link in e-mail
+      cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
+      $redir = _forge_web_wizard_set_redirect_for_role_selection($role);
+    }
     // TODO: is there better way to get value?
-    $need_cloud_computing_capasity = $submission->data[14][0];
-    // set role selection to cache because we need that data after user has clicked link in e-mail
-    cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
-    cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
-    
+    // data index 14 = I need cloud computing webform capasity 
+    if(!empty($submission->data[14][0])) {
+      $need_cloud_computing_capasity = $submission->data[14][0];
+      cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
+    }
     drupal_goto($redir);
   }
-  $form = drupal_get_form('user_register_form'); 
+  $form = drupal_get_form('user_register_form');
   return drupal_render($form);
 }
 
