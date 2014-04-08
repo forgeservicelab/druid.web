@@ -37,7 +37,7 @@ function forge_web_wizard_node_info() {
       'help' => '',
     ),
     'webform' => array(
-      'name' => t('Webform'),
+      'name' => t('Wizard'),
       'base' => 'node_content',
       'description' => t('Create a new form or questionnaire accessible to users. Submission results and statistics are recorded and accessible to privileged users.'),
       'has_title' => '1',

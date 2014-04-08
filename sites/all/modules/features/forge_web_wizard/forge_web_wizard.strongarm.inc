@@ -388,7 +388,7 @@ And additional information here...';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_webform';
-  $strongarm->value = TRUE;
+  $strongarm->value = 1;
   $export['webform_node_webform'] = $strongarm;
 
   return $export;
