@@ -25,7 +25,20 @@ function forge_landing_pages_context_default_contexts() {
   );
   $context->reactions = array(
     'block' => array(
-      'blocks' => array(),
+      'blocks' => array(
+        'views-liftup_block-block' => array(
+          'module' => 'views',
+          'delta' => 'liftup_block-block',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
+        'views-faq-block' => array(
+          'module' => 'views',
+          'delta' => 'faq-block',
+          'region' => 'middle_content',
+          'weight' => '-10',
+        ),
+      ),
       'layout' => 'forge_web_front_page',
     ),
   );
@@ -40,9 +53,14 @@ function forge_landing_pages_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'sitewide';
-  $context->description = '';
-  $context->tag = '';
+  $context->description = 'This context is triggered sitewide on english pages';
+  $context->tag = 'Sitewide';
   $context->conditions = array(
+    'language' => array(
+      'values' => array(
+        'en' => 'en',
+      ),
+    ),
     'sitewide' => array(
       'values' => array(
         1 => 1,
@@ -85,7 +103,12 @@ function forge_landing_pages_context_default_contexts() {
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Sitewide');
+  t('This context is triggered sitewide on english pages');
   $export['sitewide'] = $context;
 
   return $export;
