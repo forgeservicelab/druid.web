@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * forge_web_artners_and_people.features.inc
+ * forge_web_partners_and_people.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function forge_web_artners_and_people_ctools_plugin_api($module = NULL, $api = NULL) {
+function forge_web_partners_and_people_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function forge_web_artners_and_people_ctools_plugin_api($module = NULL, $api = N
 /**
  * Implements hook_node_info().
  */
-function forge_web_artners_and_people_node_info() {
+function forge_web_partners_and_people_node_info() {
   $items = array(
     'partners_and_people' => array(
       'name' => t('Partners and people'),

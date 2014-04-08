@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * forge_web_artners_and_people.features.field_base.inc
+ * forge_web_partners_and_people.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function forge_web_artners_and_people_field_default_field_bases() {
+function forge_web_partners_and_people_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_large_image'

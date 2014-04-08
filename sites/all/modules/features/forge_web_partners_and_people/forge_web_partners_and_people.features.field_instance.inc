@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * forge_web_artners_and_people.features.field_instance.inc
+ * forge_web_partners_and_people.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function forge_web_artners_and_people_field_default_field_instances() {
+function forge_web_partners_and_people_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-partners_and_people-body'

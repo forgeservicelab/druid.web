@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * forge_web_artners_and_people.strongarm.inc
+ * forge_web_partners_and_people.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function forge_web_artners_and_people_strongarm() {
+function forge_web_partners_and_people_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
