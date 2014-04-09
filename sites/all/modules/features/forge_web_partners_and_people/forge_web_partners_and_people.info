@@ -6,6 +6,7 @@ dependencies[] = features
 dependencies[] = forge_web_page
 dependencies[] = image
 dependencies[] = list
+dependencies[] = options
 dependencies[] = quicktabs
 dependencies[] = strongarm
 dependencies[] = text
