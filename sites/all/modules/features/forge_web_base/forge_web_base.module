@@ -96,14 +96,13 @@ function forge_web_base_block_view($delta = 0) {
  * custom function for block view
  */
 function _forge_web_base_block_view($delta) {
-  // Capture the image file path and form into HTML with attributes
   $image_file = file_load(variable_get('file_'.$delta, ''));
   $image_path = '';
  
   if (isset($image_file->uri)) {
     $image_path = $image_file->uri;
   }
-  //$image_path = 'block_image/0.jpg';
+  
   $image_style['path'] = $image_path;
   $image_style['style_name'] = variable_get('image_style_'.$delta, 'medium');
   /*
