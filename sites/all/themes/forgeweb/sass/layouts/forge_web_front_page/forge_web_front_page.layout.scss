@@ -44,6 +44,10 @@ $desk: 70em 16; // At 70em use 16 columns.
    }
 }
 
+.l-middle_content {
+  padding-top: $vert-spacing-unit / 4;
+}
+
 .l-footer {
   .l-footer-wrapper {
     @include container;  // Define these elements as the grid containers.
@@ -73,6 +77,10 @@ $desk: 70em 16; // At 70em use 16 columns.
     .l-region {
        @include set-container-width;
      }
+  }
+  
+  .l-middle_content {
+    padding-top: $vert-spacing-unit / 2;
   }
   
   .l-footer {

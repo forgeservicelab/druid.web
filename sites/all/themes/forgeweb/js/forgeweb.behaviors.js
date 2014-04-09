@@ -57,6 +57,19 @@
       }
     }
   }
+  
+  // Parnters & people block functionality
+  Drupal.behaviors.partnersPeopleBlock = {
+    attach: function (context, settings) {
+      $('#block-quicktabs-partners-or-people .view-partners .short-desc').click(function() {
+        $(this).siblings('.long-desc').fadeIn();
+      });
+      
+      $('#block-quicktabs-partners-or-people .view-partners .long-desc').click(function() {
+        $(this).fadeOut();
+      });
+    }
+  }
    
   // FAQ page scroll to clicked item
   Drupal.behaviors.scrollToFaqQuestion = {
