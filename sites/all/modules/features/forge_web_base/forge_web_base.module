@@ -44,7 +44,7 @@ function forge_web_base_block_configure($delta = 0) {
     '#title' => t('Image style'),
     '#default_value' => variable_get('image_style_'.$delta, ''),
     '#maxlength' => 64,
-    '#description' => t('Machine name of tmage style. Styles are defined <a href="@link">here</a>.', array('@link' => url('admin/config/media/image-styles'))),
+    '#description' => t('Machine name of image style. Styles are defined <a href="@link">here</a>.', array('@link' => url('admin/config/media/image-styles'))),
   );
   // File selection form element
   $form['file_'.$delta] = array(
