@@ -39,6 +39,24 @@ function forge_web_company_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_company_email'
+  $field_bases['field_company_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_company_email',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'email',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'email',
+  );
+
   // Exported field_base: 'field_company_title'
   $field_bases['field_company_title'] = array(
     'active' => 1,
