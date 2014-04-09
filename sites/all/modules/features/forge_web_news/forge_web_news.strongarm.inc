@@ -110,6 +110,9 @@ function forge_web_news_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'feed' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -117,7 +120,7 @@ function forge_web_news_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
       ),
       'display' => array(
@@ -129,6 +132,14 @@ function forge_web_news_strongarm() {
           'liftup' => array(
             'weight' => '18',
             'visible' => FALSE,
+          ),
+          'feed' => array(
+            'weight' => '101',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => TRUE,
           ),
         ),
       ),

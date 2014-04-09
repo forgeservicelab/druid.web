@@ -206,6 +206,9 @@ function forge_web_blog_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'feed' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -216,7 +219,14 @@ function forge_web_blog_strongarm() {
           'weight' => '8',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'easy_social_1' => array(
+          'default' => array(
+            'weight' => '101',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__blog_post'] = $strongarm;

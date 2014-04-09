@@ -21,7 +21,7 @@ function forge_web_news_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Liftup options',
-    'weight' => '6',
+    'weight' => '8',
     'children' => array(
       0 => 'field_liftup_title',
       1 => 'field_liftup_body',
