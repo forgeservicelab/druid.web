@@ -132,7 +132,7 @@ only screen and (min-resolution: 192dpi) {
       
       background-color: #000;
       border-left: 5px solid #fff;
-      top: 10px;
+      top: 0;
       li {
         background: url('../images/mobile_menu_bg.png') no-repeat left 10px transparent;
         padding-left: 20px;
@@ -304,6 +304,11 @@ only screen and (min-resolution: 192dpi) {
     left: 0;
     position: fixed;
     top: 0;
+  }
+  .responsive-menus.responsified {
+    &.absolute .responsive-menus-simple {
+      border-top: 10px solid #fff;
+    }
   }
 }
 
@@ -729,10 +734,10 @@ only screen and (min-resolution: 192dpi) {
     background-color: #fff;
     margin-bottom: 6em;
     @include at-breakpoint($tab) {
-      margin-bottom: 10em;
+      margin-bottom: 7em;
     }
     @include at-breakpoint($desk) {
-      margin-bottom: 12em;
+      margin-bottom: 10em;
     }
     &:last-child {
       margin-bottom: 0;
@@ -827,7 +832,7 @@ only screen and (min-resolution: 192dpi) {
   .view-people {
     position: relative;
     @include at-breakpoint($tab) {
-      min-height: 560px;
+      min-height: 525px;
       padding-left: 41.2%;
     }
     @include at-breakpoint($desk) {
@@ -1069,7 +1074,7 @@ only screen and (min-resolution: 192dpi) {
       max-width: 100%;
     }
     .question {
-      font-size: 1em;
+      font-size: 1.3em;
       text-transform: none;
       @include at-breakpoint($tab) {
         font-size: 1.5em;
@@ -1202,38 +1207,22 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Feed block styles
+// Feed styles
 
-.block--views-feed-block {
-  margin: 0 auto;
-  max-width: 24.6em;
-  @include at-breakpoint($tab) {
-    max-width: 67em;
-  }
-  @include at-breakpoint($desk) {
-    max-width: 100%;
-  }
-  .block__title {
-    font-size: 2.5em;
-    margin: 0 auto 0.5em;
-    text-transform: none;
+.view-feed {
+  .views-row {
+    margin: 0 0 4em;
     @include at-breakpoint($tab) {
-      font-size: 4em;
+      margin: 0 0 5em;
     }
     @include at-breakpoint($desk) {
-      font-size: 6em;
+      margin: 0 0 7em;
     }
-  }
-  .view {
-    text-align: center;
-    .view-content {
-      text-align: left;
+    &.views-row-last {
+      margin: 0;
     }
-  }
-  .views-row {
-    margin: 0 0 7em;
     .node__title {
-      font-size: 1.2em;
+      font-size: 1.4em;
       font-weight: 200;
       text-transform: none;
       @include at-breakpoint($tab) {
@@ -1252,7 +1241,7 @@ only screen and (min-resolution: 192dpi) {
     .field--type-video-embed-field {
       max-width: 480px;
     }
-    
+
     .field--type-video-embed-field,
     .field--name-field-main-images {
       margin: 1.5em 0;
@@ -1287,11 +1276,45 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
-    
+
     .easy_social_box {
       margin: 1.5em 0;
       .easy_social-widget {
         margin-right: 1em;
+      }
+    }
+  }
+}
+
+
+// Feed block styles
+
+.block--views-feed-block {
+  margin: 0 auto;
+  max-width: 24.6em;
+  @include at-breakpoint($tab) {
+    max-width: 67em;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  .block__title {
+    font-size: 2.5em;
+    margin: 0 auto 0.5em;
+    text-transform: none;
+    @include at-breakpoint($tab) {
+      font-size: 4em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 6em;
+    }
+  }
+  .view {
+    text-align: center;
+    .view-content {
+      text-align: left;
+      .views-row.views-row-last {
+        margin: 0 0 7em;
       }
     }
   }
