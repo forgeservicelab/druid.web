@@ -21,7 +21,7 @@ function forge_web_partners_and_people_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_partners_and_people';
-  $strongarm->value = '[node:field_partners_and_peoples_title]';
+  $strongarm->value = '[node:field_page_title]';
   $export['ant_pattern_partners_and_people'] = $strongarm;
 
   $strongarm = new stdClass();
