@@ -244,5 +244,106 @@ function forge_web_service_page_views_default_views() {
   );
   $export['service_offering_pricing'] = $view;
 
+  $view = new view();
+  $view->name = 'service_offering_sidebar_block';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Service offering sidebar block';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Service offering sidebar block';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Pricing information */
+  $handler->display->display_options['fields']['field_pricing_information']['id'] = 'field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['table'] = 'field_data_field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['field'] = 'field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['label'] = 'Price';
+  $handler->display->display_options['fields']['field_pricing_information']['element_label_colon'] = FALSE;
+  /* Field: Content: Live demo url */
+  $handler->display->display_options['fields']['field_live_demo_url']['id'] = 'field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['field'] = 'field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['label'] = 'Demo';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
+  /* Field: Content: Organizer */
+  $handler->display->display_options['fields']['field_organizer']['id'] = 'field_organizer';
+  $handler->display->display_options['fields']['field_organizer']['table'] = 'field_data_field_organizer';
+  $handler->display->display_options['fields']['field_organizer']['field'] = 'field_organizer';
+  $handler->display->display_options['fields']['field_organizer']['label'] = 'Provider';
+  $handler->display->display_options['fields']['field_organizer']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organizer']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: Contact information */
+  $handler->display->display_options['fields']['field_contact_information']['id'] = 'field_contact_information';
+  $handler->display->display_options['fields']['field_contact_information']['table'] = 'field_data_field_contact_information';
+  $handler->display->display_options['fields']['field_contact_information']['field'] = 'field_contact_information';
+  $handler->display->display_options['fields']['field_contact_information']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_contact_information']['settings'] = array(
+    'link' => 0,
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['service_offering_sidebar_block'] = array(
+    t('Master'),
+    t('Service offering sidebar block'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Price'),
+    t('Demo'),
+    t('Provider'),
+    t('Contact information'),
+    t('All'),
+    t('Block'),
+  );
+  $export['service_offering_sidebar_block'] = $view;
+
   return $export;
 }

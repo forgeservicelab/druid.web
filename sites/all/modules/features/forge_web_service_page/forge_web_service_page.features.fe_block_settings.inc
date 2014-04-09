@@ -12,6 +12,23 @@ function forge_web_service_page_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['views-3ebc56225274a68aaf777277e0d06eeb'] = array(
+    'cache' => -1,
+    'delta' => '3ebc56225274a68aaf777277e0d06eeb',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'forgeweb' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'forgeweb',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   $export['views-service_offering_comments-block'] = array(
     'cache' => -1,
     'delta' => 'service_offering_comments-block',
