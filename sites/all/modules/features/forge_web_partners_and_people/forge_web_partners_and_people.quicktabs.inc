@@ -20,14 +20,14 @@ function forge_web_partners_and_people_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Partners or people';
   $quicktabs->tabs = array(
     0 => array(
-      'bid' => 'block_delta_1',
+      'bid' => 'views_delta_partners-block',
       'hide_title' => 1,
       'title' => 'Partners',
       'weight' => '-100',
       'type' => 'block',
     ),
     1 => array(
-      'bid' => 'block_delta_1',
+      'bid' => 'views_delta_people-block',
       'hide_title' => 1,
       'title' => 'People',
       'weight' => '-99',
