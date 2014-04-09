@@ -16,7 +16,7 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
   $quicktabs->machine_name = 'product_page_quicktab';
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = FALSE;
-  $quicktabs->default_tab = 999999;
+  $quicktabs->default_tab = 0;
   $quicktabs->title = 'Product page quicktab';
   $quicktabs->tabs = array(
     0 => array(
