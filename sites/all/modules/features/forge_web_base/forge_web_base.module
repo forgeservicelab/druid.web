@@ -5,3 +5,121 @@
  */
 
 include_once 'forge_web_base.features.inc';
+
+/**
+ * Implements hook_block_info().
+ */
+function forge_web_base_block_info() {
+  $blocks = array();
+  $blocks['forge_web_what'] = array(
+    'info' => t('Forge web: What'),
+  );
+  $blocks['forge_web_why'] = array(
+    'info' => t('Forge web: Why'),
+  );
+ 
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function forge_web_base_block_configure($delta = 0) {
+  $form = array();
+  if ($delta) {
+    $custom_block = block_custom_block_get($delta);
+  }
+  $form['body_field_'.$delta] = array(
+    '#type' => 'text_format',
+    '#title' => t('Block body'),
+    '#default_value' => variable_get('body_field_'.$delta, ''),
+    '#format' => isset($custom_block['format']) ? $custom_block['format'] : NULL,
+    '#rows' => 15,
+    '#description' => t('The content of the block as shown to the user.'),
+    '#required' => TRUE,
+    '#weight' => -17,
+  );
+  $form['image_style_'.$delta] = array(
+    '#type' => 'textfield',
+    '#title' => t('Image style'),
+    '#default_value' => variable_get('image_style_'.$delta, ''),
+    '#maxlength' => 64,
+    '#description' => t('Machine name of tmage style. Styles are defined <a href="@link">here</a>.', array('@link' => url('admin/config/media/image-styles'))),
+  );
+  // File selection form element
+  $form['file_'.$delta] = array(
+    '#name' => 'block_image',
+    '#type' => 'managed_file',
+    '#title' => t('Choose an Image File'),
+    '#description' => t('Select an Image for the custom block.  Only *.gif, *.png, *.jpg, and *.jpeg images allowed.'),
+    '#default_value' => variable_get('file_'.$delta, ''),
+    '#upload_location' => 'public://block_image/',
+    '#upload_validators' => array(
+      'file_validate_extensions' => array('gif png jpg jpeg'),
+    ),
+  );
+   
+  return $form;
+}
+
+/**
+ * Implements hook_block_save().
+ */
+function forge_web_base_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'forge_web_what' :
+    case 'forge_web_why' :
+      variable_set('body_field_'.$delta, $edit['body_field_'.$delta]['value']);
+      variable_set('image_style_'.$delta, $edit['image_style_'.$delta]);
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file = file_load($edit['file_'.$delta]);
+      $file->status = FILE_STATUS_PERMANENT;
+      file_save($file);
+      $block = block_load('forge_web_base', $delta);
+      file_usage_add($file, 'forge_web_what', 'block', $block->bid);
+      variable_set('file_'.$delta, $file->fid);
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function forge_web_base_block_view($delta = 0) {
+  $block = array();
+  $block['content'] = _forge_web_base_block_view($delta);
+ 
+  return $block;
+}
+
+/*
+ * custom function for block view
+ */
+function _forge_web_base_block_view($delta) {
+  // Capture the image file path and form into HTML with attributes
+  $image_file = file_load(variable_get('file_'.$delta, ''));
+  $image_path = '';
+ 
+  if (isset($image_file->uri)) {
+    $image_path = $image_file->uri;
+  }
+  //$image_path = 'block_image/0.jpg';
+  $image_style['path'] = $image_path;
+  $image_style['style_name'] = variable_get('image_style_'.$delta, 'medium');
+  /*
+  $image_style['alt'] = variable_get('image_alt_'.$delta, '');
+  $image_style['title'] = variable_get('image_title_'.$delta, '');
+  */
+  $image = theme('image_style', $image_style);
+  
+  $text = variable_get('body_field_'.$delta, '');
+  
+  $output = '<div class="forge-web-block-image-wrapper">';
+  $output .= $image;
+  $output .= '</div>';
+  $output .= '<div class="forge-web-block-body-wrapper">';
+  $output .= $text;
+  $output .= '</div>';
+ 
+  return $output;
+}
