@@ -2,6 +2,7 @@ name = Forge web service page
 core = 7.x
 package = forgeweb
 dependencies[] = fe_block
+dependencies[] = forge_web_offering
 dependencies[] = quicktabs
 dependencies[] = views
 features[ctools][] = quicktabs:quicktabs:1
