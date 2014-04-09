@@ -30,7 +30,6 @@ $desk: 70em 16; // At 70em use 16 columns.
 .l-content {
   margin: 0 auto;
   max-width: 1200px;
-  text-align: center;
 }
 
 
@@ -122,9 +121,6 @@ only screen and (min-resolution: 192dpi) {
     @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.06));
 
     background-color: $menu-bg;
-    left: 0;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 100;
   }
@@ -303,6 +299,13 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.front .l-navigation-wrapper {
+  @include at-breakpoint($mobile_nav) {
+    left: 0;
+    position: fixed;
+    top: 0;
+  }
+}
 
 // Navigation retina styles
 
@@ -511,6 +514,12 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Front page branding
+
+.front .l-branding {
+  text-align: center;
+}
+
 // Front page title
 
 .front .field--name-field-page-title {
@@ -529,6 +538,10 @@ only screen and (min-resolution: 192dpi) {
 
 
 // Front page content
+
+.front .l-content {
+  text-align: center;
+}
 
 .front .l-content-wrapper article {
   font-size: 1em;
@@ -1295,6 +1308,33 @@ a {
   }
 }
 
+
+img {
+  height: auto;
+}
+
+.home-icon {
+  background: url('../images/footer_logo_mobile.png') no-repeat 0 0 transparent;
+  background-size: 60px auto;
+  display: block;
+  height: 60px;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  top: 20px;
+  width: 60px;
+  z-index: 101;
+  @include at-breakpoint($mobile_nav) {
+    left: 10px;
+    top: 10px;
+  }
+  @include at-breakpoint($desk) {
+    left: 20px;
+    top: 20px;
+  }
+}
+
 .block--locale-language-content {
   font-size: 1.3em;
   padding: 1em 0;
@@ -1309,8 +1349,58 @@ a {
   }
 }
 
-img {
-  height: auto;
+// Tab styles
+.tabs {
+  &.tabs--primary {
+    border-bottom: 1px solid $border-color;
+  }
+  li {
+    margin: 0;
+    a {
+      background-color: $tab-inactive;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      color: $text-color;
+      padding: 1.5em 2em;
+      position: relative;
+      text-transform: uppercase;
+      &.active {
+        background-color: $tab-active;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Border
+        &:before {
+          border-top-color: $border-color;
+          border-width: 10px;
+          bottom: -10px;
+          left: 50%;
+          margin-left: -10px;
+        }
+        // Fill
+        &:after {
+          border-top-color: $tab-active;
+          border-width: 10px;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -10px;
+        }
+      }
+      &:hover {
+        background-color: $tab-active;
+      }
+    }
+    &:last-child a {
+      border-right: 1px solid $border-color;
+    }
+  }
 }
 
 .more-link {
