@@ -92,10 +92,10 @@ function forge_web_company_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
