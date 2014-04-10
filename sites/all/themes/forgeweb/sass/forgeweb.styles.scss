@@ -912,19 +912,21 @@ only screen and (min-resolution: 192dpi) {
       background: url('../images/partners_default.png') no-repeat top left transparent;
       background-size: 40% auto;
     }
-    .short-desc,
-    .long-desc {
-      &:hover {
-        cursor: pointer;
-      }
-      h3,
-      p {
-        margin-left: 130px;
-        @include at-breakpoint($tab) {
-          margin-left: 170px;
+    .views-row {
+      .short-desc,
+      .long-desc {
+        &:hover {
+          cursor: pointer;
         }
-        @include at-breakpoint($desk) {
-          margin-left: 222px;
+        h3,
+        p {
+          margin-left: 130px;
+          @include at-breakpoint($tab) {
+            margin-left: 160px;
+          }
+          @include at-breakpoint($desk) {
+            margin-left: 222px;
+          }
         }
       }
     }
@@ -966,14 +968,14 @@ only screen and (min-resolution: 192dpi) {
       }
       &:first-child:after {
         content: "&";
-        font-size: 2.5em;
+        font-size: 30px;
         margin-left: 5px;
         @include at-breakpoint($tab) {
-          font-size: 4em;
+          font-size: 48px;
           margin-left: 7px;
         }
         @include at-breakpoint($desk) {
-          font-size: 6em;
+          font-size: 72px;
           margin-left: 10px;
         }
       }

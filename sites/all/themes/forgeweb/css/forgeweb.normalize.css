@@ -3,56 +3,56 @@
   font-weight: normal;
   font-style: normal;
   src: url("../fonts/MerriweatherSans-Regular.eot");
-  src: url("../fonts/MerriweatherSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Regular.woff") format("woff"), url("../fonts/MerriweatherSans-Regular.ttf") format("truetype"), url("../fonts/MerriweatherSans-Regular.svg#MerriweatherSans-Regular") format("svg"); }
+  src: url("../fonts/MerriweatherSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Regular.svg#MerriweatherSans-Regular") format("svg"), url("../fonts/MerriweatherSans-Regular.woff") format("woff"), url("../fonts/MerriweatherSans-Regular.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: 200;
   font-style: normal;
   src: url("../fonts/MerriweatherSans-Light.eot");
-  src: url("../fonts/MerriweatherSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Light.woff") format("woff"), url("../fonts/MerriweatherSans-Light.ttf") format("truetype"), url("../fonts/MerriweatherSans-Light.svg#MerriweatherSans-Light") format("svg"); }
+  src: url("../fonts/MerriweatherSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Light.svg#MerriweatherSans-Light") format("svg"), url("../fonts/MerriweatherSans-Light.woff") format("woff"), url("../fonts/MerriweatherSans-Light.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: bold;
   font-style: normal;
   src: url("../fonts/MerriweatherSans-Bold.eot");
-  src: url("../fonts/MerriweatherSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Bold.woff") format("woff"), url("../fonts/MerriweatherSans-Bold.ttf") format("truetype"), url("../fonts/MerriweatherSans-Bold.svg#MerriweatherSans-Bold") format("svg"); }
+  src: url("../fonts/MerriweatherSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Bold.svg#MerriweatherSans-Bold") format("svg"), url("../fonts/MerriweatherSans-Bold.woff") format("woff"), url("../fonts/MerriweatherSans-Bold.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: normal;
   font-style: italic;
   src: url("../fonts/MerriweatherSans-Italic.eot");
-  src: url("../fonts/MerriweatherSans-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Italic.woff") format("woff"), url("../fonts/MerriweatherSans-Italic.ttf") format("truetype"), url("../fonts/MerriweatherSans-Italic.svg#MerriweatherSans-Italic") format("svg"); }
+  src: url("../fonts/MerriweatherSans-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-Italic.svg#MerriweatherSans-Italic") format("svg"), url("../fonts/MerriweatherSans-Italic.woff") format("woff"), url("../fonts/MerriweatherSans-Italic.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: 200;
   font-style: italic;
   src: url("../fonts/MerriweatherSans-LightItalic.eot");
-  src: url("../fonts/MerriweatherSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-LightItalic.woff") format("woff"), url("../fonts/MerriweatherSans-LightItalic.ttf") format("truetype"), url("../fonts/MerriweatherSans-LightItalic.svg#MerriweatherSans-LightItalic") format("svg"); }
+  src: url("../fonts/MerriweatherSans-LightItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-LightItalic.svg#MerriweatherSans-LightItalic") format("svg"), url("../fonts/MerriweatherSans-LightItalic.woff") format("woff"), url("../fonts/MerriweatherSans-LightItalic.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: bold;
   font-style: italic;
   src: url("../fonts/MerriweatherSans-BoldItalic.eot");
-  src: url("../fonts/MerriweatherSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-BoldItalic.woff") format("woff"), url("../fonts/MerriweatherSans-BoldItalic.ttf") format("truetype"), url("../fonts/MerriweatherSans-BoldItalic.svg#MerriweatherSans-BoldItalic") format("svg"); }
+  src: url("../fonts/MerriweatherSans-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-BoldItalic.svg#MerriweatherSans-BoldItalic") format("svg"), url("../fonts/MerriweatherSans-BoldItalic.woff") format("woff"), url("../fonts/MerriweatherSans-BoldItalic.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: 900;
   font-style: normal;
   src: url("../fonts/MerriweatherSans-ExtraBold.eot");
-  src: url("../fonts/MerriweatherSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-ExtraBold.woff") format("woff"), url("../fonts/MerriweatherSans-ExtraBold.ttf") format("truetype"), url("../fonts/MerriweatherSans-ExtraBold.svg#MerriweatherSans-ExtraBold") format("svg"); }
+  src: url("../fonts/MerriweatherSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-ExtraBold.svg#MerriweatherSans-ExtraBold") format("svg"), url("../fonts/MerriweatherSans-ExtraBold.woff") format("woff"), url("../fonts/MerriweatherSans-ExtraBold.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'MerriweatherSans';
   font-weight: 900;
   font-style: italic;
   src: url("../fonts/MerriweatherSans-ExtraBoldItalic.eot");
-  src: url("../fonts/MerriweatherSans-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-ExtraBoldItalic.woff") format("woff"), url("../fonts/MerriweatherSans-ExtraBoldItalic.ttf") format("truetype"), url("../fonts/MerriweatherSans-ExtraBoldItalic.svg#MerriweatherSans-ExtraBoldItalic") format("svg"); }
+  src: url("../fonts/MerriweatherSans-ExtraBoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/MerriweatherSans-ExtraBoldItalic.svg#MerriweatherSans-ExtraBoldItalic") format("svg"), url("../fonts/MerriweatherSans-ExtraBoldItalic.woff") format("woff"), url("../fonts/MerriweatherSans-ExtraBoldItalic.ttf") format("truetype"); }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/variables\/_typography\.scss}line{font-family:\0000389}}
 body {
