@@ -33,6 +33,188 @@ $desk: 70em 16; // At 70em use 16 columns.
 }
 
 
+// General styles
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &.active {
+    color: $active-link-color;
+  }
+}
+
+
+img {
+  height: auto;
+}
+
+.home-icon {
+  background: url('../images/footer_logo_mobile.png') no-repeat 0 0 transparent;
+  background-size: 60px auto;
+  display: block;
+  height: 60px;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  top: 20px;
+  width: 60px;
+  z-index: 101;
+  @include at-breakpoint($mobile_nav) {
+    left: 10px;
+    top: 10px;
+  }
+  @include at-breakpoint($desk) {
+    left: 20px;
+    top: 20px;
+  }
+}
+
+.block--locale-language-content {
+  font-size: 1.3em;
+  padding: 1em 0;
+  text-align: center;
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// Reverting u-tabs default styles
+.ui-tabs {
+  @include border-radius(0);
+
+  border: 0 none;
+  padding: 0;
+  .ui-tabs-nav {
+    @include border-radius(0);
+
+    background: none;
+    border: 0 none;
+    padding: 0;
+    li {
+      @include border-radius(0);
+      
+      border: 0 none;
+      a {
+        background: none;
+        color: $link-color;
+        padding: 0;
+        &:active,
+        &:focus,
+        &:visited {
+          outline: none;
+        }
+      }
+      &.ui-state-default, 
+      &.ui-widget-content .ui-state-default, 
+      &.ui-widget-header .ui-state-default,
+      &.ui-state-active, 
+      &.ui-widget-content .ui-state-active,
+      &.ui-widget-header .ui-state-active {
+        background: none;
+      }
+    }
+  }
+  .ui-tabs-panel {
+    padding: 0;
+  }
+}
+
+.not-front .ui-tabs-nav {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1em;
+}
+
+// Tab styles
+.tabs,
+.not-front .ui-tabs-nav {
+  &.tabs--primary {
+    border-bottom: 1px solid $border-color;
+  }
+  li {
+    margin: 0;
+    a {
+      background-color: $tab-inactive;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      color: $text-color;
+      padding: 1.5em 2em;
+      position: relative;
+      text-transform: uppercase;
+      &:hover {
+        background-color: $tab-active;
+      }
+      &:active,
+      &:focus,
+      &:visited {
+        outline: none;
+      }
+    }
+    &:last-child a {
+      border-right: 1px solid $border-color;
+    }
+    &.active a,
+    &.ui-state-active a {
+      background-color: $tab-active;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom: 0;
+      }
+      // Border
+      &:before {
+        border-top-color: $border-color;
+        border-width: 10px;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -10px;
+      }
+      // Fill
+      &:after {
+        border-top-color: $tab-active;
+        border-width: 10px;
+        bottom: -9px;
+        left: 50%;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+.more-link {
+  display: inline-block;
+  margin-bottom: 2em;
+  @include at-breakpoint($tab) {
+    float: left;
+    font-size: 1.5em;
+  }
+  @include at-breakpoint($desk) {
+    margin-bottom: 0;
+  }
+  a {
+    background-color: $link-color;
+    color: #FFFFFF;
+    display: block;
+    padding: 1em 2em;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      background-color: darken($link-color, 10%);
+    }
+  }
+}
+
+
 // Logo container
 
 .site-name {
@@ -957,11 +1139,6 @@ only screen and (min-resolution: 192dpi) {
         @include at-breakpoint($desk) {
           font-size: 6em;
         }
-        &:active,
-        &:focus,
-        &:visited {
-          outline: none;
-        }
       }
       &.ui-state-active a {
         color: $text-color;
@@ -980,41 +1157,6 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
-  }
-}
-
-.ui-tabs {
-  @include border-radius(0);
-
-  border: 0 none;
-  padding: 0;
-  .ui-tabs-nav {
-    @include border-radius(0);
-
-    background: none;
-    border: 0 none;
-    padding: 0;
-    li {
-      @include border-radius(0);
-      
-      border: 0 none;
-      a {
-        background: none;
-        color: $link-color;
-        padding: 0;
-      }
-      &.ui-state-default, 
-      &.ui-widget-content .ui-state-default, 
-      &.ui-widget-header .ui-state-default,
-      &.ui-state-active, 
-      &.ui-widget-content .ui-state-active,
-      &.ui-widget-header .ui-state-active {
-        background: none;
-      }
-    }
-  }
-  .ui-tabs-panel {
-    padding: 0;
   }
 }
 
@@ -1318,135 +1460,6 @@ only screen and (min-resolution: 192dpi) {
       .views-row.views-row-last {
         margin: 0 0 7em;
       }
-    }
-  }
-}
-
-
-// General styles
-
-a {
-  color: $link-color;
-  text-decoration: none;
-  &.active {
-    color: $active-link-color;
-  }
-}
-
-
-img {
-  height: auto;
-}
-
-.home-icon {
-  background: url('../images/footer_logo_mobile.png') no-repeat 0 0 transparent;
-  background-size: 60px auto;
-  display: block;
-  height: 60px;
-  left: 10px;
-  overflow: hidden;
-  position: absolute;
-  text-indent: -9999px;
-  top: 20px;
-  width: 60px;
-  z-index: 101;
-  @include at-breakpoint($mobile_nav) {
-    left: 10px;
-    top: 10px;
-  }
-  @include at-breakpoint($desk) {
-    left: 20px;
-    top: 20px;
-  }
-}
-
-.block--locale-language-content {
-  font-size: 1.3em;
-  padding: 1em 0;
-  text-align: center;
-  ul {
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      text-transform: uppercase;
-    }
-  }
-}
-
-// Tab styles
-.tabs {
-  &.tabs--primary {
-    border-bottom: 1px solid $border-color;
-  }
-  li {
-    margin: 0;
-    a {
-      background-color: $tab-inactive;
-      border-top: 1px solid $border-color;
-      border-left: 1px solid $border-color;
-      color: $text-color;
-      padding: 1.5em 2em;
-      position: relative;
-      text-transform: uppercase;
-      &.active {
-        background-color: $tab-active;
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-color: transparent;
-          border-bottom: 0;
-        }
-        // Border
-        &:before {
-          border-top-color: $border-color;
-          border-width: 10px;
-          bottom: -10px;
-          left: 50%;
-          margin-left: -10px;
-        }
-        // Fill
-        &:after {
-          border-top-color: $tab-active;
-          border-width: 10px;
-          bottom: -9px;
-          left: 50%;
-          margin-left: -10px;
-        }
-      }
-      &:hover {
-        background-color: $tab-active;
-      }
-    }
-    &:last-child a {
-      border-right: 1px solid $border-color;
-    }
-  }
-}
-
-.more-link {
-  display: inline-block;
-  margin-bottom: 2em;
-  @include at-breakpoint($tab) {
-    float: left;
-    font-size: 1.5em;
-  }
-  @include at-breakpoint($desk) {
-    margin-bottom: 0;
-  }
-  a {
-    background-color: $link-color;
-    color: #FFFFFF;
-    display: block;
-    padding: 1em 2em;
-    text-align: center;
-    text-transform: uppercase;
-    &:hover {
-      background-color: darken($link-color, 10%);
     }
   }
 }
