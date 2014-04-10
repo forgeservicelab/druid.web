@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web project page feature.
+ */
+
+include_once 'forge_web_project_page.features.inc';
