@@ -25,11 +25,9 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0d5fcb71-47c4-4783-a311-9ce1c604583a',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
-  'field_fsl_fpa_cra' => array(),
-  'field_partner_fsl_fpa' => array(),
-  'field_sda' => array(),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -796,29 +794,9 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '20b0bba6-90e7-40a3-b958-c01368e003a2',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
-  'field_fsl_fpa_cra' => array(
-    'und' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-  ),
-  'field_partner_fsl_fpa' => array(
-    'und' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-  ),
-  'field_sda' => array(
-    'und' => array(
-      0 => array(
-        'value' => 1,
-      ),
-    ),
-  ),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -1911,9 +1889,15 @@ function forge_web_wizard_uuid_features_default_content() {
   'uuid' => '2aa05069-59a7-4e58-a949-4a7dba5618cf',
   'revision_uid' => 1,
   'body' => array(),
-  'field_fsl_fpa_cra' => array(),
-  'field_partner_fsl_fpa' => array(),
-  'field_sda' => array(),
+  'field_page_title' => array(
+    'en' => array(
+      0 => array(
+        'value' => 'Join FORGE Service Lab!',
+        'format' => NULL,
+        'safe_value' => 'Join FORGE Service Lab!',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2571,7 +2555,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '312d36a3-a198-4450-8aa6-5431b6ae7eda',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2587,6 +2571,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
       ),
     ),
   ),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2673,7 +2658,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '5616c42d-1733-4739-a375-d8c633202fe8',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2689,6 +2674,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
       ),
     ),
   ),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2775,7 +2761,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'acf32012-8e98-41bd-bb23-67a265dc06f6',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2791,6 +2777,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
       ),
     ),
   ),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2877,11 +2864,9 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c5945d6e-b049-493a-989f-2b45f7e61b07',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
-  'field_fsl_fpa_cra' => array(),
-  'field_partner_fsl_fpa' => array(),
-  'field_sda' => array(),
+  'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -3389,6 +3374,15 @@ subcontractor|I am a subcontractor of an organization that develops services in 
 ',
         'safe_summary' => '<p>Are you an expert in digital service creation? Join FORGE Service Lab marketplace, showcase your offering and  ...</p>
 ',
+      ),
+    ),
+  ),
+  'field_page_title' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'I want to offer my expertise in digital service creation',
+        'format' => NULL,
+        'safe_value' => 'I want to offer my expertise in digital service creation',
       ),
     ),
   ),

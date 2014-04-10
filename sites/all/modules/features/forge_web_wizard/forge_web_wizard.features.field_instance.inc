@@ -58,7 +58,48 @@ function forge_web_wizard_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => -4,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-forge_role_information-field_page_title'
+  $field_instances['node-forge_role_information-field_page_title'] = array(
+    'bundle' => 'forge_role_information',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_page_title',
+    'label' => 'Page title',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
     ),
   );
 
@@ -72,11 +113,7 @@ function forge_web_wizard_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(
-          'edit' => array(
-            'editor' => 'plain_text',
-          ),
-        ),
+        'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
       ),
@@ -110,140 +147,55 @@ function forge_web_wizard_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-webform-field_page_title'
+  $field_instances['node-webform-field_page_title'] = array(
+    'bundle' => 'webform',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_page_title',
+    'label' => 'Page title',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_fsl_fpa_cra'
-  $field_instances['node-webform-field_fsl_fpa_cra'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_fsl_fpa_cra',
-    'label' => 'Partner addendum for computing capacity (FSL FPA CRA) PDF',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_partner_fsl_fpa'
-  $field_instances['node-webform-field_partner_fsl_fpa'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_partner_fsl_fpa',
-    'label' => 'Partner (FSL FPA) PDF',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-webform-field_sda'
-  $field_instances['node-webform-field_sda'] = array(
-    'bundle' => 'webform',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sda',
-    'label' => 'Service development (SDA) PDF',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 3,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add here <a href="/admin/structure/fillpdf">fillPDF</a> PDF ID.');
   t('Body');
-  t('Partner (FSL FPA) PDF');
-  t('Partner addendum for computing capacity (FSL FPA CRA) PDF');
-  t('Service development (SDA) PDF');
+  t('Page title');
 
   return $field_instances;
 }

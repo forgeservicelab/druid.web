@@ -77,11 +77,12 @@
  * @see template_preprocess_node()
  * @see template_process()
  */
+  if(!empty($node->field_page_title)) {
+    $translated_title = field_get_items('node', $node, 'field_page_title');
+    $title_value = field_view_value('node', $node, 'field_page_title', $translated_title[0]);
+  }
  
- $translated_title = field_get_items('node', $node, 'field_page_title');
- $title_value = field_view_value('node', $node, 'field_page_title', $translated_title[0]);
- 
- $formatted_post_date = format_date($node->created, 'custom', 'j.m.Y');
+  $formatted_post_date = format_date($node->created, 'custom', 'j.m.Y');
 ?>
 <article<?php print $attributes; ?>>
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>

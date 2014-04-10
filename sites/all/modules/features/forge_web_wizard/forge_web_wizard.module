@@ -176,8 +176,6 @@ function _forge_web_wizard_embed_filter_replace($match) {
   else {
     return t('Content not found. (PATH:'.$match[1].')');
   }
-   
-   
 }
 
 /**
