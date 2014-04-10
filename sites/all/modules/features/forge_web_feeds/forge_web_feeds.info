@@ -1,7 +1,7 @@
 name = Forge web feeds
 description = This feature provides feeds block and listing page
 core = 7.x
-package = Features
+package = forgeweb
 version = 7.x-1.0
 project = forge_web_feeds
 dependencies[] = views
