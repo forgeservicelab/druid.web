@@ -30,7 +30,6 @@ $desk: 70em 16; // At 70em use 16 columns.
 .l-content {
   margin: 0 auto;
   max-width: 1200px;
-  text-align: center;
 }
 
 
@@ -122,9 +121,6 @@ only screen and (min-resolution: 192dpi) {
     @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.06));
 
     background-color: $menu-bg;
-    left: 0;
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 100;
   }
@@ -136,7 +132,7 @@ only screen and (min-resolution: 192dpi) {
       
       background-color: #000;
       border-left: 5px solid #fff;
-      top: 10px;
+      top: 0;
       li {
         background: url('../images/mobile_menu_bg.png') no-repeat left 10px transparent;
         padding-left: 20px;
@@ -303,6 +299,18 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.front .l-navigation-wrapper {
+  @include at-breakpoint($mobile_nav) {
+    left: 0;
+    position: fixed;
+    top: 0;
+  }
+  .responsive-menus.responsified {
+    &.absolute .responsive-menus-simple {
+      border-top: 10px solid #fff;
+    }
+  }
+}
 
 // Navigation retina styles
 
@@ -511,6 +519,12 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Front page branding
+
+.front .l-branding {
+  text-align: center;
+}
+
 // Front page title
 
 .front .field--name-field-page-title {
@@ -529,6 +543,10 @@ only screen and (min-resolution: 192dpi) {
 
 
 // Front page content
+
+.front .l-content {
+  text-align: center;
+}
 
 .front .l-content-wrapper article {
   font-size: 1em;
@@ -716,10 +734,10 @@ only screen and (min-resolution: 192dpi) {
     background-color: #fff;
     margin-bottom: 6em;
     @include at-breakpoint($tab) {
-      margin-bottom: 10em;
+      margin-bottom: 7em;
     }
     @include at-breakpoint($desk) {
-      margin-bottom: 12em;
+      margin-bottom: 10em;
     }
     &:last-child {
       margin-bottom: 0;
@@ -814,7 +832,7 @@ only screen and (min-resolution: 192dpi) {
   .view-people {
     position: relative;
     @include at-breakpoint($tab) {
-      min-height: 560px;
+      min-height: 525px;
       padding-left: 41.2%;
     }
     @include at-breakpoint($desk) {
@@ -1056,7 +1074,7 @@ only screen and (min-resolution: 192dpi) {
       max-width: 100%;
     }
     .question {
-      font-size: 1em;
+      font-size: 1.3em;
       text-transform: none;
       @include at-breakpoint($tab) {
         font-size: 1.5em;
@@ -1189,38 +1207,22 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Feed block styles
+// Feed styles
 
-.block--views-feed-block {
-  margin: 0 auto;
-  max-width: 24.6em;
-  @include at-breakpoint($tab) {
-    max-width: 67em;
-  }
-  @include at-breakpoint($desk) {
-    max-width: 100%;
-  }
-  .block__title {
-    font-size: 2.5em;
-    margin: 0 auto 0.5em;
-    text-transform: none;
+.view-feed {
+  .views-row {
+    margin: 0 0 4em;
     @include at-breakpoint($tab) {
-      font-size: 4em;
+      margin: 0 0 5em;
     }
     @include at-breakpoint($desk) {
-      font-size: 6em;
+      margin: 0 0 7em;
     }
-  }
-  .view {
-    text-align: center;
-    .view-content {
-      text-align: left;
+    &.views-row-last {
+      margin: 0;
     }
-  }
-  .views-row {
-    margin: 0 0 7em;
     .node__title {
-      font-size: 1.2em;
+      font-size: 1.4em;
       font-weight: 200;
       text-transform: none;
       @include at-breakpoint($tab) {
@@ -1239,7 +1241,7 @@ only screen and (min-resolution: 192dpi) {
     .field--type-video-embed-field {
       max-width: 480px;
     }
-    
+
     .field--type-video-embed-field,
     .field--name-field-main-images {
       margin: 1.5em 0;
@@ -1274,11 +1276,45 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
-    
+
     .easy_social_box {
       margin: 1.5em 0;
       .easy_social-widget {
         margin-right: 1em;
+      }
+    }
+  }
+}
+
+
+// Feed block styles
+
+.block--views-feed-block {
+  margin: 0 auto;
+  max-width: 24.6em;
+  @include at-breakpoint($tab) {
+    max-width: 67em;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  .block__title {
+    font-size: 2.5em;
+    margin: 0 auto 0.5em;
+    text-transform: none;
+    @include at-breakpoint($tab) {
+      font-size: 4em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 6em;
+    }
+  }
+  .view {
+    text-align: center;
+    .view-content {
+      text-align: left;
+      .views-row.views-row-last {
+        margin: 0 0 7em;
       }
     }
   }
@@ -1292,6 +1328,33 @@ a {
   text-decoration: none;
   &.active {
     color: $active-link-color;
+  }
+}
+
+
+img {
+  height: auto;
+}
+
+.home-icon {
+  background: url('../images/footer_logo_mobile.png') no-repeat 0 0 transparent;
+  background-size: 60px auto;
+  display: block;
+  height: 60px;
+  left: 10px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  top: 20px;
+  width: 60px;
+  z-index: 101;
+  @include at-breakpoint($mobile_nav) {
+    left: 10px;
+    top: 10px;
+  }
+  @include at-breakpoint($desk) {
+    left: 20px;
+    top: 20px;
   }
 }
 
@@ -1309,8 +1372,58 @@ a {
   }
 }
 
-img {
-  height: auto;
+// Tab styles
+.tabs {
+  &.tabs--primary {
+    border-bottom: 1px solid $border-color;
+  }
+  li {
+    margin: 0;
+    a {
+      background-color: $tab-inactive;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      color: $text-color;
+      padding: 1.5em 2em;
+      position: relative;
+      text-transform: uppercase;
+      &.active {
+        background-color: $tab-active;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Border
+        &:before {
+          border-top-color: $border-color;
+          border-width: 10px;
+          bottom: -10px;
+          left: 50%;
+          margin-left: -10px;
+        }
+        // Fill
+        &:after {
+          border-top-color: $tab-active;
+          border-width: 10px;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -10px;
+        }
+      }
+      &:hover {
+        background-color: $tab-active;
+      }
+    }
+    &:last-child a {
+      border-right: 1px solid $border-color;
+    }
+  }
 }
 
 .more-link {
