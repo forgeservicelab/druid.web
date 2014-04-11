@@ -47,15 +47,36 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
             //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
           }
           $url = '';
+          $prefix = '';
+          $fid = '';
+          $webform_nid = '';
+          $webform_sid = '';
           if(!empty($partner_pdf_id)) {
-            $url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE).'<br/>';
-          }
-          if(!empty($cra_pdf_id)) {
-            $url .= fillpdf_pdf_link($cra_pdf_id, NULL, array(array('nid'=> $cra_user_data['nid'], 'sid'=> $cra_user_data['sid'])), $sample = FALSE).'<br/>';
+            $fid = $partner_pdf_id;
+            $webform_nid = $partner_user_data['nid'];
+            $webform_sid = $partner_user_data['sid'];
+            
+            //$url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE).'<br/>';
           }
           if(!empty($sda_pdf_id)) {
-            $url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE).'<br/>';
+            $fid = $sda_pdf_id;
+            $webform_nid = $sda_user_data['nid'];
+            $webform_sid = $sda_user_data['sid'];
+            //$url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE);
           }
+          if(!empty($fid)) {
+            $url = _forge_web_wizard_fillpdf_pdf_link($fid, NULL, array(array('nid'=> $webform_nid, 'sid'=> $webform_sid)), $sample = FALSE);
+          }
+          if(!empty($cra_pdf_id)) {
+            if(!empty($url)) {
+              $prefix = '<br/>';
+            }
+            $fid = $cra_pdf_id;
+            $webform_nid = $cra_user_data['nid'];
+            $webform_sid = $cra_user_data['sid'];
+            $url .= $prefix._forge_web_wizard_fillpdf_pdf_link($fid, NULL, array(array('nid'=> $webform_nid, 'sid'=> $webform_sid)), $sample = FALSE);
+          }
+          
           $replacements[$original] = $url;
           break;
       }
@@ -572,4 +593,33 @@ function _forge_web_wizard_set_redirect_for_role_selection($role) {
 
 function _forge_web_wizard_get_cached_user_data($user) {
   return cache_get('forge_web_wizard_user_data_'.$user->uid.':role');
+}
+
+/**
+ * copy from fillpdf and changes return value (added trailing /)
+ * see fillpdf_pdf_link function and
+ * https://drupal.org/node/2233075
+ */
+function _forge_web_wizard_fillpdf_pdf_link($fid, $nids = NULL, $webform_arr = NULL, $sample = FALSE) {
+  $nids_uri = $webforms_uri = "";
+
+  if (is_array($nids)) {
+    $nids_uri = '&nids[]=' . implode('&nids[]=', $nids);
+  }
+  elseif (isset($nids)) {
+    $nids_uri = "&nids[]={$nids}";
+  }
+
+  if (is_array($webform_arr)) {
+    if ($webform_arr['nid']) {
+      $webform_arr = array($webform_arr);
+    }
+    foreach ($webform_arr as $key => $webform) {
+      $webforms_uri .= "&webforms[{$key}][nid]={$webform['nid']}";
+    }
+    $webforms_uri .= $webform['sid'] ? "&webforms[{$key}][sid]={$webform['sid']}" : "";
+  }
+  $sample = $sample ? '&sample=true' : '';
+  
+  return url('', array('absolute' => TRUE)) . "/fillpdf?fid={$fid}{$nids_uri}{$webforms_uri}{$sample}";
 }
