@@ -86,15 +86,7 @@
   <?php if ($teaser): ?>
     <a href="<?php print $node_url; ?>">
   <?php endif; ?>
-  <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
-    <header>
-      <?php print render($title_prefix); ?>
-      <?php if (!$page): ?>
-        <h3<?php print $title_attributes; ?>><?php print render($title_value); ?></h3>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-    </header>
-  <?php endif; ?>
+  
   <?php if ($display_submitted): ?>
     <footer class="node__submitted">
       <?php print $user_picture; ?>
@@ -112,7 +104,6 @@
   </div>
 
   <?php print render($content['links']); ?>
-  <?php print render($content['comments']); ?>
   <?php if ($teaser): ?>
     </a>
   <?php endif; ?>

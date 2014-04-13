@@ -60,7 +60,7 @@ body {
   font-weight: normal;
   font-size: 12px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/variables\/_typography\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/variables\/_typography\.scss}line{font-family:\0000397}}
 h1, h2, h3, h4, h5, h6 {
   font-family: "MerriweatherSans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
@@ -71,25 +71,25 @@ img, media {
   max-width: 100%; }
 
 /* No files to import found in components/**\/* */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000339}}
 .l-branding,
 .l-content {
   margin: 0 auto;
   max-width: 1200px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000347}}
 a {
   color: #1090d0;
   text-decoration: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000350}}
   a.active {
     color: #c7da2b; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000356}}
 img {
   height: auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000360}}
 .home-icon {
   background: url("../images/footer_logo_mobile.png") no-repeat 0 0 transparent;
   background-size: 60px auto;
@@ -103,31 +103,167 @@ img {
   width: 60px;
   z-index: 101; }
   @media (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000360}}
     .home-icon {
       left: 10px;
       top: 10px; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000351}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000360}}
     .home-icon {
       left: 20px;
       top: 20px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000373}}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000389}}
+  .home-icon {
+    background-image: url("../images/footer_logo_mobile_retina.png"); } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000394}}
 .block--locale-language-content {
   font-size: 1.3em;
   padding: 1em 0;
   text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000377}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000398}}
   .block--locale-language-content ul {
     margin: 0;
     padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003101}}
     .block--locale-language-content ul li {
       display: inline-block;
       text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003112}}
+.fivestar-average-stars div.fivestar-widget-static .star,
+.fivestar-average-stars div.fivestar-widget .star {
+  background: none;
+  display: block;
+  height: 18px;
+  overflow: hidden;
+  width: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003119}}
+  .fivestar-average-stars div.fivestar-widget-static .star > span.on,
+  .fivestar-average-stars div.fivestar-widget .star > span.on {
+    background: url("../images/star_sprite.png") no-repeat 0 0 transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003123}}
+  .fivestar-average-stars div.fivestar-widget-static .star > span.off,
+  .fivestar-average-stars div.fivestar-widget .star > span.off {
+    background: url("../images/star_sprite.png") no-repeat 0 -18px transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003128}}
+  .fivestar-average-stars div.fivestar-widget-static .star > a,
+  .fivestar-average-stars div.fivestar-widget .star > a {
+    background: url("../images/star_sprite.png") no-repeat 0 -18px transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003132}}
+  .fivestar-average-stars div.fivestar-widget-static .star.on > a,
+  .fivestar-average-stars div.fivestar-widget .star.on > a {
+    background: url("../images/star_sprite.png") no-repeat 0 0 transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003136}}
+  .fivestar-average-stars div.fivestar-widget-static .star.hover > a,
+  .fivestar-average-stars div.fivestar-widget .star.hover > a {
+    background: url("../images/star_sprite.png") no-repeat 0 -36px transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003141}}
+.fivestar-average-stars div.fivestar-widget-static .cancel,
+.fivestar-average-stars div.fivestar-widget .cancel {
+  background: none;
+  display: block;
+  height: 18px;
+  overflow: hidden;
+  width: 18px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003147}}
+  .fivestar-average-stars div.fivestar-widget-static .cancel a,
+  .fivestar-average-stars div.fivestar-widget .cancel a {
+    background: url("../images/star_sprite.png") no-repeat 0 -54px transparent;
+    background-size: 18px auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003153}}
+.fivestar-average-stars .ajax-progress-throbber {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003156}}
+.fivestar-average-stars .description {
+  color: #777; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003158}}
+  .fivestar-average-stars .description span {
+    display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003160}}
+    .fivestar-average-stars .description span.empty {
+      display: block;
+      margin-top: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003166}}
+.fivestar-average-stars .form-item {
+  margin: 0; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003184}}
+  .fivestar-average-stars div.fivestar-widget-static .star > span.on,
+  .fivestar-average-stars div.fivestar-widget .star > span.on {
+    background-image: url("../images/star_sprite_retina.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003187}}
+  .fivestar-average-stars div.fivestar-widget-static .star > span.off,
+  .fivestar-average-stars div.fivestar-widget .star > span.off {
+    background-image: url("../images/star_sprite_retina.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003191}}
+  .fivestar-average-stars div.fivestar-widget-static .star > a,
+  .fivestar-average-stars div.fivestar-widget .star > a {
+    background-image: url("../images/star_sprite_retina.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003194}}
+  .fivestar-average-stars div.fivestar-widget-static .star.on > a,
+  .fivestar-average-stars div.fivestar-widget .star.on > a {
+    background-image: url("../images/star_sprite_retina.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003197}}
+  .fivestar-average-stars div.fivestar-widget-static .star.hover > a,
+  .fivestar-average-stars div.fivestar-widget .star.hover > a {
+    background-image: url("../images/star_sprite_retina.png"); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003202}}
+  .fivestar-average-stars div.fivestar-widget-static .cancel a,
+  .fivestar-average-stars div.fivestar-widget .cancel a {
+    background-image: url("../images/star_sprite_retina.png"); } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003212}}
+.l-listing .view-content {
+  *zoom: 1;
+  max-width: 1190px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: auto;
+  margin-right: auto; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+  .l-listing .view-content:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+@media (min-width: 44em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003219}}
+  .l-listing .view-content {
+    max-width: 1190px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003221}}
+    .l-listing .view-content .views-row {
+      width: 49.15254%;
+      float: left;
+      margin-right: 1.69492%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/susy-1\.0\.9\/sass\/susy\/_grid\.scss}line{font-family:\00003184}}
+      .l-listing .view-content .views-row:nth-child(2n) {
+        float: right;
+        margin-right: 0; } }
+@media (min-width: 70em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003231}}
+  .l-listing .view-content {
+    max-width: 1190px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003233}}
+    .l-listing .view-content .views-row {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/susy-1\.0\.9\/sass\/susy\/_grid\.scss}line{font-family:\00003251}}
+      .l-listing .view-content .views-row:nth-child(2n) {
+        float: left;
+        margin-right: 1.26582%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/susy-1\.0\.9\/sass\/susy\/_grid\.scss}line{font-family:\00003184}}
+      .l-listing .view-content .views-row:nth-child(3n) {
+        float: right;
+        margin-right: 0; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003244}}
 .ui-tabs {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -136,7 +272,7 @@ img {
   border-radius: 0;
   border: 0 none;
   padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003249}}
   .ui-tabs .ui-tabs-nav {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -146,7 +282,7 @@ img {
     background: none;
     border: 0 none;
     padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003255}}
     .ui-tabs .ui-tabs-nav li {
       -webkit-border-radius: 0;
       -moz-border-radius: 0;
@@ -154,35 +290,35 @@ img {
       -o-border-radius: 0;
       border-radius: 0;
       border: 0 none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003259}}
       .ui-tabs .ui-tabs-nav li a {
         background: none;
         color: #1090d0;
         padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003265}}
         .ui-tabs .ui-tabs-nav li a:active, .ui-tabs .ui-tabs-nav li a:focus, .ui-tabs .ui-tabs-nav li a:visited {
           outline: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003274}}
       .ui-tabs .ui-tabs-nav li.ui-state-default, .ui-tabs .ui-tabs-nav li.ui-widget-content .ui-state-default, .ui-tabs .ui-tabs-nav li.ui-widget-header .ui-state-default, .ui-tabs .ui-tabs-nav li.ui-state-active, .ui-tabs .ui-tabs-nav li.ui-widget-content .ui-state-active, .ui-tabs .ui-tabs-nav li.ui-widget-header .ui-state-active {
         background: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003279}}
   .ui-tabs .ui-tabs-panel {
     padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003284}}
 .not-front .ui-tabs-nav {
   border-bottom: 1px solid #e4e4e4;
   margin-bottom: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003292}}
 .tabs.tabs--primary,
 .not-front .ui-tabs-nav.tabs--primary {
   border-bottom: 1px solid #e4e4e4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003295}}
 .tabs li,
 .not-front .ui-tabs-nav li {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003297}}
   .tabs li a,
   .not-front .ui-tabs-nav li a {
     background-color: white;
@@ -192,26 +328,26 @@ img {
     padding: 1.5em 2em;
     position: relative;
     text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003149}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003305}}
     .tabs li a:hover,
     .not-front .ui-tabs-nav li a:hover {
       background-color: #f7f7f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003310}}
     .tabs li a:active, .tabs li a:focus, .tabs li a:visited,
     .not-front .ui-tabs-nav li a:active,
     .not-front .ui-tabs-nav li a:focus,
     .not-front .ui-tabs-nav li a:visited {
       outline: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003158}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003314}}
   .tabs li:last-child a,
   .not-front .ui-tabs-nav li:last-child a {
     border-right: 1px solid #e4e4e4; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003318}}
   .tabs li.active a, .tabs li.ui-state-active a,
   .not-front .ui-tabs-nav li.active a,
   .not-front .ui-tabs-nav li.ui-state-active a {
     background-color: #f7f7f7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003321}}
     .tabs li.active a:before, .tabs li.active a:after, .tabs li.ui-state-active a:before, .tabs li.ui-state-active a:after,
     .not-front .ui-tabs-nav li.active a:before,
     .not-front .ui-tabs-nav li.active a:after,
@@ -224,7 +360,7 @@ img {
       border-style: solid;
       border-color: transparent;
       border-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003175}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003331}}
     .tabs li.active a:before, .tabs li.ui-state-active a:before,
     .not-front .ui-tabs-nav li.active a:before,
     .not-front .ui-tabs-nav li.ui-state-active a:before {
@@ -233,7 +369,7 @@ img {
       bottom: -10px;
       left: 50%;
       margin-left: -10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003339}}
     .tabs li.active a:after, .tabs li.ui-state-active a:after,
     .not-front .ui-tabs-nav li.active a:after,
     .not-front .ui-tabs-nav li.ui-state-active a:after {
@@ -243,20 +379,20 @@ img {
       left: 50%;
       margin-left: -10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003350}}
 .more-link {
   display: inline-block;
   margin-bottom: 2em; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003350}}
     .more-link {
       float: left;
       font-size: 1.5em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003194}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003350}}
     .more-link {
       margin-bottom: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003204}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003360}}
   .more-link a {
     background-color: #1090d0;
     color: #FFFFFF;
@@ -264,19 +400,19 @@ img {
     padding: 1em 2em;
     text-align: center;
     text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003367}}
     .more-link a:hover {
       background-color: #0c6fa1; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003376}}
 .site-name {
   line-height: 0;
   margin: 0; }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003376}}
     .site-name {
       margin-top: 2em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003382}}
   .site-name a {
     background: url("../images/logo_en_mobile.png") no-repeat 0 0 transparent;
     background-size: auto 200px;
@@ -286,59 +422,59 @@ img {
     text-indent: -9999px;
     width: 80px; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003226}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003382}}
       .site-name a {
         background: url("../images/logo_en.png") no-repeat 0 0 transparent;
         background-size: auto 467px;
         height: 467px;
         width: 187px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003400}}
 html[lang=fi] .site-name a {
   background-image: url("../images/logo_fi_mobile.png");
   background-size: auto 200px; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003244}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003400}}
     html[lang=fi] .site-name a {
       background-image: url("../images/logo_fi.png");
       background-size: auto 467px; } }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003419}}
   .site-name a {
     background-image: url("../images/logo_en_mobile_retina.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003427}}
   html[lang=fi] .site-name a {
     background-image: url("../images/logo_fi_mobile_retina.png"); } }
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003419}}
     .site-name a {
       background-image: url("../images/logo_en_retina.png"); } }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003427}}
     html[lang=fi] .site-name a {
       background-image: url("../images/logo_fi_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003439}}
 .site-slogan {
   font-size: 2.8em;
   margin: 0 auto 0.3em;
   max-width: 8.8em;
   text-align: left; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003439}}
     .site-slogan {
       font-size: 4.3em;
       margin-bottom: 0.2em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003283}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003439}}
     .site-slogan {
       font-size: 6.2em;
       max-width: 100%; } }
 
 @media (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003301}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003457}}
   .l-navigation-wrapper {
     -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
     -moz-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.06);
@@ -346,10 +482,10 @@ html[lang=fi] .site-name a {
     background-color: white;
     width: 100%;
     z-index: 100; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003465}}
 .l-navigation-wrapper .responsive-menus.responsified {
   padding-top: 70px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003311}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003467}}
   .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -362,40 +498,40 @@ html[lang=fi] .site-name a {
     background-color: #000;
     border-left: 5px solid #fff;
     top: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003318}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003474}}
     .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li {
       background: url("../images/mobile_menu_bg.png") no-repeat left 10px transparent;
       padding-left: 20px;
       padding-right: 70px;
       width: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003479}}
       .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li a {
         border-bottom: 0 none;
         font-size: 1.4em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003483}}
       .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li li {
         background: none;
         display: none;
         padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003331}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003487}}
         .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li li a {
           font-weight: 200;
           padding-left: 5%;
           padding-top: 0;
           text-transform: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003494}}
       .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.active {
         background: none #fff; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003496}}
         .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.active a {
           color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003498}}
           .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.active a.active {
             color: #c7da2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003502}}
         .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.active li {
           display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003508}}
   .l-navigation-wrapper .responsive-menus.responsified span.toggler {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -416,12 +552,12 @@ html[lang=fi] .site-name a {
     top: 20px;
     width: 60px;
     z-index: 1000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003525}}
   .l-navigation-wrapper .responsive-menus.responsified.responsive-toggled span.toggler {
     background-position: 20px 12px;
     border: 0 none; }
 @media (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003532}}
   .l-navigation-wrapper ul {
     height: 80px;
     margin: 0;
@@ -429,7 +565,7 @@ html[lang=fi] .site-name a {
     position: relative;
     text-align: center;
     z-index: 100; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003542}}
     .l-navigation-wrapper ul li {
       display: inline-block;
       height: 80px;
@@ -438,19 +574,19 @@ html[lang=fi] .site-name a {
       list-style-type: none;
       padding: 30px 5px;
       vertical-align: bottom; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003555}}
       .l-navigation-wrapper ul li:last-child {
         margin-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003558}}
       .l-navigation-wrapper ul li a {
         color: black;
         display: block;
         font-size: 1.15em;
         text-transform: uppercase; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003411}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003567}}
         .l-navigation-wrapper ul li a:hover, .l-navigation-wrapper ul li a.active {
           color: #c7da2b; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003571}}
       .l-navigation-wrapper ul li ul {
         background-color: black;
         display: none;
@@ -459,16 +595,16 @@ html[lang=fi] .site-name a {
         top: 80px;
         width: 100%;
         z-index: 99; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003582}}
         .l-navigation-wrapper ul li ul:hover {
           display: block; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003429}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003585}}
         .l-navigation-wrapper ul li ul a {
           color: white; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003434}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003590}}
       .l-navigation-wrapper ul li:hover.expanded > a {
         position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003592}}
         .l-navigation-wrapper ul li:hover.expanded > a:after {
           background: url("../images/menu_active.png") no-repeat 0 0 transparent;
           background-size: 103px auto;
@@ -481,24 +617,24 @@ html[lang=fi] .site-name a {
           width: 103px;
           z-index: 100; } }
   @media (min-width: 801px) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003532}}
     .l-navigation-wrapper ul {
       height: 100px; } }
     @media (min-width: 801px) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003542}}
       .l-navigation-wrapper ul li {
         height: 100px;
         line-height: 40px;
         padding: 30px 15px; } }
       @media (min-width: 801px) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003402}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003558}}
         .l-navigation-wrapper ul li a {
           font-size: 1.5em; } }
       @media (min-width: 801px) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003415}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003571}}
         .l-navigation-wrapper ul li ul {
           top: 100px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003458}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003614}}
 .l-navigation-wrapper .block--menu-menu-log-in-menu {
   display: none;
   padding-right: 20px;
@@ -506,39 +642,39 @@ html[lang=fi] .site-name a {
   right: 0;
   top: 0; }
   @media (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003458}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003614}}
     .l-navigation-wrapper .block--menu-menu-log-in-menu {
       display: block; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003468}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003624}}
   .l-navigation-wrapper .block--menu-menu-log-in-menu ul li {
     padding: 30px 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003471}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003627}}
     .l-navigation-wrapper .block--menu-menu-log-in-menu ul li a:after {
       color: #000;
       content: "/";
       padding: 0 2px 0 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003476}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003632}}
     .l-navigation-wrapper .block--menu-menu-log-in-menu ul li.last a:after {
       content: ""; }
 
 @media (min-width: 801px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003484}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003640}}
   .front .l-navigation-wrapper {
     left: 0;
     position: fixed;
     top: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003491}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003647}}
 .front .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple {
   border-top: 10px solid #fff; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003507}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003663}}
   .l-navigation-wrapper .responsive-menus.responsified span.toggler {
     background-image: url("../images/mobile_nav_retina.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003515}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003671}}
   .l-navigation-wrapper ul li:hover.expanded > a:after {
     background-image: url("../images/menu_active_retina.png"); } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003528}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003684}}
 .l-footer {
   font-weight: 200;
   background-color: black;
@@ -547,11 +683,11 @@ html[lang=fi] .site-name a {
   padding-bottom: 20px;
   padding-top: 20px; }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003528}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003684}}
     .l-footer {
       padding-bottom: 60px;
       padding-top: 40px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003542}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003698}}
   .l-footer .google-maps,
   .l-footer .facebook,
   .l-footer .twitter,
@@ -562,21 +698,21 @@ html[lang=fi] .site-name a {
     overflow: hidden;
     text-indent: -9999px; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003542}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003698}}
       .l-footer .google-maps,
       .l-footer .facebook,
       .l-footer .twitter,
       .l-footer .linkedin {
         background-image: url("../images/icons_sprite.png");
         background-size: 83px auto; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003553}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003709}}
   .l-footer .google-maps {
     height: 41px;
     margin-top: -10px;
     padding-left: 10px;
     vertical-align: middle;
     width: 70px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003559}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003715}}
     .l-footer .google-maps:before {
       background-color: #fff;
       content: "";
@@ -585,52 +721,52 @@ html[lang=fi] .site-name a {
       margin-top: 10px;
       width: 1px; }
       @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003559}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003715}}
         .l-footer .google-maps:before {
           height: 50px;
           margin-top: 23px; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003553}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003709}}
       .l-footer .google-maps {
         height: 73px;
         margin-top: -20px;
         width: 113px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003579}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003735}}
   .l-footer .facebook,
   .l-footer .twitter,
   .l-footer .linkedin {
     margin-right: 20px; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003579}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003735}}
       .l-footer .facebook,
       .l-footer .twitter,
       .l-footer .linkedin {
         margin-right: 40px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003585}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003741}}
   .l-footer .facebook {
     background-position: 0 -45px;
     height: 22px;
     width: 13px; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003585}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003741}}
       .l-footer .facebook {
         background-position: 0 -83px;
         height: 40px;
         width: 23px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003595}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003751}}
   .l-footer .twitter {
     background-position: 0 -73px;
     height: 20px;
     margin-bottom: 1px;
     width: 25px; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003595}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003751}}
       .l-footer .twitter {
         background-position: 0 -132px;
         height: 36px;
         margin-bottom: 3px;
         width: 46px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003607}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003763}}
   .l-footer .linkedin {
     background-position: 0 -98px;
     height: 21px;
@@ -638,27 +774,27 @@ html[lang=fi] .site-name a {
     margin-right: 0;
     width: 21px; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003607}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003763}}
       .l-footer .linkedin {
         background-position: 0 -178px;
         height: 36px;
         margin-bottom: 1px;
         width: 38px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003621}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003777}}
   .l-footer .block .block__title {
     display: none; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003620}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003776}}
     .l-footer .block {
       text-align: left; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003628}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003784}}
   .l-footer .l-region--footer-left {
     margin-bottom: 3em; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003628}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003784}}
       .l-footer .l-region--footer-left {
         margin-bottom: 0; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003634}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003790}}
     .l-footer .l-region--footer-left .block__content > *:first-child {
       background: url("../images/footer_logo_mobile.png") no-repeat top center transparent;
       background-size: auto 60px;
@@ -667,7 +803,7 @@ html[lang=fi] .site-name a {
       padding-top: 70px;
       text-align: center; }
       @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003634}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003790}}
         .l-footer .l-region--footer-left .block__content > *:first-child {
           background-image: url("../images/footer_logo.png");
           background-position: left center;
@@ -678,68 +814,69 @@ html[lang=fi] .site-name a {
           padding-left: 155px;
           padding-top: 0;
           text-align: left; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003655}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003811}}
   .l-footer .l-region--footer-right {
     font-size: 1.2em;
     text-align: center; }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003655}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003811}}
       .l-footer .l-region--footer-right {
         font-size: 1.9em;
         line-height: 3em;
         padding-top: 10px; } }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003663}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003819}}
       .l-footer .l-region--footer-right > *:first-child {
         display: inline-block; } }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003684}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003840}}
   .l-footer .google-maps,
   .l-footer .facebook,
   .l-footer .twitter,
   .l-footer .linkedin {
     background-image: url("../images/icons_sprite.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003692}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003848}}
   .l-footer .l-region--footer-left .block__content > *:first-child {
     background-image: url("../images/footer_logo_mobile_retina.png"); } }
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003684}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003840}}
     .l-footer .google-maps,
     .l-footer .facebook,
     .l-footer .twitter,
     .l-footer .linkedin {
       background-image: url("../images/icons_sprite_retina.png"); } }
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003692}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003848}}
     .l-footer .l-region--footer-left .block__content > *:first-child {
       background-image: url("../images/footer_logo_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003706}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003862}}
 .front .l-branding {
   text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003712}}
-.front .field--name-field-page-title {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003868}}
+.front .page-title {
   font-size: 1.15em;
   font-weight: normal;
   margin: 0 auto;
-  max-width: 27em; }
+  max-width: 27em;
+  text-transform: none; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003712}}
-    .front .field--name-field-page-title {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003868}}
+    .front .page-title {
       font-size: 1.65em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003712}}
-    .front .field--name-field-page-title {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003868}}
+    .front .page-title {
       font-size: 1.55em;
       text-align: left; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003729}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003886}}
 .front .l-content {
   text-align: center; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003733}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003890}}
 .front .l-content-wrapper article {
   font-size: 1em;
   line-height: 1.2em;
@@ -747,20 +884,20 @@ html[lang=fi] .site-name a {
   max-width: 24.6em;
   text-align: left; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003733}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003890}}
     .front .l-content-wrapper article {
       font-size: 1.1em;
       max-width: 34.5em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003733}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003890}}
     .front .l-content-wrapper article {
       font-size: 1.667em;
       max-width: 100%; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003752}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003909}}
 .front .l-highlighted {
   background-color: #000; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003754}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003911}}
   .front .l-highlighted .l-region--highlighted {
     background: url("../images/decoration_edge_up.png") repeat-x -2px 0 transparent;
     background-size: auto 12px;
@@ -768,15 +905,15 @@ html[lang=fi] .site-name a {
     max-width: 330px;
     padding: 12px 0 0; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003754}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003911}}
       .front .l-highlighted .l-region--highlighted {
         max-width: 885px; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003754}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003911}}
       .front .l-highlighted .l-region--highlighted {
         max-width: 1070px;
         position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003766}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003923}}
         .front .l-highlighted .l-region--highlighted:after {
           bottom: -100px;
           background: url("../images/large_flowers.png") no-repeat center center transparent;
@@ -785,27 +922,27 @@ html[lang=fi] .site-name a {
           left: -590px;
           position: absolute;
           width: 535px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003776}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003933}}
     .front .l-highlighted .l-region--highlighted > .block {
       background: url("../images/decoration_edge_down.png") repeat-x -2px bottom transparent;
       background-size: auto 12px;
       padding: 0 0 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003780}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003937}}
       .front .l-highlighted .l-region--highlighted > .block > div {
         background-color: #fff; }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003780}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003937}}
           .front .l-highlighted .l-region--highlighted > .block > div {
             padding-right: 15px; } }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003785}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003942}}
           .front .l-highlighted .l-region--highlighted > .block > div > * {
             background: url("../images/four_flowers.png") no-repeat right bottom transparent;
             background-size: 282px auto;
             min-height: 400px;
             padding-right: 25em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003798}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003955}}
 .flexslider {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -821,18 +958,18 @@ html[lang=fi] .site-name a {
   padding: 4em 3em;
   position: relative; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003798}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003955}}
     .flexslider {
       margin: 0;
       min-height: 400px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003811}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003968}}
   .flexslider .slides img {
     height: auto; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003814}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003971}}
   .flexslider .flex-control-nav {
     bottom: 10px;
     left: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003819}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003976}}
   .flexslider .flex-direction-nav a {
     background: url("../images/icon_accordion.png") no-repeat 0 0 transparent;
     background-size: 13px auto;
@@ -843,68 +980,68 @@ html[lang=fi] .site-name a {
     overflow: hidden;
     text-indent: -9999px;
     width: 13px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003829}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003986}}
     .flexslider .flex-direction-nav a:before {
       display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003832}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003989}}
     .flexslider .flex-direction-nav a.flex-prev {
       background-image: url("../images/icon_accordion_invert.png"); }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003996}}
 .liftup-title {
   font-size: 1.2em;
   font-weight: 200;
   margin: 0 0 1em;
   text-transform: none; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003996}}
     .liftup-title {
       font-size: 1.5em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003996}}
     .liftup-title {
       font-size: 2em; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003852}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031009}}
 .field--name-field-liftup-body {
   font-size: 1.5em;
   font-weight: 200; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003852}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031009}}
     .field--name-field-liftup-body {
       font-size: 2em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003852}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031009}}
     .field--name-field-liftup-body {
       font-size: 3em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003861}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031018}}
   .field--name-field-liftup-body p {
     margin: 0 0 1em; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003875}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031032}}
   .front .l-highlighted .l-region--highlighted {
     background-image: url("../images/decoration_edge_up_retina.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003882}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031039}}
     .front .l-highlighted .l-region--highlighted > .block {
       background-image: url("../images/decoration_edge_down_retina.png"); } }
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003877}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031034}}
     .front .l-highlighted .l-region--highlighted:after {
       background-image: url("../images/large_flowers_retina.png"); } }
     @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003885}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031042}}
       .front .l-highlighted .l-region--highlighted > .block > div > * {
         background-image: url("../images/four_flowers_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003899}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031056}}
 .front .l-middle_content {
   overflow: hidden; }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003902}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031059}}
     .front .l-middle_content .l-region--middle-content {
       position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003904}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031061}}
       .front .l-middle_content .l-region--middle-content:after {
         bottom: -100px;
         background: url("../images/multiple_flowers.png") no-repeat center center transparent;
@@ -913,38 +1050,38 @@ html[lang=fi] .site-name a {
         left: -620px;
         position: absolute;
         width: 567px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003915}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031072}}
   .front .l-middle_content .block {
     background-color: #fff;
     margin-bottom: 6em; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003915}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031072}}
       .front .l-middle_content .block {
         margin-bottom: 7em; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003915}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031072}}
       .front .l-middle_content .block {
         margin-bottom: 10em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003924}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031081}}
     .front .l-middle_content .block:last-child {
       margin-bottom: 0; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003942}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031099}}
   .front .l-middle_content .l-region--middle-content:after {
     background-image: url("../images/multiple_flowers_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003953}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031110}}
 .front .l-after_content {
   border-top: 80px solid #3f6d00; }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003953}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031110}}
     .front .l-after_content {
       background: url("../images/vertical_flowers.png") no-repeat left 300px transparent;
       background-size: auto 385px;
       overflow: hidden;
       position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003960}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031117}}
       .front .l-after_content:after {
         background: url("../images/vertical_flowers_right.png") no-repeat left top transparent;
         background-size: auto 385px;
@@ -956,58 +1093,58 @@ html[lang=fi] .site-name a {
         top: 1100px;
         width: 649px;
         z-index: -1; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003972}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031129}}
       .front .l-after_content .l-region {
         background-color: rgba(255, 255, 255, 0.9); } }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003987}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031144}}
   .front .l-after_content {
     background-image: url("../images/vertical_flowers_retina.png"); }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\00003990}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031147}}
     .front .l-after_content:after {
       background-image: url("../images/vertical_flowers_right_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031000}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031157}}
 .block--quicktabs-partners-or-people {
   margin-left: auto;
   margin-right: auto;
   max-width: 24.6em; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031000}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031157}}
     .block--quicktabs-partners-or-people {
       max-width: 67em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031000}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031157}}
     .block--quicktabs-partners-or-people {
       max-width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031010}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031167}}
   .block--quicktabs-partners-or-people .block__title {
     display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031014}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031171}}
   .block--quicktabs-partners-or-people .view-partners,
   .block--quicktabs-partners-or-people .view-people {
     position: relative; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031014}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031171}}
       .block--quicktabs-partners-or-people .view-partners,
       .block--quicktabs-partners-or-people .view-people {
         min-height: 525px;
         padding-left: 41.2%; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031014}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031171}}
       .block--quicktabs-partners-or-people .view-partners,
       .block--quicktabs-partners-or-people .view-people {
         min-height: 730px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031023}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031180}}
     .block--quicktabs-partners-or-people .view-partners .views-row,
     .block--quicktabs-partners-or-people .view-people .views-row {
       margin: 0 0 1em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031025}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031182}}
       .block--quicktabs-partners-or-people .view-partners .views-row.views-row-last,
       .block--quicktabs-partners-or-people .view-people .views-row.views-row-last {
         margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031188}}
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc p,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
@@ -1019,46 +1156,46 @@ html[lang=fi] .site-name a {
         margin: 0.5em 0;
         text-transform: none; }
       @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031192}}
         .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
         .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
         .block--quicktabs-partners-or-people .view-people .views-row .short-desc h3,
         .block--quicktabs-partners-or-people .view-people .views-row .long-desc h3 {
           font-size: 1.4em; } }
       @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031192}}
         .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
         .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
         .block--quicktabs-partners-or-people .view-people .views-row .short-desc h3,
         .block--quicktabs-partners-or-people .view-people .views-row .long-desc h3 {
           font-size: 1.7em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031043}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031200}}
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc p:last-child,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p:last-child,
       .block--quicktabs-partners-or-people .view-people .views-row .short-desc p:last-child,
       .block--quicktabs-partners-or-people .view-people .views-row .long-desc p:last-child {
         margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031047}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031204}}
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc,
       .block--quicktabs-partners-or-people .view-people .views-row .short-desc {
         overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031049}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031206}}
         .block--quicktabs-partners-or-people .view-partners .views-row .short-desc img,
         .block--quicktabs-partners-or-people .view-people .views-row .short-desc img {
           float: left;
           margin-right: 1em;
           width: 40%; }
           @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031049}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031206}}
             .block--quicktabs-partners-or-people .view-partners .views-row .short-desc img,
             .block--quicktabs-partners-or-people .view-people .views-row .short-desc img {
               width: 34%; } }
           @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031049}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031206}}
             .block--quicktabs-partners-or-people .view-partners .views-row .short-desc img,
             .block--quicktabs-partners-or-people .view-people .views-row .short-desc img {
               width: auto; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031061}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031218}}
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc,
       .block--quicktabs-partners-or-people .view-people .views-row .long-desc {
         -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
@@ -1072,9 +1209,9 @@ html[lang=fi] .site-name a {
         padding: 1em;
         top: 0;
         width: 100%;
-        z-index: 102; }
+        z-index: 99; }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031061}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031218}}
           .block--quicktabs-partners-or-people .view-partners .views-row .long-desc,
           .block--quicktabs-partners-or-people .view-people .views-row .long-desc {
             -webkit-box-shadow: 0 0 0 transparent;
@@ -1082,114 +1219,110 @@ html[lang=fi] .site-name a {
             box-shadow: 0 0 0 transparent;
             padding: 0; } }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031076}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031233}}
           .block--quicktabs-partners-or-people .view-partners .views-row .long-desc img,
           .block--quicktabs-partners-or-people .view-people .views-row .long-desc img {
             float: left;
             width: 40%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031083}}
-        .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
-        .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p,
-        .block--quicktabs-partners-or-people .view-people .views-row .long-desc h3,
-        .block--quicktabs-partners-or-people .view-people .views-row .long-desc p {
-          margin-left: 0; }
-          @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031083}}
-            .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
-            .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p,
-            .block--quicktabs-partners-or-people .view-people .views-row .long-desc h3,
-            .block--quicktabs-partners-or-people .view-people .views-row .long-desc p {
-              margin-left: 41.2%; } }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031092}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031242}}
     .block--quicktabs-partners-or-people .view-partners {
       background: url("../images/partners_default.png") no-repeat top left transparent;
       background-size: 40% auto; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031250}}
   .block--quicktabs-partners-or-people .view-partners .views-row .short-desc:hover,
   .block--quicktabs-partners-or-people .view-partners .views-row .long-desc:hover {
     cursor: pointer; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031254}}
   .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
   .block--quicktabs-partners-or-people .view-partners .views-row .short-desc p,
   .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
   .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p {
     margin-left: 130px; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031254}}
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc p,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p {
         margin-left: 160px; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031254}}
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc h3,
       .block--quicktabs-partners-or-people .view-partners .views-row .short-desc p,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
       .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p {
         margin-left: 222px; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031266}}
+  .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
+  .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p {
+    margin-left: 0; }
+    @media (min-width: 44em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031266}}
+      .block--quicktabs-partners-or-people .view-partners .views-row .long-desc h3,
+      .block--quicktabs-partners-or-people .view-partners .views-row .long-desc p {
+        margin-left: 41.2%; } }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031275}}
     .block--quicktabs-partners-or-people .view-people {
       background: url("../images/people_default.png") no-repeat top left transparent;
       background-size: 40% auto; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031123}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031282}}
   .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav {
     margin-bottom: 2em; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031284}}
     .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li {
       color: black;
       margin-right: 5px; }
       @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031284}}
         .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li {
           margin-right: 7px; } }
       @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031284}}
         .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li {
           margin-right: 10px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031293}}
       .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a {
         font-size: 2.5em; }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031293}}
           .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a {
             font-size: 4em; } }
         @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031293}}
           .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a {
             font-size: 6em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031302}}
       .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li.ui-state-active a {
         color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031305}}
       .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after {
         content: "&";
         font-size: 30px;
         margin-left: 5px; }
         @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031305}}
           .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after {
             font-size: 48px;
             margin-left: 7px; } }
         @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031305}}
           .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after {
             font-size: 72px;
             margin-left: 10px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031325}}
 .block--views-faq-block {
   margin: 0 auto;
   max-width: 24.6em; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031325}}
     .block--views-faq-block {
       padding-right: 33.89831%;
       max-width: 100%;
       position: relative; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031333}}
       .block--views-faq-block:after {
         background: url("../images/medium_flowers_flip.png") no-repeat 0 0 transparent;
         background-size: 268px auto;
@@ -1200,11 +1333,11 @@ html[lang=fi] .site-name a {
         right: -45px;
         width: 268px; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031166}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031325}}
     .block--views-faq-block {
       padding-right: 37.97468%;
       max-width: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031348}}
       .block--views-faq-block:after {
         background: url("../images/large_flowers_flip.png") no-repeat 0 0 transparent;
         background-size: 362px auto;
@@ -1214,64 +1347,64 @@ html[lang=fi] .site-name a {
         position: absolute;
         right: -45px;
         width: 362px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031359}}
   .block--views-faq-block h2 {
     font-size: 2.5em;
     margin: 0 0 0.5em; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031359}}
       .block--views-faq-block h2 {
         font-size: 4em;
         margin: 0 auto 0.5em;
         max-width: 9.5em; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031359}}
       .block--views-faq-block h2 {
         font-size: 6em; } }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031371}}
     .block--views-faq-block .view-faq {
       margin: 0 auto;
       max-width: 38em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031212}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031371}}
     .block--views-faq-block .view-faq {
       max-width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031379}}
   .block--views-faq-block .view-faq .question {
     font-size: 1.3em;
     text-transform: none; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031379}}
       .block--views-faq-block .view-faq .question {
         font-size: 1.5em; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031220}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031379}}
       .block--views-faq-block .view-faq .question {
         font-size: 2em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031389}}
   .block--views-faq-block .view-faq .views-row-last .ui-state-default .question {
     margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031392}}
   .block--views-faq-block .view-faq .answer {
     overflow: hidden; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031392}}
       .block--views-faq-block .view-faq .answer {
         font-size: 1.15em; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031233}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031392}}
       .block--views-faq-block .view-faq .answer {
         font-size: 1.3em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031400}}
     .block--views-faq-block .view-faq .answer p {
       margin: 0 0 1.5em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031248}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031407}}
 .ui-widget {
   font-size: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031255}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031414}}
 .ui-accordion .ui-corner-top,
 .ui-accordion .ui-corner-bottom,
 .ui-accordion .ui-corner-all {
@@ -1280,7 +1413,7 @@ html[lang=fi] .site-name a {
   -ms-border-radius: 0;
   -o-border-radius: 0;
   border-radius: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031263}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031422}}
 .ui-accordion .ui-state-active,
 .ui-accordion .ui-widget-content .ui-state-active,
 .ui-accordion .ui-widget-header .ui-state-active,
@@ -1291,15 +1424,15 @@ html[lang=fi] .site-name a {
   border: 0 none;
   color: black;
   font-weight: bold; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031269}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031428}}
 .ui-accordion .ui-widget-content {
   background: none;
   border: 0 none;
   color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031276}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031435}}
 .ui-accordion .ui-accordion-header a {
   color: black; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031280}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031439}}
 .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
   background: url("../images/icon_accordion_mobile.png") no-repeat 0 0 transparent;
   background-size: 7px auto;
@@ -1308,154 +1441,278 @@ html[lang=fi] .site-name a {
   margin-top: -7px;
   width: 7px; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031280}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031439}}
     .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
       background: url("../images/icon_accordion.png") no-repeat 0 0 transparent;
       background-size: 13px auto;
       height: 26px;
       margin-top: -13px;
       width: 13px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031454}}
 .ui-accordion .ui-accordion-header.ui-state-default a {
   padding: 0 0 0 23px; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031295}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031454}}
     .ui-accordion .ui-accordion-header.ui-state-default a {
       padding: 0 0 0 35px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031303}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031462}}
 .ui-accordion .ui-accordion-header.ui-state-active .ui-icon {
   display: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031306}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031465}}
 .ui-accordion .ui-accordion-header.ui-state-active a {
   padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031471}}
 .ui-accordion .ui-accordion-content {
   padding: 0; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031501}}
   .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
     background-image: url("../images/icon_accordion.png"); } }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031487}}
   .block--views-faq-block:after {
     background-image: url("../images/large_flowers_flip.png"); } }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031492}}
   .block--views-faq-block:after {
     background-image: url("../images/large_flowers_flip_retina.png"); } }
 
   @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031342}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031501}}
     .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
       background-image: url("../images/icon_accordion_retina.png"); } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031516}}
 .view-feed .views-row {
   margin: 0 0 4em; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031516}}
     .view-feed .views-row {
       margin: 0 0 5em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031357}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031516}}
     .view-feed .views-row {
       margin: 0 0 7em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031524}}
   .view-feed .views-row.views-row-last {
     margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031527}}
   .view-feed .views-row .node__title {
     font-size: 1.4em;
     font-weight: 200;
     text-transform: none; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031527}}
       .view-feed .views-row .node__title {
         font-size: 1.8em; } }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031527}}
       .view-feed .views-row .node__title {
         font-size: 2.2em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031538}}
   .view-feed .views-row .field--type-text-long {
     font-weight: 200; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031540}}
     .view-feed .views-row .field--type-text-long img {
       height: auto !important; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031385}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031544}}
   .view-feed .views-row .field--type-video-embed-field {
     max-width: 480px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031549}}
   .view-feed .views-row .field--type-video-embed-field,
   .view-feed .views-row .field--name-field-main-images {
     margin: 1.5em 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031551}}
     .view-feed .views-row .field--type-video-embed-field .field__item,
     .view-feed .views-row .field--name-field-main-images .field__item {
       line-height: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031555}}
   .view-feed .views-row .field--name-field-link {
     margin: 1.5em 0;
     word-break: break-all; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031555}}
       .view-feed .views-row .field--name-field-link {
         font-size: 1.2em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031403}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031562}}
   .view-feed .views-row .field--name-field-tags {
     margin: 1.5em 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031405}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031564}}
     .view-feed .views-row .field--name-field-tags .field__label {
       font-weight: normal; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031409}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031568}}
     .view-feed .views-row .field--name-field-tags .field__items .field__item {
       display: inline-block;
       margin-right: 5px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031412}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031571}}
       .view-feed .views-row .field--name-field-tags .field__items .field__item:after {
         content: ","; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031416}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031575}}
       .view-feed .views-row .field--name-field-tags .field__items .field__item:last-child:after {
         content: ""; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031424}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031583}}
   .view-feed .views-row .easy_social_box {
     margin: 1.5em 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031426}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031585}}
     .view-feed .views-row .easy_social_box .easy_social-widget {
       margin-right: 1em; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031595}}
 .block--views-feed-block {
   margin: 0 auto;
   max-width: 24.6em; }
   @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031595}}
     .block--views-feed-block {
       max-width: 67em; } }
   @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031436}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031595}}
     .block--views-feed-block {
       max-width: 100%; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031604}}
   .block--views-feed-block .block__title {
     font-size: 2.5em;
     margin: 0 auto 0.5em;
     text-transform: none; }
     @media (min-width: 44em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031604}}
       .block--views-feed-block .block__title {
         font-size: 4em; } }
     @media (min-width: 70em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031445}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031604}}
       .block--views-feed-block .block__title {
         font-size: 6em; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031615}}
   .block--views-feed-block .view {
     text-align: center; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031458}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031617}}
     .block--views-feed-block .view .view-content {
       text-align: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031460}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031619}}
       .block--views-feed-block .view .view-content .views-row.views-row-last {
         margin: 0 0 7em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031630}}
+.offering-header .page-title {
+  font-size: 3em;
+  margin: 0 0 0.25em;
+  text-transform: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031635}}
+.offering-header .field--name-field-logo {
+  float: left;
+  margin-right: 1em;
+  margin-top: 0.5em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031639}}
+  .offering-header .field--name-field-logo .field__item {
+    line-height: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031644}}
+.offering-header .field--name-field-customer-rating,
+.offering-header .field--name-field-offering-tags {
+  display: inline-block;
+  margin-right: 1em;
+  vertical-align: top; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031649}}
+.offering-header .field--name-field-offering-tags {
+  line-height: 22px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031651}}
+  .offering-header .field--name-field-offering-tags .field__item {
+    display: inline-block;
+    margin-right: 5px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031654}}
+    .offering-header .field--name-field-offering-tags .field__item:after {
+      content: ","; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031658}}
+    .offering-header .field--name-field-offering-tags .field__item:last-child:after {
+      content: ""; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031666}}
+.field--name-field-detailed-description {
+  font-size: 1.3em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031671}}
+.node-type-offering article {
+  margin-bottom: 3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031675}}
+.node-type-offering .block--quicktabs .block__title {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031678}}
+.node-type-offering .block--quicktabs .ui-tabs-nav {
+  margin-bottom: 3em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031683}}
+.node-type-offering aside .block__title {
+  display: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031686}}
+.node-type-offering aside .block {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 2em;
+  padding-bottom: 2em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031690}}
+  .node-type-offering aside .block:last-child {
+    border-bottom: 0 none;
+    margin-bottom: 0;
+    padding-bottom: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031695}}
+  .node-type-offering aside .block.block--views-product-download-block-block {
+    border-bottom: 0 none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031700}}
+.node-type-offering aside .view-product-download-block .views-field {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #fff;
+  overflow: hidden;
+  padding: 1em; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031705}}
+  .node-type-offering aside .view-product-download-block .views-field .views-label {
+    display: block;
+    float: left;
+    font-weight: bold;
+    margin-right: -70px;
+    width: 70px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031712}}
+  .node-type-offering aside .view-product-download-block .views-field .field-content {
+    display: block;
+    float: left;
+    margin-left: 70px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031718}}
+  .node-type-offering aside .view-product-download-block .views-field.views-field-field-page-title .field-content {
+    float: none;
+    margin-left: 0;
+    text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031727}}
+.node-type-offering aside .block--views-offerings-in-same-family-block .block__title {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031734}}
+.node--offering.node-teaser {
+  margin-bottom: 1em;
+  overflow: hidden; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031737}}
+  .node--offering.node-teaser a {
+    color: black; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031739}}
+    .node--offering.node-teaser a a {
+      color: #1090d0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031743}}
+  .node--offering.node-teaser .teaser-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-transform: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031749}}
+  .node--offering.node-teaser .field {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 85px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031753}}
+    .node--offering.node-teaser .field .field {
+      clear: both;
+      margin-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031758}}
+  .node--offering.node-teaser .field--name-field-logo {
+    float: left;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: -75px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/forgeweb\.styles\.scss}line{font-family:\000031763}}
+    .node--offering.node-teaser .field--name-field-logo .field__item {
+      line-height: 0; }

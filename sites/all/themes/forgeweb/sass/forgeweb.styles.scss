@@ -24,7 +24,16 @@
 $tab: 44em 12; // At 44em use 12 columns.
 $mobile_nav: 801px 12; // At 801px use 12 columns.
 $desk: 70em 16; // At 70em use 16 columns.
+$horz-spacing-unit: 1em;
 
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: 5px;
+
+$container-style: magic;
+$container-width: 1200px;
 
 .l-branding,
 .l-content {
@@ -70,6 +79,18 @@ img {
   }
 }
 
+// Home-icon retina styles
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .home-icon {
+    background-image: url('../images/footer_logo_mobile_retina.png');
+  }
+}
+
 .block--locale-language-content {
   font-size: 1.3em;
   padding: 1em 0;
@@ -83,6 +104,141 @@ img {
     }
   }
 }
+
+// Fivestar styles
+.fivestar-average-stars {
+  div.fivestar-widget-static,
+  div.fivestar-widget {
+    .star {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      > span {
+        &.on {
+          background: url('../images/star_sprite.png') no-repeat 0 0 transparent;
+          background-size: 18px auto;
+        }
+        &.off {
+          background: url('../images/star_sprite.png') no-repeat 0 -18px transparent;
+          background-size: 18px auto;
+        }
+      }
+      > a {
+        background: url('../images/star_sprite.png') no-repeat 0 -18px transparent;
+        background-size: 18px auto;
+      }
+      &.on > a {
+        background: url('../images/star_sprite.png') no-repeat 0 0 transparent;
+        background-size: 18px auto;
+      }
+      &.hover > a {
+        background: url('../images/star_sprite.png') no-repeat 0 -36px transparent;
+        background-size: 18px auto;
+      }
+    }
+    .cancel {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      a {
+        background: url('../images/star_sprite.png') no-repeat 0 -54px transparent;
+        background-size: 18px auto;
+      }
+    }
+  }
+  .ajax-progress-throbber {
+    display: none;
+  }
+  .description {
+    color: #777;
+    span {
+      display: none;
+      &.empty {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .form-item {
+    margin: 0;
+  }
+}
+
+
+// Fivestar retina styles
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .fivestar-average-stars {
+    div.fivestar-widget-static,
+    div.fivestar-widget {
+      .star {
+        > span {
+          &.on {
+            background-image: url('../images/star_sprite_retina.png');
+          }
+          &.off {
+            background-image: url('../images/star_sprite_retina.png');
+          }
+        }
+        > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+        &.on > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+        &.hover > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+      }
+      .cancel {
+        a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+      }
+    }
+  }
+}
+
+
+.l-listing {
+  .view-content {
+    @include container;  // Define these elements as the grid containers.
+  }
+}
+
+@include at-breakpoint($tab) {
+  .l-listing {
+    .view-content {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      .views-row {
+        @include span-columns(6, 12); // Span 6 out of 12 columns.
+        @include nth-omega(2n);
+      }
+    }
+  }
+}
+
+@include at-breakpoint($desk) {
+  .l-listing {
+    .view-content {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      .views-row {
+        @include span-columns(4, 12); // Span 4 out of 12 columns.
+        @include remove-nth-omega(2n);
+        @include nth-omega(3n);
+      }
+    }
+  }
+}
+
 
 // Reverting u-tabs default styles
 .ui-tabs {
@@ -709,11 +865,12 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page title
 
-.front .field--name-field-page-title {
+.front .page-title {
   font-size: 1.15em;
   font-weight: normal;
   margin: 0 auto;
   max-width: 27em;
+  text-transform: none;
   @include at-breakpoint($tab) {
     font-size: 1.65em;
   }
@@ -1068,7 +1225,7 @@ only screen and (min-resolution: 192dpi) {
         padding: 1em;
         top: 0;
         width: 100%;
-        z-index: 102;
+        z-index: 99;
         @include at-breakpoint($tab) {
           @include box-shadow(0 0 0 transparent);
           padding: 0;
@@ -1077,13 +1234,6 @@ only screen and (min-resolution: 192dpi) {
           @include at-breakpoint($tab) {
             float: left;
             width: 40%; 
-          }
-        }
-        h3,
-        p {
-          margin-left: 0;
-          @include at-breakpoint($tab) {
-            margin-left: 41.2%;
           }
         }
       }
@@ -1108,6 +1258,15 @@ only screen and (min-resolution: 192dpi) {
           }
           @include at-breakpoint($desk) {
             margin-left: 222px;
+          }
+        }
+      }
+      .long-desc {
+        h3,
+        p {
+          margin-left: 0;
+          @include at-breakpoint($tab) {
+            margin-left: 41.2%;
           }
         }
       }
@@ -1460,6 +1619,149 @@ only screen and (min-resolution: 192dpi) {
       .views-row.views-row-last {
         margin: 0 0 7em;
       }
+    }
+  }
+}
+
+
+// Offering page
+
+.offering-header {
+  .page-title {
+    font-size: 3em;
+    margin: 0 0 0.25em;
+    text-transform: none;
+  }
+  .field--name-field-logo {
+    float: left;
+    margin-right: 1em;
+    margin-top: 0.5em;
+    .field__item {
+      line-height: 0;
+    }
+  }
+  .field--name-field-customer-rating,
+  .field--name-field-offering-tags {
+    display: inline-block;
+    margin-right: 1em;
+    vertical-align: top;
+  }
+  .field--name-field-offering-tags {
+    line-height: 22px;
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.field--name-field-detailed-description {
+  font-size: 1.3em;
+}
+
+.node-type-offering {
+  article {
+    margin-bottom: 3em;
+  }
+  .block--quicktabs {
+    .block__title {
+      display: none;
+    }
+    .ui-tabs-nav {
+      margin-bottom: 3em;
+    }
+  }
+  aside {
+    .block__title {
+      display: none;
+    }
+    .block {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      &:last-child {
+        border-bottom: 0 none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      &.block--views-product-download-block-block {
+        border-bottom: 0 none;
+      }
+    }
+    .view-product-download-block {
+      .views-field {
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #fff;
+        overflow: hidden;
+        padding: 1em;
+        .views-label {
+          display: block;
+          float: left;
+          font-weight: bold;
+          margin-right: -70px;
+          width: 70px;
+        }
+        .field-content {
+          display: block;
+          float: left;
+          margin-left: 70px;
+        }
+        &.views-field-field-page-title {
+          .field-content {
+            float: none;
+            margin-left: 0;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+    .block--views-offerings-in-same-family-block {
+      .block__title {
+        display: block;
+      }
+    }
+  }
+}
+
+.node--offering.node-teaser {
+  margin-bottom: 1em;
+  overflow: hidden;
+  a {
+    color: $text-color;
+    a {
+      color: $link-color;
+    }
+  }
+  .teaser-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-transform: none;
+  }
+  .field {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 85px;
+    .field {
+      clear: both;
+      margin-left: 0;
+    }
+  }
+  .field--name-field-logo {
+    float: left;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: -75px;
+    .field__item {
+      line-height: 0;
     }
   }
 }
