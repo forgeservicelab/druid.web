@@ -274,10 +274,10 @@ function forge_web_offering_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '15',
         ),
       ),
       'display' => array(),

@@ -13,6 +13,55 @@ function forge_web_offering_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'offering_page';
+  $context->description = 'This context is triggered on offering nodes';
+  $context->tag = 'Offering';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'offering' => 'offering',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'quicktabs-product_page_quicktab' => array(
+          'module' => 'quicktabs',
+          'delta' => 'product_page_quicktab',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+        'views-product_download_block-block' => array(
+          'module' => 'views',
+          'delta' => 'product_download_block-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-offerings_in_same_family-block' => array(
+          'module' => 'views',
+          'delta' => 'offerings_in_same_family-block',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+    'menu' => 'node/38',
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Offering');
+  t('This context is triggered on offering nodes');
+  $export['offering_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'plaza';
   $context->description = '';
   $context->tag = 'Forge Plaza';
@@ -42,6 +91,38 @@ function forge_web_offering_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Forge Plaza');
   $export['plaza'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'plaza_front_page';
+  $context->description = '';
+  $context->tag = 'Forge Plaza';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'forge-plaza' => 'forge-plaza',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-offering_listing-block_1' => array(
+          'module' => 'views',
+          'delta' => 'offering_listing-block_1',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Forge Plaza');
+  $export['plaza_front_page'] = $context;
 
   return $export;
 }

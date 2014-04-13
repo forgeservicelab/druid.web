@@ -21,14 +21,18 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Group',
-    'weight' => '0',
+    'weight' => '14',
     'children' => array(
       0 => 'group_community',
       1 => 'group_info',
-      2 => 'group_intro',
-      3 => 'group_video',
+      2 => 'group_video',
+      3 => 'group_spesifications',
+      4 => 'group_pricing',
+      5 => 'group_support',
+      6 => 'group_terms_conditions',
+      7 => 'group_general',
     ),
-    'format_type' => 'tabs',
+    'format_type' => 'htabs',
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
@@ -77,17 +81,18 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Community',
-    'weight' => '3',
+    'weight' => '47',
     'children' => array(
       0 => 'field_customer_rating',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -124,6 +129,47 @@ function forge_web_offering_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_general|node|offering|form';
+  $field_group->group_name = 'group_general';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'General',
+    'weight' => '40',
+    'children' => array(
+      0 => 'field_category',
+      1 => 'field_collection',
+      2 => 'field_contact_information',
+      3 => 'field_detailed_description',
+      4 => 'field_experimental',
+      5 => 'field_live_demo_url',
+      6 => 'field_logo',
+      7 => 'field_offering_tags',
+      8 => 'field_oneliner',
+      9 => 'field_organizer',
+      10 => 'field_pricing_information',
+      11 => 'field_show_live_url_for_everyone',
+      12 => 'field_page_title',
+      13 => 'title',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-general field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_general|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_info|node|offering|form';
   $field_group->group_name = 'group_info';
   $field_group->entity_type = 'node';
@@ -131,31 +177,21 @@ function forge_web_offering_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
-    'label' => 'Info',
-    'weight' => '2',
+    'label' => 'Overview',
+    'weight' => '41',
     'children' => array(
-      0 => 'field_available_support',
-      1 => 'field_brief_overview_description',
-      2 => 'field_cancellation_refund_policy',
-      3 => 'field_contact_information',
-      4 => 'field_detailed_description',
-      5 => 'field_experimental',
-      6 => 'field_geographical_coverage',
-      7 => 'field_live_demo_url',
-      8 => 'field_more_information',
-      9 => 'field_pricing_information',
-      10 => 'field_show_live_url_for_everyone',
-      11 => 'field_terms_and_conditions',
-      12 => 'field_terms_and_conditions_outsi',
+      0 => 'field_brief_overview_description',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Overview',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'id' => '',
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_info|node|offering|form'] = $field_group;
@@ -268,6 +304,188 @@ function forge_web_offering_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_offering_header|node|offering|default';
+  $field_group->group_name = 'group_offering_header';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Offering header',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_customer_rating',
+      1 => 'field_logo',
+      2 => 'field_offering_tags',
+      3 => 'field_page_title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Offering header',
+      'instance_settings' => array(
+        'classes' => 'offering-header',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_offering_header|node|offering|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_oneliner_container|node|offering|teaser';
+  $field_group->group_name = 'group_oneliner_container';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Oneliner container',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_customer_rating',
+      1 => 'field_oneliner',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Oneliner container',
+      'instance_settings' => array(
+        'classes' => 'field',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_oneliner_container|node|offering|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_pricing|node|offering|form';
+  $field_group->group_name = 'group_pricing';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Pricing',
+    'weight' => '43',
+    'children' => array(
+      0 => 'field_pricing_description',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-pricing field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_pricing|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_spesifications|node|offering|form';
+  $field_group->group_name = 'group_spesifications';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Spesifications',
+    'weight' => '42',
+    'children' => array(
+      0 => 'field_spesifications',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-spesifications field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_spesifications|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_support|node|offering|form';
+  $field_group->group_name = 'group_support';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Support',
+    'weight' => '44',
+    'children' => array(
+      0 => 'field_available_support',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-support field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_support|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_terms_conditions|node|offering|form';
+  $field_group->group_name = 'group_terms_conditions';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Terms and conditions',
+    'weight' => '45',
+    'children' => array(
+      0 => 'field_cancellation_refund_policy',
+      1 => 'field_geographical_coverage',
+      2 => 'field_terms_and_conditions',
+      3 => 'field_terms_and_conditions_outsi',
+      4 => 'field_more_information',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-terms-conditions field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_terms_conditions|node|offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_video|node|offering|form';
   $field_group->group_name = 'group_video';
   $field_group->entity_type = 'node';
@@ -276,17 +494,18 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Video',
-    'weight' => '4',
+    'weight' => '46',
     'children' => array(
-      0 => 'field_upload_video',
+      0 => 'field_embed_a_video',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
