@@ -139,10 +139,10 @@ function forge_web_offering_field_group_info() {
     'label' => 'General',
     'weight' => '40',
     'children' => array(
-      0 => 'field_category',
-      1 => 'field_collection',
-      2 => 'field_contact_information',
-      3 => 'field_detailed_description',
+      0 => 'field_brief_overview_description',
+      1 => 'field_category',
+      2 => 'field_collection',
+      3 => 'field_contact_information',
       4 => 'field_experimental',
       5 => 'field_live_demo_url',
       6 => 'field_logo',
@@ -180,7 +180,7 @@ function forge_web_offering_field_group_info() {
     'label' => 'Overview',
     'weight' => '41',
     'children' => array(
-      0 => 'field_brief_overview_description',
+      0 => 'field_detailed_description',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
