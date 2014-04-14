@@ -29,11 +29,23 @@ function forge_web_offering_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-offering_slideshow-block' => array(
+          'module' => 'views',
+          'delta' => 'offering_slideshow-block',
+          'region' => 'content',
+          'weight' => '1',
+        ),
         'quicktabs-product_page_quicktab' => array(
           'module' => 'quicktabs',
           'delta' => 'product_page_quicktab',
           'region' => 'content',
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'quicktabs-product_page_quicktab_mobile' => array(
+          'module' => 'quicktabs',
+          'delta' => 'product_page_quicktab_mobile',
+          'region' => 'content',
+          'weight' => '3',
         ),
         'views-product_download_block-block' => array(
           'module' => 'views',
@@ -41,11 +53,17 @@ function forge_web_offering_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'views-offering_video-block' => array(
+          'module' => 'views',
+          'delta' => 'offering_video-block',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
         'views-offerings_in_same_family-block' => array(
           'module' => 'views',
           'delta' => 'offerings_in_same_family-block',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
       ),
     ),

@@ -25,12 +25,12 @@ function forge_web_offering_field_group_info() {
     'children' => array(
       0 => 'group_community',
       1 => 'group_info',
-      2 => 'group_video',
-      3 => 'group_spesifications',
-      4 => 'group_pricing',
-      5 => 'group_support',
-      6 => 'group_terms_conditions',
-      7 => 'group_general',
+      2 => 'group_spesifications',
+      3 => 'group_pricing',
+      4 => 'group_support',
+      5 => 'group_terms_conditions',
+      6 => 'group_general',
+      7 => 'group_media',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -81,7 +81,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Community',
-    'weight' => '47',
+    'weight' => '48',
     'children' => array(
       0 => 'field_customer_rating',
     ),
@@ -300,6 +300,35 @@ function forge_web_offering_field_group_info() {
     ),
   );
   $export['group_intro|node|service_offering|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_media|node|offering|form';
+  $field_group->group_name = 'group_media';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'offering';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_basegroup';
+  $field_group->data = array(
+    'label' => 'Media',
+    'weight' => '47',
+    'children' => array(
+      0 => 'field_embed_a_video',
+      1 => 'field_main_images',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-media field-group-htab',
+        'required_fields' => 1,
+        'id' => '',
+      ),
+    ),
+  );
+  $export['group_media|node|offering|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

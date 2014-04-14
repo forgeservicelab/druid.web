@@ -1,6 +1,8 @@
 name = Forge web product page
 core = 7.x
 package = forgeweb
+version = 7.x-1.0
+project = forge_web_product_page
 dependencies[] = fe_block
 dependencies[] = forge_web_offering
 dependencies[] = quicktabs
@@ -15,6 +17,7 @@ features[fe_block_settings][] = views-product_specifications-block
 features[fe_block_settings][] = views-product_support-block
 features[features_api][] = api:2
 features[quicktabs][] = product_page_quicktab
+features[quicktabs][] = product_page_quicktab_mobile
 features[views_view][] = product_comments
 features[views_view][] = product_download_block
 features[views_view][] = product_overview

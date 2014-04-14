@@ -253,6 +253,9 @@ only screen and (min-resolution: 192dpi) {
     border: 0 none;
     padding: 0;
     li {
+      @include at-breakpoint($tab) {
+        
+      }
       @include border-radius(0);
       
       border: 0 none;
@@ -299,9 +302,15 @@ only screen and (min-resolution: 192dpi) {
       border-top: 1px solid $border-color;
       border-left: 1px solid $border-color;
       color: $text-color;
-      padding: 1.5em 2em;
+      font-size: 0.9em;
+      padding: 1em 0.5em;
       position: relative;
-      text-transform: uppercase;
+      text-transform: none;
+      @include at-breakpoint($desk) {
+        font-size: 0.9em;
+        padding: 1.5em 2em;
+        text-transform: uppercase;
+      }
       &:hover {
         background-color: $tab-active;
       }
@@ -344,6 +353,63 @@ only screen and (min-resolution: 192dpi) {
         margin-left: -10px;
       }
     }
+  }
+}
+
+.quick-accordion.ui-accordion {
+  padding-bottom: 4em;
+  .ui-accordion-header {
+    margin-top: -1px;
+    a {
+      border-bottom: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      border-top: 1px solid $border-color;
+      font-size: 1.2em;
+      font-weight: normal;
+      text-align: center;
+    }
+    &.ui-state-default {
+      a {
+        padding: 1em;
+      }
+      .ui-icon {
+        display: none;
+      }
+    }
+    &.ui-state-active a {
+      background-color: $tab-active;
+      padding: 1em;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom: 0;
+      }
+      // Border
+      &:before {
+        border-top-color: $border-color;
+        border-width: 10px;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -10px;
+      }
+      // Fill
+      &:after {
+        border-top-color: $tab-active;
+        border-width: 10px;
+        bottom: -9px;
+        left: 50%;
+        margin-left: -10px;
+      }
+    }
+  }
+  .ui-accordion-content {
+    padding: 1em;
   }
 }
 
@@ -692,6 +758,9 @@ only screen and (min-resolution: 192dpi) {
     padding-bottom: 60px;
     padding-top: 40px;
   }
+  a {
+    color: #a8deef;
+  }
   .google-maps,
   .facebook,
   .twitter,
@@ -959,18 +1028,33 @@ only screen and (min-resolution: 192dpi) {
   background: #fff;
   border: 0 none;
   margin: 0 auto;
-  padding: 4em 3em;
   position: relative;
   @include at-breakpoint($tab) {
     margin: 0;
     min-height: 400px;
   }
-  .slides img {
-    height: auto;
+  .slides {
+    > li {
+      position: relative;
+      img {
+        height: auto;
+      }
+      .flex-caption {
+        background-color: rgba(0,0,0,0.3);
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        padding: 1em;
+        position: absolute;
+        width: 100%;
+      }
+    }
   }
-  .flex-control-nav {
-    bottom: 10px;
-    left: 0;
+  .flex-control-thumbs {
+    margin: 5px 0;
+    li img {
+      padding: 5px;
+    }
   }
   .flex-direction-nav {
     a {
@@ -990,6 +1074,14 @@ only screen and (min-resolution: 192dpi) {
         background-image: url('../images/icon_accordion_invert.png');
       }
     }
+  }
+}
+
+.front .flexslider {
+  padding: 4em 3em;
+  .flex-control-nav {
+    bottom: 10px;
+    left: 0;
   }
 }
 
@@ -1626,7 +1718,9 @@ only screen and (min-resolution: 192dpi) {
 
 // Offering page
 
+.company-header,
 .offering-header {
+  overflow: hidden;
   .page-title {
     font-size: 3em;
     margin: 0 0 0.25em;
@@ -1663,12 +1757,16 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.field--name-field-detailed-description {
-  font-size: 1.3em;
+.field--name-field-brief-overview-description {
+  font-size: 1.1em;
+  @include at-breakpoint($tab) {
+    font-size: 1.3em;
+  }
 }
 
 .node-type-offering {
-  article {
+  article,
+  .flexslider {
     margin-bottom: 3em;
   }
   .block--quicktabs {
@@ -1763,5 +1861,29 @@ only screen and (min-resolution: 192dpi) {
     .field__item {
       line-height: 0;
     }
+  }
+}
+
+.view-offering-listing {
+  margin-top: 2em;
+  @include at-breakpoint($tab) {
+    margin-top: 3em; 
+  }
+  @include at-breakpoint($desk) {
+    margin-top: 5em; 
+  }
+}
+
+.block--quicktabs-product-page-quicktab-mobile {
+  display: block;
+  @include at-breakpoint($tab) {
+    display: none;
+  }
+}
+
+.block--quicktabs-product-page-quicktab {
+  display: none;
+  @include at-breakpoint($tab) {
+    display: block;
   }
 }

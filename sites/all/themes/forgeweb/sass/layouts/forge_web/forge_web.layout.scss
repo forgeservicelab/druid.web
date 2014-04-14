@@ -31,13 +31,6 @@ $desk: 70em 16; // At 70em use 16 columns.
   margin-top: $vert-spacing-unit;
 }
 
-.l-region--highlighted,
-.l-region--help,
-.l-region--sidebar-first,
-.l-region--sidebar-second {
-  margin-bottom: $vert-spacing-unit;
-}
-
 .l-footer {
   .l-footer-wrapper {
     @include container;  // Define these elements as the grid containers.
@@ -113,7 +106,7 @@ $desk: 70em 16; // At 70em use 16 columns.
   }
   .has-sidebar-second {
     .l-content {
-      @include span-columns(12, 16); // Span 12 out of 16 columns.
+      @include span-columns(11, 16); // Span 12 out of 16 columns.
     }
     .l-region--sidebar-second {
       @include span-columns(4 omega, 16); // Span the last (omega) 4 columns of 16.
