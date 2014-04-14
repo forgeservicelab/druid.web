@@ -14,7 +14,7 @@ function forge_web_offering_menu_default_menu_links() {
   $menu_links['menu-forge-member-navigation_add-product-collection:node/add/product-family'] = array(
     'menu_name' => 'menu-forge-member-navigation',
     'link_path' => 'node/add/product-family',
-    'router_path' => 'node/add/product-family',
+    'router_path' => 'node/add',
     'link_title' => 'Add product collection',
     'options' => array(
       'attributes' => array(
