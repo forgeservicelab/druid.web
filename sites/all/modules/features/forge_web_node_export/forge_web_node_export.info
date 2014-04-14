@@ -1,0 +1,16 @@
+name = Forge web node export
+core = 7.x
+package = forgeweb
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = forge_landing_pages
+dependencies[] = forge_web_page
+dependencies[] = node_export_features
+dependencies[] = node_export_features
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[node_export_features][] = 11a49841-08aa-4ce3-bc35-077a6ca16a6a
+features[node_export_features][] = 5155b18c-e2ed-4b34-8cd9-ddc6ab871368
+features[node_export_features][] = 695e050d-da00-4b7c-bc94-893530e515e6
+features[node_export_features][] = fab349c1-8bbd-473c-8d6b-4818a548230a
