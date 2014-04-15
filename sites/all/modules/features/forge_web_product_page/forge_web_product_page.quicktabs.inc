@@ -55,7 +55,7 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     5 => array(
-      'bid' => 'views_delta_product_comments-block',
+      'bid' => 'node_comment_block_delta_node_comments',
       'hide_title' => 1,
       'title' => 'Comments',
       'weight' => '-95',
@@ -118,7 +118,7 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     4 => array(
-      'bid' => 'views_delta_product_comments-block',
+      'bid' => 'node_comment_block_delta_node_comments',
       'hide_title' => 1,
       'title' => 'Comments',
       'weight' => '-96',

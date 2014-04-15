@@ -13,6 +13,39 @@ function forge_web_offering_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'dashboard';
+  $context->description = 'This context is triggered on dashboard';
+  $context->tag = 'Forge Plaza';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'dashboard' => 'dashboard',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'menu-menu-forge-member-navigation' => array(
+          'module' => 'menu',
+          'delta' => 'menu-forge-member-navigation',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Forge Plaza');
+  t('This context is triggered on dashboard');
+  $export['dashboard'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'offering_page';
   $context->description = 'This context is triggered on offering nodes';
   $context->tag = 'Offering';
@@ -91,18 +124,7 @@ function forge_web_offering_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'menu-menu-forge-member-navigation' => array(
-          'module' => 'menu',
-          'delta' => 'menu-forge-member-navigation',
-          'region' => 'navigation',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
 
   // Translatables
@@ -119,7 +141,7 @@ function forge_web_offering_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'forge-plaza' => 'forge-plaza',
+        'plaza' => 'plaza',
       ),
     ),
   );

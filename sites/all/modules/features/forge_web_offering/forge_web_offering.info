@@ -31,6 +31,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = video_embed_field
 dependencies[] = views
+features[context][] = dashboard
 features[context][] = offering_page
 features[context][] = plaza
 features[context][] = plaza_front_page
