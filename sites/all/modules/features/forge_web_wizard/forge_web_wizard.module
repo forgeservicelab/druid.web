@@ -168,7 +168,6 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     if(!empty($forge_web_user_data->data)) {
       $form['#submit'][] = 'forge_web_wizard_user_profile_submit';
     }
-    dsm($form);
     $form['picture']['#access'] = FALSE;
   }
 }
