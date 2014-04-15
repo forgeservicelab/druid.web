@@ -240,6 +240,12 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+.comment {
+  h3 {
+    text-transform: none;
+  }
+}
+
 // Reverting u-tabs default styles
 .ui-tabs {
   @include border-radius(0);
@@ -545,13 +551,13 @@ only screen and (min-resolution: 192dpi) {
         a {
           border-bottom: 0 none;
           font-size: 1.4em;
+          font-weight: 400;
         }
         li {
           background: none;
           display: none;
           padding: 0;
           a {
-            font-weight: 200;
             padding-left: 5%;
             padding-top: 0;
             text-transform: none;
@@ -625,6 +631,7 @@ only screen and (min-resolution: 192dpi) {
           color: $menu-link-color;
           display: block;
           font-size: 1.15em;
+          font-weight: 400;
           text-transform: uppercase;
           @include at-breakpoint($desk) {
             font-size: 1.5em;
@@ -748,7 +755,6 @@ only screen and (min-resolution: 192dpi) {
 // Footer styles
 
 .l-footer {
-  font-weight: 200;
   background-color: $footer-bg;
   color: $footer-color;
   overflow: hidden;
@@ -1088,7 +1094,7 @@ only screen and (min-resolution: 192dpi) {
 
 .liftup-title {
   font-size: 1.2em;
-  font-weight: 200;
+  font-weight: 300;
   margin: 0 0 1em;
   text-transform: none;
   @include at-breakpoint($tab) {
@@ -1101,7 +1107,6 @@ only screen and (min-resolution: 192dpi) {
 
 .field--name-field-liftup-body {
   font-size: 1.5em;
-  font-weight: 200;
   @include at-breakpoint($tab) {
     font-size: 2em;
   }
@@ -1619,7 +1624,7 @@ only screen and (min-resolution: 192dpi) {
     }
     .node__title {
       font-size: 1.4em;
-      font-weight: 200;
+      font-weight: 300;
       text-transform: none;
       @include at-breakpoint($tab) {
         font-size: 1.8em;
@@ -1629,7 +1634,6 @@ only screen and (min-resolution: 192dpi) {
       }
     }
     .field--type-text-long {
-      font-weight: 200;
       img {
         height: auto !important;
       }
