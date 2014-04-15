@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Installation file for Disable user language module.
+ */
+
+/**
+ * Restore the module weight to its default value.
+ */
+function dul_update_7100() {
+  db_update('system')
+    ->fields(array('weight' => 0))
+    ->condition('name', 'dul')
+    ->execute();
+}

@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Disables the language selector in the user profile form.
+ */
+
+/**
+ * Implements hook_form_alter().
+ */
+function dul_form_alter(&$form, $form_state, $form_id) {
+  // The language selector is only displayed if there is more than one language.
+  if (drupal_multilingual()) {
+    if ($form_id == 'user_register_form' || ($form_id == 'user_profile_form' && $form['#user_category'] == 'account')) {
+      if (isset($form_state['user']) && !user_access('change own user language', $form_state['user'])) {
+        if (count(element_children($form['locale'])) > 1) {
+          $form['locale']['language']['#access'] = FALSE;
+        }
+        else {
+          $form['locale']['#access'] = FALSE;
+        }
+      }
+
+      if (user_access('administer users')) {
+        drupal_set_message(t('The user language for the current account cannot be changed; the account uses the language set in the <a href="@languages">languages page</a>.', array('@languages' => url('admin/settings/language'))), 'status', FALSE);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_init().
+ */
+function dul_init() {
+  if (!user_access('change own user language')) {
+    global $user;
+
+    $user->language = language_default('language');
+  }
+}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function dul_module_implements_alter(&$implementations, $hook) {
+  // Move dul_init(), and dul_form_alter() to the end of the list.
+  if ($hook == 'init' || $hook == 'form_alter') {
+    $group = $implementations['dul'];
+    unset($implementations['dul']);
+    $implementations['dul'] = $group;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function dul_permission() {
+  return array(
+    'change own user language' => array(
+      'title' => t('Change own user language'),
+      'description' => t('Set the language used for the user interface, and email messages for the user account.')
+    )
+  );
+}
