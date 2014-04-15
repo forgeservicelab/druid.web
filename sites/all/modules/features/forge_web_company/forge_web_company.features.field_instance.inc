@@ -40,6 +40,7 @@ Finland',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -50,7 +51,7 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -80,6 +81,7 @@ Finland',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -89,7 +91,49 @@ Finland',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-company-field_company_phone'
+  $field_instances['node-company-field_company_phone'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_company_phone',
+    'label' => 'Company phone',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -104,7 +148,7 @@ Finland',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -119,6 +163,7 @@ Finland',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -129,7 +174,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -160,6 +205,7 @@ Finland',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -170,7 +216,7 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -205,6 +251,7 @@ Finland',
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => 0,
+      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -272,6 +319,7 @@ Finland',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -297,7 +345,7 @@ Finland',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -312,6 +360,7 @@ Finland',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -323,7 +372,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -331,6 +380,7 @@ Finland',
   // Included for use with string extractors like potx.
   t('Company address');
   t('Company email');
+  t('Company phone');
   t('Company title');
   t('Company website');
   t('For example www.druid.fi');

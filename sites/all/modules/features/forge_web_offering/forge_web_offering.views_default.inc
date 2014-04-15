@@ -61,6 +61,7 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'offering' => 'offering',
+    'service_offering' => 'service_offering',
   );
 
   /* Display: Block */
@@ -162,6 +163,7 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'offering' => 'offering',
+    'service_offering' => 'service_offering',
   );
   /* Filter criterion: Content: Main images (field_main_images:fid) */
   $handler->display->display_options['filters']['field_main_images_fid']['id'] = 'field_main_images_fid';
@@ -212,7 +214,10 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['fields']['field_embed_a_video']['table'] = 'field_data_field_embed_a_video';
   $handler->display->display_options['fields']['field_embed_a_video']['field'] = 'field_embed_a_video';
   $handler->display->display_options['fields']['field_embed_a_video']['label'] = '';
+  $handler->display->display_options['fields']['field_embed_a_video']['element_type'] = '0';
   $handler->display->display_options['fields']['field_embed_a_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_embed_a_video']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_embed_a_video']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_embed_a_video']['click_sort_column'] = 'video_url';
   $handler->display->display_options['fields']['field_embed_a_video']['settings'] = array(
     'video_style' => 'normal',
@@ -244,6 +249,7 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'offering' => 'offering',
+    'service_offering' => 'service_offering',
   );
   /* Filter criterion: Content: Embed a video - Video URL */
   $handler->display->display_options['filters']['field_embed_a_video_video_url']['id'] = 'field_embed_a_video_video_url';

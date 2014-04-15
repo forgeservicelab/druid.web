@@ -12,26 +12,6 @@ function forge_web_product_page_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-product_comments-block'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'product_comments-block',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'forgeweb' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'forgeweb',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
   $export['views-product_download_block-block'] = array(
     'cache' => -1,
     'custom' => 0,
