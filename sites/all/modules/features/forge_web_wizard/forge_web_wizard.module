@@ -93,9 +93,6 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if(strstr($form_id, 'webform_client_form')) {
     drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
-    // wizard first step form redirects to wizard/registration/%/%
-    // it's defined in webform settings
-    // see this module hook_menu
     /*
     * Replace [nid:xx] in webform markup components
     */
@@ -127,6 +124,11 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         if($replacement) {
           $form['submitted'][$key]['#markup'] = $replacement;
         }
+      }
+    }
+    if(!empty($form['actions']['submit']['#value'])) {
+      if(!user_is_anonymous()) {
+        $form['actions']['submit']['#value'] = t('Fill in the application');
       }
     }
   }
