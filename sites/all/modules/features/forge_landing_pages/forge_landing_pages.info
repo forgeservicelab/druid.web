@@ -11,6 +11,7 @@ dependencies[] = locale
 dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = node_export_features
+dependencies[] = quicktabs
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = twitter_block

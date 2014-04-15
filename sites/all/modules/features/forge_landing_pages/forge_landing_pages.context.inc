@@ -32,10 +32,22 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-10',
         ),
+        'quicktabs-partners_or_people' => array(
+          'module' => 'quicktabs',
+          'delta' => 'partners_or_people',
+          'region' => 'middle_content',
+          'weight' => '-10',
+        ),
         'views-faq-block' => array(
           'module' => 'views',
           'delta' => 'faq-block',
           'region' => 'middle_content',
+          'weight' => '-9',
+        ),
+        'views-feed-block' => array(
+          'module' => 'views',
+          'delta' => 'feed-block',
+          'region' => 'after_content',
           'weight' => '-10',
         ),
       ),

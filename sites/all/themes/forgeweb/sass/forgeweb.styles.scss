@@ -935,6 +935,7 @@ only screen and (min-resolution: 192dpi) {
 // Front page title
 
 .front .page-title {
+  display: none; // Hide title on front page
   font-size: 1.15em;
   font-weight: normal;
   margin: 0 auto;
