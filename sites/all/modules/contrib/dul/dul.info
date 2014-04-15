@@ -1,0 +1,13 @@
+name = Disable user language
+description = Disables the language selector in the user profile form.
+core = 7.x
+dependencies[] = locale
+files[] = dul.module
+files[] = dul.install
+
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.0-beta1+4-dev"
+core = "7.x"
+project = "dul"
+datestamp = "1380575833"
+
