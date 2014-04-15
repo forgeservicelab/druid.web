@@ -625,3 +625,22 @@ function _forge_web_wizard_fillpdf_pdf_link($fid, $nids = NULL, $webform_arr = N
   
   return url('', array('absolute' => TRUE)) . "/fillpdf?fid={$fid}{$nids_uri}{$webforms_uri}{$sample}";
 }
+
+/**
+* Implementation of hook_menu_local_tasks_alter()
+ * we want to hide normal registration form
+*/
+function forge_web_wizard_menu_local_tasks_alter(&$data, $router_item, $root_path){
+  if(($router_item['path'] == 'user' || $router_item['path'] == 'user/password') && ($root_path == 'user' || $root_path == 'user/password')) {
+    unset($data['tabs'][0]['output'][0]);
+  }
+}
+
+/*
+ * Implementation of hook_menu_alter()
+ * do not allow permssion on user/register url
+ */
+function forge_web_wizard_menu_alter(&$items) {
+  $items['user/register']['access callback'] = FALSE;
+}
+
