@@ -14,7 +14,7 @@ Drupal.behaviors.myBehavior = {
     });
     $("input[name$='submitted[role]']").click(function() {
       val = $(this).val();
-      if(val == 'subcontractor') {
+      if(val == 'subcontractor' || val == 'several_of_these') {
         $(".form-submit").attr("disabled", "disabled");  
       }
       else {
