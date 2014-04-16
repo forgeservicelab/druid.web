@@ -142,22 +142,24 @@ function _wfm_process_elements(&$element, &$form_state, $submission, $display = 
   // Stop processing if this component does not accept multiple values.
   if (!_wfm_is_multiple($component)) {
     // Recurse through the element's children.
-    foreach (element_children($element) as $key) {
-      $sub_element = &$element[$key];
-      if (!isset($sub_element['#webform_component'])) {
-        continue;
+    if(!empty($element)) {
+      foreach (element_children($element) as $key) {
+        $sub_element = &$element[$key];
+        if (!isset($sub_element['#webform_component'])) {
+          continue;
+        }
+        $sub_component = $sub_element['#webform_component'];
+        $scid = $sub_element['#webform_component']['cid'];
+        $sub_element['#name'] = $element_name . "[$key]";
+        $sub_element['#parents'] = $element_parents;
+        $sub_element['#parents'][] = $key;
+        $sub_element['#wfm_parents'] = $element_wfm_parents;
+        $sub_element['#wfm_parents'][] = $scid;
+        if (empty($sub_component['children'])) {
+          array_unshift($sub_element['#wfm_parents'], $scid);
+        }
+        _wfm_process_elements($sub_element, $form_state, $submission, $display, $format);
       }
-      $sub_component = $sub_element['#webform_component'];
-      $scid = $sub_element['#webform_component']['cid'];
-      $sub_element['#name'] = $element_name . "[$key]";
-      $sub_element['#parents'] = $element_parents;
-      $sub_element['#parents'][] = $key;
-      $sub_element['#wfm_parents'] = $element_wfm_parents;
-      $sub_element['#wfm_parents'][] = $scid;
-      if (empty($sub_component['children'])) {
-        array_unshift($sub_element['#wfm_parents'], $scid);
-      }
-      _wfm_process_elements($sub_element, $form_state, $submission, $display, $format);
     }
     return;
   }
