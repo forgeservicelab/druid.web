@@ -105,7 +105,92 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+
+// Form styles
+form {
+  margin: 2em 0 0;
+  .form-item {
+    label {
+      font-weight: 300;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+    }
+    .description {
+      margin: 5px 0 0 5px;
+    }
+    &.form-type-textfield,
+    &.form-type-password,
+    &.form-type-email {
+      overflow: hidden;
+      padding: 0 0 0 140px;
+      label {
+        background-color: $tab-active;
+        border-bottom: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        display: block;
+        float: left;
+        min-height: 34px;
+        margin: 0 0 0 -140px;
+        padding: 8px 10px;
+        text-align: right;
+        width: 140px;
+      }
+      input {
+        @include box-shadow(0, 0, 0, transparent);
+        @include border-radius(0);
+        
+        border: 1px solid $border-color;
+        line-height: 16px;
+        min-height: 34px;
+        padding: 8px 10px;
+        width: 100%;
+        -webkit-appearance: none; // Remove IOS shadows
+      }
+    }
+    &.form-type-textarea {
+      label {
+        background-color: $tab-active;
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        margin: 0;
+        padding: 8px 10px;
+      }
+      textarea {
+        @include border-radius(0);
+        
+        border: 1px solid $border-color;
+        -webkit-appearance: none; // Remove IOS shadows
+      }
+    }
+  }
+  input[type='submit'] {
+    background-color: $button-color;
+    border: 1px solid darken($button-color, 10);
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+  }
+}
+
+form.user-pass {
+  .form-item {
+    padding: 0 0 0 250px;
+    label {
+      margin-left: -250px;
+      width: 250px;
+    }
+  }
+}
+
+.grippie {
+  display: none;
+}
+
 // Fivestar styles
+form.fivestar-widget {
+  margin: 0;
+}
 .fivestar-average-stars {
   div.fivestar-widget-static,
   div.fivestar-widget {
@@ -239,6 +324,38 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+// Comment styles
+.comment {
+  h3 {
+    font-size: 1.6em;
+    font-weight: 300;
+    text-transform: none;
+  }
+  a {
+    color: $link-color;
+  }
+  .submitted {
+    a {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.comments__form-title {
+  border-bottom: 1px solid $border-color;
+}
+
+.comment-form {
+  > div > .form-item:first-child {
+    display: none;
+  }
+  .text-format-wrapper > a {
+    display: none !important;
+  }
+  .field-name-comment-body {
+    margin-bottom: 1em;
+  }
+}
 
 // Reverting u-tabs default styles
 .ui-tabs {
@@ -545,13 +662,13 @@ only screen and (min-resolution: 192dpi) {
         a {
           border-bottom: 0 none;
           font-size: 1.4em;
+          font-weight: 400;
         }
         li {
           background: none;
           display: none;
           padding: 0;
           a {
-            font-weight: 200;
             padding-left: 5%;
             padding-top: 0;
             text-transform: none;
@@ -625,6 +742,7 @@ only screen and (min-resolution: 192dpi) {
           color: $menu-link-color;
           display: block;
           font-size: 1.15em;
+          font-weight: 400;
           text-transform: uppercase;
           @include at-breakpoint($desk) {
             font-size: 1.5em;
@@ -748,7 +866,6 @@ only screen and (min-resolution: 192dpi) {
 // Footer styles
 
 .l-footer {
-  font-weight: 200;
   background-color: $footer-bg;
   color: $footer-color;
   overflow: hidden;
@@ -1088,7 +1205,7 @@ only screen and (min-resolution: 192dpi) {
 
 .liftup-title {
   font-size: 1.2em;
-  font-weight: 200;
+  font-weight: 300;
   margin: 0 0 1em;
   text-transform: none;
   @include at-breakpoint($tab) {
@@ -1101,7 +1218,6 @@ only screen and (min-resolution: 192dpi) {
 
 .field--name-field-liftup-body {
   font-size: 1.5em;
-  font-weight: 200;
   @include at-breakpoint($tab) {
     font-size: 2em;
   }
@@ -1619,7 +1735,7 @@ only screen and (min-resolution: 192dpi) {
     }
     .node__title {
       font-size: 1.4em;
-      font-weight: 200;
+      font-weight: 300;
       text-transform: none;
       @include at-breakpoint($tab) {
         font-size: 1.8em;
@@ -1629,7 +1745,6 @@ only screen and (min-resolution: 192dpi) {
       }
     }
     .field--type-text-long {
-      font-weight: 200;
       img {
         height: auto !important;
       }
@@ -1721,6 +1836,7 @@ only screen and (min-resolution: 192dpi) {
 
 .company-header,
 .offering-header {
+  margin-bottom: 2em;
   overflow: hidden;
   .page-title {
     font-size: 3em;
@@ -1765,6 +1881,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.node-type-service-offering,
 .node-type-offering {
   article,
   .flexslider {
@@ -1791,14 +1908,21 @@ only screen and (min-resolution: 192dpi) {
         margin-bottom: 0;
         padding-bottom: 0;
       }
-      &.block--views-product-download-block-block {
+      &:first-child {
         border-bottom: 0 none;
       }
     }
+    .view-service-offering-sidebar-block,
     .view-product-download-block {
+      h3 {
+        float: none;
+        margin-left: 0;
+        text-transform: uppercase;
+      }
       .views-field {
         background-color: #f2f2f2;
         border-bottom: 1px solid #fff;
+        margin: 0;
         overflow: hidden;
         padding: 1em;
         .views-label {
@@ -1813,13 +1937,6 @@ only screen and (min-resolution: 192dpi) {
           float: left;
           margin-left: 70px;
         }
-        &.views-field-field-page-title {
-          .field-content {
-            float: none;
-            margin-left: 0;
-            text-transform: uppercase;
-          }
-        }
       }
     }
     .block--views-offerings-in-same-family-block {
@@ -1830,6 +1947,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.node--service-offering.node-teaser,
 .node--offering.node-teaser {
   margin-bottom: 1em;
   overflow: hidden;
@@ -1865,6 +1983,25 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.terms-conditions {
+  h3 {
+    font-size: 1.4em;
+    text-transform: none;
+  }
+  .field--type-file {
+    margin: 1em 0;
+    .file {
+      > * {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+  a {
+    color: $link-color;
+  }
+}
+
 .view-offering-listing {
   margin-top: 2em;
   @include at-breakpoint($tab) {
@@ -1875,6 +2012,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.block--quicktabs-service-offering-quicktab-mobile,
 .block--quicktabs-product-page-quicktab-mobile {
   display: block;
   @include at-breakpoint($tab) {
@@ -1882,9 +2020,27 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.block--quicktabs-service-offering-quicktab,
 .block--quicktabs-product-page-quicktab {
   display: none;
   @include at-breakpoint($tab) {
     display: block;
+  }
+}
+
+
+// Company page styles
+
+.block--views-company-offerings-block {
+  border-top: 1px solid $border-color;
+  margin-top: 3em;
+  @include at-breakpoint($desk) {
+    .view-content {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      .views-row {
+        @include span-columns(6, 12); // Span 6 out of 12 columns.
+        @include nth-omega(2n);
+      }
+    }
   }
 }

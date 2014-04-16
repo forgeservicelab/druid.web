@@ -48,7 +48,7 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     4 => array(
-      'bid' => 'views_delta_product_overview-block',
+      'bid' => 'views_delta_product_terms_conditions-block',
       'hide_title' => 1,
       'title' => 'Terms & conditions',
       'weight' => '-96',
@@ -118,10 +118,17 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
       'type' => 'block',
     ),
     4 => array(
+      'bid' => 'views_delta_product_terms_conditions-block',
+      'hide_title' => 1,
+      'title' => 'Terms & conditions',
+      'weight' => '-96',
+      'type' => 'block',
+    ),
+    5 => array(
       'bid' => 'node_comment_block_delta_node_comments',
       'hide_title' => 1,
       'title' => 'Comments',
-      'weight' => '-96',
+      'weight' => '-95',
       'type' => 'block',
     ),
   );
@@ -143,6 +150,7 @@ function forge_web_product_page_quicktabs_default_quicktabs() {
   t('Product page quicktab mobile');
   t('Specifications');
   t('Support');
+  t('Terms & conditions');
 
   $export['product_page_quicktab_mobile'] = $quicktabs;
 

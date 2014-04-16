@@ -11,6 +11,184 @@ function forge_web_company_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'company_offerings';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Company offerings';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Products and services';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['relationship'] = 'reverse_field_organizer_node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_organizer_node']['id'] = 'reverse_field_organizer_node';
+  $handler->display->display_options['relationships']['reverse_field_organizer_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_organizer_node']['field'] = 'reverse_field_organizer_node';
+  $handler->display->display_options['relationships']['reverse_field_organizer_node']['label'] = 'Offerings referencing company';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Page title (field_page_title) */
+  $handler->display->display_options['sorts']['field_page_title_value']['id'] = 'field_page_title_value';
+  $handler->display->display_options['sorts']['field_page_title_value']['table'] = 'field_data_field_page_title';
+  $handler->display->display_options['sorts']['field_page_title_value']['field'] = 'field_page_title_value';
+  $handler->display->display_options['sorts']['field_page_title_value']['relationship'] = 'reverse_field_organizer_node';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['relationship'] = 'reverse_field_organizer_node';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_organizer_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'offering' => 'offering',
+    'service_offering' => 'service_offering',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['company_offerings'] = array(
+    t('Master'),
+    t('Products and services'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Offerings referencing company'),
+    t('All'),
+    t('Block'),
+  );
+  $export['company_offerings'] = $view;
+
+  $view = new view();
+  $view->name = 'company_sidebar_block';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Company sidebar block';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Company address */
+  $handler->display->display_options['fields']['field_company_address']['id'] = 'field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['table'] = 'field_data_field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['field'] = 'field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['label'] = '';
+  $handler->display->display_options['fields']['field_company_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_address']['element_wrapper_type'] = '0';
+  /* Field: Content: Company website */
+  $handler->display->display_options['fields']['field_company_website']['id'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['table'] = 'field_data_field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['field'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['label'] = '';
+  $handler->display->display_options['fields']['field_company_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_website']['element_wrapper_type'] = '0';
+  /* Field: Content: Company phone */
+  $handler->display->display_options['fields']['field_company_phone']['id'] = 'field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['table'] = 'field_data_field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_company_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_phone']['element_wrapper_type'] = '0';
+  /* Field: Content: Company email */
+  $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['label'] = '';
+  $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_email']['element_wrapper_type'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'company' => 'company',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['company_sidebar_block'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('All'),
+    t('Block'),
+  );
+  $export['company_sidebar_block'] = $view;
+
+  $view = new view();
   $view->name = 'offering_contact_information';
   $view->description = '';
   $view->tag = 'default';

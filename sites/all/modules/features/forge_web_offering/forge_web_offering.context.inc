@@ -47,7 +47,7 @@ function forge_web_offering_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'offering_page';
-  $context->description = 'This context is triggered on offering nodes';
+  $context->description = 'This context is triggered on product offering nodes';
   $context->tag = 'Offering';
   $context->conditions = array(
     'node' => array(
@@ -100,14 +100,14 @@ function forge_web_offering_context_default_contexts() {
         ),
       ),
     ),
-    'menu' => 'node/38',
+    'menu' => '0',
   );
   $context->condition_mode = 0;
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Offering');
-  t('This context is triggered on offering nodes');
+  t('This context is triggered on product offering nodes');
   $export['offering_page'] = $context;
 
   $context = new stdClass();
