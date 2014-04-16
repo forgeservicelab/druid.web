@@ -92,10 +92,10 @@ function forge_web_partners_and_people_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '9',
         ),
         'language' => array(
-          'weight' => '2',
+          'weight' => '4',
         ),
       ),
       'display' => array(),

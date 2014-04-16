@@ -59,6 +59,7 @@
   }
   
   // Parnters & people block functionality
+  /* Not used anymore
   Drupal.behaviors.partnersPeopleBlock = {
     attach: function (context, settings) {
       $('#block-quicktabs-partners-or-people .view-partners .short-desc').click(function() {
@@ -70,7 +71,8 @@
       });
     }
   }
-   
+  */
+  
   // FAQ page scroll to clicked item
   Drupal.behaviors.scrollToFaqQuestion = {
     attach: function (context, settings) {
