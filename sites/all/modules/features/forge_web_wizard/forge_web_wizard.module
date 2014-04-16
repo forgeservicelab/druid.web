@@ -126,7 +126,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         }
       }
     }
-    if(!empty($form['actions']['submit']['#value'])) {
+    if(!empty($form['actions']['submit']['#value']) && !empty($form['submitted']['step_1'])) {
       if(!user_is_anonymous()) {
         $form['actions']['submit']['#value'] = t('Fill in the application');
       }
@@ -152,8 +152,8 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
         '#value' => $submission->data[5][0]
       );
       $need_computing_capasity = FALSE;
-      if($submission->data[14][0]) {
-        $need_computing_capasity = $submission->data[14][0];
+      if($submission->data[5][0] == 'partner_fsl_fpa_cra') {
+        $need_computing_capasity = 'cra';
       }
       $form['forge_web_need_cloud_computing_capasity'] = array(
         '#type' => 'value', 
@@ -194,7 +194,7 @@ function _forge_web_wizard_embed_filter_replace($match) {
       $body = field_get_items('node', $node, 'body');
     }
     $summary = $body[0]['summary'];
-    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid).'</p>';
+    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'))).'</p>';
     return $summary;
   }
   else {
@@ -478,10 +478,6 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $from = '';
   
   drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
-  // unset session data because we don't need it anymore
-  unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
-  unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
-  unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   
   return $output;
 }
@@ -588,7 +584,7 @@ function _forge_web_wizard_set_redirect_for_role_selection($role) {
   if($role == 'SDA') {
    $redir = 'wizard/service-development-contract';
   }
-  elseif($role == 'partner_fsl_fpa' || $role == 'fsl_fpa_cra') {
+  elseif(strstr($role, 'partner')) {
    $redir = 'wizard/forge-service-lab-partner-contract';
   }
   return $redir;
@@ -614,7 +610,7 @@ function _forge_web_wizard_fillpdf_pdf_link($fid, $nids = NULL, $webform_arr = N
   }
 
   if (is_array($webform_arr)) {
-    if ($webform_arr['nid']) {
+    if (!empty($webform_arr['nid'])) {
       $webform_arr = array($webform_arr);
     }
     foreach ($webform_arr as $key => $webform) {
