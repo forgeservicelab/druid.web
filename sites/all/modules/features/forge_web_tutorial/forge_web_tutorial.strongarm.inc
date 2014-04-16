@@ -21,7 +21,7 @@ function forge_web_tutorial_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_tutorial';
-  $strongarm->value = '[node:field_tutorial_title]';
+  $strongarm->value = '[node:field_page_title]';
   $export['ant_pattern_tutorial'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -161,7 +161,10 @@ function forge_web_tutorial_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'path' => array(
+          'weight' => '8',
         ),
       ),
       'display' => array(),

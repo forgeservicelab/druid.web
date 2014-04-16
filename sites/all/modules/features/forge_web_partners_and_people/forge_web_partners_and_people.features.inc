@@ -69,7 +69,7 @@ function forge_web_partners_and_people_image_default_styles() {
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 210,
-          'height' => 250,
+          'height' => 150,
         ),
         'weight' => 1,
       ),

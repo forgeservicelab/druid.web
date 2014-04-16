@@ -32,6 +32,15 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Website */
+  $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
+  $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
+  $handler->display->display_options['fields']['field_website']['label'] = '';
+  $handler->display->display_options['fields']['field_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_website']['type'] = 'link_absolute';
   /* Field: Content: Small image */
   $handler->display->display_options['fields']['field_small_image']['id'] = 'field_small_image';
   $handler->display->display_options['fields']['field_small_image']['table'] = 'field_data_field_small_image';
@@ -60,42 +69,18 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['fields']['field_short_description']['alter']['text'] = '[field_small_image]
 <h3>[field_page_title]</h3>
 [field_short_description]';
+  $handler->display->display_options['fields']['field_short_description']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_short_description']['alter']['path'] = '[field_website]';
+  $handler->display->display_options['fields']['field_short_description']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_short_description']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_short_description']['element_class'] = 'short-desc';
   $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_description']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_description']['element_default_classes'] = FALSE;
-  /* Field: Content: Large image */
-  $handler->display->display_options['fields']['field_large_image']['id'] = 'field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['table'] = 'field_data_field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['field'] = 'field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['label'] = '';
-  $handler->display->display_options['fields']['field_large_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_large_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_large_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_large_image']['settings'] = array(
-    'image_style' => 'partners_people_large',
-    'image_link' => '',
-  );
-  /* Field: Content: Long description */
-  $handler->display->display_options['fields']['field_long_description']['id'] = 'field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['table'] = 'field_data_field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['field'] = 'field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['label'] = '';
-  $handler->display->display_options['fields']['field_long_description']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_long_description']['alter']['text'] = '[field_large_image]
-<h3>[field_page_title]</h3>
-[field_long_description]';
-  $handler->display->display_options['fields']['field_long_description']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_long_description']['element_class'] = 'long-desc';
-  $handler->display->display_options['fields']['field_long_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_long_description']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_long_description']['element_default_classes'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -140,9 +125,6 @@ function forge_web_partners_and_people_views_default_views() {
     t('[field_small_image]
 <h3>[field_page_title]</h3>
 [field_short_description]'),
-    t('[field_large_image]
-<h3>[field_page_title]</h3>
-[field_long_description]'),
     t('Block'),
   );
   $export['partners'] = $view;
@@ -202,37 +184,10 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['fields']['field_short_description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_short_description']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_short_description']['element_default_classes'] = FALSE;
-  /* Field: Content: Large image */
-  $handler->display->display_options['fields']['field_large_image']['id'] = 'field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['table'] = 'field_data_field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['field'] = 'field_large_image';
-  $handler->display->display_options['fields']['field_large_image']['label'] = '';
-  $handler->display->display_options['fields']['field_large_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_large_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_large_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_large_image']['settings'] = array(
-    'image_style' => 'partners_people_large',
-    'image_link' => '',
-  );
-  /* Field: Content: Long description */
-  $handler->display->display_options['fields']['field_long_description']['id'] = 'field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['table'] = 'field_data_field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['field'] = 'field_long_description';
-  $handler->display->display_options['fields']['field_long_description']['label'] = '';
-  $handler->display->display_options['fields']['field_long_description']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_long_description']['alter']['text'] = '[field_large_image]
-<h3>[field_page_title]</h3>
-[field_long_description]';
-  $handler->display->display_options['fields']['field_long_description']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_long_description']['element_class'] = 'long-desc';
-  $handler->display->display_options['fields']['field_long_description']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_long_description']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_long_description']['element_default_classes'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Weight (field_weight) */
+  $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
+  $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
+  $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -277,9 +232,6 @@ function forge_web_partners_and_people_views_default_views() {
     t('[field_small_image]
 <h3>[field_page_title]</h3>
 [field_short_description]'),
-    t('[field_large_image]
-<h3>[field_page_title]</h3>
-[field_long_description]'),
     t('Block'),
   );
   $export['people'] = $view;

@@ -619,16 +619,16 @@ only screen and (min-resolution: 192dpi) {
 // Site slogan
 
 .site-slogan {
-  font-size: 2.8em;
+  font-size: 36px;
   margin: 0 auto 0.3em;
-  max-width: 8.8em;
+  max-width: 330px;
   text-align: left;
   @include at-breakpoint($tab) {
-    font-size: 4.3em;
+    font-size: 55px;
     margin-bottom: 0.2em;
   }
   @include at-breakpoint($desk) {
-    font-size: 6.2em;
+    font-size: 78px;
     max-width: 100%;
   }
 }
@@ -1077,11 +1077,11 @@ only screen and (min-resolution: 192dpi) {
   font-size: 1em;
   line-height: 1.2em;
   margin: 0 auto;
-  max-width: 24.6em;
+  max-width: 330px;
   text-align: left;
   @include at-breakpoint($tab) {
     font-size: 1.1em;
-    max-width: 34.5em;
+    max-width: 31em;
   }
   @include at-breakpoint($desk) {
     font-size: 1.667em;
@@ -1218,7 +1218,7 @@ only screen and (min-resolution: 192dpi) {
 .field--name-field-liftup-body {
   font-size: 1.5em;
   @include at-breakpoint($tab) {
-    font-size: 2em;
+    font-size: 1.8em;
   }
   @include at-breakpoint($desk) {
     font-size: 3em;
@@ -1365,9 +1365,9 @@ only screen and (min-resolution: 192dpi) {
 .block--quicktabs-partners-or-people {
   margin-left: auto;
   margin-right: auto;
-  max-width: 24.6em;
+  max-width: 330px;
   @include at-breakpoint($tab) {
-    max-width: 67em;
+    max-width: 880px;
   }
   @include at-breakpoint($desk) {
     max-width: 100%;
@@ -1380,13 +1380,19 @@ only screen and (min-resolution: 192dpi) {
     position: relative;
     @include at-breakpoint($tab) {
       min-height: 525px;
-      padding-left: 41.2%;
+      padding-left: 45%;
     }
     @include at-breakpoint($desk) {
       min-height: 730px;
     }
     .views-row {
-      margin: 0 0 1em;
+      margin: 0 0 2em;
+      @include at-breakpoint($tab) {
+        margin: 0 0 2em;
+      }
+      @include at-breakpoint($desk) {
+        margin: 0 0 4em;
+      }
       &.views-row-last {
         margin-bottom: 0;
       }
@@ -1412,13 +1418,16 @@ only screen and (min-resolution: 192dpi) {
       .short-desc {
         overflow: hidden;
         img {
-          float: left;
-          margin-right: 1em;
-          width: 40%;
+          float: right;
+          display: block;
+          margin: 0 10px 0 0;
+          width: 100px;
           @include at-breakpoint($tab) {
-            width: 34%;
+            float: left;
+            margin: 0 30px 0 0;
           }
           @include at-breakpoint($desk) {
+            margin: 0 4em 0 0;
             width: auto;
           }
         }
@@ -1441,7 +1450,7 @@ only screen and (min-resolution: 192dpi) {
         img {
           @include at-breakpoint($tab) {
             float: left;
-            width: 40%; 
+            width: 40%;
           }
         }
       }
@@ -1455,14 +1464,11 @@ only screen and (min-resolution: 192dpi) {
     .views-row {
       .short-desc,
       .long-desc {
-        &:hover {
-          cursor: pointer;
-        }
         h3,
         p {
-          margin-left: 130px;
+          margin: 0.5em 110px 0.5em 0;
           @include at-breakpoint($tab) {
-            margin-left: 160px;
+            margin-left: 130px;
           }
           @include at-breakpoint($desk) {
             margin-left: 222px;
@@ -1499,12 +1505,12 @@ only screen and (min-resolution: 192dpi) {
         margin-right: 10px;
       }
       a {
-        font-size: 2.5em;
+        font-size: 30px;
         @include at-breakpoint($tab) {
-          font-size: 4em;
+          font-size: 48px;
         }
         @include at-breakpoint($desk) {
-          font-size: 6em;
+          font-size: 72px;
         }
       }
       &.ui-state-active a {
@@ -1532,7 +1538,7 @@ only screen and (min-resolution: 192dpi) {
 
 .block--views-faq-block {
   margin: 0 auto;
-  max-width: 24.6em;
+  max-width: 330px;
   @include at-breakpoint($tab) {
     @include suffix(4, 12);
     
@@ -1565,21 +1571,22 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   h2 {
-    font-size: 2.5em;
+    font-size: 30px;
     margin: 0 0 0.5em;
     @include at-breakpoint($tab) {
-      font-size: 4em;
+      font-size: 48px;
       margin: 0 auto 0.5em;
-      max-width: 9.5em;
+      max-width: 530px;
     }
     @include at-breakpoint($desk) {
-      font-size: 6em;
+      font-size: 72px;
+      max-width: 100%;
     }
   }
   .view-faq {
     @include at-breakpoint($tab) {
       margin: 0 auto;
-      max-width: 38em;
+      max-width: 530px;
     }
     @include at-breakpoint($desk) {
       max-width: 100%;
@@ -1613,6 +1620,7 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .ui-widget {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
 }
 
@@ -1801,7 +1809,7 @@ only screen and (min-resolution: 192dpi) {
 
 .block--views-feed-block {
   margin: 0 auto;
-  max-width: 24.6em;
+  max-width: 330px;
   @include at-breakpoint($tab) {
     max-width: 67em;
   }
@@ -1809,14 +1817,14 @@ only screen and (min-resolution: 192dpi) {
     max-width: 100%;
   }
   .block__title {
-    font-size: 2.5em;
+    font-size: 30px;
     margin: 0 auto 0.5em;
     text-transform: none;
     @include at-breakpoint($tab) {
-      font-size: 4em;
+      font-size: 48px;
     }
     @include at-breakpoint($desk) {
-      font-size: 6em;
+      font-size: 72px;
     }
   }
   .view {
