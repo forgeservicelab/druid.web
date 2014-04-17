@@ -6,6 +6,7 @@ project = forge_landing_pages
 dependencies[] = context
 dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = forge_web_base
 dependencies[] = forge_web_page
 dependencies[] = locale
 dependencies[] = menu

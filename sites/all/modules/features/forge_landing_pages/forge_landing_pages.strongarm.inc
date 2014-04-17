@@ -116,7 +116,7 @@ function forge_landing_pages_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'node/1';
+  $strongarm->value = 'node/44';
   $export['site_frontpage'] = $strongarm;
 
   $strongarm = new stdClass();
