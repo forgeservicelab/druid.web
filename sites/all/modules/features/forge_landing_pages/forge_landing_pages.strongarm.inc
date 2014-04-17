@@ -35,7 +35,7 @@ function forge_landing_pages_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_forge_webform';
-  $strongarm->value = '1';
+  $strongarm->value = '2';
   $export['comment_forge_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -125,6 +125,13 @@ function forge_landing_pages_strongarm() {
   $strongarm->name = 'site_slogan';
   $strongarm->value = 'TEAM UP, LEARN, DESIGN, GO LIVE';
   $export['site_slogan'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'webform_node_forge_webform';
+  $strongarm->value = 1;
+  $export['webform_node_forge_webform'] = $strongarm;
 
   return $export;
 }
