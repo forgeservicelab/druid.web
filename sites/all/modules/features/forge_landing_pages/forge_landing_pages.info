@@ -46,6 +46,7 @@ features[variable][] = node_submitted_forge_webform
 features[variable][] = print_html_node_link_pages
 features[variable][] = site_frontpage
 features[variable][] = site_slogan
+features[variable][] = webform_node_forge_webform
 features[views_view][] = news_about_forge
 features_exclude[dependencies][ctools] = ctools
 forge_web[selectable_feature] = 1

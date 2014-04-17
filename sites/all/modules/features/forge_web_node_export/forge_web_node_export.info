@@ -12,7 +12,6 @@ dependencies[] = strongarm
 dependencies[] = text
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
-features[field_instance][] = node-tutorial-field_page_title
 features[node_export_features][] = 11a49841-08aa-4ce3-bc35-077a6ca16a6a
 features[node_export_features][] = 4ea9c5de-8612-4872-86f0-909e151ca7e0
 features[node_export_features][] = 5121b02d-e90a-407e-902e-7685f210c438
