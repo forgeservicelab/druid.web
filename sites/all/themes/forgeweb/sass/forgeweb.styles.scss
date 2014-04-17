@@ -291,6 +291,14 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+// General node body styles to tacke images added to content
+.not-front .field--name-body {
+  margin-bottom: 1em;
+  overflow: hidden;
+  img {
+    margin: 0 1em 1em;
+  }
+}
 
 .l-listing {
   .view-content {
@@ -1402,6 +1410,7 @@ only screen and (min-resolution: 192dpi) {
       margin-left: 320px;
     }
     @include at-breakpoint($desk) {
+      font-size: 1.2em;
       margin-left: 45%;
     }
     h2 {
@@ -1925,17 +1934,33 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Content page default styles
+
+.page-node {
+  aside {
+    border-top: 1px solid $border-color;
+    margin-top: 1em;
+    overflow: hidden;
+    @include at-breakpoint($tab) {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+  }
+}
+
 // Offering page
+
+.node-type-offering {
+  aside {
+    border-top: 0 none;
+    margin-top: 0;
+  }
+}
 
 .company-header,
 .offering-header {
   margin-bottom: 2em;
   overflow: hidden;
-  .page-title {
-    font-size: 3em;
-    margin: 0 0 0.25em;
-    text-transform: none;
-  }
   .field--name-field-logo {
     float: left;
     margin-right: 1em;
@@ -2040,6 +2065,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.node--project.node-teaser,
 .node--service-offering.node-teaser,
 .node--offering.node-teaser {
   margin-bottom: 1em;
@@ -2049,6 +2075,9 @@ only screen and (min-resolution: 192dpi) {
     a {
       color: $link-color;
     }
+  }
+  p {
+    margin: 0 0 1em;
   }
   .teaser-title {
     font-size: 1.2em;
@@ -2142,5 +2171,28 @@ only screen and (min-resolution: 192dpi) {
   .field-content {
     font-size: 1.3em;
     margin: 1em 0;
+  }
+}
+
+
+// Project page styles
+
+.view-project-sidebar {
+  margin-left: 1em;
+  .views-field {
+    font-size: 1em;
+    margin: 1em 0;
+    .views-label,
+    .field-content {
+      display: inline-block;
+    }
+    .views-label {
+      float: left;
+      margin-right: -120px;
+      width: 120px;
+    }
+    .field-content {
+      margin-left: 120px;
+    }
   }
 }
