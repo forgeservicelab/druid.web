@@ -12,3 +12,20 @@ function forge_social_media_ctools_plugin_api($module = NULL, $api = NULL) {
     return array("version" => "1");
   }
 }
+
+/**
+ * Implements hook_node_info().
+ */
+function forge_social_media_node_info() {
+  $items = array(
+    'tweet' => array(
+      'name' => t('Tweet'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
+}
