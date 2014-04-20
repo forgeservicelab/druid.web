@@ -64,6 +64,7 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
     'news' => 'news',
+    'tweet' => 'tweet',
   );
   /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
