@@ -478,6 +478,9 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $from = '';
   
   drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
   
   return $output;
 }
