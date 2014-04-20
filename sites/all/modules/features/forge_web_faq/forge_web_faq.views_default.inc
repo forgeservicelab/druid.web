@@ -31,18 +31,18 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_accordion';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'title',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
   $handler->display->display_options['style_options']['collapsible'] = 1;
-  $handler->display->display_options['style_options']['row-start-open'] = '0';
+  $handler->display->display_options['style_options']['row-start-open'] = 'none';
   $handler->display->display_options['style_options']['autoheight'] = 0;
   $handler->display->display_options['style_options']['disableifone'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
@@ -97,6 +97,7 @@ function forge_web_faq_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>'),
     t('Block'),
   );
   $export['faq'] = $view;
