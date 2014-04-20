@@ -291,6 +291,14 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+// General node body styles to tacke images added to content
+.not-front .field--name-body {
+  margin-bottom: 1em;
+  overflow: hidden;
+  img {
+    margin: 0 1em 1em;
+  }
+}
 
 .l-listing {
   .view-content {
@@ -1360,6 +1368,87 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// What & Why blocks
+
+.block--forge-web-base {
+  max-width: 330px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  @include at-breakpoint($tab) {
+    max-width: 880px;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  .block__title {
+    display: none;
+  }
+  .forge-web-block-image-wrapper {
+    height: 150px;
+    overflow: hidden;
+    img {
+      margin-top: -50%;
+      @include at-breakpoint($tab) {
+        margin-top: 0;
+      }
+    }
+    @include at-breakpoint($tab) {
+      float: left;
+      height: auto;
+      margin-right: -320px;
+      width: 300px;
+    }
+    @include at-breakpoint($desk) {
+      margin-right: -45%;
+      width: auto;
+    }
+  }
+  .forge-web-block-body-wrapper {
+    
+    @include at-breakpoint($tab) {
+      margin-left: 320px;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 1.2em;
+      margin-left: 45%;
+    }
+    h2 {
+      font-size: 30px;
+      text-transform: none;
+      @include at-breakpoint($tab) {
+        font-size: 48px;
+      }
+      @include at-breakpoint($desk) {
+        font-size: 72px;
+      }
+    }
+  }
+  &.block--forge-web-base-forge-web-why {
+    .forge-web-block-image-wrapper {
+      @include at-breakpoint($tab) {
+        float: right;
+        margin-left: -320px;
+        margin-right: 0;
+      }
+      @include at-breakpoint($desk) {
+        margin-left: -45%;
+        margin-right: 0;
+      }
+    }
+    .forge-web-block-body-wrapper {
+      @include at-breakpoint($tab) {
+        margin-left: 0;
+        margin-right: 320px;
+      }
+      @include at-breakpoint($desk) {
+        margin-left: 0;
+        margin-right: 45%;
+      }
+    }
+  }
+}
+
 // Partners & People -block styles
 
 .block--quicktabs-partners-or-people {
@@ -1427,7 +1516,7 @@ only screen and (min-resolution: 192dpi) {
             margin: 0 30px 0 0;
           }
           @include at-breakpoint($desk) {
-            margin: 0 4em 0 0;
+            margin: 0 50px 0 0;
             width: auto;
           }
         }
@@ -1471,7 +1560,7 @@ only screen and (min-resolution: 192dpi) {
             margin-left: 130px;
           }
           @include at-breakpoint($desk) {
-            margin-left: 222px;
+            margin-left: 260px;
           }
         }
       }
@@ -1590,6 +1679,12 @@ only screen and (min-resolution: 192dpi) {
     }
     @include at-breakpoint($desk) {
       max-width: 100%;
+    }
+    .view-header {
+      font-size: 1.2em;
+      @include at-breakpoint($tab) {
+        font-size: 1.6em;
+      }
     }
     .question {
       font-size: 1.3em;
@@ -1839,17 +1934,33 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Content page default styles
+
+.page-node {
+  aside {
+    border-top: 1px solid $border-color;
+    margin-top: 1em;
+    overflow: hidden;
+    @include at-breakpoint($tab) {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+  }
+}
+
 // Offering page
+
+.node-type-offering {
+  aside {
+    border-top: 0 none;
+    margin-top: 0;
+  }
+}
 
 .company-header,
 .offering-header {
   margin-bottom: 2em;
   overflow: hidden;
-  .page-title {
-    font-size: 3em;
-    margin: 0 0 0.25em;
-    text-transform: none;
-  }
   .field--name-field-logo {
     float: left;
     margin-right: 1em;
@@ -1954,6 +2065,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+.node--project.node-teaser,
 .node--service-offering.node-teaser,
 .node--offering.node-teaser {
   margin-bottom: 1em;
@@ -1963,6 +2075,9 @@ only screen and (min-resolution: 192dpi) {
     a {
       color: $link-color;
     }
+  }
+  p {
+    margin: 0 0 1em;
   }
   .teaser-title {
     font-size: 1.2em;
@@ -2056,5 +2171,28 @@ only screen and (min-resolution: 192dpi) {
   .field-content {
     font-size: 1.3em;
     margin: 1em 0;
+  }
+}
+
+
+// Project page styles
+
+.view-project-sidebar {
+  margin-left: 1em;
+  .views-field {
+    font-size: 1em;
+    margin: 1em 0;
+    .views-label,
+    .field-content {
+      display: inline-block;
+    }
+    .views-label {
+      float: left;
+      margin-right: -120px;
+      width: 120px;
+    }
+    .field-content {
+      margin-left: 120px;
+    }
   }
 }

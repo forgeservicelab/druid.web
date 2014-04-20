@@ -380,15 +380,12 @@ function forge_web_wizard_registration($nid, $sid) {
     // data index 5 = role selection webform component
     if(!empty($submission->data[5][0])) {
       $role = $submission->data[5][0];
-      // set role selection to cache because we need that data after user has clicked link in e-mail
+      if($role == 'partner_fsl_fpa_cra') {
+        $need_cloud_computing_capasity = 'cra';
+        cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
+      }
       cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
       $redir = _forge_web_wizard_set_redirect_for_role_selection($role);
-    }
-    // TODO: is there better way to get value?
-    // data index 14 = I need cloud computing webform capasity 
-    if(!empty($submission->data[14][0])) {
-      $need_cloud_computing_capasity = $submission->data[14][0];
-      cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
     }
     drupal_goto($redir);
   }
@@ -478,6 +475,9 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $from = '';
   
   drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
+  unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
   
   return $output;
 }

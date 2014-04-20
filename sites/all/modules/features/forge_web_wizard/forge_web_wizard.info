@@ -4,6 +4,7 @@ package = forgeweb
 dependencies[] = clientside_validation
 dependencies[] = clientside_validation_webform
 dependencies[] = ctools
+dependencies[] = dul
 dependencies[] = features
 dependencies[] = field_group
 dependencies[] = fillpdf

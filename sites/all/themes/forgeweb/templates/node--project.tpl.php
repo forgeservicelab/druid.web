@@ -81,15 +81,16 @@
     $translated_title = field_get_items('node', $node, 'field_page_title');
     $title_value = field_view_value('node', $node, 'field_page_title', $translated_title[0]);
   }
- 
-  $formatted_post_date = format_date($node->created, 'custom', 'j.m.Y');
 ?>
 <article<?php print $attributes; ?>>
+  <?php if ($teaser): ?>
+    <a href="<?php print $node_url; ?>">
+  <?php endif; ?>
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
     <header>
       <?php print render($title_prefix); ?>
       <?php if (!$page): ?>
-        <h2<?php print $title_attributes; ?>><?php print $formatted_post_date; ?> / <?php print render($title_value); ?></h2>
+        <h2 class="teaser-title"><?php print render($title_value); ?></h2>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
     </header>
@@ -109,9 +110,7 @@
       print render($content);
     ?>
   </div>
-  <?php if ($back_to_wizard): ?>
-    <?php print $back_to_wizard; ?>
+  <?php if ($teaser): ?>
+    </a>
   <?php endif; ?>
-  <?php print render($content['links']); ?>
-  <?php print render($content['comments']); ?>
 </article>
