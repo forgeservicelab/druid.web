@@ -109,7 +109,9 @@
       print render($content);
     ?>
   </div>
-
+  <?php if ($back_to_wizard): ?>
+    <?php print $back_to_wizard; ?>
+  <?php endif; ?>
   <?php print render($content['links']); ?>
   <?php print render($content['comments']); ?>
 </article>
