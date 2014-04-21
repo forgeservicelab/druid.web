@@ -45,7 +45,7 @@ $desk: 70em 16; // At 70em use 16 columns.
   .l-branding {
     @include span-columns(4, 12); // Span 4 out of 12 columns.
   }
-  .l-region--header{
+  .l-region--header {
     @include span-columns(8 omega, 12); // Span the last (omega) 8 columns of 12.
   }
   .l-region--navigation {
@@ -92,7 +92,7 @@ $desk: 70em 16; // At 70em use 16 columns.
   .l-branding {
     @include span-columns(6, 16); // Span 6 out of 16 columns.
   }
-  .l-region--header{
+  .l-region--header {
     @include span-columns(10 omega, 16); // Span the last (omega) 10 columns of 16.
   }
 

@@ -22,8 +22,8 @@ function forge_web_tutorial_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'forgeweb' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'forgeweb',
         'weight' => 0,
       ),

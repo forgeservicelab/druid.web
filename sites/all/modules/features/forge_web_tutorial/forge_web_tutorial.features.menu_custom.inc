@@ -15,8 +15,6 @@ function forge_web_tutorial_menu_default_menu_custom() {
     'menu_name' => 'menu-tutorial-menu',
     'title' => 'Tutorial menu',
     'description' => '',
-    'language' => 'und',
-    'i18n_mode' => 0,
   );
   // Translatables
   // Included for use with string extractors like potx.

@@ -14,18 +14,19 @@ function forge_web_tutorial_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Navigation to tutorial page';
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'forge_member_navi';
-  $fe_block_boxes->body = '<p><a class="red" href="https://plaza.forgeservicelab.fi/tutorial/define">Define</a></p>
+  $fe_block_boxes->body = '<div class="navigation-dashboard">
+<p><a class="red" href="https://forgeservicelab.fi/dashboard/define">Define</a></p>
 
-<p><a class="rose" href="https://plaza.forgeservicelab.fi/tutorial/explore">Explore</a></p>
+<p><a class="rose" href="https://forgeservicelab.fi/dashboard/explore">Explore</a></p>
 
-<p><a class="purple" href="https://plaza.forgeservicelab.fi/tutorial/learn">Learn</a></p>
+<p><a class="purple" href="https://forgeservicelab.fi/dashboard/learn">Learn</a></p>
 
-<p><a class="blue" href="https://plaza.forgeservicelab.fi/tutorial/build">Build</a></p>
+<p class="active"><a class="blue active" href="https://forgeservicelab.fi/dashboard/build">Build</a></p>
 
-<p><a class="blue" href="https://plaza.forgeservicelab.fi/tutorial/go-live">Go live</a></p>
+<p><a class="teal" href="https://forgeservicelab.fi/dashboard/go-live">Go live</a></p>
 
-<p><a class="blue" href="https://plaza.forgeservicelab.fi/tutorial/measure">Measure</a></p>
-';
+<p><a class="teal" href="https://forgeservicelab.fi/dashboard/measure">Measure</a></p>
+</div>';
 
   $export['forge_member_navi'] = $fe_block_boxes;
 

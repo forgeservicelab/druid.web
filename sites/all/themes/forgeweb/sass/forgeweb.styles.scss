@@ -296,7 +296,7 @@ only screen and (min-resolution: 192dpi) {
   margin-bottom: 1em;
   overflow: hidden;
   img {
-    margin: 0 1em 1em;
+    padding: 0 1em 1em;
   }
 }
 
@@ -645,10 +645,12 @@ only screen and (min-resolution: 192dpi) {
 // Navigation styles
 
 .l-navigation-wrapper {
+  padding-bottom: 10px;
   @include at-breakpoint($mobile_nav) {
     @include box-shadow(0 10px 10px rgba(0, 0, 0, 0.06));
 
     background-color: $menu-bg;
+    padding-bottom: 0;
     width: 100%;
     z-index: 100;
   }
@@ -2177,6 +2179,20 @@ only screen and (min-resolution: 192dpi) {
 
 // Project page styles
 
+.node--project {
+  .field--name-field-logo {
+    float: left;
+    margin-right: 1em;
+    .field__item {
+      line-height: 0;
+    }
+  }
+  .field--name-body {
+    clear: both;
+  }
+}
+
+
 .view-project-sidebar {
   margin-left: 1em;
   .views-field {
@@ -2193,6 +2209,197 @@ only screen and (min-resolution: 192dpi) {
     }
     .field-content {
       margin-left: 120px;
+    }
+  }
+}
+
+
+// Dashboard page styles
+
+.node-type-tutorial {
+  .l-region--highlighted {
+    @include at-breakpoint($tab) {
+      background: url('../images/dashboard_navigation_bg.jpg') repeat-x center center transparent;
+    }
+  }
+  .l-region--hero {
+    background: url('../images/decoration_edge_up.png') repeat-x 0 bottom #e2e2e2;
+    background-size: auto 12px;
+    overflow: hidden;
+    padding-bottom: 12px;
+    .view-tutorial-highlighted {
+      @include container;
+      margin: 0 auto;
+      @include at-breakpoint($tab) {
+        @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      }
+      h2 {
+        font-size: 2em;
+        text-transform: none;
+        @include at-breakpoint($tab) {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+  .l-region--sidebar-second {
+    background-color: #f3f3f3;
+    border-top: 0 none;
+    padding: 1em;
+    h2 {
+      font-size: 1.2em;
+      margin: 0 0 0.5em;
+    }
+    .block {
+      margin: 0 0 1.5em;
+      &:last-child {
+        margin: 0;
+      }
+      .views-row {
+        margin: 0 0 0.5em;
+        .views-field-field-attachments {
+          a {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+  .field--name-field-method,
+  .field--name-field-tools {
+    border-bottom: 2px dashed #f2f2f2;
+    margin: 0 0 1.5em;
+    padding: 0 0 1.5em;
+    .field__label {
+      font-size: 1.8em;
+      font-weight: 400;
+      margin: 0 0 0.25em;
+    }
+    .field__item {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.navigation-dashboard {
+  text-align: center;
+  > * {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+  @include at-breakpoint($tab) {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+    height: 212px;
+    margin: 0 auto;
+    > * {
+      @include span-columns(2, 12); // Span 6 out of 12 columns.
+      @include nth-omega(6n);
+      display: block;
+      &.active {
+        border: 1px solid #fff;
+        position: relative;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Border
+        &:before {
+          border-top-color: #FFFFFF;
+          border-width: 12px;
+          bottom: -12px;
+          left: 50%;
+          margin-left: -12px;
+        }
+        // Fill
+        &:after {
+          border-top-color: $tab-active;
+          border-width: 10px;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -10px;
+        }
+      }
+    }
+  }
+  a {
+    color: $text-color;
+    display: block;
+    padding: 10px 3px;
+    &.active {
+      background-color: #e2e2e2;
+    }
+    @include at-breakpoint($tab) {
+      background: url('../images/icon_dashboard_navi_blue.png') no-repeat center 90px transparent;
+      height: 210px;
+      padding: 40px 0 150px;
+      text-transform: uppercase;
+      &.red {
+        background-image: url('../images/icon_dashboard_navi_red.png');
+      }
+      &.purple {
+        background-image: url('../images/icon_dashboard_navi_purple.png');
+      }
+      &.rose {
+        background-image: url('../images/icon_dashboard_navi_rose.png');
+      }
+      &.teal {
+        background-image: url('../images/icon_dashboard_navi_teal.png');
+      }
+      &.active {
+        background-color: $tab-active;
+        background-image: url('../images/icon_dashboard_navi_active.png');
+        background-position: center 77px;
+        border: 1px solid $border-color;
+        position: relative;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Fill
+        &:after {
+          border-top-color: $border-color;
+          border-width: 11px;
+          bottom: -11px;
+          left: 50%;
+          margin-left: -11px;
+        }
+      }
+    }
+    @include at-breakpoint($desk) {
+      font-size: 1.3em;
+    }
+  }
+}
+
+
+// Dashboard page styles retina
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .node-type-tutorial {
+    .l-region--hero {
+      background-image: url('../images/decoration_edge_up_retina.png');
     }
   }
 }
