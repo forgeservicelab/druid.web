@@ -90,20 +90,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.block--locale-language-content {
-  font-size: 1.3em;
-  padding: 1em 0;
-  text-align: center;
-  ul {
-    margin: 0;
-    padding: 0;
-    li {
-      display: inline-block;
-      text-transform: uppercase;
-    }
-  }
-}
-
 
 // Form styles
 form {
@@ -634,6 +620,7 @@ only screen and (min-resolution: 192dpi) {
   @include at-breakpoint($tab) {
     font-size: 55px;
     margin-bottom: 0.2em;
+    max-width: 480px;
   }
   @include at-breakpoint($desk) {
     font-size: 78px;
@@ -810,6 +797,34 @@ only screen and (min-resolution: 192dpi) {
     position: absolute;
     right: 0;
     top: 0;
+    @include at-breakpoint($mobile_nav) {
+      display: block;
+    }
+    ul {
+      li {
+        padding: 30px 0;
+        
+        a:after {
+          color: #000;
+          content: "/";
+          padding: 0 2px 0 5px;
+        }
+        &.last a:after {
+          content: "";
+        }
+      }
+    }
+  }
+  
+  // Language menu styles
+  .block--locale-language-content,
+  .block--locale-language {
+    display: none;
+    padding-left: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 101;
     @include at-breakpoint($mobile_nav) {
       display: block;
     }
@@ -1091,7 +1106,7 @@ only screen and (min-resolution: 192dpi) {
   text-align: left;
   @include at-breakpoint($tab) {
     font-size: 1.1em;
-    max-width: 31em;
+    max-width: 480px;
   }
   @include at-breakpoint($desk) {
     font-size: 1.667em;
@@ -1560,6 +1575,7 @@ only screen and (min-resolution: 192dpi) {
           margin: 0.5em 110px 0.5em 0;
           @include at-breakpoint($tab) {
             margin-left: 130px;
+            margin-right: 0;
           }
           @include at-breakpoint($desk) {
             margin-left: 260px;
