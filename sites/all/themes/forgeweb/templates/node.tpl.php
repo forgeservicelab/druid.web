@@ -82,14 +82,14 @@
     $title_value = field_view_value('node', $node, 'field_page_title', $translated_title[0]);
   }
  
-  $formatted_post_date = format_date($node->created, 'custom', 'j.m.Y');
+  $formatted_post_date = format_date($node->created, 'custom', 'j.n.Y');
 ?>
 <article<?php print $attributes; ?>>
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
     <header>
       <?php print render($title_prefix); ?>
       <?php if (!$page): ?>
-        <h2<?php print $title_attributes; ?>><?php print $formatted_post_date; ?> / <?php print render($title_value); ?></h2>
+        <h2<?php print $title_attributes; ?>><?php if (!$page): ?><a href="<?php print $node_url; ?>"><?php endif; ?><?php print $formatted_post_date; ?> / <?php print render($title_value); ?><?php if (!$page): ?></a><?php endif; ?></h2>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
     </header>

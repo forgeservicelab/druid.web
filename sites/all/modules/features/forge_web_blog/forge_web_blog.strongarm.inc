@@ -222,7 +222,11 @@ function forge_web_blog_strongarm() {
       'display' => array(
         'easy_social_1' => array(
           'default' => array(
-            'weight' => '101',
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '3',
             'visible' => TRUE,
           ),
         ),

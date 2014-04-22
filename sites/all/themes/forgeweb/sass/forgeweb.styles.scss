@@ -1229,25 +1229,26 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .liftup-title {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 300;
   margin: 0 0 1em;
   text-transform: none;
   @include at-breakpoint($tab) {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   @include at-breakpoint($desk) {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 }
 
 .field--name-field-liftup-body {
-  font-size: 1.5em;
+  font-size: 1em;
+  margin: 1em 0 0;
   @include at-breakpoint($tab) {
-    font-size: 1.8em;
+    font-size: 1.2em;
   }
   @include at-breakpoint($desk) {
-    font-size: 3em;
+    font-size: 1.5em;
   }
   p {
     margin: 0 0 1em;
@@ -1362,6 +1363,30 @@ only screen and (min-resolution: 192dpi) {
     }
     .l-region {
       background-color: rgba(255,255,255,0.9);
+    }
+  }
+  .block--views-feed-block {
+    @include at-breakpoint($tab) {
+      @include span-columns(6, 12); // Span 6 out of 12 columns.
+    }
+    @include at-breakpoint($desk) {
+      @include span-columns(8, 12); // Span 8 out of 12 columns.
+    }
+  }
+  .block--fb-likebox {
+    margin: 2em 0;
+    @include at-breakpoint($tab) {
+      @include span-columns(6 omega, 12); // Span 6 out of 12 columns.
+      margin: 0;
+    }
+    @include at-breakpoint($desk) {
+      @include span-columns(4 omega, 12); // Span 4 out of 12 columns.
+    }
+    .block__title {
+      display: none;
+    }
+    .block__content {
+      text-align: center;
     }
   }
 }
@@ -1726,6 +1751,9 @@ only screen and (min-resolution: 192dpi) {
       @include at-breakpoint($desk) {
         font-size: 1.3em;
       }
+      a {
+        color: $link-color;
+      }
       p {
         margin: 0 0 1.5em;
       }
@@ -1887,25 +1915,8 @@ only screen and (min-resolution: 192dpi) {
       @include at-breakpoint($tab) {
         font-size: 1.2em;
       }
-    }
-    .field--name-field-tags {
-      margin: 1.5em 0;
-      .field__label {
-        font-weight: normal;
-      }
-      .field__items {
-        .field__item {
-          display: inline-block;
-          margin-right: 5px;
-          &:after {
-            content: ",";
-          }
-          &:last-child {
-            &:after {
-              content: "";
-            }
-          }
-        }
+      .field__item {
+        margin: 0 0 1em;
       }
     }
 
@@ -1914,6 +1925,33 @@ only screen and (min-resolution: 192dpi) {
       .easy_social-widget {
         margin-right: 1em;
       }
+    }
+  }
+}
+
+.page-feed {
+  .view-feed {
+    @include at-breakpoint($tab) {
+      @include span-columns(6, 12); // Span 6 out of 12 columns.
+    }
+    @include at-breakpoint($desk) {
+      @include span-columns(8, 12); // Span 8 out of 12 columns.
+    }
+  }
+  .block--fb-likebox {
+    margin: 2em 0;
+    @include at-breakpoint($tab) {
+      @include span-columns(6 omega, 12); // Span 6 out of 12 columns.
+      margin: 0;
+    }
+    @include at-breakpoint($desk) {
+      @include span-columns(4 omega, 12); // Span 4 out of 12 columns.
+    }
+    .block__title {
+      display: none;
+    }
+    .block__content {
+      text-align: center;
     }
   }
 }
@@ -1963,6 +2001,69 @@ only screen and (min-resolution: 192dpi) {
     @include at-breakpoint($tab) {
       border-top: 0 none;
       margin-top: 0;
+    }
+    .block {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      &:last-child {
+        border-bottom: 0 none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.field--name-field-tags {
+  margin: 1.5em 0;
+  .field__label {
+    font-weight: normal;
+  }
+  .field__items {
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+
+// Blog page
+
+.node-type-blog-post {
+  .l-region--sidebar-second {
+    background-color: #f3f3f3;
+    border-top: 0 none;
+    padding: 1em;
+    h2 {
+      font-size: 1.2em;
+      margin: 0 0 0.5em;
+    }
+    .block {
+      margin: 0 0 1.5em;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// News page
+
+.view-news-sidebar-block {
+  .views-row {
+    margin-bottom: 1em;
+    .views-field-field-link a {
+      word-wrap: break-word;
     }
   }
 }
@@ -2036,18 +2137,8 @@ only screen and (min-resolution: 192dpi) {
     .block__title {
       display: none;
     }
-    .block {
-      border-bottom: 1px solid $border-color;
-      margin-bottom: 2em;
-      padding-bottom: 2em;
-      &:last-child {
-        border-bottom: 0 none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      &:first-child {
-        border-bottom: 0 none;
-      }
+    .block:first-child {
+      border-bottom: 0 none;
     }
     .view-service-offering-sidebar-block,
     .view-product-download-block {
@@ -2301,10 +2392,15 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.navigation-dashboard {
+.block--menu-menu-tutorial-menu ul.menu {
+  margin: 0;
+  padding: 0;
   text-align: center;
+  white-space: nowrap;
   > * {
     display: inline-block;
+    list-style-image: none;
+    list-style-type: none;
     margin-bottom: 0;
     margin-top: 0;
     text-align: center;
@@ -2317,7 +2413,7 @@ only screen and (min-resolution: 192dpi) {
       @include span-columns(2, 12); // Span 6 out of 12 columns.
       @include nth-omega(6n);
       display: block;
-      &.active {
+      &.active-trail {
         border: 1px solid #fff;
         position: relative;
         &:before,
