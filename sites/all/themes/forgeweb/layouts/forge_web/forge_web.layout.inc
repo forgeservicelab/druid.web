@@ -6,6 +6,7 @@ template = forge-web-layout
 ; Regions
 regions[navigation]     = Navigation bar
 regions[highlighted]    = Highlighted
+regions[hero]           = Hero
 regions[content]        = Content
 regions[after_content]  = After content
 regions[sidebar_first]  = First sidebar

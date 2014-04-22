@@ -101,13 +101,10 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Responsible organization */
-  $handler->display->display_options['fields']['field_organization_reference']['id'] = 'field_organization_reference';
-  $handler->display->display_options['fields']['field_organization_reference']['table'] = 'field_data_field_organization_reference';
-  $handler->display->display_options['fields']['field_organization_reference']['field'] = 'field_organization_reference';
-  $handler->display->display_options['fields']['field_organization_reference']['label'] = 'Organization';
-  $handler->display->display_options['fields']['field_organization_reference']['settings'] = array(
-    'link' => 1,
-  );
+  $handler->display->display_options['fields']['field_responsible_organization']['id'] = 'field_responsible_organization';
+  $handler->display->display_options['fields']['field_responsible_organization']['table'] = 'field_data_field_responsible_organization';
+  $handler->display->display_options['fields']['field_responsible_organization']['field'] = 'field_responsible_organization';
+  $handler->display->display_options['fields']['field_responsible_organization']['label'] = 'Organization';
   /* Field: Content: Starting date */
   $handler->display->display_options['fields']['field_starting_date']['id'] = 'field_starting_date';
   $handler->display->display_options['fields']['field_starting_date']['table'] = 'field_data_field_starting_date';

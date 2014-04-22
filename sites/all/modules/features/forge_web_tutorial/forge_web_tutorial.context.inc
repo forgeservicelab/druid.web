@@ -29,11 +29,29 @@ function forge_web_tutorial_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-5' => array(
+        'block-7' => array(
           'module' => 'block',
-          'delta' => '5',
-          'region' => 'content',
+          'delta' => '7',
+          'region' => 'highlighted',
+          'weight' => '-8',
+        ),
+        'views-tutorial_highlighted-block' => array(
+          'module' => 'views',
+          'delta' => 'tutorial_highlighted-block',
+          'region' => 'hero',
           'weight' => '-10',
+        ),
+        'views-tutorial_sidebar_block-block' => array(
+          'module' => 'views',
+          'delta' => 'tutorial_sidebar_block-block',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'views-tutorial_sidebar_block-block_1' => array(
+          'module' => 'views',
+          'delta' => 'tutorial_sidebar_block-block_1',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
         ),
       ),
     ),

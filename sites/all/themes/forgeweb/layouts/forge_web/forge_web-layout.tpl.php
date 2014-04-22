@@ -15,6 +15,13 @@
     </div>
   <?php endif; ?>
   
+  
+  <?php if ($page['hero']): ?>
+    <div class="l-hero">
+      <?php print render($page['hero']); ?>
+    </div>
+  <?php endif; ?>
+  
   <div class="l-main">
     <div class="l-content " role="main">
       <a id="main-content"></a>
