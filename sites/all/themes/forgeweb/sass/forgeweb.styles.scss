@@ -1118,7 +1118,8 @@ only screen and (min-resolution: 192dpi) {
 // Front page highlighted area
 
 .front .l-highlighted {
-  background-color: #000;
+  background: url('../images/liftup_bg.jpg') no-repeat center center #000;
+  background-size: auto 100%;
   .l-region--highlighted {
     background: url('../images/decoration_edge_up.png') repeat-x -2px 0 transparent;
     background-size: auto 12px;
@@ -1220,7 +1221,7 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .front .flexslider {
-  padding: 4em 3em;
+  padding: 2em;
   .flex-control-nav {
     bottom: 10px;
     left: 0;
