@@ -126,7 +126,7 @@ function forge_web_news_strongarm() {
       'display' => array(
         'easy_social_1' => array(
           'default' => array(
-            'weight' => '101',
+            'weight' => '1',
             'visible' => TRUE,
           ),
           'liftup' => array(
@@ -138,7 +138,7 @@ function forge_web_news_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => TRUE,
           ),
         ),

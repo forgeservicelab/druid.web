@@ -122,9 +122,15 @@ function forge_web_blog_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-blog_authors-block_1' => array(
+        'views-blog_slideshow-block' => array(
           'module' => 'views',
-          'delta' => 'blog_authors-block_1',
+          'delta' => 'blog_slideshow-block',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+        'views-blog_sidebar_block-block' => array(
+          'module' => 'views',
+          'delta' => 'blog_sidebar_block-block',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
