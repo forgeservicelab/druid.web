@@ -2305,7 +2305,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'form_key' => 'i_want_several_of_these_info_text',
         'name' => 'I want several of these info text',
         'type' => 'markup',
-        'value' => '<p>I want several of these info text....</p>
+        'value' => '<p>If you need more than one role, please select first one role and get back once you have completed multistep form of wizard.</p>
 ',
         'extra' => array(
           'format' => 'filtered_html',
