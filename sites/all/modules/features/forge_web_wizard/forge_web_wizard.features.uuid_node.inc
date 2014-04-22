@@ -2046,7 +2046,7 @@ function forge_web_wizard_uuid_features_default_content() {
           'items' => 'SDA|I want to develop a world-class digital service
 partner_offer_expertise|I want to offer my expertise in digital service creation
 partner_offer_api_sw_datasets_tools|I want to offer APIs, software, datasets or tools
-partner_fsl_fpa_cra|I want to offer sofware, APIs datasets or tools and I need computing capacity to do that
+partner_fsl_fpa_cra|I want to offer APIs, software, datasets or tools and I need computing capacity to do that
 several_of_these|I want several of these
 subcontractor|I am a subcontractor of an organization that develops services in FORGE',
           'multiple' => 0,
