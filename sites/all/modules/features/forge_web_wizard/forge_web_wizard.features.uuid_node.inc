@@ -88,7 +88,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 1,
+    'nid' => 2,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
     'redirect_url' => 'wizard/cra-contract-submit/[node:nid]/[submission:sid]',
@@ -123,7 +123,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       35 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 35,
         'pid' => 0,
         'form_key' => 'contract',
@@ -141,7 +141,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       15 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 15,
         'pid' => 0,
         'form_key' => 'computing_capacity_organization_name',
@@ -173,7 +173,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       16 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 16,
         'pid' => 0,
         'form_key' => 'computing_capacity_business_id',
@@ -205,7 +205,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       17 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 17,
         'pid' => 0,
         'form_key' => 'computing_capacity_forge_partner_agreement_date',
@@ -230,7 +230,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       18 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 18,
         'pid' => 0,
         'form_key' => 'computing_capacity_administrative_contract',
@@ -254,7 +254,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       19 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 19,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_name',
@@ -286,7 +286,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       20 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 20,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_title',
@@ -318,7 +318,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       21 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 21,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_mobile_sms_capable',
@@ -350,7 +350,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       22 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 22,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_email',
@@ -382,7 +382,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       23 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 23,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_other_means_of_contact',
@@ -414,7 +414,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       24 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 24,
         'pid' => 18,
         'form_key' => 'computing_capacity_admin_invoicing_address',
@@ -446,7 +446,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       25 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 25,
         'pid' => 0,
         'form_key' => 'technical_contact',
@@ -470,7 +470,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       26 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 26,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_name',
@@ -502,7 +502,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       27 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 27,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_title',
@@ -534,7 +534,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       28 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 28,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_mobile_sms_capable',
@@ -566,7 +566,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       29 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 29,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_email',
@@ -595,7 +595,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       30 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 30,
         'pid' => 25,
         'form_key' => 'computing_capacity_technical_contact_other_means_of_contact',
@@ -627,7 +627,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       31 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 31,
         'pid' => 0,
         'form_key' => 'annual_service_fee',
@@ -651,7 +651,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       32 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 32,
         'pid' => 31,
         'form_key' => 'annual_service_fee_cost_of_cra',
@@ -689,7 +689,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       33 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 33,
         'pid' => 31,
         'form_key' => 'annual_service_fee_total_amount_in_euros',
@@ -727,7 +727,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       34 => array(
-        'nid' => 1,
+        'nid' => 2,
         'cid' => 34,
         'pid' => 0,
         'form_key' => 'expiration',
@@ -857,7 +857,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 2,
+    'nid' => 3,
     'confirmation' => '',
     'confirmation_format' => 'plain_text',
     'redirect_url' => 'wizard/sda-contract-submit/[node:nid]/[submission:sid]',
@@ -893,7 +893,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       83 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 83,
         'pid' => 0,
         'form_key' => 'contract',
@@ -911,7 +911,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       20 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'parties_involved',
@@ -934,7 +934,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       23 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 23,
         'pid' => 20,
         'form_key' => 'company_information',
@@ -957,7 +957,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       21 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 21,
         'pid' => 23,
         'form_key' => 'parties_involved_company_name',
@@ -988,7 +988,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       22 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 22,
         'pid' => 23,
         'form_key' => 'parties_involved_business_id',
@@ -1019,7 +1019,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       24 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 24,
         'pid' => 0,
         'form_key' => 'description_of_developed_service',
@@ -1042,7 +1042,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       25 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 25,
         'pid' => 24,
         'form_key' => 'desc_of_developer_service_name_of_the_project',
@@ -1073,7 +1073,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       26 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 26,
         'pid' => 24,
         'form_key' => 'desc_of_developer_service_concise_description_of_the_service_developed',
@@ -1102,7 +1102,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       27 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 27,
         'pid' => 0,
         'form_key' => 'administrative_contact',
@@ -1125,7 +1125,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       28 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 28,
         'pid' => 27,
         'form_key' => 'administrative_contact_name',
@@ -1156,7 +1156,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       29 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 29,
         'pid' => 27,
         'form_key' => 'administrative_contact_title',
@@ -1187,7 +1187,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       30 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 30,
         'pid' => 27,
         'form_key' => 'administrative_contact_mobile_sms_capable',
@@ -1218,7 +1218,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       31 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 31,
         'pid' => 27,
         'form_key' => 'administrative_contact_email',
@@ -1246,7 +1246,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       32 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 32,
         'pid' => 27,
         'form_key' => 'administrative_contact_other_means_of_contact',
@@ -1277,7 +1277,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       33 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 33,
         'pid' => 27,
         'form_key' => 'administrative_contact_invoicing_address',
@@ -1308,7 +1308,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       34 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 34,
         'pid' => 0,
         'form_key' => 'technical_contact',
@@ -1331,7 +1331,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       35 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 35,
         'pid' => 34,
         'form_key' => 'technical_contact_name',
@@ -1362,7 +1362,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       36 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 36,
         'pid' => 34,
         'form_key' => 'technical_contact_title',
@@ -1393,7 +1393,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       37 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 37,
         'pid' => 34,
         'form_key' => 'technical_contact_mobile_sms_capable',
@@ -1424,7 +1424,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       82 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 82,
         'pid' => 34,
         'form_key' => 'technical_contact_email',
@@ -1453,7 +1453,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       39 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 39,
         'pid' => 34,
         'form_key' => 'technical_contact_other_means_of_contact',
@@ -1484,7 +1484,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       40 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 40,
         'pid' => 0,
         'form_key' => 'the_service_developers_plans_to_use_the_following_sub_contractors_or_consultants',
@@ -1508,7 +1508,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       41 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 41,
         'pid' => 40,
         'form_key' => 'subcontractor_organization_name',
@@ -1539,7 +1539,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       42 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 42,
         'pid' => 40,
         'form_key' => 'subcontractor_business_id',
@@ -1570,7 +1570,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       43 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 43,
         'pid' => 0,
         'form_key' => 'other_contract_information',
@@ -1593,7 +1593,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       44 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 44,
         'pid' => 43,
         'form_key' => 'the_value_of_development_project',
@@ -1630,7 +1630,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       45 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 45,
         'pid' => 43,
         'form_key' => 'digile_service_fee',
@@ -1668,7 +1668,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       46 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 46,
         'pid' => 43,
         'form_key' => 'the_service_fee_is_due_payable_within',
@@ -1705,7 +1705,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       47 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 47,
         'pid' => 43,
         'form_key' => 'contract_termination',
@@ -1742,7 +1742,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       48 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 48,
         'pid' => 0,
         'form_key' => 'notices_to_service_developers',
@@ -1765,7 +1765,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       49 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 49,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_organization_name',
@@ -1796,7 +1796,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       50 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 50,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_attn',
@@ -1827,7 +1827,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       51 => array(
-        'nid' => 2,
+        'nid' => 3,
         'cid' => 51,
         'pid' => 48,
         'form_key' => 'notices_to_service_developers_address',
@@ -1950,7 +1950,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 3,
+    'nid' => 4,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
     'redirect_url' => 'wizard/registration/[node:nid]/[submission:sid]',
@@ -1995,7 +1995,7 @@ function forge_web_wizard_uuid_features_default_content() {
     'emails' => array(),
     'components' => array(
       17 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 17,
         'pid' => 0,
         'form_key' => 'contract',
@@ -2013,7 +2013,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 4,
         'pid' => 0,
         'form_key' => 'intro_text',
@@ -2035,7 +2035,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'page_num' => 1,
       ),
       5 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 5,
         'pid' => 0,
         'form_key' => 'role',
@@ -2069,7 +2069,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       6 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 6,
         'pid' => 0,
         'form_key' => 'i_want_to_develop_a_world_class_digital_service',
@@ -2093,7 +2093,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       7 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 7,
         'pid' => 6,
         'form_key' => 'sda_short_description',
@@ -2111,7 +2111,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       8 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 8,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_apis_software_datasets_or_tools',
@@ -2135,7 +2135,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       9 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 9,
         'pid' => 8,
         'form_key' => 'partner_fsl_fpa_short_description',
@@ -2152,7 +2152,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       10 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 10,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_my_expertise_in_digital_service_creation',
@@ -2176,7 +2176,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       11 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 11,
         'pid' => 10,
         'form_key' => 'fsl_fpa_cra_short_description',
@@ -2193,7 +2193,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       20 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_sw_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that',
@@ -2217,7 +2217,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       21 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 21,
         'pid' => 20,
         'form_key' => 'i_want_to_offer_sofware_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that_info_text',
@@ -2234,7 +2234,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       12 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 12,
         'pid' => 0,
         'form_key' => 'i_am_a_subcontractor_of_an_organization_that_develops_services_in_forge',
@@ -2258,7 +2258,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       13 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 13,
         'pid' => 12,
         'form_key' => 'subcontractor_short_description',
@@ -2275,7 +2275,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       18 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 18,
         'pid' => 0,
         'form_key' => 'i_want_several_of_these',
@@ -2299,7 +2299,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       19 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 19,
         'pid' => 18,
         'form_key' => 'i_want_several_of_these_info_text',
@@ -2317,7 +2317,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       2 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 2,
         'pid' => 0,
         'form_key' => 'step_1',
@@ -2335,7 +2335,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       3 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 3,
         'pid' => 0,
         'form_key' => 'i_want_to_develop_a_world_class_digital_service_contract_info',
@@ -2356,7 +2356,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       15 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 15,
         'pid' => 0,
         'form_key' => 'partner_contract_information',
@@ -2377,7 +2377,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 2,
       ),
       16 => array(
-        'nid' => 3,
+        'nid' => 4,
         'cid' => 16,
         'pid' => 0,
         'form_key' => 'fsl_fpa_cra_contract_link',
@@ -2397,7 +2397,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     ),
     'conditionals' => array(
       0 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 0,
         'andor' => NULL,
         'action' => 'show',
@@ -2406,7 +2406,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -8,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 0,
             'rid' => 0,
             'source_type' => 'component',
@@ -2417,7 +2417,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       1 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 1,
         'andor' => NULL,
         'action' => 'show',
@@ -2426,7 +2426,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -8,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 1,
             'rid' => 0,
             'source_type' => 'component',
@@ -2437,7 +2437,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       2 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 2,
         'andor' => NULL,
         'action' => 'show',
@@ -2446,7 +2446,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -7,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 2,
             'rid' => 0,
             'source_type' => 'component',
@@ -2457,7 +2457,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       3 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 3,
         'andor' => NULL,
         'action' => 'show',
@@ -2466,7 +2466,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -6,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 3,
             'rid' => 0,
             'source_type' => 'component',
@@ -2477,7 +2477,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       9 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 9,
         'andor' => NULL,
         'action' => 'show',
@@ -2486,7 +2486,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -5,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 9,
             'rid' => 0,
             'source_type' => 'component',
@@ -2497,7 +2497,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       8 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 8,
         'andor' => NULL,
         'action' => 'show',
@@ -2506,7 +2506,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -3,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 8,
             'rid' => 0,
             'source_type' => 'component',
@@ -2517,7 +2517,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       6 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 6,
         'andor' => 'or',
         'action' => 'show',
@@ -2526,7 +2526,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -2,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 6,
             'rid' => 0,
             'source_type' => 'component',
@@ -2535,7 +2535,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
             'value' => 'partner_offer_expertise',
           ),
           1 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 6,
             'rid' => 1,
             'source_type' => 'component',
@@ -2544,7 +2544,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
             'value' => 'partner_offer_api_sw_datasets_tools',
           ),
           2 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 6,
             'rid' => 2,
             'source_type' => 'component',
@@ -2555,7 +2555,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       10 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 10,
         'andor' => NULL,
         'action' => 'show',
@@ -2564,7 +2564,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => -1,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 10,
             'rid' => 0,
             'source_type' => 'component',
@@ -2575,7 +2575,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         ),
       ),
       11 => array(
-        'nid' => 3,
+        'nid' => 4,
         'rgid' => 11,
         'andor' => NULL,
         'action' => 'show',
@@ -2584,7 +2584,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'weight' => 0,
         'rules' => array(
           0 => array(
-            'nid' => 3,
+            'nid' => 4,
             'rgid' => 11,
             'rid' => 0,
             'source_type' => 'component',
@@ -2624,7 +2624,104 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'translate' => 0,
   'uuid' => '312d36a3-a198-4450-8aa6-5431b6ae7eda',
   'revision_uid' => 1,
-  'body' => array(),
+  'body' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<p><strong>What is this?</strong><br />
+In order to present your offerings at FORGE Plaza, you need to sign a FORGE Partner contract with DIGILE.<br />
+Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets the ground rules but as such is not involved in contracts between Partners and Service developers.</p>
+
+<p>FORGE Plaza works offering first (as opposed to provider first). An offering can be anything that is required for making digital services. It can be professional services or service building blocks such as graphical elements, software, APIs, datasets or tools. One FORGE Partner can display several and different kinds of offerings. If you need computing resource allocation in order to do this, you can request it together with FORGE Partnership with the set of contract documents that are linked to this page.</p>
+
+<p><strong>What are the benefits?</strong></p>
+
+<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
+Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.<br />
+Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
+Become member of FORGE Service Lab internal community.<br />
+Computing resource allocation entitles also to<br />
+access to FORGE technical Help desk</p>
+
+<p><br />
+<strong>How much computing capacity do I get?</strong></p>
+
+<ul>
+	<li>The basic allocation is</li>
+	<li>Virtual CPU cores: 1</li>
+	<li>RAM: 1 GBytes</li>
+	<li>Core instance storage: 10 GBytes/Virtual CPU core</li>
+	<li>Volume storage: 40 GBytes</li>
+	<li>Public IPv4 addresses: 1</li>
+	<li>Public IPv6 addresses: 0&nbsp; (Addresses will be provided as soon as OpenStack will have full IPv6 support)</li>
+	<li>Network bandwidth: Shared with other FORGE Affiliates</li>
+</ul>
+
+<p><strong>What is expected from a FORGE Partner?</strong><br />
+&nbsp;<br />
+Partner has to be an active owner for his offerings. This means<br />
+creating and maintaining own information at FORGE Plaza<br />
+being the point of contact for anyone who is interested in the offering<br />
+taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
+developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+
+<p><br />
+<strong>What makes a good Partner offering in Plaza?</strong></p>
+
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
+All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
+Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
+As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+
+<p><strong>What does it cost?</strong><br />
+The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.<br />
+For the basic computing resource allocation there is charge of 180 euros per month. Additional allocation is possible to have as multipliers of basic allocation. Each additional allocation costs 180 euros per month.</p>
+',
+        'summary' => '<p>This is for joining FORGE Plaza and getting computing resource allocation to display or showcase your offerings, or e.g. to set up a sandbox to allow others to test your offering. FORGE Plaza is the service catalogue, where you as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+',
+        'format' => 'filtered_html',
+        'safe_value' => '<p><strong>What is this?</strong><br />
+In order to present your offerings at FORGE Plaza, you need to sign a FORGE Partner contract with DIGILE.<br />
+Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets the ground rules but as such is not involved in contracts between Partners and Service developers.</p>
+<p>FORGE Plaza works offering first (as opposed to provider first). An offering can be anything that is required for making digital services. It can be professional services or service building blocks such as graphical elements, software, APIs, datasets or tools. One FORGE Partner can display several and different kinds of offerings. If you need computing resource allocation in order to do this, you can request it together with FORGE Partnership with the set of contract documents that are linked to this page.</p>
+<p><strong>What are the benefits?</strong></p>
+<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
+Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.<br />
+Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
+Become member of FORGE Service Lab internal community.<br />
+Computing resource allocation entitles also to<br />
+access to FORGE technical Help desk</p>
+<p>
+<strong>How much computing capacity do I get?</strong></p>
+<ul><li>The basic allocation is</li>
+<li>Virtual CPU cores: 1</li>
+<li>RAM: 1 GBytes</li>
+<li>Core instance storage: 10 GBytes/Virtual CPU core</li>
+<li>Volume storage: 40 GBytes</li>
+<li>Public IPv4 addresses: 1</li>
+<li>Public IPv6 addresses: 0  (Addresses will be provided as soon as OpenStack will have full IPv6 support)</li>
+<li>Network bandwidth: Shared with other FORGE Affiliates</li>
+</ul><p><strong>What is expected from a FORGE Partner?</strong><br />
+ <br />
+Partner has to be an active owner for his offerings. This means<br />
+creating and maintaining own information at FORGE Plaza<br />
+being the point of contact for anyone who is interested in the offering<br />
+taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
+developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+<p>
+<strong>What makes a good Partner offering in Plaza?</strong></p>
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
+All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
+Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
+As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+<p><strong>What does it cost?</strong><br />
+The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.<br />
+For the basic computing resource allocation there is charge of 180 euros per month. Additional allocation is possible to have as multipliers of basic allocation. Each additional allocation costs 180 euros per month.</p>
+',
+        'safe_summary' => '<p>This is for joining FORGE Plaza and getting computing resource allocation to display or showcase your offerings, or e.g. to set up a sandbox to allow others to test your offering. FORGE Plaza is the service catalogue, where you as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+',
+      ),
+    ),
+  ),
   'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
@@ -2713,7 +2810,76 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'translate' => 0,
   'uuid' => 'acf32012-8e98-41bd-bb23-67a265dc06f6',
   'revision_uid' => 1,
-  'body' => array(),
+  'body' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<p><strong>What is this?</strong><br />
+In order to get access to and get&nbsp;computing&nbsp;resource allocation in FORGE Service Lab each Service Developer needs to sign a Service Development Agreement with DIGILE. Only one Service Development Agreement is made for a group of Service Developers developing the same service within FORGE Service Lab.</p>
+
+<p><br />
+<strong>What are the benefits?</strong><br />
+After the contract agreement Service Developers will get the following benefits in use:<br />
+Open development ecosystem and environment which enables each participant to share and learn together efficiently in order create world-class services</p>
+
+<ul>
+	<li>Reference model and tools to develop services from idea to implementation/commercialization</li>
+	<li>Cloud Computing resources and tools for agile and fast ways to develop and test the services</li>
+	<li>Technical support function</li>
+	<li>Access to FORGE Plaza; a network and catalogue of the potential partners</li>
+	<li>Service creation and ecosystem management guidance and support during the FORGE project</li>
+	<li>Crowdsourcing methods and tools enabling to create user centric services</li>
+</ul>
+
+<p><strong>What is expected from a service developer?</strong><br />
+In order to create the agreement as a Service Developer at FORGE following factors should be stated:</p>
+
+<ul>
+	<li>Description of the project output – What kind of service concept we are aiming at – What is the purpose of the project?</li>
+	<li>Background and reasonings of the project. – Why this project?</li>
+	<li>Owner of the project</li>
+	<li>Level of the service internationalization and which continent is the main target for the service markets</li>
+	<li>Key stakeholders participating to the project</li>
+	<li>Budget estimation</li>
+	<li>Preliminary schedule of the kick-off in FORGE and estimation of the project duration in FORGE</li>
+</ul>
+
+<p><strong>What does it cost?</strong><br />
+&nbsp;<br />
+When entering FORGE Service Lab, participants pay to DIGILE a service fee – the equivalent of about 5% of the size of the project budget that is to be undertaken in FORGE. This service fee covers FORGE’s operating costs (operational and technical support as well as maintenance costs, such as electricity), and the replacement of equipment at a later stage.</p>
+',
+        'summary' => '<p>In order to get access to and get&nbsp;computing&nbsp;resource allocation in FORGE Service Lab each Service Developer needs to sign a Service Development Agreement with DIGILE. Only one Service Development Agreement is made for a group of Service Developers developing the same service within FORGE Service Lab.</p>
+',
+        'format' => 'filtered_html',
+        'safe_value' => '<p><strong>What is this?</strong><br />
+In order to get access to and get computing resource allocation in FORGE Service Lab each Service Developer needs to sign a Service Development Agreement with DIGILE. Only one Service Development Agreement is made for a group of Service Developers developing the same service within FORGE Service Lab.</p>
+<p>
+<strong>What are the benefits?</strong><br />
+After the contract agreement Service Developers will get the following benefits in use:<br />
+Open development ecosystem and environment which enables each participant to share and learn together efficiently in order create world-class services</p>
+<ul><li>Reference model and tools to develop services from idea to implementation/commercialization</li>
+<li>Cloud Computing resources and tools for agile and fast ways to develop and test the services</li>
+<li>Technical support function</li>
+<li>Access to FORGE Plaza; a network and catalogue of the potential partners</li>
+<li>Service creation and ecosystem management guidance and support during the FORGE project</li>
+<li>Crowdsourcing methods and tools enabling to create user centric services</li>
+</ul><p><strong>What is expected from a service developer?</strong><br />
+In order to create the agreement as a Service Developer at FORGE following factors should be stated:</p>
+<ul><li>Description of the project output – What kind of service concept we are aiming at – What is the purpose of the project?</li>
+<li>Background and reasonings of the project. – Why this project?</li>
+<li>Owner of the project</li>
+<li>Level of the service internationalization and which continent is the main target for the service markets</li>
+<li>Key stakeholders participating to the project</li>
+<li>Budget estimation</li>
+<li>Preliminary schedule of the kick-off in FORGE and estimation of the project duration in FORGE</li>
+</ul><p><strong>What does it cost?</strong><br />
+ <br />
+When entering FORGE Service Lab, participants pay to DIGILE a service fee – the equivalent of about 5% of the size of the project budget that is to be undertaken in FORGE. This service fee covers FORGE’s operating costs (operational and technical support as well as maintenance costs, such as electricity), and the replacement of equipment at a later stage.</p>
+',
+        'safe_summary' => '<p>In order to get access to and get computing resource allocation in FORGE Service Lab each Service Developer needs to sign a Service Development Agreement with DIGILE. Only one Service Development Agreement is made for a group of Service Developers developing the same service within FORGE Service Lab.</p>
+',
+      ),
+    ),
+  ),
   'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
@@ -2864,7 +3030,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     'data' => array(),
   ),
   'webform' => array(
-    'nid' => 6,
+    'nid' => 8,
     'confirmation' => '',
     'confirmation_format' => 'filtered_html',
     'redirect_url' => 'wizard/partner-contract-submit/[node:nid]/[submission:sid]',
@@ -2899,7 +3065,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
     'emails' => array(),
     'components' => array(
       1 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 1,
         'pid' => 0,
         'form_key' => 'partner_organization_name',
@@ -2931,7 +3097,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       2 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 2,
         'pid' => 0,
         'form_key' => 'partner_business_id',
@@ -2963,7 +3129,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       3 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 3,
         'pid' => 0,
         'form_key' => 'partner_offering_description',
@@ -2993,7 +3159,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       4 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 4,
         'pid' => 0,
         'form_key' => 'cost_payment',
@@ -3017,7 +3183,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       5 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 5,
         'pid' => 4,
         'form_key' => 'cost_payment_service_fee_in_euros',
@@ -3049,7 +3215,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       6 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 6,
         'pid' => 4,
         'form_key' => 'due_payable_in_number_of_days',
@@ -3081,7 +3247,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       7 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 7,
         'pid' => 0,
         'form_key' => 'duration_of_contract',
@@ -3113,7 +3279,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       8 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 8,
         'pid' => 0,
         'form_key' => 'notices_to_partner',
@@ -3137,7 +3303,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       9 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 9,
         'pid' => 8,
         'form_key' => 'notices_to_partner_organization_name',
@@ -3169,7 +3335,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       10 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 10,
         'pid' => 8,
         'form_key' => 'notices_to_partner_attn',
@@ -3201,7 +3367,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       11 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 11,
         'pid' => 8,
         'form_key' => 'notices_to_partner_address',
@@ -3233,7 +3399,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       12 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 12,
         'pid' => 0,
         'form_key' => 'contract',
@@ -3251,7 +3417,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'page_num' => 1,
       ),
       13 => array(
-        'nid' => 6,
+        'nid' => 8,
         'cid' => 13,
         'pid' => 0,
         'form_key' => 'i_need_cloud_computing_capasity',
@@ -3299,7 +3465,75 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'translate' => 0,
   'uuid' => 'dcd17082-a71b-4150-9a9a-900d87614b62',
   'revision_uid' => 1,
-  'body' => array(),
+  'body' => array(
+    'und' => array(
+      0 => array(
+        'value' => '<p>This is for joining FORGE Plaza, the service catalogue, where you as a digital service professional or as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+
+<p><strong>What is this?</strong><br />
+In order to present your offerings at FORGE Plaza, you need to sign a FORGE Partner contract with DIGILE.<br />
+Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets the ground rules but as such is not involved in contracts between Partners and Service developers.</p>
+
+<p>FORGE Plaza works offering first (as opposed to provider first). An offering can be anything that is required for making digital services. It can be professional services or service building blocks such as graphical elements, software, APIs, datasets or tools. One FORGE Partner can display several and different kinds of offerings. If you need computing resource allocation, that is also available on additional cost but you need to request that separately. &nbsp;</p>
+
+<p><strong>What are the benefits?</strong></p>
+
+<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
+Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view<br />
+Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
+Become member of FORGE Service Lab internal community</p>
+
+<p><strong>What is expected from a FORGE Partner?</strong><br />
+&nbsp;<br />
+Partner has to be an active owner for his offerings. This means<br />
+creating and maintaining own information at FORGE Plaza<br />
+being the point of contact for anyone who is interested in the offering<br />
+taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
+developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+
+<p><strong>What makes a good Partner offering in Plaza?</strong></p>
+
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
+All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
+Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
+As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+
+<p><strong>What does it cost?</strong><br />
+The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.</p>
+',
+        'summary' => '<p>This is for joining FORGE Plaza, the service catalogue, where you as a digital service professional or as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+',
+        'format' => 'filtered_html',
+        'safe_value' => '<p>This is for joining FORGE Plaza, the service catalogue, where you as a digital service professional or as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+<p><strong>What is this?</strong><br />
+In order to present your offerings at FORGE Plaza, you need to sign a FORGE Partner contract with DIGILE.<br />
+Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets the ground rules but as such is not involved in contracts between Partners and Service developers.</p>
+<p>FORGE Plaza works offering first (as opposed to provider first). An offering can be anything that is required for making digital services. It can be professional services or service building blocks such as graphical elements, software, APIs, datasets or tools. One FORGE Partner can display several and different kinds of offerings. If you need computing resource allocation, that is also available on additional cost but you need to request that separately.  </p>
+<p><strong>What are the benefits?</strong></p>
+<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
+Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view<br />
+Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
+Become member of FORGE Service Lab internal community</p>
+<p><strong>What is expected from a FORGE Partner?</strong><br />
+ <br />
+Partner has to be an active owner for his offerings. This means<br />
+creating and maintaining own information at FORGE Plaza<br />
+being the point of contact for anyone who is interested in the offering<br />
+taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
+developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+<p><strong>What makes a good Partner offering in Plaza?</strong></p>
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
+All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
+Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
+As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+<p><strong>What does it cost?</strong><br />
+The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.</p>
+',
+        'safe_summary' => '<p>This is for joining FORGE Plaza, the service catalogue, where you as a digital service professional or as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
+',
+      ),
+    ),
+  ),
   'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
