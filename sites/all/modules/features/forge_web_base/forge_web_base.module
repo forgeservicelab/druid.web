@@ -26,9 +26,7 @@ function forge_web_base_block_info() {
  */
 function forge_web_base_block_configure($delta = 0) {
   $form = array();
-  if ($delta) {
-    $custom_block = block_custom_block_get($delta);
-  }
+  
   $form['body_field_'.$delta] = array(
     '#type' => 'text_format',
     '#title' => t('Block body'),
@@ -87,6 +85,8 @@ function forge_web_base_block_save($delta = '', $edit = array()) {
  */
 function forge_web_base_block_view($delta = 0) {
   $block = array();
+  $block_data = db_query("SELECT * FROM {block} WHERE delta = :delta", array(':delta' => $delta))->fetchAssoc();
+  $block['title'] = t($block_data['title']);
   $block['content'] = _forge_web_base_block_view($delta);
  
   return $block;
@@ -111,7 +111,7 @@ function _forge_web_base_block_view($delta) {
   */
   $image = theme('image_style', $image_style);
   
-  $text = variable_get('body_field_'.$delta, '');
+  $text = t(variable_get('body_field_'.$delta, ''));
   
   $output = '<div class="forge-web-block-image-wrapper">';
   $output .= $image;
