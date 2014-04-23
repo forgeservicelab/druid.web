@@ -104,8 +104,10 @@ form {
       margin: 5px 0 0 5px;
     }
     &.form-type-textfield,
+    &.webform-component-textfield,
     &.form-type-password,
-    &.form-type-email {
+    &.form-type-email,
+    &.webform-component-email {
       overflow: hidden;
       padding: 0 0 0 140px;
       label {
@@ -120,6 +122,19 @@ form {
         padding: 8px 10px;
         text-align: right;
         width: 140px;
+        &.error {
+          background-color: #D31959;
+          border: 0 none;
+          clear: both;
+          color: #FFFFFF;
+          float: none;
+          margin: 0;
+          min-height: 0;
+          padding: 4px 5px;
+          text-align: left;
+          text-transform: none;
+          width: auto;
+        }
       }
       input {
         @include box-shadow(0, 0, 0, transparent);
@@ -133,7 +148,14 @@ form {
         -webkit-appearance: none; // Remove IOS shadows
       }
     }
-    &.form-type-textarea {
+    &.form-type-radio {
+      margin-bottom: 0.6em;
+      label {
+        text-transform: none;
+      }
+    }
+    &.form-type-textarea,
+    &.webform-component-textarea {
       label {
         background-color: $tab-active;
         border-left: 1px solid $border-color;
@@ -148,13 +170,45 @@ form {
         border: 1px solid $border-color;
         -webkit-appearance: none; // Remove IOS shadows
       }
+      .grippie {
+        display: none;
+      }
     }
   }
+  
+  fieldset,
+  .webform-component-fieldset {
+    background-color: #F2F2F2;
+    border: 0 none;
+    display: block;
+    margin: 2em 0;
+    padding: 0;
+    legend {
+      background-color: #FFFFFF;
+      font-size: 1.5em;
+      padding-bottom: 0.5em;
+      width: 100%;
+    }
+    .fieldset-wrapper {
+      padding: 0 1em;
+    }
+  }
+  
   input[type='submit'] {
     background-color: $button-color;
     border: 1px solid darken($button-color, 10);
+    color: $text-color;
     font-size: 1.2em;
     padding: 0.5em 1.5em;
+  }
+  
+  .form-actions {
+    input {
+      margin-right: 1em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
   }
 }
 
@@ -164,6 +218,16 @@ form.user-pass {
     label {
       margin-left: -250px;
       width: 250px;
+    }
+  }
+}
+
+form.user-register-form {
+  .form-item {
+    padding: 0 0 0 160px;
+    label {
+      margin-left: -160px;
+      width: 160px;
     }
   }
 }
@@ -2515,4 +2579,22 @@ only screen and (min-resolution: 192dpi) {
       background-image: url('../images/decoration_edge_up_retina.png');
     }
   }
+}
+
+
+// Join FORGE styles
+
+.section-wizard {
+  form {
+    fieldset,
+    .webform-component-fieldset {
+      a {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.back-to-wizard {
+  font-size: 1.2em;
 }
