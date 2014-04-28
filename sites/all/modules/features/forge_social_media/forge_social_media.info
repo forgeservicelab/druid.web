@@ -13,7 +13,6 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = twitter
 dependencies[] = twitter_actions
-dependencies[] = twitter_importer
 features[ctools][] = strongarm:strongarm:1
 features[fe_block_settings][] = fb_likebox-0
 features[features_api][] = api:2
