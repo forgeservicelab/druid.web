@@ -1,0 +1,14 @@
+name = Forge web XML sitemap
+core = 7.x
+package = Forge backend
+version = 7.x-1.0
+project = forge_web_xml_sitemap
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = xmlsitemap_generated_last
+features[variable][] = xmlsitemap_regenerate_needed
+features[variable][] = xmlsitemap_settings_menu_link_main-menu
+features[variable][] = xmlsitemap_settings_node_page
+project path = sites/all/modules/features
