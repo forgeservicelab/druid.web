@@ -13,13 +13,20 @@ Drupal.behaviors.myBehavior = {
       $("#edit-submitted-other-contract-information-digile-service-fee").val(calculated_value);
     });
     $("input[name$='submitted[role]']").click(function() {
-      val = $(this).val();
+      var val = $(this).val();
       if(val == 'subcontractor' || val == 'several_of_these') {
         $(".form-submit").attr("disabled", "disabled");  
       }
       else {
         $(".form-submit").removeAttr("disabled");
       }
+    });
+    // move info elements inside radiobutton selection
+    $("input[name$='submitted[role]']").each(function() {
+      var idVal = $(this).attr("id");
+      // use label text to search roght DOM element
+      var label = $("label[for='"+idVal+"']").text();
+      $(this).parent().after(($("span:contains('"+$.trim(label)+"')").parent().parent()));
     });
   }
 };

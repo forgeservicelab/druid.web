@@ -2197,7 +2197,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_sw_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that',
-        'name' => 'I want to offer sofware, APIs datasets or tools and I need computing capacity to do that',
+        'name' => 'I want to offer APIs, software, datasets or tools and I need computing capacity to do that',
         'type' => 'fieldset',
         'value' => '',
         'extra' => array(
