@@ -28,6 +28,10 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'fillpdf_link':
+          /*
+           * Set contract(s) link(s) to email to replaced [fillpdf_link] token
+           * User specific data is saved in session
+           */
           if(!empty($_SESSION['forge_web_wizard_sda_contract_'.$user->uid])) {
             $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
             $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
@@ -85,12 +89,13 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   if(strstr($form_id, 'webform_client_form')) {
     drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
     /*
-    * Replace [nid:xx] in webform markup components
+    * Replace [path]xx/xxx[/path] in webform markup components
     */
     foreach ($form['submitted'] as $key => $compo) {
       if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
         // if component type is a fieldset lets loop again. 
         // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
+        // ATM there is only one fieldset
         if(is_array($compo)) {
           foreach ($compo as $sub_key => $sub_compo) {
             if(is_array($sub_compo)) {
@@ -106,7 +111,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
           }
         }
       }
-      // if component typeis markup and if there is [nid:xx] lets replace it
+      // if component typeis markup and if there is [path] lets replace it
       elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[path]')) {
         $pattern = '#\[path]((?:[^[]|\[(?!/?path])|(?R))+)\[/path]#';
         $callback = '_forge_web_wizard_embed_filter_replace';
@@ -163,7 +168,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * function converts [nid:xxx] with node summary and link to node
+ * function converts [path]xxx/xxx[/path] with node summary and link to node
  * @param $match
  *   $match[1] contains the nid
  * @return
@@ -301,8 +306,7 @@ function forge_web_wizard_admin_settings() {
  */
 function forge_web_wizard_user_profile_submit($form, &$form_state) {
   global $user;
-  
-  //$role = $user->field_role[$user->language][0]['value'];
+
   // get wizard role selection from cache
   $role = _forge_web_wizard_get_cached_user_data($user);
   $redir = _forge_web_wizard_set_redirect_for_role_selection($role->data);
@@ -312,15 +316,16 @@ function forge_web_wizard_user_profile_submit($form, &$form_state) {
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
- * and redirect user ro right place
+ * menu callback for Partner contract submit to save session data
+ * and redirect user to the right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_partner_contract_submit($nid, $sid) {
   global $user;
   // save temporary user data to session
   $_SESSION['forge_web_wizard_partner_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
-  // set value for webform component "I need cloud computing capasity" if user has selected it
-  // we need this for next step of wizard if user has selected computing capasity
+  // "I need cloud computing capasity" if user has selected it
   $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
   if($need_cloud_computing_capasity->data == 'cra') {
     drupal_goto('wizard/partner-addendum-computing-capacity-contract');
@@ -331,8 +336,10 @@ function forge_web_wizard_partner_contract_submit($nid, $sid) {
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
+ * Manu callback for sda contract submit to save session data
  * and redirect user ro right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_sda_contract_submit($nid, $sid) {
   global $user;
@@ -342,8 +349,10 @@ function forge_web_wizard_sda_contract_submit($nid, $sid) {
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
+ * Menu callback for cra contract submit to save session data
  * and redirect user ro right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_cra_contract_submit($nid, $sid) {
   global $user;
