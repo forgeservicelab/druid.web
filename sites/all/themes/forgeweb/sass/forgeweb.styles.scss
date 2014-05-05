@@ -236,7 +236,7 @@ form.user-register-form {
 }
 
 
-// General node body styles to tacke images added to content
+// General node body styles to tackle images added to content
 
 .not-front .field--name-body {
   margin-bottom: 1em;
@@ -1293,6 +1293,31 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Content page default styles
+
+.page-node {
+  aside {
+    border-top: 1px solid $border-color;
+    margin-top: 1em;
+    overflow: hidden;
+    @include at-breakpoint($tab) {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+    .block {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      &:last-child {
+        border-bottom: 0 none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
 // ****** FRONT PAGE SPESIFIC STYLES ****** //
 
 // Front page navigation exceptions (fixed on the top of the page)
@@ -2115,31 +2140,6 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Content page default styles
-
-.page-node {
-  aside {
-    border-top: 1px solid $border-color;
-    margin-top: 1em;
-    overflow: hidden;
-    @include at-breakpoint($tab) {
-      border-top: 0 none;
-      margin-top: 0;
-    }
-    .block {
-      border-bottom: 1px solid $border-color;
-      margin-bottom: 2em;
-      padding-bottom: 2em;
-      &:last-child {
-        border-bottom: 0 none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-  }
-}
-
-
 // Blog page
 
 .node-type-blog-post {
@@ -2217,12 +2217,28 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.field--name-field-brief-overview-description {
+// Brief overview field under the offering title on offering page
+.field--name-field-brief-overview-description,
+.field--name-field-free-text-company {
   font-size: 1.1em;
   @include at-breakpoint($tab) {
     font-size: 1.3em;
   }
 }
+
+.field--name-field-logo {
+  float: left;
+  height: 75px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: -75px;
+  text-align: center;
+  width: 75px;
+  .field__item {
+    line-height: 0;
+  }
+}
+
 
 .node-type-service-offering,
 .node-type-offering {
@@ -2287,8 +2303,11 @@ only screen and (min-resolution: 192dpi) {
   overflow: hidden;
   a {
     color: $text-color;
-    a {
-      color: $link-color;
+    .node__content {
+      overflow: hidden;
+      a {
+        color: $link-color;
+      }
     }
   }
   p {
@@ -2308,18 +2327,13 @@ only screen and (min-resolution: 192dpi) {
       clear: both;
       margin-left: 0;
     }
-  }
-  .field--name-field-logo {
-    float: left;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: -75px;
-    .field__item {
-      line-height: 0;
+    &.field--name-field-logo {
+      margin-left: 0;
     }
   }
 }
 
+// Terms and conditons tab on offering
 .terms-conditions {
   h3 {
     font-size: 1.4em;
@@ -2339,16 +2353,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.view-offering-listing {
-  margin-top: 2em;
-  @include at-breakpoint($tab) {
-    margin-top: 3em; 
-  }
-  @include at-breakpoint($desk) {
-    margin-top: 5em; 
-  }
-}
-
 .block--quicktabs-service-offering-quicktab-mobile,
 .block--quicktabs-product-page-quicktab-mobile {
   display: block;
@@ -2362,6 +2366,19 @@ only screen and (min-resolution: 192dpi) {
   display: none;
   @include at-breakpoint($tab) {
     display: block;
+  }
+}
+
+
+// Offering listing page styles
+
+.view-offering-listing {
+  margin-top: 2em;
+  @include at-breakpoint($tab) {
+    margin-top: 3em; 
+  }
+  @include at-breakpoint($desk) {
+    margin-top: 5em; 
   }
 }
 
@@ -2393,18 +2410,15 @@ only screen and (min-resolution: 192dpi) {
 // Project page styles
 
 .node--project {
-  .field--name-field-logo {
-    float: left;
-    margin-right: 1em;
-    .field__item {
-      line-height: 0;
+  &.node--project--full {
+    .field--name-field-logo {
+      margin-right: 1em;
     }
   }
   .field--name-body {
     clear: both;
   }
 }
-
 
 .view-project-sidebar {
   margin-left: 1em;
@@ -2435,6 +2449,7 @@ only screen and (min-resolution: 192dpi) {
       background: url('../images/dashboard_navigation_bg.jpg') repeat-x center center transparent;
     }
   }
+  
   .l-region--hero {
     background: url('../images/decoration_edge_up.png') repeat-x 0 bottom #e2e2e2;
     background-size: auto 12px;
@@ -2455,6 +2470,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   .l-region--sidebar-second {
     background-color: #f3f3f3;
     border-top: 0 none;
@@ -2478,6 +2494,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   .field--name-field-method,
   .field--name-field-tools {
     border-bottom: 2px dashed #f2f2f2;
@@ -2510,6 +2527,7 @@ only screen and (min-resolution: 192dpi) {
     margin-top: 0;
     text-align: center;
   }
+  
   @include at-breakpoint($tab) {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
     height: 212px;
@@ -2550,6 +2568,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   a {
     color: $text-color;
     display: block;
@@ -2557,6 +2576,7 @@ only screen and (min-resolution: 192dpi) {
     &.active {
       background-color: #e2e2e2;
     }
+    
     @include at-breakpoint($tab) {
       background: url('../images/icon_dashboard_navi_blue.png') no-repeat center 90px transparent;
       height: 210px;
@@ -2600,6 +2620,7 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+    
     @include at-breakpoint($desk) {
       font-size: 1.3em;
     }
