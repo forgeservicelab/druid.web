@@ -15,12 +15,16 @@ function forge_web_navigation_menu_default_menu_custom() {
     'menu_name' => 'main-menu',
     'title' => 'Main menu',
     'description' => 'The <em>Main</em> menu is used on many sites to show the major sections of the site, often in a top navigation bar.',
+    'language' => 'und',
+    'i18n_mode' => 5,
   );
   // Exported menu: menu-log-in-menu.
   $menus['menu-log-in-menu'] = array(
     'menu_name' => 'menu-log-in-menu',
     'title' => 'Log in menu',
     'description' => '',
+    'language' => 'und',
+    'i18n_mode' => 5,
   );
   // Translatables
   // Included for use with string extractors like potx.

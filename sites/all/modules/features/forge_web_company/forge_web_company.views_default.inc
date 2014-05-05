@@ -210,14 +210,40 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_company_address' => 'field_company_address',
+    'field_company_email' => 'field_company_email',
+    'field_company_phone' => 'field_company_phone',
+    'field_company_website' => 'field_company_website',
+  );
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_contact_details']['id'] = 'field_contact_details';
-  $handler->display->display_options['fields']['field_contact_details']['table'] = 'field_data_field_contact_details';
-  $handler->display->display_options['fields']['field_contact_details']['field'] = 'field_contact_details';
+  /* Field: Content: Company address */
+  $handler->display->display_options['fields']['field_company_address']['id'] = 'field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['table'] = 'field_data_field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['field'] = 'field_company_address';
+  $handler->display->display_options['fields']['field_company_address']['label'] = '';
+  $handler->display->display_options['fields']['field_company_address']['element_label_colon'] = FALSE;
+  /* Field: Content: Company email */
+  $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
+  $handler->display->display_options['fields']['field_company_email']['label'] = '';
+  $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
+  /* Field: Content: Company phone */
+  $handler->display->display_options['fields']['field_company_phone']['id'] = 'field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['table'] = 'field_data_field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
+  $handler->display->display_options['fields']['field_company_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_company_phone']['element_label_colon'] = FALSE;
+  /* Field: Content: Company website */
+  $handler->display->display_options['fields']['field_company_website']['id'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['table'] = 'field_data_field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['field'] = 'field_company_website';
+  $handler->display->display_options['fields']['field_company_website']['label'] = '';
+  $handler->display->display_options['fields']['field_company_website']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -255,11 +281,20 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'entityreference_style';
   $handler->display->display_options['style_options']['search_fields'] = array(
-    'field_contact_details' => 'field_contact_details',
+    'field_company_address' => 'field_company_address',
+    'field_company_email' => 'field_company_email',
+    'field_company_phone' => 'field_company_phone',
+    'field_company_website' => 'field_company_website',
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_company_address' => 'field_company_address',
+    'field_company_email' => 'field_company_email',
+    'field_company_phone' => 'field_company_phone',
+    'field_company_website' => 'field_company_website',
+  );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $translatables['offering_contact_information'] = array(
@@ -279,7 +314,6 @@ function forge_web_company_views_default_views() {
     t('next ›'),
     t('last »'),
     t('author'),
-    t('Broken handler field_data_field_contact_details.field_contact_details'),
     t('All'),
     t('Page'),
     t('Entity Reference'),
@@ -308,10 +342,6 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -324,6 +354,15 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -372,7 +411,7 @@ function forge_web_company_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('author'),
+    t('All'),
     t('Page'),
     t('Entity Reference'),
   );
