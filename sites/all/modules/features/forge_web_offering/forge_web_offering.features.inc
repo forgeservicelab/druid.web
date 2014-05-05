@@ -40,7 +40,7 @@ function forge_web_offering_image_default_styles() {
     'name' => 'offering_logo',
     'label' => 'Offering logo',
     'effects' => array(
-      5 => array(
+      3 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',

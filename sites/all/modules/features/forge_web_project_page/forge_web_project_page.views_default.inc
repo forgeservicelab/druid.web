@@ -25,7 +25,11 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['css_class'] = 'l-listing';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '300';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '300';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -176,7 +180,11 @@ function forge_web_project_page_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '300';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '300';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -185,7 +193,7 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['style_options']['optionset'] = 'slideshow';
   $handler->display->display_options['style_options']['captionfield'] = 'field_main_images_1';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Screenshots */
+  /* Field: Content: Main images */
   $handler->display->display_options['fields']['field_main_images']['id'] = 'field_main_images';
   $handler->display->display_options['fields']['field_main_images']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images']['field'] = 'field_main_images';
@@ -198,7 +206,7 @@ function forge_web_project_page_views_default_views() {
   );
   $handler->display->display_options['fields']['field_main_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_main_images']['delta_offset'] = '0';
-  /* Field: Content: Screenshots */
+  /* Field: Content: Main images */
   $handler->display->display_options['fields']['field_main_images_1']['id'] = 'field_main_images_1';
   $handler->display->display_options['fields']['field_main_images_1']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images_1']['field'] = 'field_main_images';
@@ -241,7 +249,7 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'project' => 'project',
   );
-  /* Filter criterion: Content: Screenshots (field_main_images:fid) */
+  /* Filter criterion: Content: Main images (field_main_images:fid) */
   $handler->display->display_options['filters']['field_main_images_fid']['id'] = 'field_main_images_fid';
   $handler->display->display_options['filters']['field_main_images_fid']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['filters']['field_main_images_fid']['field'] = 'field_main_images_fid';

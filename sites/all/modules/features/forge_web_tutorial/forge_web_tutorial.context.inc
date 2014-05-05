@@ -29,11 +29,11 @@ function forge_web_tutorial_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-7' => array(
-          'module' => 'block',
-          'delta' => '7',
+        'menu-menu-tutorial-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-tutorial-menu',
           'region' => 'highlighted',
-          'weight' => '-8',
+          'weight' => '-10',
         ),
         'views-tutorial_highlighted-block' => array(
           'module' => 'views',

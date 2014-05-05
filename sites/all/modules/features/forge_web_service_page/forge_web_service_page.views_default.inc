@@ -118,19 +118,23 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['title'] = 'Service offering overview';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'time';
+  $handler->display->display_options['cache']['results_lifespan'] = '300';
+  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['output_lifespan'] = '300';
+  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Brief overview description */
-  $handler->display->display_options['fields']['field_brief_overview_description']['id'] = 'field_brief_overview_description';
-  $handler->display->display_options['fields']['field_brief_overview_description']['table'] = 'field_data_field_brief_overview_description';
-  $handler->display->display_options['fields']['field_brief_overview_description']['field'] = 'field_brief_overview_description';
-  $handler->display->display_options['fields']['field_brief_overview_description']['label'] = '';
-  $handler->display->display_options['fields']['field_brief_overview_description']['element_label_colon'] = FALSE;
+  /* Field: Content: Detailed description */
+  $handler->display->display_options['fields']['field_detailed_description']['id'] = 'field_detailed_description';
+  $handler->display->display_options['fields']['field_detailed_description']['table'] = 'field_data_field_detailed_description';
+  $handler->display->display_options['fields']['field_detailed_description']['field'] = 'field_detailed_description';
+  $handler->display->display_options['fields']['field_detailed_description']['label'] = '';
+  $handler->display->display_options['fields']['field_detailed_description']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -286,7 +290,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
-  /* Field: Content: Pricing information */
+  /* Field: Field: Pricing information */
   $handler->display->display_options['fields']['field_pricing_information']['id'] = 'field_pricing_information';
   $handler->display->display_options['fields']['field_pricing_information']['table'] = 'field_data_field_pricing_information';
   $handler->display->display_options['fields']['field_pricing_information']['field'] = 'field_pricing_information';
@@ -309,14 +313,13 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_organizer']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Content: Contact information */
-  $handler->display->display_options['fields']['field_contact_information']['id'] = 'field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['table'] = 'field_data_field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['field'] = 'field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['label'] = 'Contact';
-  $handler->display->display_options['fields']['field_contact_information']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_contact_information']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_contact_information']['settings'] = array(
+  /* Field: Content: Service offer contact details */
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['id'] = 'field_service_offer_contact_deta';
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['table'] = 'field_data_field_service_offer_contact_deta';
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['field'] = 'field_service_offer_contact_deta';
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_service_offer_contact_deta']['settings'] = array(
     'link' => 0,
   );
   /* Sort criterion: Content: Post date */

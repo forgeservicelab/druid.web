@@ -37,7 +37,6 @@ function forge_web_faq_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -79,7 +78,6 @@ function forge_web_faq_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),

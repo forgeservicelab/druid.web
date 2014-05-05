@@ -15,6 +15,8 @@ function forge_web_tutorial_default_fe_block_settings() {
   $export['block-forge_member_navi'] = array(
     'cache' => -1,
     'custom' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'machine_name' => 'forge_member_navi',
     'module' => 'block',
     'node_types' => array(),
@@ -36,6 +38,8 @@ function forge_web_tutorial_default_fe_block_settings() {
     'cache' => 4,
     'custom' => 0,
     'delta' => 'print-links',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'print',
     'node_types' => array(),
     'pages' => '',

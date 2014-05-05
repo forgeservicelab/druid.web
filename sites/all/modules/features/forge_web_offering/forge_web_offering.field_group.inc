@@ -55,12 +55,12 @@ function forge_web_offering_field_group_info() {
     'label' => 'Group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_media',
-      1 => 'group_community',
-      2 => 'group_intro',
-      3 => 'group_terms_conditions',
+      0 => 'group_community',
+      1 => 'group_intro',
+      2 => 'group_media',
+      3 => 'group_overview',
       4 => 'group_pricing',
-      5 => 'group_overview',
+      5 => 'group_terms_conditions',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -292,7 +292,8 @@ function forge_web_offering_field_group_info() {
       8 => 'field_organizer',
       9 => 'field_pricing_information',
       10 => 'field_page_title',
-      11 => 'title',
+      11 => 'field_service_offer_contact_deta',
+      12 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
