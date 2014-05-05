@@ -162,7 +162,32 @@ function forge_web_wizard_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__forge_role_information';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'print' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'liftup' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
@@ -246,17 +271,15 @@ function forge_web_wizard_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_cra_pdf_id';
-  $strongarm->value = '2';
+  $strongarm->value = '106';
   $export['forge_web_wizard_cra_pdf_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_email_body';
-  $strongarm->value = 'Contract link:
-[current-user:fillpdf_link]
-
-And additional information here...';
+  $strongarm->value = 'Here is your prefilled contract link(s):
+[current-user:fillpdf_link]';
   $export['forge_web_wizard_email_body'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -277,14 +300,14 @@ And additional information here...';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_partner_pdf_id';
-  $strongarm->value = '1';
+  $strongarm->value = '105';
   $export['forge_web_wizard_partner_pdf_id'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_sda_pdf_id';
-  $strongarm->value = '3';
+  $strongarm->value = '103';
   $export['forge_web_wizard_sda_pdf_id'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -365,7 +388,7 @@ And additional information here...';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_forge_role_information';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_forge_role_information'] = $strongarm;
 
   $strongarm = new stdClass();
