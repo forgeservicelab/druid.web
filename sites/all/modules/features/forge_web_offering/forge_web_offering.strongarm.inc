@@ -63,7 +63,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_offering';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['comment_default_mode_offering'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -133,7 +133,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_offering';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['comment_preview_offering'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -147,7 +147,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_preview_service_offering';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['comment_preview_service_offering'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -192,7 +192,9 @@ function forge_web_offering_strongarm() {
   $strongarm->value = array(
     'view_own' => array(),
     'view' => array(
-      0 => 4,
+      0 => 1,
+      1 => 4,
+      2 => 5,
     ),
   );
   $export['content_access_offering'] = $strongarm;
@@ -206,7 +208,9 @@ function forge_web_offering_strongarm() {
       0 => 4,
     ),
     'view' => array(
-      0 => 4,
+      0 => 1,
+      1 => 4,
+      2 => 5,
     ),
   );
   $export['content_access_service_offering'] = $strongarm;
@@ -216,17 +220,7 @@ function forge_web_offering_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_terms_and_conditions';
   $strongarm->value = array(
-    'view_modes' => array(
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(),
@@ -239,17 +233,7 @@ function forge_web_offering_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_field_collection_item__field_terms_and_conditions_outsi';
   $strongarm->value = array(
-    'view_modes' => array(
-      'full' => array(
-        'custom_settings' => FALSE,
-      ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
-      ),
-      'token' => array(
-        'custom_settings' => FALSE,
-      ),
-    ),
+    'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(),
@@ -380,9 +364,6 @@ function forge_web_offering_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'feed' => array(
-        'custom_settings' => FALSE,
-      ),
       'liftup' => array(
         'custom_settings' => FALSE,
       ),
@@ -396,10 +377,10 @@ function forge_web_offering_strongarm() {
           'weight' => '1',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '3',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '2',
         ),
       ),
       'display' => array(),
@@ -425,7 +406,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_service_offering';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_service_offering'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -496,6 +477,7 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'node_options_service_offering';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'promote',
   );
   $export['node_options_service_offering'] = $strongarm;
 

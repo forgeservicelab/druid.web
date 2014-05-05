@@ -16,6 +16,8 @@ function forge_web_offering_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 'menu-forge-member-navigation',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -28,7 +30,7 @@ function forge_web_offering_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 

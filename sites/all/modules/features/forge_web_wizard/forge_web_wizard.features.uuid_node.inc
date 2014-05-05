@@ -1887,8 +1887,29 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2aa05069-59a7-4e58-a949-4a7dba5618cf',
-  'revision_uid' => 1,
-  'body' => array(),
+  'revision_uid' => 6,
+  'body' => array(
+    'en' => array(
+      0 => array(
+        'value' => '<h2>Join FORGE Service Lab!</h2>
+
+<p>FORGE Service Lab is for everybody who is interested in developing digital services – be they businesses, educational institutions, business development teams, start-ups, public sector organizations etc. Our doors are open - businesses and organizations, from any area of the public or private sector are welcome to take their project to FORGE, or to join an existing one. And if you are a digital service professional or a "building block" (APIs, software, datasets or tools) provider, tell everybody about your expertise in FORGE Plaza.</p>
+
+<p>The goal of the FORGE Service Lab contractual framework is to ensure that all parties playing similar roles are treated equally and to keep FORGE Service Lab operations as transparent as possible.&nbsp;There are two kinds of roles a party can have in FORGE Service Lab and the contractual framework of FORGE Service Lab consists of two different sets of documents. Each set characterizes specific type of relationship of a party (=a legal entity) with DIGILE in FORGE Service Lab related matters.</p>
+
+<p>These contracts that you find here will help you to think in which role(s) you wish to participate, share, learn and do business. So take your time and study them and do <a href="https://forgeservicelab.fi/en/contact-us">Contact us</a>&nbsp;if you feel you’d need a bit of hand.</p>
+',
+        'summary' => '',
+        'format' => 'filtered_html',
+        'safe_value' => '<h2>Join FORGE Service Lab!</h2>
+<p>FORGE Service Lab is for everybody who is interested in developing digital services – be they businesses, educational institutions, business development teams, start-ups, public sector organizations etc. Our doors are open - businesses and organizations, from any area of the public or private sector are welcome to take their project to FORGE, or to join an existing one. And if you are a digital service professional or a "building block" (APIs, software, datasets or tools) provider, tell everybody about your expertise in FORGE Plaza.</p>
+<p>The goal of the FORGE Service Lab contractual framework is to ensure that all parties playing similar roles are treated equally and to keep FORGE Service Lab operations as transparent as possible. There are two kinds of roles a party can have in FORGE Service Lab and the contractual framework of FORGE Service Lab consists of two different sets of documents. Each set characterizes specific type of relationship of a party (=a legal entity) with DIGILE in FORGE Service Lab related matters.</p>
+<p>These contracts that you find here will help you to think in which role(s) you wish to participate, share, learn and do business. So take your time and study them and do <a href="https://forgeservicelab.fi/en/contact-us">Contact us</a> if you feel you’d need a bit of hand.</p>
+',
+        'safe_summary' => '',
+      ),
+    ),
+  ),
   'field_page_title' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
@@ -2019,11 +2040,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'form_key' => 'intro_text',
         'name' => 'Intro text',
         'type' => 'markup',
-        'value' => '<p dir="ltr">To begin choose the role(s) you want to play at FORGE Service Lab. This will help us to select the correct contracts for you.</p>
-
-<p dir="ltr">The goal of the FORGE Service Lab contractual framework is to ensure that all parties playing similar roles are treated equally and to keep FORGE Service Lab operations as transparent as possible.</p>
-
-<p dir="ltr">There are two kinds of roles a party can have in FORGE Service Lab and the contractual framework of FORGE Service Lab consists of two different sets of documents. Each set characterizes specific type of relationship of a party (=a legal entity) with DIGILE in FORGE Service Lab related matters.</p>
+        'value' => '<p dir="ltr">To begin choose the role(s) you want to play at FORGE Service Lab:</p>
 ',
         'extra' => array(
           'format' => 'filtered_html',
@@ -2305,7 +2322,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'form_key' => 'i_want_several_of_these_info_text',
         'name' => 'I want several of these info text',
         'type' => 'markup',
-        'value' => '<p>If you need more than one role, please select first one role and get back once you have completed multistep form of wizard.</p>
+        'value' => '<p><span style="line-height:1.6">If you need more than one role, please select first one role and get back once you have completed multistep form of wizard.</span></p>
 ',
         'extra' => array(
           'format' => 'filtered_html',
@@ -2635,18 +2652,20 @@ Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets t
 
 <p><strong>What are the benefits?</strong></p>
 
-<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
-Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.<br />
-Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
-Become member of FORGE Service Lab internal community.<br />
-Computing resource allocation entitles also to<br />
-access to FORGE technical Help desk</p>
+<ul>
+	<li>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.</li>
+	<li>Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.</li>
+	<li>Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.</li>
+	<li>Become member of FORGE Service Lab internal community.</li>
+</ul>
 
-<p><br />
-<strong>How much computing capacity do I get?</strong></p>
+<p>Computing resource allocation entitles also to&nbsp;access to FORGE technical Help desk and&nbsp;FORGE internal XMPP, Redmine Forums and news.</p>
+
+<p><strong>How much computing capacity do I get?</strong></p>
+
+<p>The basic allocation is</p>
 
 <ul>
-	<li>The basic allocation is</li>
 	<li>Virtual CPU cores: 1</li>
 	<li>RAM: 1 GBytes</li>
 	<li>Core instance storage: 10 GBytes/Virtual CPU core</li>
@@ -2656,21 +2675,27 @@ access to FORGE technical Help desk</p>
 	<li>Network bandwidth: Shared with other FORGE Affiliates</li>
 </ul>
 
-<p><strong>What is expected from a FORGE Partner?</strong><br />
-&nbsp;<br />
-Partner has to be an active owner for his offerings. This means<br />
-creating and maintaining own information at FORGE Plaza<br />
-being the point of contact for anyone who is interested in the offering<br />
-taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
-developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+<p><strong>What is expected from FORGE Partner?</strong></p>
+
+<p>Partner has to be an active owner for his offerings. This means</p>
+
+<ul>
+	<li>creating and maintaining own information at FORGE Plaza</li>
+	<li>being the point of contact for anyone who is interested in the offering</li>
+	<li>taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use</li>
+	<li>developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</li>
+</ul>
 
 <p><br />
 <strong>What makes a good Partner offering in Plaza?</strong></p>
 
-<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
-All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
-Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
-As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.</p>
+
+<ul>
+	<li>All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.</li>
+	<li>Price tag or price indication and terms of use are required to show to other Forgeans but not in public.</li>
+	<li>As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</li>
+</ul>
 
 <p><strong>What does it cost?</strong><br />
 The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.<br />
@@ -2684,36 +2709,33 @@ In order to present your offerings at FORGE Plaza, you need to sign a FORGE Part
 Only a legal entity can become a FORGE Partner. Please notice that DIGILE sets the ground rules but as such is not involved in contracts between Partners and Service developers.</p>
 <p>FORGE Plaza works offering first (as opposed to provider first). An offering can be anything that is required for making digital services. It can be professional services or service building blocks such as graphical elements, software, APIs, datasets or tools. One FORGE Partner can display several and different kinds of offerings. If you need computing resource allocation in order to do this, you can request it together with FORGE Partnership with the set of contract documents that are linked to this page.</p>
 <p><strong>What are the benefits?</strong></p>
-<p>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.<br />
-Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.<br />
-Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.<br />
-Become member of FORGE Service Lab internal community.<br />
-Computing resource allocation entitles also to<br />
-access to FORGE technical Help desk</p>
-<p>
-<strong>How much computing capacity do I get?</strong></p>
-<ul><li>The basic allocation is</li>
-<li>Virtual CPU cores: 1</li>
+<ul><li>Gain visibility amongst FORGE community and find customers among FORGE Service developers by having dedicated page and being able to promote your offerings in FORGE Plaza.</li>
+<li>Gain public visibility by displaying your offerings and organization information in FORGE Plaza public view.</li>
+<li>Indicate affiliation with FORGE Service Lab in advertisements and publications in a manner as instructed by DIGILE.</li>
+<li>Become member of FORGE Service Lab internal community.</li>
+</ul><p>Computing resource allocation entitles also to access to FORGE technical Help desk and FORGE internal XMPP, Redmine Forums and news.</p>
+<p><strong>How much computing capacity do I get?</strong></p>
+<p>The basic allocation is</p>
+<ul><li>Virtual CPU cores: 1</li>
 <li>RAM: 1 GBytes</li>
 <li>Core instance storage: 10 GBytes/Virtual CPU core</li>
 <li>Volume storage: 40 GBytes</li>
 <li>Public IPv4 addresses: 1</li>
 <li>Public IPv6 addresses: 0  (Addresses will be provided as soon as OpenStack will have full IPv6 support)</li>
 <li>Network bandwidth: Shared with other FORGE Affiliates</li>
-</ul><p><strong>What is expected from a FORGE Partner?</strong><br />
- <br />
-Partner has to be an active owner for his offerings. This means<br />
-creating and maintaining own information at FORGE Plaza<br />
-being the point of contact for anyone who is interested in the offering<br />
-taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
-developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
-<p>
+</ul><p><strong>What is expected from FORGE Partner?</strong></p>
+<p>Partner has to be an active owner for his offerings. This means</p>
+<ul><li>creating and maintaining own information at FORGE Plaza</li>
+<li>being the point of contact for anyone who is interested in the offering</li>
+<li>taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use</li>
+<li>developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</li>
+</ul><p>
 <strong>What makes a good Partner offering in Plaza?</strong></p>
-<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
-All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
-Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
-As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
-<p><strong>What does it cost?</strong><br />
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.</p>
+<ul><li>All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.</li>
+<li>Price tag or price indication and terms of use are required to show to other Forgeans but not in public.</li>
+<li>As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</li>
+</ul><p><strong>What does it cost?</strong><br />
 The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.<br />
 For the basic computing resource allocation there is charge of 180 euros per month. Additional allocation is possible to have as multipliers of basic allocation. Each additional allocation costs 180 euros per month.</p>
 ',
@@ -2722,7 +2744,15 @@ For the basic computing resource allocation there is charge of 180 euros per mon
       ),
     ),
   ),
-  'field_page_title' => array(),
+  'field_page_title' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'Forge partner role and CRA information',
+        'format' => NULL,
+        'safe_value' => 'Forge partner role and CRA information',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2880,7 +2910,15 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
       ),
     ),
   ),
-  'field_page_title' => array(),
+  'field_page_title' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'I want to develop a world-class digital service',
+        'format' => NULL,
+        'safe_value' => 'I want to develop a world-class digital service',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -3451,7 +3489,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
 );
   $nodes[] = array(
   'uid' => 1,
-  'title' => 'Forge partner role information',
+  'title' => 'FORGE Partner role information',
   'log' => '',
   'status' => 1,
   'comment' => 1,
@@ -3464,7 +3502,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'dcd17082-a71b-4150-9a9a-900d87614b62',
-  'revision_uid' => 1,
+  'revision_uid' => 6,
   'body' => array(
     'und' => array(
       0 => array(
@@ -3534,7 +3572,15 @@ The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the
       ),
     ),
   ),
-  'field_page_title' => array(),
+  'field_page_title' => array(
+    'und' => array(
+      0 => array(
+        'value' => 'FORGE Partner role information',
+        'format' => NULL,
+        'safe_value' => 'FORGE Partner role information',
+      ),
+    ),
+  ),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',

@@ -28,23 +28,21 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'fillpdf_link':
+          /*
+           * Set contract(s) link(s) to email to replaced [fillpdf_link] token
+           * User specific data is saved in session
+           */
           if(!empty($_SESSION['forge_web_wizard_sda_contract_'.$user->uid])) {
             $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
             $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
-            // unset session data because we don't need it anymore
-            //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
           }
           if(!empty($_SESSION['forge_web_wizard_partner_contract_'.$user->uid])) {
             $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
             $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
-            // unset session data because we don't need it anymore
-            //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
           }
           if(!empty($_SESSION['forge_web_wizard_cra_contract_'.$user->uid])) {
             $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
             $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
-            // unset session data because we don't need it anymore
-            //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
           }
           $url = '';
           $prefix = '';
@@ -55,14 +53,11 @@ function forge_web_wizard_tokens($type, $tokens, array $data = array(), array $o
             $fid = $partner_pdf_id;
             $webform_nid = $partner_user_data['nid'];
             $webform_sid = $partner_user_data['sid'];
-            
-            //$url .= fillpdf_pdf_link($partner_pdf_id, NULL, array(array('nid'=> $partner_user_data['nid'], 'sid'=> $partner_user_data['sid'])), $sample = FALSE).'<br/>';
           }
           if(!empty($sda_pdf_id)) {
             $fid = $sda_pdf_id;
             $webform_nid = $sda_user_data['nid'];
             $webform_sid = $sda_user_data['sid'];
-            //$url .= fillpdf_pdf_link($sda_pdf_id, NULL, array(array('nid'=> $sda_user_data['nid'], 'sid'=> $sda_user_data['sid'])), $sample = FALSE);
           }
           if(!empty($fid)) {
             $url = _forge_web_wizard_fillpdf_pdf_link($fid, NULL, array(array('nid'=> $webform_nid, 'sid'=> $webform_sid)), $sample = FALSE);
@@ -94,17 +89,17 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   if(strstr($form_id, 'webform_client_form')) {
     drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
     /*
-    * Replace [nid:xx] in webform markup components
+    * Replace [path]xx/xxx[/path] in webform markup components
     */
     foreach ($form['submitted'] as $key => $compo) {
       if (!empty($compo['#type']) && $compo['#type'] == 'fieldset') {
         // if component type is a fieldset lets loop again. 
         // TODO: maybe we need recursive function for this if there is fieldsets inside fieldsets
+        // ATM there is only one fieldset
         if(is_array($compo)) {
           foreach ($compo as $sub_key => $sub_compo) {
             if(is_array($sub_compo)) {
               if (!empty($sub_compo['#type']) && $sub_compo['#type'] === 'markup' && strstr($sub_compo['#webform_component']['value'],'[path]')) {
-                //$pattern = '/\[path:([.*][^|]*?)?\]/im';
                 $pattern = '#\[path]((?:[^[]|\[(?!/?path])|(?R))+)\[/path]#';
                 $callback = '_forge_web_wizard_embed_filter_replace';
                 $replacement = preg_replace_callback($pattern, $callback, $sub_compo['#webform_component']['value']);
@@ -116,7 +111,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
           }
         }
       }
-      // if component typeis markup and if there is [nid:xx] lets replace it
+      // if component typeis markup and if there is [path] lets replace it
       elseif (!empty($compo['#type']) && $compo['#type'] == 'markup' && strstr($compo['#webform_component']['value'],'[path]')) {
         $pattern = '#\[path]((?:[^[]|\[(?!/?path])|(?R))+)\[/path]#';
         $callback = '_forge_web_wizard_embed_filter_replace';
@@ -173,7 +168,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * function converts [nid:xxx] with node summary and link to node
+ * function converts [path]xxx/xxx[/path] with node summary and link to node
  * @param $match
  *   $match[1] contains the nid
  * @return
@@ -311,8 +306,7 @@ function forge_web_wizard_admin_settings() {
  */
 function forge_web_wizard_user_profile_submit($form, &$form_state) {
   global $user;
-  
-  //$role = $user->field_role[$user->language][0]['value'];
+
   // get wizard role selection from cache
   $role = _forge_web_wizard_get_cached_user_data($user);
   $redir = _forge_web_wizard_set_redirect_for_role_selection($role->data);
@@ -322,15 +316,16 @@ function forge_web_wizard_user_profile_submit($form, &$form_state) {
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
- * and redirect user ro right place
+ * menu callback for Partner contract submit to save session data
+ * and redirect user to the right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_partner_contract_submit($nid, $sid) {
   global $user;
   // save temporary user data to session
   $_SESSION['forge_web_wizard_partner_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
-  // set value for webform component "I need cloud computing capasity" if user has selected it
-  // we need this for next step of wizard if user has selected computing capasity
+  // "I need cloud computing capasity" if user has selected it
   $need_cloud_computing_capasity = cache_get('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity');
   if($need_cloud_computing_capasity->data == 'cra') {
     drupal_goto('wizard/partner-addendum-computing-capacity-contract');
@@ -341,28 +336,28 @@ function forge_web_wizard_partner_contract_submit($nid, $sid) {
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
+ * Manu callback for sda contract submit to save session data
  * and redirect user ro right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_sda_contract_submit($nid, $sid) {
   global $user;
-  
   // save temporary user data to session
   $_SESSION['forge_web_wizard_sda_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
-  
   drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
 
 /*
- * submit callback for _partner_contract_submit to save session data
+ * Menu callback for cra contract submit to save session data
  * and redirect user ro right place
+ * 
+ * callback is set in webform node settings
  */
 function forge_web_wizard_cra_contract_submit($nid, $sid) {
   global $user;
-  
   // save temporary user data to session
   $_SESSION['forge_web_wizard_cra_contract_'.$user->uid] = array('nid' => $nid, 'sid' => $sid);
-  
   drupal_goto('wizard/confirmation/'.$nid.'/'.$sid);
 }
 
@@ -407,11 +402,7 @@ function forge_web_wizard_user_registration_submit($form, &$form_state) {
     // set role selection to cache because we need that data after user has clicked link in e-mail
     cache_set('forge_web_wizard_user_data_'.$user->uid.':role', $role);
     cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
-    
-    //$user->field_role[$user->language][]['value'] = $role;
-    //user_save($user);
   }
-  
 }
 
 /*
@@ -434,20 +425,14 @@ function forge_web_wizard_confirmation($nid, $sid) {
   if(!empty($_SESSION['forge_web_wizard_sda_contract_'.$user->uid])) {
     $sda_user_data = $_SESSION['forge_web_wizard_sda_contract_'.$user->uid];
     $sda_pdf_id = variable_get('forge_web_wizard_sda_pdf_id', '');
-    // unset session data because we don't need it anymore
-    //unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   }
   if(!empty($_SESSION['forge_web_wizard_partner_contract_'.$user->uid])) {
     $partner_user_data = $_SESSION['forge_web_wizard_partner_contract_'.$user->uid];
     $partner_pdf_id = variable_get('forge_web_wizard_partner_pdf_id', '');
-    // unset session data because we don't need it anymore
-    //unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
   }
   if(!empty($_SESSION['forge_web_wizard_cra_contract_'.$user->uid])) {
     $cra_user_data = $_SESSION['forge_web_wizard_cra_contract_'.$user->uid];
     $cra_pdf_id = variable_get('forge_web_wizard_cra_pdf_id', '');
-    // unset session data because we don't need it anymore
-    //unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
   }
   
   // clear temporary cache data also which were used in wizard only
@@ -500,7 +485,7 @@ function forge_web_wizard_mail($key, &$message, $params) {
 
 /**
  * Implements hook_fillpdf_merge_fields_alter_alter().
- * alter is twice because fillpdf has drupal_alter('fillpdf_merge_fields_alter' so we need two alters :)
+ * alter is twice because fillpdf has drupal_alter('fillpdf_merge_fields_alter') so we need two alters :)
  */
 function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
   /*
@@ -575,12 +560,7 @@ function _forge_web_wizard_recursive_array_search($needle, $haystack, $return_ar
 }
 
 function _forge_web_wizard_set_redirect_for_role_selection($role) {
-  /*
-   SDA|I want to develop a world-class digital service
-   partner_fsl_fpa|I want to offer APIs, software, datasets or tools
-   fsl_fpa_cra|I want to offer my expertise in digital service creation
-   subcontractor|I am a subcontractor of an organization that develops services in FORGE
-  */
+  $redir = '';
   if($role == 'SDA') {
    $redir = 'wizard/service-development-contract';
   }

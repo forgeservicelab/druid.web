@@ -62,6 +62,7 @@ function forge_web_project_page_context_default_contexts() {
     'path' => array(
       'values' => array(
         'projects' => 'projects',
+        'projektit' => 'projektit',
       ),
     ),
   );

@@ -100,7 +100,7 @@ function forge_web_offering_context_default_contexts() {
         ),
       ),
     ),
-    'menu' => '0',
+    'menu' => 'node/61',
   );
   $context->condition_mode = 0;
 

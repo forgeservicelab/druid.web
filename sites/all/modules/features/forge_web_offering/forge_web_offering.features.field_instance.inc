@@ -10,6 +10,140 @@
 function forge_web_offering_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_pricing_information_in-field_pricing_information'
+  $field_instances['field_collection_item-field_pricing_information_in-field_pricing_information'] = array(
+    'bundle' => 'field_pricing_information_in',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pricing_information',
+    'label' => 'Pricing information',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_pricing_information_in-field_visible_to_public_internet'
+  $field_instances['field_collection_item-field_pricing_information_in-field_visible_to_public_internet'] = array(
+    'bundle' => 'field_pricing_information_in',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_visible_to_public_internet',
+    'label' => 'Visible to public internet',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_pricing_information_out-field_pricing_information'
+  $field_instances['field_collection_item-field_pricing_information_out-field_pricing_information'] = array(
+    'bundle' => 'field_pricing_information_out',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_pricing_information',
+    'label' => 'Pricing information',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_pricing_information_out-field_visible_to_public_internet'
+  $field_instances['field_collection_item-field_pricing_information_out-field_visible_to_public_internet'] = array(
+    'bundle' => 'field_pricing_information_out',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_visible_to_public_internet',
+    'label' => 'Visible to public internet',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_terms_and_conditions-field_attachment_t_and_c'
   $field_instances['field_collection_item-field_terms_and_conditions-field_attachment_t_and_c'] = array(
     'bundle' => 'field_terms_and_conditions',
@@ -469,7 +603,6 @@ function forge_web_offering_field_default_field_instances() {
       'allow_ownvote' => 1,
       'allow_revote' => 1,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
@@ -647,6 +780,48 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-offering-field_geographical_coverage_term'
+  $field_instances['node-offering-field_geographical_coverage_term'] = array(
+    'bundle' => 'offering',
+    'default_value' => array(
+      0 => array(
+        'tid' => 11,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_geographical_coverage_term',
+    'label' => 'Geographical coverage',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-offering-field_live_demo_url'
   $field_instances['node-offering-field_live_demo_url'] = array(
     'bundle' => 'offering',
@@ -730,15 +905,13 @@ function forge_web_offering_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'exclude_cv' => 0,
     'field_name' => 'field_logo',
     'label' => 'Logo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 32,
       'entity_translation_sync' => 0,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1079,7 +1252,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -1120,7 +1292,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1132,6 +1303,94 @@ function forge_web_offering_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-offering-field_pricing_information_in'
+  $field_instances['node-offering-field_pricing_information_in'] = array(
+    'bundle' => 'offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pricing_information_in',
+    'label' => 'Pricing information inside FORGE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-offering-field_pricing_information_out'
+  $field_instances['node-offering-field_pricing_information_out'] = array(
+    'bundle' => 'offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_pricing_information_out',
+    'label' => 'Pricing information outside FORGE',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 11,
     ),
   );
 
@@ -1336,6 +1595,47 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-product_family-field_product_family_title'
+  $field_instances['node-product_family-field_product_family_title'] = array(
+    'bundle' => 'product_family',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_product_family_title',
+    'label' => 'Product family title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-service_offering-field_brief_overview_description'
   $field_instances['node-service_offering-field_brief_overview_description'] = array(
     'bundle' => 'service_offering',
@@ -1348,7 +1648,7 @@ function forge_web_offering_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 7,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1363,8 +1663,7 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1389,7 +1688,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1404,7 +1703,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -1430,7 +1728,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1468,7 +1766,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1491,45 +1789,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
-    ),
-  );
-
-  // Exported field_instance: 'node-service_offering-field_contact_information'
-  $field_instances['node-service_offering-field_contact_information'] = array(
-    'bundle' => 'service_offering',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 16,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_contact_information',
-    'label' => 'Contact information',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 11,
+      'weight' => 13,
     ),
   );
 
@@ -1574,11 +1834,10 @@ function forge_web_offering_field_default_field_instances() {
     'label' => 'Customer rating',
     'required' => 0,
     'settings' => array(
-      'allow_clear' => 0,
-      'allow_ownvote' => 0,
-      'allow_revote' => 0,
+      'allow_clear' => 1,
+      'allow_ownvote' => 1,
+      'allow_revote' => 1,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'stars' => 5,
       'target' => 'none',
       'user_register_form' => FALSE,
@@ -1603,7 +1862,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1645,7 +1904,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1686,7 +1945,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 12,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1727,7 +1986,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1799,15 +2058,13 @@ function forge_web_offering_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'exclude_cv' => 0,
     'field_name' => 'field_logo',
     'label' => 'Logo',
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 33,
       'entity_translation_sync' => 0,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -1858,7 +2115,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2053,7 +2310,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2135,7 +2392,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2151,7 +2408,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -2177,7 +2433,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2192,7 +2448,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2207,6 +2462,42 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-service_offering-field_service_offer_contact_deta'
+  $field_instances['node-service_offering-field_service_offer_contact_deta'] = array(
+    'bundle' => 'service_offering',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_service_offer_contact_deta',
+    'label' => 'Service offer contact details',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-service_offering-field_terms_and_conditions'
   $field_instances['node-service_offering-field_terms_and_conditions'] = array(
     'bundle' => 'service_offering',
@@ -2218,7 +2509,7 @@ function forge_web_offering_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2271,10 +2562,13 @@ function forge_web_offering_field_default_field_instances() {
   t('Organizer');
   t('Pricing description');
   t('Pricing information');
+  t('Pricing information inside FORGE');
+  t('Pricing information outside FORGE');
   t('Product family title');
   t('Provide price indication as minimum. An exmple: price for xyz will not be more than xx eur.');
   t('Provider');
   t('Screenshots');
+  t('Service offer contact details');
   t('Show live URL for everyone');
   t('Spesifications');
   t('Tags');
@@ -2282,6 +2576,7 @@ function forge_web_offering_field_default_field_instances() {
   t('Terms and conditions outside FORGE');
   t('Text for terms and conditions');
   t('Text for terms and conditions outside FORGE');
+  t('Visible to public internet');
   t('What is your offering and why is it great?');
 
   return $field_instances;

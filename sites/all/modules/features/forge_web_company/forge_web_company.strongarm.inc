@@ -104,9 +104,6 @@ function forge_web_company_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
-      'feed' => array(
-        'custom_settings' => FALSE,
-      ),
       'liftup' => array(
         'custom_settings' => FALSE,
       ),
@@ -117,13 +114,13 @@ function forge_web_company_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '2',
         ),
         'language' => array(
-          'weight' => '9',
+          'weight' => '1',
         ),
       ),
       'display' => array(),
@@ -167,7 +164,7 @@ function forge_web_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_company';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_company'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -15,6 +15,8 @@ function forge_web_offering_menu_default_menu_custom() {
     'menu_name' => 'menu-forge-member-navigation',
     'title' => 'Forge member navigation',
     'description' => '',
+    'language' => 'und',
+    'i18n_mode' => 0,
   );
   // Translatables
   // Included for use with string extractors like potx.

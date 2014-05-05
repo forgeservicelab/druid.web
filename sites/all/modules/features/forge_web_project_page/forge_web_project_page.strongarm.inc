@@ -106,10 +106,10 @@ function forge_web_project_page_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '10',
         ),
         'language' => array(
-          'weight' => '10',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
