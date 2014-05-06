@@ -198,11 +198,7 @@ form {
   }
   
   input[type='submit'] {
-    background-color: $button-color;
-    border: 1px solid darken($button-color, 10);
-    color: $text-color;
-    font-size: 1.2em;
-    padding: 0.5em 1.5em;
+    @extend .button;
   }
   
   .form-actions {
@@ -1369,17 +1365,12 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .front .l-content-wrapper article {
-  font-size: 1em;
-  line-height: 1.2em;
-  margin: 0 auto;
+  @extend .large-caption;
   max-width: 330px;
-  text-align: left;
   @include at-breakpoint($tab) {
-    font-size: 1.1em;
     max-width: 480px;
   }
   @include at-breakpoint($desk) {
-    font-size: 1.667em;
     max-width: 100%;
   }
 }
@@ -1675,14 +1666,7 @@ only screen and (min-resolution: 192dpi) {
       margin-left: 45%;
     }
     h2 {
-      font-size: 30px;
-      text-transform: none;
-      @include at-breakpoint($tab) {
-        font-size: 48px;
-      }
-      @include at-breakpoint($desk) {
-        font-size: 72px;
-      }
+      @extend .large-header;
     }
   }
   &.block--forge-web-base-forge-web-why {
@@ -1857,27 +1841,19 @@ only screen and (min-resolution: 192dpi) {
         margin-right: 10px;
       }
       a {
-        font-size: 30px;
-        @include at-breakpoint($tab) {
-          font-size: 48px;
-        }
-        @include at-breakpoint($desk) {
-          font-size: 72px;
-        }
+        @extend .large-header;
       }
       &.ui-state-active a {
         color: $text-color;
       }
       &:first-child:after {
         content: "&";
-        font-size: 30px;
+        @extend .large-header;
         margin-left: 5px;
         @include at-breakpoint($tab) {
-          font-size: 48px;
           margin-left: 7px;
         }
         @include at-breakpoint($desk) {
-          font-size: 72px;
           margin-left: 10px;
         }
       }
@@ -1923,15 +1899,13 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   h2 {
-    font-size: 30px;
+    @extend .large-header;
     margin: 0 0 0.5em;
     @include at-breakpoint($tab) {
-      font-size: 48px;
       margin: 0 auto 0.5em;
       max-width: 530px;
     }
     @include at-breakpoint($desk) {
-      font-size: 72px;
       max-width: 100%;
     }
   }
@@ -1944,10 +1918,7 @@ only screen and (min-resolution: 192dpi) {
       max-width: 100%;
     }
     .view-header {
-      font-size: 1.2em;
-      @include at-breakpoint($tab) {
-        font-size: 1.6em;
-      }
+      @extend .large-caption;
     }
     .question {
       font-size: 1.3em;
@@ -2118,15 +2089,8 @@ only screen and (min-resolution: 192dpi) {
     max-width: 100%;
   }
   .block__title {
-    font-size: 30px;
+    @extend .large-header;
     margin: 0 auto 0.5em;
-    text-transform: none;
-    @include at-breakpoint($tab) {
-      font-size: 48px;
-    }
-    @include at-breakpoint($desk) {
-      font-size: 72px;
-    }
   }
   .view {
     text-align: center;
@@ -2220,10 +2184,7 @@ only screen and (min-resolution: 192dpi) {
 // Brief overview field under the offering title on offering page
 .field--name-field-brief-overview-description,
 .field--name-field-free-text-company {
-  font-size: 1.1em;
-  @include at-breakpoint($tab) {
-    font-size: 1.3em;
-  }
+  @extend .medium-caption;
 }
 
 .field--name-field-logo {
