@@ -24,13 +24,14 @@ function forge_web_offering_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'group_community',
-      1 => 'group_info',
-      2 => 'group_spesifications',
-      3 => 'group_pricing',
-      4 => 'group_support',
-      5 => 'group_terms_conditions',
-      6 => 'group_general',
-      7 => 'group_media',
+      1 => 'group_general',
+      2 => 'group_info',
+      3 => 'group_intro',
+      4 => 'group_media',
+      5 => 'group_pricing',
+      6 => 'group_spesifications',
+      7 => 'group_support',
+      8 => 'group_terms_conditions',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -83,7 +84,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Community',
-    'weight' => '48',
+    'weight' => '9',
     'children' => array(
       0 => 'field_customer_rating',
     ),
@@ -139,22 +140,14 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'General',
-    'weight' => '40',
+    'weight' => '2',
     'children' => array(
       0 => 'field_brief_overview_description',
-      1 => 'field_category',
-      2 => 'field_collection',
-      3 => 'field_contact_information',
-      4 => 'field_experimental',
-      5 => 'field_live_demo_url',
-      6 => 'field_logo',
-      7 => 'field_offering_tags',
-      8 => 'field_oneliner',
-      9 => 'field_organizer',
-      10 => 'field_pricing_information',
-      11 => 'field_show_live_url_for_everyone',
-      12 => 'field_page_title',
-      13 => 'title',
+      1 => 'field_contact_information',
+      2 => 'field_experimental',
+      3 => 'field_live_demo_url',
+      4 => 'field_show_live_url_for_everyone',
+      5 => 'field_pricing_information',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -180,7 +173,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Overview',
-    'weight' => '41',
+    'weight' => '3',
     'children' => array(
       0 => 'field_detailed_description',
     ),
@@ -253,16 +246,19 @@ function forge_web_offering_field_group_info() {
       3 => 'field_offering_tags',
       4 => 'field_oneliner',
       5 => 'field_organizer',
-      6 => 'title',
-      7 => 'field_page_title',
+      6 => 'field_page_title',
+      7 => 'field_pricing_information_in',
+      8 => 'field_pricing_information_out',
+      9 => 'title',
     ),
-    'format_type' => 'tab',
+    'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
         'classes' => '',
         'required_fields' => 1,
+        'id' => '',
       ),
     ),
   );
@@ -320,10 +316,9 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '47',
+    'weight' => '8',
     'children' => array(
-      0 => 'field_embed_a_video',
-      1 => 'field_main_images',
+      0 => 'field_main_images',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -538,7 +533,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Pricing',
-    'weight' => '43',
+    'weight' => '5',
     'children' => array(
       0 => 'field_pricing_description',
     ),
@@ -594,9 +589,10 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Spesifications',
-    'weight' => '42',
+    'weight' => '4',
     'children' => array(
       0 => 'field_spesifications',
+      1 => 'field_geographical_coverage_term',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -622,7 +618,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Support',
-    'weight' => '44',
+    'weight' => '6',
     'children' => array(
       0 => 'field_available_support',
     ),
@@ -650,13 +646,13 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
     'label' => 'Terms and conditions',
-    'weight' => '45',
+    'weight' => '7',
     'children' => array(
       0 => 'field_cancellation_refund_policy',
-      1 => 'field_geographical_coverage',
+      1 => 'field_more_information',
       2 => 'field_terms_and_conditions',
       3 => 'field_terms_and_conditions_outsi',
-      4 => 'field_more_information',
+      4 => 'field_geographical_coverage',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -710,7 +706,7 @@ function forge_web_offering_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'offering';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_basegroup';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Video',
     'weight' => '46',
