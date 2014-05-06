@@ -13,14 +13,20 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access administration menu'.
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
-    'roles' => array(),
+    'roles' => array(
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'admin_menu',
   );
 
   // Exported permission: 'access administration pages'.
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
-    'roles' => array(),
+    'roles' => array(
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'system',
   );
 
@@ -84,6 +90,13 @@ function forge_web_acl_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'access private fields'.
+  $permissions['access private fields'] = array(
+    'name' => 'access private fields',
+    'roles' => array(),
+    'module' => 'field_permissions',
   );
 
   // Exported permission: 'access site in maintenance mode'.
@@ -168,6 +181,13 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'administer features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: 'administer field permissions'.
+  $permissions['administer field permissions'] = array(
+    'name' => 'administer field permissions',
+    'roles' => array(),
+    'module' => 'field_permissions',
   );
 
   // Exported permission: 'administer filters'.
@@ -310,9 +330,119 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'context_ui',
   );
 
+  // Exported permission: 'create company content'.
+  $permissions['create company content'] = array(
+    'name' => 'create company content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create contact_us content'.
+  $permissions['create contact_us content'] = array(
+    'name' => 'create contact_us content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create faq_item content'.
+  $permissions['create faq_item content'] = array(
+    'name' => 'create faq_item content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create field_cancellation_refund_policy'.
+  $permissions['create field_cancellation_refund_policy'] = array(
+    'name' => 'create field_cancellation_refund_policy',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_company_contact_details_fo'.
+  $permissions['create field_company_contact_details_fo'] = array(
+    'name' => 'create field_company_contact_details_fo',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_customer_rating'.
+  $permissions['create field_customer_rating'] = array(
+    'name' => 'create field_customer_rating',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_live_demo_url'.
+  $permissions['create field_live_demo_url'] = array(
+    'name' => 'create field_live_demo_url',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_pricing_description'.
+  $permissions['create field_pricing_description'] = array(
+    'name' => 'create field_pricing_description',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_pricing_information'.
+  $permissions['create field_pricing_information'] = array(
+    'name' => 'create field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_pricing_information_in'.
+  $permissions['create field_pricing_information_in'] = array(
+    'name' => 'create field_pricing_information_in',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_terms_and_conditions'.
+  $permissions['create field_terms_and_conditions'] = array(
+    'name' => 'create field_terms_and_conditions',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create forge_role_information content'.
   $permissions['create forge_role_information content'] = array(
     'name' => 'create forge_role_information content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create forge_webform content'.
+  $permissions['create forge_webform content'] = array(
+    'name' => 'create forge_webform content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -324,9 +454,74 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create offering content'.
+  $permissions['create offering content'] = array(
+    'name' => 'create offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create partners_and_people content'.
+  $permissions['create partners_and_people content'] = array(
+    'name' => 'create partners_and_people content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create product_family content'.
+  $permissions['create product_family content'] = array(
+    'name' => 'create product_family content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create project content'.
+  $permissions['create project content'] = array(
+    'name' => 'create project content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create service_offering content'.
+  $permissions['create service_offering content'] = array(
+    'name' => 'create service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create tutorial content'.
+  $permissions['create tutorial content'] = array(
+    'name' => 'create tutorial content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create tweet content'.
+  $permissions['create tweet content'] = array(
+    'name' => 'create tweet content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -366,9 +561,41 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'webform',
   );
 
+  // Exported permission: 'delete any company content'.
+  $permissions['delete any company content'] = array(
+    'name' => 'delete any company content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any contact_us content'.
+  $permissions['delete any contact_us content'] = array(
+    'name' => 'delete any contact_us content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any faq_item content'.
+  $permissions['delete any faq_item content'] = array(
+    'name' => 'delete any faq_item content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any forge_role_information content'.
   $permissions['delete any forge_role_information content'] = array(
     'name' => 'delete any forge_role_information content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any forge_webform content'.
+  $permissions['delete any forge_webform content'] = array(
+    'name' => 'delete any forge_webform content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -380,9 +607,68 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any offering content'.
+  $permissions['delete any offering content'] = array(
+    'name' => 'delete any offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any partners_and_people content'.
+  $permissions['delete any partners_and_people content'] = array(
+    'name' => 'delete any partners_and_people content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any product_family content'.
+  $permissions['delete any product_family content'] = array(
+    'name' => 'delete any product_family content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any project content'.
+  $permissions['delete any project content'] = array(
+    'name' => 'delete any project content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any service_offering content'.
+  $permissions['delete any service_offering content'] = array(
+    'name' => 'delete any service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any tutorial content'.
+  $permissions['delete any tutorial content'] = array(
+    'name' => 'delete any tutorial content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any tweet content'.
+  $permissions['delete any tweet content'] = array(
+    'name' => 'delete any tweet content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -396,9 +682,43 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own company content'.
+  $permissions['delete own company content'] = array(
+    'name' => 'delete own company content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own contact_us content'.
+  $permissions['delete own contact_us content'] = array(
+    'name' => 'delete own contact_us content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own faq_item content'.
+  $permissions['delete own faq_item content'] = array(
+    'name' => 'delete own faq_item content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own forge_role_information content'.
   $permissions['delete own forge_role_information content'] = array(
     'name' => 'delete own forge_role_information content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own forge_webform content'.
+  $permissions['delete own forge_webform content'] = array(
+    'name' => 'delete own forge_webform content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -410,9 +730,74 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own offering content'.
+  $permissions['delete own offering content'] = array(
+    'name' => 'delete own offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own partners_and_people content'.
+  $permissions['delete own partners_and_people content'] = array(
+    'name' => 'delete own partners_and_people content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own product_family content'.
+  $permissions['delete own product_family content'] = array(
+    'name' => 'delete own product_family content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own project content'.
+  $permissions['delete own project content'] = array(
+    'name' => 'delete own project content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own service_offering content'.
+  $permissions['delete own service_offering content'] = array(
+    'name' => 'delete own service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own tutorial content'.
+  $permissions['delete own tutorial content'] = array(
+    'name' => 'delete own tutorial content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own tweet content'.
+  $permissions['delete own tweet content'] = array(
+    'name' => 'delete own tweet content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -440,6 +825,48 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in category'.
+  $permissions['delete terms in category'] = array(
+    'name' => 'delete terms in category',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in collection'.
+  $permissions['delete terms in collection'] = array(
+    'name' => 'delete terms in collection',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in geographical_coverage'.
+  $permissions['delete terms in geographical_coverage'] = array(
+    'name' => 'delete terms in geographical_coverage',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in hashtag'.
+  $permissions['delete terms in hashtag'] = array(
+    'name' => 'delete terms in hashtag',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in tags'.
+  $permissions['delete terms in tags'] = array(
+    'name' => 'delete terms in tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in tags_offerings'.
+  $permissions['delete terms in tags_offerings'] = array(
+    'name' => 'delete terms in tags_offerings',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'display drupal links'.
   $permissions['display drupal links'] = array(
     'name' => 'display drupal links',
@@ -454,9 +881,41 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'webform',
   );
 
+  // Exported permission: 'edit any company content'.
+  $permissions['edit any company content'] = array(
+    'name' => 'edit any company content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any contact_us content'.
+  $permissions['edit any contact_us content'] = array(
+    'name' => 'edit any contact_us content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any faq_item content'.
+  $permissions['edit any faq_item content'] = array(
+    'name' => 'edit any faq_item content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any forge_role_information content'.
   $permissions['edit any forge_role_information content'] = array(
     'name' => 'edit any forge_role_information content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any forge_webform content'.
+  $permissions['edit any forge_webform content'] = array(
+    'name' => 'edit any forge_webform content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -468,9 +927,68 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any offering content'.
+  $permissions['edit any offering content'] = array(
+    'name' => 'edit any offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any partners_and_people content'.
+  $permissions['edit any partners_and_people content'] = array(
+    'name' => 'edit any partners_and_people content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any product_family content'.
+  $permissions['edit any product_family content'] = array(
+    'name' => 'edit any product_family content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any project content'.
+  $permissions['edit any project content'] = array(
+    'name' => 'edit any project content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any service_offering content'.
+  $permissions['edit any service_offering content'] = array(
+    'name' => 'edit any service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any tutorial content'.
+  $permissions['edit any tutorial content'] = array(
+    'name' => 'edit any tutorial content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any tweet content'.
+  $permissions['edit any tweet content'] = array(
+    'name' => 'edit any tweet content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -484,6 +1002,74 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit field_cancellation_refund_policy'.
+  $permissions['edit field_cancellation_refund_policy'] = array(
+    'name' => 'edit field_cancellation_refund_policy',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_company_contact_details_fo'.
+  $permissions['edit field_company_contact_details_fo'] = array(
+    'name' => 'edit field_company_contact_details_fo',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_customer_rating'.
+  $permissions['edit field_customer_rating'] = array(
+    'name' => 'edit field_customer_rating',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_live_demo_url'.
+  $permissions['edit field_live_demo_url'] = array(
+    'name' => 'edit field_live_demo_url',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_pricing_description'.
+  $permissions['edit field_pricing_description'] = array(
+    'name' => 'edit field_pricing_description',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_pricing_information'.
+  $permissions['edit field_pricing_information'] = array(
+    'name' => 'edit field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_pricing_information_in'.
+  $permissions['edit field_pricing_information_in'] = array(
+    'name' => 'edit field_pricing_information_in',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_terms_and_conditions'.
+  $permissions['edit field_terms_and_conditions'] = array(
+    'name' => 'edit field_terms_and_conditions',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own comments'.
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
@@ -491,9 +1077,123 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'edit own company content'.
+  $permissions['edit own company content'] = array(
+    'name' => 'edit own company content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own contact_us content'.
+  $permissions['edit own contact_us content'] = array(
+    'name' => 'edit own contact_us content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own faq_item content'.
+  $permissions['edit own faq_item content'] = array(
+    'name' => 'edit own faq_item content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own field_cancellation_refund_policy'.
+  $permissions['edit own field_cancellation_refund_policy'] = array(
+    'name' => 'edit own field_cancellation_refund_policy',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_company_contact_details_fo'.
+  $permissions['edit own field_company_contact_details_fo'] = array(
+    'name' => 'edit own field_company_contact_details_fo',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_customer_rating'.
+  $permissions['edit own field_customer_rating'] = array(
+    'name' => 'edit own field_customer_rating',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_live_demo_url'.
+  $permissions['edit own field_live_demo_url'] = array(
+    'name' => 'edit own field_live_demo_url',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_pricing_description'.
+  $permissions['edit own field_pricing_description'] = array(
+    'name' => 'edit own field_pricing_description',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_pricing_information'.
+  $permissions['edit own field_pricing_information'] = array(
+    'name' => 'edit own field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_pricing_information_in'.
+  $permissions['edit own field_pricing_information_in'] = array(
+    'name' => 'edit own field_pricing_information_in',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_terms_and_conditions'.
+  $permissions['edit own field_terms_and_conditions'] = array(
+    'name' => 'edit own field_terms_and_conditions',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own forge_role_information content'.
   $permissions['edit own forge_role_information content'] = array(
     'name' => 'edit own forge_role_information content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own forge_webform content'.
+  $permissions['edit own forge_webform content'] = array(
+    'name' => 'edit own forge_webform content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -505,9 +1205,74 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own offering content'.
+  $permissions['edit own offering content'] = array(
+    'name' => 'edit own offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own partners_and_people content'.
+  $permissions['edit own partners_and_people content'] = array(
+    'name' => 'edit own partners_and_people content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own product_family content'.
+  $permissions['edit own product_family content'] = array(
+    'name' => 'edit own product_family content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own project content'.
+  $permissions['edit own project content'] = array(
+    'name' => 'edit own project content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own service_offering content'.
+  $permissions['edit own service_offering content'] = array(
+    'name' => 'edit own service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own tutorial content'.
+  $permissions['edit own tutorial content'] = array(
+    'name' => 'edit own tutorial content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own tweet content'.
+  $permissions['edit own tweet content'] = array(
+    'name' => 'edit own tweet content',
     'roles' => array(),
     'module' => 'node',
   );
@@ -524,6 +1289,48 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own webform submissions',
     'roles' => array(),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'edit terms in category'.
+  $permissions['edit terms in category'] = array(
+    'name' => 'edit terms in category',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in collection'.
+  $permissions['edit terms in collection'] = array(
+    'name' => 'edit terms in collection',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in geographical_coverage'.
+  $permissions['edit terms in geographical_coverage'] = array(
+    'name' => 'edit terms in geographical_coverage',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in hashtag'.
+  $permissions['edit terms in hashtag'] = array(
+    'name' => 'edit terms in hashtag',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in tags'.
+  $permissions['edit terms in tags'] = array(
+    'name' => 'edit terms in tags',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in tags_offerings'.
+  $permissions['edit terms in tags_offerings'] = array(
+    'name' => 'edit terms in tags_offerings',
+    'roles' => array(),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'flush caches'.
@@ -637,8 +1444,166 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'use text format filtered_html',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'view field_cancellation_refund_policy'.
+  $permissions['view field_cancellation_refund_policy'] = array(
+    'name' => 'view field_cancellation_refund_policy',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_company_contact_details_fo'.
+  $permissions['view field_company_contact_details_fo'] = array(
+    'name' => 'view field_company_contact_details_fo',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_customer_rating'.
+  $permissions['view field_customer_rating'] = array(
+    'name' => 'view field_customer_rating',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_live_demo_url'.
+  $permissions['view field_live_demo_url'] = array(
+    'name' => 'view field_live_demo_url',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_pricing_description'.
+  $permissions['view field_pricing_description'] = array(
+    'name' => 'view field_pricing_description',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_pricing_information'.
+  $permissions['view field_pricing_information'] = array(
+    'name' => 'view field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_pricing_information_in'.
+  $permissions['view field_pricing_information_in'] = array(
+    'name' => 'view field_pricing_information_in',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_terms_and_conditions'.
+  $permissions['view field_terms_and_conditions'] = array(
+    'name' => 'view field_terms_and_conditions',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_cancellation_refund_policy'.
+  $permissions['view own field_cancellation_refund_policy'] = array(
+    'name' => 'view own field_cancellation_refund_policy',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_company_contact_details_fo'.
+  $permissions['view own field_company_contact_details_fo'] = array(
+    'name' => 'view own field_company_contact_details_fo',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_customer_rating'.
+  $permissions['view own field_customer_rating'] = array(
+    'name' => 'view own field_customer_rating',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_live_demo_url'.
+  $permissions['view own field_live_demo_url'] = array(
+    'name' => 'view own field_live_demo_url',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pricing_description'.
+  $permissions['view own field_pricing_description'] = array(
+    'name' => 'view own field_pricing_description',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pricing_information'.
+  $permissions['view own field_pricing_information'] = array(
+    'name' => 'view own field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pricing_information_in'.
+  $permissions['view own field_pricing_information_in'] = array(
+    'name' => 'view own field_pricing_information_in',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_terms_and_conditions'.
+  $permissions['view own field_terms_and_conditions'] = array(
+    'name' => 'view own field_terms_and_conditions',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
   );
 
   // Exported permission: 'view own unpublished content'.
