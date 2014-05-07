@@ -44,6 +44,10 @@ $desk: 70em 16; // At 70em use 16 columns.
    }
 }
 
+.l-after_content_helper {
+  margin: 0 auto;
+}
+
 .l-middle_content {
   padding-top: $vert-spacing-unit / 4;
 }

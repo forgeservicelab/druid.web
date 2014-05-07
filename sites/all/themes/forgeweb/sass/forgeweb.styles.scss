@@ -1553,43 +1553,49 @@ only screen and (min-resolution: 192dpi) {
 
 .front .l-after_content {
   border-top: 80px solid #3f6d00;
-  @include at-breakpoint($desk) {
-    background: url('../images/vertical_flowers.png') no-repeat left 300px transparent;
-    background-size: auto 385px;
-    overflow: hidden;
-    position: relative;
-    &:after {
-      background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
-      background-size: auto 385px;
-      content: "";
-      display: block;
-      height: 385px;
-      position: absolute;
-      right: 0;
-      top: 1100px;
-      width: 649px;
-      z-index: -1;
+  overflow: hidden;
+  .l-after_content_helper {
+    max-width: 330px;
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 1090px;
+      position: relative;
+      &:before {
+        background: url('../images/vertical_flowers.png') no-repeat left top transparent;
+        left: -730px;
+        top: 100px;
+      }
+      &:after {
+        background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
+        right: -730px;
+        top: 1100px;
+      }
+      &:before,
+      &:after {
+        background-size: auto 385px;
+        content: "";
+        display: block;
+        height: 385px;
+        position: absolute;
+        width: 649px;
+      }
     }
     .l-region {
-      background-color: rgba(255,255,255,0.9);
+      overflow: hidden;
     }
   }
   .block--views-feed-block {
     @include at-breakpoint($tab) {
-      @include span-columns(6, 12); // Span 6 out of 12 columns.
-    }
-    @include at-breakpoint($desk) {
-      @include span-columns(8, 12); // Span 8 out of 12 columns.
+      @include span-columns(7, 12); // Span 6 out of 12 columns.
     }
   }
   .block--fb-likebox {
     margin: 2em 0;
     @include at-breakpoint($tab) {
-      @include span-columns(6 omega, 12); // Span 6 out of 12 columns.
+      @include span-columns(5 omega, 12); // Span 6 out of 12 columns.
       margin: 0;
-    }
-    @include at-breakpoint($desk) {
-      @include span-columns(4 omega, 12); // Span 4 out of 12 columns.
     }
     .block__title {
       display: none;
@@ -1609,9 +1615,11 @@ only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
-  .front .l-after_content {
+  .front .l-after_content .l-after_content_helper {
     @include at-breakpoint($desk) {
-      background-image: url('../images/vertical_flowers_retina.png');
+      &:before {
+        background-image: url('../images/vertical_flowers_retina.png');
+      }
       &:after {
         background-image: url('../images/vertical_flowers_right_retina.png');
       }
@@ -2080,13 +2088,21 @@ only screen and (min-resolution: 192dpi) {
 // Feed block styles
 
 .block--views-feed-block {
-  margin: 0 auto;
   max-width: 330px;
   @include at-breakpoint($tab) {
     max-width: 67em;
   }
   @include at-breakpoint($desk) {
     max-width: 100%;
+  }
+  > * {
+   @include at-breakpoint($tab) {
+      margin: 0 auto;
+      max-width: 530px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
   }
   .block__title {
     @extend .large-header;
