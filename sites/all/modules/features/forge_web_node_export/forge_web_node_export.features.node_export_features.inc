@@ -51,7 +51,9 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_page_attachment\' => array(),
-      \'field_page_image\' => array(),
+      \'field_page_liftup_image\' => array(),
+      \'field_liftup_location\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -227,6 +229,7 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_images_for_content\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -392,6 +395,7 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_images_for_content\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -555,7 +559,9 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_page_attachment\' => array(),
-      \'field_page_image\' => array(),
+      \'field_page_liftup_image\' => array(),
+      \'field_liftup_location\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -699,7 +705,9 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_page_attachment\' => array(),
-      \'field_page_image\' => array(),
+      \'field_page_liftup_image\' => array(),
+      \'field_liftup_location\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -865,6 +873,7 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_images_for_content\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -985,11 +994,11 @@ function forge_web_node_export_node_export_features_default() {
       \'type\' => \'page\',
       \'language\' => \'en\',
       \'created\' => \'1399368753\',
-      \'changed\' => \'1399368842\',
+      \'changed\' => \'1399475469\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'71de82a9-6472-49e6-a5f2-ad1bc4dd543a\',
-      \'revision_timestamp\' => \'1399368842\',
+      \'revision_timestamp\' => \'1399475469\',
       \'revision_uid\' => \'1\',
       \'body\' => array(
         \'en\' => array(
@@ -1028,18 +1037,18 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_page_attachment\' => array(),
-      \'field_page_image\' => array(
+      \'field_page_liftup_image\' => array(
         \'und\' => array(
           array(
-            \'fid\' => \'129\',
+            \'fid\' => \'130\',
             \'uid\' => \'1\',
             \'filename\' => \'image_puut.jpg\',
             \'uri\' => \'public://image_puut_0.jpg\',
             \'filemime\' => \'image/jpeg\',
             \'filesize\' => \'73193\',
             \'status\' => \'1\',
-            \'timestamp\' => \'1399368842\',
-            \'uuid\' => \'eeb1e84d-84d2-437c-afce-332df007f273\',
+            \'timestamp\' => \'1399475469\',
+            \'uuid\' => \'e694bc83-bbfd-40bb-80ee-fa77b53c7b4f\',
             \'rdf_mapping\' => array(),
             \'alt\' => \'\',
             \'title\' => \'\',
@@ -1048,6 +1057,14 @@ function forge_web_node_export_node_export_features_default() {
           ),
         ),
       ),
+      \'field_liftup_location\' => array(
+        \'und\' => array(
+          array(
+            \'value\' => \'front_page_big_liftup_2\',
+          ),
+        ),
+      ),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1126,7 +1143,7 @@ function forge_web_node_export_node_export_features_default() {
               \'status\' => \'1\',
               \'translate\' => \'0\',
               \'created\' => \'1399368753\',
-              \'changed\' => \'1399368842\',
+              \'changed\' => \'1399475469\',
             ),
           ),
         ),
@@ -1164,11 +1181,11 @@ function forge_web_node_export_node_export_features_default() {
       \'type\' => \'page\',
       \'language\' => \'en\',
       \'created\' => \'1399368753\',
-      \'changed\' => \'1399368822\',
+      \'changed\' => \'1399475492\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'a746c45f-f355-454e-8c27-9152d8a02a9c\',
-      \'revision_timestamp\' => \'1399368822\',
+      \'revision_timestamp\' => \'1399475492\',
       \'revision_uid\' => \'1\',
       \'body\' => array(
         \'en\' => array(
@@ -1207,18 +1224,18 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_page_attachment\' => array(),
-      \'field_page_image\' => array(
+      \'field_page_liftup_image\' => array(
         \'und\' => array(
           array(
-            \'fid\' => \'128\',
+            \'fid\' => \'131\',
             \'uid\' => \'1\',
             \'filename\' => \'image_kukkakiska.jpg\',
             \'uri\' => \'public://image_kukkakiska.jpg\',
             \'filemime\' => \'image/jpeg\',
             \'filesize\' => \'46174\',
             \'status\' => \'1\',
-            \'timestamp\' => \'1399368822\',
-            \'uuid\' => \'666234d5-cd65-48f9-88f1-c40fda0dbc93\',
+            \'timestamp\' => \'1399475492\',
+            \'uuid\' => \'55ff9f05-9824-4fa1-b4d6-6756237bf689\',
             \'rdf_mapping\' => array(),
             \'alt\' => \'\',
             \'title\' => \'\',
@@ -1227,6 +1244,14 @@ function forge_web_node_export_node_export_features_default() {
           ),
         ),
       ),
+      \'field_liftup_location\' => array(
+        \'und\' => array(
+          array(
+            \'value\' => \'front_page_big_liftup_1\',
+          ),
+        ),
+      ),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1305,7 +1330,7 @@ function forge_web_node_export_node_export_features_default() {
               \'status\' => \'1\',
               \'translate\' => \'0\',
               \'created\' => \'1399368753\',
-              \'changed\' => \'1399368822\',
+              \'changed\' => \'1399475492\',
             ),
           ),
         ),
@@ -1415,6 +1440,7 @@ function forge_web_node_export_node_export_features_default() {
           ),
         ),
       ),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1585,6 +1611,7 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_images_for_content\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1765,6 +1792,7 @@ function forge_web_node_export_node_export_features_default() {
         ),
       ),
       \'field_images_for_content\' => array(),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1911,6 +1939,7 @@ function forge_web_node_export_node_export_features_default() {
           ),
         ),
       ),
+      \'metatags\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
