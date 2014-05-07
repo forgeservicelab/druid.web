@@ -1555,7 +1555,12 @@ only screen and (min-resolution: 192dpi) {
   border-top: 80px solid #3f6d00;
   overflow: hidden;
   .l-after_content_helper {
+    max-width: 330px;
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
     @include at-breakpoint($desk) {
+      max-width: 1090px;
       position: relative;
       &:before {
         background: url('../images/vertical_flowers.png') no-repeat left top transparent;
@@ -1583,13 +1588,13 @@ only screen and (min-resolution: 192dpi) {
   }
   .block--views-feed-block {
     @include at-breakpoint($tab) {
-      @include span-columns(8, 12); // Span 6 out of 12 columns.
+      @include span-columns(7, 12); // Span 6 out of 12 columns.
     }
   }
   .block--fb-likebox {
     margin: 2em 0;
     @include at-breakpoint($tab) {
-      @include span-columns(4 omega, 12); // Span 6 out of 12 columns.
+      @include span-columns(5 omega, 12); // Span 6 out of 12 columns.
       margin: 0;
     }
     .block__title {
@@ -2083,13 +2088,21 @@ only screen and (min-resolution: 192dpi) {
 // Feed block styles
 
 .block--views-feed-block {
-  margin: 0 auto;
   max-width: 330px;
   @include at-breakpoint($tab) {
     max-width: 67em;
   }
   @include at-breakpoint($desk) {
     max-width: 100%;
+  }
+  > * {
+   @include at-breakpoint($tab) {
+      margin: 0 auto;
+      max-width: 530px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
   }
   .block__title {
     @extend .large-header;
