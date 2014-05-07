@@ -34,17 +34,14 @@ function forge_web_base_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Field: Content: Image */
-  $handler->display->display_options['fields']['field_page_image']['id'] = 'field_page_image';
-  $handler->display->display_options['fields']['field_page_image']['table'] = 'field_data_field_page_image';
-  $handler->display->display_options['fields']['field_page_image']['field'] = 'field_page_image';
-  $handler->display->display_options['fields']['field_page_image']['label'] = '';
-  $handler->display->display_options['fields']['field_page_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_page_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_page_image']['element_wrapper_class'] = 'forge-web-block-image-wrapper';
-  $handler->display->display_options['fields']['field_page_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_page_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_page_image']['settings'] = array(
+  /* Field: Content: Liftup image */
+  $handler->display->display_options['fields']['field_page_liftup_image']['id'] = 'field_page_liftup_image';
+  $handler->display->display_options['fields']['field_page_liftup_image']['table'] = 'field_data_field_page_liftup_image';
+  $handler->display->display_options['fields']['field_page_liftup_image']['field'] = 'field_page_liftup_image';
+  $handler->display->display_options['fields']['field_page_liftup_image']['label'] = '';
+  $handler->display->display_options['fields']['field_page_liftup_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_page_liftup_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_page_liftup_image']['settings'] = array(
     'image_style' => 'front_page_image',
     'image_link' => '',
   );
@@ -77,12 +74,6 @@ function forge_web_base_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Page title (field_page_title) */
-  $handler->display->display_options['filters']['field_page_title_value']['id'] = 'field_page_title_value';
-  $handler->display->display_options['filters']['field_page_title_value']['table'] = 'field_data_field_page_title';
-  $handler->display->display_options['filters']['field_page_title_value']['field'] = 'field_page_title_value';
-  $handler->display->display_options['filters']['field_page_title_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_page_title_value']['value'] = 'What Forge';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -93,9 +84,7 @@ function forge_web_base_views_default_views() {
 
   /* Display: Block: What FORGE */
   $handler = $view->new_display('block', 'Block: What FORGE', 'block');
-
-  /* Display: Block: Why FORGE */
-  $handler = $view->new_display('block', 'Block: Why FORGE', 'block_1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -105,18 +94,46 @@ function forge_web_base_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Page title (field_page_title) */
-  $handler->display->display_options['filters']['field_page_title_value']['id'] = 'field_page_title_value';
-  $handler->display->display_options['filters']['field_page_title_value']['table'] = 'field_data_field_page_title';
-  $handler->display->display_options['filters']['field_page_title_value']['field'] = 'field_page_title_value';
-  $handler->display->display_options['filters']['field_page_title_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_page_title_value']['value'] = 'Why Forge';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'page' => 'page',
+  );
+  /* Filter criterion: Content: Liftup location (field_liftup_location) */
+  $handler->display->display_options['filters']['field_liftup_location_value']['id'] = 'field_liftup_location_value';
+  $handler->display->display_options['filters']['field_liftup_location_value']['table'] = 'field_data_field_liftup_location';
+  $handler->display->display_options['filters']['field_liftup_location_value']['field'] = 'field_liftup_location_value';
+  $handler->display->display_options['filters']['field_liftup_location_value']['value'] = array(
+    'front_page_big_liftup_1' => 'front_page_big_liftup_1',
+  );
+
+  /* Display: Block: Why FORGE */
+  $handler = $view->new_display('block', 'Block: Why FORGE', 'block_1');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'page' => 'page',
+  );
+  /* Filter criterion: Content: Liftup location (field_liftup_location) */
+  $handler->display->display_options['filters']['field_liftup_location_value']['id'] = 'field_liftup_location_value';
+  $handler->display->display_options['filters']['field_liftup_location_value']['table'] = 'field_data_field_liftup_location';
+  $handler->display->display_options['filters']['field_liftup_location_value']['field'] = 'field_liftup_location_value';
+  $handler->display->display_options['filters']['field_liftup_location_value']['value'] = array(
+    'front_page_big_liftup_2' => 'front_page_big_liftup_2',
   );
   $translatables['what_why_blocks'] = array(
     t('Master'),
