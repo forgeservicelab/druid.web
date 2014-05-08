@@ -10,7 +10,6 @@ function forgeweb_preprocess_html(&$variables) {
 
   drupal_add_js(drupal_get_path('theme', 'forgeweb') . '/js/remove-activeclasses.js', 'file');
   drupal_add_js(drupal_get_path('theme', 'forgeweb') . '/js/navi-scroller.js', 'file');
-}
   
   // Check for favicons from registry and add them to head after a thorough checkup
   $registry = theme_get_registry(TRUE);
