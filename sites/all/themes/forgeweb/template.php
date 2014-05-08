@@ -25,3 +25,45 @@ function forgeweb_preprocess_node(&$vars) {
     $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('attributes' => array('class' => 'back-to-wizard')));
   }
 }
+
+/**
+ * Implements hook_extension_EXTENSION_registry_alter().
+ *
+ * Add favicons and mobile/tablet icons under head tag.
+ */
+function forgeweb_theme_registry_alter(&$registry) {
+
+  // The regex finds all files following certain naming conventions.
+  $mask = '/^(favicon|mstile|browserconfig|apple-touch-icon)(-precomposed)?(-([0-9]+x[0-9]+))?\.(png|ico|xml)$/';
+
+  // Loop over all themes in the trail in reverse (starting with the current
+  // theme) and use the touch icons of the first theme we find. The favicon files
+  // are found under theme_name/images
+  foreach (array_reverse(omega_theme_trail()) as $theme => $name) {
+    $path = drupal_get_path('theme', $theme) . '/images/favicons';
+
+    // Scan files from the path and iterate through the files
+    if ($files = file_scan_directory($path, $mask, array('recurse' => FALSE))) {
+      foreach ($files as $file) {
+        $matches = array();
+
+        // Run the filename through the regex once more picking up the
+        // sub-matches in order to find out the dimensions and other information
+        // of the files.
+        preg_match($mask, $file->filename, $matches);
+
+        // Cache the array of apple touch icons.
+        $registry['html']['mobile-favicons'][$file->uri] = array(
+          'uri' => $file->uri,
+          'precomposed' => !empty($matches[2]) ? $matches[2] : FALSE,
+          'sizes' => !empty($matches[4]) ? $matches[4] : FALSE,
+          'icon-type' => $matches[1],
+          'file-type' => $matches[5],
+        );
+      }
+
+      // Break out of the loop because we found at least one touch icon.
+      break;
+    }
+  }
+}
