@@ -1,0 +1,3 @@
+name = Login alter
+description = Login page alter hooks
+core = 7.x

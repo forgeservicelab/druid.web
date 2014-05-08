@@ -1,0 +1,9 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter
+ */
+function login_alter_form_user_login_alter(&$form, &$form_state, $form_id) {
+  $form['name']['#description'] = t('In order to log in you should be a FORGE Service Developer or a FORGE Plaza Partner. This means that you have made a contract with DIGILE. In order to join FORGE please click
+     <a href="https://www.forgeservicelab.fi/wizard/join-forge-service-lab">join FORGE</a>. for making a contract with DIGILE or <a href="https://www.forgeservicelab.fi/en/contact-us">Contact us</a>');
+}

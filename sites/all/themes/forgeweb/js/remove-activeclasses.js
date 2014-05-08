@@ -1,7 +1,7 @@
 // Removed active-classes from mainmenu anchors
 (function ($) {
   $(function () {
-    $('#menu-name-main-menu ul li ul li a').removeClass("active");
+    $('#block-menu-block-1 #rm-no-id .menu').removeClass('active');
     });
   });
 })(jQuery);

@@ -1,0 +1,62 @@
+diff --git a/better_exposed_filters.js b/better_exposed_filters.js
+index 87d606e..4d08cce 100644
+--- a/better_exposed_filters.js
++++ b/better_exposed_filters.js
+@@ -98,6 +98,32 @@
+     }                   // attach: function() {
+   };                    // Drupal.behaviors.better_exposed_filters = {
+ 
++  // This is only needed to provide ajax functionality
++  Drupal.behaviors.better_exposed_filters_select_as_links = {
++    attach: function(context) {
++
++      $('.bef-select-as-links').once(function() {
++          $widgets = $('.views-exposed-widgets');
++          $widgets.find('.views-submit-button, .bef-select-as-links select').hide();
++          $options = $('.bef-select-as-links select option');
++          $(this).find('.form-type-bef-link a').click(function(event) {
++              // we have to prevent the page load triggered by the links
++              event.preventDefault();
++              $options.removeAttr('selected');
++              text = $(this).text();
++              // set the corresponding option inside the select element
++              $options.filter(function() {
++                  return $(this).text() == text;
++              }).attr('selected', 'selected');
++
++              // submit the form
++              $(this).parents('.views-exposed-widgets')
++                .find('.views-submit-button input').click();
++          });
++      });
++    }
++  };
++
+   /*
+    * Helper functions
+    */
+diff --git a/better_exposed_filters.theme b/better_exposed_filters.theme
+index c020f14..1eb6fe1 100644
+--- a/better_exposed_filters.theme
++++ b/better_exposed_filters.theme
+@@ -481,6 +481,7 @@ function theme_select_as_links($vars) {
+   );
+ 
+   return '<div class="bef-select-as-links">'
++    . theme('select', array('element' => $vars['element']))
+     . theme('form_element', array('element' => $properties))
+     . '</div>';
+ }
+diff --git a/better_exposed_filters_exposed_form_plugin.inc b/better_exposed_filters_exposed_form_plugin.inc
+index 5489aef..6533651 100644
+--- a/better_exposed_filters_exposed_form_plugin.inc
++++ b/better_exposed_filters_exposed_form_plugin.inc
+@@ -598,7 +598,7 @@ class better_exposed_filters_exposed_form_plugin extends views_plugin_exposed_fo
+ 
+         case 'bef_links':
+           $show_apply = TRUE;
+-
++          drupal_add_js(drupal_get_path('module', 'better_exposed_filters') . '/better_exposed_filters.js');
+           $form[$field_id]['#theme'] = 'select_as_links';
+           break;
+ 

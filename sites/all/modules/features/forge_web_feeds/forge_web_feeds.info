@@ -4,6 +4,7 @@ core = 7.x
 package = forgeweb
 version = 7.x-1.0
 project = forge_web_feeds
+dependencies[] = better_exposed_filters
 dependencies[] = context
 dependencies[] = fb_likebox
 dependencies[] = views
