@@ -1552,8 +1552,14 @@ only screen and (min-resolution: 192dpi) {
 // Front page after content area
 
 .front .l-after_content {
-  border-top: 80px solid #3f6d00;
+  border-top: 20px solid #3f6d00;
   overflow: hidden;
+  @include at-breakpoint($tab) {
+    border-top-width: 50px;
+  }
+  @include at-breakpoint($desk) {
+    border-top-width: 80px;
+  }
   .l-after_content_helper {
     max-width: 330px;
     @include at-breakpoint($tab) {
@@ -1630,55 +1636,51 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page What & Why blocks
 
-.block--forge-web-base {
-  max-width: 330px;
-  margin-left: auto;
-  margin-right: auto;
+.view-what-why-blocks {
   overflow: hidden;
-  @include at-breakpoint($tab) {
-    max-width: 880px;
-  }
-  @include at-breakpoint($desk) {
-    max-width: 100%;
-  }
-  .block__title {
-    display: none;
-  }
-  .forge-web-block-image-wrapper {
-    height: 150px;
+  .view-content {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
+    .block__title {
+      display: none;
+    }
     img {
-      margin-top: -50%;
       @include at-breakpoint($tab) {
-        margin-top: 0;
+        float: left;
+        height: auto;
+        margin-right: -320px;
+        width: 300px;
+      }
+      @include at-breakpoint($desk) {
+        margin-right: -45%;
+        width: auto;
       }
     }
-    @include at-breakpoint($tab) {
-      float: left;
-      height: auto;
-      margin-right: -320px;
-      width: 300px;
-    }
-    @include at-breakpoint($desk) {
-      margin-right: -45%;
-      width: auto;
-    }
-  }
-  .forge-web-block-body-wrapper {
+    .forge-web-block-body-wrapper {
     
-    @include at-breakpoint($tab) {
-      margin-left: 320px;
-    }
-    @include at-breakpoint($desk) {
-      font-size: 1.2em;
-      margin-left: 45%;
-    }
-    h2 {
-      @extend .large-header;
+      @include at-breakpoint($tab) {
+        margin-left: 320px;
+      }
+      @include at-breakpoint($desk) {
+        font-size: 1.2em;
+        margin-left: 45%;
+      }
+      h2 {
+        @extend .large-header;
+      }
     }
   }
-  &.block--forge-web-base-forge-web-why {
-    .forge-web-block-image-wrapper {
+  
+  &.even .view-content {
+    img {
       @include at-breakpoint($tab) {
         float: right;
         margin-left: -320px;
