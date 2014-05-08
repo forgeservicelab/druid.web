@@ -24,7 +24,7 @@ function forge_web_offering_flexslider_default_presets() {
     'easing' => 'swing',
     'direction' => 'horizontal',
     'reverse' => 0,
-    'smoothHeight' => 0,
+    'smoothHeight' => 1,
     'startAt' => '0',
     'animationSpeed' => '400',
     'initDelay' => '0',

@@ -42,7 +42,7 @@ $container-width: 1200px;
 }
 
 
-// General styles
+// ****** GENERAL STYLES ******* //
 
 a {
   color: $link-color;
@@ -78,7 +78,9 @@ img {
   }
 }
 
+
 // Home-icon retina styles
+
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min--moz-device-pixel-ratio: 2),
@@ -92,6 +94,7 @@ only screen and (min-resolution: 192dpi) {
 
 
 // Form styles
+
 form {
   margin: 2em 0 0;
   .form-item {
@@ -195,11 +198,7 @@ form {
   }
   
   input[type='submit'] {
-    background-color: $button-color;
-    border: 1px solid darken($button-color, 10);
-    color: $text-color;
-    font-size: 1.2em;
-    padding: 0.5em 1.5em;
+    @extend .button;
   }
   
   .form-actions {
@@ -232,14 +231,24 @@ form.user-register-form {
   }
 }
 
-.grippie {
-  display: none;
+
+// General node body styles to tackle images added to content
+
+.not-front .field--name-body {
+  margin-bottom: 1em;
+  overflow: hidden;
+  img {
+    padding: 0 1em 1em;
+  }
 }
 
+
 // Fivestar styles
+
 form.fivestar-widget {
   margin: 0;
 }
+
 .fivestar-average-stars {
   div.fivestar-widget-static,
   div.fivestar-widget {
@@ -304,6 +313,7 @@ form.fivestar-widget {
 
 
 // Fivestar retina styles
+
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min--moz-device-pixel-ratio: 2),
@@ -341,25 +351,43 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-// General node body styles to tacke images added to content
-.not-front .field--name-body {
-  margin-bottom: 1em;
-  overflow: hidden;
-  img {
-    padding: 0 1em 1em;
+
+// Field tag styles
+
+.field--name-field-tags {
+  margin: 1.5em 0;
+  .field__label {
+    font-weight: normal;
+  }
+  .field__items {
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
   }
 }
 
+
+// Listing styles
+
 .l-listing {
   .view-content {
-    @include container;  // Define these elements as the grid containers.
+    @include container; // Define these elements as the grid containers.
   }
 }
 
 @include at-breakpoint($tab) {
   .l-listing {
     .view-content {
-      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      @include set-container-width;
       .views-row {
         @include span-columns(6, 12); // Span 6 out of 12 columns.
         @include nth-omega(2n);
@@ -371,7 +399,7 @@ only screen and (min-resolution: 192dpi) {
 @include at-breakpoint($desk) {
   .l-listing {
     .view-content {
-      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      @include set-container-width;
       .views-row {
         @include span-columns(4, 12); // Span 4 out of 12 columns.
         @include remove-nth-omega(2n);
@@ -381,7 +409,9 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+
 // Comment styles
+
 .comment {
   h3 {
     font-size: 1.6em;
@@ -413,6 +443,9 @@ only screen and (min-resolution: 192dpi) {
     margin-bottom: 1em;
   }
 }
+
+
+// Tabs
 
 // Reverting u-tabs default styles
 .ui-tabs {
@@ -463,7 +496,6 @@ only screen and (min-resolution: 192dpi) {
   margin-bottom: 1em;
 }
 
-// Tab styles
 .tabs,
 .not-front .ui-tabs-nav {
   &.tabs--primary {
@@ -530,6 +562,9 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+
+// Quicktab Accordion styles
+
 .quick-accordion.ui-accordion {
   padding-bottom: 4em;
   .ui-accordion-header {
@@ -587,6 +622,85 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+
+// UI accordion styles (used on front page FAQ-block)
+
+.ui-accordion {
+  .ui-corner-top,
+  .ui-corner-bottom,
+  .ui-corner-all {
+    @include border-radius(0);
+  }
+  .ui-state-active, 
+  .ui-widget-content .ui-state-active,
+  .ui-widget-header .ui-state-active,
+  .ui-state-default, 
+  .ui-widget-content .ui-state-default, 
+  .ui-widget-header .ui-state-default {
+    background: none;
+    border: 0 none;
+    color: $text-color;
+    font-weight: bold;
+  }
+  .ui-widget-content {
+    background: none;
+    border: 0 none;
+    color: $text-color;
+  }
+  
+  .ui-accordion-header {
+    a {
+      color: $text-color;
+    }
+    &.ui-state-default {
+      .ui-icon {
+        background: url('../images/icon_accordion_mobile.png') no-repeat 0 0 transparent;
+        background-size: 7px auto;
+        display: block;
+        height: 13px;
+        margin-top: -7px;
+        width: 7px;
+        @include at-breakpoint($tab) {
+          background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
+          background-size: 13px auto;
+          height: 26px;
+          margin-top: -13px;
+          width: 13px;
+        }
+      }
+      a {
+        padding: 0 0 0 23px;
+        @include at-breakpoint($tab) {
+          padding: 0 0 0 35px;
+        }
+      }
+    }
+    &.ui-state-active {
+      .ui-icon {
+        display: none;
+      }
+      a {
+        padding: 0;
+      }
+    }
+  }
+  
+  .ui-accordion-content {
+    padding: 0;
+  }
+}
+
+
+// UI Widged override
+
+.ui-widget {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+
+
+// More link styles
+
 .more-link {
   display: inline-block;
   margin-bottom: 2em;
@@ -611,7 +725,66 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Logo container
+// Flexslider styles
+
+.flexslider {
+  @include border-radius(0);
+  @include box-shadow(0 0 0 transparent);
+  
+  background: #fff;
+  border: 0 none;
+  margin: 0 auto;
+  position: relative;
+  @include at-breakpoint($tab) {
+    margin: 0;
+    min-height: 400px;
+  }
+  .slides {
+    > li {
+      position: relative;
+      img {
+        height: auto;
+      }
+      .flex-caption {
+        background-color: rgba(0,0,0,0.3);
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        padding: 1em;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+  .flex-control-thumbs {
+    margin: 5px 0;
+    li img {
+      padding: 5px;
+    }
+  }
+  .flex-direction-nav {
+    a {
+      background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
+      background-size: 13px auto;
+      display: block;
+      font-size: 0;
+      height: 26px;
+      margin-top: -13px;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 13px;
+      &:before {
+        display: none;
+      }
+      &.flex-prev {
+        background-image: url('../images/icon_accordion_invert.png');
+      }
+    }
+  }
+}
+
+
+// Logo styles
 
 .site-name {
   line-height: 0;
@@ -846,9 +1019,6 @@ only screen and (min-resolution: 192dpi) {
               z-index: 100;
             }
           }
-          ul {
-            //display: block;
-          }
         }
       }
     }
@@ -909,18 +1079,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.front .l-navigation-wrapper {
-  @include at-breakpoint($mobile_nav) {
-    left: 0;
-    position: fixed;
-    top: 0;
-  }
-  .responsive-menus.responsified {
-    &.absolute .responsive-menus-simple {
-      border-top: 10px solid #fff;
-    }
-  }
-}
 
 // Navigation retina styles
 
@@ -1131,11 +1289,55 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Content page default styles
+
+.page-node {
+  aside {
+    border-top: 1px solid $border-color;
+    margin-top: 1em;
+    overflow: hidden;
+    @include at-breakpoint($tab) {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+    .block {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      &:last-child {
+        border-bottom: 0 none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// ****** FRONT PAGE SPESIFIC STYLES ****** //
+
+// Front page navigation exceptions (fixed on the top of the page)
+
+.front .l-navigation-wrapper {
+  @include at-breakpoint($mobile_nav) {
+    left: 0;
+    position: fixed;
+    top: 0;
+  }
+  .responsive-menus.responsified {
+    &.absolute .responsive-menus-simple {
+      border-top: 10px solid #fff;
+    }
+  }
+}
+
+
 // Front page branding
 
 .front .l-branding {
   text-align: center;
 }
+
 
 // Front page title
 
@@ -1163,17 +1365,12 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .front .l-content-wrapper article {
-  font-size: 1em;
-  line-height: 1.2em;
-  margin: 0 auto;
+  @extend .large-caption;
   max-width: 330px;
-  text-align: left;
   @include at-breakpoint($tab) {
-    font-size: 1.1em;
     max-width: 480px;
   }
   @include at-breakpoint($desk) {
-    font-size: 1.667em;
     max-width: 100%;
   }
 }
@@ -1228,70 +1425,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.flexslider {
-  @include border-radius(0);
-  @include box-shadow(0 0 0 transparent);
-  
-  background: #fff;
-  border: 0 none;
-  margin: 0 auto;
-  position: relative;
-  @include at-breakpoint($tab) {
-    margin: 0;
-    min-height: 400px;
-  }
-  .slides {
-    > li {
-      position: relative;
-      img {
-        height: auto;
-      }
-      .flex-caption {
-        background-color: rgba(0,0,0,0.3);
-        bottom: 0;
-        color: #fff;
-        left: 0;
-        padding: 1em;
-        position: absolute;
-        width: 100%;
-      }
-    }
-  }
-  .flex-control-thumbs {
-    margin: 5px 0;
-    li img {
-      padding: 5px;
-    }
-  }
-  .flex-direction-nav {
-    a {
-      background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
-      background-size: 13px auto;
-      display: block;
-      font-size: 0;
-      height: 26px;
-      margin-top: -13px;
-      overflow: hidden;
-      text-indent: -9999px;
-      width: 13px;
-      &:before {
-        display: none;
-      }
-      &.flex-prev {
-        background-image: url('../images/icon_accordion_invert.png');
-      }
-    }
-  }
-}
-
-.front .flexslider {
-  padding: 2em;
-  .flex-control-nav {
-    bottom: 10px;
-    left: 0;
-  }
-}
-
 .liftup-title {
   font-size: 1em;
   font-weight: 300;
@@ -1318,6 +1451,7 @@ only screen and (min-resolution: 192dpi) {
     margin: 0 0 1em;
   }
 }
+
 
 // Front page highlighted area retina styles
 
@@ -1346,6 +1480,17 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+  }
+}
+
+
+// Front page flexslider exceptions
+
+.front .flexslider {
+  padding: 2em;
+  .flex-control-nav {
+    bottom: 10px;
+    left: 0;
   }
 }
 
@@ -1408,43 +1553,49 @@ only screen and (min-resolution: 192dpi) {
 
 .front .l-after_content {
   border-top: 80px solid #3f6d00;
-  @include at-breakpoint($desk) {
-    background: url('../images/vertical_flowers.png') no-repeat left 300px transparent;
-    background-size: auto 385px;
-    overflow: hidden;
-    position: relative;
-    &:after {
-      background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
-      background-size: auto 385px;
-      content: "";
-      display: block;
-      height: 385px;
-      position: absolute;
-      right: 0;
-      top: 1100px;
-      width: 649px;
-      z-index: -1;
+  overflow: hidden;
+  .l-after_content_helper {
+    max-width: 330px;
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 1090px;
+      position: relative;
+      &:before {
+        background: url('../images/vertical_flowers.png') no-repeat left top transparent;
+        left: -730px;
+        top: 100px;
+      }
+      &:after {
+        background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
+        right: -730px;
+        top: 1100px;
+      }
+      &:before,
+      &:after {
+        background-size: auto 385px;
+        content: "";
+        display: block;
+        height: 385px;
+        position: absolute;
+        width: 649px;
+      }
     }
     .l-region {
-      background-color: rgba(255,255,255,0.9);
+      overflow: hidden;
     }
   }
   .block--views-feed-block {
     @include at-breakpoint($tab) {
-      @include span-columns(6, 12); // Span 6 out of 12 columns.
-    }
-    @include at-breakpoint($desk) {
-      @include span-columns(8, 12); // Span 8 out of 12 columns.
+      @include span-columns(7, 12); // Span 6 out of 12 columns.
     }
   }
   .block--fb-likebox {
     margin: 2em 0;
     @include at-breakpoint($tab) {
-      @include span-columns(6 omega, 12); // Span 6 out of 12 columns.
+      @include span-columns(5 omega, 12); // Span 6 out of 12 columns.
       margin: 0;
-    }
-    @include at-breakpoint($desk) {
-      @include span-columns(4 omega, 12); // Span 4 out of 12 columns.
     }
     .block__title {
       display: none;
@@ -1464,9 +1615,11 @@ only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
-  .front .l-after_content {
+  .front .l-after_content .l-after_content_helper {
     @include at-breakpoint($desk) {
-      background-image: url('../images/vertical_flowers_retina.png');
+      &:before {
+        background-image: url('../images/vertical_flowers_retina.png');
+      }
       &:after {
         background-image: url('../images/vertical_flowers_right_retina.png');
       }
@@ -1475,7 +1628,7 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// What & Why blocks
+// Front page What & Why blocks
 
 .block--forge-web-base {
   max-width: 330px;
@@ -1521,14 +1674,7 @@ only screen and (min-resolution: 192dpi) {
       margin-left: 45%;
     }
     h2 {
-      font-size: 30px;
-      text-transform: none;
-      @include at-breakpoint($tab) {
-        font-size: 48px;
-      }
-      @include at-breakpoint($desk) {
-        font-size: 72px;
-      }
+      @extend .large-header;
     }
   }
   &.block--forge-web-base-forge-web-why {
@@ -1556,7 +1702,8 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-// Partners & People -block styles
+
+// Front page Partners & People -block styles
 
 .block--quicktabs-partners-or-people {
   margin-left: auto;
@@ -1702,27 +1849,19 @@ only screen and (min-resolution: 192dpi) {
         margin-right: 10px;
       }
       a {
-        font-size: 30px;
-        @include at-breakpoint($tab) {
-          font-size: 48px;
-        }
-        @include at-breakpoint($desk) {
-          font-size: 72px;
-        }
+        @extend .large-header;
       }
       &.ui-state-active a {
         color: $text-color;
       }
       &:first-child:after {
         content: "&";
-        font-size: 30px;
+        @extend .large-header;
         margin-left: 5px;
         @include at-breakpoint($tab) {
-          font-size: 48px;
           margin-left: 7px;
         }
         @include at-breakpoint($desk) {
-          font-size: 72px;
           margin-left: 10px;
         }
       }
@@ -1768,15 +1907,13 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   h2 {
-    font-size: 30px;
+    @extend .large-header;
     margin: 0 0 0.5em;
     @include at-breakpoint($tab) {
-      font-size: 48px;
       margin: 0 auto 0.5em;
       max-width: 530px;
     }
     @include at-breakpoint($desk) {
-      font-size: 72px;
       max-width: 100%;
     }
   }
@@ -1789,10 +1926,7 @@ only screen and (min-resolution: 192dpi) {
       max-width: 100%;
     }
     .view-header {
-      font-size: 1.2em;
-      @include at-breakpoint($tab) {
-        font-size: 1.6em;
-      }
+      @extend .large-caption;
     }
     .question {
       font-size: 1.3em;
@@ -1822,76 +1956,6 @@ only screen and (min-resolution: 192dpi) {
         margin: 0 0 1.5em;
       }
     }
-  }
-}
-
-.ui-widget {
-  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1em;
-}
-
-.ui-accordion {
-  .ui-corner-top,
-  .ui-corner-bottom,
-  .ui-corner-all {
-    @include border-radius(0);
-  }
-  .ui-state-active, 
-  .ui-widget-content .ui-state-active,
-  .ui-widget-header .ui-state-active,
-  .ui-state-default, 
-  .ui-widget-content .ui-state-default, 
-  .ui-widget-header .ui-state-default {
-    background: none;
-    border: 0 none;
-    color: $text-color;
-    font-weight: bold;
-  }
-  .ui-widget-content {
-    background: none;
-    border: 0 none;
-    color: $text-color;
-  }
-  
-  .ui-accordion-header {
-    a {
-      color: $text-color;
-    }
-    &.ui-state-default {
-      .ui-icon {
-        background: url('../images/icon_accordion_mobile.png') no-repeat 0 0 transparent;
-        background-size: 7px auto;
-        display: block;
-        height: 13px;
-        margin-top: -7px;
-        width: 7px;
-        @include at-breakpoint($tab) {
-          background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
-          background-size: 13px auto;
-          height: 26px;
-          margin-top: -13px;
-          width: 13px;
-        }
-      }
-      a {
-        padding: 0 0 0 23px;
-        @include at-breakpoint($tab) {
-          padding: 0 0 0 35px;
-        }
-      }
-    }
-    &.ui-state-active {
-      .ui-icon {
-        display: none;
-      }
-      a {
-        padding: 0;
-      }
-    }
-  }
-  
-  .ui-accordion-content {
-    padding: 0;
   }
 }
 
@@ -2024,7 +2088,6 @@ only screen and (min-resolution: 192dpi) {
 // Feed block styles
 
 .block--views-feed-block {
-  margin: 0 auto;
   max-width: 330px;
   @include at-breakpoint($tab) {
     max-width: 67em;
@@ -2032,16 +2095,18 @@ only screen and (min-resolution: 192dpi) {
   @include at-breakpoint($desk) {
     max-width: 100%;
   }
-  .block__title {
-    font-size: 30px;
-    margin: 0 auto 0.5em;
-    text-transform: none;
-    @include at-breakpoint($tab) {
-      font-size: 48px;
+  > * {
+   @include at-breakpoint($tab) {
+      margin: 0 auto;
+      max-width: 530px;
     }
     @include at-breakpoint($desk) {
-      font-size: 72px;
+      max-width: 100%;
     }
+  }
+  .block__title {
+    @extend .large-header;
+    margin: 0 auto 0.5em;
   }
   .view {
     text-align: center;
@@ -2049,52 +2114,6 @@ only screen and (min-resolution: 192dpi) {
       text-align: left;
       .views-row.views-row-last {
         margin: 0 0 7em;
-      }
-    }
-  }
-}
-
-
-// Content page default styles
-
-.page-node {
-  aside {
-    border-top: 1px solid $border-color;
-    margin-top: 1em;
-    overflow: hidden;
-    @include at-breakpoint($tab) {
-      border-top: 0 none;
-      margin-top: 0;
-    }
-    .block {
-      border-bottom: 1px solid $border-color;
-      margin-bottom: 2em;
-      padding-bottom: 2em;
-      &:last-child {
-        border-bottom: 0 none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-  }
-}
-
-.field--name-field-tags {
-  margin: 1.5em 0;
-  .field__label {
-    font-weight: normal;
-  }
-  .field__items {
-    .field__item {
-      display: inline-block;
-      margin-right: 5px;
-      &:after {
-        content: ",";
-      }
-      &:last-child {
-        &:after {
-          content: "";
-        }
       }
     }
   }
@@ -2121,6 +2140,7 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
+
 // News page
 
 .view-news-sidebar-block {
@@ -2131,6 +2151,7 @@ only screen and (min-resolution: 192dpi) {
     }
   }
 }
+
 
 // Offering page
 
@@ -2176,12 +2197,25 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.field--name-field-brief-overview-description {
-  font-size: 1.1em;
-  @include at-breakpoint($tab) {
-    font-size: 1.3em;
+// Brief overview field under the offering title on offering page
+.field--name-field-brief-overview-description,
+.field--name-field-free-text-company {
+  @extend .medium-caption;
+}
+
+.field--name-field-logo {
+  float: left;
+  height: 75px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: -75px;
+  text-align: center;
+  width: 75px;
+  .field__item {
+    line-height: 0;
   }
 }
+
 
 .node-type-service-offering,
 .node-type-offering {
@@ -2246,8 +2280,11 @@ only screen and (min-resolution: 192dpi) {
   overflow: hidden;
   a {
     color: $text-color;
-    a {
-      color: $link-color;
+    .node__content {
+      overflow: hidden;
+      a {
+        color: $link-color;
+      }
     }
   }
   p {
@@ -2267,18 +2304,13 @@ only screen and (min-resolution: 192dpi) {
       clear: both;
       margin-left: 0;
     }
-  }
-  .field--name-field-logo {
-    float: left;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: -75px;
-    .field__item {
-      line-height: 0;
+    &.field--name-field-logo {
+      margin-left: 0;
     }
   }
 }
 
+// Terms and conditons tab on offering
 .terms-conditions {
   h3 {
     font-size: 1.4em;
@@ -2298,16 +2330,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.view-offering-listing {
-  margin-top: 2em;
-  @include at-breakpoint($tab) {
-    margin-top: 3em; 
-  }
-  @include at-breakpoint($desk) {
-    margin-top: 5em; 
-  }
-}
-
 .block--quicktabs-service-offering-quicktab-mobile,
 .block--quicktabs-product-page-quicktab-mobile {
   display: block;
@@ -2321,6 +2343,19 @@ only screen and (min-resolution: 192dpi) {
   display: none;
   @include at-breakpoint($tab) {
     display: block;
+  }
+}
+
+
+// Offering listing page styles
+
+.view-offering-listing {
+  margin-top: 2em;
+  @include at-breakpoint($tab) {
+    margin-top: 3em; 
+  }
+  @include at-breakpoint($desk) {
+    margin-top: 5em; 
   }
 }
 
@@ -2352,18 +2387,15 @@ only screen and (min-resolution: 192dpi) {
 // Project page styles
 
 .node--project {
-  .field--name-field-logo {
-    float: left;
-    margin-right: 1em;
-    .field__item {
-      line-height: 0;
+  &.node--project--full {
+    .field--name-field-logo {
+      margin-right: 1em;
     }
   }
   .field--name-body {
     clear: both;
   }
 }
-
 
 .view-project-sidebar {
   margin-left: 1em;
@@ -2394,6 +2426,7 @@ only screen and (min-resolution: 192dpi) {
       background: url('../images/dashboard_navigation_bg.jpg') repeat-x center center transparent;
     }
   }
+  
   .l-region--hero {
     background: url('../images/decoration_edge_up.png') repeat-x 0 bottom #e2e2e2;
     background-size: auto 12px;
@@ -2414,6 +2447,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   .l-region--sidebar-second {
     background-color: #f3f3f3;
     border-top: 0 none;
@@ -2437,6 +2471,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   .field--name-field-method,
   .field--name-field-tools {
     border-bottom: 2px dashed #f2f2f2;
@@ -2469,6 +2504,7 @@ only screen and (min-resolution: 192dpi) {
     margin-top: 0;
     text-align: center;
   }
+  
   @include at-breakpoint($tab) {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
     height: 212px;
@@ -2509,6 +2545,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
+  
   a {
     color: $text-color;
     display: block;
@@ -2516,6 +2553,7 @@ only screen and (min-resolution: 192dpi) {
     &.active {
       background-color: #e2e2e2;
     }
+    
     @include at-breakpoint($tab) {
       background: url('../images/icon_dashboard_navi_blue.png') no-repeat center 90px transparent;
       height: 210px;
@@ -2559,6 +2597,7 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+    
     @include at-breakpoint($desk) {
       font-size: 1.3em;
     }

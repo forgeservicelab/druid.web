@@ -108,7 +108,13 @@ function forge_web_page_strongarm() {
           'weight' => '0',
         ),
         'language' => array(
-          'weight' => '3',
+          'weight' => '4',
+        ),
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'path' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(),

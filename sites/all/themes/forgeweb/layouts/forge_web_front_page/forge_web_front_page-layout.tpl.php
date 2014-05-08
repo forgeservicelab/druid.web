@@ -50,7 +50,9 @@
   
   <?php if ($page['after_content']): ?>
     <div class="l-after_content">
-      <?php print render($page['after_content']); ?>
+      <div class="l-after_content_helper">
+        <?php print render($page['after_content']); ?>
+      </div>
     </div>
   <?php endif; ?>
   
