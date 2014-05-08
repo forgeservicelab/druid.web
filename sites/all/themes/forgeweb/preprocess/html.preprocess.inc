@@ -13,7 +13,6 @@ function forgeweb_preprocess_html(&$variables) {
   
   // Check for favicons from registry and add them to head after a thorough checkup
   $registry = theme_get_registry(TRUE);
-  dsm($registry);
   /*
    * 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
