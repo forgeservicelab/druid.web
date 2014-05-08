@@ -594,6 +594,10 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
     // Grab BEF settings.
     $settings = $this->_bef_get_settings();
 
+    // Allow modules/themes to alter BEF settings before they are passed to the
+    // exposed form widgets.
+    drupal_alter('better_exposed_filters_settings', $settings);
+
     // Some elements may be placed in a secondary fieldset (eg: "Advanced
     // search options"). Place this after the exposed filters and before the
     // rest of the items in the exposed form.
@@ -601,8 +605,12 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
       // If one of the secondary widgets has exposed input, do not collapse
       // the secondary fieldset.
       $secondary_collapse = TRUE;
-      foreach ($this->view->get_exposed_input() as $key => $value) {
-        if (!empty($value) && isset($settings[$key]['more_options']['is_secondary'])) {
+      $exposed_input = $this->view->get_exposed_input();
+      foreach ($this->display->handler->get_handlers('filter') as $label => $filter) {
+        if (!$filter->options['exposed']) {
+          continue;
+        }
+        if (!empty($exposed_input[$filter->options['expose']['identifier']]) && $settings[$label]['more_options']['is_secondary']) {
           $secondary_collapse = FALSE;
           break;
         }
@@ -1150,7 +1158,7 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
           // the view results appear on. This can cause problems with
           // select_as_links options as they will use the wrong path. We provide
           // a hint for theme functions to correct this.
-          if (!empty($this->display->display_options['exposed_block'])) {
+          if (!empty($this->display->display_options['exposed_block']) && isset($this->display->display_options['path'])) {
             $form[$field_id]['#bef_path'] = $this->display->display_options['path'];
           }
           break;
