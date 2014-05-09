@@ -83,6 +83,10 @@
   }
  
   $formatted_post_date = format_date($node->created, 'custom', 'j.n.Y');
+  
+  global $base_url;
+  
+  $share_url = $base_url . $node_url;
 ?>
 <article<?php print $attributes; ?>>
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
@@ -108,6 +112,15 @@
       hide($content['links']);
       print render($content);
     ?>
+    
+    <?php if (!$page && $type == 'news' || $type == 'blog_post' || $type == 'tweet'): ?>
+      <div class="share-links">
+        <?php print t('Share'); ?>:
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $share_url; ?>" class="share-facebook" target="_blank"><span><?php print t('Share on Facebook'); ?></span></a>
+        <a href="https://twitter.com/home?status=<?php print render($title_value); ?>%20%7C%20<?php print $share_url; ?>" class="share-twitter" target="_blank"><span><?php print t('Share on Twitter'); ?></span></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $share_url; ?>&title=<?php print render($title_value); ?>&summary=&source=" class="share-linkedin" target="_blank"><span><?php print t('Share on LinkedIn'); ?></span></a>
+      </div>
+    <?php endif; ?>
   </div>
   <?php if (!empty($back_to_wizard)): ?>
     <?php print $back_to_wizard; ?>
