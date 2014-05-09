@@ -22,6 +22,7 @@ function forge_web_base_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'odd';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -41,15 +42,19 @@ function forge_web_base_views_default_views() {
   $handler->display->display_options['fields']['field_page_liftup_image']['label'] = '';
   $handler->display->display_options['fields']['field_page_liftup_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_liftup_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_page_liftup_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_page_liftup_image']['settings'] = array(
-    'image_style' => 'front_page_image',
+    'picture_group' => 'mobile_and_tablet',
+    'fallback_image_style' => '',
     'image_link' => '',
+    'colorbox' => 'mobile_and_tablet',
   );
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
   $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['label'] = '';
+  $handler->display->display_options['fields']['field_page_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_page_title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
@@ -58,6 +63,9 @@ function forge_web_base_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '<h2>[field_page_title]</h2>
+[body-value]';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'forge-web-block-body-wrapper';
@@ -111,6 +119,8 @@ function forge_web_base_views_default_views() {
 
   /* Display: Block: Why FORGE */
   $handler = $view->new_display('block', 'Block: Why FORGE', 'block_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'even';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -143,6 +153,8 @@ function forge_web_base_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<h2>[field_page_title]</h2>
+[body-value]'),
     t('Block: What FORGE'),
     t('Block: Why FORGE'),
   );
