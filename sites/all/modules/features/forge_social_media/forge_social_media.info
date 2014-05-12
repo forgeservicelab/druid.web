@@ -1,7 +1,7 @@
 name = Forge web social media
 description = Feature for social media share and feeds
 core = 7.x
-package = forgeweb
+package = Forge backend
 dependencies[] = ctools
 dependencies[] = date
 dependencies[] = easy_social

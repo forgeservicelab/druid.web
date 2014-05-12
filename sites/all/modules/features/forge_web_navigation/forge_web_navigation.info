@@ -1,7 +1,7 @@
 name = Forge web navigation
 description = This feature adds navigation for the website
 core = 7.x
-package = forgeweb
+package = Forge backend
 version = 7.x-1.0
 project = forge_web_navigation
 dependencies[] = ctools

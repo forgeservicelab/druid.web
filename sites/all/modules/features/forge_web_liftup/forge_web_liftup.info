@@ -1,7 +1,7 @@
 name = Forge web liftup
 description = This feature provides liftup block functionality
 core = 7.x
-package = forgeweb
+package = Forge web
 version = 7.x-1.0
 project = forge_web_liftup
 dependencies[] = ds

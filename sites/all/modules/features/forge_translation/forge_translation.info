@@ -1,7 +1,7 @@
 name = Forge translation
 description = Feature for entity translation and settings
 core = 7.x
-package = forgeweb
+package = Forge backend
 version = 7.x-1.0
 project = forge_translation
 dependencies[] = ctools

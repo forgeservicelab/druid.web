@@ -1,7 +1,7 @@
 name = Forge web tutorial
 description = Feature for tutorial
 core = 7.x
-package = forgeweb
+package = Forge dashboard
 version = 7.x-1.0
 project = forge_web_tutorial
 dependencies[] = ctools
