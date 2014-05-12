@@ -134,6 +134,30 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['filters']['type_1']['group_info']['default_group'] = '3';
   $handler->display->display_options['filters']['type_1']['group_info']['group_items'] = array(
     1 => array(
+      'title' => 'News',
+      'operator' => 'in',
+      'value' => array(
+        'news' => 'news',
+        'all' => 0,
+        'blog' => 0,
+        'blog_post' => 0,
+        'company' => 0,
+        'contact_us' => 0,
+        'faq_item' => 0,
+        'forge_role_information' => 0,
+        'forge_webform' => 0,
+        'page' => 0,
+        'partners_and_people' => 0,
+        'product_family' => 0,
+        'offering' => 0,
+        'project' => 0,
+        'service_offering' => 0,
+        'tutorial' => 0,
+        'tweet' => 0,
+        'webform' => 0,
+      ),
+    ),
+    2 => array(
       'title' => 'Blogs',
       'operator' => 'in',
       'value' => array(
@@ -157,7 +181,7 @@ function forge_web_feeds_views_default_views() {
         'webform' => 0,
       ),
     ),
-    2 => array(
+    3 => array(
       'title' => 'Tweets',
       'operator' => 'in',
       'value' => array(
@@ -178,30 +202,6 @@ function forge_web_feeds_views_default_views() {
         'project' => 0,
         'service_offering' => 0,
         'tutorial' => 0,
-        'webform' => 0,
-      ),
-    ),
-    3 => array(
-      'title' => 'Other content',
-      'operator' => 'in',
-      'value' => array(
-        'news' => 'news',
-        'page' => 'page',
-        'all' => 0,
-        'blog' => 0,
-        'blog_post' => 0,
-        'company' => 0,
-        'contact_us' => 0,
-        'faq_item' => 0,
-        'forge_role_information' => 0,
-        'forge_webform' => 0,
-        'partners_and_people' => 0,
-        'product_family' => 0,
-        'offering' => 0,
-        'project' => 0,
-        'service_offering' => 0,
-        'tutorial' => 0,
-        'tweet' => 0,
         'webform' => 0,
       ),
     ),

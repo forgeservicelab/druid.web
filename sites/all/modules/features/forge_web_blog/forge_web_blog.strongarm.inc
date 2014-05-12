@@ -227,7 +227,7 @@ function forge_web_blog_strongarm() {
           ),
           'teaser' => array(
             'weight' => '3',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
       ),
