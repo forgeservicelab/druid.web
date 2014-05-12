@@ -14,7 +14,7 @@ function forge_web_ga_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_account';
-  $strongarm->value = 'UA-1231431-33';
+  $strongarm->value = 'UA-50873791-1';
   $export['googleanalytics_account'] = $strongarm;
 
   $strongarm = new stdClass();
