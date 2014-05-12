@@ -25,9 +25,10 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0d5fcb71-47c4-4783-a311-9ce1c604583a',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
   'field_page_title' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -794,9 +795,10 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '20b0bba6-90e7-40a3-b958-c01368e003a2',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
   'field_page_title' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -1887,7 +1889,7 @@ function forge_web_wizard_uuid_features_default_content() {
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2aa05069-59a7-4e58-a949-4a7dba5618cf',
-  'revision_uid' => 6,
+  'revision_uid' => 0,
   'body' => array(
     'en' => array(
       0 => array(
@@ -1911,6 +1913,7 @@ function forge_web_wizard_uuid_features_default_content() {
     ),
   ),
   'field_page_title' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2214,7 +2217,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_sw_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that',
-        'name' => 'I want to offer sofware, APIs datasets or tools and I need computing capacity to do that',
+        'name' => 'I want to offer APIs, software, datasets or tools and I need computing capacity to do that',
         'type' => 'fieldset',
         'value' => '',
         'extra' => array(
@@ -2640,7 +2643,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '312d36a3-a198-4450-8aa6-5431b6ae7eda',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2753,6 +2756,7 @@ For the basic computing resource allocation there is charge of 180 euros per mon
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -2839,7 +2843,7 @@ For the basic computing resource allocation there is charge of 180 euros per mon
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'acf32012-8e98-41bd-bb23-67a265dc06f6',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2919,6 +2923,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -3005,9 +3010,10 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c5945d6e-b049-493a-989f-2b45f7e61b07',
-  'revision_uid' => 1,
+  'revision_uid' => 0,
   'body' => array(),
   'field_page_title' => array(),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
@@ -3502,7 +3508,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'dcd17082-a71b-4150-9a9a-900d87614b62',
-  'revision_uid' => 6,
+  'revision_uid' => 0,
   'body' => array(
     'und' => array(
       0 => array(
@@ -3581,6 +3587,7 @@ The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the
       ),
     ),
   ),
+  'metatags' => array(),
   'rdf_mapping' => array(
     'rdftype' => array(
       0 => 'sioc:Item',
