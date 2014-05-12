@@ -284,43 +284,6 @@ form.user-register-form {
 }
 
 
-// Ajax throbber styles
-
-.forge-throbber {
-  left: -999em;
-  margin-left: -50px;
-  position: absolute;
-  opacity: 0;
-  top: 200px;
-  transition: opacity 0.3s ease-in-out;
-  z-index: 2;
-  &.visible {
-    left: 50%;
-    opacity: 1;
-  }
-  .forge-throbber-inner {
-    background: url('../images/forge_throbber.gif') no-repeat;
-    height: 100px;
-    width: 100px;
-  }
-}
-
-.form-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
-  height: 100%;
-  left: -200%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  &.visible {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-
 // General node body styles to tackle images added to content
 
 .not-front .field--name-body {
@@ -2195,6 +2158,41 @@ only screen and (min-resolution: 192dpi) {
       .easy_social-widget {
         margin-right: 1em;
       }
+    }
+  }
+  
+  // Ajax throbber styles
+  .forge-throbber {
+    left: -999em;
+    margin-left: -50px;
+    position: absolute;
+    opacity: 0;
+    top: 200px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 2;
+    &.visible {
+      left: 50%;
+      opacity: 1;
+    }
+    .forge-throbber-inner {
+      background: url('../images/forge_throbber.gif') no-repeat;
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+  .form-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 100%;
+    left: -200%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    &.visible {
+      left: 0;
+      opacity: 1;
     }
   }
   
