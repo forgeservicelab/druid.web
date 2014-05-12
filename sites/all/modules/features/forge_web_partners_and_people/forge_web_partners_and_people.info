@@ -1,7 +1,7 @@
 name = Forge web partners and people
 description = Partners and people block for front page
 core = 7.x
-package = forgeweb
+package = Forge web
 version = 7.x-1.0
 project = forge_web_partners_and_people
 dependencies[] = ctools

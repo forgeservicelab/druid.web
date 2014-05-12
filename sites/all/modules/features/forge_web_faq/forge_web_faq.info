@@ -1,7 +1,7 @@
 name = Forge web FAQ
 description = This feature provides the FAQ-functionality with multilingual questions and aswers
 core = 7.x
-package = forgeweb
+package = Forge web
 version = 7.x-1.0
 project = forge_web_faq
 dependencies[] = forge_web_page

@@ -1,6 +1,6 @@
 name = Forge web landing pages
 core = 7.x
-package = forgeweb
+package = Forge web
 version = 7.x-1.0
 project = forge_landing_pages
 dependencies[] = context

@@ -1,6 +1,6 @@
 name = forge_web_wysiwyg
 core = 7.x
-package = forgeweb
+package = Forge backend
 dependencies[] = ckeditor
 dependencies[] = features
 dependencies[] = filter

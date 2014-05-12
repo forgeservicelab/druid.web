@@ -1,6 +1,6 @@
 name = Forge web wizard
 core = 7.x
-package = forgeweb
+package = Forge backend
 dependencies[] = clientside_validation
 dependencies[] = clientside_validation_webform
 dependencies[] = ctools

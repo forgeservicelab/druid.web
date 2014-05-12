@@ -1,7 +1,7 @@
 name = Forge web offering
 description = Feature for offerings, both product and service
 core = 7.x
-package = forgeweb
+package = Forge plaza
 version = 7.x-1.0
 project = forge_web_offering
 dependencies[] = ckeditor
