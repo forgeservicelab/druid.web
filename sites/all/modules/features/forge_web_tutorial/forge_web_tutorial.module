@@ -5,3 +5,9 @@
  */
 
 include_once 'forge_web_tutorial.features.inc';
+
+function forge_web_tutorial_node_view($node, $view_mode, $langcode) {
+  if($node->type == 'tutorial') {
+    drupal_add_js(drupal_get_path('module', 'forge_web_tutorial').'/forge_web_tutorial.js');
+  }
+}
