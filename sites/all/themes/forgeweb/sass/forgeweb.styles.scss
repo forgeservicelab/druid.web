@@ -287,7 +287,7 @@ form.user-register-form {
 // General node body styles to tackle images added to content
 
 .not-front .field--name-body {
-  margin-bottom: 1em;
+  margin: 2em 0;
   overflow: hidden;
   img {
     padding: 0 1em 1em;
@@ -433,6 +433,8 @@ only screen and (min-resolution: 192dpi) {
 .l-listing {
   .view-content {
     @include container; // Define these elements as the grid containers.
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -2565,15 +2567,13 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Offering listing page styles
+// Offering listing page and projects listing page styles
 
+.view-on-going-projects,
 .view-offering-listing {
   margin-top: 2em;
   @include at-breakpoint($tab) {
     margin-top: 3em; 
-  }
-  @include at-breakpoint($desk) {
-    margin-top: 5em; 
   }
 }
 
