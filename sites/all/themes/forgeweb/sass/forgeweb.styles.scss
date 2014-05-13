@@ -1174,28 +1174,37 @@ only screen and (min-resolution: 192dpi) {
     padding-top: 40px;
   }
   a {
-    color: #a8deef;
+    color: $footer-link-color;
+    &:hover {
+      color: $active-link-color;
+    }
   }
   .google-maps,
   .facebook,
   .twitter,
   .linkedin {
     background: url('../images/icons_sprite_mobile.png') no-repeat right 0 transparent;
-    background-size: 46px auto;
+    background-size: 42px auto;
     display: inline-block;
     overflow: hidden;
     text-indent: -9999px;
+    &:hover {
+      background-position: right -107px;
+    }
     @include at-breakpoint($desk) {
       background-image: url('../images/icons_sprite.png');
       background-size: 83px auto;
+      &:hover {
+        background-position: right -214px;
+      }
     }
   }
   .google-maps {
-    height: 41px;
+    height: 37px;
     margin-top: -10px;
     padding-left: 10px;
     vertical-align: middle;
-    width: 70px;
+    width: 63px;
     &:before {
       background-color: #fff;
       content: "";
@@ -1223,38 +1232,56 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   .facebook {
-    background-position: 0 -45px;
-    height: 22px;
-    width: 13px;
+    background-position: 0 -41px;
+    height: 21px;
+    width: 12px;
+    &:hover {
+      background-position: 0 -148px;
+    }
     @include at-breakpoint($desk) {
       background-position: 0 -83px;
       height: 40px;
       width: 23px;
+      &:hover {
+        background-position: 0 -297px;
+      }
     }
   }
   .twitter {
-    background-position: 0 -73px;
-    height: 20px;
+    background-position: 0 -66px;
+    height: 18px;
     margin-bottom: 1px;
-    width: 25px;
+    width: 23px;
+    &:hover {
+      background-position: 0 -173px;
+    }
     @include at-breakpoint($desk) {
       background-position: 0 -132px;
       height: 36px;
       margin-bottom: 3px;
       width: 46px;
+      &:hover {
+        background-position: 0 -346px;
+      }
     }
   }
   .linkedin {
-    background-position: 0 -98px;
-    height: 21px;
+    background-position: 0 -89px;
+    height: 18px;
     margin-bottom: 2px;
     margin-right: 0;
-    width: 21px;
+    width: 20px;
+    &:hover {
+      background-position: 0 -196px;
+    }
     @include at-breakpoint($desk) {
       background-position: 0 -178px;
       height: 36px;
       margin-bottom: 1px;
       width: 38px;
+      &:hover {
+        background-position: 0 -392px;
+      }
     }
   }
   .block {
@@ -1278,11 +1305,14 @@ only screen and (min-resolution: 192dpi) {
         margin-top: 0;
         padding-top: 70px;
         text-align: center;
+        @include at-breakpoint($tab) {
+          margin-top: 1em;
+        }
         @include at-breakpoint($desk) {
           background-image: url('../images/footer_logo.png');
           background-position: left center;
           background-size: auto 135px;
-          font-size: 1.9em;
+          font-size: 1.7em;
           height: 135px;
           line-height: 135px;
           padding-left: 155px;
@@ -1296,8 +1326,8 @@ only screen and (min-resolution: 192dpi) {
     font-size: 1.2em;
     text-align: center;
     @include at-breakpoint($desk) {
-      font-size: 1.9em;
-      line-height: 3em;
+      font-size: 1.7em;
+      line-height: 2em;
       padding-top: 10px;
     }
     > *:first-child {
@@ -1323,10 +1353,53 @@ only screen and (min-resolution: 192dpi) {
     .twitter,
     .linkedin {
       background-image: url('../images/icons_sprite.png');
+      &:hover {
+        background-position: right -108px;
+      }
       @include at-breakpoint($desk) {
         background-image: url('../images/icons_sprite_retina.png');
+        &:hover {
+          background-position: right -214px;
+        }
       }
     }
+    .facebook {
+      background-position: 0 -42px;
+      &:hover {
+        background-position: 0 -150px;
+      }
+      @include at-breakpoint($desk) {
+        background-position: 0 -83px;
+        &:hover {
+          background-position: 0 -297px;
+        }
+      }
+    }
+    .twitter {
+      background-position: 0 -67px;
+      &:hover {
+        background-position: 0 -175px;
+      }
+      @include at-breakpoint($desk) {
+        background-position: 0 -132px;
+        &:hover {
+          background-position: 0 -346px;
+        }
+      }
+    }
+    .linkedin {
+      background-position: 0 -90px;
+      &:hover {
+        background-position: 0 -198px;
+      }
+      @include at-breakpoint($desk) {
+        background-position: 0 -178px;
+        &:hover {
+          background-position: 0 -392px;
+        }
+      }
+    }
+    
     .l-region--footer-left {
       .block__content {
         > *:first-child {
