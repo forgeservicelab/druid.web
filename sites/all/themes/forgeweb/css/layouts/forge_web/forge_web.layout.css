@@ -7,10 +7,10 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000328}}
 .l-main {
   *zoom: 1;
-  max-width: 1190px;
-  _width: 1190px;
-  padding-left: 5px;
-  padding-right: 5px;
+  max-width: 1160px;
+  _width: 1160px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
@@ -24,10 +24,10 @@
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000335}}
 .l-footer .l-footer-wrapper {
   *zoom: 1;
-  max-width: 1190px;
-  _width: 1190px;
-  padding-left: 5px;
-  padding-right: 5px;
+  max-width: 1160px;
+  _width: 1160px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-left: auto;
   margin-right: auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
@@ -39,7 +39,7 @@
 @media (min-width: 44em) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000341}}
   .l-main {
-    max-width: 1190px; }
+    max-width: 1160px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000345}}
   .l-branding {
@@ -82,7 +82,7 @@
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000371}}
   .l-footer .l-footer-wrapper {
-    max-width: 1190px; }
+    max-width: 1160px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000373}}
     .l-footer .l-footer-wrapper .l-region--footer-left {
       width: 49.15254%;
@@ -100,7 +100,7 @@
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000388}}
   .l-main {
-    max-width: 1190px; }
+    max-width: 1160px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/private\/var\/www\/forge_web\/web\/sites\/all\/themes\/forgeweb\/sass\/layouts\/forge_web\/forge_web\.layout\.scss}line{font-family:\0000392}}
   .l-branding {
