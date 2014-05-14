@@ -98,13 +98,19 @@
   
   Drupal.behaviors.smoothScrolling = {
     attach: function (context, settings) {
+      $("#rm-no-id>li>ul>li.active").removeClass("active");
+      $("#rm-no-id>li>ul>li>a.active").removeClass("active");
       $('#block-menu-block-1 a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
+          $(this)
           target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
           if (target.length) {
+            var top = (parseInt(target.offset().top));
+            var scrollTop = top-100;
+            
             $('html,body').animate({
-              scrollTop: target.offset().top
+              scrollTop: scrollTop
             }, 1000);
             return false;
           }
