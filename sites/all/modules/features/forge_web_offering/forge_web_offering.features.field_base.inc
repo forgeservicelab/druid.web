@@ -305,11 +305,11 @@ function forge_web_offering_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'users' => array(
+      'node' => array(
         'columns' => array(
-          'target_id' => 'uid',
+          'target_id' => 'nid',
         ),
-        'table' => 'users',
+        'table' => 'node',
       ),
     ),
     'indexes' => array(
@@ -321,19 +321,20 @@ function forge_web_offering_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'offering_contact_information',
         ),
-        'target_bundles' => array(),
       ),
-      'target_type' => 'user',
+      'target_type' => 'node',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
