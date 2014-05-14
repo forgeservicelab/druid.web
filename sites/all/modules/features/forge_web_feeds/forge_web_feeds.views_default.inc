@@ -33,6 +33,8 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['cache']['output_lifespan'] = '-1';
   $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -41,13 +43,13 @@ function forge_web_feeds_views_default_views() {
       'allow_secondary' => 0,
       'secondary_label' => 'Advanced options',
     ),
-    'type_1' => array(
+    'type' => array(
       'bef_format' => 'default',
       'more_options' => array(
-        'bef_select_all_none' => 1,
+        'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'any_label' => 'All content',
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
@@ -70,23 +72,15 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Field: Content: Rendered Node */
-  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
-  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
-  $handler->display->display_options['fields']['rendered_entity']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['rendered_entity']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
-  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -100,39 +94,35 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
-    'news' => 'news',
-    'tweet' => 'tweet',
   );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'blog_post' => 'blog_post',
-    'news' => 'news',
-    'page' => 'page',
-    'tweet' => 'tweet',
-  );
-  $handler->display->display_options['filters']['type_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['type_1']['expose']['operator_id'] = 'type_1_op';
-  $handler->display->display_options['filters']['type_1']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['type_1']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['type_1']['expose']['operator'] = 'type_1_op';
-  $handler->display->display_options['filters']['type_1']['expose']['identifier'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['type_1']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 2;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     4 => 0,
     3 => 0,
     5 => 0,
+    6 => 0,
   );
-  $handler->display->display_options['filters']['type_1']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['type_1']['group_info']['label'] = 'Type';
-  $handler->display->display_options['filters']['type_1']['group_info']['identifier'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['group_info']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['type_1']['group_info']['default_group'] = '3';
-  $handler->display->display_options['filters']['type_1']['group_info']['group_items'] = array(
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['type']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['group_info']['optional'] = FALSE;
+  $handler->display->display_options['filters']['type']['group_info']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['type']['group_info']['default_group'] = '1';
+  $handler->display->display_options['filters']['type']['group_info']['default_group_multiple'] = array(
+    1 => '1',
+    2 => '2',
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
     1 => array(
       'title' => 'News',
       'operator' => 'in',
@@ -182,10 +172,17 @@ function forge_web_feeds_views_default_views() {
       ),
     ),
     3 => array(
+<<<<<<< HEAD
+      'title' => 'News',
+      'operator' => 'in',
+      'value' => array(
+        'news' => 'news',
+=======
       'title' => 'Tweets',
       'operator' => 'in',
       'value' => array(
         'tweet' => 'tweet',
+>>>>>>> 8addede2752165e14711f24e92bd2a5b086ba533
         'all' => 0,
         'blog' => 0,
         'blog_post' => 0,
@@ -194,7 +191,10 @@ function forge_web_feeds_views_default_views() {
         'faq_item' => 0,
         'forge_role_information' => 0,
         'forge_webform' => 0,
+<<<<<<< HEAD
+=======
         'news' => 0,
+>>>>>>> 8addede2752165e14711f24e92bd2a5b086ba533
         'page' => 0,
         'partners_and_people' => 0,
         'product_family' => 0,
