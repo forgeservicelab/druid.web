@@ -172,17 +172,14 @@ function forge_web_feeds_views_default_views() {
       ),
     ),
     3 => array(
-<<<<<<< HEAD
       'title' => 'News',
       'operator' => 'in',
       'value' => array(
         'news' => 'news',
-=======
       'title' => 'Tweets',
       'operator' => 'in',
       'value' => array(
         'tweet' => 'tweet',
->>>>>>> 8addede2752165e14711f24e92bd2a5b086ba533
         'all' => 0,
         'blog' => 0,
         'blog_post' => 0,
@@ -191,10 +188,7 @@ function forge_web_feeds_views_default_views() {
         'faq_item' => 0,
         'forge_role_information' => 0,
         'forge_webform' => 0,
-<<<<<<< HEAD
-=======
         'news' => 0,
->>>>>>> 8addede2752165e14711f24e92bd2a5b086ba533
         'page' => 0,
         'partners_and_people' => 0,
         'product_family' => 0,
@@ -205,7 +199,8 @@ function forge_web_feeds_views_default_views() {
         'webform' => 0,
       ),
     ),
-  );
+  ),
+);
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
