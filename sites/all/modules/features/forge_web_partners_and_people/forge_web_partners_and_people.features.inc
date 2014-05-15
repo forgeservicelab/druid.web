@@ -8,6 +8,15 @@
  * Implements hook_ctools_plugin_api().
  */
 function forge_web_partners_and_people_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "breakpoints" && $api == "default_breakpoint_group") {
+    return array("version" => "1");
+  }
+  if ($module == "breakpoints" && $api == "default_breakpoints") {
+    return array("version" => "1");
+  }
+  if ($module == "picture" && $api == "default_picture_mapping") {
+    return array("version" => "1");
+  }
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }
@@ -70,6 +79,52 @@ function forge_web_partners_and_people_image_default_styles() {
         'data' => array(
           'width' => 180,
           'height' => 135,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: retina_custom_user_retina_display_1x.
+  $styles['retina_custom_user_retina_display_1x'] = array(
+    'name' => 'retina_custom_user_retina_display_1x',
+    'label' => 'retina_custom_user_retina_display_1x',
+    'effects' => array(
+      9 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 180,
+          'height' => 135,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: retina_custom_user_retina_display_2x.
+  $styles['retina_custom_user_retina_display_2x'] = array(
+    'name' => 'retina_custom_user_retina_display_2x',
+    'label' => 'retina_custom_user_retina_display_2x',
+    'effects' => array(
+      10 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 360,
+          'height' => 270,
         ),
         'weight' => 1,
       ),

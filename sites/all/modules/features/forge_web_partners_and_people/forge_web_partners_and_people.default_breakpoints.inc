@@ -1,0 +1,30 @@
+<?php
+/**
+ * @file
+ * forge_web_partners_and_people.default_breakpoints.inc
+ */
+
+/**
+ * Implements hook_default_breakpoints().
+ */
+function forge_web_partners_and_people_default_breakpoints() {
+  $export = array();
+
+  $breakpoint = new stdClass();
+  $breakpoint->disabled = FALSE; /* Edit this to true to make a default breakpoint disabled initially */
+  $breakpoint->api_version = 1;
+  $breakpoint->machine_name = 'custom.user.retina_display';
+  $breakpoint->name = 'retina display';
+  $breakpoint->breakpoint = '(min-width: 0em)';
+  $breakpoint->source = 'user';
+  $breakpoint->source_type = 'custom';
+  $breakpoint->status = 1;
+  $breakpoint->weight = 0;
+  $breakpoint->multipliers = array(
+    '1x' => '1x',
+    '2x' => '2x',
+  );
+  $export['custom.user.retina_display'] = $breakpoint;
+
+  return $export;
+}

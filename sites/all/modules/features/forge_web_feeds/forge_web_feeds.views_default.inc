@@ -172,11 +172,7 @@ function forge_web_feeds_views_default_views() {
       ),
     ),
     3 => array(
-      'title' => 'News',
-      'operator' => 'in',
-      'value' => array(
-        'news' => 'news',
-      'title' => 'Tweets',
+      'title' => 'Twitter',
       'operator' => 'in',
       'value' => array(
         'tweet' => 'tweet',
@@ -199,8 +195,7 @@ function forge_web_feeds_views_default_views() {
         'webform' => 0,
       ),
     ),
-  ),
-);
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

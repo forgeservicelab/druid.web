@@ -53,9 +53,12 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['fields']['field_small_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_small_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_small_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_small_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_small_image']['settings'] = array(
-    'image_style' => 'partners_people_small',
+    'picture_group' => 'retina_display',
+    'fallback_image_style' => 'partners_people_small',
     'image_link' => '',
+    'colorbox' => 'retina_display',
   );
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
