@@ -1,0 +1,12 @@
+name = Forge web administrator tools
+description = Feature for admin tools
+core = 7.x
+package = Forge backend
+version = 7.x-1.0
+project = forge_web_administrator_tools
+dependencies[] = admin_views
+dependencies[] = views
+dependencies[] = views_bulk_operations
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features_exclude[dependencies][ctools] = ctools
