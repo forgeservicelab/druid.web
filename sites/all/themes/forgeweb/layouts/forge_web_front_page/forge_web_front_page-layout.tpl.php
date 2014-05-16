@@ -4,7 +4,14 @@
       <?php print render($page['navigation']); ?>
     </div>
   </header>
-
+  
+  <?php if ($page['help']): ?>
+    <div class="l-help-wrapper">
+      <?php print render($page['help']); ?>
+      <div class="toggle-help"><?php print t("Show/hide"); ?></div>
+    </div>
+  <?php endif; ?>
+  
   <div class="l-main">
     <div class="l-content " role="main">
       <a id="main-content"></a>

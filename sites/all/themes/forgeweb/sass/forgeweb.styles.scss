@@ -1416,6 +1416,95 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Help region styles
+
+.l-help-wrapper {
+  @include transition(all 0.3s ease-in-out);
+  
+  background-color: $admin-color;
+  border-right: 1px solid #fff;
+  color: #fff;
+  left: -60%;
+  position: fixed;
+  top: 20px;
+  width: 60%;
+  z-index: 999;
+  &.open {
+    left: 0;
+  }
+  @include at-breakpoint($tab) {
+    left: -300px;
+    top: 120px;
+    width: 300px;
+  }
+  .toggle-help {
+    background: url('../images/icon_wrench.png') no-repeat center center $admin-color;
+    background-size: 40px auto;
+    font-size: 0.8em;
+    height: 60px;
+    line-height: 55px;
+    overflow: hidden;
+    position: absolute;
+    right: -61px;
+    text-align: center;
+    text-indent: -9999px;
+    top: 0;
+    width: 60px;
+    z-index: 1000;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($admin-color, 10%);
+    }
+  }
+  h2 {
+    background-color: lighten($admin-color, 10%);
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.5em 1em;
+    text-align: right;
+  }
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-image: none;
+      list-style-type: none;
+      a {
+        border-bottom: 1px solid #FFFFFF;
+        display: block;
+        padding: 0.6em;
+        &:hover {
+          background-color: darken($admin-color, 10%);
+        }
+      }
+      &.last a {
+        border-bottom: 0 none;
+      }
+    }
+  }
+  a {
+    color: #fff;
+  }
+}
+
+
+// Help region retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .l-help-wrapper {
+    .toggle-help {
+      background-image: url('../images/icon_wrench_retina.png');
+    }
+  }
+}
+
+
 // Content page default styles
 
 .page-node {
@@ -2239,12 +2328,12 @@ only screen and (min-resolution: 192dpi) {
   
   // Ajax throbber styles
   .forge-throbber {
+    @include transition(opacity 0.3s ease-in-out);
     left: -999em;
     margin-left: -50px;
     position: absolute;
     opacity: 0;
     top: 200px;
-    transition: opacity 0.3s ease-in-out;
     z-index: 2;
     &.visible {
       left: 50%;
