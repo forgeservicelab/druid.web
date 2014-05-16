@@ -74,6 +74,12 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'after_content',
           'weight' => '-9',
         ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'footer_right',
+          'weight' => '-10',
+        ),
       ),
       'layout' => 'forge_web_front_page',
     ),
@@ -95,6 +101,7 @@ function forge_landing_pages_context_default_contexts() {
     'language' => array(
       'values' => array(
         'en' => 'en',
+        'fi' => 'fi',
       ),
     ),
     'sitewide' => array(
