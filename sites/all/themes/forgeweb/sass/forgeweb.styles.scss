@@ -2762,6 +2762,19 @@ only screen and (min-resolution: 192dpi) {
           margin-left: -10px;
         }
       }
+      &.next-from-active a {
+        background-image: url('../images/icon_dashboard_navi_red.png');
+        
+      }
+      &.last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_rose.png');
+      }
+      &.last-last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_purple.png');
+      }
+      &.last-last-last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_blue.png');
+      }
     }
   }
   
@@ -2774,22 +2787,10 @@ only screen and (min-resolution: 192dpi) {
     }
     
     @include at-breakpoint($tab) {
-      background: url('../images/icon_dashboard_navi_blue.png') no-repeat center 90px transparent;
+      background: url('../images/icon_dashboard_navi_teal.png') no-repeat center 90px transparent;
       height: 210px;
       padding: 40px 0 150px;
       text-transform: uppercase;
-      &.red {
-        background-image: url('../images/icon_dashboard_navi_red.png');
-      }
-      &.purple {
-        background-image: url('../images/icon_dashboard_navi_purple.png');
-      }
-      &.rose {
-        background-image: url('../images/icon_dashboard_navi_rose.png');
-      }
-      &.teal {
-        background-image: url('../images/icon_dashboard_navi_teal.png');
-      }
       &.active {
         background-color: $tab-active;
         background-image: url('../images/icon_dashboard_navi_active.png');

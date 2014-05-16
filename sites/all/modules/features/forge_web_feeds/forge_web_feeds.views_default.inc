@@ -148,7 +148,7 @@ function forge_web_feeds_views_default_views() {
       ),
     ),
     2 => array(
-      'title' => 'Blogs',
+      'title' => 'Blog',
       'operator' => 'in',
       'value' => array(
         'blog_post' => 'blog_post',
