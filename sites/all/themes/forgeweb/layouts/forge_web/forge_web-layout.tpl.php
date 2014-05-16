@@ -9,6 +9,13 @@
     </div>
   </header>
   
+  <?php if ($page['help']): ?>
+    <div class="l-help-wrapper">
+      <?php print render($page['help']); ?>
+      <div class="toggle-help"><?php print t("Show/hide"); ?></div>
+    </div>
+  <?php endif; ?>
+  
   <?php if ($page['highlighted']): ?>
     <div class="l-highlighted">
       <?php print render($page['highlighted']); ?>

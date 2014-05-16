@@ -5,6 +5,7 @@ template = forge-web-layout
 
 ; Regions
 regions[navigation]     = Navigation bar
+regions[help]           = Help
 regions[highlighted]    = Highlighted
 regions[hero]           = Hero
 regions[content]        = Content

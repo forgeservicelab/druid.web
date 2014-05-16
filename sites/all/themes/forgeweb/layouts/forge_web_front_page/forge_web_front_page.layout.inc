@@ -5,6 +5,7 @@ template = forge-web-front-page-layout
 
 ; Regions
 regions[navigation]     = Navigation bar
+regions[help]           = Help
 regions[content]        = Content
 regions[highlighted]    = Highlighted
 regions[middle_content] = Middle content
