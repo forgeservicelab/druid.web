@@ -60,7 +60,7 @@ Finland',
     'bundle' => 'company',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Only for FORGE internal administrative purpose, will not be shown to public',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -503,6 +503,7 @@ Finland');
   t('Free text company');
   t('Images for content');
   t('Logo');
+  t('Only for FORGE internal administrative purpose, will not be shown to public');
 
   return $field_instances;
 }
