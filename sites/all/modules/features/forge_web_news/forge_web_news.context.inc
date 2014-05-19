@@ -49,6 +49,7 @@ function forge_web_news_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'feed',
   );
   $context->condition_mode = 0;
 
