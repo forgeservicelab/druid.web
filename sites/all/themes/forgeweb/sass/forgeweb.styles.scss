@@ -2463,6 +2463,59 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
+// Tweet page
+
+.node--tweet--full {
+  .field--name-field-tweet-date {
+    color: $text-gray-color;
+    font-size: 1.3em;
+    margin: 0 0 1.5em 0;
+  }
+  .field--name-field-tweet-body {
+    @include border-radius(30px);
+    
+    border: 1px solid #777;
+    font-size: 1.3em;
+    font-style: italic;
+    line-height: 1.5em;
+    margin: 20px 0;
+    padding: 1em;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 0 20px 20px;
+      border-color: #FFFFFF transparent;
+      display: block;
+      width: 0;
+      z-index: 1;
+      margin-left: -20px;
+      top: -20px;
+      left: 25%;
+      @include at-breakpoint($tab) {
+        left: 15%;
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      border-style: solid;
+      border-width: 0 20px 20px;
+      border-color: #777 transparent;
+      display: block;
+      width: 0;
+      z-index: 0;
+      margin-left: -20px;
+      top: -21px;
+      left: 25%;
+      @include at-breakpoint($tab) {
+        left: 15%;
+      }
+    }
+  }
+}
+
 // Offering page
 
 .node-type-offering {

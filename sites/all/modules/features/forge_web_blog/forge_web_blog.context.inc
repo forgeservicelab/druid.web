@@ -148,6 +148,7 @@ function forge_web_blog_context_default_contexts() {
         ),
       ),
     ),
+    'menu' => 'feed',
   );
   $context->condition_mode = 0;
 
