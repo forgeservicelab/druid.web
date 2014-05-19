@@ -32,7 +32,7 @@ function forge_web_company_views_api($module = NULL, $api = NULL) {
 function forge_web_company_node_info() {
   $items = array(
     'company' => array(
-      'name' => t('Company'),
+      'name' => t('Organization'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

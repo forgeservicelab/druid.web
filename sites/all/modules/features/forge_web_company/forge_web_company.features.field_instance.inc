@@ -10,6 +10,128 @@
 function forge_web_company_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-company-field_admin_email'
+  $field_instances['node-company-field_admin_email'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_admin_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-company-field_admin_name'
+  $field_instances['node-company-field_admin_name'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_admin_name',
+    'label' => 'Name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-company-field_admin_phone'
+  $field_instances['node-company-field_admin_phone'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Phone number in international format without spaces. (+358441234567)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_admin_phone',
+    'label' => 'Phone',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-company-field_company_address'
   $field_instances['node-company-field_company_address'] = array(
     'bundle' => 'company',
@@ -51,7 +173,7 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -60,7 +182,7 @@ Finland',
     'bundle' => 'company',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Only for FORGE internal administrative purpose, will not be shown to public',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -91,7 +213,7 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 14,
     ),
   );
 
@@ -131,7 +253,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -171,7 +293,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 11,
+      'weight' => 9,
     ),
   );
 
@@ -213,7 +335,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -254,7 +376,7 @@ Finland',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -296,7 +418,7 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -494,6 +616,7 @@ Finland',
   t('Company phone');
   t('Company title');
   t('Company website');
+  t('Email');
   t('For example www.druid.fi');
   t('For example:
 Druid Oy
@@ -503,7 +626,9 @@ Finland');
   t('Free text company');
   t('Images for content');
   t('Logo');
-  t('Only for FORGE internal administrative purpose, will not be shown to public');
+  t('Name');
+  t('Phone');
+  t('Phone number in international format without spaces. (+358441234567)');
 
   return $field_instances;
 }

@@ -117,10 +117,13 @@ function forge_web_company_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'metatags' => array(
+          'weight' => '4',
         ),
       ),
       'display' => array(),

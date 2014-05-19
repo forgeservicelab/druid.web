@@ -23,8 +23,9 @@ function forge_web_company_field_group_info() {
     'label' => 'Base group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_company',
-      1 => 'group_media',
+      0 => 'group_contact_detail_for_admin',
+      1 => 'group_company',
+      2 => 'group_media',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -85,12 +86,11 @@ function forge_web_company_field_group_info() {
       1 => 'field_company_email',
       2 => 'field_company_website',
       3 => 'field_free_text_company',
-      4 => 'field_company_contact_details_fo',
-      5 => 'field_company_phone',
-      6 => 'field_logo',
-      7 => 'field_page_title',
-      8 => 'field_company_email_outside_forg',
-      9 => 'title',
+      4 => 'field_company_phone',
+      5 => 'field_logo',
+      6 => 'field_page_title',
+      7 => 'field_company_email_outside_forg',
+      8 => 'title',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -108,6 +108,38 @@ function forge_web_company_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_contact_detail_for_admin|node|company|form';
+  $field_group->group_name = 'group_contact_detail_for_admin';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'company';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_base';
+  $field_group->data = array(
+    'label' => 'Contact details for administration',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_company_contact_details_fo',
+      1 => 'field_admin_name',
+      2 => 'field_admin_phone',
+      3 => 'field_admin_email',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'label' => 'Contact details for administration',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'group-media field-group-htab',
+        'description' => '',
+      ),
+      'formatter' => 'closed',
+    ),
+  );
+  $export['group_contact_detail_for_admin|node|company|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_media|node|company|form';
   $field_group->group_name = 'group_media';
   $field_group->entity_type = 'node';
@@ -116,7 +148,7 @@ function forge_web_company_field_group_info() {
   $field_group->parent_name = 'group_base';
   $field_group->data = array(
     'label' => 'Media',
-    'weight' => '18',
+    'weight' => '19',
     'children' => array(
       0 => 'field_images_for_content',
     ),
