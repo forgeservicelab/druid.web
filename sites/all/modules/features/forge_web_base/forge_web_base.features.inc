@@ -61,6 +61,78 @@ function forge_web_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: insert_full_scale_width_1120px.
+  $styles['insert_full_scale_width_1120px'] = array(
+    'name' => 'insert_full_scale_width_1120px',
+    'label' => 'Insert Full (scale width: 1120px)',
+    'effects' => array(
+      11 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 1120,
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: insert_half_scale_width_560px.
+  $styles['insert_half_scale_width_560px'] = array(
+    'name' => 'insert_half_scale_width_560px',
+    'label' => 'Insert Half (scale width: 560px)',
+    'effects' => array(
+      12 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 560,
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: insert_tall_scale_height_600px.
+  $styles['insert_tall_scale_height_600px'] = array(
+    'name' => 'insert_tall_scale_height_600px',
+    'label' => 'Insert Tall (scale height: 600px)',
+    'effects' => array(
+      13 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '',
+          'height' => 600,
+          'upscale' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: responsive_custom_user_mobile_1x.
   $styles['responsive_custom_user_mobile_1x'] = array(
     'name' => 'responsive_custom_user_mobile_1x',

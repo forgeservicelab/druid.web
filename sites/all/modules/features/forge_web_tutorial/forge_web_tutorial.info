@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = file
 dependencies[] = forge_web_news
 dependencies[] = forge_web_offering
+dependencies[] = image
 dependencies[] = link
 dependencies[] = menu
 dependencies[] = print

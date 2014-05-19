@@ -1654,9 +1654,10 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.field--name-field-liftup-body {
+.field--name-field-liftup-body,
+.field--name-field-liftup-text {
   font-size: 1em;
-  margin: 1em 0 0;
+  margin: 1em 0;
   @include at-breakpoint($tab) {
     font-size: 1.2em;
   }
@@ -1666,6 +1667,10 @@ only screen and (min-resolution: 192dpi) {
   p {
     margin: 0 0 1em;
   }
+}
+
+.field--name-field-liftup-image {
+  margin: 1em 0;
 }
 
 

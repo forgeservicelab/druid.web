@@ -34,7 +34,7 @@ function forge_web_liftup_image_default_styles() {
     'name' => 'liftup_image',
     'label' => 'Liftup image',
     'effects' => array(
-      1 => array(
+      14 => array(
         'label' => 'Scale',
         'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
         'effect callback' => 'image_scale_effect',
@@ -44,9 +44,9 @@ function forge_web_liftup_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
-          'width' => 685,
+          'width' => 650,
           'height' => '',
-          'upscale' => 0,
+          'upscale' => 1,
         ),
         'weight' => 1,
       ),
