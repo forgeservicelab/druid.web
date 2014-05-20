@@ -137,22 +137,26 @@ function forge_web_project_page_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
+          'colorbox' => 'mobile_and_tablet',
+          'fallback_image_style' => '',
           'image_link' => '',
-          'image_style' => 'offering_logo',
+          'picture_group' => 'offering_logo_retina',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'picture',
         'settings' => array(
+          'colorbox' => 'mobile_and_tablet',
+          'fallback_image_style' => '',
           'image_link' => '',
-          'image_style' => 'offering_logo',
+          'picture_group' => 'offering_logo_retina',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 0,
       ),
     ),

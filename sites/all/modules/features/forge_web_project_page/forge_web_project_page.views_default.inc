@@ -200,9 +200,12 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['fields']['field_main_images']['label'] = '';
   $handler->display->display_options['fields']['field_main_images']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_images']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_main_images']['type'] = 'picture';
   $handler->display->display_options['fields']['field_main_images']['settings'] = array(
-    'image_style' => 'flexslider_full',
+    'picture_group' => 'slideshow_main_retina',
+    'fallback_image_style' => '',
     'image_link' => '',
+    'colorbox' => 'mobile_and_tablet',
   );
   $handler->display->display_options['fields']['field_main_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_main_images']['delta_offset'] = '0';

@@ -172,7 +172,8 @@ form {
         border-top: 1px solid $border-color;
         display: block;
         float: left;
-        min-height: 34px;
+        line-height: 16px;
+        min-height: 36px;
         margin: 0 0 0 -140px;
         padding: 8px 10px;
         text-align: right;
@@ -1892,6 +1893,7 @@ only screen and (min-resolution: 192dpi) {
       }
       @include at-breakpoint($desk) {
         font-size: 1.2em;
+        line-height: 1.4em;
         margin-left: 45%;
       }
       h2 {
@@ -2435,7 +2437,7 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Blog page
+// Blog-post page
 
 .node-type-blog-post {
   .l-region--sidebar-second {
@@ -2540,6 +2542,10 @@ only screen and (min-resolution: 192dpi) {
     margin-top: 0.5em;
     .field__item {
       line-height: 0;
+      img {
+        max-height: 75px;
+        width: auto;
+      }
     }
   }
   .field--name-field-customer-rating,
@@ -2581,6 +2587,10 @@ only screen and (min-resolution: 192dpi) {
   width: 75px;
   .field__item {
     line-height: 0;
+    img {
+      max-height: 75px;
+      width: auto;
+    }
   }
 }
 
