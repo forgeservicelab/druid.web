@@ -28,7 +28,7 @@ $horz-spacing-unit: 1em;
 
 .large-caption {
   font-size: 1em;
-  line-height: 1.2em;
+  line-height: 1.4em;
   margin: 0 auto;
   text-align: left;
   @include at-breakpoint($tab) {
@@ -44,6 +44,7 @@ $horz-spacing-unit: 1em;
 
 .medium-caption {
   font-size: 1.1em;
+  line-height: 1.3em;
   @include at-breakpoint($tab) {
     font-size: 1.3em;
   }

@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = field_group
 dependencies[] = forge_web_offering
 dependencies[] = image
+dependencies[] = picture
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views

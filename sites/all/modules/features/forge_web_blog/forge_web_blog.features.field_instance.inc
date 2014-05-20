@@ -478,7 +478,6 @@ function forge_web_blog_field_default_field_instances() {
       'alt_field' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -494,13 +493,27 @@ function forge_web_blog_field_default_field_instances() {
         'insert' => 1,
         'insert_absolute' => 0,
         'insert_class' => '',
-        'insert_default' => 'auto',
+        'insert_default' => 'image_insert_full_scale_width_1120px',
         'insert_styles' => array(
           'auto' => 'auto',
           'icon_link' => 0,
           'image' => 0,
+          'image_flexslider_full' => 0,
+          'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 'image_insert_full_scale_width_1120px',
+          'image_insert_half_scale_width_560px' => 'image_insert_half_scale_width_560px',
+          'image_insert_tall_scale_height_600px' => 'image_insert_tall_scale_height_600px',
           'image_large' => 0,
+          'image_liftup_image' => 0,
           'image_medium' => 0,
+          'image_offering_logo' => 0,
+          'image_partners_people_large' => 0,
+          'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -517,7 +530,7 @@ function forge_web_blog_field_default_field_instances() {
   $field_instances['node-blog_post-field_liftup_image'] = array(
     'bundle' => 'blog_post',
     'deleted' => 0,
-    'description' => 'Add here a picture to be used on the listings.',
+    'description' => 'Use images that are 650 pixels or wider. Smaller images will be upscaled to 650 pixels wide and this will reduce the image quality.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -556,7 +569,6 @@ function forge_web_blog_field_default_field_instances() {
       'alt_field' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -570,16 +582,34 @@ function forge_web_blog_field_default_field_instances() {
       'module' => 'image',
       'settings' => array(
         'insert' => 0,
-        'insert_absolute' => FALSE,
+        'insert_absolute' => 0,
         'insert_class' => '',
-        'insert_default' => array(
-          0 => 'auto',
-        ),
+        'insert_default' => 'auto',
         'insert_styles' => array(
-          0 => 'auto',
+          'auto' => 'auto',
+          'icon_link' => 0,
+          'image' => 0,
+          'image_flexslider_full' => 0,
+          'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 0,
+          'image_insert_half_scale_width_560px' => 0,
+          'image_insert_tall_scale_height_600px' => 0,
+          'image_large' => 0,
+          'image_liftup_image' => 0,
+          'image_medium' => 0,
+          'image_offering_logo' => 0,
+          'image_partners_people_large' => 0,
+          'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
+          'image_thumbnail' => 0,
+          'link' => 0,
         ),
         'insert_width' => '',
-        'preview_image_style' => 'medium',
+        'preview_image_style' => 'liftup_image',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -626,8 +656,7 @@ function forge_web_blog_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -883,7 +912,6 @@ function forge_web_blog_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add a picture here that will be used in the blog listings.');
-  t('Add here a picture to be used on the listings.');
   t('Add here the picture(s) that you want to be displayed on the slideshow.');
   t('Add image(s) that you want to use on the body field here and once uploaded to the server, click the insert button to insert the image to the body field.');
   t('Blog');
@@ -902,6 +930,7 @@ function forge_web_blog_field_default_field_instances() {
   t('Paste here youtube or vimeo URL.');
   t('Tags');
   t('Title');
+  t('Use images that are 650 pixels or wider. Smaller images will be upscaled to 650 pixels wide and this will reduce the image quality.');
   t('Video');
   t('Write here a short description of the blog post you are writing. This text is shown on the blog post listing page.');
 

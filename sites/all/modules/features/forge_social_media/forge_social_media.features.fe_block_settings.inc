@@ -16,19 +16,21 @@ function forge_social_media_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 0,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'fb_likebox',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
       'forgeweb' => array(
-        'region' => 'content',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'forgeweb',
         'weight' => 0,
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => 0,
   );
 
