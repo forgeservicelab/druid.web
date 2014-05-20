@@ -279,13 +279,6 @@ function forge_web_base_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'honeypot_log';
-  $strongarm->value = 0;
-  $export['honeypot_log'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'honeypot_protect_all_forms';
   $strongarm->value = 1;
   $export['honeypot_protect_all_forms'] = $strongarm;
