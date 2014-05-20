@@ -179,5 +179,77 @@ function forge_web_base_image_default_styles() {
     ),
   );
 
+  // Exported image style: retina_flexslider_full_custom_user_retina_display_2x.
+  $styles['retina_flexslider_full_custom_user_retina_display_2x'] = array(
+    'name' => 'retina_flexslider_full_custom_user_retina_display_2x',
+    'label' => 'retina_flexslider_full_custom_user_retina_display_2x',
+    'effects' => array(
+      19 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 2240,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: retina_offering_logo_custom_user_retina_display_1x.
+  $styles['retina_offering_logo_custom_user_retina_display_1x'] = array(
+    'name' => 'retina_offering_logo_custom_user_retina_display_1x',
+    'label' => 'retina_offering_logo_custom_user_retina_display_1x',
+    'effects' => array(
+      17 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 75,
+          'height' => 75,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: retina_offering_logo_custom_user_retina_display_2x.
+  $styles['retina_offering_logo_custom_user_retina_display_2x'] = array(
+    'name' => 'retina_offering_logo_custom_user_retina_display_2x',
+    'label' => 'retina_offering_logo_custom_user_retina_display_2x',
+    'effects' => array(
+      18 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 150,
+          'height' => 150,
+          'upscale' => 0,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
   return $styles;
 }
