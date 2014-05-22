@@ -287,11 +287,16 @@ form.user-register-form {
 
 // General node body styles to tackle images added to content
 
-.not-front .field--name-body {
+.not-front .field--name-body,
+.not-front .field--name-field-news-body {
   margin: 2em 0;
   overflow: hidden;
-  img {
-    padding: 0 1em 1em;
+  img[style*="float:left"] {
+    padding: 0 1em 1em 0;
+  }
+
+  img[style*="float:right"] {
+    padding: 0 0 1em 1em;
   }
 }
 
@@ -2533,19 +2538,33 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .company-header,
-.offering-header {
+.offering-header,
+.project-header {
   margin-bottom: 2em;
+  min-height: 85px;
   overflow: hidden;
+  padding: 0 0 0 90px;
+  position: relative;
   .field--name-field-logo {
-    float: left;
-    margin-right: 1em;
-    margin-top: 0.5em;
+    left: 0;
+    margin-right: 0;
+    position: absolute;
+    top: 0;
     .field__item {
       line-height: 0;
       img {
         max-height: 75px;
         width: auto;
       }
+    }
+  }
+  h1.page-title {
+    font-size: 1.5em;
+    @include at-breakpoint($tab) {
+      font-size: 1.8em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 2.5em;
     }
   }
   .field--name-field-customer-rating,
@@ -2763,11 +2782,6 @@ only screen and (min-resolution: 192dpi) {
 // Project page styles
 
 .node--project {
-  &.node--project--full {
-    .field--name-field-logo {
-      margin-right: 1em;
-    }
-  }
   .field--name-body {
     clear: both;
   }
