@@ -5,3 +5,21 @@
  */
 
 include_once 'forge_web_company.features.inc';
+
+/*
+ * Implementation of hook_form_alter
+ */
+function forge_web_company_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'company_node_form') {
+    $form['#validate'][] = 'forge_web_company_custom_validation';
+  }
+}
+
+/*
+ * Custom validation
+ */
+function forge_web_company_custom_validation($form, &$form_state) {
+  if (!preg_match('/^\+\d+$/', $form_state['values']['field_admin_phone']['und']['0']['value'])) {
+    form_set_error('field_admin_phone', t('Phone number must start with "+" and must includes only numbers'));
+  } 
+}
