@@ -639,8 +639,12 @@ function _forge_web_wizard_create_node($submission) {
   $node->promote = 0; //(1 or 0): promoted to front page
   $node->comment = 0;
   
+  // Name of the project -> page title
   $node->field_page_title[$node->language][]['value'] = $submission->data[25][0];
+  // Concise description of the project -> Short project description
   $node->field_short_project_desc[$node->language][]['value'] = $submission->data[26][0];
+  // Concise description of the project -> node body
+  $node->body[$node->language][]['value'] = $submission->data[26][0];
   
   // Company name -> Responsible organization
   if(is_array($submission->wfm_data[21])) {
@@ -656,8 +660,8 @@ function _forge_web_wizard_create_node($submission) {
       }
     }
   }
-  
   $node->field_responsible_organization[$node->language][]['value'] = implode(', ', $responsible_organizations);
+  
   $node = node_submit($node); // Prepare node for saving
   node_save($node);
 }  
