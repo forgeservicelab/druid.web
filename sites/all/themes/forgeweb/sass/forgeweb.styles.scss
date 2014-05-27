@@ -2627,6 +2627,19 @@ only screen and (min-resolution: 192dpi) {
     .ui-tabs-nav {
       margin-bottom: 3em;
     }
+    @include at-breakpoint($desk) {
+      .ui-tabs-nav li a {
+        font-size: 0.8em;
+      }
+    }
+    .views-label {
+      @extend h3;
+      display: block;
+      margin: 1em 0;
+    }
+    .views-field {
+      margin: 1.4em 0;
+    }
   }
   aside {
     .block__title {
