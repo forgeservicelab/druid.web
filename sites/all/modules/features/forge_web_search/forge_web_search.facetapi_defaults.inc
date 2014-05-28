@@ -66,12 +66,12 @@ function forge_web_search_facetapi_default_facet_settings() {
       'display' => '4',
       'indexed' => '4',
     ),
-    'empty_behavior' => 'none',
+    'empty_behavior' => 'text',
     'soft_limit' => '20',
     'nofollow' => 1,
     'show_expanded' => 0,
     'empty_text' => array(
-      'value' => '<p>Empty text</p>
+      'value' => '<p>No categories in current search.</p>
 ',
       'format' => 'filtered_html',
     ),
