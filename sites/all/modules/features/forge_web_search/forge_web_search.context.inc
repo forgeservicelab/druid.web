@@ -38,12 +38,6 @@ function forge_web_search_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'facetapi-IPaCM7H1dF7Clj1WBtiZQw516MCvTYka' => array(
-          'module' => 'facetapi',
-          'delta' => 'IPaCM7H1dF7Clj1WBtiZQw516MCvTYka',
-          'region' => 'sidebar_first',
-          'weight' => '-9',
-        ),
         'facetapi-NqeDE2mMWoSI3cj9ZcfT1DsECY1MWH0Z' => array(
           'module' => 'facetapi',
           'delta' => 'NqeDE2mMWoSI3cj9ZcfT1DsECY1MWH0Z',
