@@ -247,8 +247,9 @@ function forge_web_offering_field_group_info() {
       7 => 'field_page_title',
       8 => 'field_geographical_coverage_term',
       9 => 'field_geographical_coverage',
-      10 => 'title',
-      11 => 'group_sidebar',
+      10 => 'metatags',
+      11 => 'title',
+      12 => 'group_sidebar',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -289,8 +290,9 @@ function forge_web_offering_field_group_info() {
       5 => 'field_offering_tags',
       6 => 'field_oneliner',
       7 => 'field_page_title',
-      8 => 'title',
-      9 => 'group_sidebar',
+      8 => 'metatags',
+      9 => 'title',
+      10 => 'group_sidebar',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -669,7 +671,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_intro';
   $field_group->data = array(
     'label' => 'Sidebar',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_experimental',
       1 => 'field_live_demo_url',
@@ -700,7 +702,7 @@ function forge_web_offering_field_group_info() {
   $field_group->parent_name = 'group_intro';
   $field_group->data = array(
     'label' => 'Sidebar',
-    'weight' => '13',
+    'weight' => '11',
     'children' => array(
       0 => 'field_live_demo_url',
       1 => 'field_organizer',
