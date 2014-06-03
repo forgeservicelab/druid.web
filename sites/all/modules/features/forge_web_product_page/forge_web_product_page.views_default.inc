@@ -89,7 +89,7 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_offering_website']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_offering_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offering_website']['click_sort_column'] = 'url';
-  /* Field: Content: Address */
+  /* Field: Content: Contact person / Address */
   $handler->display->display_options['fields']['field_offering_address']['id'] = 'field_offering_address';
   $handler->display->display_options['fields']['field_offering_address']['table'] = 'field_data_field_offering_address';
   $handler->display->display_options['fields']['field_offering_address']['field'] = 'field_offering_address';
@@ -241,7 +241,10 @@ function forge_web_product_page_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Product overview';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -482,7 +485,10 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['title'] = 'Product terms & conditions';
   $handler->display->display_options['css_class'] = 'terms-conditions';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';

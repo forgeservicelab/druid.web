@@ -1733,7 +1733,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 11,
+      'weight' => 8,
     ),
   );
 
@@ -1915,7 +1915,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 9,
     ),
   );
 
