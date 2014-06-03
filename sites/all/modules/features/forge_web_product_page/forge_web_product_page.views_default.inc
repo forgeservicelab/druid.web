@@ -31,7 +31,16 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = '[field_experimental]';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Experimental */
+  $handler->display->display_options['fields']['field_experimental']['id'] = 'field_experimental';
+  $handler->display->display_options['fields']['field_experimental']['table'] = 'field_data_field_experimental';
+  $handler->display->display_options['fields']['field_experimental']['field'] = 'field_experimental';
+  $handler->display->display_options['fields']['field_experimental']['label'] = '';
+  $handler->display->display_options['fields']['field_experimental']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_experimental']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_experimental']['type'] = 'list_key';
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
@@ -42,12 +51,6 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
-  /* Field: Content: Pricing information */
-  $handler->display->display_options['fields']['field_pricing_information']['id'] = 'field_pricing_information';
-  $handler->display->display_options['fields']['field_pricing_information']['table'] = 'field_data_field_pricing_information';
-  $handler->display->display_options['fields']['field_pricing_information']['field'] = 'field_pricing_information';
-  $handler->display->display_options['fields']['field_pricing_information']['label'] = 'Price';
-  $handler->display->display_options['fields']['field_pricing_information']['element_label_colon'] = FALSE;
   /* Field: Content: Live demo url */
   $handler->display->display_options['fields']['field_live_demo_url']['id'] = 'field_live_demo_url';
   $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
@@ -56,25 +59,49 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_live_demo_url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_live_demo_url']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
-  /* Field: Content: Organizer */
+  /* Field: Content: Provider */
   $handler->display->display_options['fields']['field_organizer']['id'] = 'field_organizer';
   $handler->display->display_options['fields']['field_organizer']['table'] = 'field_data_field_organizer';
   $handler->display->display_options['fields']['field_organizer']['field'] = 'field_organizer';
-  $handler->display->display_options['fields']['field_organizer']['label'] = 'Provider';
   $handler->display->display_options['fields']['field_organizer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organizer']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Content: Contact information */
-  $handler->display->display_options['fields']['field_contact_information']['id'] = 'field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['table'] = 'field_data_field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['field'] = 'field_contact_information';
-  $handler->display->display_options['fields']['field_contact_information']['label'] = 'Contact';
-  $handler->display->display_options['fields']['field_contact_information']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_contact_information']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_contact_information']['settings'] = array(
-    'link' => 0,
-  );
+  /* Field: Content: Phone */
+  $handler->display->display_options['fields']['field_offering_phone']['id'] = 'field_offering_phone';
+  $handler->display->display_options['fields']['field_offering_phone']['table'] = 'field_data_field_offering_phone';
+  $handler->display->display_options['fields']['field_offering_phone']['field'] = 'field_offering_phone';
+  $handler->display->display_options['fields']['field_offering_phone']['label'] = '';
+  $handler->display->display_options['fields']['field_offering_phone']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_phone']['element_label_colon'] = FALSE;
+  /* Field: Content: E-mail */
+  $handler->display->display_options['fields']['field_offering_email']['id'] = 'field_offering_email';
+  $handler->display->display_options['fields']['field_offering_email']['table'] = 'field_data_field_offering_email';
+  $handler->display->display_options['fields']['field_offering_email']['field'] = 'field_offering_email';
+  $handler->display->display_options['fields']['field_offering_email']['label'] = '';
+  $handler->display->display_options['fields']['field_offering_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_email']['element_label_colon'] = FALSE;
+  /* Field: Content: Website */
+  $handler->display->display_options['fields']['field_offering_website']['id'] = 'field_offering_website';
+  $handler->display->display_options['fields']['field_offering_website']['table'] = 'field_data_field_offering_website';
+  $handler->display->display_options['fields']['field_offering_website']['field'] = 'field_offering_website';
+  $handler->display->display_options['fields']['field_offering_website']['label'] = '';
+  $handler->display->display_options['fields']['field_offering_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_website']['click_sort_column'] = 'url';
+  /* Field: Content: Contact person / Address */
+  $handler->display->display_options['fields']['field_offering_address']['id'] = 'field_offering_address';
+  $handler->display->display_options['fields']['field_offering_address']['table'] = 'field_data_field_offering_address';
+  $handler->display->display_options['fields']['field_offering_address']['field'] = 'field_offering_address';
+  $handler->display->display_options['fields']['field_offering_address']['label'] = 'Contact';
+  $handler->display->display_options['fields']['field_offering_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_address']['alter']['text'] = '[field_offering_address]
+[field_offering_phone]
+[field_offering_email]
+[field_offering_website] ';
+  $handler->display->display_options['fields']['field_offering_address']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_address']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -115,10 +142,13 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Price'),
     t('Demo'),
     t('Provider'),
     t('Contact'),
+    t('[field_offering_address]
+[field_offering_phone]
+[field_offering_email]
+[field_offering_website] '),
     t('All'),
     t('Block'),
   );
@@ -211,7 +241,10 @@ function forge_web_product_page_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Product overview';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -219,6 +252,12 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Pricing information */
+  $handler->display->display_options['fields']['field_pricing_information']['id'] = 'field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['table'] = 'field_data_field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['field'] = 'field_pricing_information';
+  $handler->display->display_options['fields']['field_pricing_information']['label'] = '';
+  $handler->display->display_options['fields']['field_pricing_information']['element_label_colon'] = FALSE;
   /* Field: Content: Pricing description */
   $handler->display->display_options['fields']['field_pricing_description']['id'] = 'field_pricing_description';
   $handler->display->display_options['fields']['field_pricing_description']['table'] = 'field_data_field_pricing_description';
@@ -446,7 +485,10 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['title'] = 'Product terms & conditions';
   $handler->display->display_options['css_class'] = 'terms-conditions';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    5 => '5',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -454,35 +496,28 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Terms and conditions */
-  $handler->display->display_options['fields']['field_terms_and_conditions']['id'] = 'field_terms_and_conditions';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['table'] = 'field_data_field_terms_and_conditions';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['field'] = 'field_terms_and_conditions';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['element_label_type'] = 'h3';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_terms_and_conditions']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_terms_and_conditions']['settings'] = array(
+  /* Field: Content: Terms and conditions inside FORGE Service Lab */
+  $handler->display->display_options['fields']['field_terms_conditions_inside']['id'] = 'field_terms_conditions_inside';
+  $handler->display->display_options['fields']['field_terms_conditions_inside']['table'] = 'field_data_field_terms_conditions_inside';
+  $handler->display->display_options['fields']['field_terms_conditions_inside']['field'] = 'field_terms_conditions_inside';
+  $handler->display->display_options['fields']['field_terms_conditions_inside']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_terms_conditions_inside']['settings'] = array(
     'edit' => '',
     'delete' => '',
     'add' => '',
-    'description' => 1,
+    'description' => 0,
     'view_mode' => 'full',
   );
-  /* Field: Content: Terms and conditions outside FORGE */
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['id'] = 'field_terms_and_conditions_outsi';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['table'] = 'field_data_field_terms_and_conditions_outsi';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['field'] = 'field_terms_and_conditions_outsi';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['element_label_type'] = 'h3';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_terms_and_conditions_outsi']['settings'] = array(
+  /* Field: Content: Terms and conditions in production environment */
+  $handler->display->display_options['fields']['field_terms_conditions_prod']['id'] = 'field_terms_conditions_prod';
+  $handler->display->display_options['fields']['field_terms_conditions_prod']['table'] = 'field_data_field_terms_conditions_prod';
+  $handler->display->display_options['fields']['field_terms_conditions_prod']['field'] = 'field_terms_conditions_prod';
+  $handler->display->display_options['fields']['field_terms_conditions_prod']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_terms_conditions_prod']['settings'] = array(
     'edit' => '',
     'delete' => '',
     'add' => '',
-    'description' => 1,
+    'description' => 0,
     'view_mode' => 'full',
   );
   /* Field: Content: Cancellation / refund policy */
@@ -491,8 +526,14 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_cancellation_refund_policy']['field'] = 'field_cancellation_refund_policy';
   $handler->display->display_options['fields']['field_cancellation_refund_policy']['element_type'] = '0';
   $handler->display->display_options['fields']['field_cancellation_refund_policy']['element_label_type'] = 'h3';
+  $handler->display->display_options['fields']['field_cancellation_refund_policy']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_cancellation_refund_policy']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_cancellation_refund_policy']['element_default_classes'] = FALSE;
+  /* Field: Content: More information */
+  $handler->display->display_options['fields']['field_more_information']['id'] = 'field_more_information';
+  $handler->display->display_options['fields']['field_more_information']['table'] = 'field_data_field_more_information';
+  $handler->display->display_options['fields']['field_more_information']['field'] = 'field_more_information';
+  $handler->display->display_options['fields']['field_more_information']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -533,9 +574,10 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Terms and conditions'),
-    t('Terms and conditions outside FORGE'),
+    t('Terms and conditions inside FORGE Service Lab'),
+    t('Terms and conditions in production environment'),
     t('Cancellation / refund policy'),
+    t('More information'),
     t('All'),
     t('Block'),
   );

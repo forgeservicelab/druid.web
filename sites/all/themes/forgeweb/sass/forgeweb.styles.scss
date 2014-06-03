@@ -162,9 +162,10 @@ form {
     &.webform-component-textfield,
     &.form-type-password,
     &.form-type-email,
+    &.form-type-link-field,
     &.webform-component-email {
       overflow: hidden;
-      padding: 0 0 0 140px;
+      padding: 0 0 0 200px;
       label {
         background-color: $tab-active;
         border-bottom: 1px solid $border-color;
@@ -174,10 +175,10 @@ form {
         float: left;
         line-height: 16px;
         min-height: 36px;
-        margin: 0 0 0 -140px;
+        margin: 0 0 0 -200px;
         padding: 8px 10px;
         text-align: right;
-        width: 140px;
+        width: 200px;
         &.error {
           background-color: #D31959;
           border: 0 none;
@@ -192,7 +193,7 @@ form {
           width: auto;
         }
       }
-      input {
+      > input {
         @include box-shadow(0, 0, 0, transparent);
         @include border-radius(0);
         
@@ -219,6 +220,19 @@ form {
         border-top: 1px solid $border-color;
         margin: 0;
         padding: 8px 10px;
+        &.error {
+          background-color: #D31959;
+          border: 0 none;
+          clear: both;
+          color: #FFFFFF;
+          float: none;
+          margin: 0;
+          min-height: 0;
+          padding: 4px 5px;
+          text-align: left;
+          text-transform: none;
+          width: auto;
+        }
       }
       textarea {
         @include border-radius(0);
@@ -284,14 +298,192 @@ form.user-register-form {
   }
 }
 
+// Webform styles
+
+.webform-client-form {
+  fieldset {
+    .fieldset-wrapper {
+      padding-top: 1em;
+      fieldset {
+        legend {
+          background-color: transparent;
+          font-size: 1.2em;
+        }
+        .fieldset-wrapper {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .wfm-item {
+    overflow: hidden;
+    > input {
+      float: right;
+    }
+  }
+  .form-item {
+    &.form-type-textfield,
+    &.webform-component-textfield,
+    &.form-type-password,
+    &.form-type-email,
+    &.form-type-link-field,
+    &.webform-component-email {
+      padding: 0 0 0 250px;
+      label {
+        margin: 0 0 0 -250px;
+        width: 250px;
+      }
+    }
+  }
+}
+
+// Node add page styles
+ 
+.page-node-add {
+  form {
+    .form-item {
+      &.form-type-textfield,
+      &.webform-component-textfield,
+      &.form-type-password,
+      &.form-type-email,
+      &.form-type-link-field,
+      &.webform-component-email {
+        padding: 0 0 0 250px;
+        label {
+          margin: 0 0 0 -250px;
+          width: 250px;
+        }
+      }
+    }
+  }
+  
+  .admin-sidebar-right {
+    > h3 {
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #fff;
+      float: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 1em;
+      text-transform: uppercase;
+    }
+    > div {
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #fff;
+      margin: 0;
+      overflow: hidden;
+      padding: 1em;
+      
+      // Some special cases
+      &.field-name-field-live-demo-url {
+        border-bottom: 0 none;
+        padding-bottom: 0;
+      }
+      .form-item {
+        padding: 0;
+        label {
+          border-bottom: 0 none;
+          border-right: 1px solid $border-color;
+          margin: 0;
+          text-align: left;
+          width: 100%;
+        }
+        &.form-type-radios {
+          label {
+            border-right: 0 none;
+            margin-bottom: 10px;
+          }
+        }
+        &.form-type-link-field {
+          margin-bottom: 0;
+          > label {
+            float: none;
+          }
+          .link-field-subrow {
+            background-color: #FFFFFF;
+            border: 1px solid $border-color;
+            padding: 10px 10px 0;
+          }
+          .link-field-column {
+            float: none;
+            width: 100%;
+            .form-item {
+              clear: both;
+              label {
+                background-color: rgba(0, 0, 0, 0);
+                border: 0 none;
+                min-height: 0;
+                padding: 5px 0;
+                text-transform: none;
+              }
+            }
+          }
+        }
+      }
+      
+      .field-name-field-offering-website {
+        .form-item.form-type-link-field {
+          .link-field-subrow {
+            border: 0 none;
+            padding: 0;
+            .form-item {
+              margin: 0;
+              label {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+      
+      &.admin-field-wrapper {
+        > h3 {
+          font-size: 1em;
+          font-weight: 300;
+          margin: 0 0 1em;
+        }
+        > .description {
+          font-size: 0.8em;
+          margin: 1em 0 1em 5px;
+        }
+      }
+    }
+  }
+  .admin-after-content {
+    clear: both;
+  }
+  
+  @include at-breakpoint($tab) {
+    .admin-content-sidebar-right {
+      @include span-columns(8, 12); // Span 8 out of 12 columns.
+    }
+    .admin-sidebar-right {
+      @include span-columns(4 omega, 12); // Span the last (omega) 4 columns of 12.
+    }
+  }
+  
+  @include at-breakpoint($desk) {
+    .admin-content-sidebar-right {
+      @include span-columns(11, 16); // Span 12 out of 16 columns.
+    }
+    .admin-sidebar-right {
+      @include span-columns(4 omega, 16); // Span the last (omega) 4 columns of 16.
+    }
+  }
+}
 
 // General node body styles to tackle images added to content
 
-.not-front .field--name-body {
+.not-front .field--name-body,
+.not-front .field--name-field-news-body {
   margin: 2em 0;
   overflow: hidden;
-  img {
-    padding: 0 1em 1em;
+  img[style*="float:left"] {
+    padding: 0 1em 1em 0;
+  }
+
+  img[style*="float:right"] {
+    padding: 0 0 1em 1em;
   }
 }
 
@@ -552,7 +744,8 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .tabs,
-.not-front .ui-tabs-nav {
+.not-front .ui-tabs-nav,
+.horizontal-tabs {
   &.tabs--primary {
     border-bottom: 1px solid $border-color;
   }
@@ -2533,19 +2726,33 @@ only screen and (min-resolution: 192dpi) {
 }
 
 .company-header,
-.offering-header {
+.offering-header,
+.project-header {
   margin-bottom: 2em;
+  min-height: 85px;
   overflow: hidden;
+  padding: 0 0 0 90px;
+  position: relative;
   .field--name-field-logo {
-    float: left;
-    margin-right: 1em;
-    margin-top: 0.5em;
+    left: 0;
+    margin-right: 0;
+    position: absolute;
+    top: 0;
     .field__item {
       line-height: 0;
       img {
         max-height: 75px;
         width: auto;
       }
+    }
+  }
+  h1.page-title {
+    font-size: 1.5em;
+    @include at-breakpoint($tab) {
+      font-size: 1.8em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 2.5em;
     }
   }
   .field--name-field-customer-rating,
@@ -2607,6 +2814,19 @@ only screen and (min-resolution: 192dpi) {
     }
     .ui-tabs-nav {
       margin-bottom: 3em;
+    }
+    @include at-breakpoint($desk) {
+      .ui-tabs-nav li a {
+        font-size: 0.8em;
+      }
+    }
+    .views-label {
+      @extend h3;
+      display: block;
+      margin: 1em 0;
+    }
+    .views-field {
+      margin: 1.4em 0;
     }
   }
   aside {
@@ -2763,11 +2983,6 @@ only screen and (min-resolution: 192dpi) {
 // Project page styles
 
 .node--project {
-  &.node--project--full {
-    .field--name-field-logo {
-      margin-right: 1em;
-    }
-  }
   .field--name-body {
     clear: both;
   }
