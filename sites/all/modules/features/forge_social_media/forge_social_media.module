@@ -5,3 +5,25 @@
  */
 
 include_once 'forge_social_media.features.inc';
+
+
+/**
+ * Implements hook_feeds_parser_sources_alter().
+ */ 
+function forge_social_media_feeds_parser_sources_alter(&$sources, $content_type) {
+  $sources['tweet_url'] = array(
+    'name' => t('Tweet URL'),
+    'description' => t('The URL of a tweet.'),
+    'callback' => 'forge_social_media_tweet_url',
+  );
+}
+
+/**
+ * Populates the "tweet_url" field for each result.
+ */
+function forge_social_media_tweet_url(FeedsSource $source, FeedsParserResult $result, $key) {
+  $item = $result->currentItem();
+  // jsonpath_parser:2 corresponds to user screen name in my importer.
+  // jsonpath_parser:0 corresponds to tweet ID in my importer.
+  return 'https://twitter.com/' . $item['jsonpath_parser:2'] . '/status/' . $item['jsonpath_parser:0'];
+}
