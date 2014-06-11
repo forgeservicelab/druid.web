@@ -1,0 +1,8 @@
+.messages {
+  background-color: #fff;
+  
+  &.messages--error, &.error {
+    background-color: #d31959;
+    color: #fff;
+  }
+}

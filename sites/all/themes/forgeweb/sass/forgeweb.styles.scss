@@ -165,20 +165,27 @@ form {
     &.form-type-link-field,
     &.webform-component-email {
       overflow: hidden;
-      padding: 0 0 0 200px;
+      @include at-breakpoint($tab) {
+        padding: 0 0 0 200px;
+      }
       label {
         background-color: $tab-active;
-        border-bottom: 1px solid $border-color;
         border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
         border-top: 1px solid $border-color;
         display: block;
-        float: left;
         line-height: 16px;
+        margin: 0;
         min-height: 36px;
-        margin: 0 0 0 -200px;
         padding: 8px 10px;
-        text-align: right;
-        width: 200px;
+        @include at-breakpoint($tab) {
+          border-bottom: 1px solid $border-color;
+          border-right: 0 none;
+          float: left;
+          margin: 0 0 0 -200px;
+          text-align: right;
+          width: 200px;
+        }
         &.error {
           background-color: #D31959;
           border: 0 none;
@@ -246,13 +253,218 @@ form {
     }
   }
   
+  .field-type-text-long {
+    margin-bottom: 1em;
+  }
+  
+  .form-select,
+  .form-checkboxes,
+  .form-radios {
+    margin: 0 0 2em 1em;
+  }
+  
+  .form-checkboxes {
+    .form-item {
+      label {
+        text-transform: none;
+      }
+    }
+    .category.main > .form-item {
+      &.expandable {
+        color: darken($button-color, 10%);
+        .toggle {
+          background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+          display: inline-block;
+          height: 16px;
+          margin: 3px 0 0 5px;
+          vertical-align: top;
+          width: 16px;
+        }
+        &.expanded {
+          .toggle {
+            background-position: right -16px;
+          }
+        }
+      }
+    }
+    > .category > .category {
+      display: none;
+      &.open {
+        @include transition(all 0.3s ease-in-out);
+        
+        display: block;
+      }
+    }
+    .category.main .category {
+      margin-left: 30px;
+    }
+  }
+  
+  .field-type-image {
+    background-color: #F2F2F2;
+    margin-bottom: 1em;
+    padding: 10px;
+    table {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      thead {
+        display: none;
+      }
+      tbody {
+        display: block;
+      }
+      tr {
+        display: block;
+        white-space: normal;
+        @include at-breakpoint($tab) {
+          padding: 10px 60px 10px 10px;
+          position: relative;
+        }
+        td {
+          display: block;
+          padding: 5px;
+          text-align: center;
+          @include at-breakpoint($tab) {
+            padding: 0;
+          }
+        }
+        .form-item {
+          white-space: normal;
+        }
+        .form-submit {
+          background-image: url('../images/icon_delete.png');
+          background-position: 12px center;
+          background-repeat: no-repeat;
+          background-size: 16px auto;
+          margin-bottom: 5px;
+          padding-left: 40px;
+          @include at-breakpoint($tab) {
+            background-position: center center;
+            display: block;
+            height: 40px;
+            margin: -20px 0 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            text-indent: -9990px;
+            top: 50%;
+            width: 40px;
+          }
+        }
+      }
+    }
+    
+    table.sticky-header,
+    .tabledrag-handle,
+    .tabledrag-toggle-weight-wrapper {
+      // Hide table headers & dragging ability in mobile
+      display: none;
+    }
+    
+    .image-widget {
+      .image-preview {
+        display: block;
+        float: none;
+        line-height: 0;
+        padding: 5px 0;
+        text-align: center;
+        img {
+          line-height: 0;
+          width: 100%;
+        }
+        @include at-breakpoint($tab) {
+          float: left;
+          padding: 0;
+          width: 30%;
+          img {
+            width: auto;
+          }
+        }
+      }
+      .image-widget-data {
+        float: none;
+        @include at-breakpoint($tab) {
+          
+        }
+        .form-item.form-type-textfield {
+          padding: 5px 0 0;
+          @include at-breakpoint($tab) {
+            padding: 5px 0 0 140px;
+          }
+          label {
+            margin: 0;
+            text-align: left;
+            width: auto;
+            @include at-breakpoint($tab) {
+              margin: 0 0 0 -140px;
+              text-align: right;
+              width: 140px;
+            }
+          }
+          .description {
+            text-align: left;
+          }
+        }
+        @include at-breakpoint($tab) {
+          float: right;
+          text-align: left;
+          width: 68%;
+        }
+      }
+    }
+    
+    .form-type-managed-file {
+      margin-bottom: 1em;
+      .image-widget-data {
+        text-align: center;
+        width: 100%;
+        @include at-breakpoint($tab) {
+          float: left;
+          text-align: left;
+          width: 70%;
+        }
+        .file-size {
+          margin-right: 10px;
+        }
+        input.form-file {
+          clear: both;
+          float: left;
+          margin-bottom: 10px;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            float: none;
+            width: auto;
+          }
+        }
+        input.form-submit {
+          margin-bottom: 10px;
+          margin-top: 10px;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+  
+  .form-type-managed-file {
+    input.form-file {
+      margin-right: 10px;
+    }
+  }
+  
   fieldset,
   .webform-component-fieldset {
-    background-color: #F2F2F2;
     border: 0 none;
     display: block;
     margin: 2em 0;
     padding: 0;
+    @include at-breakpoint($tab) {
+      background-color: #F2F2F2;
+    }
     legend {
       background-color: #FFFFFF;
       font-size: 1.5em;
@@ -260,7 +472,31 @@ form {
       width: 100%;
     }
     .fieldset-wrapper {
-      padding: 0 1em;
+      @include at-breakpoint($tab) {
+        padding: 0 1em;
+      }
+      .field-type-image {
+        background-color: transparent;
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
+    fieldset {
+      .fieldset-wrapper {
+        padding: 1em 0 0;
+        @include at-breakpoint($tab) {
+          padding: 1em 1em 0;
+        }
+        > div {
+          margin-bottom: 1em;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &:first-child {
+            margin-bottom: 1em;
+          }
+        }
+      }
     }
   }
   
@@ -270,7 +506,13 @@ form {
   
   .form-actions {
     input {
+      margin-bottom: 1em;
       margin-right: 1em;
+      width: 100%;
+      @include at-breakpoint($tab) {
+        margin-bottom: 0;
+        width: auto;
+      }
       &:last-child {
         margin-right: 0;
       }
@@ -294,6 +536,38 @@ form.user-register-form {
     label {
       margin-left: -160px;
       width: 160px;
+    }
+  }
+}
+
+html.js .form-autocomplete {
+  background-image: url('../images/throbber_bg.png');
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  &.throbbing {
+    background-image: url('../images/throbber.gif');
+    background-color: #f5f5f5;
+    background-position: 100% center;
+  }
+}
+
+// Form retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  form {
+    .field-type-image {
+      table {
+        tr {
+          .form-submit {
+            background-image: url('../images/icon_delete_retina.png');
+          }
+        }
+      }
     }
   }
 }
@@ -338,24 +612,48 @@ form.user-register-form {
 }
 
 // Node add page styles
- 
+
+.page-node-edit,
 .page-node-add {
   form {
     .form-item {
-      &.form-type-textfield,
-      &.webform-component-textfield,
-      &.form-type-password,
-      &.form-type-email,
-      &.form-type-link-field,
-      &.webform-component-email {
-        padding: 0 0 0 250px;
-        label {
-          margin: 0 0 0 -250px;
-          width: 250px;
+      @include at-breakpoint($tab) {
+        &.form-type-textfield,
+        &.webform-component-textfield,
+        &.form-type-password,
+        &.form-type-email,
+        &.form-type-link-field,
+        &.webform-component-email {
+          padding: 0 0 0 250px;
+          label {
+            margin: 0 0 0 -250px;
+            width: 250px;
+          }
         }
       }
     }
+    .field-type-text-long {
+      // Hide text-format options and plain text switcher
+      .text-format-wrapper > a,
+      .filter-wrapper {
+        display: none !important;
+      }
+    }
+    // Special case when geographical coverage field is displayed
+    .field-name-field-geographical-coverage {
+      margin-bottom: 2em;
+    }
+    fieldset {
+      margin-top: 0;
+    }
   }
+  
+  // Tab styles
+   @include at-breakpoint($desk) {
+     .horizontal-tabs ul li a {
+       font-size: 0.8em;
+     }
+   }
   
   .admin-sidebar-right {
     > h3 {
@@ -374,11 +672,6 @@ form.user-register-form {
       overflow: hidden;
       padding: 1em;
       
-      // Some special cases
-      &.field-name-field-live-demo-url {
-        border-bottom: 0 none;
-        padding-bottom: 0;
-      }
       .form-item {
         padding: 0;
         label {
@@ -389,9 +682,13 @@ form.user-register-form {
           width: 100%;
         }
         &.form-type-radios {
+          margin-bottom: 0;
           label {
             border-right: 0 none;
             margin-bottom: 10px;
+          }
+          .form-radios {
+            margin-bottom: 0;
           }
         }
         &.form-type-link-field {
@@ -738,73 +1035,124 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.not-front .ui-tabs-nav {
+.not-front .ui-tabs-nav,
+.horizontal-tabs ul {
   border-bottom: 1px solid $border-color;
   margin-bottom: 1em;
 }
 
 .tabs,
-.not-front .ui-tabs-nav,
+.not-front .ui-tabs,
 .horizontal-tabs {
   &.tabs--primary {
     border-bottom: 1px solid $border-color;
   }
-  li {
-    margin: 0;
-    a {
-      background-color: $tab-inactive;
-      border-top: 1px solid $border-color;
-      border-left: 1px solid $border-color;
-      color: $text-color;
-      font-size: 0.9em;
-      padding: 1em 0.5em;
-      position: relative;
-      text-transform: none;
-      @include at-breakpoint($desk) {
+  ul {
+    padding: 0;
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+    li {
+      float: left;
+      list-style-type: none;
+      list-style-image: none;
+      margin: 0;
+      a {
+        background-color: $tab-inactive;
+        border-top: 1px solid $border-color;
+        border-left: 1px solid $border-color;
+        color: $text-color;
+        display: block;
         font-size: 0.9em;
-        padding: 1.5em 2em;
-        text-transform: uppercase;
+        padding: 1em 0.5em;
+        position: relative;
+        text-transform: none;
+        @include at-breakpoint($desk) {
+          font-size: 0.9em;
+          padding: 1.5em 2em;
+          text-transform: uppercase;
+        }
+        strong {
+          font-weight: normal;
+        }
+        &:hover {
+          background-color: $tab-active;
+        }
+        &:active,
+        &:focus,
+        &:visited {
+          outline: none;
+        }
       }
-      &:hover {
+      &:last-child a {
+        border-right: 1px solid $border-color;
+      }
+      &.active a,
+      &.ui-state-active a,
+      &.selected a {
         background-color: $tab-active;
-      }
-      &:active,
-      &:focus,
-      &:visited {
-        outline: none;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Border
+        &:before {
+          border-top-color: $border-color;
+          border-width: 10px;
+          bottom: -10px;
+          left: 50%;
+          margin-left: -10px;
+        }
+        // Fill
+        &:after {
+          border-top-color: $tab-active;
+          border-width: 10px;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -10px;
+        }
       }
     }
-    &:last-child a {
+  }
+}
+
+// Horizontal tabs spesific stuff
+
+.horizontal-tabs {
+  display: relative;
+  ul {
+    margin-bottom: 0;
+  }
+  .horizontal-tab-hidden {
+    display: none;
+    position: absolute;
+    top: -100000px;
+    width: 100%;
+  }
+  
+  .horizontal-tabs-panes {
+    padding: 2em 0;
+    @include at-breakpoint($tab) {
+      border-bottom: 1px solid $border-color;
+      border-left: 1px solid $border-color;
       border-right: 1px solid $border-color;
+      margin-bottom: 1em;
+      padding: 2em 1em;
     }
-    &.active a,
-    &.ui-state-active a {
-      background-color: $tab-active;
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-color: transparent;
-        border-bottom: 0;
-      }
-      // Border
-      &:before {
-        border-top-color: $border-color;
-        border-width: 10px;
-        bottom: -10px;
-        left: 50%;
-        margin-left: -10px;
-      }
-      // Fill
-      &:after {
-        border-top-color: $tab-active;
-        border-width: 10px;
-        bottom: -9px;
-        left: 50%;
-        margin-left: -10px;
+    > fieldset {
+      background-color: rgba(0, 0, 0, 0);
+      margin: 0;
+      padding: 0;
+     > legend {
+        display: none;
       }
     }
   }

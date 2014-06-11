@@ -404,7 +404,7 @@ function forge_web_offering_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_live_demo_url',
     'field_permissions' => array(
-      'type' => 2,
+      'type' => 0,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -832,36 +832,6 @@ function forge_web_offering_field_default_field_bases() {
     ),
     'translatable' => 1,
     'type' => 'text',
-  );
-
-  // Exported field_base: 'field_show_live_url_for_everyone'
-  $field_bases['field_show_live_url_for_everyone'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_show_live_url_for_everyone',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'No',
-        1 => 'Yes',
-      ),
-      'allowed_values_function' => '',
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_spesifications'

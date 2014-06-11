@@ -255,7 +255,7 @@ function forge_web_offering_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'metatags' => array(
           'weight' => '11',
@@ -357,10 +357,10 @@ function forge_web_offering_strongarm() {
           'weight' => '3',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => '3',
         ),
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
