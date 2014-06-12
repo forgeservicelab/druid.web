@@ -91,15 +91,17 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     /*
      * make maxlenght module working with webform components
      */
-    $max_length = 240;
-    $field1 = 'partner_offering_description';
-    $form['submitted'][$field1]['#pre_render'] = array('maxlength_pre_render');
-    $form['submitted'][$field1]['#maxlength'] = $max_length;
-    $form['submitted'][$field1]['#maxlength_js'] = TRUE;
-    $field2 = 'desc_of_developer_service_concise_description_of_the_service_developed';
-    $form['submitted']['description_of_developed_service'][$field2]['#pre_render'] = array('maxlength_pre_render');
-    $form['submitted']['description_of_developed_service'][$field2]['#maxlength'] = $max_length;
-    $form['submitted']['description_of_developed_service'][$field2]['#maxlength_js'] = TRUE;
+    if(module_exists(maxlength)) {
+      $max_length = 240;
+      $field1 = 'partner_offering_description';
+      $form['submitted'][$field1]['#pre_render'] = array('maxlength_pre_render');
+      $form['submitted'][$field1]['#maxlength'] = $max_length;
+      $form['submitted'][$field1]['#maxlength_js'] = TRUE;
+      $field2 = 'desc_of_developer_service_concise_description_of_the_service_developed';
+      $form['submitted']['description_of_developed_service'][$field2]['#pre_render'] = array('maxlength_pre_render');
+      $form['submitted']['description_of_developed_service'][$field2]['#maxlength'] = $max_length;
+      $form['submitted']['description_of_developed_service'][$field2]['#maxlength_js'] = TRUE;
+    }
     
     /*
     * Replace [path]xx/xxx[/path] in webform markup components
