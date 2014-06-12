@@ -162,6 +162,7 @@ function forge_web_wizard_uuid_features_default_content() {
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Use the registered organization name in contracts.',
           'title_display' => 'before',
           'private' => 0,
           'wrapper_classes' => '',
@@ -1542,10 +1543,12 @@ function forge_web_wizard_uuid_features_default_content() {
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Use the registered organization name in contracts.',
           'title_display' => 'before',
           'private' => 0,
           'wrapper_classes' => '',
           'css_classes' => '',
+          'exclude_cv' => 0,
           'wfm_max_items' => 1,
           'wfm_min_items' => 1,
           'wfm_add_more_text' => 'Add another item',
@@ -1799,10 +1802,12 @@ function forge_web_wizard_uuid_features_default_content() {
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Use the registered organization name in contracts.',
           'title_display' => 'before',
           'private' => 0,
           'wrapper_classes' => '',
           'css_classes' => '',
+          'exclude_cv' => 0,
           'wfm_max_items' => 1,
           'wfm_min_items' => 1,
           'wfm_add_more_text' => 'Add another item',
@@ -2253,7 +2258,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_sw_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that',
-        'name' => 'I want to offer sofware, APIs datasets or tools and I need computing capacity to do that',
+        'name' => 'I want to offer APIs, software, datasets or tools and I need computing capacity to do that',
         'type' => 'fieldset',
         'value' => '',
         'extra' => array(
@@ -3165,6 +3170,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Use the registered organization name in contracts.',
           'title_display' => 'before',
           'private' => 0,
           'wrapper_classes' => '',
@@ -3403,6 +3409,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
         'type' => 'textfield',
         'value' => '',
         'extra' => array(
+          'description' => 'Use the registered organization name in contracts.',
           'title_display' => 'before',
           'private' => 0,
           'wrapper_classes' => '',
@@ -3556,7 +3563,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'dcd17082-a71b-4150-9a9a-900d87614b62',
-  'revision_uid' => 6,
+  'revision_uid' => 1,
   'body' => array(
     'und' => array(
       0 => array(
