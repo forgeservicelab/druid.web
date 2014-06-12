@@ -91,7 +91,6 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     /*
      * make maxlenght module working with webform components
      */
-    dsm($form['submitted']);
     $max_length = 240;
     $field1 = 'partner_offering_description';
     $form['submitted'][$field1]['#pre_render'] = array('maxlength_pre_render');
