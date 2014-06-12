@@ -303,7 +303,6 @@ form {
   .field-type-image {
     background-color: #F2F2F2;
     margin-bottom: 1em;
-    padding: 10px;
     table {
       display: block;
       margin-bottom: 10px;
@@ -328,11 +327,25 @@ form {
           @include at-breakpoint($tab) {
             padding: 0;
           }
+          input.form-submit.insert-button {
+            background: none repeat scroll 0 0 #C7DA2C;
+            height: auto;
+            margin: 10px 0;
+            padding: 0.5em 1.5em;
+            position: static;
+            text-indent: 0;
+            width: 100%;
+            @include at-breakpoint($tab) {
+              float: right;
+              margin: 0;
+              width: auto;
+            }
+          }
         }
         .form-item {
           white-space: normal;
         }
-        .form-submit {
+        input.form-submit {
           background-image: url('../images/icon_delete.png');
           background-position: 12px center;
           background-repeat: no-repeat;
@@ -389,6 +402,7 @@ form {
           
         }
         .form-item.form-type-textfield {
+          clear: both;
           padding: 5px 0 0;
           @include at-breakpoint($tab) {
             padding: 5px 0 0 140px;
@@ -417,6 +431,7 @@ form {
     
     .form-type-managed-file {
       margin-bottom: 1em;
+      padding: 10px;
       .image-widget-data {
         text-align: center;
         width: 100%;
@@ -446,6 +461,12 @@ form {
             width: auto;
           }
         }
+      }
+    }
+    
+    fieldset {
+      .fieldset-wrapper {
+        padding: 0;
       }
     }
   }
@@ -645,6 +666,10 @@ only screen and (min-resolution: 192dpi) {
     }
     fieldset {
       margin-top: 0;
+    }
+    > div > .form-actions {
+      clear: both;
+      margin-top: 1em;
     }
   }
   
@@ -3151,7 +3176,8 @@ only screen and (min-resolution: 192dpi) {
 
 
 .node-type-service-offering,
-.node-type-offering {
+.node-type-offering,
+.node-type-company {
   article,
   .flexslider {
     margin-bottom: 3em;
@@ -3185,7 +3211,8 @@ only screen and (min-resolution: 192dpi) {
       border-bottom: 0 none;
     }
     .view-service-offering-sidebar-block,
-    .view-product-download-block {
+    .view-product-download-block,
+    .view-company-sidebar-block {
       h3 {
         float: none;
         margin-left: 0;
@@ -3306,24 +3333,31 @@ only screen and (min-resolution: 192dpi) {
 
 // Company page styles
 
-.block--views-company-offerings-block {
+.company-offerings {
   border-top: 1px solid $border-color;
   margin-top: 3em;
-  @include at-breakpoint($desk) {
+  .attachment {
     .view-content {
+      margin-top: 1em;
+    }
+    .button {
+      display: block;
+      margin-bottom: 10px;
+      @include at-breakpoint($tab) {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+  @include at-breakpoint($desk) {
+    > .view-content {
       @include set-container-width; // Reset only the container width (elements have already been declared as containers).
       .views-row {
         @include span-columns(6, 12); // Span 6 out of 12 columns.
         @include nth-omega(2n);
       }
     }
-  }
-}
-
-.view-company-sidebar-block {
-  .field-content {
-    font-size: 1.3em;
-    margin: 1em 0;
   }
 }
 

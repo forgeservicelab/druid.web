@@ -379,6 +379,7 @@ function forge_web_service_page_views_default_views() {
 [field_offering_email]
 [field_offering_website] ';
   $handler->display->display_options['fields']['field_offering_address']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_address']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -426,6 +427,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
   $handler->display->display_options['fields']['field_live_demo_url']['field'] = 'field_live_demo_url';
   $handler->display->display_options['fields']['field_live_demo_url']['label'] = 'Demo';
+  $handler->display->display_options['fields']['field_live_demo_url']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
   $handler->display->display_options['displays'] = array(
     'block' => 'block',

@@ -23,15 +23,27 @@ function forge_web_company_field_group_info() {
     'label' => 'Base group',
     'weight' => '0',
     'children' => array(
-      0 => 'group_company',
-      1 => 'group_media',
+      0 => 'field_free_text_company',
+      1 => 'field_logo',
+      2 => 'field_page_title',
+      3 => 'field_images_for_content',
+      4 => 'metatags',
+      5 => 'title',
     ),
-    'format_type' => 'htabs',
+    'format_type' => 'div',
     'format_settings' => array(
-      'formatter' => '',
+      'label' => 'Base group',
       'instance_settings' => array(
-        'classes' => 'group-base field-group-htabs',
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'admin-content-sidebar-right',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_base|node|company|form'] = $field_group;
@@ -132,6 +144,43 @@ function forge_web_company_field_group_info() {
     ),
   );
   $export['group_media|node|company|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_sidebar|node|company|form';
+  $field_group->group_name = 'group_sidebar';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'company';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Sidebar',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_company_address',
+      1 => 'field_company_email',
+      2 => 'field_company_contact_details_fo',
+      3 => 'field_company_phone',
+      4 => 'field_company_webpage',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Sidebar',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'id' => '',
+        'classes' => 'admin-sidebar-right',
+        'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_sidebar|node|company|form'] = $field_group;
 
   return $export;
 }
