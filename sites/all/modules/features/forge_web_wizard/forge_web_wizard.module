@@ -168,36 +168,6 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
- * function converts [path]xxx/xxx[/path] with node summary and link to node
- * @param $match
- *   $match[1] contains the nid
- * @return
- *   String
- */
-function _forge_web_wizard_embed_filter_replace($match) {
-  if (!empty($match[1])) {
-    $path = $match[1];
-    $normal_path = drupal_get_normal_path($path);
-    if(!empty($normal_path)) {
-      $node_path_arr = explode('/', $normal_path);
-      $nid = $node_path_arr[1];
-      if(is_numeric($nid)) {
-        $node = node_load($nid);
-      }
-    }
-    if(is_object($node)) {
-      $body = field_get_items('node', $node, 'body');
-    }
-    $summary = $body[0]['summary'];
-    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'))).'</p>';
-    return $summary;
-  }
-  else {
-    return t('Content not found. (PATH:'.$match[1].')');
-  }
-}
-
-/**
  * 
  * Implements hook_menu 
  */
@@ -460,6 +430,10 @@ function forge_web_wizard_confirmation($nid, $sid) {
   $from = '';
   
   drupal_mail('forge_web_wizard', 'key', $to, $user->language, array('body' => $body, 'subject' => $subject, 'attachment' => $attachment), $from, TRUE);
+  
+  // Create project node from submitted data
+  _forge_web_wizard_create_node($submission);
+  
   unset($_SESSION['forge_web_wizard_sda_contract_'.$user->id]);
   unset($_SESSION['forge_web_wizard_partner_contract_'.$user->id]);
   unset($_SESSION['forge_web_wizard_cra_contract_'.$user->id]);
@@ -528,6 +502,54 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
     }
   }
   
+}
+
+/**
+* Implementation of hook_menu_local_tasks_alter()
+ * we want to hide normal registration form
+*/
+function forge_web_wizard_menu_local_tasks_alter(&$data, $router_item, $root_path){
+  if(($router_item['path'] == 'user' || $router_item['path'] == 'user/password') && ($root_path == 'user' || $root_path == 'user/password')) {
+    unset($data['tabs'][0]['output'][0]);
+  }
+}
+
+/*
+ * Implementation of hook_menu_alter()
+ * do not allow permssion on user/register url
+ */
+function forge_web_wizard_menu_alter(&$items) {
+  $items['user/register']['access callback'] = FALSE;
+}
+
+/**
+ * function converts [path]xxx/xxx[/path] with node summary and link to node
+ * @param $match
+ *   $match[1] contains the nid
+ * @return
+ *   String
+ */
+function _forge_web_wizard_embed_filter_replace($match) {
+  if (!empty($match[1])) {
+    $path = $match[1];
+    $normal_path = drupal_get_normal_path($path);
+    if(!empty($normal_path)) {
+      $node_path_arr = explode('/', $normal_path);
+      $nid = $node_path_arr[1];
+      if(is_numeric($nid)) {
+        $node = node_load($nid);
+      }
+    }
+    if(is_object($node)) {
+      $body = field_get_items('node', $node, 'body');
+    }
+    $summary = $body[0]['summary'];
+    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'))).'</p>';
+    return $summary;
+  }
+  else {
+    return t('Content not found. (PATH:'.$match[1].')');
+  }
 }
 
 /*
@@ -603,21 +625,43 @@ function _forge_web_wizard_fillpdf_pdf_link($fid, $nids = NULL, $webform_arr = N
   return url('', array('absolute' => TRUE)) . "/fillpdf?fid={$fid}{$nids_uri}{$webforms_uri}{$sample}";
 }
 
-/**
-* Implementation of hook_menu_local_tasks_alter()
- * we want to hide normal registration form
-*/
-function forge_web_wizard_menu_local_tasks_alter(&$data, $router_item, $root_path){
-  if(($router_item['path'] == 'user' || $router_item['path'] == 'user/password') && ($root_path == 'user' || $root_path == 'user/password')) {
-    unset($data['tabs'][0]['output'][0]);
+function _forge_web_wizard_create_node($submission) {
+  global $user;
+  
+  $node = new stdClass();
+  // Name of the project -> node title
+  $node->title = $submission->data[25][0];
+  $node->type = 'project';
+  node_object_prepare($node);
+  $node->language = LANGUAGE_NONE;
+  $node->uid = $user->uid;
+  $node->status = 1; //(1 or 0): published or not
+  $node->promote = 0; //(1 or 0): promoted to front page
+  $node->comment = 0;
+  
+  // Name of the project -> page title
+  $node->field_page_title[$node->language][]['value'] = $submission->data[25][0];
+  // Concise description of the project -> Short project description
+  $node->field_short_project_desc[$node->language][]['value'] = $submission->data[26][0];
+  // Concise description of the project -> node body
+  $node->body[$node->language][]['value'] = $submission->data[26][0];
+  
+  // Company name -> Responsible organization
+  if(is_array($submission->wfm_data[21])) {
+    foreach($submission->wfm_data[21] as $company_array) {
+      if(is_array($company_array)) {
+        foreach($company_array as $companies) {
+          if(is_array($companies)) {
+            foreach($companies as $company) {
+              $responsible_organizations[] = $company[21][0];
+            }
+          }
+        }
+      }
+    }
   }
-}
-
-/*
- * Implementation of hook_menu_alter()
- * do not allow permssion on user/register url
- */
-function forge_web_wizard_menu_alter(&$items) {
-  $items['user/register']['access callback'] = FALSE;
-}
-
+  $node->field_responsible_organization[$node->language][]['value'] = implode(', ', $responsible_organizations);
+  
+  $node = node_submit($node); // Prepare node for saving
+  node_save($node);
+}  

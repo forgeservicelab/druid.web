@@ -10,6 +10,93 @@
 function forge_web_company_field_default_field_bases() {
   $field_bases = array();
 
+  // Exported field_base: 'field_admin_email'
+  $field_bases['field_admin_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_admin_email',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'email',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'email',
+  );
+
+  // Exported field_base: 'field_admin_name'
+  $field_bases['field_admin_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_admin_name',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_admin_phone'
+  $field_bases['field_admin_phone'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_admin_phone',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_company_address'
   $field_bases['field_company_address'] = array(
     'active' => 1,
@@ -81,6 +168,9 @@ function forge_web_company_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_company_email',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
@@ -99,6 +189,9 @@ function forge_web_company_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_company_phone',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -163,6 +256,9 @@ function forge_web_company_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_free_text_company',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

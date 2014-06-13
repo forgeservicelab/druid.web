@@ -141,9 +141,9 @@ function forge_web_wysiwyg_ckeditor_profile_defaults() {
         'UserFilesAbsolutePath' => '%d%b%f/',
         'forcePasteAsPlainText' => 'f',
         'html_entities' => 'f',
-        'scayt_autoStartup' => 't',
+        'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.scayt_autoStartup = true;',
         'loadPlugins' => array(
           'drupalbreaks' => array(
             'name' => 'drupalbreaks',

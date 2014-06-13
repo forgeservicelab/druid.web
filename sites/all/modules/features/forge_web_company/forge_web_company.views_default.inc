@@ -205,26 +205,26 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
-  /* Field: Content: Company address */
+  /* Field: Content: Organization address */
   $handler->display->display_options['fields']['field_company_address']['id'] = 'field_company_address';
   $handler->display->display_options['fields']['field_company_address']['table'] = 'field_data_field_company_address';
   $handler->display->display_options['fields']['field_company_address']['field'] = 'field_company_address';
   $handler->display->display_options['fields']['field_company_address']['label'] = 'Address';
   $handler->display->display_options['fields']['field_company_address']['alter']['nl2br'] = TRUE;
   $handler->display->display_options['fields']['field_company_address']['element_label_colon'] = FALSE;
-  /* Field: Content: Company phone */
+  /* Field: Content: Organization phone */
   $handler->display->display_options['fields']['field_company_phone']['id'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['table'] = 'field_data_field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['label'] = 'Phone';
   $handler->display->display_options['fields']['field_company_phone']['element_label_colon'] = FALSE;
-  /* Field: Content: Company email */
+  /* Field: Content: Organization email */
   $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
   $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['label'] = 'E-mail';
   $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
-  /* Field: Content: Company website */
+  /* Field: Content: Organization website */
   $handler->display->display_options['fields']['field_company_webpage']['id'] = 'field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['table'] = 'field_data_field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['field'] = 'field_company_webpage';
@@ -311,19 +311,19 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Field: Content: Company address */
+  /* Field: Content: Organization address */
   $handler->display->display_options['fields']['field_company_address']['id'] = 'field_company_address';
   $handler->display->display_options['fields']['field_company_address']['table'] = 'field_data_field_company_address';
   $handler->display->display_options['fields']['field_company_address']['field'] = 'field_company_address';
   $handler->display->display_options['fields']['field_company_address']['label'] = '';
   $handler->display->display_options['fields']['field_company_address']['element_label_colon'] = FALSE;
-  /* Field: Content: Company email */
+  /* Field: Content: Organization email */
   $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
   $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['label'] = '';
   $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
-  /* Field: Content: Company phone */
+  /* Field: Content: Organization phone */
   $handler->display->display_options['fields']['field_company_phone']['id'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['table'] = 'field_data_field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
@@ -541,7 +541,7 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Free text company */
+  /* Field: Content: Free text organization */
   $handler->display->display_options['fields']['field_free_text_company']['id'] = 'field_free_text_company';
   $handler->display->display_options['fields']['field_free_text_company']['table'] = 'field_data_field_free_text_company';
   $handler->display->display_options['fields']['field_free_text_company']['field'] = 'field_free_text_company';
@@ -612,7 +612,7 @@ function forge_web_company_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('author'),
-    t('Free text company'),
+    t('Free text organization'),
     t('Block'),
     t('Entity Reference'),
   );
