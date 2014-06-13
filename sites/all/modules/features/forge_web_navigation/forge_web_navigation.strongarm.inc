@@ -96,7 +96,7 @@ function forge_web_navigation_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_ignore_admin';
   $strongarm->value = array(
-    1 => '1',
+    1 => 0,
   );
   $export['responsive_menus_ignore_admin'] = $strongarm;
 

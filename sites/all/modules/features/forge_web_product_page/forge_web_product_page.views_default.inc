@@ -51,14 +51,6 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
-  /* Field: Content: Live demo url */
-  $handler->display->display_options['fields']['field_live_demo_url']['id'] = 'field_live_demo_url';
-  $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
-  $handler->display->display_options['fields']['field_live_demo_url']['field'] = 'field_live_demo_url';
-  $handler->display->display_options['fields']['field_live_demo_url']['label'] = 'Demo';
-  $handler->display->display_options['fields']['field_live_demo_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_live_demo_url']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
   /* Field: Content: Provider */
   $handler->display->display_options['fields']['field_organizer']['id'] = 'field_organizer';
   $handler->display->display_options['fields']['field_organizer']['table'] = 'field_data_field_organizer';
@@ -80,15 +72,30 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['fields']['field_offering_email']['field'] = 'field_offering_email';
   $handler->display->display_options['fields']['field_offering_email']['label'] = '';
   $handler->display->display_options['fields']['field_offering_email']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_email']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_email']['alter']['path'] = 'mailto:[field_offering_email-email]';
+  $handler->display->display_options['fields']['field_offering_email']['alter']['max_length'] = '25';
+  $handler->display->display_options['fields']['field_offering_email']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_email']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_email']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_offering_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_email']['type'] = 'email_plain';
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_offering_website']['id'] = 'field_offering_website';
   $handler->display->display_options['fields']['field_offering_website']['table'] = 'field_data_field_offering_website';
   $handler->display->display_options['fields']['field_offering_website']['field'] = 'field_offering_website';
   $handler->display->display_options['fields']['field_offering_website']['label'] = '';
   $handler->display->display_options['fields']['field_offering_website']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_website']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_website']['alter']['path'] = '[field_offering_website-url]';
+  $handler->display->display_options['fields']['field_offering_website']['alter']['target'] = '_blank';
+  $handler->display->display_options['fields']['field_offering_website']['alter']['max_length'] = '25';
+  $handler->display->display_options['fields']['field_offering_website']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_website']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_website']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_offering_website']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_offering_website']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_offering_website']['type'] = 'link_title_plain';
   /* Field: Content: Contact person / Address */
   $handler->display->display_options['fields']['field_offering_address']['id'] = 'field_offering_address';
   $handler->display->display_options['fields']['field_offering_address']['table'] = 'field_data_field_offering_address';
@@ -133,6 +140,30 @@ function forge_web_product_page_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Attachment */
+  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Live demo url */
+  $handler->display->display_options['fields']['field_live_demo_url']['id'] = 'field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['field'] = 'field_live_demo_url';
+  $handler->display->display_options['fields']['field_live_demo_url']['label'] = 'Demo';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_live_demo_url']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['displays'] = array(
+    'block' => 'block',
+    'default' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
   $translatables['product_download_block'] = array(
     t('Master'),
     t('Product download block'),
@@ -142,7 +173,6 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Demo'),
     t('Provider'),
     t('Contact'),
     t('[field_offering_address]
@@ -151,6 +181,8 @@ function forge_web_product_page_views_default_views() {
 [field_offering_website] '),
     t('All'),
     t('Block'),
+    t('Attachment'),
+    t('Demo'),
   );
   $export['product_download_block'] = $view;
 
@@ -210,6 +242,11 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'offering' => 'offering',
   );
+  /* Filter criterion: Content: Detailed description (field_detailed_description) */
+  $handler->display->display_options['filters']['field_detailed_description_value']['id'] = 'field_detailed_description_value';
+  $handler->display->display_options['filters']['field_detailed_description_value']['table'] = 'field_data_field_detailed_description';
+  $handler->display->display_options['filters']['field_detailed_description_value']['field'] = 'field_detailed_description_value';
+  $handler->display->display_options['filters']['field_detailed_description_value']['operator'] = 'not empty';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -548,6 +585,11 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'AND',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -562,6 +604,7 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'offering' => 'offering',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

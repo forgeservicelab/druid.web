@@ -20,12 +20,12 @@ function forge_web_wizard_uuid_features_default_content() {
   'sticky' => 0,
   'vuuid' => 'e60bfb65-d54d-4c6b-990d-59b20bc84289',
   'type' => 'webform',
-  'language' => 'en',
+  'language' => 'und',
   'created' => 1396268984,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '0d5fcb71-47c4-4783-a311-9ce1c604583a',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(),
   'field_page_title' => array(),
   'metatags' => array(),
@@ -85,8 +85,20 @@ function forge_web_wizard_uuid_features_default_content() {
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'und',
+    'data' => array(
+      'und' => array(
+        'entity_type' => 'node',
+        'entity_id' => 2,
+        'language' => 'und',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1396268984,
+        'changed' => 1401866001,
+      ),
+    ),
   ),
   'webform' => array(
     'nid' => 2,
@@ -790,12 +802,12 @@ function forge_web_wizard_uuid_features_default_content() {
   'sticky' => 0,
   'vuuid' => 'd611e597-fc5f-41e2-b195-8406b8599cd4',
   'type' => 'webform',
-  'language' => 'en',
+  'language' => 'und',
   'created' => 1395214677,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '20b0bba6-90e7-40a3-b958-c01368e003a2',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(),
   'field_page_title' => array(),
   'metatags' => array(),
@@ -855,8 +867,20 @@ function forge_web_wizard_uuid_features_default_content() {
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'und',
+    'data' => array(
+      'und' => array(
+        'entity_type' => 'node',
+        'entity_id' => 3,
+        'language' => 'und',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1395214677,
+        'changed' => 1401866006,
+      ),
+    ),
   ),
   'webform' => array(
     'nid' => 3,
@@ -1884,14 +1908,14 @@ function forge_web_wizard_uuid_features_default_content() {
   'sticky' => 0,
   'vuuid' => 'e9cb725b-d70d-4ad2-bb98-aa868bc561f1',
   'type' => 'webform',
-  'language' => 'en',
+  'language' => 'und',
   'created' => 1395932764,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '2aa05069-59a7-4e58-a949-4a7dba5618cf',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
-    'en' => array(
+    'und' => array(
       0 => array(
         'value' => '<h2>Join FORGE Service Lab!</h2>
 
@@ -1970,8 +1994,20 @@ function forge_web_wizard_uuid_features_default_content() {
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'und',
+    'data' => array(
+      'und' => array(
+        'entity_type' => 'node',
+        'entity_id' => 4,
+        'language' => 'und',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1395932764,
+        'changed' => 1401283573,
+      ),
+    ),
   ),
   'webform' => array(
     'nid' => 4,
@@ -2217,7 +2253,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
         'cid' => 20,
         'pid' => 0,
         'form_key' => 'i_want_to_offer_sw_apis_datasets_or_tools_and_i_need_computing_capacity_to_do_that',
-        'name' => 'I want to offer APIs, software, datasets or tools and I need computing capacity to do that',
+        'name' => 'I want to offer sofware, APIs datasets or tools and I need computing capacity to do that',
         'type' => 'fieldset',
         'value' => '',
         'extra' => array(
@@ -2643,7 +2679,7 @@ subcontractor|I am a subcontractor of an organization that develops services in 
   'tnid' => 0,
   'translate' => 0,
   'uuid' => '312d36a3-a198-4450-8aa6-5431b6ae7eda',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
     'und' => array(
       0 => array(
@@ -2843,7 +2879,7 @@ For the basic computing resource allocation there is charge of 180 euros per mon
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'acf32012-8e98-41bd-bb23-67a265dc06f6',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(
     'und' => array(
       0 => array(
@@ -3005,12 +3041,12 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'sticky' => 0,
   'vuuid' => '24629cd2-f29b-4bd1-a49c-c881de341025',
   'type' => 'webform',
-  'language' => 'en',
+  'language' => 'und',
   'created' => 1396348941,
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'c5945d6e-b049-493a-989f-2b45f7e61b07',
-  'revision_uid' => 0,
+  'revision_uid' => 1,
   'body' => array(),
   'field_page_title' => array(),
   'metatags' => array(),
@@ -3070,8 +3106,20 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
     ),
   ),
   'translations' => array(
-    'original' => NULL,
-    'data' => array(),
+    'original' => 'und',
+    'data' => array(
+      'und' => array(
+        'entity_type' => 'node',
+        'entity_id' => 8,
+        'language' => 'und',
+        'source' => '',
+        'uid' => 1,
+        'status' => 1,
+        'translate' => 0,
+        'created' => 1396348941,
+        'changed' => 1401866011,
+      ),
+    ),
   ),
   'webform' => array(
     'nid' => 8,
@@ -3508,7 +3556,7 @@ When entering FORGE Service Lab, participants pay to DIGILE a service fee – th
   'tnid' => 0,
   'translate' => 0,
   'uuid' => 'dcd17082-a71b-4150-9a9a-900d87614b62',
-  'revision_uid' => 0,
+  'revision_uid' => 6,
   'body' => array(
     'und' => array(
       0 => array(
@@ -3529,18 +3577,24 @@ Become member of FORGE Service Lab internal community</p>
 
 <p><strong>What is expected from a FORGE Partner?</strong><br />
 &nbsp;<br />
-Partner has to be an active owner for his offerings. This means<br />
-creating and maintaining own information at FORGE Plaza<br />
-being the point of contact for anyone who is interested in the offering<br />
-taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
-developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
+Partner has to be an active owner for his offerings. This means</p>
+
+<ul>
+	<li>creating and maintaining own information at FORGE Plaza</li>
+	<li>being the point of contact for anyone who is interested in the offering</li>
+	<li>taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use</li>
+	<li>developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</li>
+</ul>
 
 <p><strong>What makes a good Partner offering in Plaza?</strong></p>
 
-<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
-All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
-Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
-As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.</p>
+
+<ul>
+	<li>All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.</li>
+	<li>Price tag or price indication and terms of use are required to show to other Forgeans but not in public.</li>
+	<li>As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</li>
+</ul>
 
 <p><strong>What does it cost?</strong><br />
 The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.</p>
@@ -3560,17 +3614,17 @@ Indicate affiliation with FORGE Service Lab in advertisements and publications i
 Become member of FORGE Service Lab internal community</p>
 <p><strong>What is expected from a FORGE Partner?</strong><br />
  <br />
-Partner has to be an active owner for his offerings. This means<br />
-creating and maintaining own information at FORGE Plaza<br />
-being the point of contact for anyone who is interested in the offering<br />
-taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use<br />
-developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</p>
-<p><strong>What makes a good Partner offering in Plaza?</strong></p>
-<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.<br />
-All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.<br />
-Price tag or price indication and terms of use are required to show to other Forgeans but not in public.<br />
-As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</p>
-<p><strong>What does it cost?</strong><br />
+Partner has to be an active owner for his offerings. This means</p>
+<ul><li>creating and maintaining own information at FORGE Plaza</li>
+<li>being the point of contact for anyone who is interested in the offering</li>
+<li>taking the effort to formulate the offerings so that they are easy to understand and it is easy to understand what are the requirements for taking an offering into use</li>
+<li>developing the offerings actively so that good quality is ensured and offering continuously represents professional expertise in digital service creation</li>
+</ul><p><strong>What makes a good Partner offering in Plaza?</strong></p>
+<p>FORGE Service Lab requirements of transparency and equal treatment affect how offerings are displayed at FORGE Plaza.</p>
+<ul><li>All offerings need to be clearly described and adequately focused for responding to specific need in service creation so that they are easy to understand.</li>
+<li>Price tag or price indication and terms of use are required to show to other Forgeans but not in public.</li>
+<li>As a basic rule it is expected that an offering is production quality and readily available for taking into use. It is possible to showcase on Plaza also offerings that are not quite yet on production quality level, but these must be marked clearly with label “Experimental”. Very immature technology (e.g. such that only has been demoed or prototyped) is best to develop further before bringing it to FORGE Plaza to be offered to others. For this purpose you might want to consider teaming up and starting a service development project in FORGE Service Lab!</li>
+</ul><p><strong>What does it cost?</strong><br />
 The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.</p>
 ',
         'safe_summary' => '<p>This is for joining FORGE Plaza, the service catalogue, where you as a digital service professional or as a service “building block” provider can show to others and be contacted about your displayed offerings by FORGE Service Developers or anyone visiting the public side of FORGE Plaza. You will be called as “FORGE Partner” in the contract.</p>
