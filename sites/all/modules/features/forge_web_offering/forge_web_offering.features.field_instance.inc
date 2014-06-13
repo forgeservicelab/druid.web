@@ -383,7 +383,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -400,7 +400,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_collection',
-    'label' => 'Collection',
+    'label' => 'Product family',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1499,48 +1499,6 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_page_title',
     'label' => 'Product family title',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_family-field_product_family_title'
-  $field_instances['node-product_family-field_product_family_title'] = array(
-    'bundle' => 'product_family',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_product_family_title',
-    'label' => 'Product family title',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1682,7 +1640,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'service_offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1699,7 +1657,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_collection',
-    'label' => 'Collection',
+    'label' => 'Product family',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -2652,7 +2610,6 @@ function forge_web_offering_field_default_field_instances() {
   t('Brief overview description');
   t('Cancellation / refund policy');
   t('Category');
-  t('Collection');
   t('Contact person / Address');
   t('Customer rating');
   t('Detailed description');
@@ -2662,6 +2619,7 @@ function forge_web_offering_field_default_field_instances() {
   t('Geographical coverage');
   t('Here you can provide more detailed information about the product pricing');
   t('If you have showcases to demonstrate what can be done with your offering.');
+  t('If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.');
   t('Live demo url');
   t('Logo');
   t('Main principle is that a service provider ensures the maturity level of his offering and indicates it clearly in offering description for potential customers.');
@@ -2672,6 +2630,7 @@ function forge_web_offering_field_default_field_instances() {
   t('Phone');
   t('Pricing description');
   t('Pricing information');
+  t('Product family');
   t('Product family title');
   t('Provider');
   t('Screenshots');

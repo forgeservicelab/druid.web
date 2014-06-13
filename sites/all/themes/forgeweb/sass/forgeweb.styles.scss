@@ -664,6 +664,12 @@ only screen and (min-resolution: 192dpi) {
     .field-name-field-geographical-coverage {
       margin-bottom: 2em;
     }
+    
+    .field-name-field-collection {
+      .form-select {
+        margin-bottom: 0;
+      }
+    }
     fieldset {
       margin-top: 0;
     }
@@ -1066,90 +1072,95 @@ only screen and (min-resolution: 192dpi) {
   margin-bottom: 1em;
 }
 
-.tabs,
-.not-front .ui-tabs,
-.horizontal-tabs {
-  &.tabs--primary {
-    border-bottom: 1px solid $border-color;
+%tabs {
+  padding: 0;
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
   }
-  ul {
-    padding: 0;
-    &:after {
-      clear: both;
-      content: "";
-      display: table;
-    }
-    li {
-      float: left;
-      list-style-type: none;
-      list-style-image: none;
-      margin: 0;
-      a {
-        background-color: $tab-inactive;
-        border-top: 1px solid $border-color;
-        border-left: 1px solid $border-color;
-        color: $text-color;
-        display: block;
+  li {
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    a {
+      background-color: $tab-inactive;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      color: $text-color;
+      display: block;
+      font-size: 0.9em;
+      padding: 1em 0.5em;
+      position: relative;
+      text-transform: none;
+      @include at-breakpoint($desk) {
         font-size: 0.9em;
-        padding: 1em 0.5em;
-        position: relative;
-        text-transform: none;
-        @include at-breakpoint($desk) {
-          font-size: 0.9em;
-          padding: 1.5em 2em;
-          text-transform: uppercase;
-        }
-        strong {
-          font-weight: normal;
-        }
-        &:hover {
-          background-color: $tab-active;
-        }
-        &:active,
-        &:focus,
-        &:visited {
-          outline: none;
-        }
+        padding: 1.5em 2em;
+        text-transform: uppercase;
       }
-      &:last-child a {
-        border-right: 1px solid $border-color;
+      strong {
+        font-weight: normal;
       }
-      &.active a,
-      &.ui-state-active a,
-      &.selected a {
+      &:hover {
         background-color: $tab-active;
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-color: transparent;
-          border-bottom: 0;
-        }
-        // Border
-        &:before {
-          border-top-color: $border-color;
-          border-width: 10px;
-          bottom: -10px;
-          left: 50%;
-          margin-left: -10px;
-        }
-        // Fill
-        &:after {
-          border-top-color: $tab-active;
-          border-width: 10px;
-          bottom: -9px;
-          left: 50%;
-          margin-left: -10px;
-        }
+      }
+      &:active,
+      &:focus,
+      &:visited {
+        outline: none;
+      }
+    }
+    &:last-child a {
+      border-right: 1px solid $border-color;
+    }
+    &.active a,
+    &.ui-state-active a,
+    &.selected a {
+      background-color: $tab-active;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom: 0;
+      }
+      // Border
+      &:before {
+        border-top-color: $border-color;
+        border-width: 10px;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -10px;
+      }
+      // Fill
+      &:after {
+        border-top-color: $tab-active;
+        border-width: 10px;
+        bottom: -9px;
+        left: 50%;
+        margin-left: -10px;
       }
     }
   }
 }
 
-// Horizontal tabs spesific stuff
+.tabs {
+  &.tabs--primary {
+    border-bottom: 1px solid $border-color;
+  }
+  @extend %tabs;
+}
+
+.not-front .ui-tabs,
+.horizontal-tabs ul {
+  @extend %tabs;
+}
+
+// Horizontal tabs specific stuff
 
 .horizontal-tabs {
   display: relative;

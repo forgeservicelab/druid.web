@@ -379,7 +379,7 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_product_family';
-  $strongarm->value = '4';
+  $strongarm->value = '0';
   $export['language_content_type_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -465,21 +465,21 @@ function forge_web_offering_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_offering';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_offering'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_product_family';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_product_family'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_service_offering';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_service_offering'] = $strongarm;
 
   $strongarm = new stdClass();
