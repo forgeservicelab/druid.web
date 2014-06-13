@@ -33,7 +33,7 @@ function forge_web_company_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_admin_email',
-    'label' => 'Email',
+    'label' => 'E-mail',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -91,47 +91,6 @@ function forge_web_company_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-company-field_admin_phone'
-  $field_instances['node-company-field_admin_phone'] = array(
-    'bundle' => 'company',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Phone number in international format without spaces. (+358441234567)',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_admin_phone',
-    'label' => 'Phone',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 12,
-    ),
-  );
-
   // Exported field_instance: 'node-company-field_company_address'
   $field_instances['node-company-field_company_address'] = array(
     'bundle' => 'company',
@@ -147,7 +106,7 @@ Finland',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -158,12 +117,11 @@ Finland',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_company_address',
-    'label' => 'Company address',
+    'label' => 'Organization address',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -188,7 +146,7 @@ Finland',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -213,92 +171,12 @@ Finland',
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => 11,
     ),
   );
 
   // Exported field_instance: 'node-company-field_company_email'
   $field_instances['node-company-field_company_email'] = array(
-    'bundle' => 'company',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_company_email',
-    'label' => 'Company email',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'email',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'email_textfield',
-      'weight' => 8,
-    ),
-  );
-
-  // Exported field_instance: 'node-company-field_company_email_outside_forg'
-  $field_instances['node-company-field_company_email_outside_forg'] = array(
-    'bundle' => 'company',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_company_email_outside_forg',
-    'label' => 'Company email outside FORGE',
-    'required' => FALSE,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance: 'node-company-field_company_phone'
-  $field_instances['node-company-field_company_phone'] = array(
     'bundle' => 'company',
     'default_value' => NULL,
     'deleted' => 0,
@@ -318,33 +196,31 @@ Finland',
       ),
     ),
     'entity_type' => 'node',
-    'exclude_cv' => 0,
-    'field_name' => 'field_company_phone',
-    'label' => 'Company phone',
+    'field_name' => 'field_company_email',
+    'label' => 'Organization email',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
+      'module' => 'email',
       'settings' => array(
         'size' => 60,
       ),
-      'type' => 'text_textfield',
-      'weight' => 7,
+      'type' => 'email_textfield',
+      'weight' => 10,
     ),
   );
 
-  // Exported field_instance: 'node-company-field_company_website'
-  $field_instances['node-company-field_company_website'] = array(
+  // Exported field_instance: 'node-company-field_company_phone'
+  $field_instances['node-company-field_company_phone'] = array(
     'bundle' => 'company',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'For example www.druid.fi',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -360,12 +236,12 @@ Finland',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_company_website',
-    'label' => 'Company website',
+    'exclude_cv' => 0,
+    'field_name' => 'field_company_phone',
+    'label' => 'Organization phone',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -376,7 +252,61 @@ Finland',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-company-field_company_webpage'
+  $field_instances['node-company-field_company_webpage'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_company_webpage',
+    'label' => 'Organization website',
+    'required' => 0,
+    'settings' => array(
+      'attributes' => array(
+        'class' => '',
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 8,
     ),
   );
 
@@ -403,11 +333,10 @@ Finland',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_free_text_company',
-    'label' => 'Free text company',
+    'label' => 'Free text organization',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -450,7 +379,7 @@ Finland',
     'label' => 'Images for content',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
+      'alt_field' => 1,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
       'file_directory' => '',
@@ -458,7 +387,7 @@ Finland',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -475,21 +404,32 @@ Finland',
           'image' => 0,
           'image_flexslider_full' => 0,
           'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 0,
+          'image_insert_half_scale_width_560px' => 0,
+          'image_insert_tall_scale_height_600px' => 0,
           'image_large' => 0,
           'image_liftup_image' => 0,
           'image_medium' => 0,
           'image_offering_logo' => 0,
           'image_partners_people_large' => 0,
           'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
+          'image_retina_flexslider_full_custom_user_retina_display_2x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_1x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_2x' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
         'insert_width' => '',
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'large',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -590,11 +530,10 @@ Finland',
     ),
     'entity_type' => 'node',
     'field_name' => 'field_page_title',
-    'label' => 'Company title',
+    'label' => 'Organization title',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -611,26 +550,22 @@ Finland',
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Company address');
   t('Company contact details for administration');
-  t('Company email');
-  t('Company email outside FORGE');
-  t('Company phone');
-  t('Company title');
-  t('Company website');
-  t('Email');
-  t('For example www.druid.fi');
+  t('E-mail');
   t('For example:
 Druid Oy
 Kaupintie 5
 00440 Helsinki
 Finland');
-  t('Free text company');
+  t('Free text organization');
   t('Images for content');
   t('Logo');
   t('Name');
-  t('Phone');
-  t('Phone number in international format without spaces. (+358441234567)');
+  t('Organization address');
+  t('Organization email');
+  t('Organization phone');
+  t('Organization title');
+  t('Organization website');
 
   return $field_instances;
 }
