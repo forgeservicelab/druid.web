@@ -158,6 +158,9 @@ form {
     .description {
       margin: 5px 0 0 5px;
     }
+    input.error {
+      border: 2px solid #d31959;
+    }
     &.form-type-textfield,
     &.webform-component-textfield,
     &.form-type-password,
@@ -565,7 +568,8 @@ form.user-profile-form {
   .form-type-password {
     padding-bottom: 40px;
     position: relative;
-    input {
+    input,
+    &.form-item-current-pass input {
       width: 100%;
     }
     div.password-strength,
@@ -699,6 +703,10 @@ only screen and (min-resolution: 192dpi) {
           label {
             margin: 0 0 0 -250px;
             width: 250px;
+            &.error {
+              margin: 0;
+              width: 100%;
+            }
           }
         }
       }
@@ -3671,4 +3679,20 @@ only screen and (min-resolution: 192dpi) {
 
 .back-to-wizard {
   font-size: 1.2em;
+}
+
+.webform-component--other-contract-information {
+  @include at-breakpoint($desk) {
+    .form-item {
+      overflow: hidden;
+      label {
+        float:left;
+        width: 70%;
+      }
+      input {
+        float: right;
+        width: 30%;
+      }
+    }
+  }
 }

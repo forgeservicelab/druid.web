@@ -40,6 +40,7 @@ $desk: 70em 16; // At 70em use 16 columns.
 @include at-breakpoint($tab) { // At a given Susy Media Layout, use a given amount of columns.
   .l-main {
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+    min-height: 495px;
   }
 
   .l-branding {
