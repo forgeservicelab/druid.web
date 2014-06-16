@@ -158,6 +158,9 @@ form {
     .description {
       margin: 5px 0 0 5px;
     }
+    input.error {
+      border: 2px solid #d31959;
+    }
     &.form-type-textfield,
     &.webform-component-textfield,
     &.form-type-password,
@@ -561,6 +564,57 @@ form.user-register-form {
   }
 }
 
+form.user-profile-form {
+  .form-type-password {
+    padding-bottom: 40px;
+    position: relative;
+    input,
+    &.form-item-current-pass input {
+      width: 100%;
+    }
+    div.password-strength,
+    div.password-confirm {
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      width: 100%;
+    }
+    @include at-breakpoint($tab) {
+      padding-bottom: 0;
+      input {
+        width: 55%;
+      }
+      div.password-strength,
+      div.password-confirm {
+        bottom: auto;
+        left: auto;
+        margin: 0;
+        position: static;
+        width: 40%;
+      }
+    }
+    @include at-breakpoint($desk) {
+      input {
+        width: 70%;
+      }
+      div.password-strength,
+      div.password-confirm {
+        width: 25%;
+      }
+    }
+  }
+  .password-suggestions {
+    background-color: $tab-active;
+    border-color: $border-color;
+    margin: 1em 0;
+    ul {
+      color: red;
+      padding: 0 0 0 30px;
+    }
+  }
+}
+
 html.js .form-autocomplete {
   background-image: url('../images/throbber_bg.png');
   background-position: 100% center;
@@ -649,6 +703,10 @@ only screen and (min-resolution: 192dpi) {
           label {
             margin: 0 0 0 -250px;
             width: 250px;
+            &.error {
+              margin: 0;
+              width: 100%;
+            }
           }
         }
       }
@@ -3621,4 +3679,20 @@ only screen and (min-resolution: 192dpi) {
 
 .back-to-wizard {
   font-size: 1.2em;
+}
+
+.webform-component--other-contract-information {
+  @include at-breakpoint($desk) {
+    .form-item {
+      overflow: hidden;
+      label {
+        float:left;
+        width: 70%;
+      }
+      input {
+        float: right;
+        width: 30%;
+      }
+    }
+  }
 }

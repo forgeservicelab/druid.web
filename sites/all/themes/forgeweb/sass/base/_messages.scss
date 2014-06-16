@@ -1,8 +1,35 @@
 .messages {
   background-color: #fff;
+  padding: 5px 10px;
+  text-transform: none;
   
   &.messages--error, &.error {
     background-color: #d31959;
     color: #fff;
+  }
+}
+
+.form-item.webform-component {
+  label.error {
+    background-color: #d31959;
+    color: #fff;
+    float: right;
+    margin-left: 0;
+    padding: 5px 10px;
+    text-transform: none;
+    width: 100%;
+  }
+}
+
+.form-type-checkboxes {
+  position: relative;
+  label.error {
+    background-color: #D31959;
+    color: #FFFFFF;
+    line-height: 1em;
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
