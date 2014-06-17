@@ -204,10 +204,17 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Please contact the provider for more information.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Detailed description */
   $handler->display->display_options['fields']['field_detailed_description']['id'] = 'field_detailed_description';
   $handler->display->display_options['fields']['field_detailed_description']['table'] = 'field_data_field_detailed_description';
@@ -259,6 +266,7 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Please contact the provider for more information.'),
     t('All'),
     t('Block'),
   );
@@ -369,10 +377,17 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Please contact the provider for more information.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Spesifications */
   $handler->display->display_options['fields']['field_spesifications']['id'] = 'field_spesifications';
   $handler->display->display_options['fields']['field_spesifications']['table'] = 'field_data_field_spesifications';
@@ -424,6 +439,7 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Please contact the provider for more information.'),
     t('All'),
     t('Block'),
   );
@@ -447,10 +463,17 @@ function forge_web_product_page_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Please contact the provider for more information.';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Content: Available support */
   $handler->display->display_options['fields']['field_available_support']['id'] = 'field_available_support';
   $handler->display->display_options['fields']['field_available_support']['table'] = 'field_data_field_available_support';
@@ -502,6 +525,7 @@ function forge_web_product_page_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Please contact the provider for more information.'),
     t('All'),
     t('Block'),
   );
