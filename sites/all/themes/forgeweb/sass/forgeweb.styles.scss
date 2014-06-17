@@ -3268,7 +3268,8 @@ only screen and (min-resolution: 192dpi) {
       display: block;
       margin: 1em 0;
     }
-    .views-field {
+    .views-field,
+    .view-empty {
       margin: 1.4em 0;
     }
   }
