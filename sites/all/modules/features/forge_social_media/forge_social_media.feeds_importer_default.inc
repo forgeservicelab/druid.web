@@ -38,12 +38,11 @@ function forge_social_media_feeds_importer_default() {
     'parser' => array(
       'plugin_key' => 'FeedsJSONPathParser',
       'config' => array(
-        'context' => '$.statuses.*',
+        'context' => '$.*',
         'sources' => array(
-          'jsonpath_parser:0' => 'text',
-          'jsonpath_parser:1' => 'user.screen_name',
-          'jsonpath_parser:2' => 'id_str',
-          'jsonpath_parser:3' => '',
+          'jsonpath_parser:0' => 'id',
+          'jsonpath_parser:1' => 'text',
+          'jsonpath_parser:2' => 'text',
         ),
         'debug' => array(
           'options' => array(
@@ -51,7 +50,6 @@ function forge_social_media_feeds_importer_default() {
             'jsonpath_parser:0' => 0,
             'jsonpath_parser:1' => 0,
             'jsonpath_parser:2' => 0,
-            'jsonpath_parser:3' => 0,
           ),
         ),
       ),
@@ -84,9 +82,9 @@ function forge_social_media_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '1',
         'input_format' => 'plain_text',
-        'skip_hash_check' => 0,
+        'skip_hash_check' => 1,
         'bundle' => 'tweet',
       ),
     ),
