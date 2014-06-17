@@ -131,7 +131,7 @@ function forge_web_ldap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cas_logout_destination';
-  $strongarm->value = '';
+  $strongarm->value = '<front>';
   $export['cas_logout_destination'] = $strongarm;
 
   $strongarm = new stdClass();
