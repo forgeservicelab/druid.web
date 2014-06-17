@@ -19,7 +19,6 @@ function forge_web_company_form_alter(&$form, &$form_state, $form_id) {
  * Custom validation
  */
 function forge_web_company_custom_validation($form, &$form_state) {
-  dsm($form_state);
   if (!empty($form_state['values']['field_admin_phone']['und']['0']['value']) && !preg_match('/^\+\d+$/', $form_state['values']['field_admin_phone']['und']['0']['value'])) {
     form_set_error('field_admin_phone', t('Phone number must start with "+" and must includes only numbers'));
   }
