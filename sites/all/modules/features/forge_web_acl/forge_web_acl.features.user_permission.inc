@@ -86,6 +86,62 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'contextual',
   );
 
+  // Exported permission: 'access devel information'.
+  $permissions['access devel information'] = array(
+    'name' => 'access devel information',
+    'roles' => array(),
+    'module' => 'devel',
+  );
+
+  // Exported permission: 'access environment indicator'.
+  $permissions['access environment indicator'] = array(
+    'name' => 'access environment indicator',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
+  // Exported permission: 'access environment indicator default_environment'.
+  $permissions['access environment indicator default_environment'] = array(
+    'name' => 'access environment indicator default_environment',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
+  // Exported permission: 'access environment indicator overwritten_environment'.
+  $permissions['access environment indicator overwritten_environment'] = array(
+    'name' => 'access environment indicator overwritten_environment',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
+  // Exported permission: 'access environment indicator prod'.
+  $permissions['access environment indicator prod'] = array(
+    'name' => 'access environment indicator prod',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
+  // Exported permission: 'access environment indicator testi'.
+  $permissions['access environment indicator testi'] = array(
+    'name' => 'access environment indicator testi',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
+  // Exported permission: 'access own authorizations'.
+  $permissions['access own authorizations'] = array(
+    'name' => 'access own authorizations',
+    'roles' => array(),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'access own consumers'.
+  $permissions['access own consumers'] = array(
+    'name' => 'access own consumers',
+    'roles' => array(),
+    'module' => 'oauth_common',
+  );
+
   // Exported permission: 'access own webform results'.
   $permissions['access own webform results'] = array(
     'name' => 'access own webform results',
@@ -100,6 +156,13 @@ function forge_web_acl_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'webform',
+  );
+
+  // Exported permission: 'access print'.
+  $permissions['access print'] = array(
+    'name' => 'access print',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: 'access private fields'.
@@ -130,6 +193,27 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'add authenticated twitter accounts'.
+  $permissions['add authenticated twitter accounts'] = array(
+    'name' => 'add authenticated twitter accounts',
+    'roles' => array(),
+    'module' => 'twitter',
+  );
+
+  // Exported permission: 'add twitter accounts'.
+  $permissions['add twitter accounts'] = array(
+    'name' => 'add twitter accounts',
+    'roles' => array(),
+    'module' => 'twitter',
+  );
+
+  // Exported permission: 'admin_display_suite'.
+  $permissions['admin_display_suite'] = array(
+    'name' => 'admin_display_suite',
+    'roles' => array(),
+    'module' => 'ds',
+  );
+
   // Exported permission: 'administer actions'.
   $permissions['administer actions'] = array(
     'name' => 'administer actions',
@@ -142,6 +226,20 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'administer blocks',
     'roles' => array(),
     'module' => 'block',
+  );
+
+  // Exported permission: 'administer breakpoints'.
+  $permissions['administer breakpoints'] = array(
+    'name' => 'administer breakpoints',
+    'roles' => array(),
+    'module' => 'breakpoints',
+  );
+
+  // Exported permission: 'administer cas'.
+  $permissions['administer cas'] = array(
+    'name' => 'administer cas',
+    'roles' => array(),
+    'module' => 'cas',
   );
 
   // Exported permission: 'administer ckeditor'.
@@ -158,6 +256,13 @@ function forge_web_acl_user_default_permissions() {
       'Content admin' => 'Content admin',
     ),
     'module' => 'comment',
+  );
+
+  // Exported permission: 'administer consumers'.
+  $permissions['administer consumers'] = array(
+    'name' => 'administer consumers',
+    'roles' => array(),
+    'module' => 'oauth_common',
   );
 
   // Exported permission: 'administer content types'.
@@ -188,11 +293,25 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'administer environment indicator settings'.
+  $permissions['administer environment indicator settings'] = array(
+    'name' => 'administer environment indicator settings',
+    'roles' => array(),
+    'module' => 'environment_indicator',
+  );
+
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: 'administer field collections'.
+  $permissions['administer field collections'] = array(
+    'name' => 'administer field collections',
+    'roles' => array(),
+    'module' => 'field_collection',
   );
 
   // Exported permission: 'administer field permissions'.
@@ -202,11 +321,39 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'administer fieldgroups'.
+  $permissions['administer fieldgroups'] = array(
+    'name' => 'administer fieldgroups',
+    'roles' => array(),
+    'module' => 'field_group',
+  );
+
   // Exported permission: 'administer filters'.
   $permissions['administer filters'] = array(
     'name' => 'administer filters',
     'roles' => array(),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'administer fitvids'.
+  $permissions['administer fitvids'] = array(
+    'name' => 'administer fitvids',
+    'roles' => array(),
+    'module' => 'fitvids',
+  );
+
+  // Exported permission: 'administer flexslider'.
+  $permissions['administer flexslider'] = array(
+    'name' => 'administer flexslider',
+    'roles' => array(),
+    'module' => 'flexslider',
+  );
+
+  // Exported permission: 'administer honeypot'.
+  $permissions['administer honeypot'] = array(
+    'name' => 'administer honeypot',
+    'roles' => array(),
+    'module' => 'honeypot',
   );
 
   // Exported permission: 'administer image styles'.
@@ -248,11 +395,60 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'administer oauth'.
+  $permissions['administer oauth'] = array(
+    'name' => 'administer oauth',
+    'roles' => array(),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'administer pathauto'.
+  $permissions['administer pathauto'] = array(
+    'name' => 'administer pathauto',
+    'roles' => array(),
+    'module' => 'pathauto',
+  );
+
+  // Exported permission: 'administer pdfs'.
+  $permissions['administer pdfs'] = array(
+    'name' => 'administer pdfs',
+    'roles' => array(),
+    'module' => 'fillpdf',
+  );
+
   // Exported permission: 'administer permissions'.
   $permissions['administer permissions'] = array(
     'name' => 'administer permissions',
     'roles' => array(),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer pictures'.
+  $permissions['administer pictures'] = array(
+    'name' => 'administer pictures',
+    'roles' => array(),
+    'module' => 'picture',
+  );
+
+  // Exported permission: 'administer print'.
+  $permissions['administer print'] = array(
+    'name' => 'administer print',
+    'roles' => array(),
+    'module' => 'print',
+  );
+
+  // Exported permission: 'administer quicktabs'.
+  $permissions['administer quicktabs'] = array(
+    'name' => 'administer quicktabs',
+    'roles' => array(),
+    'module' => 'quicktabs',
+  );
+
+  // Exported permission: 'administer responsive menus'.
+  $permissions['administer responsive menus'] = array(
+    'name' => 'administer responsive menus',
+    'roles' => array(),
+    'module' => 'responsive_menus',
   );
 
   // Exported permission: 'administer shortcuts'.
@@ -292,6 +488,13 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'system',
   );
 
+  // Exported permission: 'administer twitter accounts'.
+  $permissions['administer twitter accounts'] = array(
+    'name' => 'administer twitter accounts',
+    'roles' => array(),
+    'module' => 'twitter',
+  );
+
   // Exported permission: 'administer url aliases'.
   $permissions['administer url aliases'] = array(
     'name' => 'administer url aliases',
@@ -306,6 +509,20 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer uuid'.
+  $permissions['administer uuid'] = array(
+    'name' => 'administer uuid',
+    'roles' => array(),
+    'module' => 'uuid',
+  );
+
+  // Exported permission: 'administer video styles'.
+  $permissions['administer video styles'] = array(
+    'name' => 'administer video styles',
+    'roles' => array(),
+    'module' => 'video_embed_field',
+  );
+
   // Exported permission: 'administer views'.
   $permissions['administer views'] = array(
     'name' => 'administer views',
@@ -313,11 +530,25 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'administer voting api'.
+  $permissions['administer voting api'] = array(
+    'name' => 'administer voting api',
+    'roles' => array(),
+    'module' => 'votingapi',
+  );
+
   // Exported permission: 'block IP addresses'.
   $permissions['block IP addresses'] = array(
     'name' => 'block IP addresses',
     'roles' => array(),
     'module' => 'system',
+  );
+
+  // Exported permission: 'bypass honeypot protection'.
+  $permissions['bypass honeypot protection'] = array(
+    'name' => 'bypass honeypot protection',
+    'roles' => array(),
+    'module' => 'honeypot',
   );
 
   // Exported permission: 'bypass node access'.
@@ -332,6 +563,13 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'cancel account',
     'roles' => array(),
     'module' => 'user',
+  );
+
+  // Exported permission: 'change own user language'.
+  $permissions['change own user language'] = array(
+    'name' => 'change own user language',
+    'roles' => array(),
+    'module' => 'dul',
   );
 
   // Exported permission: 'change own username'.
@@ -1308,6 +1546,27 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'execute php code'.
+  $permissions['execute php code'] = array(
+    'name' => 'execute php code',
+    'roles' => array(),
+    'module' => 'devel',
+  );
+
+  // Exported permission: 'export nodes'.
+  $permissions['export nodes'] = array(
+    'name' => 'export nodes',
+    'roles' => array(),
+    'module' => 'node_export',
+  );
+
+  // Exported permission: 'export own nodes'.
+  $permissions['export own nodes'] = array(
+    'name' => 'export own nodes',
+    'roles' => array(),
+    'module' => 'node_export',
+  );
+
   // Exported permission: 'flush caches'.
   $permissions['flush caches'] = array(
     'name' => 'flush caches',
@@ -1322,11 +1581,53 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'grant content access'.
+  $permissions['grant content access'] = array(
+    'name' => 'grant content access',
+    'roles' => array(),
+    'module' => 'content_access',
+  );
+
+  // Exported permission: 'grant own content access'.
+  $permissions['grant own content access'] = array(
+    'name' => 'grant own content access',
+    'roles' => array(),
+    'module' => 'content_access',
+  );
+
   // Exported permission: 'manage features'.
   $permissions['manage features'] = array(
     'name' => 'manage features',
     'roles' => array(),
     'module' => 'features',
+  );
+
+  // Exported permission: 'node-specific print configuration'.
+  $permissions['node-specific print configuration'] = array(
+    'name' => 'node-specific print configuration',
+    'roles' => array(),
+    'module' => 'print',
+  );
+
+  // Exported permission: 'notify of path changes'.
+  $permissions['notify of path changes'] = array(
+    'name' => 'notify of path changes',
+    'roles' => array(),
+    'module' => 'pathauto',
+  );
+
+  // Exported permission: 'oauth authorize any consumers'.
+  $permissions['oauth authorize any consumers'] = array(
+    'name' => 'oauth authorize any consumers',
+    'roles' => array(),
+    'module' => 'oauth_common',
+  );
+
+  // Exported permission: 'oauth register any consumers'.
+  $permissions['oauth register any consumers'] = array(
+    'name' => 'oauth register any consumers',
+    'roles' => array(),
+    'module' => 'oauth_common',
   );
 
   // Exported permission: 'post comments'.
@@ -1341,6 +1642,13 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'comment',
   );
 
+  // Exported permission: 'publish all pdfs'.
+  $permissions['publish all pdfs'] = array(
+    'name' => 'publish all pdfs',
+    'roles' => array(),
+    'module' => 'fillpdf',
+  );
+
   // Exported permission: 'publish own pdfs'.
   $permissions['publish own pdfs'] = array(
     'name' => 'publish own pdfs',
@@ -1350,6 +1658,13 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'fillpdf',
   );
 
+  // Exported permission: 'rate content'.
+  $permissions['rate content'] = array(
+    'name' => 'rate content',
+    'roles' => array(),
+    'module' => 'fivestar',
+  );
+
   // Exported permission: 'revert revisions'.
   $permissions['revert revisions'] = array(
     'name' => 'revert revisions',
@@ -1357,6 +1672,18 @@ function forge_web_acl_user_default_permissions() {
       'Content admin' => 'Content admin',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'save draft'.
+  $permissions['save draft'] = array(
+    'name' => 'save draft',
+    'roles' => array(
+      'Blogger' => 'Blogger',
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'save_draft',
   );
 
   // Exported permission: 'select account cancellation method'.
@@ -1385,11 +1712,25 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'shortcut',
   );
 
+  // Exported permission: 'switch users'.
+  $permissions['switch users'] = array(
+    'name' => 'switch users',
+    'roles' => array(),
+    'module' => 'devel',
+  );
+
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
     'roles' => array(),
     'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate admin strings'.
+  $permissions['translate admin strings'] = array(
+    'name' => 'translate admin strings',
+    'roles' => array(),
+    'module' => 'i18n_string',
   );
 
   // Exported permission: 'translate any entity'.
@@ -1398,6 +1739,13 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
+    'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate comment entities'.
+  $permissions['translate comment entities'] = array(
+    'name' => 'translate comment entities',
+    'roles' => array(),
     'module' => 'entity_translation',
   );
 
@@ -1417,11 +1765,58 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'entity_translation',
   );
 
+  // Exported permission: 'translate taxonomy_term entities'.
+  $permissions['translate taxonomy_term entities'] = array(
+    'name' => 'translate taxonomy_term entities',
+    'roles' => array(),
+    'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate user entities'.
+  $permissions['translate user entities'] = array(
+    'name' => 'translate user entities',
+    'roles' => array(),
+    'module' => 'entity_translation',
+  );
+
+  // Exported permission: 'translate user-defined strings'.
+  $permissions['translate user-defined strings'] = array(
+    'name' => 'translate user-defined strings',
+    'roles' => array(),
+    'module' => 'i18n_string',
+  );
+
+  // Exported permission: 'use PHP for title patterns'.
+  $permissions['use PHP for title patterns'] = array(
+    'name' => 'use PHP for title patterns',
+    'roles' => array(),
+    'module' => 'auto_nodetitle',
+  );
+
+  // Exported permission: 'use PHP to import nodes'.
+  $permissions['use PHP to import nodes'] = array(
+    'name' => 'use PHP to import nodes',
+    'roles' => array(),
+    'module' => 'node_export',
+  );
+
   // Exported permission: 'use easy social wizard'.
   $permissions['use easy social wizard'] = array(
     'name' => 'use easy social wizard',
     'roles' => array(),
     'module' => 'easy_social',
+  );
+
+  // Exported permission: 'use text format comment'.
+  $permissions['use text format comment'] = array(
+    'name' => 'use text format comment',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'filter',
   );
 
   // Exported permission: 'use text format filtered_html'.
