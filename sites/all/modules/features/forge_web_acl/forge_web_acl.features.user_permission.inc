@@ -14,6 +14,8 @@ function forge_web_acl_user_default_permissions() {
   $permissions['access administration menu'] = array(
     'name' => 'access administration menu',
     'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -24,6 +26,8 @@ function forge_web_acl_user_default_permissions() {
   $permissions['access administration pages'] = array(
     'name' => 'access administration pages',
     'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -47,7 +51,11 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access comments'.
   $permissions['access comments'] = array(
     'name' => 'access comments',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'comment',
   );
 
@@ -65,7 +73,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access content overview'.
   $permissions['access content overview'] = array(
     'name' => 'access content overview',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -144,7 +154,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer comments'.
   $permissions['administer comments'] = array(
     'name' => 'administer comments',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'comment',
   );
 
@@ -214,7 +226,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer menu'.
   $permissions['administer menu'] = array(
     'name' => 'administer menu',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'menu',
   );
 
@@ -228,7 +242,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer nodes'.
   $permissions['administer nodes'] = array(
     'name' => 'administer nodes',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -263,7 +279,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'administer taxonomy'.
   $permissions['administer taxonomy'] = array(
     'name' => 'administer taxonomy',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'taxonomy',
   );
 
@@ -370,7 +388,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -382,20 +399,12 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'create field_live_demo_url'.
-  $permissions['create field_live_demo_url'] = array(
-    'name' => 'create field_live_demo_url',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_pricing_description'.
   $permissions['create field_pricing_description'] = array(
     'name' => 'create field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -406,7 +415,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -417,7 +425,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -428,7 +435,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -460,7 +466,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -487,7 +492,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -505,7 +509,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -735,8 +738,6 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -763,7 +764,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -780,8 +780,6 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own service_offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -1005,9 +1003,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit field_cancellation_refund_policy'.
   $permissions['edit field_cancellation_refund_policy'] = array(
     'name' => 'edit field_cancellation_refund_policy',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1023,13 +1019,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit field_customer_rating'.
   $permissions['edit field_customer_rating'] = array(
     'name' => 'edit field_customer_rating',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_live_demo_url'.
-  $permissions['edit field_live_demo_url'] = array(
-    'name' => 'edit field_live_demo_url',
     'roles' => array(),
     'module' => 'field_permissions',
   );
@@ -1073,7 +1062,12 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own comments'.
   $permissions['edit own comments'] = array(
     'name' => 'edit own comments',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'comment',
   );
 
@@ -1107,11 +1101,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own field_cancellation_refund_policy'.
   $permissions['edit own field_cancellation_refund_policy'] = array(
     'name' => 'edit own field_cancellation_refund_policy',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1121,7 +1111,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1133,20 +1122,12 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'edit own field_live_demo_url'.
-  $permissions['edit own field_live_demo_url'] = array(
-    'name' => 'edit own field_live_demo_url',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_pricing_description'.
   $permissions['edit own field_pricing_description'] = array(
     'name' => 'edit own field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1157,7 +1138,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1168,7 +1148,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1179,7 +1158,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1211,7 +1189,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -1238,7 +1215,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -1256,7 +1232,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -1357,7 +1332,12 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'post comments'.
   $permissions['post comments'] = array(
     'name' => 'post comments',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'comment',
   );
 
@@ -1389,7 +1369,12 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'skip comment approval'.
   $permissions['skip comment approval'] = array(
     'name' => 'skip comment approval',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'comment',
   );
 
@@ -1445,7 +1430,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'filter',
   );
@@ -1453,9 +1437,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'view field_cancellation_refund_policy'.
   $permissions['view field_cancellation_refund_policy'] = array(
     'name' => 'view field_cancellation_refund_policy',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1475,18 +1457,12 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_live_demo_url'.
-  $permissions['view field_live_demo_url'] = array(
-    'name' => 'view field_live_demo_url',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view field_pricing_description'.
   $permissions['view field_pricing_description'] = array(
     'name' => 'view field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -1498,6 +1474,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'view field_pricing_information',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -1509,6 +1486,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'view field_pricing_information_in',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -1520,6 +1498,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'view field_terms_and_conditions',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
     ),
@@ -1529,11 +1508,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'view own field_cancellation_refund_policy'.
   $permissions['view own field_cancellation_refund_policy'] = array(
     'name' => 'view own field_cancellation_refund_policy',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1543,7 +1518,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1555,20 +1529,12 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view own field_live_demo_url'.
-  $permissions['view own field_live_demo_url'] = array(
-    'name' => 'view own field_live_demo_url',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view own field_pricing_description'.
   $permissions['view own field_pricing_description'] = array(
     'name' => 'view own field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1579,7 +1545,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1590,7 +1555,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );
@@ -1601,7 +1565,6 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'field_permissions',
   );

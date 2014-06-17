@@ -16,6 +16,12 @@ function forge_web_acl_user_default_roles() {
     'weight' => 2,
   );
 
+  // Exported role: Forge member.
+  $roles['Forge member'] = array(
+    'name' => 'Forge member',
+    'weight' => 4,
+  );
+
   // Exported role: Partner.
   $roles['Partner'] = array(
     'name' => 'Partner',
