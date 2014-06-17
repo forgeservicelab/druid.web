@@ -218,18 +218,21 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['label'] = 'Phone';
   $handler->display->display_options['fields']['field_company_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_phone']['hide_empty'] = TRUE;
   /* Field: Content: Organization email */
   $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
   $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['label'] = 'E-mail';
   $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_email']['hide_empty'] = TRUE;
   /* Field: Content: Organization website */
   $handler->display->display_options['fields']['field_company_webpage']['id'] = 'field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['table'] = 'field_data_field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['field'] = 'field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['label'] = 'Website';
   $handler->display->display_options['fields']['field_company_webpage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_webpage']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_company_webpage']['click_sort_column'] = 'url';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';

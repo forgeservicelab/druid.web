@@ -38,6 +38,7 @@ features[field_group][] = group_media|node|company|form
 features[field_group][] = group_sidebar|node|company|form
 features[field_instance][] = node-company-field_admin_email
 features[field_instance][] = node-company-field_admin_name
+features[field_instance][] = node-company-field_admin_phone
 features[field_instance][] = node-company-field_company_address
 features[field_instance][] = node-company-field_company_contact_details_fo
 features[field_instance][] = node-company-field_company_email
