@@ -191,4 +191,19 @@
     }
   };
   
+  Drupal.behaviors.openCommentTab = {
+    attach: function (context, settings) {
+      var hash = $(location).attr('hash');
+      if(hash.search('comment') != -1) {
+        $('div').find('div#quicktabs-service_offering_quicktab ul.ui-tabs-nav li').each(function () {
+          $(this).removeClass('ui-tabs-selected');
+          $(this).removeClass('ui-state-active');
+        });
+        $('div').find('ul.ui-tabs-nav li').last().addClass('ui-tabs-selected ui-state-active');
+        $('div').find('div#qt-service_offering_quicktab-ui-tabs1').addClass('ui-tabs-hide');
+        $('div').find('div#qt-service_offering_quicktab-ui-tabs4').removeClass('ui-tabs-hide');
+      }
+    }
+  };
+  
 })(jQuery);
