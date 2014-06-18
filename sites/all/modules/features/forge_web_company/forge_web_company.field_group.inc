@@ -132,6 +132,7 @@ function forge_web_company_field_group_info() {
       0 => 'field_company_contact_details_fo',
       1 => 'field_admin_email',
       2 => 'field_admin_name',
+      3 => 'field_admin_phone',
     ),
     'format_type' => 'div',
     'format_settings' => array(
