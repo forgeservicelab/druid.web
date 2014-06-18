@@ -81,6 +81,7 @@ class OAuthHTTPFetcherResult extends FeedsFetcherResult {
       }
       $response = $oauth->executeRequest($request);
       if ($response->getStatusCode() == 200) {
+        dsm($response->getBody());
         return $response->getBody();
       }
       else {
