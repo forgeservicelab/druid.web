@@ -36,8 +36,16 @@ function forge_social_media_form_alter(&$form, &$form_state, $form_id) {
     $site_id = '';
     $site_id = $form['site_id']['#default_value'];
     $tokens = _forge_social_media_get_access_token_values($site_id);
-    $twitter_access_token = $tokens['oauth_token'];
-    $twitter_access_token_secret = $tokens['oauth_token_secret'];
+    if($tokens) {
+      $twitter_access_token = $tokens['oauth_token'];
+      $twitter_access_token_secret = $tokens['oauth_token_secret'];
+    }
+    // get tokens from variables
+    else {
+      // add tokens to variables also, then we can add those to 
+      $twitter_access_token = variable_get('forge_social_media_twitter_access_token', '1073565216-D45ntQI0x1NOGYr5kIQvCEYAv9KwCXJPOYHijDP');
+      $twitter_access_token_secret = variable_get('forge_social_media_twitter_access_token_secret', 'F0Hf3k67YWq9WNQq4UnpfuVKf4IMV6Jqi96nben5VQ0NE');
+    }
     $form['twitter'] = array(
       '#type' => 'fieldset',
       '#title' => 'Twitter access tokens',
@@ -65,6 +73,9 @@ function forge_social_media_submit_handler(&$form, &$form_state) {
   $access_token = $form_state['values']['forge_social_media_twitter_access_token'];
   $access_token_secret = $form_state['values']['forge_social_media_twitter_access_token_secret'];
   if(!empty($access_token) && !empty($access_token_secret)) {
+    // add tokens to varibles then we can add those to feature
+    variable_set('forge_social_media_twitter_access_token', $access_token);
+    variable_set('forge_social_media_twitter_access_token_secret', $access_token_secret);
     $result = _forge_social_media_get_access_token_values($site_id);
     if($result) {
       db_update('feeds_oauth_access_tokens')
@@ -89,8 +100,6 @@ function forge_social_media_submit_handler(&$form, &$form_state) {
   }
   // TODO: move this to custom validation function
   else {
-    dsm($access_token);
-    dsm($access_token_secret);
     if(empty($access_token) && !empty($access_token_secret)) {
       drupal_set_message(t('Please fill BOTH Twitter access token AND Twitter Access token secret.'), 'error');
     }
