@@ -17,6 +17,11 @@ function forge_web_administrator_tools_context_default_contexts() {
   $context->description = 'This context is triggered sitewide when administrator is logged in';
   $context->tag = 'Administartor';
   $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~admin/*' => '~admin/*',
+      ),
+    ),
     'sitewide' => array(
       'values' => array(
         1 => 1,

@@ -1,0 +1,58 @@
+// Search form styles
+
+.search form,
+.block--views-exp-search-page {
+  margin: 1em 0 2em;
+  text-align: center;
+  
+  form {
+    line-height: 0;
+    margin: 0;
+  }
+  
+  .views-exposed-widgets {
+    margin: 0;
+    padding-right: 110px;
+    position: relative;
+  }
+  
+  .views-exposed-form {
+    display: inline-block;
+    
+    .views-exposed-widget,
+    .views-submit-button {
+      padding: 0;
+    }
+    
+    .views-submit-button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      input {
+        margin: 0;
+        padding: 5px 0;
+        width: 100px;
+      }
+    }
+    
+    .form-item {
+      padding: 0;
+    }
+  }
+}
+
+// Pager
+
+.pager__item {
+  margin-right: 5px;
+  padding: 0;
+  a {
+    background-color: $tab-active;
+    padding: 5px 10px;
+  }
+}
+
+.pager__item--current,
+.pager__item--ellipsis {
+  padding: 5px 10px;
+}

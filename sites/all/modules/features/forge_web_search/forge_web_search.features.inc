@@ -35,71 +35,24 @@ function forge_web_search_default_search_api_index() {
     "server" : "database_server",
     "item_type" : "node",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
-      "data_alter_callbacks" : {
-        "search_api_alter_bundle_filter" : {
-          "status" : 1,
-          "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : [] }
-        },
-        "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_node_status" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_language_control" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : { "lang_field" : "language", "languages" : [] }
-        },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
-        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } }
-      },
+      "data_alter_callbacks" : { "search_api_alter_node_access" : { "status" : 1, "weight" : "0", "settings" : [] } },
       "processors" : {
-        "search_api_case_ignore" : {
-          "status" : 1,
-          "weight" : "0",
-          "settings" : { "fields" : { "title" : true, "body:value" : true } }
-        },
+        "search_api_case_ignore" : { "status" : 1, "weight" : "0", "settings" : { "strings" : 0 } },
         "search_api_html_filter" : {
           "status" : 1,
           "weight" : "10",
           "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+            "tags" : "h1 = 5\\nh2 = 3\\nh3 = 2\\nstrong = 2\\nb = 2\\nem = 1.5\\nu = 1.5"
           }
         },
         "search_api_tokenizer" : {
           "status" : 1,
           "weight" : "20",
-          "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
-            "spaces" : "[^\\\\p{L}\\\\p{N}]",
-            "ignorable" : "[-]"
-          }
-        },
-        "search_api_stopwords" : {
-          "status" : 0,
-          "weight" : "30",
-          "settings" : {
-            "fields" : { "title" : true, "body:value" : true },
-            "file" : "",
-            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
-          }
-        },
-        "search_api_highlighting" : {
-          "status" : 0,
-          "weight" : "35",
-          "settings" : {
-            "prefix" : "\\u003Cstrong\\u003E",
-            "suffix" : "\\u003C\\/strong\\u003E",
-            "excerpt" : 1,
-            "excerpt_length" : "256",
-            "exclude_fields" : [],
-            "highlight" : "always"
-          }
+          "settings" : { "spaces" : "[^\\\\p{L}\\\\p{N}]", "ignorable" : "[-]" }
         }
       },
       "fields" : {
@@ -108,12 +61,32 @@ function forge_web_search_default_search_api_index() {
         "changed" : { "type" : "date" },
         "comment_count" : { "type" : "integer" },
         "created" : { "type" : "date" },
+        "field_brief_overview_description:value" : { "type" : "text" },
+        "field_cancellation_refund_policy" : { "type" : "text" },
         "field_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_geographical_coverage_term" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_company_address" : { "type" : "text" },
+        "field_company_email" : { "type" : "text" },
+        "field_company_phone" : { "type" : "text" },
+        "field_detailed_description:value" : { "type" : "text" },
+        "field_free_text_company:value" : { "type" : "text" },
+        "field_geographical_coverage" : { "type" : "text" },
+        "field_logo:file" : { "type" : "integer", "entity_type" : "file" },
+        "field_more_information" : { "type" : "text" },
+        "field_news_body:value" : { "type" : "text" },
+        "field_offering_address" : { "type" : "text" },
+        "field_offering_email" : { "type" : "text" },
+        "field_offering_phone" : { "type" : "text" },
         "field_offering_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_oneliner" : { "type" : "text" },
+        "field_organizer" : { "type" : "integer", "entity_type" : "node" },
+        "field_pricing_description:value" : { "type" : "text" },
+        "field_pricing_information" : { "type" : "text" },
+        "field_responsible_organization" : { "type" : "text" },
+        "field_tweet_body" : { "type" : "text" },
+        "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
+        "status" : { "type" : "integer" },
         "sticky" : { "type" : "boolean" },
         "title" : { "type" : "text", "boost" : "5.0" },
         "type" : { "type" : "string" }
@@ -199,10 +172,14 @@ function forge_web_search_default_search_api_server() {
             "type" : "text",
             "boost" : "1.0"
           },
-          "field_tags" : {
-            "table" : "search_api_db_default_node_index_field_tags",
-            "column" : "value",
-            "type" : "list\\u003Cinteger\\u003E",
+          "field_responsible_organization" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_cancellation_refund_policy" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
             "boost" : "1.0"
           },
           "field_category" : {
@@ -211,16 +188,114 @@ function forge_web_search_default_search_api_server() {
             "type" : "list\\u003Cinteger\\u003E",
             "boost" : "1.0"
           },
+          "field_geographical_coverage" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_more_information" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
           "field_offering_tags" : {
             "table" : "search_api_db_default_node_index_field_offering_tags",
             "column" : "value",
             "type" : "list\\u003Cinteger\\u003E",
             "boost" : "1.0"
           },
-          "field_geographical_coverage_term" : {
-            "table" : "search_api_db_default_node_index_field_geographical_coverage_t",
-            "column" : "value",
-            "type" : "list\\u003Cinteger\\u003E",
+          "field_oneliner" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_organizer" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "field_organizer",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_pricing_information" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_offering_address" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_offering_phone" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_offering_email" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_company_address" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_company_email" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_company_phone" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_brief_overview_description:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_detailed_description:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_pricing_description:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_free_text_company:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "nid" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "nid",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_news_body:value" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "status" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "status",
+            "type" : "integer",
+            "boost" : "1.0"
+          },
+          "field_tweet_body" : {
+            "table" : "search_api_db_default_node_index_text",
+            "type" : "text",
+            "boost" : "1.0"
+          },
+          "field_logo:file" : {
+            "table" : "search_api_db_default_node_index",
+            "column" : "field_logo_file",
+            "type" : "integer",
             "boost" : "1.0"
           }
         }

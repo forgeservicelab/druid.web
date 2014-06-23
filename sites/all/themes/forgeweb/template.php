@@ -67,3 +67,22 @@ function forgeweb_theme_registry_alter(&$registry) {
     }
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Replace the search field label with a placeholder
+ */
+function forgeweb_form_alter(&$form, &$form_state, $form_id){
+  if($form_id == "views_exposed_form"){
+    if (isset($form['keyword'])) {
+      // Get the label value from search form
+      $label_value = $form['#info']['filter-search_api_views_fulltext']['label'];
+      // Move the label to the input as a placeholder
+      $form['keyword']['#attributes'] = array('placeholder' => array(t($label_value)));
+      // Hide the original label
+      $form['#info']['filter-search_api_views_fulltext']['label'] = '';
+    }
+  }
+}
+
