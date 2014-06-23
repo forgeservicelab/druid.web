@@ -52,7 +52,7 @@ function forge_web_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Tags',
+    'title' => '',
     'visibility' => 0,
   );
 
@@ -74,7 +74,7 @@ function forge_web_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Categories',
+    'title' => '',
     'visibility' => 0,
   );
 

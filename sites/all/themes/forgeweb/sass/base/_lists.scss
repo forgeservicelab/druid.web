@@ -1,0 +1,24 @@
+// Search result styles
+
+.search-result {
+  margin-bottom: 2em;
+  padding: 10px;
+  &.views-row-odd {
+    background-color: $tab-active;
+  }
+}
+
+.search-result--logo {
+  min-height: 95px;
+  padding-left: 95px;
+  position: relative;
+  .logo {
+    left: 10px;
+    position: absolute;
+    top: 10px;
+  }
+}
+
+.listing-title {
+  margin: 0 0 1em;
+}

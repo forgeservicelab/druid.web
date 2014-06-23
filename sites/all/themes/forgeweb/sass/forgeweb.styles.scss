@@ -78,16 +78,6 @@ img {
   }
 }
 
-// When user is logged in there is toolbar that needs 20px of space on tab and desktop views
-.logged-in .home-icon {
-  @include at-breakpoint($tab) {
-    top: 30px;
-  }
-  @include at-breakpoint($desk) {
-    top: 40px;
-  }
-}
-
 
 // Home-icon retina styles
 
@@ -1575,6 +1565,7 @@ only screen and (min-resolution: 192dpi) {
 
     background-color: $menu-bg;
     padding-bottom: 0;
+    position: relative;
     width: 100%;
     z-index: 100;
   }
@@ -1779,12 +1770,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.logged-in .l-navigation-wrapper {
-  // When user is logged in there is toolbar that needs 20px of space
-  .block--menu-menu-log-in-menu {
-    top: 20px;
-  }
-}
 
 // Navigation retina styles
 
@@ -3710,6 +3695,37 @@ only screen and (min-resolution: 192dpi) {
         float: right;
         width: 30%;
       }
+    }
+  }
+}
+
+
+// Search styles
+
+.section-search {
+  .l-region--sidebar-first {
+    .block--facetapi {
+      margin-bottom: 2.5em;
+      .block__title {
+        font-size: 1.3em;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style-image: none;
+          list-style-type: none;
+        }
+      }
+    }
+  }
+  
+  .block--current-search {
+    margin: 2em 0;
+    h3 {
+      font-size: 1.2em;
+      font-weight: 300;
+      text-transform: none;
     }
   }
 }
