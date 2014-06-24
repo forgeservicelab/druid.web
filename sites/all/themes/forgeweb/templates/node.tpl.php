@@ -113,7 +113,7 @@
       print render($content);
     ?>
     
-    <?php if (!$page && $type == 'news' || !$page &&  $type == 'blog_post' || !$page && $type == 'tweet'): ?>
+    <?php if (!$page && $type == 'news' || !$page &&  $type == 'blog_post' || !$page && $type == 'tweet' && $view_mode != 'liftup'): ?>
       <div class="share-links">
         <?php print t('Share'); ?>:
         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $share_url; ?>" class="share-facebook" target="_blank"><span><?php print t('Share on Facebook'); ?></span></a>

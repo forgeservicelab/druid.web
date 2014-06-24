@@ -3124,7 +3124,8 @@ only screen and (min-resolution: 192dpi) {
 
 // Tweet page
 
-.node--tweet--full {
+.node--tweet--full,
+.node--tweet--liftup {
   .field--name-field-tweet-date {
     color: $text-gray-color;
     font-size: 1.3em;
@@ -3174,6 +3175,21 @@ only screen and (min-resolution: 192dpi) {
     }
   }
 }
+
+.node--tweet--liftup {
+  .node__title {
+    font-size: 1.2em;
+    @include at-breakpoint($tab) {
+      font-size: 2em;
+    }
+  }
+  .field--name-field-tweet-body {
+    @include at-breakpoint($tab) {
+      margin: 40px 0 20px 0;
+    }
+  }
+}
+
 
 // Offering page
 
