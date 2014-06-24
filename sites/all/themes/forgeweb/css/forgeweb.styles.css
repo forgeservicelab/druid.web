@@ -3179,8 +3179,9 @@ html[lang=fi] .site-name a {
   display: none;
 }
 .view-feed .views-exposed-form .views-exposed-widget .form-item label {
+  background-color: #000;
   border-bottom: 2px solid #e4e4e4;
-  color: #1090d0;
+  color: #fff;
   display: block;
   font-size: 0.9em;
   margin: 0;
@@ -3199,8 +3200,7 @@ html[lang=fi] .site-name a {
   }
 }
 .view-feed .views-exposed-form .views-exposed-widget .form-item label.checked {
-  background-color: #000;
-  color: #fff;
+  color: #c7da2b;
 }
 .view-feed .views-exposed-form .views-exposed-widget .form-item label:hover {
   cursor: pointer;

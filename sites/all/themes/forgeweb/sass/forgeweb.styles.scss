@@ -2897,8 +2897,9 @@ only screen and (min-resolution: 192dpi) {
           display: none;
         }
         label {
+          background-color: #000;
           border-bottom: 2px solid $border-color;
-          color: $link-color;
+          color: #fff;
           display: block;
           font-size: 0.9em;
           margin: 0;
@@ -2912,8 +2913,7 @@ only screen and (min-resolution: 192dpi) {
             font-size: 1.2em;
           }
           &.checked {
-            background-color: #000;
-            color: #fff;
+            color: $active-link-color;
           }
           &:hover {
             cursor: pointer;
