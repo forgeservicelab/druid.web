@@ -3238,6 +3238,9 @@ html[lang=fi] .site-name a {
     font-size: 1.4em;
   }
 }
+.view-feed .views-row .field--type-text-long {
+  margin: 0;
+}
 .view-feed .views-row .field--type-text-long img {
   height: auto !important;
 }
