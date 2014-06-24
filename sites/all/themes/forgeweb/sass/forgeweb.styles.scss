@@ -179,7 +179,7 @@ form {
         display: block;
         line-height: 16px;
         margin: 0;
-        min-height: 36px;
+        min-height: 34px;
         padding: 8px 10px;
         @include at-breakpoint($tab) {
           border-bottom: 1px solid $border-color;
@@ -277,6 +277,7 @@ form {
         color: darken($button-color, 10%);
         .toggle {
           background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+          background-size: 16px auto;
           display: inline-block;
           height: 16px;
           margin: 3px 0 0 5px;
@@ -619,6 +620,7 @@ html.js .form-autocomplete {
   background-image: url('../images/throbber_bg.png');
   background-position: 100% center;
   background-repeat: no-repeat;
+  background-size: 23px auto;
   &.throbbing {
     background-image: url('../images/throbber.gif');
     background-color: #f5f5f5;
@@ -644,6 +646,19 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+    .form-checkboxes {
+      .category.main > .form-item {
+        &.expandable {
+          .toggle {
+            background-image: url('../images/icon_expand_retina.png');
+          }
+        }
+      }
+    }
+  }
+  
+  html.js .form-autocomplete {
+    background-image: url('../images/throbber_bg_retina.png');
   }
 }
 
@@ -1142,6 +1157,7 @@ only screen and (min-resolution: 192dpi) {
     list-style-type: none;
     list-style-image: none;
     margin: 0;
+    outline: 0;
     a {
       background-color: $tab-inactive;
       border-top: 1px solid $border-color;
@@ -1166,7 +1182,7 @@ only screen and (min-resolution: 192dpi) {
       &:active,
       &:focus,
       &:visited {
-        outline: none;
+        outline: 0;
       }
     }
     &:last-child a {
