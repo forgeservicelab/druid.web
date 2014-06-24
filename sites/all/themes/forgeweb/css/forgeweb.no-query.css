@@ -175,6 +175,9 @@ h3, .node-type-service-offering .block--quicktabs .views-label,
   position: absolute;
   top: 10px;
 }
+.search-result--logo .logo img {
+  max-width: 75px;
+}
 
 .listing-title {
   margin: 0 0 1em;
@@ -339,7 +342,7 @@ form .form-item.form-type-textfield label, form .form-item.webform-component-tex
   display: block;
   line-height: 16px;
   margin: 0;
-  min-height: 36px;
+  min-height: 34px;
   padding: 8px 10px;
 }
 @media (min-width: 44em) {
@@ -436,6 +439,7 @@ form .form-checkboxes .category.main > .form-item.expandable {
 }
 form .form-checkboxes .category.main > .form-item.expandable .toggle {
   background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+  background-size: 16px auto;
   display: inline-block;
   height: 16px;
   margin: 3px 0 0 5px;
@@ -780,6 +784,7 @@ html.js .form-autocomplete {
   background-image: url("../images/throbber_bg.png");
   background-position: 100% center;
   background-repeat: no-repeat;
+  background-size: 23px auto;
 }
 html.js .form-autocomplete.throbbing {
   background-image: url("../images/throbber.gif");
@@ -790,6 +795,13 @@ html.js .form-autocomplete.throbbing {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   form .field-type-image table tr .form-submit {
     background-image: url("../images/icon_delete_retina.png");
+  }
+  form .form-checkboxes .category.main > .form-item.expandable .toggle {
+    background-image: url("../images/icon_expand_retina.png");
+  }
+
+  html.js .form-autocomplete {
+    background-image: url("../images/throbber_bg_retina.png");
   }
 }
 .webform-client-form fieldset .fieldset-wrapper {
@@ -1293,6 +1305,7 @@ form.fivestar-widget {
   list-style-type: none;
   list-style-image: none;
   margin: 0;
+  outline: 0;
 }
 .tabs li a, .not-front .ui-tabs li a,
 .horizontal-tabs ul li a {
@@ -1326,7 +1339,7 @@ form.fivestar-widget {
 .horizontal-tabs ul li a:active, .tabs li a:focus, .not-front .ui-tabs li a:focus,
 .horizontal-tabs ul li a:focus, .tabs li a:visited, .not-front .ui-tabs li a:visited,
 .horizontal-tabs ul li a:visited {
-  outline: none;
+  outline: 0;
 }
 .tabs li:last-child a, .not-front .ui-tabs li:last-child a,
 .horizontal-tabs ul li:last-child a {
