@@ -89,6 +89,21 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   if(strstr($form_id, 'webform_client_form')) {
     drupal_add_js(drupal_get_path('module', 'forge_web_wizard').'/forge_web_wizard.js');
     /*
+     * make maxlenght module working with webform components
+     */
+    if(module_exists(maxlength)) {
+      $max_length = 240;
+      $field1 = 'partner_offering_description';
+      $form['submitted'][$field1]['#pre_render'] = array('maxlength_pre_render');
+      $form['submitted'][$field1]['#maxlength'] = $max_length;
+      $form['submitted'][$field1]['#maxlength_js'] = TRUE;
+      $field2 = 'desc_of_developer_service_concise_description_of_the_service_developed';
+      $form['submitted']['description_of_developed_service'][$field2]['#pre_render'] = array('maxlength_pre_render');
+      $form['submitted']['description_of_developed_service'][$field2]['#maxlength'] = $max_length;
+      $form['submitted']['description_of_developed_service'][$field2]['#maxlength_js'] = TRUE;
+    }
+    
+    /*
     * Replace [path]xx/xxx[/path] in webform markup components
     */
     foreach ($form['submitted'] as $key => $compo) {
@@ -468,9 +483,9 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
    * 
    * Mapped array:
    * array(
-   *  'FIELD_KEY_FROM_WEBFORM' => 'FIELD NAME TO MAP IN PDF'
+   *  'FIELD_KEY_FROM_WEBFORM_COMPONENT' => 'FIELD NAME TO MAP IN PDF'
    *  // if you need to map one webform field to many pdf fields use:
-   *  'FIELD_KEY_FROM_WEBFORM' => array(
+   *  'FIELD_KEY_FROM_WEBFORM_COMPONENT' => array(
    *    'FIELD NAME TO MAP IN PDF 1'
    *    'FIELD NAME TO MAP IN PDF 2'
    *    ......
@@ -485,6 +500,9 @@ function forge_web_wizard_fillpdf_merge_fields_alter_alter(&$fields, $context) {
     'subcontractor_organization_name' => 'Organization name',
     'subcontractor_business_id' => 'Consultant business ID'
   );
+  foreach($fields as $key => $field) {
+    $fields[$key] = strip_tags(htmlspecialchars_decode($field));
+  }
   foreach($mapped_fields as $field_key => $field_value) {
     $component_key = _forge_web_wizard_search_for_key($field_key, $context['webforms'][0]['webform']->webform['components']); 
     $multiple_fields = _forge_web_wizard_recursive_array_search($component_key, $context['webforms'][0]['submission']->wfm_data[$component_key]);
