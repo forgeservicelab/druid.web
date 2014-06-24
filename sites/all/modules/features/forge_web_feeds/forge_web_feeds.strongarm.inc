@@ -84,7 +84,7 @@ function forge_web_feeds_strongarm() {
         'custom_settings' => FALSE,
       ),
       'liftup' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'revision' => array(
         'custom_settings' => FALSE,

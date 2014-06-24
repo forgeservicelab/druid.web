@@ -3408,12 +3408,14 @@ html[lang=fi] .site-name a {
   word-wrap: break-word;
 }
 
-.node--tweet--full .field--name-field-tweet-date {
+.node--tweet--full .field--name-field-tweet-date,
+.node--tweet--liftup .field--name-field-tweet-date {
   color: #777777;
   font-size: 1.3em;
   margin: 0 0 1.5em 0;
 }
-.node--tweet--full .field--name-field-tweet-body {
+.node--tweet--full .field--name-field-tweet-body,
+.node--tweet--liftup .field--name-field-tweet-body {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -3427,7 +3429,8 @@ html[lang=fi] .site-name a {
   padding: 1em;
   position: relative;
 }
-.node--tweet--full .field--name-field-tweet-body:after {
+.node--tweet--full .field--name-field-tweet-body:after,
+.node--tweet--liftup .field--name-field-tweet-body:after {
   content: '';
   position: absolute;
   border-style: solid;
@@ -3441,11 +3444,13 @@ html[lang=fi] .site-name a {
   left: 25%;
 }
 @media (min-width: 44em) {
-  .node--tweet--full .field--name-field-tweet-body:after {
+  .node--tweet--full .field--name-field-tweet-body:after,
+  .node--tweet--liftup .field--name-field-tweet-body:after {
     left: 15%;
   }
 }
-.node--tweet--full .field--name-field-tweet-body:before {
+.node--tweet--full .field--name-field-tweet-body:before,
+.node--tweet--liftup .field--name-field-tweet-body:before {
   content: '';
   position: absolute;
   border-style: solid;
@@ -3459,8 +3464,23 @@ html[lang=fi] .site-name a {
   left: 25%;
 }
 @media (min-width: 44em) {
-  .node--tweet--full .field--name-field-tweet-body:before {
+  .node--tweet--full .field--name-field-tweet-body:before,
+  .node--tweet--liftup .field--name-field-tweet-body:before {
     left: 15%;
+  }
+}
+
+.node--tweet--liftup .node__title {
+  font-size: 1.2em;
+}
+@media (min-width: 44em) {
+  .node--tweet--liftup .node__title {
+    font-size: 2em;
+  }
+}
+@media (min-width: 44em) {
+  .node--tweet--liftup .field--name-field-tweet-body {
+    margin: 40px 0 20px 0;
   }
 }
 
