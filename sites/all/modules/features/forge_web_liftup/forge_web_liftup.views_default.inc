@@ -65,6 +65,7 @@ function forge_web_liftup_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
     'news' => 'news',
+    'tweet' => 'tweet',
   );
 
   /* Display: Block */
