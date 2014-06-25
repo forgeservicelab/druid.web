@@ -1,0 +1,8 @@
+<target name="phpcs">
+	<exec executable="phpcs">
+		<arg line="--report=checkstyle 
+				--report-file=${output}/phpcs/checkstyle.xml 
+				--standard=Drupal
+				${basedir}/sites/all/modules" />
+	</exec>
+</target>
