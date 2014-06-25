@@ -1,5 +1,5 @@
-<target name="phpcs">
-	<exec executable="phpcs">
+<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
+	<exec executable="phpcs" failonerror="off">
 		<arg line="--report=checkstyle 
 				--report-file=${output}/phpcs/checkstyle.xml 
 				--standard=Drupal
