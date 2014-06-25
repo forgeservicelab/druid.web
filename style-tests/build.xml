@@ -1,8 +1,11 @@
-<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-	<exec executable="phpcs" failonerror="off">
-		<arg line="--report=checkstyle 
-				--report-file=${output}/phpcs/checkstyle.xml 
-				--standard=Drupal
-				${basedir}/sites/all/modules" />
-	</exec>
-</target>
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="name-of-project" default="phpcs">
+	<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
+		<exec executable="phpcs" failonerror="off">
+			<arg value="--report=checkstyle" />
+			<arg value="--report-file=${output}/phpcs/checkstyle.xml" />
+			<arg value="--standard=Drupal" />
+			<arg path="${basedir}/sites/all/modules" />
+		</exec>
+	</target>
+</project>
