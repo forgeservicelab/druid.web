@@ -154,6 +154,12 @@ function forge_web_offering_context_default_contexts() {
           'region' => 'content',
           'weight' => '1',
         ),
+        'views--exp-offering_listing-block_1' => array(
+          'module' => 'views',
+          'delta' => '-exp-offering_listing-block_1',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
       ),
     ),
   );
