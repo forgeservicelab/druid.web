@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Plaza-style-check" default="phpcs">
 	<target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
-		<exec executable="phpcs" failonerror="off">
+		<exec executable="phpcs">
 			<arg value="--report=checkstyle" />
 			<arg value="--report-file=checkstyle-result.xml" />
 			<arg value="--standard=Drupal" />
