@@ -191,6 +191,20 @@ function forge_social_media_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'forge_social_media_twitter_access_token';
+  $strongarm->value = '1073565216-D45ntQI0x1NOGYr5kIQvCEYAv9KwCXJPOYHijDP';
+  $export['forge_social_media_twitter_access_token'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'forge_social_media_twitter_access_token_secret';
+  $strongarm->value = 'F0Hf3k67YWq9WNQq4UnpfuVKf4IMV6Jqi96nben5VQ0NE';
+  $export['forge_social_media_twitter_access_token_secret'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'twitter_api';
   $strongarm->value = 'https://api.twitter.com';
   $export['twitter_api'] = $strongarm;

@@ -78,16 +78,6 @@ img {
   }
 }
 
-// When user is logged in there is toolbar that needs 20px of space on tab and desktop views
-.logged-in .home-icon {
-  @include at-breakpoint($tab) {
-    top: 30px;
-  }
-  @include at-breakpoint($desk) {
-    top: 40px;
-  }
-}
-
 
 // Home-icon retina styles
 
@@ -189,7 +179,7 @@ form {
         display: block;
         line-height: 16px;
         margin: 0;
-        min-height: 36px;
+        min-height: 34px;
         padding: 8px 10px;
         @include at-breakpoint($tab) {
           border-bottom: 1px solid $border-color;
@@ -287,6 +277,7 @@ form {
         color: darken($button-color, 10%);
         .toggle {
           background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+          background-size: 16px auto;
           display: inline-block;
           height: 16px;
           margin: 3px 0 0 5px;
@@ -629,6 +620,7 @@ html.js .form-autocomplete {
   background-image: url('../images/throbber_bg.png');
   background-position: 100% center;
   background-repeat: no-repeat;
+  background-size: 23px auto;
   &.throbbing {
     background-image: url('../images/throbber.gif');
     background-color: #f5f5f5;
@@ -654,6 +646,19 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+    .form-checkboxes {
+      .category.main > .form-item {
+        &.expandable {
+          .toggle {
+            background-image: url('../images/icon_expand_retina.png');
+          }
+        }
+      }
+    }
+  }
+  
+  html.js .form-autocomplete {
+    background-image: url('../images/throbber_bg_retina.png');
   }
 }
 
@@ -1152,6 +1157,7 @@ only screen and (min-resolution: 192dpi) {
     list-style-type: none;
     list-style-image: none;
     margin: 0;
+    outline: 0;
     a {
       background-color: $tab-inactive;
       border-top: 1px solid $border-color;
@@ -1176,7 +1182,7 @@ only screen and (min-resolution: 192dpi) {
       &:active,
       &:focus,
       &:visited {
-        outline: none;
+        outline: 0;
       }
     }
     &:last-child a {
@@ -1575,6 +1581,7 @@ only screen and (min-resolution: 192dpi) {
 
     background-color: $menu-bg;
     padding-bottom: 0;
+    position: relative;
     width: 100%;
     z-index: 100;
   }
@@ -1779,12 +1786,6 @@ only screen and (min-resolution: 192dpi) {
   }
 }
 
-.logged-in .l-navigation-wrapper {
-  // When user is logged in there is toolbar that needs 20px of space
-  .block--menu-menu-log-in-menu {
-    top: 20px;
-  }
-}
 
 // Navigation retina styles
 
@@ -2896,8 +2897,9 @@ only screen and (min-resolution: 192dpi) {
           display: none;
         }
         label {
+          background-color: #000;
           border-bottom: 2px solid $border-color;
-          color: $link-color;
+          color: #fff;
           display: block;
           font-size: 0.9em;
           margin: 0;
@@ -2911,8 +2913,7 @@ only screen and (min-resolution: 192dpi) {
             font-size: 1.2em;
           }
           &.checked {
-            background-color: #000;
-            color: #fff;
+            color: $active-link-color;
           }
           &:hover {
             cursor: pointer;
@@ -2950,6 +2951,7 @@ only screen and (min-resolution: 192dpi) {
       }
     }
     .field--type-text-long {
+      margin: 0;
       img {
         height: auto !important;
       }
@@ -3123,7 +3125,8 @@ only screen and (min-resolution: 192dpi) {
 
 // Tweet page
 
-.node--tweet--full {
+.node--tweet--full,
+.node--tweet--liftup {
   .field--name-field-tweet-date {
     color: $text-gray-color;
     font-size: 1.3em;
@@ -3173,6 +3176,21 @@ only screen and (min-resolution: 192dpi) {
     }
   }
 }
+
+.node--tweet--liftup {
+  .node__title {
+    font-size: 1.2em;
+    @include at-breakpoint($tab) {
+      font-size: 2em;
+    }
+  }
+  .field--name-field-tweet-body {
+    @include at-breakpoint($tab) {
+      margin: 40px 0 20px 0;
+    }
+  }
+}
+
 
 // Offering page
 
@@ -3710,6 +3728,37 @@ only screen and (min-resolution: 192dpi) {
         float: right;
         width: 30%;
       }
+    }
+  }
+}
+
+
+// Search styles
+
+.section-search {
+  .l-region--sidebar-first {
+    .block--facetapi {
+      margin-bottom: 2.5em;
+      .block__title {
+        font-size: 1.3em;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          list-style-image: none;
+          list-style-type: none;
+        }
+      }
+    }
+  }
+  
+  .block--current-search {
+    margin: 2em 0;
+    h3 {
+      font-size: 1.2em;
+      font-weight: 300;
+      text-transform: none;
     }
   }
 }

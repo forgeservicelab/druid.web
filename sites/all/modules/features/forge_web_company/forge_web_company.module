@@ -26,3 +26,18 @@ function forge_web_company_custom_validation($form, &$form_state) {
     form_set_error('field_company_phone', t('Phone number must start with "+" and must includes only numbers'));
   }
 }
+
+/*
+ * implements hook_views_pre_view
+ */
+function forge_web_company_views_pre_view(&$view) {
+  if($view->name == 'offering_provider') {
+    $node = '';
+    $node = menu_get_object();
+    if($node) {
+      $node->uid;
+      $args[] = $node->uid;
+      $view->set_arguments($args);
+    }
+  }
+}

@@ -26,11 +26,17 @@ function forge_web_search_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views--exp-search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-search-page',
+          'region' => 'content',
+          'weight' => '-48',
+        ),
         'current_search-standard' => array(
           'module' => 'current_search',
           'delta' => 'standard',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-47',
         ),
         'facetapi-W6Y01TnXzLiqUKc7f9pIbDZKgyVZ0i1g' => array(
           'module' => 'facetapi',

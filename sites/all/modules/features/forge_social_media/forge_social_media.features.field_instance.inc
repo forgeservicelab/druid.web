@@ -24,6 +24,12 @@ function forge_social_media_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -37,6 +43,7 @@ function forge_social_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -62,6 +69,12 @@ function forge_social_media_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -75,6 +88,7 @@ function forge_social_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -103,6 +117,13 @@ function forge_social_media_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -117,6 +138,7 @@ function forge_social_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -150,6 +172,12 @@ function forge_social_media_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -167,6 +195,7 @@ function forge_social_media_field_default_field_instances() {
       'default_value_code' => '',
       'default_value_code2' => '',
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -199,6 +228,12 @@ function forge_social_media_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'liftup' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -212,6 +247,7 @@ function forge_social_media_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
