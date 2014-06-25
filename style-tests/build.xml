@@ -5,7 +5,8 @@
 			<arg value="--report=checkstyle" />
 			<arg value="--report-file=checkstyle-result.xml" />
 			<arg value="--standard=Drupal" />
-			<arg path="${basedir}/../sites/all/modules" />
+			<arg path="${basedir}/../sites/all/modules/custom" />
+			<arg path="${basedir}/../sites/all/modules/patches" />
 		</exec>
 	</target>
 </project>
