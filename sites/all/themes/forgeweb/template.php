@@ -22,7 +22,7 @@
  
 function forgeweb_preprocess_node(&$vars) {
   if(!empty($_GET['fw'])) {
-    $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('attributes' => array('class' => 'back-to-wizard')));
+    $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role'])), array('attributes' => array('class' => 'back-to-wizard')));
   }
 }
 
