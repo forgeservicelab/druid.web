@@ -4,6 +4,7 @@
 		<exec executable="phpcs">
 			<arg value="--report=checkstyle" />
 			<arg value="--report-file=checkstyle-result.xml" />
+			<arg value="--extensions=php,inc,module,js" />
 			<arg value="--standard=Drupal" />
 			<arg path="${basedir}/../sites/all/modules/custom" />
 		</exec>
