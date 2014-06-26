@@ -119,4 +119,91 @@
     }
   };
   
+  // Groups form checkboxes, if their labels start with dashes.
+  Drupal.behaviors.checkboxPrettify = {
+    attach: function (context) {
+      
+      $(context).find('form.node-form div.form-checkboxes').once('checkboxPrettify', function() {
+        var $this = $(this);
+        var prevDepth;
+        
+        $this.find('div.form-item').each(function() {
+          var $formItem = $(this);
+          var $label = $formItem.find('label');
+          var labelText = $label.text();
+          
+          // Count dashes from label start and do level wrapping based on the amount of dashes.
+          for (var level = 0, strLength = labelText.length; level < strLength; level++) {
+            if (labelText.charAt(level) !== '-') {
+              if (level > 0) {
+                // Remove dashes from title.
+                $label.text($label.text().substring(level));
+                
+                if (prevDepth !== 'undefined') {
+                  // This item will be higher in the tree than the last one.
+                  if (prevDepth < level) {
+                    var $lastCategory = $this.find('div.category.level-' + prevDepth).last();
+                    
+                    // Since we moved higher, there shouldn't be an wrapper available yet.
+                    $('<div class="category subcategory level-' + level + '"></div>')
+                      .append($formItem)
+                      .appendTo($lastCategory)
+                      .prev()
+                      // Add parent class to the "parent" element.
+                      .addClass('expandable');
+                  }
+                  // This item is in the same level as the last one so just add the item after it.
+                  else if (prevDepth === level) {
+                    $this.find('div.category div.form-item').last().after($formItem);
+                  }
+                  // And finally the item will be lower in the tree than the last one.
+                  else {
+                    $this.find('div.category div.form-item').last().parents('div.category.level-' + level).append($formItem);
+                  }
+                }
+              }
+              // Main level wrapper.
+              else {
+                $formItem.append('<span class="toggle"></span>');
+                
+                $('<div class="category main level-0"></div>')
+                  .append($formItem)
+                  .appendTo($this);
+              }
+              
+              $formItem.addClass('level-' + level);
+              prevDepth = level;
+              break;
+            }
+          }
+        });
+        // When you click the label or toggle button, open the following category container
+        $this.delegate('label, span.toggle', 'click', function(){
+          $(this).parent().toggleClass('expanded').next().toggleClass('open');
+        });
+        // Keep subcategories open that have been checked
+        $this.find('div.form-item input:checked').each(function () {
+          $(this).parents('.category').addClass('open');
+        });
+        // Add expanded class to terms that have subcategories checked
+        $this.find('div.category.subcategory.open').prev().addClass('expanded');
+      });
+    }
+  };
+  
+  Drupal.behaviors.openCommentTab = {
+    attach: function (context, settings) {
+      var hash = $(location).attr('hash');
+      if(hash.search('comment') != -1) {
+        $('div').find('div#quicktabs-service_offering_quicktab ul.ui-tabs-nav li').each(function () {
+          $(this).removeClass('ui-tabs-selected');
+          $(this).removeClass('ui-state-active');
+        });
+        $('div').find('ul.ui-tabs-nav li').last().addClass('ui-tabs-selected ui-state-active');
+        $('div').find('div#qt-service_offering_quicktab-ui-tabs1').addClass('ui-tabs-hide');
+        $('div').find('div#qt-service_offering_quicktab-ui-tabs4').removeClass('ui-tabs-hide');
+      }
+    }
+  };
+  
 })(jQuery);

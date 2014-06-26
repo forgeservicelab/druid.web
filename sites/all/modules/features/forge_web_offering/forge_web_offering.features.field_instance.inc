@@ -383,7 +383,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -400,7 +400,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_collection',
-    'label' => 'Collection',
+    'label' => 'Product family',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -412,7 +412,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -593,7 +593,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 14,
+      'weight' => 10,
     ),
   );
 
@@ -634,7 +634,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -675,7 +675,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -716,7 +716,6 @@ function forge_web_offering_field_default_field_instances() {
       ),
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'rel_remove' => 'default',
       'title' => 'optional',
       'title_maxlength' => 128,
@@ -785,7 +784,7 @@ function forge_web_offering_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'insert' => 0,
+        'insert' => 1,
         'insert_absolute' => 0,
         'insert_class' => '',
         'insert_default' => 'auto',
@@ -795,12 +794,23 @@ function forge_web_offering_field_default_field_instances() {
           'image' => 0,
           'image_flexslider_full' => 0,
           'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 0,
+          'image_insert_half_scale_width_560px' => 0,
+          'image_insert_tall_scale_height_600px' => 0,
           'image_large' => 0,
           'image_liftup_image' => 0,
           'image_medium' => 0,
           'image_offering_logo' => 0,
           'image_partners_people_large' => 0,
           'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
+          'image_retina_flexslider_full_custom_user_retina_display_2x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_1x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_2x' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
@@ -840,7 +850,6 @@ function forge_web_offering_field_default_field_instances() {
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
@@ -863,17 +872,28 @@ function forge_web_offering_field_default_field_instances() {
           'image' => 0,
           'image_flexslider_full' => 0,
           'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 0,
+          'image_insert_half_scale_width_560px' => 0,
+          'image_insert_tall_scale_height_600px' => 0,
           'image_large' => 0,
           'image_liftup_image' => 0,
           'image_medium' => 0,
           'image_offering_logo' => 0,
           'image_partners_people_large' => 0,
           'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
+          'image_retina_flexslider_full_custom_user_retina_display_2x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_1x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_2x' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
         'insert_width' => '',
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'large',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -1213,7 +1233,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 15,
     ),
   );
 
@@ -1337,48 +1357,6 @@ function forge_web_offering_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-offering-field_show_live_url_for_everyone'
-  $field_instances['node-offering-field_show_live_url_for_everyone'] = array(
-    'bundle' => 'offering',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 18,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 13,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_show_live_url_for_everyone',
-    'label' => 'Show live URL for everyone',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 13,
     ),
   );
 
@@ -1521,48 +1499,6 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_page_title',
     'label' => 'Product family title',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_family-field_product_family_title'
-  $field_instances['node-product_family-field_product_family_title'] = array(
-    'bundle' => 'product_family',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_product_family_title',
-    'label' => 'Product family title',
     'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1604,7 +1540,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_brief_overview_description',
     'label' => 'Brief overview description',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'text_processing' => 1,
@@ -1704,7 +1640,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'service_offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1721,7 +1657,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_collection',
-    'label' => 'Collection',
+    'label' => 'Product family',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1733,7 +1669,7 @@ function forge_web_offering_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1915,7 +1851,7 @@ function forge_web_offering_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -2081,13 +2017,12 @@ function forge_web_offering_field_default_field_instances() {
       'alt_field' => 0,
       'default_image' => 0,
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
-      'title_field' => 0,
+      'title_field' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -2104,17 +2039,28 @@ function forge_web_offering_field_default_field_instances() {
           'image' => 0,
           'image_flexslider_full' => 0,
           'image_flexslider_thumbnail' => 0,
+          'image_front_page_image' => 0,
+          'image_insert_full_scale_width_1120px' => 0,
+          'image_insert_half_scale_width_560px' => 0,
+          'image_insert_tall_scale_height_600px' => 0,
           'image_large' => 0,
           'image_liftup_image' => 0,
           'image_medium' => 0,
           'image_offering_logo' => 0,
           'image_partners_people_large' => 0,
           'image_partners_people_small' => 0,
+          'image_responsive_custom_user_mobile_1x' => 0,
+          'image_responsive_custom_user_tablet_1x' => 0,
+          'image_retina_custom_user_retina_display_1x' => 0,
+          'image_retina_custom_user_retina_display_2x' => 0,
+          'image_retina_flexslider_full_custom_user_retina_display_2x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_1x' => 0,
+          'image_retina_offering_logo_custom_user_retina_display_2x' => 0,
           'image_thumbnail' => 0,
           'link' => 0,
         ),
         'insert_width' => '',
-        'preview_image_style' => 'thumbnail',
+        'preview_image_style' => 'large',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
@@ -2306,7 +2252,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_offering_tags',
     'label' => 'Tags',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -2383,7 +2329,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'service_offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'What is your offering and why is it great?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2405,7 +2351,6 @@ function forge_web_offering_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -2425,7 +2370,7 @@ function forge_web_offering_field_default_field_instances() {
     'bundle' => 'service_offering',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Name of the organization providing the offering.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -2443,7 +2388,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_organizer',
     'label' => 'Provider',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -2665,7 +2610,6 @@ function forge_web_offering_field_default_field_instances() {
   t('Brief overview description');
   t('Cancellation / refund policy');
   t('Category');
-  t('Collection');
   t('Contact person / Address');
   t('Customer rating');
   t('Detailed description');
@@ -2675,6 +2619,7 @@ function forge_web_offering_field_default_field_instances() {
   t('Geographical coverage');
   t('Here you can provide more detailed information about the product pricing');
   t('If you have showcases to demonstrate what can be done with your offering.');
+  t('If you want to add your offerings to a product family, first create a <a href="/node/add/product-family">product family</a> and then choose that family to all offerings that you want to belong to it.');
   t('Live demo url');
   t('Logo');
   t('Main principle is that a service provider ensures the maturity level of his offering and indicates it clearly in offering description for potential customers.');
@@ -2685,10 +2630,10 @@ function forge_web_offering_field_default_field_instances() {
   t('Phone');
   t('Pricing description');
   t('Pricing information');
+  t('Product family');
   t('Product family title');
   t('Provider');
   t('Screenshots');
-  t('Show live URL for everyone');
   t('Spesifications');
   t('Tags');
   t('Terms and conditions');

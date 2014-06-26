@@ -5,3 +5,39 @@
  */
 
 include_once 'forge_web_company.features.inc';
+
+/*
+ * Implementation of hook_form_alter
+ */
+function forge_web_company_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'company_node_form') {
+    $form['#validate'][] = 'forge_web_company_custom_validation';
+  }
+}
+
+/*
+ * Custom validation
+ */
+function forge_web_company_custom_validation($form, &$form_state) {
+  if (!empty($form_state['values']['field_admin_phone']['und']['0']['value']) && !preg_match('/^\+\d+$/', $form_state['values']['field_admin_phone']['und']['0']['value'])) {
+    form_set_error('field_admin_phone', t('Phone number must start with "+" and must includes only numbers'));
+  }
+  if (!empty($form_state['values']['field_company_phone']['und']['0']['value']) && !preg_match('/^\+\d+$/', $form_state['values']['field_company_phone']['und']['0']['value'])) {
+    form_set_error('field_company_phone', t('Phone number must start with "+" and must includes only numbers'));
+  }
+}
+
+/*
+ * implements hook_views_pre_view
+ */
+function forge_web_company_views_pre_view(&$view) {
+  if($view->name == 'offering_provider') {
+    $node = '';
+    $node = menu_get_object();
+    if($node) {
+      $node->uid;
+      $args[] = $node->uid;
+      $view->set_arguments($args);
+    }
+  }
+}

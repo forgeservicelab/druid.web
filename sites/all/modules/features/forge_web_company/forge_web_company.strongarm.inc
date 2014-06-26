@@ -122,6 +122,9 @@ function forge_web_company_strongarm() {
         'language' => array(
           'weight' => '1',
         ),
+        'metatags' => array(
+          'weight' => '6',
+        ),
       ),
       'display' => array(),
     ),
@@ -132,7 +135,7 @@ function forge_web_company_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_company';
-  $strongarm->value = '4';
+  $strongarm->value = '0';
   $export['language_content_type_company'] = $strongarm;
 
   $strongarm = new stdClass();

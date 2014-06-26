@@ -15,10 +15,10 @@ Drupal.behaviors.myBehavior = {
     $("input[name$='submitted[role]']").click(function() {
       var val = $(this).val();
       if(val == 'subcontractor' || val == 'several_of_these') {
-        $(".form-submit").attr("disabled", "disabled");  
+        $(".form-submit").hide();  
       }
       else {
-        $(".form-submit").removeAttr("disabled");
+        $(".form-submit").show();
       }
     });
     // move info elements inside radiobutton selection

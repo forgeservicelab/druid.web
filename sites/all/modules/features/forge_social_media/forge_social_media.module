@@ -5,3 +5,115 @@
  */
 
 include_once 'forge_social_media.features.inc';
+
+
+/**
+ * Implements hook_feeds_parser_sources_alter().
+ */ 
+function forge_social_media_feeds_parser_sources_alter(&$sources, $content_type) {
+  $sources['tweet_url'] = array(
+    'name' => t('Tweet URL'),
+    'description' => t('The URL of a tweet.'),
+    'callback' => 'forge_social_media_tweet_url',
+  );
+}
+
+/**
+ * Populates the "tweet_url" field for each result.
+ */
+function forge_social_media_tweet_url(FeedsSource $source, FeedsParserResult $result, $key) {
+  $item = $result->currentItem();
+  // jsonpath_parser:2 corresponds to user screen name in my importer.
+  // jsonpath_parser:0 corresponds to tweet ID in my importer.
+  return 'https://twitter.com/' . $item['jsonpath_parser:2'] . '/status/' . $item['jsonpath_parser:0'];
+}
+
+/*
+ * implements hook_form_alter
+ */
+function forge_social_media_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'OAuthHTTPFetcher_feeds_form') {
+    $site_id = '';
+    $site_id = $form['site_id']['#default_value'];
+    $tokens = _forge_social_media_get_access_token_values($site_id);
+    if($tokens) {
+      $twitter_access_token = $tokens['oauth_token'];
+      $twitter_access_token_secret = $tokens['oauth_token_secret'];
+    }
+    // get tokens from variables
+    else {
+      // add tokens to variables also, then we can add those to 
+      $twitter_access_token = variable_get('forge_social_media_twitter_access_token', '1073565216-D45ntQI0x1NOGYr5kIQvCEYAv9KwCXJPOYHijDP');
+      $twitter_access_token_secret = variable_get('forge_social_media_twitter_access_token_secret', 'F0Hf3k67YWq9WNQq4UnpfuVKf4IMV6Jqi96nben5VQ0NE');
+    }
+    $form['twitter'] = array(
+      '#type' => 'fieldset',
+      '#title' => 'Twitter access tokens',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['twitter']['forge_social_media_twitter_access_token'] = array (
+      '#type' => 'textfield',
+      '#title' => t('Twitter Access token'),
+      '#default_value' => $twitter_access_token,
+      '#description' => t('Twitter Access token here.'),
+    );
+    $form['twitter']['forge_social_media_twitter_access_token_secret'] = array (
+      '#type' => 'textfield',
+      '#title' => t('Twitter Access token secret'),
+      '#default_value' => $twitter_access_token_secret,
+      '#description' => t('Twitter Access token secret here.'),
+    );
+    $form['#submit'][] = "forge_social_media_submit_handler";
+  }
+}
+
+function forge_social_media_submit_handler(&$form, &$form_state) {
+  $site_id = $form_state['values']['site_id'];
+  $access_token = $form_state['values']['forge_social_media_twitter_access_token'];
+  $access_token_secret = $form_state['values']['forge_social_media_twitter_access_token_secret'];
+  if(!empty($access_token) && !empty($access_token_secret)) {
+    // add tokens to varibles then we can add those to feature
+    variable_set('forge_social_media_twitter_access_token', $access_token);
+    variable_set('forge_social_media_twitter_access_token_secret', $access_token_secret);
+    $result = _forge_social_media_get_access_token_values($site_id);
+    if($result) {
+      db_update('feeds_oauth_access_tokens')
+        ->fields(array(
+          'oauth_token' => $access_token,
+          'oauth_token_secret' => $access_token_secret,
+        ))
+        ->condition('site_id', $site_id)
+        ->execute();
+    }
+    else {
+      db_insert('feeds_oauth_access_tokens')
+        ->fields(array(
+          'uid' => 1,
+          'oauth_token' => trim($access_token),
+          'oauth_token_secret' => trim($access_token_secret),
+          'site_id' => $site_id,
+          'oauth_refresh_token' => trim($access_token),
+        ))
+        ->execute();
+    }
+  }
+  // TODO: move this to custom validation function
+  else {
+    if(empty($access_token) && !empty($access_token_secret)) {
+      drupal_set_message(t('Please fill BOTH Twitter access token AND Twitter Access token secret.'), 'error');
+    }
+    elseif(!empty($access_token) && empty($access_token_secret)) {
+      drupal_set_message(t('Please fill BOTH Twitter access token AND Twitter Access token secret.'), 'error');
+    }
+  }
+}
+
+function _forge_social_media_get_access_token_values($site_id) {
+  if(!empty($site_id)) {
+    $result = db_query_range('SELECT * FROM {feeds_oauth_access_tokens} WHERE site_id IN (:ancestors)', 0, 1, array(':ancestors' => $site_id))->fetchAssoc();
+    if($result) {
+      return $result;
+    }
+  }
+}

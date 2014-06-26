@@ -3,14 +3,15 @@ description = Enables OAuth authentication before retrieving a feed.
 dependencies[] = feeds
 package = Feeds
 core = 7.x
+php = 5.3
 configure = admin/config/services/feeds-oauth
 
 files[] = OAuthHTTPFetcher.inc
 files[] = OAuth2HTTPSFetcher.inc
 
-; Information added by Drupal.org packaging script on 2013-12-12
-version = "7.x-1.0-beta3"
+; Information added by Drupal.org packaging script on 2014-03-11
+version = "7.x-1.0-beta3+1-dev"
 core = "7.x"
 project = "feeds_oauth"
-datestamp = "1386872605"
+datestamp = "1394567606"
 

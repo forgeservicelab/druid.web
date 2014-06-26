@@ -5,3 +5,21 @@
  */
 
 include_once 'forge_web_service_page.features.inc';
+
+/*
+ * Implementation of hook_form_alter
+ */
+function forge_web_service_page_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'service_offering_node_form') {
+    $form['#validate'][] = 'forge_web_service_page_custom_validation';
+  }
+}
+
+/*
+ * Custom validation
+ */
+function forge_web_service_page_custom_validation($form, &$form_state) {
+  if(!preg_match('/\d/', $form_state['values']['field_pricing_information']['und']['0']['value'])) {
+    form_set_error('field_pricing_information', t('Pricing information must contains letters and at least one number.'));
+  }
+}
