@@ -3637,6 +3637,11 @@ html[lang=fi] .site-name a {
 .node-type-company aside .block:first-child {
   border-bottom: 0 none;
 }
+.node-type-service-offering aside .block__content,
+.node-type-offering aside .block__content,
+.node-type-company aside .block__content {
+  padding: 0;
+}
 .node-type-service-offering aside .view-service-offering-sidebar-block h3, .node-type-service-offering aside .view-service-offering-sidebar-block .block--quicktabs .views-label, .node-type-service-offering .block--quicktabs aside .view-service-offering-sidebar-block .views-label,
 .node-type-offering .block--quicktabs .node-type-service-offering aside .view-service-offering-sidebar-block .views-label,
 .node-type-company .block--quicktabs .node-type-service-offering aside .view-service-offering-sidebar-block .views-label,
@@ -3825,6 +3830,40 @@ html[lang=fi] .site-name a {
   .block--quicktabs-product-page-quicktab {
     display: block;
   }
+}
+
+.l-region--sidebar-second .block__title {
+  float: none;
+  font-size: 1.17em;
+  margin-left: 0;
+  text-transform: uppercase;
+}
+@media (min-width: 44em) {
+  .l-region--sidebar-second .block__title {
+    font-size: 1.5em;
+  }
+}
+.l-region--sidebar-second .block__title,
+.l-region--sidebar-second .block__content {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #fff;
+  margin: 0;
+  overflow: hidden;
+  padding: 1em;
+}
+.l-region--sidebar-second .block__title .field__label,
+.l-region--sidebar-second .block__content .field__label {
+  display: block;
+  float: left;
+  font-weight: bold;
+  margin-right: -70px;
+  width: 70px;
+}
+.l-region--sidebar-second .block__title .field__content,
+.l-region--sidebar-second .block__content .field__content {
+  display: block;
+  float: left;
+  margin-left: 70px;
 }
 
 .view-on-going-projects,
@@ -4144,4 +4183,22 @@ html[lang=fi] .site-name a {
   font-size: 1.2em;
   font-weight: 300;
   text-transform: none;
+}
+
+.section-all-contracts .field--name-field-page-attachment .field__item span {
+  background: url("../images/forge_icon.png") no-repeat 0 0 transparent;
+  background-size: 20px auto;
+  display: block;
+  margin-bottom: 5px;
+  min-height: 20px;
+  padding: 0 0 0 30px;
+}
+.section-all-contracts .field--name-field-page-attachment .field__item span img {
+  display: none;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .section-all-contracts .field--name-field-page-attachment .field__item span {
+    background-image: url("../images/forge_icon_retina.png");
+  }
 }
