@@ -75,7 +75,6 @@ function forgeweb_theme_registry_alter(&$registry) {
  */
 function forgeweb_form_alter(&$form, &$form_state, $form_id){
   if($form_id == "views_exposed_form"){
-    dsm($form);
     if (isset($form['keyword'])) {
       // Get the label value from search form
       $label_value = $form['#info']['filter-search_api_views_fulltext']['label'];
