@@ -19,7 +19,9 @@ function forge_web_offering_form_alter(&$form, &$form_state, $form_id) {
  * Custom validation
  */
 function forge_web_offering_custom_validation($form, &$form_state) {
-  if(!preg_match('/\d/', $form_state['values']['field_pricing_information']['en']['0']['value'])) {
-    form_set_error('field_pricing_information', t('Pricing information must contains letters and at least one number.'));
+  foreach($form_state['values']['field_pricing_information'] as $value) {
+    if(!preg_match('/\d/', $value['0']['value'])) {
+      form_set_error('field_pricing_information', t('Pricing information must contains letters and at least one number.'));
+    }
   }
 }
