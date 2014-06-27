@@ -10,37 +10,17 @@
 function forge_web_administrator_tools_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-administrator-tools_show-all-comments:admin/content/comment
-  $menu_links['menu-administrator-tools_show-all-comments:admin/content/comment'] = array(
-    'menu_name' => 'menu-administrator-tools',
-    'link_path' => 'admin/content/comment',
-    'router_path' => 'admin/content/comment',
-    'link_title' => 'Show all comments',
+  // Exported menu link: management_own-content:own-content
+  $menu_links['management_own-content:own-content'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'own-content',
+    'router_path' => 'own-content',
+    'link_title' => 'Own content',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-administrator-tools_show-all-comments:admin/content/comment',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 0,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => 0,
-    'customized' => 1,
-  );
-  // Exported menu link: menu-administrator-tools_show-all-content:admin/content
-  $menu_links['menu-administrator-tools_show-all-content:admin/content'] = array(
-    'menu_name' => 'menu-administrator-tools',
-    'link_path' => 'admin/content',
-    'router_path' => 'admin/content',
-    'link_title' => 'Show all content',
-    'options' => array(
-      'attributes' => array(
-        'title' => '',
-      ),
-      'identifier' => 'menu-administrator-tools_show-all-content:admin/content',
+      'identifier' => 'management_own-content:own-content',
     ),
     'module' => 'menu',
     'hidden' => 0,
@@ -52,8 +32,7 @@ function forge_web_administrator_tools_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Show all comments');
-  t('Show all content');
+  t('Own content');
 
 
   return $menu_links;

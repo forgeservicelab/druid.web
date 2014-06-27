@@ -101,45 +101,86 @@ h3, .node-type-service-offering .block--quicktabs .views-label,
 }
 
 .search form,
-.block--views-exp-search-page {
+.block--views-exp-search-page,
+.view-own-content form {
   margin: 1em 0 2em;
   text-align: center;
 }
 .search form form,
-.block--views-exp-search-page form {
+.block--views-exp-search-page form,
+.view-own-content form form {
   line-height: 0;
   margin: 0;
 }
+.search form .form-select,
+.search form .form-checkboxes,
+.search form .form-radios,
+.block--views-exp-search-page .form-select,
+.block--views-exp-search-page .form-checkboxes,
+.block--views-exp-search-page .form-radios,
+.view-own-content form .form-select,
+.view-own-content form .form-checkboxes,
+.view-own-content form .form-radios {
+  margin: 0 0 0 10px;
+}
 .search form .views-exposed-widgets,
-.block--views-exp-search-page .views-exposed-widgets {
+.block--views-exp-search-page .views-exposed-widgets,
+.view-own-content form .views-exposed-widgets {
   margin: 0;
   padding-right: 110px;
   position: relative;
 }
+.search form .views-exposed-widgets .views-exposed-widget,
+.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget,
+.view-own-content form .views-exposed-widgets .views-exposed-widget {
+  margin: 5px 1.5em;
+}
+.search form .views-exposed-widgets .views-exposed-widget label,
+.search form .views-exposed-widgets .views-exposed-widget .views-widget,
+.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget label,
+.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget .views-widget,
+.view-own-content form .views-exposed-widgets .views-exposed-widget label,
+.view-own-content form .views-exposed-widgets .views-exposed-widget .views-widget {
+  display: inline-block;
+}
+.search form .views-exposed-widgets .views-exposed-widget label,
+.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget label,
+.view-own-content form .views-exposed-widgets .views-exposed-widget label {
+  font-weight: 300;
+  margin: 0;
+  text-transform: uppercase;
+}
 .search form .views-exposed-form,
-.block--views-exp-search-page .views-exposed-form {
+.block--views-exp-search-page .views-exposed-form,
+.view-own-content form .views-exposed-form {
   display: inline-block;
 }
 .search form .views-exposed-form .views-exposed-widget,
 .search form .views-exposed-form .views-submit-button,
 .block--views-exp-search-page .views-exposed-form .views-exposed-widget,
-.block--views-exp-search-page .views-exposed-form .views-submit-button {
+.block--views-exp-search-page .views-exposed-form .views-submit-button,
+.view-own-content form .views-exposed-form .views-exposed-widget,
+.view-own-content form .views-exposed-form .views-submit-button {
   padding: 0;
 }
 .search form .views-exposed-form .views-submit-button,
-.block--views-exp-search-page .views-exposed-form .views-submit-button {
+.block--views-exp-search-page .views-exposed-form .views-submit-button,
+.view-own-content form .views-exposed-form .views-submit-button {
+  margin: 0;
   position: absolute;
   right: 0;
   top: 0;
 }
 .search form .views-exposed-form .views-submit-button input,
-.block--views-exp-search-page .views-exposed-form .views-submit-button input {
+.block--views-exp-search-page .views-exposed-form .views-submit-button input,
+.view-own-content form .views-exposed-form .views-submit-button input {
   margin: 0;
   padding: 5px 0;
   width: 100px;
 }
 .search form .views-exposed-form .form-item,
-.block--views-exp-search-page .views-exposed-form .form-item {
+.block--views-exp-search-page .views-exposed-form .form-item,
+.view-own-content form .views-exposed-form .form-item {
   padding: 0;
 }
 
@@ -4201,4 +4242,37 @@ html[lang=fi] .site-name a {
   .section-all-contracts .field--name-field-page-attachment .field__item span {
     background-image: url("../images/forge_icon_retina.png");
   }
+}
+.view-own-content form {
+  border-bottom: 1px solid #e4e4e4;
+  margin-bottom: 0;
+  padding-bottom: 1em;
+}
+.view-own-content form .views-exposed-widgets .views-widget-filter-field_page_title_value {
+  margin: 0 0.5em;
+}
+.view-own-content table {
+  width: 100%;
+}
+.view-own-content table thead th {
+  background-color: #fff;
+  font-size: 1.3em;
+  font-weight: 300;
+  padding: 10px 10px 30px;
+  text-align: left;
+}
+.view-own-content table thead th a {
+  color: #000;
+}
+.view-own-content table thead th a img {
+  margin-left: 5px;
+}
+.view-own-content table tr.odd {
+  background-color: #e4e4e4;
+}
+.view-own-content table tr.even {
+  background-color: #fff;
+}
+.view-own-content table td {
+  padding: 0 10px;
 }

@@ -1,7 +1,8 @@
 // Search form styles
 
 .search form,
-.block--views-exp-search-page {
+.block--views-exp-search-page,
+.view-own-content form {
   margin: 1em 0 2em;
   text-align: center;
   
@@ -10,10 +11,28 @@
     margin: 0;
   }
   
+  .form-select,
+  .form-checkboxes,
+  .form-radios {
+    margin: 0 0 0 10px;
+  }
+  
   .views-exposed-widgets {
     margin: 0;
     padding-right: 110px;
     position: relative;
+    .views-exposed-widget {
+      margin: 5px 1.5em;
+      label,
+      .views-widget {
+        display: inline-block;
+      }
+      label {
+        font-weight: 300;
+        margin: 0;
+        text-transform: uppercase;
+      }
+    }
   }
   
   .views-exposed-form {
@@ -25,6 +44,7 @@
     }
     
     .views-submit-button {
+      margin: 0;
       position: absolute;
       right: 0;
       top: 0;
