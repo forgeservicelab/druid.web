@@ -148,17 +148,44 @@ function forge_web_offering_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
         'views-offering_listing-block_1' => array(
           'module' => 'views',
           'delta' => 'offering_listing-block_1',
-          'region' => 'content',
-          'weight' => '1',
+          'region' => 'under_content',
+          'weight' => '-10',
         ),
         'views--exp-offering_listing-block_1' => array(
           'module' => 'views',
           'delta' => '-exp-offering_listing-block_1',
           'region' => 'sidebar_first',
           'weight' => '-10',
+        ),
+      ),
+    ),
+    'region' => array(
+      'forgeweb' => array(
+        'disable' => array(
+          'content' => 'content',
+          'branding' => 0,
+          'header' => 0,
+          'navigation' => 0,
+          'highlighted' => 0,
+          'hero' => 0,
+          'help' => 0,
+          'before_content' => 0,
+          'under_content' => 0,
+          'middle_content' => 0,
+          'after_content' => 0,
+          'sidebar_first' => 0,
+          'sidebar_second' => 0,
+          'footer_left' => 0,
+          'footer_right' => 0,
         ),
       ),
     ),

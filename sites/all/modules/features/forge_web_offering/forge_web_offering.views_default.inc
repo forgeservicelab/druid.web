@@ -26,11 +26,6 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '300';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '300';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
@@ -45,6 +40,7 @@ function forge_web_offering_views_default_views() {
       'bef_format' => 'bef',
       'more_options' => array(
         'bef_select_all_none' => 0,
+        'bef_select_all_none_nested' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
@@ -136,6 +132,7 @@ function forge_web_offering_views_default_views() {
   );
   $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'category';
+  $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
   /* Filter criterion: Content: Tags (field_offering_tags) */
   $handler->display->display_options['filters']['field_offering_tags_tid']['id'] = 'field_offering_tags_tid';
   $handler->display->display_options['filters']['field_offering_tags_tid']['table'] = 'field_data_field_offering_tags';

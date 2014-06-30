@@ -266,6 +266,7 @@ form {
     margin: 0 0 2em 1em;
   }
   
+  .bef-checkboxes,
   .form-checkboxes {
     .form-item {
       label {
@@ -1025,6 +1026,8 @@ only screen and (min-resolution: 192dpi) {
 // Listing styles
 
 .l-listing {
+  min-height: 400px;
+  position: relative;
   .view-content {
     @include container; // Define these elements as the grid containers.
     padding-left: 0;
@@ -1052,6 +1055,47 @@ only screen and (min-resolution: 192dpi) {
         @include span-columns(4, 12); // Span 4 out of 12 columns.
         @include remove-nth-omega(2n);
         @include nth-omega(3n);
+      }
+    }
+  }
+}
+
+
+// Sidebar styles
+
+.l-region--sidebar-first {
+  .block {
+    .views-exposed-form {
+      .views-exposed-widget {
+        margin-bottom: 2.5em;
+        padding: 0;
+        > label {
+          display: block;
+          font-size: 1.3em;
+          font-weight: 400;
+          margin: 0.83em 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+    form {
+      margin: 0;
+      .form-select,
+      .form-checkboxes,
+      .form-radios {
+        margin: 0;
+        label {
+          margin-bottom: 0;
+        }
+        input[type='checkbox'],
+        input[type='radio'] {
+          margin-right: 0.5em;
+        }
+      }
+      .views-submit-button {
+        .ajax-progress-throbber {
+          display: none;
+        }
       }
     }
   }
@@ -2164,7 +2208,8 @@ only screen and (min-resolution: 192dpi) {
   aside {
     border-top: 1px solid $border-color;
     margin-top: 1em;
-    overflow: hidden;
+    // TODO: Check if this one is still required somewhere
+    //overflow: hidden;
     @include at-breakpoint($tab) {
       border-top: 0 none;
       margin-top: 0;
@@ -2986,41 +3031,6 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   
-  // Ajax throbber styles
-  .forge-throbber {
-    @include transition(opacity 0.3s ease-in-out);
-    left: -999em;
-    margin-left: -50px;
-    position: absolute;
-    opacity: 0;
-    top: 200px;
-    z-index: 2;
-    &.visible {
-      left: 50%;
-      opacity: 1;
-    }
-    .forge-throbber-inner {
-      background: url('../images/forge_throbber.gif') no-repeat;
-      height: 100px;
-      width: 100px;
-    }
-  }
-
-  .form-overlay {
-    background-color: rgba(255, 255, 255, 0.6);
-    height: 100%;
-    left: -200%;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-    &.visible {
-      left: 0;
-      opacity: 1;
-    }
-  }
-  
   // Hide drupal default throbber.
   .ajax-progress {
     display: none !important;
@@ -3459,10 +3469,9 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Offering listing page and projects listing page styles
+// Projects listing page styles
 
-.view-on-going-projects,
-.view-offering-listing {
+.view-on-going-projects {
   margin-top: 2em;
   @include at-breakpoint($tab) {
     margin-top: 3em; 

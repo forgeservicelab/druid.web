@@ -198,6 +198,43 @@ h3, .node-type-service-offering .block--quicktabs .views-label,
   padding: 5px 10px;
 }
 
+.forge-throbber {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  left: -999em;
+  margin-left: -50px;
+  position: absolute;
+  opacity: 0;
+  top: 200px;
+  z-index: 2;
+}
+.forge-throbber.visible {
+  left: 50%;
+  opacity: 1;
+}
+.forge-throbber .forge-throbber-inner {
+  background: url("../images/forge_throbber.gif") no-repeat;
+  height: 100px;
+  width: 100px;
+}
+
+.form-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+  height: 100%;
+  left: -200%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.form-overlay.visible {
+  left: 0;
+  opacity: 1;
+}
+
 .search-result {
   margin-bottom: 2em;
   padding: 10px;
@@ -472,12 +509,15 @@ form .form-checkboxes,
 form .form-radios {
   margin: 0 0 2em 1em;
 }
+form .bef-checkboxes .form-item label,
 form .form-checkboxes .form-item label {
   text-transform: none;
 }
+form .bef-checkboxes .category.main > .form-item.expandable,
 form .form-checkboxes .category.main > .form-item.expandable {
   color: #a3b41f;
 }
+form .bef-checkboxes .category.main > .form-item.expandable .toggle,
 form .form-checkboxes .category.main > .form-item.expandable .toggle {
   background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
   background-size: 16px auto;
@@ -487,12 +527,15 @@ form .form-checkboxes .category.main > .form-item.expandable .toggle {
   vertical-align: top;
   width: 16px;
 }
+form .bef-checkboxes .category.main > .form-item.expandable.expanded .toggle,
 form .form-checkboxes .category.main > .form-item.expandable.expanded .toggle {
   background-position: right -16px;
 }
+form .bef-checkboxes > .category > .category,
 form .form-checkboxes > .category > .category {
   display: none;
 }
+form .bef-checkboxes > .category > .category.open,
 form .form-checkboxes > .category > .category.open {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -500,6 +543,7 @@ form .form-checkboxes > .category > .category.open {
   transition: all 0.3s ease-in-out;
   display: block;
 }
+form .bef-checkboxes .category.main .category,
 form .form-checkboxes .category.main .category {
   margin-left: 30px;
 }
@@ -1204,6 +1248,10 @@ form.fivestar-widget {
   content: "";
 }
 
+.l-listing {
+  min-height: 400px;
+  position: relative;
+}
 .l-listing .view-content {
   *zoom: 1;
   max-width: 1190px;
@@ -1252,6 +1300,42 @@ form.fivestar-widget {
     margin-right: 0;
   }
 }
+.l-region--sidebar-first .block .views-exposed-form .views-exposed-widget {
+  margin-bottom: 2.5em;
+  padding: 0;
+}
+.l-region--sidebar-first .block .views-exposed-form .views-exposed-widget > label {
+  display: block;
+  font-size: 1.3em;
+  font-weight: 400;
+  margin: 0.83em 0;
+  text-transform: uppercase;
+}
+.l-region--sidebar-first .block form {
+  margin: 0;
+}
+.l-region--sidebar-first .block form .form-select,
+.l-region--sidebar-first .block form .form-checkboxes,
+.l-region--sidebar-first .block form .form-radios {
+  margin: 0;
+}
+.l-region--sidebar-first .block form .form-select label,
+.l-region--sidebar-first .block form .form-checkboxes label,
+.l-region--sidebar-first .block form .form-radios label {
+  margin-bottom: 0;
+}
+.l-region--sidebar-first .block form .form-select input[type='checkbox'],
+.l-region--sidebar-first .block form .form-select input[type='radio'],
+.l-region--sidebar-first .block form .form-checkboxes input[type='checkbox'],
+.l-region--sidebar-first .block form .form-checkboxes input[type='radio'],
+.l-region--sidebar-first .block form .form-radios input[type='checkbox'],
+.l-region--sidebar-first .block form .form-radios input[type='radio'] {
+  margin-right: 0.5em;
+}
+.l-region--sidebar-first .block form .views-submit-button .ajax-progress-throbber {
+  display: none;
+}
+
 .comment h3, .comment .node-type-service-offering .block--quicktabs .views-label, .node-type-service-offering .block--quicktabs .comment .views-label,
 .comment .node-type-offering .block--quicktabs .views-label,
 .node-type-offering .block--quicktabs .comment .views-label,
@@ -2352,7 +2436,6 @@ html[lang=fi] .site-name a {
 .page-node aside {
   border-top: 1px solid #e4e4e4;
   margin-top: 1em;
-  overflow: hidden;
 }
 @media (min-width: 44em) {
   .page-node aside {
@@ -3314,41 +3397,6 @@ html[lang=fi] .site-name a {
 .view-feed .views-row .easy_social_box .easy_social-widget {
   margin-right: 1em;
 }
-.view-feed .forge-throbber {
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -moz-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-  left: -999em;
-  margin-left: -50px;
-  position: absolute;
-  opacity: 0;
-  top: 200px;
-  z-index: 2;
-}
-.view-feed .forge-throbber.visible {
-  left: 50%;
-  opacity: 1;
-}
-.view-feed .forge-throbber .forge-throbber-inner {
-  background: url("../images/forge_throbber.gif") no-repeat;
-  height: 100px;
-  width: 100px;
-}
-.view-feed .form-overlay {
-  background-color: rgba(255, 255, 255, 0.6);
-  height: 100%;
-  left: -200%;
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-.view-feed .form-overlay.visible {
-  left: 0;
-  opacity: 1;
-}
 .view-feed .ajax-progress {
   display: none !important;
 }
@@ -3907,13 +3955,11 @@ html[lang=fi] .site-name a {
   margin-left: 70px;
 }
 
-.view-on-going-projects,
-.view-offering-listing {
+.view-on-going-projects {
   margin-top: 2em;
 }
 @media (min-width: 44em) {
-  .view-on-going-projects,
-  .view-offering-listing {
+  .view-on-going-projects {
     margin-top: 3em;
   }
 }
