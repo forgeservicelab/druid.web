@@ -29,8 +29,6 @@ function forge_landing_pages_default_fe_block_boxes() {
 
 <p><a href="/forge-service-lab-use-instruction">FORGE Service Lab Use Instruction</a></p>
 
-<p><a href="/en/all-contract-templates">Contracts</a></p>
-
 <p><a class="facebook" href="https://www.facebook.com/groups/forgefriends/" target="_blank">Facebook</a><a class="twitter" href="https://twitter.com/ForgeFriends" target="_blank">Twitter</a><a class="linkedin" href="https://www.linkedin.com/company/digile" target="_blank">LinkedIn</a></p>
 ';
 
