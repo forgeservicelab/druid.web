@@ -123,7 +123,7 @@
   Drupal.behaviors.checkboxPrettify = {
     attach: function (context) {
       
-      $(context).find('form.node-form div.form-checkboxes').once('checkboxPrettify', function() {
+      $(context).find('form.node-form div.form-checkboxes, #block-views-exp-offering-listing-block-1 .bef-checkboxes').once('checkboxPrettify', function() {
         var $this = $(this);
         var prevDepth;
         
