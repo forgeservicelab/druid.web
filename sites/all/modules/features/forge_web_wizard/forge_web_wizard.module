@@ -562,7 +562,7 @@ function _forge_web_wizard_embed_filter_replace($match) {
       $body = field_get_items('node', $node, 'body');
     }
     $summary = $body[0]['summary'];
-    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'))).'</p>';
+    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'), 'attributes' => array('class' => 'learn-more-link'))).'</p>';
     return $summary;
   }
   else {
