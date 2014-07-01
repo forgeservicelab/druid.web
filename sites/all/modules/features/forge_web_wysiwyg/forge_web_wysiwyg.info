@@ -1,6 +1,8 @@
 name = forge_web_wysiwyg
 core = 7.x
 package = Forge backend
+version = 7.x-1.0
+project = forge_web_wysiwyg
 dependencies[] = ckeditor
 dependencies[] = features
 dependencies[] = filter
@@ -11,6 +13,7 @@ features[ckeditor_profile][] = Full
 features[features_api][] = api:2
 features[filter][] = comment
 features[filter][] = filtered_html
+features[filter][] = full_html
 forge_web[selectable_feature] = 1
 forge_web[title] = Wysiwyg feature
 forge_web[description] = Feature to handle ckeditor, wysiwyg-profiles and variables
