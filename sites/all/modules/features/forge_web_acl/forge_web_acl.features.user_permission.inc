@@ -82,7 +82,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access contextual links'.
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'contextual',
   );
 
@@ -694,7 +696,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create news content'.
   $permissions['create news content'] = array(
     'name' => 'create news content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -711,7 +715,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create page content'.
   $permissions['create page content'] = array(
     'name' => 'create page content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -737,7 +743,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create project content'.
   $permissions['create project content'] = array(
     'name' => 'create project content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -844,7 +852,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any news content'.
   $permissions['delete any news content'] = array(
     'name' => 'delete any news content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -860,7 +870,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any page content'.
   $permissions['delete any page content'] = array(
     'name' => 'delete any page content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -885,7 +897,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any project content'.
   $permissions['delete any project content'] = array(
     'name' => 'delete any project content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -967,7 +981,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own news content'.
   $permissions['delete own news content'] = array(
     'name' => 'delete own news content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -983,7 +999,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own page content'.
   $permissions['delete own page content'] = array(
     'name' => 'delete own page content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1009,7 +1027,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own project content'.
   $permissions['delete own project content'] = array(
     'name' => 'delete own project content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1159,7 +1179,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any news content'.
   $permissions['edit any news content'] = array(
     'name' => 'edit any news content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1175,7 +1197,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any page content'.
   $permissions['edit any page content'] = array(
     'name' => 'edit any page content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1200,7 +1224,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any project content'.
   $permissions['edit any project content'] = array(
     'name' => 'edit any project content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1417,7 +1443,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own news content'.
   $permissions['edit own news content'] = array(
     'name' => 'edit own news content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1434,7 +1462,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own page content'.
   $permissions['edit own page content'] = array(
     'name' => 'edit own page content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1460,7 +1490,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own project content'.
   $permissions['edit own project content'] = array(
     'name' => 'edit own project content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
