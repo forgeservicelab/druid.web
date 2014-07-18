@@ -2,7 +2,6 @@
 name = Login Destination
 description = Customize the destination that the user is redirected to after login.
 core = 7.x
-dependencies[] = ctools
 files[] = login_destination.module
 files[] = login_destination.admin.inc
 configure = admin/config/people/login-destination
