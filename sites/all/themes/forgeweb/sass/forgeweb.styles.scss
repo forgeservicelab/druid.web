@@ -93,58 +93,6 @@ only screen and (min-resolution: 192dpi) {
 }
 
 
-// Social media icon styles
-
-.share-links {
-  margin-top: 1em;
-}
-
-.share-facebook,
-.share-twitter,
-.share-linkedin {
-  display: inline-block;
-  margin-bottom: -5px;
-  overflow: hidden;
-  padding: 5px;
-  text-indent: -9999px;
-  span {
-    background: url('../images/icons_social.png') no-repeat 0 0 transparent;
-    background-size: 55px auto;
-    display: block;
-    height: 20px;
-    width: 11px;
-  }
-}
-
-.share-twitter span {
-  background-position: -15px 0;
-  width: 17px;
-}
-
-.share-linkedin span {
-  background-position: -35px 0;
-  width: 20px;
-}
-
-
-// Social media icon retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .share-facebook,
-  .share-twitter,
-  .share-linkedin {
-    span {
-      background-image: url('../images/icons_social_retina.png');
-    }
-  }
-}
-
-
 // Form styles
 
 form {
@@ -1866,11 +1814,15 @@ only screen and (min-resolution: 192dpi) {
   background-color: $footer-bg;
   color: $footer-color;
   overflow: hidden;
-  padding-bottom: 20px;
-  padding-top: 20px;
-  @include at-breakpoint($desk) {
-    padding-bottom: 60px;
-    padding-top: 40px;
+  padding: 20px 0;
+  @include at-breakpoint($tab) {
+    padding: 10px 0 20px;
+  }
+  p {
+    margin: 5px 0;
+    @include at-breakpoint($tab) {
+      margin: 0;
+    }
   }
   a {
     color: $footer-link-color;
@@ -1878,109 +1830,28 @@ only screen and (min-resolution: 192dpi) {
       color: $active-link-color;
     }
   }
-  .google-maps,
-  .facebook,
-  .twitter,
-  .linkedin {
-    background: url('../images/icons_sprite_mobile.png') no-repeat right 0 transparent;
-    background-size: 42px auto;
-    display: inline-block;
-    overflow: hidden;
-    text-indent: -9999px;
-    &:hover {
-      background-position: right -107px;
-    }
-    @include at-breakpoint($desk) {
-      background-image: url('../images/icons_sprite.png');
-      background-size: 83px auto;
-      &:hover {
-        background-position: right -214px;
-      }
-    }
-  }
   .google-maps {
-    height: 37px;
+    background: url('../images/icons_social.png') no-repeat 0 -40px transparent;
+    background-size: 76px auto;
+    display: inline-block;
+    height: 34px;
+    margin-left: 15px;
     margin-top: -10px;
-    padding-left: 10px;
+    position: relative;
+    text-indent: -9999px;
     vertical-align: middle;
-    width: 63px;
+    width: 38px;
     &:before {
       background-color: #fff;
+      bottom: 1px;
       content: "";
-      display: block;
-      height: 31px;
-      margin-top: 10px;
+      height: 24px;
+      left: -10px;
+      position: absolute;
       width: 1px;
-      @include at-breakpoint($desk) {
-        height: 50px;
-        margin-top: 23px;
-      }
     }
-    @include at-breakpoint($desk) {
-      height: 73px;
-      margin-top: -20px;
-      width: 113px;
-    }
-  }
-  .facebook,
-  .twitter,
-  .linkedin {
-    margin-right: 20px;
-    @include at-breakpoint($desk) {
-      margin-right: 40px;
-    }
-  }
-  .facebook {
-    background-position: 0 -41px;
-    height: 21px;
-    width: 12px;
     &:hover {
-      background-position: 0 -148px;
-    }
-    @include at-breakpoint($desk) {
-      background-position: 0 -83px;
-      height: 40px;
-      width: 23px;
-      &:hover {
-        background-position: 0 -297px;
-      }
-    }
-  }
-  .twitter {
-    background-position: 0 -66px;
-    height: 18px;
-    margin-bottom: 1px;
-    width: 23px;
-    &:hover {
-      background-position: 0 -173px;
-    }
-    @include at-breakpoint($desk) {
-      background-position: 0 -132px;
-      height: 36px;
-      margin-bottom: 3px;
-      width: 46px;
-      &:hover {
-        background-position: 0 -346px;
-      }
-    }
-  }
-  .linkedin {
-    background-position: 0 -89px;
-    height: 18px;
-    margin-bottom: 2px;
-    margin-right: 0;
-    width: 20px;
-    &:hover {
-      background-position: 0 -196px;
-    }
-    @include at-breakpoint($desk) {
-      background-position: 0 -178px;
-      height: 36px;
-      margin-bottom: 1px;
-      width: 38px;
-      &:hover {
-        background-position: 0 -392px;
-      }
+      background-position: -38px -40px;
     }
   }
   .block {
@@ -1992,15 +1863,17 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   .l-region--footer-left {
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     @include at-breakpoint($tab) {
       margin-bottom: 0;
     }
     .block__content {
+      text-align: center;
       > *:first-child {
         background: url('../images/footer_logo_mobile.png') no-repeat top center transparent;
         background-size: auto 60px;
-        font-size: 1.2em;
+        display: inline-block;
+        font-size: 1em;
         margin-top: 0;
         padding-top: 70px;
         text-align: center;
@@ -2008,13 +1881,12 @@ only screen and (min-resolution: 192dpi) {
           margin-top: 1em;
         }
         @include at-breakpoint($desk) {
-          background-image: url('../images/footer_logo.png');
           background-position: left center;
-          background-size: auto 135px;
-          font-size: 1.7em;
-          height: 135px;
-          line-height: 135px;
-          padding-left: 155px;
+          font-size: 1.2em;
+          height: 60px;
+          line-height: 60px;
+          margin-top: 2em;
+          padding-left: 75px;
           padding-top: 0;
           text-align: left;
         }
@@ -2022,12 +1894,12 @@ only screen and (min-resolution: 192dpi) {
     }
   }
   .l-region--footer-right {
-    font-size: 1.2em;
+    font-size: 1em;
+    padding-top: 10px;
     text-align: center;
     @include at-breakpoint($desk) {
-      font-size: 1.7em;
+      font-size: 1.1em;
       line-height: 2em;
-      padding-top: 10px;
     }
     > *:first-child {
       @include at-breakpoint($tab) {
@@ -2047,65 +1919,13 @@ only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .l-footer {
-    .google-maps,
-    .facebook,
-    .twitter,
-    .linkedin {
-      background-image: url('../images/icons_sprite.png');
-      &:hover {
-        background-position: right -108px;
-      }
-      @include at-breakpoint($desk) {
-        background-image: url('../images/icons_sprite_retina.png');
-        &:hover {
-          background-position: right -214px;
-        }
-      }
+    .google-maps {
+      background-image: url('../images/icons_social_retina.png');
     }
-    .facebook {
-      background-position: 0 -42px;
-      &:hover {
-        background-position: 0 -150px;
-      }
-      @include at-breakpoint($desk) {
-        background-position: 0 -83px;
-        &:hover {
-          background-position: 0 -297px;
-        }
-      }
-    }
-    .twitter {
-      background-position: 0 -67px;
-      &:hover {
-        background-position: 0 -175px;
-      }
-      @include at-breakpoint($desk) {
-        background-position: 0 -132px;
-        &:hover {
-          background-position: 0 -346px;
-        }
-      }
-    }
-    .linkedin {
-      background-position: 0 -90px;
-      &:hover {
-        background-position: 0 -198px;
-      }
-      @include at-breakpoint($desk) {
-        background-position: 0 -178px;
-        &:hover {
-          background-position: 0 -392px;
-        }
-      }
-    }
-    
     .l-region--footer-left {
       .block__content {
         > *:first-child {
           background-image: url('../images/footer_logo_mobile_retina.png');
-          @include at-breakpoint($desk) {
-            background-image: url('../images/footer_logo_retina.png');
-          }
         }
       }
     }
