@@ -30,6 +30,11 @@
   <?php endif; ?>
   
   <div class="l-main">
+    <?php if ($page['before_content']): ?>
+      <div class="l-before_content">
+        <?php print render($page['before_content']); ?>
+      </div>
+    <?php endif; ?>
     <div class="l-content " role="main">
       <a id="main-content"></a>
       <?php print $messages; ?>
@@ -39,6 +44,12 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       <?php print $feed_icons; ?>
+      
+      <?php if ($page['under_content']): ?>
+        <div class="l-under_content">
+          <?php print render($page['under_content']); ?>
+        </div>
+      <?php endif; ?>
     </div>
     
     <?php print render($page['sidebar_first']); ?>

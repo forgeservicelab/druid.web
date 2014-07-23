@@ -1,4 +1,5 @@
 <?php
+require_once 'login_destination.crud.inc';
 
 /**
  * @file
@@ -57,13 +58,21 @@ function login_destination_menu() {
     'access arguments' => array('administer users'),
     'file' => 'login_destination.admin.inc',
   );
-  $items['admin/config/people/login-destination/delete/%login_destination'] = array(
-    'title' => 'Delete login destination rule',
+  $op_item = array(
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('login_destination_delete_form', 5),
+    'page arguments' => array('login_destination_op_form', 4, 5),
     'access arguments' => array('administer users'),
     'file' => 'login_destination.admin.inc',
   );
+  $items['admin/config/people/login-destination/delete/%login_destination']           = $op_item;
+  $items['admin/config/people/login-destination/delete/%login_destination']['title']  = 'Delete login destination rule';
+  $items['admin/config/people/login-destination/revert/%login_destination']           = $op_item;
+  $items['admin/config/people/login-destination/revert/%login_destination']['title']  = 'Revert login destination rule';
+  $items['admin/config/people/login-destination/enable/%login_destination']           = $op_item;
+  $items['admin/config/people/login-destination/enable/%login_destination']['title']  = 'Enable login destination rule';
+  $items['admin/config/people/login-destination/disable/%login_destination']          = $op_item;
+  $items['admin/config/people/login-destination/disable/%login_destination']['title'] = 'Disable login destination rule';
+
   $items['admin/config/people/login-destination/list'] = array(
     'title' => 'List',
     'type' => MENU_DEFAULT_LOCAL_TASK,
@@ -81,29 +90,6 @@ function login_destination_menu() {
   );
 
   return $items;
-}
-
-/**
- * Load a login destination.
- */
-function login_destination_load($id) {
-  $result = db_select('login_destination', 'l')
-    ->fields('l')
-    ->condition('id', $id)
-    ->execute()
-    ->fetchAssoc();
-
-  $result['triggers'] = unserialize($result['triggers']);
-  if (empty($result['triggers'])) {
-    $result['triggers'] = array();
-  }
-
-  $result['roles'] = unserialize($result['roles']);
-  if (empty($result['roles'])) {
-    $result['roles'] = array();
-  }
-  
-  return $result;
 }
 
 /**
@@ -333,20 +319,16 @@ function login_destination_perform_redirect($trigger = '', $current = NULL) {
  * This function is intended to be used by external modules.
  */
 function login_destination_get_destination($trigger = '', $current = NULL) {
-  // Get all the login destination rules from the database.
-  $result = db_select('login_destination', 'l')
-    //->addTag('translatable')
-    ->fields('l', array('triggers', 'roles', 'pages_type', 'pages', 'destination_type', 'destination'))
-    ->orderBy('weight')
-    ->execute()
-    ->fetchAll();
-
   if ($current == NULL) {
     $current = $_GET['q'];
   }
 
   // examine path matches
-  foreach ($result as $data) {
+  foreach (login_destination_load_all() as $data) {
+    // If this rule is disabled, skip it.
+    if (!empty($data->disabled)) {
+      continue;
+    }
     // try to match the subsequent rule
     if (_login_destination_match_rule($data, $trigger, $current)) {
       // Note: Matching rule with empty destination will cancel redirect.
@@ -406,13 +388,8 @@ function _login_destination_match_rule($rule, $trigger = '', $current = NULL) {
   $type = $rule->pages_type;
   $pages = $rule->pages;
 
-  $triggers = unserialize($rule->triggers);
-  if (empty($triggers))
-    $triggers = array();
-
-  $roles = unserialize($rule->roles);
-  if (empty($roles))
-    $roles = array();
+  $triggers = $rule->triggers;
+  $roles = $rule->roles;
 
   // remove non-existent roles
   $roles = array_intersect_key(_login_destination_role_options(), $roles);
