@@ -1,0 +1,29 @@
+// Company page styles
+
+.company-offerings {
+  border-top: 1px solid $border-color;
+  margin-top: 3em;
+  .attachment {
+    .view-content {
+      margin-top: 1em;
+    }
+    .button {
+      display: block;
+      margin-bottom: 10px;
+      @include at-breakpoint($tab) {
+        display: inline-block;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+  @include at-breakpoint($desk) {
+    > .view-content {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      .views-row {
+        @include span-columns(6, 12); // Span 6 out of 12 columns.
+        @include nth-omega(2n);
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+// More link styles
+
+.more-link {
+  display: inline-block;
+  margin-bottom: 2em;
+  @include at-breakpoint($tab) {
+    float: left;
+    font-size: 1.5em;
+  }
+  @include at-breakpoint($desk) {
+    margin-bottom: 0;
+  }
+  a {
+    background-color: $link-color;
+    color: #FFFFFF;
+    display: block;
+    padding: 1em 2em;
+    text-align: center;
+    text-transform: uppercase;
+    &:hover {
+      background-color: darken($link-color, 10%);
+    }
+  }
+}

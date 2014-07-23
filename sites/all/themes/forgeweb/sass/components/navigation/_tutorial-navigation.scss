@@ -1,0 +1,115 @@
+// Tutorial navigation block
+
+.block--menu-menu-tutorial-menu ul.menu {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  white-space: nowrap;
+  > * {
+    display: inline-block;
+    list-style-image: none;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  @include at-breakpoint($tab) {
+    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+    height: 212px;
+    margin: 0 auto;
+    > * {
+      @include span-columns(2, 12); // Span 6 out of 12 columns.
+      @include nth-omega(6n);
+      display: block;
+      &.active-trail {
+        border: 1px solid #fff;
+        position: relative;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Border
+        &:before {
+          border-top-color: #FFFFFF;
+          border-width: 12px;
+          bottom: -12px;
+          left: 50%;
+          margin-left: -12px;
+        }
+        // Fill
+        &:after {
+          border-top-color: $tab-active;
+          border-width: 10px;
+          bottom: -9px;
+          left: 50%;
+          margin-left: -10px;
+        }
+      }
+      &.next-from-active a {
+        background-image: url('../images/icon_dashboard_navi_red.png');
+        
+      }
+      &.last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_rose.png');
+      }
+      &.last-last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_purple.png');
+      }
+      &.last-last-last-from-active a {
+        background-image: url('../images/icon_dashboard_navi_blue.png');
+      }
+    }
+  }
+  
+  a {
+    color: $text-color;
+    display: block;
+    padding: 10px 3px;
+    &.active {
+      background-color: #e2e2e2;
+    }
+    
+    @include at-breakpoint($tab) {
+      background: url('../images/icon_dashboard_navi_teal.png') no-repeat center 90px transparent;
+      height: 210px;
+      padding: 40px 0 150px;
+      text-transform: uppercase;
+      &.active {
+        background-color: $tab-active;
+        background-image: url('../images/icon_dashboard_navi_active.png');
+        background-position: center 77px;
+        border: 1px solid $border-color;
+        position: relative;
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: transparent;
+          border-bottom: 0;
+        }
+        // Fill
+        &:after {
+          border-top-color: $border-color;
+          border-width: 11px;
+          bottom: -11px;
+          left: 50%;
+          margin-left: -11px;
+        }
+      }
+    }
+    
+    @include at-breakpoint($desk) {
+      font-size: 1.3em;
+    }
+  }
+}

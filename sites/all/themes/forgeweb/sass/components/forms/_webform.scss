@@ -1,0 +1,38 @@
+// Webform styles
+
+.webform-client-form {
+  fieldset {
+    .fieldset-wrapper {
+      padding-top: 1em;
+      fieldset {
+        legend {
+          background-color: transparent;
+          font-size: 1.2em;
+        }
+        .fieldset-wrapper {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .wfm-item {
+    overflow: hidden;
+    > input {
+      float: right;
+    }
+  }
+  .form-item {
+    &.form-type-textfield,
+    &.webform-component-textfield,
+    &.form-type-password,
+    &.form-type-email,
+    &.form-type-link-field,
+    &.webform-component-email {
+      padding: 0 0 0 250px;
+      label {
+        margin: 0 0 0 -250px;
+        width: 250px;
+      }
+    }
+  }
+}

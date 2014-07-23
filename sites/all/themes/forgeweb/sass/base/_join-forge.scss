@@ -1,0 +1,32 @@
+// Join FORGE styles
+
+.section-wizard {
+  form {
+    fieldset,
+    .webform-component-fieldset {
+      a {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+.back-to-wizard {
+  font-size: 1.2em;
+}
+
+.webform-component--other-contract-information {
+  @include at-breakpoint($desk) {
+    .form-item {
+      overflow: hidden;
+      label {
+        float:left;
+        width: 70%;
+      }
+      input {
+        float: right;
+        width: 30%;
+      }
+    }
+  }
+}

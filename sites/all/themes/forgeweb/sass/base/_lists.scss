@@ -1,23 +1,36 @@
-// Search result styles
+// Listing styles
 
-.search-result {
-  margin-bottom: 2em;
-  padding: 10px;
-  &.views-row-odd {
-    background-color: $tab-active;
+.l-listing {
+  min-height: 400px;
+  position: relative;
+  .view-content {
+    @include container; // Define these elements as the grid containers.
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.search-result--logo {
-  min-height: 95px;
-  padding-left: 95px;
-  position: relative;
-  .logo {
-    left: 10px;
-    position: absolute;
-    top: 10px;
-    img {
-      max-width: 75px;
+@include at-breakpoint($tab) {
+  .l-listing {
+    .view-content {
+      @include set-container-width;
+      .views-row {
+        @include span-columns(6, 12); // Span 6 out of 12 columns.
+        @include nth-omega(2n);
+      }
+    }
+  }
+}
+
+@include at-breakpoint($desk) {
+  .l-listing {
+    .view-content {
+      @include set-container-width;
+      .views-row {
+        @include span-columns(4, 12); // Span 4 out of 12 columns.
+        @include remove-nth-omega(2n);
+        @include nth-omega(3n);
+      }
     }
   }
 }

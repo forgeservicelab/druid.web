@@ -1,0 +1,88 @@
+// Tutorial page styles
+
+.node-type-tutorial {
+  .l-region--highlighted {
+    @include at-breakpoint($tab) {
+      background: url('../images/dashboard_navigation_bg.jpg') repeat-x center center transparent;
+    }
+  }
+  
+  .l-region--hero {
+    background: url('../images/decoration_edge_up.png') repeat-x 0 bottom #e2e2e2;
+    background-size: auto 12px;
+    overflow: hidden;
+    padding-bottom: 12px;
+    .view-tutorial-highlighted {
+      @include container;
+      margin: 0 auto;
+      @include at-breakpoint($tab) {
+        @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      }
+      h2 {
+        font-size: 2em;
+        text-transform: none;
+        @include at-breakpoint($tab) {
+          font-size: 3em;
+        }
+      }
+    }
+  }
+  
+  .l-region--sidebar-second {
+    background-color: #f3f3f3;
+    border-top: 0 none;
+    padding: 1em;
+    h2 {
+      font-size: 1.2em;
+      margin: 0 0 0.5em;
+    }
+    .block {
+      margin: 0 0 1.5em;
+      &:last-child {
+        margin: 0;
+      }
+      .views-row {
+        margin: 0 0 0.5em;
+        .views-field-field-attachments {
+          a {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+  
+  .field--name-field-method,
+  .field--name-field-tools {
+    border-bottom: 2px dashed #f2f2f2;
+    margin: 0 0 1.5em;
+    padding: 0 0 1.5em;
+    .field__label {
+      font-size: 1.8em;
+      font-weight: 400;
+      margin: 0 0 0.25em;
+    }
+    .field__item {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// Tutorial page styles retina
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .node-type-tutorial {
+    .l-region--hero {
+      background-image: url('../images/decoration_edge_up_retina.png');
+    }
+  }
+}

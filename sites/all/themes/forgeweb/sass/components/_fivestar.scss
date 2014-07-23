@@ -1,0 +1,107 @@
+// Fivestar styles
+
+form.fivestar-widget {
+  margin: 0;
+}
+
+.fivestar-average-stars {
+  div.fivestar-widget-static,
+  div.fivestar-widget {
+    .star {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      > span {
+        &.on {
+          background: url('../images/star_sprite.png') no-repeat 0 0 transparent;
+          background-size: 18px auto;
+        }
+        &.off {
+          background: url('../images/star_sprite.png') no-repeat 0 -18px transparent;
+          background-size: 18px auto;
+        }
+      }
+      > a {
+        background: url('../images/star_sprite.png') no-repeat 0 -18px transparent;
+        background-size: 18px auto;
+      }
+      &.on > a {
+        background: url('../images/star_sprite.png') no-repeat 0 0 transparent;
+        background-size: 18px auto;
+      }
+      &.hover > a {
+        background: url('../images/star_sprite.png') no-repeat 0 -36px transparent;
+        background-size: 18px auto;
+      }
+    }
+    .cancel {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      a {
+        background: url('../images/star_sprite.png') no-repeat 0 -54px transparent;
+        background-size: 18px auto;
+      }
+    }
+  }
+  .ajax-progress-throbber {
+    display: none;
+  }
+  .description {
+    color: #777;
+    span {
+      display: none;
+      &.empty {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .form-item {
+    margin: 0;
+  }
+}
+
+
+// Fivestar retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .fivestar-average-stars {
+    div.fivestar-widget-static,
+    div.fivestar-widget {
+      .star {
+        > span {
+          &.on {
+            background-image: url('../images/star_sprite_retina.png');
+          }
+          &.off {
+            background-image: url('../images/star_sprite_retina.png');
+          }
+        }
+        > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+        &.on > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+        &.hover > a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+      }
+      .cancel {
+        a {
+          background-image: url('../images/star_sprite_retina.png');
+        }
+      }
+    }
+  }
+}

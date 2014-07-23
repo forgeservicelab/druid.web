@@ -1,0 +1,174 @@
+// Tabs
+
+// Reverting u-tabs default styles
+.ui-tabs {
+  @include border-radius(0);
+
+  border: 0 none;
+  padding: 0;
+  .ui-tabs-nav {
+    @include border-radius(0);
+
+    background: none;
+    border: 0 none;
+    padding: 0;
+    li {
+      @include at-breakpoint($tab) {
+        
+      }
+      @include border-radius(0);
+      
+      border: 0 none;
+      a {
+        background: none;
+        color: $link-color;
+        padding: 0;
+        &:active,
+        &:focus,
+        &:visited {
+          outline: none;
+        }
+      }
+      &.ui-state-default, 
+      &.ui-widget-content .ui-state-default, 
+      &.ui-widget-header .ui-state-default,
+      &.ui-state-active, 
+      &.ui-widget-content .ui-state-active,
+      &.ui-widget-header .ui-state-active {
+        background: none;
+      }
+    }
+  }
+  .ui-tabs-panel {
+    padding: 0;
+  }
+}
+
+.not-front .ui-tabs-nav,
+.horizontal-tabs ul {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1em;
+}
+
+%tabs {
+  padding: 0;
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+  li {
+    float: left;
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    outline: 0;
+    a {
+      background-color: $tab-inactive;
+      border-top: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      color: $text-color;
+      display: block;
+      font-size: 0.9em;
+      padding: 1em 0.5em;
+      position: relative;
+      text-transform: none;
+      @include at-breakpoint($desk) {
+        font-size: 0.9em;
+        padding: 1.5em 2em;
+        text-transform: uppercase;
+      }
+      strong {
+        font-weight: normal;
+      }
+      &:hover {
+        background-color: $tab-active;
+      }
+      &:active,
+      &:focus,
+      &:visited {
+        outline: 0;
+      }
+    }
+    &:last-child a {
+      border-right: 1px solid $border-color;
+    }
+    &.active a,
+    &.ui-state-active a,
+    &.selected a {
+      background-color: $tab-active;
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-bottom: 0;
+      }
+      // Border
+      &:before {
+        border-top-color: $border-color;
+        border-width: 10px;
+        bottom: -10px;
+        left: 50%;
+        margin-left: -10px;
+      }
+      // Fill
+      &:after {
+        border-top-color: $tab-active;
+        border-width: 10px;
+        bottom: -9px;
+        left: 50%;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+.tabs {
+  &.tabs--primary {
+    border-bottom: 1px solid $border-color;
+  }
+  @extend %tabs;
+}
+
+.not-front .ui-tabs,
+.horizontal-tabs ul {
+  @extend %tabs;
+}
+
+// Horizontal tabs specific stuff
+
+.horizontal-tabs {
+  display: relative;
+  ul {
+    margin-bottom: 0;
+  }
+  .horizontal-tab-hidden {
+    display: none;
+    position: absolute;
+    top: -100000px;
+    width: 100%;
+  }
+  
+  .horizontal-tabs-panes {
+    padding: 2em 0;
+    @include at-breakpoint($tab) {
+      border-bottom: 1px solid $border-color;
+      border-left: 1px solid $border-color;
+      border-right: 1px solid $border-color;
+      margin-bottom: 1em;
+      padding: 2em 1em;
+    }
+    > fieldset {
+      background-color: rgba(0, 0, 0, 0);
+      margin: 0;
+      padding: 0;
+     > legend {
+        display: none;
+      }
+    }
+  }
+}

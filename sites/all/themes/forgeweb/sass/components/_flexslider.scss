@@ -1,0 +1,57 @@
+// Flexslider styles
+
+.flexslider {
+  @include border-radius(0);
+  @include box-shadow(0 0 0 transparent);
+  
+  background: #fff;
+  border: 0 none;
+  margin: 0 auto;
+  position: relative;
+  @include at-breakpoint($tab) {
+    margin: 0;
+    min-height: 400px;
+  }
+  .slides {
+    > li {
+      position: relative;
+      img {
+        height: auto;
+      }
+      .flex-caption {
+        background-color: rgba(0,0,0,0.3);
+        bottom: 0;
+        color: #fff;
+        left: 0;
+        padding: 1em;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+  .flex-control-thumbs {
+    margin: 5px 0;
+    li img {
+      padding: 5px;
+    }
+  }
+  .flex-direction-nav {
+    a {
+      background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
+      background-size: 13px auto;
+      display: block;
+      font-size: 0;
+      height: 26px;
+      margin-top: -13px;
+      overflow: hidden;
+      text-indent: -9999px;
+      width: 13px;
+      &:before {
+        display: none;
+      }
+      &.flex-prev {
+        background-image: url('../images/icon_accordion_invert.png');
+      }
+    }
+  }
+}

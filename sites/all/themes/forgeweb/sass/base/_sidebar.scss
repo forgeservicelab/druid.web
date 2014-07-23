@@ -1,0 +1,71 @@
+// Sidebar styles
+
+.l-region--sidebar-first {
+  .block {
+    .views-exposed-form {
+      .views-exposed-widget {
+        margin-bottom: 2.5em;
+        padding: 0;
+        > label {
+          display: block;
+          font-size: 1.3em;
+          font-weight: 400;
+          margin: 0.83em 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+    form {
+      margin: 0;
+      .form-select,
+      .form-checkboxes,
+      .form-radios {
+        margin: 0;
+        label {
+          margin-bottom: 0;
+        }
+        input[type='checkbox'],
+        input[type='radio'] {
+          margin-right: 0.5em;
+        }
+      }
+      .views-submit-button {
+        .ajax-progress-throbber {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.l-region--sidebar-second {
+  .block__title {
+    float: none;
+    font-size: 1.17em;
+    margin-left: 0;
+    text-transform: uppercase;
+    @include at-breakpoint($tab) {
+      font-size: 1.5em;
+    }
+  }
+  .block__title,
+  .block__content {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #fff;
+    margin: 0;
+    overflow: hidden;
+    padding: 1em;
+    .field__label {
+      display: block;
+      float: left;
+      font-weight: bold;
+      margin-right: -70px;
+      width: 70px;
+    }
+    .field__content {
+      display: block;
+      float: left;
+      margin-left: 70px;
+    }
+  }
+}

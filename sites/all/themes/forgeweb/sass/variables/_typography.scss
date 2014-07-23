@@ -42,3 +42,11 @@ h3 {
     font-size: 1.5em;
   }
 }
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  &.active {
+    color: $active-link-color;
+  }
+}

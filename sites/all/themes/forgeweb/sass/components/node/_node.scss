@@ -1,0 +1,40 @@
+// Content page default styles
+
+.page-node {
+  aside {
+    border-top: 1px solid $border-color;
+    margin-top: 1em;
+    // TODO: Check if this one is still required somewhere
+    //overflow: hidden;
+    @include at-breakpoint($tab) {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+    .block {
+      border-bottom: 1px solid $border-color;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
+      &:last-child {
+        border-bottom: 0 none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+// General node body styles to tackle images added to content
+
+.not-front .field--name-body,
+.not-front .field--name-field-news-body {
+  margin: 2em 0;
+  overflow: hidden;
+  img[style*="float:left"] {
+    padding: 0 1em 1em 0;
+  }
+
+  img[style*="float:right"] {
+    padding: 0 0 1em 1em;
+  }
+}

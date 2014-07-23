@@ -1,0 +1,33 @@
+// Comment styles
+
+.comment {
+  h3 {
+    font-size: 1.6em;
+    font-weight: 300;
+    text-transform: none;
+  }
+  a {
+    color: $link-color;
+  }
+  .submitted {
+    a {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.comments__form-title {
+  border-bottom: 1px solid $border-color;
+}
+
+.comment-form {
+  > div > .form-item:first-child {
+    display: none;
+  }
+  .text-format-wrapper > a {
+    display: none !important;
+  }
+  .field-name-comment-body {
+    margin-bottom: 1em;
+  }
+}

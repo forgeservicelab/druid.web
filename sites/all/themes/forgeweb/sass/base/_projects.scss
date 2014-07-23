@@ -1,0 +1,8 @@
+// Projects listing page styles
+
+.view-on-going-projects {
+  margin-top: 2em;
+  @include at-breakpoint($tab) {
+    margin-top: 3em; 
+  }
+}

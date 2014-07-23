@@ -1,3 +1,522 @@
+// Form styles
+
+form {
+  margin: 2em 0 0;
+  .form-item {
+    label {
+      font-weight: 300;
+      margin-bottom: 0.5em;
+      text-transform: uppercase;
+    }
+    .description {
+      margin: 5px 0 0 5px;
+    }
+    input.error {
+      border: 2px solid #d31959;
+    }
+    &.form-type-textfield,
+    &.webform-component-textfield,
+    &.form-type-password,
+    &.form-type-email,
+    &.form-type-link-field,
+    &.webform-component-email {
+      overflow: hidden;
+      @include at-breakpoint($tab) {
+        padding: 0 0 0 200px;
+      }
+      label {
+        background-color: $tab-active;
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        display: block;
+        line-height: 16px;
+        margin: 0;
+        min-height: 34px;
+        padding: 8px 10px;
+        @include at-breakpoint($tab) {
+          border-bottom: 1px solid $border-color;
+          border-right: 0 none;
+          float: left;
+          margin: 0 0 0 -200px;
+          text-align: right;
+          width: 200px;
+        }
+        &.error {
+          background-color: #D31959;
+          border: 0 none;
+          clear: both;
+          color: #FFFFFF;
+          float: none;
+          margin: 0;
+          min-height: 0;
+          padding: 4px 5px;
+          text-align: left;
+          text-transform: none;
+          width: auto;
+        }
+      }
+      > input {
+        @include box-shadow(0, 0, 0, transparent);
+        @include border-radius(0);
+        
+        border: 1px solid $border-color;
+        line-height: 16px;
+        min-height: 34px;
+        padding: 8px 10px;
+        width: 100%;
+        -webkit-appearance: none; // Remove IOS shadows
+      }
+    }
+    &.form-type-radio {
+      margin-bottom: 0.6em;
+      label {
+        text-transform: none;
+      }
+    }
+    &.form-type-textarea,
+    &.webform-component-textarea {
+      label {
+        background-color: $tab-active;
+        border-left: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        border-top: 1px solid $border-color;
+        margin: 0;
+        padding: 8px 10px;
+        &.error {
+          background-color: #D31959;
+          border: 0 none;
+          clear: both;
+          color: #FFFFFF;
+          float: none;
+          margin: 0;
+          min-height: 0;
+          padding: 4px 5px;
+          text-align: left;
+          text-transform: none;
+          width: auto;
+        }
+      }
+      textarea {
+        @include border-radius(0);
+        
+        border: 1px solid $border-color;
+        -webkit-appearance: none; // Remove IOS shadows
+      }
+      .grippie {
+        display: none;
+      }
+    }
+  }
+  
+  .field-type-text-long {
+    margin-bottom: 1em;
+  }
+  
+  .form-select,
+  .form-checkboxes,
+  .form-radios {
+    margin: 0 0 2em 1em;
+  }
+  
+  .bef-checkboxes,
+  .form-checkboxes {
+    .form-item {
+      label {
+        text-transform: none;
+      }
+    }
+    .category.main > .form-item {
+      &.expandable {
+        color: darken($button-color, 10%);
+        .toggle {
+          background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
+          background-size: 16px auto;
+          display: inline-block;
+          height: 16px;
+          margin: 3px 0 0 5px;
+          vertical-align: top;
+          width: 16px;
+        }
+        &.expanded {
+          .toggle {
+            background-position: right -16px;
+          }
+        }
+      }
+    }
+    > .category > .category {
+      display: none;
+      &.open {
+        @include transition(all 0.3s ease-in-out);
+        
+        display: block;
+      }
+    }
+    .category.main .category {
+      margin-left: 30px;
+    }
+  }
+  
+  .field-type-image {
+    background-color: #F2F2F2;
+    margin-bottom: 1em;
+    table {
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+      thead {
+        display: none;
+      }
+      tbody {
+        display: block;
+      }
+      tr {
+        display: block;
+        white-space: normal;
+        @include at-breakpoint($tab) {
+          padding: 10px 60px 10px 10px;
+          position: relative;
+        }
+        td {
+          display: block;
+          padding: 5px;
+          text-align: center;
+          @include at-breakpoint($tab) {
+            padding: 0;
+          }
+          input.form-submit.insert-button {
+            background: none repeat scroll 0 0 #C7DA2C;
+            height: auto;
+            margin: 10px 0;
+            padding: 0.5em 1.5em;
+            position: static;
+            text-indent: 0;
+            width: 100%;
+            @include at-breakpoint($tab) {
+              float: right;
+              margin: 0;
+              width: auto;
+            }
+          }
+        }
+        .form-item {
+          white-space: normal;
+        }
+        input.form-submit {
+          background-image: url('../images/icon_delete.png');
+          background-position: 12px center;
+          background-repeat: no-repeat;
+          background-size: 16px auto;
+          margin-bottom: 5px;
+          padding-left: 40px;
+          @include at-breakpoint($tab) {
+            background-position: center center;
+            display: block;
+            height: 40px;
+            margin: -20px 0 0;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            right: 10px;
+            text-indent: -9990px;
+            top: 50%;
+            width: 40px;
+          }
+        }
+      }
+    }
+    
+    table.sticky-header,
+    .tabledrag-handle,
+    .tabledrag-toggle-weight-wrapper {
+      // Hide table headers & dragging ability in mobile
+      display: none;
+    }
+    
+    .image-widget {
+      .image-preview {
+        display: block;
+        float: none;
+        line-height: 0;
+        padding: 5px 0;
+        text-align: center;
+        img {
+          line-height: 0;
+          width: 100%;
+        }
+        @include at-breakpoint($tab) {
+          float: left;
+          padding: 0;
+          width: 30%;
+          img {
+            width: auto;
+          }
+        }
+      }
+      .image-widget-data {
+        float: none;
+        @include at-breakpoint($tab) {
+          
+        }
+        .form-item.form-type-textfield {
+          clear: both;
+          padding: 5px 0 0;
+          @include at-breakpoint($tab) {
+            padding: 5px 0 0 140px;
+          }
+          label {
+            margin: 0;
+            text-align: left;
+            width: auto;
+            @include at-breakpoint($tab) {
+              margin: 0 0 0 -140px;
+              text-align: right;
+              width: 140px;
+            }
+          }
+          .description {
+            text-align: left;
+          }
+        }
+        @include at-breakpoint($tab) {
+          float: right;
+          text-align: left;
+          width: 68%;
+        }
+      }
+    }
+    
+    .form-type-managed-file {
+      margin-bottom: 1em;
+      padding: 10px;
+      .image-widget-data {
+        text-align: center;
+        width: 100%;
+        @include at-breakpoint($tab) {
+          float: left;
+          text-align: left;
+          width: 70%;
+        }
+        .file-size {
+          margin-right: 10px;
+        }
+        input.form-file {
+          clear: both;
+          float: left;
+          margin-bottom: 10px;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            float: none;
+            width: auto;
+          }
+        }
+        input.form-submit {
+          margin-bottom: 10px;
+          margin-top: 10px;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            width: auto;
+          }
+        }
+      }
+    }
+    
+    fieldset {
+      .fieldset-wrapper {
+        padding: 0;
+      }
+    }
+  }
+  
+  .form-type-managed-file {
+    input.form-file {
+      margin-right: 10px;
+    }
+  }
+  
+  fieldset,
+  .webform-component-fieldset {
+    border: 0 none;
+    display: block;
+    margin: 2em 0;
+    padding: 0;
+    @include at-breakpoint($tab) {
+      background-color: #F2F2F2;
+    }
+    legend {
+      background-color: #FFFFFF;
+      font-size: 1.5em;
+      padding-bottom: 0.5em;
+      width: 100%;
+    }
+    .fieldset-wrapper {
+      @include at-breakpoint($tab) {
+        padding: 0 1em;
+      }
+      .field-type-image {
+        background-color: transparent;
+        margin-bottom: 0;
+        padding: 0;
+      }
+    }
+    fieldset {
+      .fieldset-wrapper {
+        padding: 1em 0 0;
+        @include at-breakpoint($tab) {
+          padding: 1em 1em 0;
+        }
+        > div {
+          margin-bottom: 1em;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &:first-child {
+            margin-bottom: 1em;
+          }
+        }
+      }
+    }
+  }
+  
+  input[type='submit'] {
+    @extend .button;
+  }
+  
+  .form-actions {
+    input {
+      margin-bottom: 1em;
+      margin-right: 1em;
+      width: 100%;
+      @include at-breakpoint($tab) {
+        margin-bottom: 0;
+        width: auto;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+form.user-pass {
+  .form-item {
+    padding: 0 0 0 250px;
+    label {
+      margin-left: -250px;
+      width: 250px;
+    }
+  }
+}
+
+form.user-register-form {
+  .form-item {
+    padding: 0 0 0 160px;
+    label {
+      margin-left: -160px;
+      width: 160px;
+    }
+  }
+}
+
+form.user-profile-form {
+  .form-type-password {
+    padding-bottom: 40px;
+    position: relative;
+    input,
+    &.form-item-current-pass input {
+      width: 100%;
+    }
+    div.password-strength,
+    div.password-confirm {
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      width: 100%;
+    }
+    @include at-breakpoint($tab) {
+      padding-bottom: 0;
+      input {
+        width: 55%;
+      }
+      div.password-strength,
+      div.password-confirm {
+        bottom: auto;
+        left: auto;
+        margin: 0;
+        position: static;
+        width: 40%;
+      }
+    }
+    @include at-breakpoint($desk) {
+      input {
+        width: 70%;
+      }
+      div.password-strength,
+      div.password-confirm {
+        width: 25%;
+      }
+    }
+  }
+  .password-suggestions {
+    background-color: $tab-active;
+    border-color: $border-color;
+    margin: 1em 0;
+    ul {
+      color: red;
+      padding: 0 0 0 30px;
+    }
+  }
+}
+
+html.js .form-autocomplete {
+  background-image: url('../images/throbber_bg.png');
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  background-size: 23px auto;
+  &.throbbing {
+    background-image: url('../images/throbber.gif');
+    background-color: #f5f5f5;
+    background-position: 100% center;
+  }
+}
+
+// Form retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  form {
+    .field-type-image {
+      table {
+        tr {
+          .form-submit {
+            background-image: url('../images/icon_delete_retina.png');
+          }
+        }
+      }
+    }
+    .form-checkboxes {
+      .category.main > .form-item {
+        &.expandable {
+          .toggle {
+            background-image: url('../images/icon_expand_retina.png');
+          }
+        }
+      }
+    }
+  }
+  
+  html.js .form-autocomplete {
+    background-image: url('../images/throbber_bg_retina.png');
+  }
+}
+
+
 // Search form styles
 
 .search form,

@@ -1,0 +1,22 @@
+// Field tag styles
+
+.field--name-field-tags {
+  margin: 1.5em 0;
+  .field__label {
+    font-weight: normal;
+  }
+  .field__items {
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}

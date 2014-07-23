@@ -1,0 +1,19 @@
+// Blog-post page
+
+.node-type-blog-post {
+  .l-region--sidebar-second {
+    background-color: #f3f3f3;
+    border-top: 0 none;
+    padding: 1em;
+    h2 {
+      font-size: 1.2em;
+      margin: 0 0 0.5em;
+    }
+    .block {
+      margin: 0 0 1.5em;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
