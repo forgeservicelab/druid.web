@@ -108,10 +108,137 @@ a.active {
   color: #c7da2b;
 }
 
-/* No files to import found in abstractions/**\/* */
+.icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon {
+  background-color: transparent;
+  background-image: url("../images/icon_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 152px auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon {
+    background-size: 76px auto;
+  }
+}
+.forge-icon__large, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon {
+  background-position: 0 -160px;
+}
+
+.forge-icon__small, .section-all-contracts .field--name-field-page-attachment .field__item span {
+  background-position: 0 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .forge-icon__large, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon {
+    background-position: 0 -135px;
+  }
+
+  .forge-icon__small, .section-all-contracts .field--name-field-page-attachment .field__item span {
+    background-position: 0 -35px;
+  }
+}
+.google-maps-icon, .l-footer .google-maps {
+  background-position: 0 -480px;
+}
+.google-maps-icon:hover, .l-footer .google-maps:hover {
+  background-position: -38px -480px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .google-maps-icon, .l-footer .google-maps {
+    background-position: 0 -297px;
+    background-size: 76px auto;
+  }
+  .google-maps-icon:hover, .l-footer .google-maps:hover {
+    background-position: -38px -297px;
+  }
+}
+.social-media-icon__facebook, .social-icon__facebook {
+  background-position: 0 -440px;
+}
+.social-media-icon__facebook:hover, .social-icon__facebook:hover {
+  background-position: 0 -460px;
+}
+
+.social-media-icon__twitter, .social-icon__twitter {
+  background-position: -15px -444px;
+}
+.social-media-icon__twitter:hover, .social-icon__twitter:hover {
+  background-position: -15px -464px;
+}
+
+.social-media-icon__linkedin, .social-icon__linkedin {
+  background-position: -35px -440px;
+}
+.social-media-icon__linkedin:hover, .social-icon__linkedin:hover {
+  background-position: -35px -460px;
+}
+
+.social-media-icon__facebook--invert, .social-icon--invert.social-icon__facebook {
+  background-position: 0 -460px;
+}
+.social-media-icon__facebook--invert:hover, .social-icon--invert.social-icon__facebook:hover {
+  background-position: 0 -440px;
+}
+
+.social-media-icon__twitter--invert, .social-icon--invert.social-icon__twitter {
+  background-position: -15px -464px;
+}
+.social-media-icon__twitter--invert:hover, .social-icon--invert.social-icon__twitter:hover {
+  background-position: -15px -444px;
+}
+
+.social-media-icon__linkedin--invert, .social-icon--invert.social-icon__linkedin {
+  background-position: -35px -460px;
+}
+.social-media-icon__linkedin--invert:hover, .social-icon--invert.social-icon__linkedin:hover {
+  background-position: -35px -440px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .social-media-icon__facebook, .social-icon__facebook {
+    background-position: 0 -257px;
+  }
+  .social-media-icon__facebook:hover, .social-icon__facebook:hover {
+    background-position: 0 -277px;
+  }
+
+  .social-media-icon__twitter, .social-icon__twitter {
+    background-position: -14px -261px;
+  }
+  .social-media-icon__twitter:hover, .social-icon__twitter:hover {
+    background-position: -14px -281px;
+  }
+
+  .social-media-icon__linkedin, .social-icon__linkedin {
+    background-position: -35px -257px;
+  }
+  .social-media-icon__linkedin:hover, .social-icon__linkedin:hover {
+    background-position: -35px -277px;
+  }
+
+  .social-media-icon__facebook--invert, .social-icon--invert.social-icon__facebook {
+    background-position: 0 -277px;
+  }
+  .social-media-icon__facebook--invert:hover, .social-icon--invert.social-icon__facebook:hover {
+    background-position: 0 -257px;
+  }
+
+  .social-media-icon__twitter--invert, .social-icon--invert.social-icon__twitter {
+    background-position: -14px -281px;
+  }
+  .social-media-icon__twitter--invert:hover, .social-icon--invert.social-icon__twitter:hover {
+    background-position: -14px -261px;
+  }
+
+  .social-media-icon__linkedin--invert, .social-icon--invert.social-icon__linkedin {
+    background-position: -35px -277px;
+  }
+  .social-media-icon__linkedin--invert:hover, .social-icon--invert.social-icon__linkedin:hover {
+    background-position: -35px -257px;
+  }
+}
 .section-all-contracts .field--name-field-page-attachment .field__item span {
-  background: url("../images/forge_icon.png") no-repeat 0 0 transparent;
-  background-size: 20px auto;
   display: block;
   margin-bottom: 5px;
   min-height: 20px;
@@ -121,11 +248,6 @@ a.active {
   display: none;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .section-all-contracts .field--name-field-page-attachment .field__item span {
-    background-image: url("../images/forge_icon_retina.png");
-  }
-}
 @media (min-width: 44em) {
   .page-feed .view-feed {
     width: 49.15254%;
@@ -2324,8 +2446,6 @@ form.fivestar-widget {
 }
 
 .social-icon {
-  background: url("../images/icons_social.png") no-repeat 0 0 transparent;
-  background-size: 76px auto;
   display: inline-block;
   margin: 5px 15px 0 0;
   overflow: hidden;
@@ -2337,54 +2457,19 @@ form.fivestar-widget {
   height: 20px;
   width: 11px;
 }
-.social-icon__facebook:hover {
-  background-position: 0 -20px;
-}
 
 .social-icon__twitter {
-  background-position: -14px -4px;
   height: 16px;
   margin-bottom: 1px;
   width: 19px;
 }
-.social-icon__twitter:hover {
-  background-position: -14px -24px;
-}
 
 .social-icon__linkedin {
-  background-position: -35px 0;
   height: 20px;
   margin-right: 0;
   width: 20px;
 }
-.social-icon__linkedin:hover {
-  background-position: -35px -20px;
-}
 
-.social-icon--invert .social-icon__facebook {
-  background-position: 0 -20px;
-}
-.social-icon--invert .social-icon__facebook:hover {
-  background-position: 0 0;
-}
-.social-icon--invert .social-icon__twitter {
-  background-position: -14px -24px;
-}
-.social-icon--invert .social-icon__twitter:hover {
-  background-position: -14px -4px;
-}
-.social-icon--invert .social-icon__linkedin {
-  background-position: -35px -20px;
-}
-.social-icon--invert .social-icon__linkedin:hover {
-  background-position: -35px 0;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .social-icon {
-    background-image: url("../images/icons_social_retina.png");
-  }
-}
 .field--name-field-tags {
   margin: 1.5em 0;
 }
@@ -2586,8 +2671,6 @@ form.fivestar-widget {
   color: #c7da2b;
 }
 .l-footer .google-maps {
-  background: url("../images/icons_social.png") no-repeat 0 -40px transparent;
-  background-size: 76px auto;
   display: inline-block;
   height: 34px;
   margin-left: 15px;
@@ -2605,9 +2688,6 @@ form.fivestar-widget {
   left: -10px;
   position: absolute;
   width: 1px;
-}
-.l-footer .google-maps:hover {
-  background-position: -38px -40px;
 }
 .l-footer .block .block__title {
   display: none;
@@ -2629,13 +2709,22 @@ form.fivestar-widget {
   text-align: center;
 }
 .l-footer .l-region--footer-left .block__content > *:first-child {
-  background: url("../images/footer_logo_mobile.png") no-repeat top center transparent;
-  background-size: auto 60px;
   display: inline-block;
   font-size: 1em;
   margin-top: 0;
   padding-top: 70px;
+  position: relative;
   text-align: center;
+}
+.l-footer .l-region--footer-left .block__content > *:first-child:after {
+  content: "";
+  display: block;
+  height: 60px;
+  left: 50%;
+  margin: 0 0 0 -30px;
+  position: absolute;
+  top: 0;
+  width: 60px;
 }
 @media (min-width: 44em) {
   .l-footer .l-region--footer-left .block__content > *:first-child {
@@ -2644,7 +2733,6 @@ form.fivestar-widget {
 }
 @media (min-width: 70em) {
   .l-footer .l-region--footer-left .block__content > *:first-child {
-    background-position: left center;
     font-size: 1.2em;
     height: 60px;
     line-height: 60px;
@@ -2652,6 +2740,10 @@ form.fivestar-widget {
     padding-left: 75px;
     padding-top: 0;
     text-align: left;
+  }
+  .l-footer .l-region--footer-left .block__content > *:first-child:after {
+    left: 0;
+    margin: 0;
   }
 }
 .l-footer .l-region--footer-right {
@@ -2671,14 +2763,6 @@ form.fivestar-widget {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .l-footer .google-maps {
-    background-image: url("../images/icons_social_retina.png");
-  }
-  .l-footer .l-region--footer-left .block__content > *:first-child {
-    background-image: url("../images/footer_logo_mobile_retina.png");
-  }
-}
 .l-help-wrapper {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -2994,8 +3078,6 @@ form.fivestar-widget {
 }
 
 .home-icon {
-  background: url("../images/footer_logo_mobile.png") no-repeat 0 0 transparent;
-  background-size: 60px auto;
   display: block;
   height: 60px;
   left: 10px;
@@ -3019,11 +3101,6 @@ form.fivestar-widget {
   }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .home-icon {
-    background-image: url("../images/footer_logo_mobile_retina.png");
-  }
-}
 .l-navigation-wrapper {
   padding-bottom: 10px;
 }

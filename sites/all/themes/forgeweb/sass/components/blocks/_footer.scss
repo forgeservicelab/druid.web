@@ -21,8 +21,8 @@
     }
   }
   .google-maps {
-    background: url('../images/icons_social.png') no-repeat 0 -40px transparent;
-    background-size: 76px auto;
+    @extend .google-maps-icon;
+    
     display: inline-block;
     height: 34px;
     margin-left: 15px;
@@ -39,9 +39,6 @@
       left: -10px;
       position: absolute;
       width: 1px;
-    }
-    &:hover {
-      background-position: -38px -40px;
     }
   }
   .block {
@@ -60,18 +57,29 @@
     .block__content {
       text-align: center;
       > *:first-child {
-        background: url('../images/footer_logo_mobile.png') no-repeat top center transparent;
-        background-size: auto 60px;
         display: inline-block;
         font-size: 1em;
         margin-top: 0;
         padding-top: 70px;
+        position: relative;
         text-align: center;
+        &:after {
+          @extend .forge-icon;
+          @extend .forge-icon__large;
+          
+          content: "";
+          display: block;
+          height: 60px;
+          left: 50%;
+          margin: 0 0 0 -30px;
+          position: absolute;
+          top: 0;
+          width: 60px;
+        }
         @include at-breakpoint($tab) {
           margin-top: 1em;
         }
         @include at-breakpoint($desk) {
-          background-position: left center;
           font-size: 1.2em;
           height: 60px;
           line-height: 60px;
@@ -79,6 +87,10 @@
           padding-left: 75px;
           padding-top: 0;
           text-align: left;
+          &:after {
+            left: 0;
+            margin: 0;
+          }
         }
       }
     }
@@ -94,29 +106,6 @@
     > *:first-child {
       @include at-breakpoint($tab) {
         display: inline-block;
-      }
-    }
-  }
-}
-
-
-// Footer retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .l-footer {
-    .google-maps {
-      background-image: url('../images/icons_social_retina.png');
-    }
-    .l-region--footer-left {
-      .block__content {
-        > *:first-child {
-          background-image: url('../images/footer_logo_mobile_retina.png');
-        }
       }
     }
   }

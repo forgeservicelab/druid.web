@@ -4,34 +4,15 @@
   .field--name-field-page-attachment {
     .field__item {
       span {
-        background: url('../images/forge_icon.png') no-repeat 0 0 transparent;
-        background-size: 20px auto;
+        @extend .forge-icon;
+        @extend .forge-icon__small;
+        
         display: block;
         margin-bottom: 5px;
         min-height: 20px;
         padding: 0 0 0 30px;
         img {
           display: none;
-        }
-      }
-    }
-  }
-}
-
-
-// All contracts page styles retina
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .section-all-contracts {
-    .field--name-field-page-attachment {
-      .field__item {
-        span {
-          background-image: url('../images/forge_icon_retina.png');
         }
       }
     }

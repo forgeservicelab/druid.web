@@ -6,8 +6,8 @@
 }
 
 .social-icon {
-  background: url('../images/icons_social.png') no-repeat 0 0 transparent;
-  background-size: 76px auto;
+  @extend .social-media-icon;
+  
   display: inline-block;
   margin: 5px 15px 0 0;
   overflow: hidden;
@@ -16,61 +16,34 @@
 }
 
 .social-icon__facebook {
+  @extend .social-media-icon__facebook;
+  
   height: 20px;
   width: 11px;
-  &:hover {
-    background-position: 0 -20px;
-  }
 }
 .social-icon__twitter {
-  background-position: -14px -4px;
+  @extend .social-media-icon__twitter;
+  
   height: 16px;
   margin-bottom: 1px;
   width: 19px;
-  &:hover {
-    background-position: -14px -24px;
-  }
 }
 .social-icon__linkedin {
-  background-position: -35px 0;
+  @extend .social-media-icon__linkedin;
+  
   height: 20px;
   margin-right: 0;
   width: 20px;
-  &:hover {
-    background-position: -35px -20px;
-  }
 }
 
 .social-icon--invert {
-  .social-icon__facebook {
-    background-position: 0 -20px;
-    &:hover {
-      background-position: 0 0;
-    }
+  &.social-icon__facebook {
+    @extend .social-media-icon__facebook--invert;
   }
-  .social-icon__twitter {
-    background-position: -14px -24px;
-    &:hover {
-      background-position: -14px -4px;
-    }
+  &.social-icon__twitter {
+    @extend .social-media-icon__twitter--invert;
   }
-  .social-icon__linkedin {
-    background-position: -35px -20px;
-    &:hover {
-      background-position: -35px 0;
-    }
+  &.social-icon__linkedin {
+    @extend .social-media-icon__linkedin--invert;
   }
 }
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .social-icon {
-    background-image: url('../images/icons_social_retina.png');
-  }
-}
-
-  

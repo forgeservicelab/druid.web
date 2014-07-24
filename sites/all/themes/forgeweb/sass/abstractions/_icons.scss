@@ -1,0 +1,173 @@
+// General icon definitions
+
+.icon-sprite {
+  background-color: transparent;
+  background-image: url('../images/icon_sprite.png');
+  background-repeat: no-repeat;
+  background-size: 152px auto;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .icon-sprite {
+    background-size: 76px auto;
+  }
+}
+
+// Forge icon
+
+.forge-icon {
+  @extend .icon-sprite;
+}
+
+.forge-icon__large {
+  background-position: 0 -160px;
+}
+
+.forge-icon__small {
+  background-position: 0 0;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .forge-icon__large {
+    background-position: 0 -135px;
+  }
+  
+  .forge-icon__small {
+    background-position: 0 -35px;
+  }
+}
+
+
+// Google maps icon
+
+.google-maps-icon {
+  @extend .icon-sprite;
+  
+  background-position: 0 -480px;
+  &:hover {
+    background-position: -38px -480px;
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .google-maps-icon {
+    background-position: 0 -297px;
+    background-size: 76px auto;
+    &:hover {
+      background-position: -38px -297px;
+    }
+  }
+}
+
+
+// Social media icons
+
+.social-media-icon {
+  @extend .icon-sprite;
+}
+
+.social-media-icon__facebook {
+  background-position: 0 -440px;
+  &:hover {
+    background-position: 0 -460px;
+  }
+}
+
+.social-media-icon__twitter {
+  background-position: -15px -444px;
+  &:hover {
+    background-position: -15px -464px;
+  }
+}
+
+.social-media-icon__linkedin {
+  background-position: -35px -440px;
+  &:hover {
+    background-position: -35px -460px;
+  }
+}
+
+.social-media-icon__facebook--invert {
+  background-position: 0 -460px;
+  &:hover {
+    background-position: 0 -440px;
+  }
+}
+
+.social-media-icon__twitter--invert {
+  background-position: -15px -464px;
+  &:hover {
+    background-position: -15px -444px;
+  }
+}
+
+.social-media-icon__linkedin--invert {
+  background-position: -35px -460px;
+  &:hover {
+    background-position: -35px -440px;
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .social-media-icon__facebook {
+    background-position: 0 -257px;
+    &:hover {
+      background-position: 0 -277px;
+    }
+  }
+
+  .social-media-icon__twitter {
+    background-position: -14px -261px;
+    &:hover {
+      background-position: -14px -281px;
+    }
+  }
+
+  .social-media-icon__linkedin {
+    background-position: -35px -257px;
+    &:hover {
+      background-position: -35px -277px;
+    }
+  }
+  
+  .social-media-icon__facebook--invert {
+    background-position: 0 -277px;
+    &:hover {
+      background-position: 0 -257px;
+    }
+  }
+
+  .social-media-icon__twitter--invert {
+    background-position: -14px -281px;
+    &:hover {
+      background-position: -14px -261px;
+    }
+  }
+
+  .social-media-icon__linkedin--invert {
+    background-position: -35px -277px;
+    &:hover {
+      background-position: -35px -257px;
+    }
+  }
+}

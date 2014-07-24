@@ -1,6 +1,7 @@
 .home-icon {
-  background: url('../images/footer_logo_mobile.png') no-repeat 0 0 transparent;
-  background-size: 60px auto;
+  @extend .forge-icon;
+  @extend .forge-icon__large;
+  
   display: block;
   height: 60px;
   left: 10px;
@@ -17,20 +18,6 @@
   @include at-breakpoint($desk) {
     left: 20px;
     top: 20px;
-  }
-}
-
-
-// Home-icon retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .home-icon {
-    background-image: url('../images/footer_logo_mobile_retina.png');
   }
 }
 
