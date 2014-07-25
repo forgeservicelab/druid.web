@@ -10,29 +10,27 @@
     margin-top: 2em;
   }
   a {
-    background: url('../images/logo_en_mobile.png') no-repeat 0 0 transparent;
-    background-size: auto 200px;
+    background: url('../images/logo_sprite_mobile.png') no-repeat 0 0 transparent;
+    background-size: 400px auto;
     display: inline-block;
     height: 200px;
     overflow: hidden;
     text-indent: -9999px;
     width: 80px;
     @include at-breakpoint($tab) {
-      background: url('../images/logo_en.png') no-repeat 0 0 transparent;
-      background-size: auto 467px;
-      height: 467px;
-      width: 187px;
+      background: url('../images/logo_sprite.png') no-repeat 0 0 transparent;
+      background-size: 938px auto;
+      height: 466px;
+      width: 188px;
     }
   }
 }
 
 html[lang=fi] {
   .site-name a {
-    background-image: url('../images/logo_fi_mobile.png');
-    background-size: auto 200px;
+    background-position: 0 -200px;
     @include at-breakpoint($tab) {
-      background-image: url('../images/logo_fi.png');
-      background-size: auto 467px;
+      background-position: 0 -466px;
     }
   }
 }
@@ -47,17 +45,19 @@ only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .site-name a {
-    background-image: url('../images/logo_en_mobile_retina.png');
+    background-position: -40px 0;
+    background-size: 200px auto;
     @include at-breakpoint($tab) {
-      background-image: url('../images/logo_en_retina.png');
+      background-position: -94px 0;
+      background-size: 470px auto;
     }
   }
 
   html[lang=fi] {
     .site-name a {
-      background-image: url('../images/logo_fi_mobile_retina.png');
+      background-position: -120px 0;
       @include at-breakpoint($tab) {
-        background-image: url('../images/logo_fi_retina.png');
+        background-position: -283px 0;
       }
     }
   }

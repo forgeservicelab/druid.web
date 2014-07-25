@@ -37,8 +37,9 @@
   }
   .flex-direction-nav {
     a {
-      background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
-      background-size: 13px auto;
+      @extend .icon-sprite;
+      
+      background-position: 0 -897px;
       display: block;
       font-size: 0;
       height: 26px;
@@ -50,7 +51,28 @@
         display: none;
       }
       &.flex-prev {
-        background-image: url('../images/icon_accordion_invert.png');
+        background-position: -40px -897px;
+      }
+    }
+  }
+}
+
+
+// Flexslider retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .flexslider {
+    .flex-direction-nav {
+      a {
+        background-position: 0 -462px;
+        &.flex-prev {
+          background-position: -14px -462px;
+        }
       }
     }
   }

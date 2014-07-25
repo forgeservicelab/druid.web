@@ -108,16 +108,16 @@ a.active {
   color: #c7da2b;
 }
 
-.icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon {
+.icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon, .ui-accordion .ui-accordion-header.ui-state-default .ui-icon, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler {
   background-color: transparent;
   background-image: url("../images/icon_sprite.png");
   background-repeat: no-repeat;
-  background-size: 152px auto;
+  background-size: 206px auto;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon {
-    background-size: 76px auto;
+  .icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon, .ui-accordion .ui-accordion-header.ui-state-default .ui-icon, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler {
+    background-size: 103px auto;
   }
 }
 .forge-icon__large, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon {
@@ -236,6 +236,20 @@ a.active {
   }
   .social-media-icon__linkedin--invert:hover, .social-icon--invert.social-icon__linkedin:hover {
     background-position: -35px -257px;
+  }
+}
+.admin-sprite, form .bef-checkboxes .category.main > .form-item.expandable .toggle,
+form .form-checkboxes .category.main > .form-item.expandable .toggle, form .field-type-image table tr input.form-submit, .l-help-wrapper .toggle-help {
+  background-color: transparent;
+  background-image: url("../images/admin_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 80px auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .admin-sprite, form .bef-checkboxes .category.main > .form-item.expandable .toggle,
+  form .form-checkboxes .category.main > .form-item.expandable .toggle, form .field-type-image table tr input.form-submit, .l-help-wrapper .toggle-help {
+    background-size: 40px auto;
   }
 }
 .section-all-contracts .field--name-field-page-attachment .field__item span {
@@ -416,8 +430,7 @@ form .form-checkboxes .category.main > .form-item.expandable {
 }
 form .bef-checkboxes .category.main > .form-item.expandable .toggle,
 form .form-checkboxes .category.main > .form-item.expandable .toggle {
-  background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
-  background-size: 16px auto;
+  background-position: 0 0;
   display: inline-block;
   height: 16px;
   margin: 3px 0 0 5px;
@@ -426,7 +439,7 @@ form .form-checkboxes .category.main > .form-item.expandable .toggle {
 }
 form .bef-checkboxes .category.main > .form-item.expandable.expanded .toggle,
 form .form-checkboxes .category.main > .form-item.expandable.expanded .toggle {
-  background-position: right -16px;
+  background-position: 0 -16px;
 }
 form .bef-checkboxes > .category > .category,
 form .form-checkboxes > .category > .category {
@@ -499,16 +512,14 @@ form .field-type-image table tr .form-item {
   white-space: normal;
 }
 form .field-type-image table tr input.form-submit {
-  background-image: url("../images/icon_delete.png");
-  background-position: 12px center;
-  background-repeat: no-repeat;
-  background-size: 16px auto;
+  background-color: #c7da2b;
+  background-position: 11px -118px;
   margin-bottom: 5px;
   padding-left: 40px;
 }
 @media (min-width: 44em) {
   form .field-type-image table tr input.form-submit {
-    background-position: center center;
+    background-position: 11px -114px;
     display: block;
     height: 40px;
     margin: -20px 0 0;
@@ -775,15 +786,25 @@ html.js .form-autocomplete.throbbing {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  form .field-type-image table tr .form-submit {
-    background-image: url("../images/icon_delete_retina.png");
+  form .field-type-image table tr input.form-submit {
+    background-position: 11px -78px;
   }
+  form .bef-checkboxes .category.main > .form-item.expandable .toggle,
   form .form-checkboxes .category.main > .form-item.expandable .toggle {
-    background-image: url("../images/icon_expand_retina.png");
+    background-position: 0 -23px;
+  }
+  form .bef-checkboxes .category.main > .form-item.expandable.expanded .toggle,
+  form .form-checkboxes .category.main > .form-item.expandable.expanded .toggle {
+    background-position: 0 -39px;
   }
 
   html.js .form-autocomplete {
     background-image: url("../images/throbber_bg_retina.png");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
+  form .field-type-image table tr input.form-submit {
+    background-position: 11px -74px;
   }
 }
 .search form,
@@ -931,8 +952,8 @@ html.js .form-autocomplete.throbbing {
   }
 }
 .site-name a {
-  background: url("../images/logo_en_mobile.png") no-repeat 0 0 transparent;
-  background-size: auto 200px;
+  background: url("../images/logo_sprite_mobile.png") no-repeat 0 0 transparent;
+  background-size: 400px auto;
   display: inline-block;
   height: 200px;
   overflow: hidden;
@@ -941,41 +962,41 @@ html.js .form-autocomplete.throbbing {
 }
 @media (min-width: 44em) {
   .site-name a {
-    background: url("../images/logo_en.png") no-repeat 0 0 transparent;
-    background-size: auto 467px;
-    height: 467px;
-    width: 187px;
+    background: url("../images/logo_sprite.png") no-repeat 0 0 transparent;
+    background-size: 938px auto;
+    height: 466px;
+    width: 188px;
   }
 }
 
 html[lang=fi] .site-name a {
-  background-image: url("../images/logo_fi_mobile.png");
-  background-size: auto 200px;
+  background-position: 0 -200px;
 }
 @media (min-width: 44em) {
   html[lang=fi] .site-name a {
-    background-image: url("../images/logo_fi.png");
-    background-size: auto 467px;
+    background-position: 0 -466px;
   }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .site-name a {
-    background-image: url("../images/logo_en_mobile_retina.png");
+    background-position: -40px 0;
+    background-size: 200px auto;
   }
   html[lang=fi] .site-name a {
-    background-image: url("../images/logo_fi_mobile_retina.png");
+    background-position: -120px 0;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
   .site-name a {
-    background-image: url("../images/logo_en_retina.png");
+    background-position: -94px 0;
+    background-size: 470px auto;
   }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
   html[lang=fi] .site-name a {
-    background-image: url("../images/logo_fi_retina.png");
+    background-position: -283px 0;
   }
 }
 
@@ -2072,8 +2093,7 @@ img {
   color: black;
 }
 .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
-  background: url("../images/icon_accordion_mobile.png") no-repeat 0 0 transparent;
-  background-size: 7px auto;
+  background-position: 0 -884px;
   display: block;
   height: 13px;
   margin-top: -7px;
@@ -2081,8 +2101,7 @@ img {
 }
 @media (min-width: 44em) {
   .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
-    background: url("../images/icon_accordion.png") no-repeat 0 0 transparent;
-    background-size: 13px auto;
+    background-position: 0 -897px;
     height: 26px;
     margin-top: -13px;
     width: 13px;
@@ -2106,6 +2125,11 @@ img {
   padding: 0;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
+    background-position: 0 -462px;
+  }
+}
 .comment h3, .comment .node-type-service-offering .block--quicktabs .views-label, .node-type-service-offering .block--quicktabs .comment .views-label,
 .comment .node-type-offering .block--quicktabs .views-label,
 .node-type-offering .block--quicktabs .comment .views-label,
@@ -2394,8 +2418,7 @@ form.fivestar-widget {
   padding: 5px;
 }
 .flexslider .flex-direction-nav a {
-  background: url("../images/icon_accordion.png") no-repeat 0 0 transparent;
-  background-size: 13px auto;
+  background-position: 0 -897px;
   display: block;
   font-size: 0;
   height: 26px;
@@ -2408,9 +2431,17 @@ form.fivestar-widget {
   display: none;
 }
 .flexslider .flex-direction-nav a.flex-prev {
-  background-image: url("../images/icon_accordion_invert.png");
+  background-position: -40px -897px;
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .flexslider .flex-direction-nav a {
+    background-position: 0 -462px;
+  }
+  .flexslider .flex-direction-nav a.flex-prev {
+    background-position: -14px -462px;
+  }
+}
 .more-link {
   display: inline-block;
   margin-bottom: 2em;
@@ -2586,11 +2617,6 @@ form.fivestar-widget {
   margin: 0 0 1.5em;
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
-    background-image: url("../images/icon_accordion.png");
-  }
-}
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
   .block--views-faq-block:after {
     background-image: url("../images/large_flowers_flip.png");
@@ -2599,12 +2625,6 @@ form.fivestar-widget {
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
   .block--views-faq-block:after {
     background-image: url("../images/large_flowers_flip_retina.png");
-  }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
-    background-image: url("../images/icon_accordion_retina.png");
   }
 }
 
@@ -2788,8 +2808,8 @@ form.fivestar-widget {
   }
 }
 .l-help-wrapper .toggle-help {
-  background: url("../images/icon_wrench.png") no-repeat center center #d31959;
-  background-size: 40px auto;
+  background-color: #d31959;
+  background-position: 7px -222px;
   font-size: 0.8em;
   height: 60px;
   line-height: 55px;
@@ -2839,7 +2859,7 @@ form.fivestar-widget {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .l-help-wrapper .toggle-help {
-    background-image: url("../images/icon_wrench_retina.png");
+    background-position: 7px -146px;
   }
 }
 @media (min-width: 44em) {
@@ -3116,6 +3136,9 @@ form.fivestar-widget {
     z-index: 100;
   }
 }
+.l-navigation-wrapper ul li:hover.expanded > a {
+  position: relative;
+}
 .l-navigation-wrapper .responsive-menus.responsified {
   padding-top: 70px;
 }
@@ -3142,6 +3165,9 @@ form.fivestar-widget {
   border-bottom: 0 none;
   font-size: 1.4em;
   font-weight: 400;
+}
+.l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li a:hover.expanded > a:after {
+  background: none;
 }
 .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li li {
   background: none;
@@ -3174,8 +3200,8 @@ form.fivestar-widget {
   -webkit-box-shadow: 0 0 0 transparent;
   -moz-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
-  background: url("../images/mobile_nav.png") no-repeat 12px -37px #c7da2b;
-  background-size: 37px auto;
+  background-color: #c7da2b;
+  background-position: 14px -755px;
   height: 60px;
   overflow: hidden;
   padding: 0;
@@ -3187,7 +3213,7 @@ form.fivestar-widget {
   z-index: 1000;
 }
 .l-navigation-wrapper .responsive-menus.responsified.responsive-toggled span.toggler {
-  background-position: 20px 12px;
+  background-position: 20px -706px;
   border: 0 none;
 }
 @media (min-width: 801px) {
@@ -3240,8 +3266,7 @@ form.fivestar-widget {
     position: relative;
   }
   .l-navigation-wrapper ul li:hover.expanded > a:after {
-    background: url("../images/menu_active.png") no-repeat 0 0 transparent;
-    background-size: 103px auto;
+    background-position: 0 -662px;
     bottom: -42px;
     content: "";
     height: 12px;
@@ -3329,10 +3354,16 @@ form.fivestar-widget {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .l-navigation-wrapper .responsive-menus.responsified span.toggler {
-    background-image: url("../images/mobile_nav_retina.png");
+    background-position: -34px -401px;
+  }
+  .l-navigation-wrapper .responsive-menus.responsified.responsive-toggled span.toggler {
+    background-position: -27px -352px;
+  }
+  .l-navigation-wrapper ul li:hover.expanded > a {
+    position: relative;
   }
   .l-navigation-wrapper ul li:hover.expanded > a:after {
-    background-image: url("../images/menu_active_retina.png");
+    background-position: 0 -337px;
   }
 }
 .ui-tabs {
@@ -3576,16 +3607,16 @@ form.fivestar-widget {
     margin-left: -10px;
   }
   .block--menu-menu-tutorial-menu ul.menu > *.next-from-active a {
-    background-image: url("../images/icon_dashboard_navi_red.png");
+    background-position: center -67px;
   }
   .block--menu-menu-tutorial-menu ul.menu > *.last-from-active a {
-    background-image: url("../images/icon_dashboard_navi_rose.png");
+    background-position: center -199px;
   }
   .block--menu-menu-tutorial-menu ul.menu > *.last-last-from-active a {
-    background-image: url("../images/icon_dashboard_navi_purple.png");
+    background-position: center -331px;
   }
   .block--menu-menu-tutorial-menu ul.menu > *.last-last-last-from-active a {
-    background-image: url("../images/icon_dashboard_navi_blue.png");
+    background-position: center -464px;
   }
 }
 .block--menu-menu-tutorial-menu ul.menu a {
@@ -3598,15 +3629,17 @@ form.fivestar-widget {
 }
 @media (min-width: 44em) {
   .block--menu-menu-tutorial-menu ul.menu a {
-    background: url("../images/icon_dashboard_navi_teal.png") no-repeat center 90px transparent;
+    background-image: url("../images/tutorial_sprite.png");
+    background-repeat: no-repeat;
+    background-size: 112px auto;
+    background-position: center -595px;
     height: 210px;
     padding: 40px 0 150px;
     text-transform: uppercase;
   }
   .block--menu-menu-tutorial-menu ul.menu a.active {
+    background-position: center 76px;
     background-color: #f7f7f7;
-    background-image: url("../images/icon_dashboard_navi_active.png");
-    background-position: center 77px;
     border: 1px solid #e4e4e4;
     position: relative;
   }
@@ -3630,6 +3663,30 @@ form.fivestar-widget {
 @media (min-width: 70em) {
   .block--menu-menu-tutorial-menu ul.menu a {
     font-size: 1.3em;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .block--menu-menu-tutorial-menu ul.menu > *.next-from-active a {
+    background-position: center -520px;
+  }
+  .block--menu-menu-tutorial-menu ul.menu > *.last-from-active a {
+    background-position: center -655px;
+  }
+  .block--menu-menu-tutorial-menu ul.menu > *.last-last-from-active a {
+    background-position: center -792px;
+  }
+  .block--menu-menu-tutorial-menu ul.menu > *.last-last-last-from-active a {
+    background-position: center -929px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
+  .block--menu-menu-tutorial-menu ul.menu a {
+    background-size: 56px auto;
+    background-position: center -1067px;
+  }
+  .block--menu-menu-tutorial-menu ul.menu a.active {
+    background-position: center -373px;
   }
 }
 

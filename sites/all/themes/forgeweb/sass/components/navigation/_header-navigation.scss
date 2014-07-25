@@ -35,6 +35,16 @@
     width: 100%;
     z-index: 100;
   }
+  
+  ul li:hover {
+    &.expanded > a {
+      position: relative;
+      &:after {
+        @extend .icon-sprite;
+      }
+    }
+  }
+  
   .responsive-menus.responsified {
     padding-top: 70px;
     &.absolute .responsive-menus-simple {
@@ -53,6 +63,13 @@
           border-bottom: 0 none;
           font-size: 1.4em;
           font-weight: 400;
+          &:hover {
+            &.expanded > a {
+              &:after {
+                background: none;
+              }
+            }
+          }
         }
         li {
           background: none;
@@ -82,8 +99,10 @@
       @include border-radius(0);
       @include box-shadow(0 0 0 transparent);
       
-      background: url('../images/mobile_nav.png') no-repeat 12px -37px $active-link-color;
-      background-size: 37px auto;
+      @extend .icon-sprite;
+      
+      background-color: $active-link-color;
+      background-position: 14px -755px;
       height: 60px;
       overflow: hidden;
       padding: 0;
@@ -96,11 +115,12 @@
     }
     &.responsive-toggled {
       span.toggler {
-        background-position: 20px 12px;
+        background-position: 20px -706px;
         border: 0 none;
       }
     }
   }
+  
   @include at-breakpoint($mobile_nav) {
     ul {
       height: 80px;
@@ -164,8 +184,7 @@
           &.expanded > a {
             position: relative;
             &:after {
-              background: url('../images/menu_active.png') no-repeat 0 0 transparent;
-              background-size: 103px auto;
+              background-position: 0 -662px;
               bottom: -42px;
               content:"";
               height: 12px;
@@ -248,17 +267,19 @@ only screen and (min-resolution: 192dpi) {
   .l-navigation-wrapper {
     .responsive-menus.responsified {
       span.toggler {
-        background-image: url('../images/mobile_nav_retina.png');
+        background-position: -34px -401px;
+      }
+      &.responsive-toggled {
+        span.toggler {
+          background-position: -27px -352px;
+        }
       }
     }
-    ul {
-      li {
-        &:hover {
-          &.expanded > a {
-            &:after {
-              background-image: url('../images/menu_active_retina.png');
-            }
-          }
+    ul li:hover {
+      &.expanded > a {
+        position: relative;
+        &:after {
+          background-position: 0 -337px;
         }
       }
     }

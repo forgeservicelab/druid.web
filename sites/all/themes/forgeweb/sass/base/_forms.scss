@@ -130,8 +130,9 @@ form {
       &.expandable {
         color: darken($button-color, 10%);
         .toggle {
-          background: url("../images/icon_expand.png") no-repeat scroll right 0px rgba(0, 0, 0, 0);
-          background-size: 16px auto;
+          @extend .admin-sprite;
+          
+          background-position: 0 0;
           display: inline-block;
           height: 16px;
           margin: 3px 0 0 5px;
@@ -140,7 +141,7 @@ form {
         }
         &.expanded {
           .toggle {
-            background-position: right -16px;
+            background-position: 0 -16px;
           }
         }
       }
@@ -204,14 +205,14 @@ form {
           white-space: normal;
         }
         input.form-submit {
-          background-image: url('../images/icon_delete.png');
-          background-position: 12px center;
-          background-repeat: no-repeat;
-          background-size: 16px auto;
+          @extend .admin-sprite;
+          
+          background-color: $active-link-color;
+          background-position: 11px -118px;
           margin-bottom: 5px;
           padding-left: 40px;
           @include at-breakpoint($tab) {
-            background-position: center center;
+            background-position: 11px -114px;;
             display: block;
             height: 40px;
             margin: -20px 0 0;
@@ -494,17 +495,26 @@ only screen and (min-resolution: 192dpi) {
     .field-type-image {
       table {
         tr {
-          .form-submit {
-            background-image: url('../images/icon_delete_retina.png');
+          input.form-submit {
+            background-position: 11px -78px;
+            @include at-breakpoint($tab) {
+              background-position: 11px -74px;
+            }
           }
         }
       }
     }
+    .bef-checkboxes,
     .form-checkboxes {
       .category.main > .form-item {
         &.expandable {
           .toggle {
-            background-image: url('../images/icon_expand_retina.png');
+            background-position: 0 -23px;
+          }
+          &.expanded {
+            .toggle {
+              background-position: 0 -39px;
+            }
           }
         }
       }

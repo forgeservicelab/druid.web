@@ -20,8 +20,10 @@
     width: 300px;
   }
   .toggle-help {
-    background: url('../images/icon_wrench.png') no-repeat center center $admin-color;
-    background-size: 40px auto;
+    @extend .admin-sprite;
+    
+    background-color: $admin-color;
+    background-position: 7px -222px;
     font-size: 0.8em;
     height: 60px;
     line-height: 55px;
@@ -81,7 +83,7 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .l-help-wrapper {
     .toggle-help {
-      background-image: url('../images/icon_wrench_retina.png');
+      background-position: 7px -146px;
     }
   }
 }

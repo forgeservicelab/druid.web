@@ -89,15 +89,15 @@
     }
     &.ui-state-default {
       .ui-icon {
-        background: url('../images/icon_accordion_mobile.png') no-repeat 0 0 transparent;
-        background-size: 7px auto;
+        @extend .icon-sprite;
+        
+        background-position: 0 -884px;
         display: block;
         height: 13px;
         margin-top: -7px;
         width: 7px;
         @include at-breakpoint($tab) {
-          background: url('../images/icon_accordion.png') no-repeat 0 0 transparent;
-          background-size: 13px auto;
+          background-position: 0 -897px;
           height: 26px;
           margin-top: -13px;
           width: 13px;
@@ -122,5 +122,25 @@
   
   .ui-accordion-content {
     padding: 0;
+  }
+}
+
+
+// Accordion retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .ui-accordion {
+    .ui-accordion-header {
+      &.ui-state-default {
+        .ui-icon {
+          background-position: 0 -462px;
+        }
+      }
+    }
   }
 }

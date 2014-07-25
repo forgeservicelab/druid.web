@@ -53,17 +53,16 @@
         }
       }
       &.next-from-active a {
-        background-image: url('../images/icon_dashboard_navi_red.png');
-        
+        background-position: center -67px;
       }
       &.last-from-active a {
-        background-image: url('../images/icon_dashboard_navi_rose.png');
+        background-position: center -199px;
       }
       &.last-last-from-active a {
-        background-image: url('../images/icon_dashboard_navi_purple.png');
+        background-position: center -331px;
       }
       &.last-last-last-from-active a {
-        background-image: url('../images/icon_dashboard_navi_blue.png');
+        background-position: center -464px;
       }
     }
   }
@@ -77,14 +76,16 @@
     }
     
     @include at-breakpoint($tab) {
-      background: url('../images/icon_dashboard_navi_teal.png') no-repeat center 90px transparent;
+      background-image: url('../images/tutorial_sprite.png');
+      background-repeat: no-repeat;
+      background-size: 112px auto;
+      background-position: center -595px;
       height: 210px;
       padding: 40px 0 150px;
       text-transform: uppercase;
       &.active {
+        background-position: center 76px;
         background-color: $tab-active;
-        background-image: url('../images/icon_dashboard_navi_active.png');
-        background-position: center 77px;
         border: 1px solid $border-color;
         position: relative;
         &:before,
@@ -110,6 +111,41 @@
     
     @include at-breakpoint($desk) {
       font-size: 1.3em;
+    }
+  }
+}
+
+// Tutorial retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .block--menu-menu-tutorial-menu ul.menu {
+    > * {
+      &.next-from-active a {
+        background-position: center -520px;
+      }
+      &.last-from-active a {
+        background-position: center -655px;
+      }
+      &.last-last-from-active a {
+        background-position: center -792px;
+      }
+      &.last-last-last-from-active a {
+        background-position: center -929px;
+      }
+    }
+    a {
+      @include at-breakpoint($tab) {
+        background-size: 56px auto;
+        background-position: center -1067px;
+        &.active {
+          background-position: center -373px;
+        }
+      }
     }
   }
 }

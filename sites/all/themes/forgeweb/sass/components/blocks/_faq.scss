@@ -108,17 +108,4 @@ only screen and (min-resolution: 192dpi) {
       }
     }
   }
-  
-  .ui-accordion {
-    .ui-accordion-header {
-      &.ui-state-default {
-        .ui-icon {
-          background-image: url('../images/icon_accordion.png');
-          @include at-breakpoint($tab) {
-            background-image: url('../images/icon_accordion_retina.png');
-          }
-        }
-      }
-    }
-  }
 }
