@@ -108,6 +108,18 @@ a.active {
   color: #c7da2b;
 }
 
+.flower-sprite, .front .l-highlighted .l-region--highlighted:after {
+  background-color: transparent;
+  background-image: url("../images/flower_sprite.png");
+  background-repeat: no-repeat;
+  background-size: 1463px auto;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+  .flower-sprite, .front .l-highlighted .l-region--highlighted:after {
+    background-image: url("../images/flower_sprite_retina.png");
+  }
+}
 .icon-sprite, .forge-icon, .section-all-contracts .field--name-field-page-attachment .field__item span, .l-footer .l-region--footer-left .block__content > *:first-child:after, .home-icon, .google-maps-icon, .l-footer .google-maps, .social-media-icon, .social-icon, .ui-accordion .ui-accordion-header.ui-state-default .ui-icon, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler {
   background-color: transparent;
   background-image: url("../images/icon_sprite.png");
@@ -1095,9 +1107,8 @@ html[lang=fi] .site-name a {
     position: relative;
   }
   .front .l-highlighted .l-region--highlighted:after {
+    background-position: -928px 0;
     bottom: -100px;
-    background: url("../images/large_flowers.png") no-repeat center center transparent;
-    background-size: 100% 1182px;
     height: 1182px;
     left: -590px;
     position: absolute;
@@ -1178,11 +1189,6 @@ html[lang=fi] .site-name a {
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .front .l-highlighted .l-region--highlighted:after {
-    background-image: url("../images/large_flowers_retina.png");
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
   .front .l-highlighted .l-region--highlighted > .block > div > * {
     background-image: url("../images/four_flowers_retina.png");
   }
@@ -1205,8 +1211,6 @@ html[lang=fi] .site-name a {
   }
   .front .l-middle_content .l-region--middle-content:after {
     bottom: -100px;
-    background: url("../images/multiple_flowers.png") no-repeat center center transparent;
-    background-size: 100% 380px;
     height: 380px;
     left: -620px;
     position: absolute;
@@ -1229,12 +1233,6 @@ html[lang=fi] .site-name a {
 }
 .front .l-middle_content .block:last-child {
   margin-bottom: 0;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-  .front .l-middle_content .l-region--middle-content:after {
-    background-image: url("../images/multiple_flowers_retina.png");
-  }
 }
 
 .front .l-after_content {

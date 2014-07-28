@@ -154,6 +154,9 @@ only screen and (min-resolution: 192dpi) {
     margin: 0 auto;
     max-width: 330px;
     padding: 12px 0 0;
+    &:after {
+      @extend .flower-sprite;
+    }
     @include at-breakpoint($tab) {
       max-width: 885px;
     }
@@ -161,9 +164,8 @@ only screen and (min-resolution: 192dpi) {
       max-width: 1070px;
       position: relative;
       &:after {
+        background-position: -928px 0;
         bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
-        background: url('../images/large_flowers.png') no-repeat center center transparent;
-        background-size: 100% 1182px;
         height: 1182px;
         left: -590px;
         position: absolute;
@@ -236,11 +238,6 @@ only screen and (min-resolution: 192dpi) {
   .front .l-highlighted {
     .l-region--highlighted {
       background-image: url('../images/decoration_edge_up_retina.png');
-      &:after {
-        @include at-breakpoint($tab) {
-          background-image: url('../images/large_flowers_retina.png');
-        }
-      }
       > .block {
         background-image: url('../images/decoration_edge_down_retina.png');
         > div {
@@ -276,8 +273,6 @@ only screen and (min-resolution: 192dpi) {
       position: relative;
       &:after {
         bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
-        background: url('../images/multiple_flowers.png') no-repeat center center transparent;
-        background-size: 100% 380px;
         height: 380px;
         left: -620px;
         position: absolute;
@@ -296,26 +291,6 @@ only screen and (min-resolution: 192dpi) {
     }
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-}
-
-
-// Front page middle content area retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .front .l-middle_content {
-    @include at-breakpoint($desk) {
-      .l-region--middle-content {
-        &:after {
-          background-image: url('../images/multiple_flowers_retina.png');
-        }
-      }
     }
   }
 }
