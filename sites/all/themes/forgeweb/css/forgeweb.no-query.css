@@ -108,15 +108,15 @@ a.active {
   color: #c7da2b;
 }
 
-.flower-sprite, .front .l-highlighted .l-region--highlighted:after {
+.flower-sprite, .front .l-highlighted .l-region--highlighted:after, .front .l-highlighted .l-region--highlighted > .block > div > *:after, .front .l-middle_content .l-region--middle-content:after, .front .l-after_content .l-after_content_helper:before, .front .l-after_content .l-after_content_helper:after, .block--views-faq-block:after {
   background-color: transparent;
   background-image: url("../images/flower_sprite.png");
   background-repeat: no-repeat;
-  background-size: 1463px auto;
+  background-size: 1298px auto;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .flower-sprite, .front .l-highlighted .l-region--highlighted:after {
+  .flower-sprite, .front .l-highlighted .l-region--highlighted:after, .front .l-highlighted .l-region--highlighted > .block > div > *:after, .front .l-middle_content .l-region--middle-content:after, .front .l-after_content .l-after_content_helper:before, .front .l-after_content .l-after_content_helper:after, .block--views-faq-block:after {
     background-image: url("../images/flower_sprite_retina.png");
   }
 }
@@ -159,7 +159,6 @@ a.active {
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .google-maps-icon, .l-footer .google-maps {
     background-position: 0 -297px;
-    background-size: 76px auto;
   }
   .google-maps-icon:hover, .l-footer .google-maps:hover {
     background-position: -38px -297px;
@@ -1107,7 +1106,7 @@ html[lang=fi] .site-name a {
     position: relative;
   }
   .front .l-highlighted .l-region--highlighted:after {
-    background-position: -928px 0;
+    background-position: -641px 0;
     bottom: -100px;
     height: 1182px;
     left: -590px;
@@ -1128,12 +1127,22 @@ html[lang=fi] .site-name a {
     padding-right: 15px;
   }
 }
+.front .l-highlighted .l-region--highlighted > .block > div > * {
+  position: relative;
+}
 @media (min-width: 44em) {
   .front .l-highlighted .l-region--highlighted > .block > div > * {
-    background: url("../images/four_flowers.png") no-repeat right bottom transparent;
-    background-size: 282px auto;
     min-height: 400px;
     padding-right: 25em;
+  }
+  .front .l-highlighted .l-region--highlighted > .block > div > *:after {
+    background-position: -293px -818px;
+    bottom: 0;
+    content: "";
+    height: 364px;
+    position: absolute;
+    right: 15px;
+    width: 273px;
   }
 }
 
@@ -1188,12 +1197,6 @@ html[lang=fi] .site-name a {
     background-image: url("../images/decoration_edge_down_retina.png");
   }
 }
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .front .l-highlighted .l-region--highlighted > .block > div > * {
-    background-image: url("../images/four_flowers_retina.png");
-  }
-}
-
 .front .flexslider {
   padding: 2em;
 }
@@ -1210,6 +1213,7 @@ html[lang=fi] .site-name a {
     position: relative;
   }
   .front .l-middle_content .l-region--middle-content:after {
+    background-position: 0 -801px;
     bottom: -100px;
     height: 380px;
     left: -620px;
@@ -1263,17 +1267,16 @@ html[lang=fi] .site-name a {
     position: relative;
   }
   .front .l-after_content .l-after_content_helper:before {
-    background: url("../images/vertical_flowers.png") no-repeat left top transparent;
+    background-position: 0 -1182px;
     left: -730px;
     top: 100px;
   }
   .front .l-after_content .l-after_content_helper:after {
-    background: url("../images/vertical_flowers_right.png") no-repeat left top transparent;
+    background-position: -649px -1182px;
     right: -730px;
     top: 1100px;
   }
   .front .l-after_content .l-after_content_helper:before, .front .l-after_content .l-after_content_helper:after {
-    background-size: auto 385px;
     content: "";
     display: block;
     height: 385px;
@@ -1307,15 +1310,6 @@ html[lang=fi] .site-name a {
 }
 .front .l-after_content .block--fb-likebox .block__content {
   text-align: center;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-  .front .l-after_content .l-after_content_helper:before {
-    background-image: url("../images/vertical_flowers_retina.png");
-  }
-  .front .l-after_content .l-after_content_helper:after {
-    background-image: url("../images/vertical_flowers_right_retina.png");
-  }
 }
 
 .view-what-why-blocks {
@@ -2527,8 +2521,7 @@ form.fivestar-widget {
     position: relative;
   }
   .block--views-faq-block:after {
-    background: url("../images/medium_flowers_flip.png") no-repeat 0 0 transparent;
-    background-size: 268px auto;
+    background-position: -363px 0;
     bottom: -25px;
     content: "";
     height: 591px;
@@ -2543,8 +2536,7 @@ form.fivestar-widget {
     max-width: 100%;
   }
   .block--views-faq-block:after {
-    background: url("../images/large_flowers_flip.png") no-repeat 0 0 transparent;
-    background-size: 362px auto;
+    background-position: 0 0;
     bottom: -100px;
     content: "";
     height: 800px;
@@ -2613,17 +2605,6 @@ form.fivestar-widget {
 }
 .block--views-faq-block .view-faq .answer p {
   margin: 0 0 1.5em;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .block--views-faq-block:after {
-    background-image: url("../images/large_flowers_flip.png");
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
-  .block--views-faq-block:after {
-    background-image: url("../images/large_flowers_flip_retina.png");
-  }
 }
 
 .block--views-feed-block {

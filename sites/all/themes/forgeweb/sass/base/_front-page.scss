@@ -164,7 +164,7 @@ only screen and (min-resolution: 192dpi) {
       max-width: 1070px;
       position: relative;
       &:after {
-        background-position: -928px 0;
+        background-position: -641px 0;
         bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
         height: 1182px;
         left: -590px;
@@ -182,11 +182,22 @@ only screen and (min-resolution: 192dpi) {
           padding-right: 15px;
         }
         > * {
+          position: relative;
+          &:after {
+            @extend .flower-sprite;
+          }
           @include at-breakpoint($tab) {
-            background: url('../images/four_flowers.png') no-repeat right bottom transparent;
-            background-size: 282px auto;
             min-height: 400px;
             padding-right: 25em;
+            &:after {
+              background-position: -293px -818px;
+              bottom: 0;
+              content: "";
+              height: 364px;
+              position: absolute;
+              right: 15px;
+              width: 273px;
+            }
           }
         }
       }
@@ -240,13 +251,6 @@ only screen and (min-resolution: 192dpi) {
       background-image: url('../images/decoration_edge_up_retina.png');
       > .block {
         background-image: url('../images/decoration_edge_down_retina.png');
-        > div {
-          > * {
-            @include at-breakpoint($tab) {
-              background-image: url('../images/four_flowers_retina.png');
-            }
-          }
-        }
       }
     }
   }
@@ -268,10 +272,16 @@ only screen and (min-resolution: 192dpi) {
 
 .front .l-middle_content {
   overflow: hidden;
+  .l-region--middle-content {
+    &:after {
+      @extend .flower-sprite;
+    }
+  }
   @include at-breakpoint($desk) {
     .l-region--middle-content {
       position: relative;
       &:after {
+        background-position: 0 -801px;
         bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
         height: 380px;
         left: -620px;
@@ -309,6 +319,10 @@ only screen and (min-resolution: 192dpi) {
   }
   .l-after_content_helper {
     max-width: 330px;
+    &:before,
+    &:after {
+      @extend .flower-sprite;
+    }
     @include at-breakpoint($tab) {
       max-width: 880px;
     }
@@ -316,18 +330,17 @@ only screen and (min-resolution: 192dpi) {
       max-width: 1090px;
       position: relative;
       &:before {
-        background: url('../images/vertical_flowers.png') no-repeat left top transparent;
+        background-position: 0 -1182px;
         left: -730px;
         top: 100px;
       }
       &:after {
-        background: url('../images/vertical_flowers_right.png') no-repeat left top transparent;
+        background-position: -649px -1182px;
         right: -730px;
         top: 1100px;
       }
       &:before,
       &:after {
-        background-size: auto 385px;
         content: "";
         display: block;
         height: 385px;
@@ -355,27 +368,6 @@ only screen and (min-resolution: 192dpi) {
     }
     .block__content {
       text-align: center;
-    }
-  }
-}
-
-
-// Front page after content area retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .front .l-after_content .l-after_content_helper {
-    @include at-breakpoint($desk) {
-      &:before {
-        background-image: url('../images/vertical_flowers_retina.png');
-      }
-      &:after {
-        background-image: url('../images/vertical_flowers_right_retina.png');
-      }
     }
   }
 }

@@ -67,7 +67,6 @@ only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .google-maps-icon {
     background-position: 0 -297px;
-    background-size: 76px auto;
     &:hover {
       background-position: -38px -297px;
     }

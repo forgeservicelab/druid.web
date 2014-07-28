@@ -3,14 +3,16 @@
 .block--views-faq-block {
   margin: 0 auto;
   max-width: 330px;
+  &:after {
+    @extend .flower-sprite;
+  }
   @include at-breakpoint($tab) {
     @include suffix(4, 12);
     
     max-width: 100%;
     position: relative;
     &:after {
-      background: url('../images/medium_flowers_flip.png') no-repeat 0 0 transparent;
-      background-size: 268px auto;
+      background-position: -363px 0;
       bottom: -25px;
       content: "";
       height: 591px;
@@ -24,8 +26,7 @@
     
     max-width: 100%;
     &:after {
-      background: url('../images/large_flowers_flip.png') no-repeat 0 0 transparent;
-      background-size: 362px auto;
+      background-position: 0 0;
       bottom: -100px;
       content: "";
       height: 800px;
@@ -82,29 +83,6 @@
       }
       p {
         margin: 0 0 1.5em;
-      }
-    }
-  }
-}
-
-
-// FAQ-block retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
-  .block--views-faq-block {
-    @include at-breakpoint($tab) {
-      &:after {
-        background-image: url('../images/large_flowers_flip.png');
-      }
-    }
-    @include at-breakpoint($desk) {
-      &:after {
-        background-image: url('../images/large_flowers_flip_retina.png');
       }
     }
   }
