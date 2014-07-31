@@ -12,14 +12,14 @@
     background: none;
     border: 0 none;
     padding: 0;
-    li {
+    > li {
       @include at-breakpoint($tab) {
         
       }
       @include border-radius(0);
       
       border: 0 none;
-      a {
+      > a {
         background: none;
         color: $link-color;
         padding: 0;
@@ -57,13 +57,13 @@
     content: "";
     display: table;
   }
-  li {
+  > li {
     float: left;
     list-style-type: none;
     list-style-image: none;
     margin: 0;
     outline: 0;
-    a {
+    > a {
       background-color: $tab-inactive;
       border-top: 1px solid $border-color;
       border-left: 1px solid $border-color;
@@ -134,7 +134,7 @@
   @extend %tabs;
 }
 
-.not-front .ui-tabs,
+.not-front .ui-tabs .ui-tabs-nav,
 .horizontal-tabs ul {
   @extend %tabs;
 }
