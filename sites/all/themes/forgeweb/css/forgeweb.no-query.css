@@ -1414,7 +1414,7 @@ form.fivestar-widget {
   border: 0 none;
   padding: 0;
 }
-.ui-tabs .ui-tabs-nav li {
+.ui-tabs .ui-tabs-nav > li {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -1422,15 +1422,15 @@ form.fivestar-widget {
   border-radius: 0;
   border: 0 none;
 }
-.ui-tabs .ui-tabs-nav li a {
+.ui-tabs .ui-tabs-nav > li > a {
   background: none;
   color: #1090d0;
   padding: 0;
 }
-.ui-tabs .ui-tabs-nav li a:active, .ui-tabs .ui-tabs-nav li a:focus, .ui-tabs .ui-tabs-nav li a:visited {
+.ui-tabs .ui-tabs-nav > li > a:active, .ui-tabs .ui-tabs-nav > li > a:focus, .ui-tabs .ui-tabs-nav > li > a:visited {
   outline: none;
 }
-.ui-tabs .ui-tabs-nav li.ui-state-default, .ui-tabs .ui-tabs-nav li.ui-widget-content .ui-state-default, .ui-tabs .ui-tabs-nav li.ui-widget-header .ui-state-default, .ui-tabs .ui-tabs-nav li.ui-state-active, .ui-tabs .ui-tabs-nav li.ui-widget-content .ui-state-active, .ui-tabs .ui-tabs-nav li.ui-widget-header .ui-state-active {
+.ui-tabs .ui-tabs-nav > li.ui-state-default, .ui-tabs .ui-tabs-nav > li.ui-widget-content .ui-state-default, .ui-tabs .ui-tabs-nav > li.ui-widget-header .ui-state-default, .ui-tabs .ui-tabs-nav > li.ui-state-active, .ui-tabs .ui-tabs-nav > li.ui-widget-content .ui-state-active, .ui-tabs .ui-tabs-nav > li.ui-widget-header .ui-state-active {
   background: none;
 }
 .ui-tabs .ui-tabs-panel {
@@ -1443,26 +1443,26 @@ form.fivestar-widget {
   margin-bottom: 1em;
 }
 
-.tabs, .not-front .ui-tabs,
+.tabs, .not-front .ui-tabs .ui-tabs-nav,
 .horizontal-tabs ul {
   padding: 0;
 }
-.tabs:after, .not-front .ui-tabs:after,
+.tabs:after, .not-front .ui-tabs .ui-tabs-nav:after,
 .horizontal-tabs ul:after {
   clear: both;
   content: "";
   display: table;
 }
-.tabs li, .not-front .ui-tabs li,
-.horizontal-tabs ul li {
+.tabs > li, .not-front .ui-tabs .ui-tabs-nav > li,
+.horizontal-tabs ul > li {
   float: left;
   list-style-type: none;
   list-style-image: none;
   margin: 0;
   outline: 0;
 }
-.tabs li a, .not-front .ui-tabs li a,
-.horizontal-tabs ul li a {
+.tabs > li > a, .not-front .ui-tabs .ui-tabs-nav > li > a,
+.horizontal-tabs ul > li > a {
   background-color: white;
   border-top: 1px solid #e4e4e4;
   border-left: 1px solid #e4e4e4;
@@ -1474,44 +1474,44 @@ form.fivestar-widget {
   text-transform: none;
 }
 @media (min-width: 70em) {
-  .tabs li a, .not-front .ui-tabs li a,
-  .horizontal-tabs ul li a {
+  .tabs > li > a, .not-front .ui-tabs .ui-tabs-nav > li > a,
+  .horizontal-tabs ul > li > a {
     font-size: 0.9em;
     padding: 1.5em 2em;
     text-transform: uppercase;
   }
 }
-.tabs li a strong, .not-front .ui-tabs li a strong,
-.horizontal-tabs ul li a strong {
+.tabs > li > a strong, .not-front .ui-tabs .ui-tabs-nav > li > a strong,
+.horizontal-tabs ul > li > a strong {
   font-weight: normal;
 }
-.tabs li a:hover, .not-front .ui-tabs li a:hover,
-.horizontal-tabs ul li a:hover {
+.tabs > li > a:hover, .not-front .ui-tabs .ui-tabs-nav > li > a:hover,
+.horizontal-tabs ul > li > a:hover {
   background-color: #f7f7f7;
 }
-.tabs li a:active, .not-front .ui-tabs li a:active,
-.horizontal-tabs ul li a:active, .tabs li a:focus, .not-front .ui-tabs li a:focus,
-.horizontal-tabs ul li a:focus, .tabs li a:visited, .not-front .ui-tabs li a:visited,
-.horizontal-tabs ul li a:visited {
+.tabs > li > a:active, .not-front .ui-tabs .ui-tabs-nav > li > a:active,
+.horizontal-tabs ul > li > a:active, .tabs > li > a:focus, .not-front .ui-tabs .ui-tabs-nav > li > a:focus,
+.horizontal-tabs ul > li > a:focus, .tabs > li > a:visited, .not-front .ui-tabs .ui-tabs-nav > li > a:visited,
+.horizontal-tabs ul > li > a:visited {
   outline: 0;
 }
-.tabs li:last-child a, .not-front .ui-tabs li:last-child a,
-.horizontal-tabs ul li:last-child a {
+.tabs > li:last-child a, .not-front .ui-tabs .ui-tabs-nav > li:last-child a,
+.horizontal-tabs ul > li:last-child a {
   border-right: 1px solid #e4e4e4;
 }
-.tabs li.active a, .not-front .ui-tabs li.active a,
-.horizontal-tabs ul li.active a, .tabs li.ui-state-active a, .not-front .ui-tabs li.ui-state-active a,
-.horizontal-tabs ul li.ui-state-active a, .tabs li.selected a, .not-front .ui-tabs li.selected a,
-.horizontal-tabs ul li.selected a {
+.tabs > li.active a, .not-front .ui-tabs .ui-tabs-nav > li.active a,
+.horizontal-tabs ul > li.active a, .tabs > li.ui-state-active a, .not-front .ui-tabs .ui-tabs-nav > li.ui-state-active a,
+.horizontal-tabs ul > li.ui-state-active a, .tabs > li.selected a, .not-front .ui-tabs .ui-tabs-nav > li.selected a,
+.horizontal-tabs ul > li.selected a {
   background-color: #f7f7f7;
 }
-.tabs li.active a:before, .not-front .ui-tabs li.active a:before,
-.horizontal-tabs ul li.active a:before, .tabs li.active a:after, .not-front .ui-tabs li.active a:after,
-.horizontal-tabs ul li.active a:after, .tabs li.ui-state-active a:before, .not-front .ui-tabs li.ui-state-active a:before,
-.horizontal-tabs ul li.ui-state-active a:before, .tabs li.ui-state-active a:after, .not-front .ui-tabs li.ui-state-active a:after,
-.horizontal-tabs ul li.ui-state-active a:after, .tabs li.selected a:before, .not-front .ui-tabs li.selected a:before,
-.horizontal-tabs ul li.selected a:before, .tabs li.selected a:after, .not-front .ui-tabs li.selected a:after,
-.horizontal-tabs ul li.selected a:after {
+.tabs > li.active a:before, .not-front .ui-tabs .ui-tabs-nav > li.active a:before,
+.horizontal-tabs ul > li.active a:before, .tabs > li.active a:after, .not-front .ui-tabs .ui-tabs-nav > li.active a:after,
+.horizontal-tabs ul > li.active a:after, .tabs > li.ui-state-active a:before, .not-front .ui-tabs .ui-tabs-nav > li.ui-state-active a:before,
+.horizontal-tabs ul > li.ui-state-active a:before, .tabs > li.ui-state-active a:after, .not-front .ui-tabs .ui-tabs-nav > li.ui-state-active a:after,
+.horizontal-tabs ul > li.ui-state-active a:after, .tabs > li.selected a:before, .not-front .ui-tabs .ui-tabs-nav > li.selected a:before,
+.horizontal-tabs ul > li.selected a:before, .tabs > li.selected a:after, .not-front .ui-tabs .ui-tabs-nav > li.selected a:after,
+.horizontal-tabs ul > li.selected a:after {
   content: "";
   position: absolute;
   width: 0;
@@ -1520,20 +1520,20 @@ form.fivestar-widget {
   border-color: transparent;
   border-bottom: 0;
 }
-.tabs li.active a:before, .not-front .ui-tabs li.active a:before,
-.horizontal-tabs ul li.active a:before, .tabs li.ui-state-active a:before, .not-front .ui-tabs li.ui-state-active a:before,
-.horizontal-tabs ul li.ui-state-active a:before, .tabs li.selected a:before, .not-front .ui-tabs li.selected a:before,
-.horizontal-tabs ul li.selected a:before {
+.tabs > li.active a:before, .not-front .ui-tabs .ui-tabs-nav > li.active a:before,
+.horizontal-tabs ul > li.active a:before, .tabs > li.ui-state-active a:before, .not-front .ui-tabs .ui-tabs-nav > li.ui-state-active a:before,
+.horizontal-tabs ul > li.ui-state-active a:before, .tabs > li.selected a:before, .not-front .ui-tabs .ui-tabs-nav > li.selected a:before,
+.horizontal-tabs ul > li.selected a:before {
   border-top-color: #e4e4e4;
   border-width: 10px;
   bottom: -10px;
   left: 50%;
   margin-left: -10px;
 }
-.tabs li.active a:after, .not-front .ui-tabs li.active a:after,
-.horizontal-tabs ul li.active a:after, .tabs li.ui-state-active a:after, .not-front .ui-tabs li.ui-state-active a:after,
-.horizontal-tabs ul li.ui-state-active a:after, .tabs li.selected a:after, .not-front .ui-tabs li.selected a:after,
-.horizontal-tabs ul li.selected a:after {
+.tabs > li.active a:after, .not-front .ui-tabs .ui-tabs-nav > li.active a:after,
+.horizontal-tabs ul > li.active a:after, .tabs > li.ui-state-active a:after, .not-front .ui-tabs .ui-tabs-nav > li.ui-state-active a:after,
+.horizontal-tabs ul > li.ui-state-active a:after, .tabs > li.selected a:after, .not-front .ui-tabs .ui-tabs-nav > li.selected a:after,
+.horizontal-tabs ul > li.selected a:after {
   border-top-color: #f7f7f7;
   border-width: 10px;
   bottom: -9px;
