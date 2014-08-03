@@ -32,6 +32,22 @@ only screen and (min-resolution: 192dpi) {
   background-position: 0 0;
 }
 
+/**
+  * When the small forge icon is used on file field displays
+  * we need to hide the default icon and replace it
+  * with our forge icon.
+  *
+  */
+.forge-icon__small .file {
+  display: block;
+  margin-bottom: 5px;
+  min-height: 20px;
+  padding: 0 0 0 30px;
+  img {
+    display: none;
+  }
+}
+
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (min--moz-device-pixel-ratio: 2),

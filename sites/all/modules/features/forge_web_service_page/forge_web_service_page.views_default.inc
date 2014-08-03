@@ -312,7 +312,7 @@ function forge_web_service_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Service offering sidebar block';
+  $handler->display->display_options['css_class'] = 'sidebar-block';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -321,6 +321,8 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
@@ -328,7 +330,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['label'] = '';
   $handler->display->display_options['fields']['field_page_title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_page_title']['element_class'] = 'views-field';
+  $handler->display->display_options['fields']['field_page_title']['element_class'] = 'sidebar-block__title';
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
@@ -336,7 +338,11 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_organizer']['id'] = 'field_organizer';
   $handler->display->display_options['fields']['field_organizer']['table'] = 'field_data_field_organizer';
   $handler->display->display_options['fields']['field_organizer']['field'] = 'field_organizer';
+  $handler->display->display_options['fields']['field_organizer']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_organizer']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_organizer']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organizer']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_organizer']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_organizer']['settings'] = array(
     'link' => 1,
   );
@@ -353,6 +359,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_offering_email']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_offering_email']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_offering_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offering_email']['type'] = 'email_plain';
   /* Field: Content: Phone */
   $handler->display->display_options['fields']['field_offering_phone']['id'] = 'field_offering_phone';
@@ -361,6 +368,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_offering_phone']['label'] = '';
   $handler->display->display_options['fields']['field_offering_phone']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_offering_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_phone']['element_default_classes'] = FALSE;
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_offering_website']['id'] = 'field_offering_website';
   $handler->display->display_options['fields']['field_offering_website']['table'] = 'field_data_field_offering_website';
@@ -374,6 +382,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_offering_website']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_offering_website']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_offering_website']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_offering_website']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offering_website']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_offering_website']['type'] = 'link_title_plain';
   /* Field: Content: Contact person / Address */
@@ -387,6 +396,10 @@ function forge_web_service_page_views_default_views() {
 [field_offering_email]
 [field_offering_website] ';
   $handler->display->display_options['fields']['field_offering_address']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_offering_address']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_offering_address']['element_label_class'] = 'sidebar-block__item-label';
+  $handler->display->display_options['fields']['field_offering_address']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_offering_address']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_offering_address']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -422,6 +435,7 @@ function forge_web_service_page_views_default_views() {
 
   /* Display: Attachment */
   $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -435,6 +449,10 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['fields']['field_live_demo_url']['table'] = 'field_data_field_live_demo_url';
   $handler->display->display_options['fields']['field_live_demo_url']['field'] = 'field_live_demo_url';
   $handler->display->display_options['fields']['field_live_demo_url']['label'] = 'Demo';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_label_class'] = 'sidebar-block__item-label';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_live_demo_url']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_live_demo_url']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_live_demo_url']['click_sort_column'] = 'url';
   $handler->display->display_options['displays'] = array(
@@ -444,7 +462,6 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['attachment_position'] = 'after';
   $translatables['service_offering_sidebar_block'] = array(
     t('Master'),
-    t('Service offering sidebar block'),
     t('more'),
     t('Apply'),
     t('Reset'),

@@ -15,6 +15,7 @@ function forge_web_my_forge_default_fe_block_boxes() {
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'my_forge_sidebar';
   $fe_block_boxes->body = '<ul>
+	<li><a href="/dashboard/define">My FORGE</a></li>
 	<li><a href="https://support.forgeservicelab.fi/redmine">Redmine</a></li>
 	<li><a href="https://git.forgeservicelab.fi/">GitLab</a></li>
 	<li><a href="https://cloud.forgeservicelab.fi/">OpenStack</a></li>

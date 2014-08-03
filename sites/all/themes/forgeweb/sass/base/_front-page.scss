@@ -259,11 +259,15 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page flexslider exceptions
 
-.front .flexslider {
-  padding: 2em;
-  .flex-control-nav {
-    bottom: 10px;
-    left: 0;
+.front .flexslider-wrapper {
+  overflow: hidden;
+  .flexslider {
+    margin: 5px;
+    padding: 40px;
+    .flex-control-nav {
+      bottom: 10px;
+      left: 0;
+    }
   }
 }
 

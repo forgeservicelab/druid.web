@@ -5,23 +5,3 @@
     clear: both;
   }
 }
-
-.view-project-sidebar {
-  margin-left: 1em;
-  .views-field {
-    font-size: 1em;
-    margin: 1em 0;
-    .views-label,
-    .field-content {
-      display: inline-block;
-    }
-    .views-label {
-      float: left;
-      margin-right: -120px;
-      width: 120px;
-    }
-    .field-content {
-      margin-left: 120px;
-    }
-  }
-}

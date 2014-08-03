@@ -39,19 +39,25 @@
     a {
       @extend .icon-sprite;
       
-      background-position: 0 -897px;
+      background-position: 0 -924px;
       display: block;
       font-size: 0;
-      height: 26px;
+      height: 50px;
       margin-top: -13px;
+      opacity: 1;
       overflow: hidden;
       text-indent: -9999px;
-      width: 13px;
+      width: 27px;
       &:before {
         display: none;
       }
+      &.flex-next {
+        right: 5px;
+      }
       &.flex-prev {
-        background-position: -40px -897px;
+        background-position: -26px -924px;
+        left: 5px;
+        right: auto;
       }
     }
   }
@@ -69,9 +75,9 @@ only screen and (min-resolution: 192dpi) {
   .flexslider {
     .flex-direction-nav {
       a {
-        background-position: 0 -462px;
+        background-position: 1px -559px;
         &.flex-prev {
-          background-position: -14px -462px;
+          background-position: -26px -559px;
         }
       }
     }
