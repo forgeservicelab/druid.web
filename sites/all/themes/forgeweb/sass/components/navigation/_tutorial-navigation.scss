@@ -1,11 +1,11 @@
 // Tutorial navigation block
 
-.block--menu-menu-tutorial-menu ul.menu {
+.block--menu-menu-tutorial-menu .menu {
   margin: 0;
   padding: 0;
   text-align: center;
   white-space: nowrap;
-  > * {
+  > li {
     display: inline-block;
     list-style-image: none;
     list-style-type: none;
@@ -18,7 +18,7 @@
     @include set-container-width; // Reset only the container width (elements have already been declared as containers).
     height: 212px;
     margin: 0 auto;
-    > * {
+    > li {
       @include span-columns(2, 12); // Span 6 out of 12 columns.
       @include nth-omega(6n);
       display: block;
@@ -123,8 +123,8 @@ only screen and (min--moz-device-pixel-ratio: 2),
 only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
-  .block--menu-menu-tutorial-menu ul.menu {
-    > * {
+  .block--menu-menu-tutorial-menu .menu {
+    > li {
       &.next-from-active a {
         background-position: center -520px;
       }

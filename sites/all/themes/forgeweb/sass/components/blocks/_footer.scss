@@ -49,6 +49,7 @@
       text-align: left;
     }
   }
+  
   .l-region--footer-left {
     margin-bottom: 1em;
     @include at-breakpoint($tab) {
@@ -95,6 +96,7 @@
       }
     }
   }
+  
   .l-region--footer-right {
     font-size: 1em;
     padding-top: 10px;

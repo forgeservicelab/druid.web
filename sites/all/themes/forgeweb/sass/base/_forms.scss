@@ -14,6 +14,8 @@ form {
     input.error {
       border: 2px solid #d31959;
     }
+    
+    // Text-field, password-field and email-field styles
     &.form-type-textfield,
     &.webform-component-textfield,
     &.form-type-password,
@@ -68,12 +70,8 @@ form {
         -webkit-appearance: none; // Remove IOS shadows
       }
     }
-    &.form-type-radio {
-      margin-bottom: 0.6em;
-      label {
-        text-transform: none;
-      }
-    }
+    
+    // Textarea-field settings
     &.form-type-textarea,
     &.webform-component-textarea {
       label {
@@ -107,18 +105,17 @@ form {
         display: none;
       }
     }
+    
+    // Radio-button-field styles
+    &.form-type-radio {
+      margin-bottom: 0.6em;
+      label {
+        text-transform: none;
+      }
+    }
   }
   
-  .field-type-text-long {
-    margin-bottom: 1em;
-  }
-  
-  .form-select,
-  .form-checkboxes,
-  .form-radios {
-    margin: 0 0 2em 1em;
-  }
-  
+  // Checkboxes and radiobutton styles
   .bef-checkboxes,
   .form-checkboxes {
     .form-item {
@@ -159,6 +156,18 @@ form {
     }
   }
   
+  .form-select,
+  .form-checkboxes,
+  .form-radios {
+    margin: 0 0 2em 1em;
+  }
+  
+  
+  .field-type-text-long {
+    margin-bottom: 1em;
+  }
+  
+  // Image-field styles
   .field-type-image {
     background-color: #F2F2F2;
     margin-bottom: 1em;
@@ -288,6 +297,7 @@ form {
       }
     }
     
+    // Image-field managed file section styles
     .form-type-managed-file {
       margin-bottom: 1em;
       padding: 10px;
@@ -321,8 +331,13 @@ form {
           }
         }
       }
+      
+      input.form-file {
+        margin-right: 10px;
+      }
     }
     
+    // Image-field fieldset styles
     fieldset {
       .fieldset-wrapper {
         padding: 0;
@@ -330,12 +345,7 @@ form {
     }
   }
   
-  .form-type-managed-file {
-    input.form-file {
-      margin-right: 10px;
-    }
-  }
-  
+  // Form fieldset styles
   fieldset,
   .webform-component-fieldset {
     border: 0 none;
@@ -380,10 +390,12 @@ form {
     }
   }
   
+  // Submit button styles
   input[type='submit'] {
     @extend .button;
   }
   
+  // Form actions styles
   .form-actions {
     input {
       margin-bottom: 1em;
@@ -400,6 +412,7 @@ form {
   }
 }
 
+// Password form styles
 form.user-pass {
   .form-item {
     padding: 0 0 0 250px;
@@ -410,6 +423,7 @@ form.user-pass {
   }
 }
 
+// Registration form styles
 form.user-register-form {
   .form-item {
     padding: 0 0 0 160px;
@@ -420,6 +434,7 @@ form.user-register-form {
   }
 }
 
+// User profile form styles
 form.user-profile-form {
   .form-type-password {
     padding-bottom: 40px;
@@ -471,6 +486,7 @@ form.user-profile-form {
   }
 }
 
+// Throbbing styles
 html.js .form-autocomplete {
   background-image: url('../images/throbber_bg.png');
   background-position: 100% center;
@@ -504,6 +520,7 @@ only screen and (min-resolution: 192dpi) {
         }
       }
     }
+    
     .bef-checkboxes,
     .form-checkboxes {
       .category.main > .form-item {
@@ -609,6 +626,7 @@ only screen and (min-resolution: 192dpi) {
 
 
 // Ajax throbber styles
+
 .forge-throbber {
   @include transition(opacity 0.3s ease-in-out);
   left: -999em;

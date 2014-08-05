@@ -402,12 +402,6 @@ form .form-item.form-type-textfield > input, form .form-item.webform-component-t
   width: 100%;
   -webkit-appearance: none;
 }
-form .form-item.form-type-radio {
-  margin-bottom: 0.6em;
-}
-form .form-item.form-type-radio label {
-  text-transform: none;
-}
 form .form-item.form-type-textarea label, form .form-item.webform-component-textarea label {
   background-color: #f7f7f7;
   border-left: 1px solid #e4e4e4;
@@ -441,13 +435,11 @@ form .form-item.form-type-textarea textarea, form .form-item.webform-component-t
 form .form-item.form-type-textarea .grippie, form .form-item.webform-component-textarea .grippie {
   display: none;
 }
-form .field-type-text-long {
-  margin-bottom: 1em;
+form .form-item.form-type-radio {
+  margin-bottom: 0.6em;
 }
-form .form-select,
-form .form-checkboxes,
-form .form-radios {
-  margin: 0 0 2em 1em;
+form .form-item.form-type-radio label {
+  text-transform: none;
 }
 form .bef-checkboxes .form-item label,
 form .form-checkboxes .form-item label {
@@ -485,6 +477,14 @@ form .form-checkboxes > .category > .category.open {
 form .bef-checkboxes .category.main .category,
 form .form-checkboxes .category.main .category {
   margin-left: 30px;
+}
+form .form-select,
+form .form-checkboxes,
+form .form-radios {
+  margin: 0 0 2em 1em;
+}
+form .field-type-text-long {
+  margin-bottom: 1em;
 }
 form .field-type-image {
   background-color: #F2F2F2;
@@ -661,11 +661,11 @@ form .field-type-image .form-type-managed-file .image-widget-data input.form-sub
     width: auto;
   }
 }
+form .field-type-image .form-type-managed-file input.form-file {
+  margin-right: 10px;
+}
 form .field-type-image fieldset .fieldset-wrapper {
   padding: 0;
-}
-form .form-type-managed-file input.form-file {
-  margin-right: 10px;
 }
 form fieldset,
 form .webform-component-fieldset {
@@ -1846,7 +1846,7 @@ img, media {
   position: relative;
 }
 .form-type-checkboxes label.error {
-  background-color: #D31959;
+  background-color: #d31959;
   color: #FFFFFF;
   line-height: 1em;
   padding: 0 10px;
@@ -1862,6 +1862,10 @@ img {
 .ui-widget {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1em;
+}
+
+.file a {
+  vertical-align: top;
 }
 
 .view-own-content form {
@@ -1896,15 +1900,6 @@ img {
 }
 .view-own-content table td {
   padding: 0 10px;
-}
-
-.view-on-going-projects {
-  margin-top: 2em;
-}
-@media (min-width: 44em) {
-  .view-on-going-projects {
-    margin-top: 3em;
-  }
 }
 
 .section-search .l-region--sidebar-first .block--facetapi {
@@ -1956,16 +1951,6 @@ img {
   max-width: 75px;
 }
 
-.sidebar-block .sidebar-block__title, .sidebar-block--long-labels .sidebar-block__title {
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #fff;
-  float: none;
-  font-size: 1.2em;
-  margin: 0;
-  overflow: hidden;
-  padding: 1em;
-  text-transform: uppercase;
-}
 .sidebar-block .sidebar-block__item, .sidebar-block--long-labels .sidebar-block__item {
   background-color: #f2f2f2;
   border-bottom: 1px solid #fff;
@@ -1984,6 +1969,17 @@ img {
   display: block;
   float: left;
   margin-left: 70px;
+}
+
+.sidebar-block__title, .node-type-tutorial .l-region--sidebar-second .block .block__title {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #fff;
+  float: none;
+  font-size: 1.2em;
+  margin: 0;
+  overflow: hidden;
+  padding: 1em;
+  text-transform: uppercase;
 }
 
 .sidebar-block--long-labels .sidebar-block__item .sidebar-block__item-label {
@@ -2836,6 +2832,34 @@ form.fivestar-widget {
     width: 300px;
   }
 }
+.l-help-wrapper .block__title {
+  background-color: #e73874;
+  border-bottom: 1px solid #FFFFFF;
+  font-size: 1em;
+  margin: 0;
+  padding: 0.5em 1em;
+  text-align: right;
+}
+.l-help-wrapper .menu {
+  margin: 0;
+  padding: 0;
+}
+.l-help-wrapper .menu li {
+  list-style-image: none;
+  list-style-type: none;
+}
+.l-help-wrapper .menu li a {
+  border-bottom: 1px solid #FFFFFF;
+  color: #fff;
+  display: block;
+  padding: 0.6em;
+}
+.l-help-wrapper .menu li a:hover {
+  background-color: #a51446;
+}
+.l-help-wrapper .menu li.last a {
+  border-bottom: 0 none;
+}
 .l-help-wrapper .toggle-help {
   background-color: #d31959;
   background-position: 7px -222px;
@@ -2854,36 +2878,6 @@ form.fivestar-widget {
 .l-help-wrapper .toggle-help:hover {
   cursor: pointer;
   background-color: #a51446;
-}
-.l-help-wrapper h2 {
-  background-color: #e73874;
-  border-bottom: 1px solid #FFFFFF;
-  font-size: 1em;
-  margin: 0;
-  padding: 0.5em 1em;
-  text-align: right;
-}
-.l-help-wrapper ul.menu {
-  margin: 0;
-  padding: 0;
-}
-.l-help-wrapper ul.menu li {
-  list-style-image: none;
-  list-style-type: none;
-}
-.l-help-wrapper ul.menu li a {
-  border-bottom: 1px solid #FFFFFF;
-  display: block;
-  padding: 0.6em;
-}
-.l-help-wrapper ul.menu li a:hover {
-  background-color: #a51446;
-}
-.l-help-wrapper ul.menu li.last a {
-  border-bottom: 0 none;
-}
-.l-help-wrapper a {
-  color: #fff;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
@@ -3578,13 +3572,13 @@ form.fivestar-widget {
   display: none;
 }
 
-.block--menu-menu-tutorial-menu ul.menu {
+.block--menu-menu-tutorial-menu .menu {
   margin: 0;
   padding: 0;
   text-align: center;
   white-space: nowrap;
 }
-.block--menu-menu-tutorial-menu ul.menu > * {
+.block--menu-menu-tutorial-menu .menu > li {
   display: inline-block;
   list-style-image: none;
   list-style-type: none;
@@ -3593,26 +3587,26 @@ form.fivestar-widget {
   text-align: center;
 }
 @media (min-width: 44em) {
-  .block--menu-menu-tutorial-menu ul.menu {
+  .block--menu-menu-tutorial-menu .menu {
     max-width: 59em;
     height: 212px;
     margin: 0 auto;
   }
-  .block--menu-menu-tutorial-menu ul.menu > * {
+  .block--menu-menu-tutorial-menu .menu > li {
     width: 15.25424%;
     float: left;
     margin-right: 1.69492%;
     display: block;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *:nth-child(6n) {
+  .block--menu-menu-tutorial-menu .menu > li:nth-child(6n) {
     float: right;
     margin-right: 0;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.active-trail {
+  .block--menu-menu-tutorial-menu .menu > li.active-trail {
     border: 1px solid #fff;
     position: relative;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.active-trail:before, .block--menu-menu-tutorial-menu ul.menu > *.active-trail:after {
+  .block--menu-menu-tutorial-menu .menu > li.active-trail:before, .block--menu-menu-tutorial-menu .menu > li.active-trail:after {
     content: "";
     position: absolute;
     width: 0;
@@ -3621,43 +3615,43 @@ form.fivestar-widget {
     border-color: transparent;
     border-bottom: 0;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.active-trail:before {
+  .block--menu-menu-tutorial-menu .menu > li.active-trail:before {
     border-top-color: #FFFFFF;
     border-width: 12px;
     bottom: -12px;
     left: 50%;
     margin-left: -12px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.active-trail:after {
+  .block--menu-menu-tutorial-menu .menu > li.active-trail:after {
     border-top-color: #f7f7f7;
     border-width: 10px;
     bottom: -9px;
     left: 50%;
     margin-left: -10px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.next-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.next-from-active a {
     background-position: center -67px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-from-active a {
     background-position: center -199px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-last-from-active a {
     background-position: center -331px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-last-last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-last-last-from-active a {
     background-position: center -464px;
   }
 }
-.block--menu-menu-tutorial-menu ul.menu a {
+.block--menu-menu-tutorial-menu .menu a {
   color: black;
   display: block;
   padding: 10px 3px;
 }
-.block--menu-menu-tutorial-menu ul.menu a.active {
+.block--menu-menu-tutorial-menu .menu a.active {
   background-color: #e2e2e2;
 }
 @media (min-width: 44em) {
-  .block--menu-menu-tutorial-menu ul.menu a {
+  .block--menu-menu-tutorial-menu .menu a {
     background-image: url("../images/tutorial_sprite.png");
     background-repeat: no-repeat;
     background-size: 112px auto;
@@ -3666,13 +3660,13 @@ form.fivestar-widget {
     padding: 40px 0 150px;
     text-transform: uppercase;
   }
-  .block--menu-menu-tutorial-menu ul.menu a.active {
+  .block--menu-menu-tutorial-menu .menu a.active {
     background-position: center 76px;
     background-color: #f7f7f7;
     border: 1px solid #e4e4e4;
     position: relative;
   }
-  .block--menu-menu-tutorial-menu ul.menu a.active:before, .block--menu-menu-tutorial-menu ul.menu a.active:after {
+  .block--menu-menu-tutorial-menu .menu a.active:before, .block--menu-menu-tutorial-menu .menu a.active:after {
     content: "";
     position: absolute;
     width: 0;
@@ -3681,7 +3675,7 @@ form.fivestar-widget {
     border-color: transparent;
     border-bottom: 0;
   }
-  .block--menu-menu-tutorial-menu ul.menu a.active:after {
+  .block--menu-menu-tutorial-menu .menu a.active:after {
     border-top-color: #e4e4e4;
     border-width: 11px;
     bottom: -11px;
@@ -3690,31 +3684,31 @@ form.fivestar-widget {
   }
 }
 @media (min-width: 70em) {
-  .block--menu-menu-tutorial-menu ul.menu a {
+  .block--menu-menu-tutorial-menu .menu a {
     font-size: 1.3em;
   }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .block--menu-menu-tutorial-menu ul.menu > *.next-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.next-from-active a {
     background-position: center -520px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-from-active a {
     background-position: center -655px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-last-from-active a {
     background-position: center -792px;
   }
-  .block--menu-menu-tutorial-menu ul.menu > *.last-last-last-from-active a {
+  .block--menu-menu-tutorial-menu .menu > li.last-last-last-from-active a {
     background-position: center -929px;
   }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .block--menu-menu-tutorial-menu ul.menu a {
+  .block--menu-menu-tutorial-menu .menu a {
     background-size: 56px auto;
     background-position: center -1067px;
   }
-  .block--menu-menu-tutorial-menu ul.menu a.active {
+  .block--menu-menu-tutorial-menu .menu a.active {
     background-position: center -373px;
   }
 }
@@ -3779,6 +3773,12 @@ form.fivestar-widget {
 .not-front .field--name-field-news-body {
   margin: 2em 0;
   overflow: hidden;
+}
+@media (min-width: 44em) {
+  .not-front .field--name-body,
+  .not-front .field--name-field-news-body {
+    margin: 2em 0 3em;
+  }
 }
 .not-front .field--name-body img[style*="float:left"],
 .not-front .field--name-field-news-body img[style*="float:left"] {
@@ -4067,26 +4067,10 @@ form.fivestar-widget {
     font-size: 3em;
   }
 }
-.node-type-tutorial .l-region--sidebar-second {
-  background-color: #f3f3f3;
-  border-top: 0 none;
-  padding: 1em;
-}
-.node-type-tutorial .l-region--sidebar-second h2 {
-  font-size: 1.2em;
-  margin: 0 0 0.5em;
-}
 .node-type-tutorial .l-region--sidebar-second .block {
-  margin: 0 0 1.5em;
-}
-.node-type-tutorial .l-region--sidebar-second .block:last-child {
-  margin: 0;
-}
-.node-type-tutorial .l-region--sidebar-second .block .views-row {
-  margin: 0 0 0.5em;
-}
-.node-type-tutorial .l-region--sidebar-second .block .views-row .views-field-field-attachments a {
-  vertical-align: top;
+  border-bottom: 0 none;
+  margin: 0 0 1em;
+  padding: 0;
 }
 .node-type-tutorial .field--name-field-method,
 .node-type-tutorial .field--name-field-tools {

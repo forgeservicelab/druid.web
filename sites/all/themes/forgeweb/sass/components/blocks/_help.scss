@@ -19,6 +19,34 @@
     top: 120px;
     width: 300px;
   }
+  .block__title {
+    background-color: lighten($admin-color, 10%);
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.5em 1em;
+    text-align: right;
+  }
+  .menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-image: none;
+      list-style-type: none;
+      a {
+        border-bottom: 1px solid #FFFFFF;
+        color: #fff;
+        display: block;
+        padding: 0.6em;
+        &:hover {
+          background-color: darken($admin-color, 10%);
+        }
+      }
+      &.last a {
+        border-bottom: 0 none;
+      }
+    }
+  }
   .toggle-help {
     @extend .admin-sprite;
     
@@ -39,36 +67,6 @@
       cursor: pointer;
       background-color: darken($admin-color, 10%);
     }
-  }
-  h2 {
-    background-color: lighten($admin-color, 10%);
-    border-bottom: 1px solid #FFFFFF;
-    font-size: 1em;
-    margin: 0;
-    padding: 0.5em 1em;
-    text-align: right;
-  }
-  ul.menu {
-    margin: 0;
-    padding: 0;
-    li {
-      list-style-image: none;
-      list-style-type: none;
-      a {
-        border-bottom: 1px solid #FFFFFF;
-        display: block;
-        padding: 0.6em;
-        &:hover {
-          background-color: darken($admin-color, 10%);
-        }
-      }
-      &.last a {
-        border-bottom: 0 none;
-      }
-    }
-  }
-  a {
-    color: #fff;
   }
 }
 

@@ -4,6 +4,9 @@
 .not-front .field--name-field-news-body {
   margin: 2em 0;
   overflow: hidden;
+  @include at-breakpoint($tab) {
+    margin: 2em 0 3em;
+  }
   img[style*="float:left"] {
     padding: 0 1em 1em 0;
   }
