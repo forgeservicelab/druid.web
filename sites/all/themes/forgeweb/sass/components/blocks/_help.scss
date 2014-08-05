@@ -1,0 +1,87 @@
+// Help region styles
+
+.l-help-wrapper {
+  @include transition(all 0.3s ease-in-out);
+  
+  background-color: $admin-color;
+  border-right: 1px solid #fff;
+  color: #fff;
+  left: -60%;
+  position: fixed;
+  top: 20px;
+  width: 60%;
+  z-index: 999;
+  &.open {
+    left: 0;
+  }
+  @include at-breakpoint($tab) {
+    left: -300px;
+    top: 120px;
+    width: 300px;
+  }
+  .block__title {
+    background-color: lighten($admin-color, 10%);
+    border-bottom: 1px solid #FFFFFF;
+    font-size: 1em;
+    margin: 0;
+    padding: 0.5em 1em;
+    text-align: right;
+  }
+  .menu {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-image: none;
+      list-style-type: none;
+      a {
+        border-bottom: 1px solid #FFFFFF;
+        color: #fff;
+        display: block;
+        padding: 0.6em;
+        &:hover {
+          background-color: darken($admin-color, 10%);
+        }
+      }
+      &.last a {
+        border-bottom: 0 none;
+      }
+    }
+  }
+  .toggle-help {
+    @extend .admin-sprite;
+    
+    background-color: $admin-color;
+    background-position: 7px -222px;
+    font-size: 0.8em;
+    height: 60px;
+    line-height: 55px;
+    overflow: hidden;
+    position: absolute;
+    right: -61px;
+    text-align: center;
+    text-indent: -9999px;
+    top: 0;
+    width: 60px;
+    z-index: 1000;
+    &:hover {
+      cursor: pointer;
+      background-color: darken($admin-color, 10%);
+    }
+  }
+}
+
+
+// Help region retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .l-help-wrapper {
+    .toggle-help {
+      background-position: 7px -146px;
+    }
+  }
+}

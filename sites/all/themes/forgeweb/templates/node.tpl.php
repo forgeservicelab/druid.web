@@ -92,8 +92,11 @@
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
     <header>
       <?php print render($title_prefix); ?>
-      <?php if (!$page): ?>
+      <?php if (!$page && $view_mode != 'liftup'): ?>
         <h2<?php print $title_attributes; ?>><?php if (!$page): ?><a href="<?php print $node_url; ?>"><?php endif; ?><?php print $formatted_post_date; ?> / <?php print render($title_value); ?><?php if (!$page): ?></a><?php endif; ?></h2>
+      <?php endif; ?>
+      <?php if ($type == 'tweet' && $view_mode == 'liftup'): ?>
+        <h3 class="liftup-title"><?php print $formatted_post_date; ?> / <?php print render($title_value); ?></h3>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
     </header>

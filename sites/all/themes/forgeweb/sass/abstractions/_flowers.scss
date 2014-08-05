@@ -1,0 +1,19 @@
+// General flower definitions
+
+.flower-sprite {
+  background-color: transparent;
+  background-image: url('../images/flower_sprite.png');
+  background-repeat: no-repeat;
+  background-size: 1298px auto;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .flower-sprite {
+    background-image: url('../images/flower_sprite_retina.png');
+  }
+}

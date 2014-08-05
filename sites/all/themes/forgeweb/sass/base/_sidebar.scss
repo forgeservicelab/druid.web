@@ -1,0 +1,110 @@
+// Sidebar styles
+
+.sidebar-block {
+  .sidebar-block__item {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #fff;
+    margin: 0;
+    overflow: hidden;
+    padding: 1em;
+    .sidebar-block__item-label {
+      display: block;
+      float: left;
+      font-weight: bold;
+      margin-right: -70px;
+      width: 70px;
+    }
+    .sidebar-block__item-content {
+        display: block;
+        float: left;
+        margin-left: 70px;
+    }
+  }
+}
+
+.sidebar-block__title {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #fff;
+  float: none;
+  font-size: 1.2em;
+  margin: 0;
+  overflow: hidden;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+// The long labels variant
+.sidebar-block--long-labels {
+  @extend .sidebar-block;
+  
+  .sidebar-block__item {
+    .sidebar-block__item-label {
+      margin-right: -100px;
+      width: 100px;
+    }
+    .sidebar-block__item-content {
+      margin-left: 100px;
+    }
+  }
+}
+
+
+.l-region--sidebar-first {
+  .block {
+    .views-exposed-form {
+      .views-exposed-widget {
+        margin-bottom: 2.5em;
+        padding: 0;
+        > label {
+          display: block;
+          font-size: 1.3em;
+          font-weight: 400;
+          margin: 0.83em 0;
+          text-transform: uppercase;
+        }
+      }
+    }
+    form {
+      margin: 0;
+      .form-select,
+      .form-checkboxes,
+      .form-radios {
+        margin: 0;
+        label {
+          margin-bottom: 0;
+        }
+        input[type='checkbox'],
+        input[type='radio'] {
+          margin-right: 0.5em;
+        }
+      }
+      .views-submit-button {
+        .ajax-progress-throbber {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.l-region--sidebar-second {
+  border-top: 1px solid $border-color;
+  margin-top: 1em;
+  @include at-breakpoint($tab) {
+    border-top: 0 none;
+    margin-top: 0;
+  }
+  .block {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+    &:last-child {
+      border-bottom: 0 none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .block__title {
+      font-size: 1.2em;
+    }
+  }
+}

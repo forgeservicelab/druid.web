@@ -1,0 +1,10 @@
+// News page
+
+.view-news-sidebar-block {
+  .views-row {
+    margin-bottom: 1em;
+    .views-field-field-link a {
+      word-wrap: break-word;
+    }
+  }
+}

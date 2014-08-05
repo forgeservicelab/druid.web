@@ -1,0 +1,89 @@
+// FAQ-block styles
+
+.block--views-faq-block {
+  margin: 0 auto;
+  max-width: 330px;
+  &:after {
+    @extend .flower-sprite;
+  }
+  @include at-breakpoint($tab) {
+    @include suffix(4, 12);
+    
+    max-width: 100%;
+    position: relative;
+    &:after {
+      background-position: -363px 0;
+      bottom: -25px;
+      content: "";
+      height: 591px;
+      position: absolute;
+      right: -45px;
+      width: 268px;
+    }
+  }
+  @include at-breakpoint($desk) {
+    @include suffix(6, 16);
+    
+    max-width: 100%;
+    &:after {
+      background-position: 0 0;
+      bottom: -100px;
+      content: "";
+      height: 800px;
+      position: absolute;
+      right: -45px;
+      width: 362px;
+    }
+  }
+  h2 {
+    @extend .large-header;
+    margin: 0 0 0.5em;
+    @include at-breakpoint($tab) {
+      margin: 0 auto 0.5em;
+      max-width: 530px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
+  }
+  .view-faq {
+    @include at-breakpoint($tab) {
+      margin: 0 auto;
+      max-width: 530px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
+    .view-header {
+      @extend .large-caption;
+    }
+    .question {
+      font-size: 1.3em;
+      text-transform: none;
+      @include at-breakpoint($tab) {
+        font-size: 1.5em;
+      }
+      @include at-breakpoint($desk) {
+        font-size: 2em;
+      }
+    }
+    .views-row-last .ui-state-default .question {
+      margin-bottom: 0;
+    }
+    .answer {
+      overflow: hidden;
+      @include at-breakpoint($tab) {
+        font-size: 1.15em;
+      }
+      @include at-breakpoint($desk) {
+        font-size: 1.3em;
+      }
+      a {
+        color: $link-color;
+      }
+      p {
+        margin: 0 0 1.5em;
+      }
+    }
+  }
+}

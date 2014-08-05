@@ -1,0 +1,171 @@
+// Node add page styles
+
+.page-node-edit,
+.page-node-add {
+  form {
+    .form-item {
+      @include at-breakpoint($tab) {
+        &.form-type-textfield,
+        &.webform-component-textfield,
+        &.form-type-password,
+        &.form-type-email,
+        &.form-type-link-field,
+        &.webform-component-email {
+          padding: 0 0 0 250px;
+          label {
+            margin: 0 0 0 -250px;
+            width: 250px;
+            &.error {
+              margin: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .field-type-text-long {
+      // Hide text-format options and plain text switcher
+      .text-format-wrapper > a,
+      .filter-wrapper {
+        display: none !important;
+      }
+    }
+    // Special case when geographical coverage field is displayed
+    .field-name-field-geographical-coverage {
+      margin-bottom: 2em;
+    }
+    
+    .field-name-field-collection {
+      .form-select {
+        margin-bottom: 0;
+      }
+    }
+    fieldset {
+      margin-top: 0;
+    }
+    > div > .form-actions {
+      clear: both;
+      margin-top: 1em;
+    }
+  }
+  
+  // Tab styles
+   @include at-breakpoint($desk) {
+     .horizontal-tabs ul li a {
+       font-size: 0.8em;
+     }
+   }
+  
+  .admin-sidebar-right {
+    > h3 {
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #fff;
+      float: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 1em;
+      text-transform: uppercase;
+    }
+    > div {
+      background-color: #f2f2f2;
+      border-bottom: 1px solid #fff;
+      margin: 0;
+      overflow: hidden;
+      padding: 1em;
+      
+      .form-item {
+        padding: 0;
+        label {
+          border-bottom: 0 none;
+          border-right: 1px solid $border-color;
+          margin: 0;
+          text-align: left;
+          width: 100%;
+        }
+        &.form-type-radios {
+          margin-bottom: 0;
+          label {
+            border-right: 0 none;
+            margin-bottom: 10px;
+          }
+          .form-radios {
+            margin-bottom: 0;
+          }
+        }
+        &.form-type-link-field {
+          margin-bottom: 0;
+          > label {
+            float: none;
+          }
+          .link-field-subrow {
+            background-color: #FFFFFF;
+            border: 1px solid $border-color;
+            padding: 10px 10px 0;
+          }
+          .link-field-column {
+            float: none;
+            width: 100%;
+            .form-item {
+              clear: both;
+              label {
+                background-color: rgba(0, 0, 0, 0);
+                border: 0 none;
+                min-height: 0;
+                padding: 5px 0;
+                text-transform: none;
+              }
+            }
+          }
+        }
+      }
+      
+      .field-name-field-offering-website {
+        .form-item.form-type-link-field {
+          .link-field-subrow {
+            border: 0 none;
+            padding: 0;
+            .form-item {
+              margin: 0;
+              label {
+                width: auto;
+              }
+            }
+          }
+        }
+      }
+      
+      &.admin-field-wrapper {
+        > h3 {
+          font-size: 1em;
+          font-weight: 300;
+          margin: 0 0 1em;
+        }
+        > .description {
+          font-size: 0.8em;
+          margin: 1em 0 1em 5px;
+        }
+      }
+    }
+  }
+  .admin-after-content {
+    clear: both;
+  }
+  
+  @include at-breakpoint($tab) {
+    .admin-content-sidebar-right {
+      @include span-columns(8, 12); // Span 8 out of 12 columns.
+    }
+    .admin-sidebar-right {
+      @include span-columns(4 omega, 12); // Span the last (omega) 4 columns of 12.
+    }
+  }
+  
+  @include at-breakpoint($desk) {
+    .admin-content-sidebar-right {
+      @include span-columns(11, 16); // Span 12 out of 16 columns.
+    }
+    .admin-sidebar-right {
+      @include span-columns(4 omega, 16); // Span the last (omega) 4 columns of 16.
+    }
+  }
+}

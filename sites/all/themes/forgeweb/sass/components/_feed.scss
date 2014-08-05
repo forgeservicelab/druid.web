@@ -1,0 +1,117 @@
+// Feed styles
+
+.view-feed {
+  .views-exposed-form {
+    margin-bottom: 3em;
+    overflow: hidden;
+    .views-exposed-widget {
+      float: none;
+      padding: 0;
+      > label {
+        display: none;
+      }
+      .form-item {
+        display: block;
+        width: 100%;
+        @include at-breakpoint($tab) {
+          float: left;
+          width: 33.33%;
+        }
+        input {
+          display: none;
+        }
+        label {
+          background-color: #000;
+          border-bottom: 2px solid $border-color;
+          color: #fff;
+          display: block;
+          font-size: 0.9em;
+          margin: 0;
+          padding: 1em 0;
+          text-align: center;
+          @include at-breakpoint($tab) {
+            border-bottom: 0 none;
+            border-right: 2px solid $border-color;
+          }
+          @include at-breakpoint($desk) {
+            font-size: 1.2em;
+          }
+          &.checked {
+            color: $active-link-color;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        &:last-child {
+          label {
+            border-bottom: 0 none;
+            border-right: 0 none;
+          }
+        }
+      }
+    }
+  }
+  .view-content {
+    position: relative;
+  }
+  .views-row {
+    margin: 0 0 3em;
+    @include at-breakpoint($tab) {
+      margin: 0 0 4em;
+    }
+    @include at-breakpoint($desk) {
+      margin: 0 0 5em;
+    }
+    &.views-row-last {
+      margin: 0;
+    }
+    .node__title {
+      font-size: 1.2em;
+      font-weight: 300;
+      text-transform: none;
+      @include at-breakpoint($desk) {
+        font-size: 1.4em;
+      }
+    }
+    .field--type-text-long {
+      margin: 0;
+      img {
+        height: auto !important;
+      }
+    }
+    .field--type-video-embed-field {
+      max-width: 480px;
+    }
+
+    .field--type-video-embed-field,
+    .field--name-field-main-images {
+      margin: 1.5em 0;
+      .field__item {
+        line-height: 0;
+      }
+    }
+    .field--name-field-link {
+      margin: 1.5em 0;
+      word-break: break-all;
+      @include at-breakpoint($tab) {
+        font-size: 1.2em;
+      }
+      .field__item {
+        margin: 0 0 1em;
+      }
+    }
+
+    .easy_social_box {
+      margin: 1.5em 0;
+      .easy_social-widget {
+        margin-right: 1em;
+      }
+    }
+  }
+  
+  // Hide drupal default throbber.
+  .ajax-progress {
+    display: none !important;
+  }
+}

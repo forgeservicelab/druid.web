@@ -1,0 +1,617 @@
+// ****** FRONT PAGE SPESIFIC STYLES ****** //
+
+
+// Logo styles
+
+.site-name {
+  line-height: 0;
+  margin: 0;
+  @include at-breakpoint($desk) {
+    margin-top: 2em;
+  }
+  a {
+    background: url('../images/logo_sprite_mobile.png') no-repeat 0 0 transparent;
+    background-size: 400px auto;
+    display: inline-block;
+    height: 200px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 80px;
+    @include at-breakpoint($tab) {
+      background: url('../images/logo_sprite.png') no-repeat 0 0 transparent;
+      background-size: 938px auto;
+      height: 466px;
+      width: 188px;
+    }
+  }
+}
+
+html[lang=fi] {
+  .site-name a {
+    background-position: 0 -200px;
+    @include at-breakpoint($tab) {
+      background-position: 0 -466px;
+    }
+  }
+}
+
+
+// Logo retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .site-name a {
+    background-position: -40px 0;
+    background-size: 200px auto;
+    @include at-breakpoint($tab) {
+      background-position: -94px 0;
+      background-size: 470px auto;
+    }
+  }
+
+  html[lang=fi] {
+    .site-name a {
+      background-position: -120px 0;
+      @include at-breakpoint($tab) {
+        background-position: -283px 0;
+      }
+    }
+  }
+}
+
+
+// Site slogan
+
+.site-slogan {
+  font-size: 36px;
+  margin: 0 auto 0.3em;
+  max-width: 330px;
+  text-align: left;
+  @include at-breakpoint($tab) {
+    font-size: 55px;
+    margin-bottom: 0.2em;
+    max-width: 480px;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 78px;
+    max-width: 100%;
+  }
+}
+
+
+// Front page navigation exceptions (fixed on the top of the page)
+
+.front .l-navigation-wrapper {
+  @include at-breakpoint($mobile_nav) {
+    left: 0;
+    position: fixed;
+    top: 0;
+  }
+  .responsive-menus.responsified {
+    &.absolute .responsive-menus-simple {
+      border-top: 10px solid #fff;
+    }
+  }
+}
+
+
+// Front page branding
+
+.front .l-branding {
+  text-align: center;
+}
+
+
+// Front page title
+
+.front .page-title {
+  display: none; // Hide title on front page
+  font-size: 1.15em;
+  font-weight: normal;
+  margin: 0 auto;
+  max-width: 27em;
+  text-transform: none;
+  @include at-breakpoint($tab) {
+    font-size: 1.65em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 1.55em;
+    text-align: left;
+  }
+}
+
+
+// Front page content
+
+.front .l-content {
+  text-align: center;
+}
+
+.front .l-content-wrapper article {
+  @extend .large-caption;
+  max-width: 330px;
+  @include at-breakpoint($tab) {
+    max-width: 480px;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+}
+
+
+// Front page highlighted area
+
+.front .l-highlighted {
+  background: url('../images/liftup_bg.jpg') no-repeat center center #000;
+  background-size: auto 100%;
+  .l-region--highlighted {
+    background: url('../images/decoration_edge_up.png') repeat-x -2px 0 transparent;
+    background-size: auto 12px;
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 12px 0 0;
+    &:after {
+      @extend .flower-sprite;
+    }
+    @include at-breakpoint($tab) {
+      max-width: 885px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 1070px;
+      position: relative;
+      &:after {
+        background-position: -641px 0;
+        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
+        height: 1182px;
+        left: -590px;
+        position: absolute;
+        width: 535px;
+      }
+    }
+    > .block {
+      background: url('../images/decoration_edge_down.png') repeat-x -2px bottom transparent;
+      background-size: auto 12px;
+      padding: 0 0 12px;
+      > div {
+        background-color: #fff;
+        @include at-breakpoint($tab) {
+          padding-right: 15px;
+        }
+        > * {
+          position: relative;
+          &:after {
+            @extend .flower-sprite;
+          }
+          @include at-breakpoint($tab) {
+            min-height: 400px;
+            padding-right: 25em;
+            &:after {
+              background-position: -293px -818px;
+              bottom: 0;
+              content: "";
+              height: 364px;
+              position: absolute;
+              right: 15px;
+              width: 273px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.liftup-title {
+  font-size: 1em;
+  font-weight: 300;
+  margin: 0 0 1em;
+  text-transform: none;
+  @include at-breakpoint($tab) {
+    font-size: 1.2em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 1.5em;
+  }
+}
+
+.field--name-field-liftup-body,
+.field--name-field-liftup-text {
+  font-size: 1em;
+  margin: 1em 0;
+  @include at-breakpoint($tab) {
+    font-size: 1.2em;
+  }
+  @include at-breakpoint($desk) {
+    font-size: 1.5em;
+  }
+  p {
+    margin: 0 0 1em;
+  }
+}
+
+.field--name-field-liftup-image {
+  margin: 1em 0;
+}
+
+
+// Front page highlighted area retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .front .l-highlighted {
+    .l-region--highlighted {
+      background-image: url('../images/decoration_edge_up_retina.png');
+      > .block {
+        background-image: url('../images/decoration_edge_down_retina.png');
+      }
+    }
+  }
+}
+
+
+// Front page flexslider exceptions
+
+.front .flexslider-wrapper {
+  overflow: hidden;
+  .flexslider {
+    margin: 5px;
+    padding: 40px;
+    .flex-control-nav {
+      bottom: 10px;
+      left: 0;
+    }
+  }
+}
+
+
+// Front page middle content area
+
+.front .l-middle_content {
+  overflow: hidden;
+  .l-region--middle-content {
+    &:after {
+      @extend .flower-sprite;
+    }
+  }
+  @include at-breakpoint($desk) {
+    .l-region--middle-content {
+      position: relative;
+      &:after {
+        background-position: 0 -801px;
+        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
+        height: 380px;
+        left: -620px;
+        position: absolute;
+        width: 567px;
+      }
+    }
+  }
+  .block {
+    background-color: #fff;
+    margin-bottom: 6em;
+    @include at-breakpoint($tab) {
+      margin-bottom: 7em;
+    }
+    @include at-breakpoint($desk) {
+      margin-bottom: 10em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// Front page after content area
+
+.front .l-after_content {
+  border-top: 20px solid #3f6d00;
+  overflow: hidden;
+  @include at-breakpoint($tab) {
+    border-top-width: 50px;
+  }
+  @include at-breakpoint($desk) {
+    border-top-width: 80px;
+  }
+  .l-after_content_helper {
+    max-width: 330px;
+    &:before,
+    &:after {
+      @extend .flower-sprite;
+    }
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 1090px;
+      position: relative;
+      &:before {
+        background-position: 0 -1182px;
+        left: -730px;
+        top: 100px;
+      }
+      &:after {
+        background-position: -649px -1182px;
+        right: -730px;
+        top: 1100px;
+      }
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        height: 385px;
+        position: absolute;
+        width: 649px;
+      }
+    }
+    .l-region {
+      overflow: hidden;
+    }
+  }
+  .block--views-feed-block {
+    @include at-breakpoint($tab) {
+      @include span-columns(7, 12); // Span 6 out of 12 columns.
+    }
+  }
+  .block--fb-likebox {
+    margin: 2em 0;
+    @include at-breakpoint($tab) {
+      @include span-columns(5 omega, 12); // Span 6 out of 12 columns.
+      margin: 0;
+    }
+    .block__title {
+      display: none;
+    }
+    .block__content {
+      text-align: center;
+    }
+  }
+}
+
+
+// Front page What & Why blocks
+
+.view-what-why-blocks {
+  overflow: hidden;
+  .view-content {
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    @include at-breakpoint($tab) {
+      max-width: 880px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
+    .block__title {
+      display: none;
+    }
+    img {
+      @include at-breakpoint($tab) {
+        float: left;
+        height: auto;
+        margin-right: -320px;
+        width: 300px;
+      }
+      @include at-breakpoint($desk) {
+        margin-right: -45%;
+        width: auto;
+      }
+    }
+    .forge-web-block-body-wrapper {
+    
+      @include at-breakpoint($tab) {
+        margin-left: 320px;
+      }
+      @include at-breakpoint($desk) {
+        font-size: 1.2em;
+        line-height: 1.4em;
+        margin-left: 45%;
+      }
+      h2 {
+        @extend .large-header;
+      }
+    }
+  }
+  
+  &.even .view-content {
+    img {
+      @include at-breakpoint($tab) {
+        float: right;
+        margin-left: -320px;
+        margin-right: 0;
+      }
+      @include at-breakpoint($desk) {
+        margin-left: -45%;
+        margin-right: 0;
+      }
+    }
+    .forge-web-block-body-wrapper {
+      @include at-breakpoint($tab) {
+        margin-left: 0;
+        margin-right: 320px;
+      }
+      @include at-breakpoint($desk) {
+        margin-left: 0;
+        margin-right: 45%;
+      }
+    }
+  }
+}
+
+
+// Front page Partners & People -block styles
+
+.block--quicktabs-partners-or-people {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 330px;
+  @include at-breakpoint($tab) {
+    max-width: 880px;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  .block__title {
+    display: none;
+  }
+  .view-partners,
+  .view-people {
+    position: relative;
+    @include at-breakpoint($tab) {
+      min-height: 525px;
+      padding-left: 45%;
+    }
+    @include at-breakpoint($desk) {
+      min-height: 730px;
+    }
+    .views-row {
+      margin: 0 0 2em;
+      @include at-breakpoint($tab) {
+        margin: 0 0 2em;
+      }
+      @include at-breakpoint($desk) {
+        margin: 0 0 4em;
+      }
+      &.views-row-last {
+        margin-bottom: 0;
+      }
+      .short-desc,
+      .long-desc {
+        h3,
+        p {
+          margin: 0.5em 0;
+          text-transform: none;
+        }
+        h3 {
+          @include at-breakpoint($tab) {
+            font-size: 1.4em;
+          }
+          @include at-breakpoint($desk) {
+            font-size: 1.7em;
+          }
+        }
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .short-desc {
+        overflow: hidden;
+        img {
+          float: right;
+          display: block;
+          margin: 0 10px 0 0;
+          width: 100px;
+          @include at-breakpoint($tab) {
+            float: left;
+            margin: 0 30px 0 0;
+          }
+          @include at-breakpoint($desk) {
+            margin: 0 50px 0 0;
+            height: auto;
+            width: 180px;
+          }
+        }
+      }
+      .long-desc {
+        @include box-shadow(0 5px 10px rgba(0,0,0,.8));
+        background-color: #FFFFFF;
+        display: none;
+        min-height: 100%;
+        left: 0;
+        position: absolute;
+        padding: 1em;
+        top: 0;
+        width: 100%;
+        z-index: 99;
+        @include at-breakpoint($tab) {
+          @include box-shadow(0 0 0 transparent);
+          padding: 0;
+        }
+        img {
+          @include at-breakpoint($tab) {
+            float: left;
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+  .view-partners {
+    @include at-breakpoint($tab) {
+      background: url('../images/partners_default.png') no-repeat top left transparent;
+      background-size: 40% auto;
+    }
+    .views-row {
+      .short-desc,
+      .long-desc {
+        h3,
+        p {
+          margin: 0.5em 110px 0.5em 0;
+          @include at-breakpoint($tab) {
+            margin-left: 130px;
+            margin-right: 0;
+          }
+          @include at-breakpoint($desk) {
+            margin-left: 260px;
+          }
+        }
+      }
+      .long-desc {
+        h3,
+        p {
+          margin-left: 0;
+          @include at-breakpoint($tab) {
+            margin-left: 41.2%;
+          }
+        }
+      }
+    }
+  }
+  .view-people {
+    @include at-breakpoint($tab) {
+      background: url('../images/people_default.png') no-repeat top left transparent;
+      background-size: 40% auto;
+    }
+  }
+  
+  .ui-tabs .ui-tabs-nav {
+    margin-bottom: 2em;
+    li {
+      color: $text-color;
+      margin-right: 5px;
+      @include at-breakpoint($tab) {
+        margin-right: 7px;
+      }
+      @include at-breakpoint($desk) {
+        margin-right: 10px;
+      }
+      a {
+        @extend .large-header;
+      }
+      &.ui-state-active a {
+        color: $text-color;
+      }
+      &:first-child:after {
+        content: "&";
+        @extend .large-header;
+        margin-left: 5px;
+        @include at-breakpoint($tab) {
+          margin-left: 7px;
+        }
+        @include at-breakpoint($desk) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
