@@ -1,0 +1,189 @@
+// Offering page
+
+.node-type-offering {
+  aside {
+    border-top: 0 none;
+    margin-top: 0;
+  }
+}
+
+.company-header,
+.offering-header,
+.project-header {
+  margin-bottom: 2em;
+  min-height: 85px;
+  overflow: hidden;
+  padding: 0 0 0 90px;
+  position: relative;
+  .field--name-field-logo {
+    left: 0;
+    margin-right: 0;
+    position: absolute;
+    top: 0;
+    .field__item {
+      line-height: 0;
+      img {
+        max-height: 75px;
+        width: auto;
+      }
+    }
+  }
+  h1.page-title {
+    font-size: 1.5em;
+    @include at-breakpoint($tab) {
+      font-size: 1.8em;
+    }
+    @include at-breakpoint($desk) {
+      font-size: 2.5em;
+    }
+  }
+  .field--name-field-customer-rating,
+  .field--name-field-offering-tags {
+    display: inline-block;
+    margin-right: 1em;
+    vertical-align: top;
+  }
+  .field--name-field-offering-tags {
+    line-height: 22px;
+    .field__item {
+      display: inline-block;
+      margin-right: 5px;
+      &:after {
+        content: ",";
+      }
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+// Brief overview field under the offering title on offering page
+.field--name-field-brief-overview-description,
+.field--name-field-free-text-company {
+  @extend .medium-caption;
+}
+
+.field--name-field-logo {
+  float: left;
+  height: 75px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: -75px;
+  text-align: center;
+  width: 75px;
+  .field__item {
+    line-height: 0;
+    img {
+      max-height: 75px;
+      width: auto;
+    }
+  }
+}
+
+
+.node-type-service-offering,
+.node-type-offering,
+.node-type-company {
+  article,
+  .flexslider {
+    margin-bottom: 3em;
+  }
+  .block--quicktabs {
+    .block__title {
+      display: none;
+    }
+    .ui-tabs-nav {
+      margin-bottom: 3em;
+    }
+    @include at-breakpoint($desk) {
+      .ui-tabs-nav li a {
+        font-size: 0.8em;
+      }
+    }
+    .views-label {
+      @extend h3;
+      display: block;
+      margin: 1em 0;
+    }
+    .views-field,
+    .view-empty {
+      margin: 1.4em 0;
+    }
+  }
+}
+
+.node--project.node-teaser,
+.node--service-offering.node-teaser,
+.node--offering.node-teaser {
+  margin-bottom: 1em;
+  overflow: hidden;
+  a {
+    color: $text-color;
+    .node__content {
+      overflow: hidden;
+      a {
+        color: $link-color;
+      }
+    }
+  }
+  p {
+    margin: 0 0 1em;
+  }
+  .teaser-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    text-transform: none;
+  }
+  .field {
+    float: left;
+    margin-bottom: 5px;
+    margin-left: 85px;
+    .field {
+      clear: both;
+      margin-left: 0;
+    }
+    &.field--name-field-logo {
+      margin-left: 0;
+    }
+  }
+}
+
+// Terms and conditons tab on offering
+.terms-conditions {
+  h3 {
+    font-size: 1.4em;
+    text-transform: none;
+  }
+  .field--type-file {
+    margin: 1em 0;
+    .file {
+      > * {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+  a {
+    color: $link-color;
+  }
+}
+
+.block--quicktabs-service-offering-quicktab-mobile,
+.block--quicktabs-product-page-quicktab-mobile {
+  display: block;
+  @include at-breakpoint($tab) {
+    display: none;
+  }
+}
+
+.block--quicktabs-service-offering-quicktab,
+.block--quicktabs-product-page-quicktab {
+  display: none;
+  @include at-breakpoint($tab) {
+    display: block;
+  }
+}

@@ -267,11 +267,17 @@ function forge_web_offering_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'content_access_offering';
   $strongarm->value = array(
-    'view_own' => array(),
+    'view_own' => array(
+      0 => 4,
+    ),
     'view' => array(
       0 => 1,
-      1 => 4,
-      2 => 5,
+      1 => 2,
+      2 => 3,
+      3 => 5,
+      4 => 6,
+      5 => 7,
+      6 => 4,
     ),
   );
   $export['content_access_offering'] = $strongarm;

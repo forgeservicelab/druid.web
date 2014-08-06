@@ -1,0 +1,41 @@
+// Own content page styles
+
+.view-own-content {
+  form {
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 0;
+    padding-bottom: 1em;
+    .views-exposed-widgets .views-widget-filter-field_page_title_value {
+      margin: 0 0.5em;
+    }
+  }
+  table {
+    width: 100%;
+    thead {
+      th {
+        background-color: #fff;
+        font-size: 1.3em;
+        font-weight: 300;
+        padding: 10px 10px 30px;
+        text-align: left;
+        a {
+          color: #000;
+          img {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    tr {
+      &.odd {
+        background-color: $border-color;
+      }
+      &.even {
+        background-color: #fff;
+      }
+    }
+    td {
+      padding: 0 10px;
+    }
+  }
+}

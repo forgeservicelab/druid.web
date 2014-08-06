@@ -92,6 +92,7 @@ function forge_web_tutorial_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Attachments';
+  $handler->display->display_options['css_class'] = 'sidebar-block';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -100,13 +101,18 @@ function forge_web_tutorial_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Content: Attachments */
   $handler->display->display_options['fields']['field_attachments']['id'] = 'field_attachments';
   $handler->display->display_options['fields']['field_attachments']['table'] = 'field_data_field_attachments';
   $handler->display->display_options['fields']['field_attachments']['field'] = 'field_attachments';
   $handler->display->display_options['fields']['field_attachments']['label'] = '';
+  $handler->display->display_options['fields']['field_attachments']['element_type'] = '0';
   $handler->display->display_options['fields']['field_attachments']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_attachments']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_attachments']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_attachments']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_attachments']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_attachments']['group_rows'] = FALSE;
@@ -144,7 +150,10 @@ function forge_web_tutorial_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_video']['table'] = 'field_data_field_link_to_video';
   $handler->display->display_options['fields']['field_link_to_video']['field'] = 'field_link_to_video';
   $handler->display->display_options['fields']['field_link_to_video']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_video']['element_type'] = '0';
   $handler->display->display_options['fields']['field_link_to_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_video']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_link_to_video']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_video']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_video']['group_rows'] = FALSE;

@@ -95,6 +95,7 @@ function forge_web_project_page_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'sidebar-block sidebar-block--long-labels';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -109,12 +110,20 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_organization']['table'] = 'field_data_field_responsible_organization';
   $handler->display->display_options['fields']['field_responsible_organization']['field'] = 'field_responsible_organization';
   $handler->display->display_options['fields']['field_responsible_organization']['label'] = 'Organization';
+  $handler->display->display_options['fields']['field_responsible_organization']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_responsible_organization']['element_label_class'] = 'sidebar-block__item-label';
+  $handler->display->display_options['fields']['field_responsible_organization']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_responsible_organization']['element_default_classes'] = FALSE;
   /* Field: Content: Starting date */
   $handler->display->display_options['fields']['field_starting_date']['id'] = 'field_starting_date';
   $handler->display->display_options['fields']['field_starting_date']['table'] = 'field_data_field_starting_date';
   $handler->display->display_options['fields']['field_starting_date']['field'] = 'field_starting_date';
+  $handler->display->display_options['fields']['field_starting_date']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_starting_date']['element_label_class'] = 'sidebar-block__item-label';
+  $handler->display->display_options['fields']['field_starting_date']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_starting_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_starting_date']['settings'] = array(
-    'format_type' => 'finnish',
+    'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

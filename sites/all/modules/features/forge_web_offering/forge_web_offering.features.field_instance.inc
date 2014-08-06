@@ -324,6 +324,7 @@ function forge_web_offering_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'field_cancellation_refund_policy',
     'label' => 'Cancellation / refund policy',
     'required' => 1,

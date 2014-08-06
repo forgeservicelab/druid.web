@@ -186,6 +186,7 @@ function forge_web_company_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'sidebar-block';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -201,7 +202,7 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['label'] = '';
   $handler->display->display_options['fields']['field_page_title']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_page_title']['element_class'] = 'views-field';
+  $handler->display->display_options['fields']['field_page_title']['element_class'] = 'sidebar-block__title';
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
@@ -211,27 +212,43 @@ function forge_web_company_views_default_views() {
   $handler->display->display_options['fields']['field_company_address']['field'] = 'field_company_address';
   $handler->display->display_options['fields']['field_company_address']['label'] = 'Address';
   $handler->display->display_options['fields']['field_company_address']['alter']['nl2br'] = TRUE;
+  $handler->display->display_options['fields']['field_company_address']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_company_address']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_company_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_address']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_company_address']['element_default_classes'] = FALSE;
   /* Field: Content: Organization phone */
   $handler->display->display_options['fields']['field_company_phone']['id'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['table'] = 'field_data_field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['field'] = 'field_company_phone';
   $handler->display->display_options['fields']['field_company_phone']['label'] = 'Phone';
+  $handler->display->display_options['fields']['field_company_phone']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_company_phone']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_company_phone']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_phone']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_company_phone']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_company_phone']['hide_empty'] = TRUE;
   /* Field: Content: Organization email */
   $handler->display->display_options['fields']['field_company_email']['id'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['table'] = 'field_data_field_company_email';
   $handler->display->display_options['fields']['field_company_email']['field'] = 'field_company_email';
   $handler->display->display_options['fields']['field_company_email']['label'] = 'E-mail';
+  $handler->display->display_options['fields']['field_company_email']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_company_email']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_company_email']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_email']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_company_email']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_company_email']['hide_empty'] = TRUE;
   /* Field: Content: Organization website */
   $handler->display->display_options['fields']['field_company_webpage']['id'] = 'field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['table'] = 'field_data_field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['field'] = 'field_company_webpage';
   $handler->display->display_options['fields']['field_company_webpage']['label'] = 'Website';
+  $handler->display->display_options['fields']['field_company_webpage']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_company_webpage']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_company_webpage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_company_webpage']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_company_webpage']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_company_webpage']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_company_webpage']['click_sort_column'] = 'url';
   /* Sort criterion: Content: Post date */

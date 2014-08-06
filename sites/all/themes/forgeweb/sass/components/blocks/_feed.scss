@@ -1,0 +1,33 @@
+// Feed block styles
+
+.block--views-feed-block {
+  max-width: 330px;
+  @include at-breakpoint($tab) {
+    max-width: 67em;
+  }
+  @include at-breakpoint($desk) {
+    max-width: 100%;
+  }
+  > * {
+   @include at-breakpoint($tab) {
+      margin: 0 auto;
+      max-width: 530px;
+    }
+    @include at-breakpoint($desk) {
+      max-width: 100%;
+    }
+  }
+  .block__title {
+    @extend .large-header;
+    margin: 0 auto 0.5em;
+  }
+  .view {
+    text-align: center;
+    .view-content {
+      text-align: left;
+      .views-row.views-row-last {
+        margin: 0 0 7em;
+      }
+    }
+  }
+}

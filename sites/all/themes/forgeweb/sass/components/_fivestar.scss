@@ -1,0 +1,113 @@
+// Fivestar styles
+
+form.fivestar-widget {
+  margin: 0;
+}
+
+.fivestar-average-stars {
+  div.fivestar-widget-static,
+  div.fivestar-widget {
+    .star {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      > span {
+        &.on {
+          @extend .icon-sprite;
+          
+          background-position: 0 -975px;
+        }
+        &.off {
+          @extend .icon-sprite;
+          
+          background-position: 0 -993px;
+        }
+      }
+      > a {
+        @extend .icon-sprite;
+        
+        background-position: 0 -993px;
+      }
+      &.on > a {
+        @extend .icon-sprite;
+        
+        background-position: 0 -975px;
+      }
+      &.hover > a {
+        @extend .icon-sprite;
+        
+        background-position: 0 -1011px;
+      }
+    }
+    .cancel {
+      background: none;
+      display: block;
+      height: 18px;
+      overflow: hidden;
+      width: 18px;
+      a {
+        @extend .icon-sprite;
+        
+        background-position: 0 -1029px;
+      }
+    }
+  }
+  .ajax-progress-throbber {
+    display: none;
+  }
+  .description {
+    color: #777;
+    span {
+      display: none;
+      &.empty {
+        display: block;
+        margin-top: 0.5em;
+      }
+    }
+  }
+  .form-item {
+    margin: 0;
+  }
+}
+
+
+// Fivestar retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .fivestar-average-stars {
+    div.fivestar-widget-static,
+    div.fivestar-widget {
+      .star {
+        > span {
+          &.on {
+            background-position: -9px -487px;
+          }
+          &.off {
+            background-position: -9px -505px;
+          }
+        }
+        > a {
+          background-position: -9px -505px;
+        }
+        &.on > a {
+          background-position: -9px -487px;
+        }
+        &.hover > a {
+          background-position: -9px -523px;
+        }
+      }
+      .cancel {
+        a {
+          background-position: -9px -541px;
+        }
+      }
+    }
+  }
+}

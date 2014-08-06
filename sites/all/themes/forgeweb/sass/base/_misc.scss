@@ -1,0 +1,19 @@
+// Misc style definitions
+
+img {
+  height: auto;
+}
+
+// UI Widged override
+
+.ui-widget {
+  font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+}
+
+// File field display
+.file {
+  a {
+    vertical-align: top;
+  }
+}
