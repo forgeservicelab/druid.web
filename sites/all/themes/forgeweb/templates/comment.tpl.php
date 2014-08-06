@@ -63,6 +63,13 @@
  $unlinked_title = $comment->subject;
 ?>
 <article<?php print $attributes; ?>>
+  <?php if($node->type === 'bulletin_board_item'): ?>
+    <header class="comment__info">
+      <div class="comment__author"><?php print $author; ?></div>
+      <div class="comment__post-date"><?php print $formatted_created; ?></div>
+    </header>
+  <?php endif; ?>
+  
   <?php print render($title_prefix); ?>
   <?php if ($new): ?>
     <mark class="new"><?php print $new; ?></mark>
@@ -76,9 +83,15 @@
       hide($content['links']);
       print render($content);
     ?>
+    <?php 
+      if($node->type === 'bulletin_board_item') {
+        print render($content['links']);
+      }
+    ?>
   </div>
-
-  <footer class="comment__info">
-    <p class="submitted comment__submitted"><?php print $author; ?> <?php print $formatted_created; ?></p>
-  </footer>
+  <?php if($node->type != 'bulletin_board_item'): ?>
+    <footer class="comment__info">
+      <p class="submitted comment__submitted"><?php print $author; ?> <?php print $formatted_created; ?></p>
+    </footer>
+  <?php endif; ?>
 </article>

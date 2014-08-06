@@ -329,6 +329,14 @@ form .form-checkboxes .category.main > .form-item.expandable .toggle, form .fiel
 .page-feed .block--fb-likebox .block__content {
   text-align: center;
 }
+.page-feed .views-exposed-form-feed-page {
+  margin: 1em 0 0;
+}
+.page-feed .views-exposed-form-feed-page .views-exposed-widgets,
+.page-feed .views-exposed-form-feed-page .form-checkboxes {
+  margin: 0;
+  overflow: hidden;
+}
 
 form {
   margin: 2em 0 0;
@@ -337,9 +345,6 @@ form .form-item label {
   font-weight: 300;
   margin-bottom: 0.5em;
   text-transform: uppercase;
-}
-form .form-item .description {
-  margin: 5px 0 0 5px;
 }
 form .form-item input.error {
   border: 2px solid #d31959;
@@ -402,7 +407,7 @@ form .form-item.form-type-textfield > input, form .form-item.webform-component-t
   width: 100%;
   -webkit-appearance: none;
 }
-form .form-item.form-type-textarea label, form .form-item.webform-component-textarea label {
+form .form-item.form-type-textarea > label, form .form-item.webform-component-textarea > label, form .form-item.form-type-select > label {
   background-color: #f7f7f7;
   border-left: 1px solid #e4e4e4;
   border-right: 1px solid #e4e4e4;
@@ -410,7 +415,7 @@ form .form-item.form-type-textarea label, form .form-item.webform-component-text
   margin: 0;
   padding: 8px 10px;
 }
-form .form-item.form-type-textarea label.error, form .form-item.webform-component-textarea label.error {
+form .form-item.form-type-textarea > label.error, form .form-item.webform-component-textarea > label.error, form .form-item.form-type-select > label.error {
   background-color: #D31959;
   border: 0 none;
   clear: both;
@@ -423,7 +428,7 @@ form .form-item.form-type-textarea label.error, form .form-item.webform-componen
   text-transform: none;
   width: auto;
 }
-form .form-item.form-type-textarea textarea, form .form-item.webform-component-textarea textarea {
+form .form-item.form-type-textarea textarea, form .form-item.webform-component-textarea textarea, form .form-item.form-type-select textarea {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -432,7 +437,7 @@ form .form-item.form-type-textarea textarea, form .form-item.webform-component-t
   border: 1px solid #e4e4e4;
   -webkit-appearance: none;
 }
-form .form-item.form-type-textarea .grippie, form .form-item.webform-component-textarea .grippie {
+form .form-item.form-type-textarea .grippie, form .form-item.webform-component-textarea .grippie, form .form-item.form-type-select .grippie {
   display: none;
 }
 form .form-item.form-type-radio {
@@ -440,6 +445,10 @@ form .form-item.form-type-radio {
 }
 form .form-item.form-type-radio label {
   text-transform: none;
+}
+form .description {
+  font-size: 0.85em;
+  margin: 5px 0 0 5px;
 }
 form .bef-checkboxes .form-item label,
 form .form-checkboxes .form-item label {
@@ -1200,6 +1209,8 @@ html[lang=fi] .site-name a {
 }
 .field--name-field-liftup-body p,
 .field--name-field-liftup-text p {
+  font-size: 0.9em;
+  line-height: 1.3em;
   margin: 0 0 1em;
 }
 
@@ -2926,6 +2937,11 @@ form.fivestar-widget {
 .page-node-add form .field-name-field-geographical-coverage {
   margin-bottom: 2em;
 }
+.page-node-edit form .form-type-select .chosen-container,
+.page-node-add form .form-type-select .chosen-container {
+  margin: 0;
+  width: 100% !important;
+}
 .page-node-edit form .field-name-field-collection .form-select,
 .page-node-add form .field-name-field-collection .form-select {
   margin-bottom: 0;
@@ -2970,7 +2986,6 @@ form.fivestar-widget {
   background-color: #f2f2f2;
   border-bottom: 1px solid #fff;
   margin: 0;
-  overflow: hidden;
   padding: 1em;
 }
 .page-node-edit .admin-sidebar-right > div .form-item,

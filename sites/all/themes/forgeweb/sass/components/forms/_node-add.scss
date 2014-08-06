@@ -34,7 +34,12 @@
     .field-name-field-geographical-coverage {
       margin-bottom: 2em;
     }
-    
+    .form-type-select {
+      .chosen-container {
+        margin: 0;
+        width: 100% !important; // Override fixed width provided by js
+      }
+    }
     .field-name-field-collection {
       .form-select {
         margin-bottom: 0;
@@ -70,7 +75,6 @@
       background-color: #f2f2f2;
       border-bottom: 1px solid #fff;
       margin: 0;
-      overflow: hidden;
       padding: 1em;
       
       .form-item {

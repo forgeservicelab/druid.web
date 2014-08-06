@@ -8,9 +8,6 @@ form {
       margin-bottom: 0.5em;
       text-transform: uppercase;
     }
-    .description {
-      margin: 5px 0 0 5px;
-    }
     input.error {
       border: 2px solid #d31959;
     }
@@ -73,8 +70,9 @@ form {
     
     // Textarea-field settings
     &.form-type-textarea,
-    &.webform-component-textarea {
-      label {
+    &.webform-component-textarea,
+    &.form-type-select {
+      > label {
         background-color: $tab-active;
         border-left: 1px solid $border-color;
         border-right: 1px solid $border-color;
@@ -113,6 +111,11 @@ form {
         text-transform: none;
       }
     }
+  }
+  
+  .description {
+    font-size: 0.85em;
+    margin: 5px 0 0 5px;
   }
   
   // Checkboxes and radiobutton styles
