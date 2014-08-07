@@ -138,7 +138,10 @@ only screen and (min-resolution: 192dpi) {
     .ui-accordion-header {
       &.ui-state-default {
         .ui-icon {
-          background-position: 0 -462px;
+          background-position: 0 -448px;
+          @include at-breakpoint($tab) {
+            background-position: 0 -462px;
+          }
         }
       }
     }
