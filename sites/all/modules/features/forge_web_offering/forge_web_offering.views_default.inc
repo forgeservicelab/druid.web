@@ -130,6 +130,7 @@ function forge_web_offering_views_default_views() {
     6 => 0,
     7 => 0,
   );
+  $handler->display->display_options['filters']['field_category_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_category_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_category_tid']['vocabulary'] = 'category';
   $handler->display->display_options['filters']['field_category_tid']['hierarchy'] = 1;
@@ -158,6 +159,7 @@ function forge_web_offering_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['block_caching'] = '6';
   $translatables['offering_listing'] = array(
     t('Master'),
     t('more'),
@@ -203,7 +205,7 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['style_options']['optionset'] = 'slideshow';
   $handler->display->display_options['style_options']['captionfield'] = 'field_main_images_1';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Screenshots */
+  /* Field: Content: Main images */
   $handler->display->display_options['fields']['field_main_images']['id'] = 'field_main_images';
   $handler->display->display_options['fields']['field_main_images']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images']['field'] = 'field_main_images';
@@ -219,7 +221,7 @@ function forge_web_offering_views_default_views() {
   );
   $handler->display->display_options['fields']['field_main_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_main_images']['delta_offset'] = '0';
-  /* Field: Content: Screenshots */
+  /* Field: Content: Main images */
   $handler->display->display_options['fields']['field_main_images_1']['id'] = 'field_main_images_1';
   $handler->display->display_options['fields']['field_main_images_1']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images_1']['field'] = 'field_main_images';
@@ -263,7 +265,7 @@ function forge_web_offering_views_default_views() {
     'offering' => 'offering',
     'service_offering' => 'service_offering',
   );
-  /* Filter criterion: Content: Screenshots (field_main_images:fid) */
+  /* Filter criterion: Content: Main images (field_main_images:fid) */
   $handler->display->display_options['filters']['field_main_images_fid']['id'] = 'field_main_images_fid';
   $handler->display->display_options['filters']['field_main_images_fid']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['filters']['field_main_images_fid']['field'] = 'field_main_images_fid';
