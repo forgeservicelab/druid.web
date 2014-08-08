@@ -44,6 +44,7 @@ function forge_web_wizard_field_default_field_instances() {
     'settings' => array(
       'display_summary' => TRUE,
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -85,6 +86,7 @@ function forge_web_wizard_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -133,6 +135,7 @@ function forge_web_wizard_field_default_field_instances() {
     'settings' => array(
       'display_summary' => TRUE,
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
@@ -174,6 +177,7 @@ function forge_web_wizard_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
