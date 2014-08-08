@@ -26,9 +26,9 @@ function forge_web_wizard_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-7' => array(
+        'block-6' => array(
           'module' => 'block',
-          'delta' => '7',
+          'delta' => '6',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
@@ -58,9 +58,9 @@ function forge_web_wizard_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-6' => array(
+        'block-7' => array(
           'module' => 'block',
-          'delta' => '6',
+          'delta' => '7',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
