@@ -38,7 +38,7 @@
    *   Drupal.settings directly you should use this because of potential
    *   modifications made by the Ajax callback that also produced 'context'.
    */
-   
+
   // Navigation functionality
   Drupal.behaviors.showSubNavigation = {
     attach: function (context, settings) {
@@ -57,22 +57,7 @@
       }
     }
   }
-  
-  // Parnters & people block functionality
-  /* Not used anymore
-  Drupal.behaviors.partnersPeopleBlock = {
-    attach: function (context, settings) {
-      $('#block-quicktabs-partners-or-people .view-partners .short-desc').click(function() {
-        $(this).siblings('.long-desc').fadeIn();
-      });
-      
-      $('#block-quicktabs-partners-or-people .view-partners .long-desc').click(function() {
-        $(this).fadeOut();
-      });
-    }
-  }
-  */
-  
+
   // FAQ page scroll to clicked item
   Drupal.behaviors.scrollToFaqQuestion = {
     attach: function (context, settings) {
@@ -95,7 +80,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.smoothScrolling = {
     attach: function (context, settings) {
       $("#rm-no-id>li>ul>li.active").removeClass("active");
@@ -104,10 +89,10 @@
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
           $(this)
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           if (target.length) {
             var top = (parseInt(target.offset().top));
-            var scrollTop = top-100;
+            var scrollTop = top - 100;
             
             $('html,body').animate({
               scrollTop: scrollTop
@@ -118,32 +103,32 @@
       });
     }
   };
-  
+
   // Groups form checkboxes, if their labels start with dashes.
   Drupal.behaviors.checkboxPrettify = {
     attach: function (context) {
-      
+
       $(context).find('form.node-form div.form-checkboxes, #block-views-exp-offering-listing-block-1 .bef-checkboxes').once('checkboxPrettify', function() {
         var $this = $(this);
         var prevDepth;
-        
+
         $this.find('div.form-item').each(function() {
           var $formItem = $(this);
           var $label = $formItem.find('label');
           var labelText = $label.text();
-          
+
           // Count dashes from label start and do level wrapping based on the amount of dashes.
           for (var level = 0, strLength = labelText.length; level < strLength; level++) {
             if (labelText.charAt(level) !== '-') {
               if (level > 0) {
                 // Remove dashes from title.
                 $label.text($label.text().substring(level));
-                
+
                 if (prevDepth !== 'undefined') {
                   // This item will be higher in the tree than the last one.
                   if (prevDepth < level) {
                     var $lastCategory = $this.find('div.category.level-' + prevDepth).last();
-                    
+
                     // Since we moved higher, there shouldn't be an wrapper available yet.
                     $('<div class="category subcategory level-' + level + '"></div>')
                       .append($formItem)
@@ -165,12 +150,12 @@
               // Main level wrapper.
               else {
                 $formItem.append('<span class="toggle"></span>');
-                
+
                 $('<div class="category main level-0"></div>')
                   .append($formItem)
                   .appendTo($this);
               }
-              
+
               $formItem.addClass('level-' + level);
               prevDepth = level;
               break;
@@ -190,7 +175,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.openCommentTab = {
     attach: function (context, settings) {
       var hash = $(location).attr('hash');
@@ -205,5 +190,5 @@
       }
     }
   };
-  
+
 })(jQuery);

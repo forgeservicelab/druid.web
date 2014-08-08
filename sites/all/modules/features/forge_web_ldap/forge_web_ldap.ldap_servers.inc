@@ -17,7 +17,7 @@ function forge_web_ldap_default_ldap_servers() {
   $ldap_servers_conf->name = 'Forge LDAP server';
   $ldap_servers_conf->status = TRUE;
   $ldap_servers_conf->ldap_type = 'default';
-  $ldap_servers_conf->address = '193.166.24.115';
+  $ldap_servers_conf->address = 'auth.forgeservicelab.fi';
   $ldap_servers_conf->port = 636;
   $ldap_servers_conf->tls = FALSE;
   $ldap_servers_conf->followrefs = FALSE;

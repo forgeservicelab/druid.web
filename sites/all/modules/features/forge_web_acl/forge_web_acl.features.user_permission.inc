@@ -95,41 +95,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'devel',
   );
 
-  // Exported permission: 'access environment indicator'.
-  $permissions['access environment indicator'] = array(
-    'name' => 'access environment indicator',
-    'roles' => array(),
-    'module' => 'environment_indicator',
-  );
-
-  // Exported permission: 'access environment indicator default_environment'.
-  $permissions['access environment indicator default_environment'] = array(
-    'name' => 'access environment indicator default_environment',
-    'roles' => array(),
-    'module' => 'environment_indicator',
-  );
-
-  // Exported permission: 'access environment indicator overwritten_environment'.
-  $permissions['access environment indicator overwritten_environment'] = array(
-    'name' => 'access environment indicator overwritten_environment',
-    'roles' => array(),
-    'module' => 'environment_indicator',
-  );
-
-  // Exported permission: 'access environment indicator prod'.
-  $permissions['access environment indicator prod'] = array(
-    'name' => 'access environment indicator prod',
-    'roles' => array(),
-    'module' => 'environment_indicator',
-  );
-
-  // Exported permission: 'access environment indicator testi'.
-  $permissions['access environment indicator testi'] = array(
-    'name' => 'access environment indicator testi',
-    'roles' => array(),
-    'module' => 'environment_indicator',
-  );
-
   // Exported permission: 'access own authorizations'.
   $permissions['access own authorizations'] = array(
     'name' => 'access own authorizations',
@@ -293,13 +258,6 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'administer entity translation',
     'roles' => array(),
     'module' => 'entity_translation',
-  );
-
-  // Exported permission: 'administer environment indicator settings'.
-  $permissions['administer environment indicator settings'] = array(
-    'name' => 'administer environment indicator settings',
-    'roles' => array(),
-    'module' => 'environment_indicator',
   );
 
   // Exported permission: 'administer features'.
@@ -549,7 +507,13 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'bypass honeypot protection'.
   $permissions['bypass honeypot protection'] = array(
     'name' => 'bypass honeypot protection',
-    'roles' => array(),
+    'roles' => array(
+      'Blogger' => 'Blogger',
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
     'module' => 'honeypot',
   );
 
@@ -615,13 +579,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create field_cancellation_refund_policy'.
-  $permissions['create field_cancellation_refund_policy'] = array(
-    'name' => 'create field_cancellation_refund_policy',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'create field_company_contact_details_fo'.
   $permissions['create field_company_contact_details_fo'] = array(
     'name' => 'create field_company_contact_details_fo',
@@ -652,26 +609,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create field_pricing_information'.
   $permissions['create field_pricing_information'] = array(
     'name' => 'create field_pricing_information',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'create field_pricing_information_in'.
-  $permissions['create field_pricing_information_in'] = array(
-    'name' => 'create field_pricing_information_in',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'create field_terms_and_conditions'.
-  $permissions['create field_terms_and_conditions'] = array(
-    'name' => 'create field_terms_and_conditions',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
@@ -933,6 +870,9 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete any webform content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -1264,13 +1204,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit field_cancellation_refund_policy'.
-  $permissions['edit field_cancellation_refund_policy'] = array(
-    'name' => 'edit field_cancellation_refund_policy',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit field_company_contact_details_fo'.
   $permissions['edit field_company_contact_details_fo'] = array(
     'name' => 'edit field_company_contact_details_fo',
@@ -1299,24 +1232,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit field_pricing_information'.
   $permissions['edit field_pricing_information'] = array(
     'name' => 'edit field_pricing_information',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_pricing_information_in'.
-  $permissions['edit field_pricing_information_in'] = array(
-    'name' => 'edit field_pricing_information_in',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit field_terms_and_conditions'.
-  $permissions['edit field_terms_and_conditions'] = array(
-    'name' => 'edit field_terms_and_conditions',
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
@@ -1362,13 +1277,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own field_cancellation_refund_policy'.
-  $permissions['edit own field_cancellation_refund_policy'] = array(
-    'name' => 'edit own field_cancellation_refund_policy',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'edit own field_company_contact_details_fo'.
   $permissions['edit own field_company_contact_details_fo'] = array(
     'name' => 'edit own field_company_contact_details_fo',
@@ -1399,26 +1307,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own field_pricing_information'.
   $permissions['edit own field_pricing_information'] = array(
     'name' => 'edit own field_pricing_information',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_pricing_information_in'.
-  $permissions['edit own field_pricing_information_in'] = array(
-    'name' => 'edit own field_pricing_information_in',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'edit own field_terms_and_conditions'.
-  $permissions['edit own field_terms_and_conditions'] = array(
-    'name' => 'edit own field_terms_and_conditions',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
@@ -1856,16 +1744,11 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'use text format filtered_html',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
       'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
     ),
     'module' => 'filter',
-  );
-
-  // Exported permission: 'view field_cancellation_refund_policy'.
-  $permissions['view field_cancellation_refund_policy'] = array(
-    'name' => 'view field_cancellation_refund_policy',
-    'roles' => array(),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: 'view field_company_contact_details_fo'.
@@ -1908,37 +1791,6 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: 'view field_pricing_information_in'.
-  $permissions['view field_pricing_information_in'] = array(
-    'name' => 'view field_pricing_information_in',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Forge member' => 'Forge member',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view field_terms_and_conditions'.
-  $permissions['view field_terms_and_conditions'] = array(
-    'name' => 'view field_terms_and_conditions',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Forge member' => 'Forge member',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_cancellation_refund_policy'.
-  $permissions['view own field_cancellation_refund_policy'] = array(
-    'name' => 'view own field_cancellation_refund_policy',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: 'view own field_company_contact_details_fo'.
   $permissions['view own field_company_contact_details_fo'] = array(
     'name' => 'view own field_company_contact_details_fo',
@@ -1969,26 +1821,6 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'view own field_pricing_information'.
   $permissions['view own field_pricing_information'] = array(
     'name' => 'view own field_pricing_information',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_pricing_information_in'.
-  $permissions['view own field_pricing_information_in'] = array(
-    'name' => 'view own field_pricing_information_in',
-    'roles' => array(
-      'Content admin' => 'Content admin',
-      'Partner' => 'Partner',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view own field_terms_and_conditions'.
-  $permissions['view own field_terms_and_conditions'] = array(
-    'name' => 'view own field_terms_and_conditions',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
