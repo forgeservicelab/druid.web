@@ -47,11 +47,22 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = 'We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['counter']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
   $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['label'] = '';
+  $handler->display->display_options['fields']['field_page_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_page_title']['alter']['text'] = '[counter] [field_page_title]';
   $handler->display->display_options['fields']['field_page_title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_page_title']['element_class'] = 'question';
   $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
@@ -85,6 +96,12 @@ function forge_web_faq_views_default_views() {
     'field_page_title' => 0,
     'field_answer' => 0,
   );
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'faq:page_1';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -110,6 +127,111 @@ function forge_web_faq_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_page_title' => 'field_page_title',
+    'field_answer' => 'field_answer',
+    'edit_node' => 'edit_node',
+    'contextual_links' => 'contextual_links',
+    'draggableviews' => 'draggableviews',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_page_title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_answer' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'contextual_links' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'draggableviews' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Draggableviews: Content */
+  $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
+  $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
+  $handler->display->display_options['fields']['draggableviews']['label'] = '';
+  $handler->display->display_options['fields']['draggableviews']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  /* Field: Global: View result counter */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = '';
+  $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
+  /* Field: Content: Page title */
+  $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
+  $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
+  $handler->display->display_options['fields']['field_page_title']['field'] = 'field_page_title';
+  $handler->display->display_options['fields']['field_page_title']['label'] = '';
+  $handler->display->display_options['fields']['field_page_title']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_page_title']['alter']['text'] = '[counter] [field_page_title]';
+  $handler->display->display_options['fields']['field_page_title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_page_title']['element_class'] = 'question';
+  $handler->display->display_options['fields']['field_page_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_page_title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_page_title']['element_default_classes'] = FALSE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Field: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'field_page_title' => 0,
+    'field_answer' => 0,
+  );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Draggableviews: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'self';
+  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  $handler->display->display_options['path'] = 'admin/content/faq-ordering';
   $translatables['faq'] = array(
     t('Master'),
     t('FAQ'),
@@ -120,7 +242,9 @@ function forge_web_faq_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>'),
+    t('[counter] [field_page_title]'),
     t('Block'),
+    t('Page'),
   );
   $export['faq'] = $view;
 
