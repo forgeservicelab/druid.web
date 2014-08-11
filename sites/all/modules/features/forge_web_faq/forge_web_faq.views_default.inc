@@ -22,7 +22,6 @@ function forge_web_faq_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'FAQ';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time';
@@ -40,13 +39,6 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['style_options']['autoheight'] = 0;
   $handler->display->display_options['style_options']['disableifone'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Field: Content: Page title */
   $handler->display->display_options['fields']['field_page_title']['id'] = 'field_page_title';
   $handler->display->display_options['fields']['field_page_title']['table'] = 'field_data_field_page_title';
@@ -85,6 +77,10 @@ function forge_web_faq_views_default_views() {
     'field_page_title' => 0,
     'field_answer' => 0,
   );
+  /* Sort criterion: Content: Page title (field_page_title) */
+  $handler->display->display_options['sorts']['field_page_title_value']['id'] = 'field_page_title_value';
+  $handler->display->display_options['sorts']['field_page_title_value']['table'] = 'field_data_field_page_title';
+  $handler->display->display_options['sorts']['field_page_title_value']['field'] = 'field_page_title_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -112,14 +108,12 @@ function forge_web_faq_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block');
   $translatables['faq'] = array(
     t('Master'),
-    t('FAQ'),
     t('more'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>'),
     t('Block'),
   );
   $export['faq'] = $view;
