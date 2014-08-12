@@ -190,14 +190,14 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_http';
-  $strongarm->value = 'http://193.166.24.104/piwik/';
+  $strongarm->value = 'http://analytics.forgeservicelab.fi/piwik/';
   $export['piwik_url_http'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_https';
-  $strongarm->value = 'https://193.166.24.104/piwik/';
+  $strongarm->value = 'https://analytics.forgeservicelab.fi/piwik/';
   $export['piwik_url_https'] = $strongarm;
 
   $strongarm = new stdClass();

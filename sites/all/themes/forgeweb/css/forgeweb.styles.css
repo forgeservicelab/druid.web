@@ -2176,9 +2176,15 @@ img {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
+    background-position: 0 -448px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
+  .ui-accordion .ui-accordion-header.ui-state-default .ui-icon {
     background-position: 0 -462px;
   }
 }
+
 .comment h3, .comment .node-type-service-offering .block--quicktabs .views-label, .node-type-service-offering .block--quicktabs .comment .views-label,
 .comment .node-type-offering .block--quicktabs .views-label,
 .node-type-offering .block--quicktabs .comment .views-label,
