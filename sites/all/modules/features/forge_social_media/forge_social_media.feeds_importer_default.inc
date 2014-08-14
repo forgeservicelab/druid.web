@@ -43,6 +43,9 @@ function forge_social_media_feeds_importer_default() {
           'jsonpath_parser:0' => 'id',
           'jsonpath_parser:1' => 'text',
           'jsonpath_parser:2' => 'text',
+          'jsonpath_parser:3' => 'created_at',
+          'jsonpath_parser:4' => 'id_str',
+          'jsonpath_parser:5' => 'text',
         ),
         'debug' => array(
           'options' => array(
@@ -50,6 +53,9 @@ function forge_social_media_feeds_importer_default() {
             'jsonpath_parser:0' => 0,
             'jsonpath_parser:1' => 0,
             'jsonpath_parser:2' => 0,
+            'jsonpath_parser:3' => 0,
+            'jsonpath_parser:4' => 0,
+            'jsonpath_parser:5' => 0,
           ),
         ),
       ),
@@ -79,6 +85,21 @@ function forge_social_media_feeds_importer_default() {
           3 => array(
             'source' => 'tweet_url',
             'target' => 'url',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'jsonpath_parser:3',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'jsonpath_parser:4',
+            'target' => 'field_tweet_id',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'jsonpath_parser:5',
+            'target' => 'field_page_title',
             'unique' => FALSE,
           ),
         ),
