@@ -194,5 +194,16 @@
       }
     }
   };
+  
+  // Masonry configuration
+  Drupal.behaviors.masonry = {
+    attach: function (context) {
+      var msnry = new Masonry( '.masonry-wrapper', {
+        // options
+        columnWidth: '.masonry-item',
+        itemSelector: '.masonry-item'
+      });
+    }
+  }
 
 })(jQuery);
