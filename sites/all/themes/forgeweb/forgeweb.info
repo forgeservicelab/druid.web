@@ -22,7 +22,7 @@ scripts[] = js/forgeweb.behaviors.js
 scripts[] = js/jquery.hoverIntent.minified.js
 scripts[] = js/ajax-throbber.js
 scripts[] = js/help-toggle.js
-
+scripts[] = js/masonry.pkgd.min.js
 ; ========================================
 ; Regions
 ; ========================================

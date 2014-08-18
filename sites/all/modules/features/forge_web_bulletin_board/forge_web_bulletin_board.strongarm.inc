@@ -56,7 +56,7 @@ function forge_web_bulletin_board_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_bulletin_board_item';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_subject_field_bulletin_board_item'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -153,6 +153,13 @@ function forge_web_bulletin_board_strongarm() {
   $strongarm->name = 'node_submitted_bulletin_board_item';
   $strongarm->value = 0;
   $export['node_submitted_bulletin_board_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_bulletin_board_item_pattern';
+  $strongarm->value = 'bulletin-board/[node:title]';
+  $export['pathauto_node_bulletin_board_item_pattern'] = $strongarm;
 
   return $export;
 }

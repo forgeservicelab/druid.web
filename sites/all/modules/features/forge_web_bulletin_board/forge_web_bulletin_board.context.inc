@@ -70,13 +70,13 @@ function forge_web_bulletin_board_context_default_contexts() {
           'module' => 'views',
           'delta' => 'fe318909593de220416f16fd6a25c226',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '1',
         ),
         'views-8ed64fab5eba24a6e12a79bc56af4ac3' => array(
           'module' => 'views',
           'delta' => '8ed64fab5eba24a6e12a79bc56af4ac3',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => '2',
         ),
         'node_comment_block-node_comments' => array(
           'module' => 'node_comment_block',
