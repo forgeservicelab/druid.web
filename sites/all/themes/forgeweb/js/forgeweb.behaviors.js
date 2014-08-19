@@ -195,6 +195,19 @@
     }
   };
   
+  Drupal.behaviors.mergeMobileNavigation = {
+    attach: function (context, settings) {
+      var mobile_nav_width = 801;
+      var win_width = $(window).width();
+      if (win_width <= mobile_nav_width) {
+        //console.log($('#block-menu-menu-log-in-menu').attr('class'));
+        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
+        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0));
+        //responsive-menus-simple
+      }
+    }
+  };
+
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
