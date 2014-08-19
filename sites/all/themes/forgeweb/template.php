@@ -9,6 +9,10 @@
  // Alter the default comment form
  function forgeweb_form_comment_form_alter(&$form, &$form_state) {
    $form['comment_body']['#after_build'][] = 'forgeweb_customize_comment_form';
+
+   if($form['node_type']['#value'] == 'comment_node_bulletin_board_item') {
+     $form['comment_body']['und'][0]['#title'] = t('Reply');
+   }
  }
 
  function forgeweb_customize_comment_form(&$form) {

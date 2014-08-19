@@ -30,6 +30,11 @@
   <?php endif; ?>
   
   <div class="l-main">
+    <?php if ($title && !$node): ?>
+      <h1 class="page-title">
+        <?php print $title; ?>
+      </h1>
+    <?php endif; ?>
     <?php if ($page['before_content']): ?>
       <div class="l-before_content">
         <?php print render($page['before_content']); ?>

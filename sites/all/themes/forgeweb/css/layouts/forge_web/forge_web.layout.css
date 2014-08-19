@@ -36,6 +36,10 @@
   clear: both;
 }
 
+.l-under_content {
+  clear: both;
+}
+
 @media (min-width: 44em) {
   .l-main {
     max-width: 1160px;
