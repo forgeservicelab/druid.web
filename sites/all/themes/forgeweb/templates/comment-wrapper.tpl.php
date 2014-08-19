@@ -42,7 +42,12 @@
   <?php print render($content['comments']); ?>
 
   <?php if ($content['comment_form']): ?>
-    <h2<?php print $form_title_attributes ?>><?php print t('Add new comment'); ?></h2>
+    <?php if ($content['#node']->type != 'bulletin_board_item'): ?>
+      <h2<?php print $form_title_attributes ?>><?php print t('Add new comment'); ?></h2>
+    <?php endif; ?>
+    <?php if ($content['#node']->type == 'bulletin_board_item'): ?>
+      <h2<?php print $form_title_attributes ?>><?php print t('Add new reply'); ?></h2>
+    <?php endif; ?>
     <?php print render($content['comment_form']); ?>
   <?php endif; ?>
 </section>

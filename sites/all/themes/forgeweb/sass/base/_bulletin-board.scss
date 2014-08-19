@@ -1,0 +1,221 @@
+.bulletin-board {
+  .bulletin-board__header {
+    margin-bottom: 3em;
+    overflow: hidden;
+    .button {
+      display: block;
+      float: left;
+    }
+  }
+  
+  .bulletin-board__content {
+    margin: -1% 0;
+    @include at-breakpoint($tab) {
+      margin: -1%;
+    }
+    @include at-breakpoint($desk) {
+      margin: -0.5%;
+    }
+  }
+  
+  .bulletin-board__item {
+    background-color: #f5f5f5;
+    border: 1px solid $border-color;
+    margin: 1% 0;
+    padding: 1em 1em 40px;
+    width: 100%;
+    @include at-breakpoint($tab) {
+      margin: 1%;
+      padding: 1em;
+      width: 31%;
+    }
+    @include at-breakpoint($desk) {
+      margin: 0.5%;
+      width: 24%;
+    }
+    &:hover .bulletin-board__item-link {
+      display: block;
+    }
+  }
+  
+  .bulletin-board__item-type,
+  .bulletin-board__item-replies {
+    display: block;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    margin-bottom: 15px;
+    width: 50%;
+  }
+  
+  .bulletin-board__item-type {
+    color: $link-blue;
+    float: left;
+  }
+  
+  .bulletin-board__item-replies {
+    float: right;
+    text-align: right;
+  }
+  
+  .bulletin-board__item-content {
+    font-size: 1.1em;
+  }
+  
+  .bulletin-board__item-link {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    @include at-breakpoint($tab) {
+      background-color: rgba(255,255,255,0.7);
+      bottom: auto;
+      display: none;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+    }
+    > a {
+      background-color: $link-blue;
+      color: #fff;
+      display: block;
+      padding: 5px;
+      text-align: center;
+      width: 100%;
+      &:hover {
+        background-color: lighten($link-blue, 10);
+      }
+      @include at-breakpoint($tab) {
+        bottom: 0;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.node-type-bulletin-board-item,
+.bulletin-board__item-reply-form {
+  .l-content {
+    position: relative;
+    > .block {
+      @include at-breakpoint($tab) {
+        clear: left;
+        float: left;
+        margin-right: -15%;
+        width: 15%;
+      }
+    }
+  }
+  .l-under_content {
+    overflow: hidden;
+  }
+  .node {
+    background-color: #f5f5f5;
+    border: 1px solid $border-color;
+    padding: 1em;
+    width: 100;
+    @include at-breakpoint($tab) {
+      float: right;
+      margin-left: 15%;
+      width: 85%;
+    }
+    .page-title {
+      font-size: 1.5em;
+      margin-bottom: 1em;
+      margin-right: 100px;
+    }
+    .links {
+      li {
+        float: right;
+        margin: 0 0 0 1em;
+        a {
+          @extend .button;
+        }
+      }
+    }
+  }
+  
+  .reply-count {
+    font-size: 0.9em;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
+  
+  .post__info {
+    background-color: #f5f5f5;
+    padding: 0.5em 1em;
+    @include at-breakpoint($tab) {
+      background-color: transparent;
+      padding: 0;
+    }
+  }
+  .post__post-date {
+    font-size: 0.9em;
+  }
+  
+  // Reply
+  .comment {
+    margin: 2em 0;
+    overflow: hidden;
+    .new {
+      padding: 0 10px;
+      position: absolute;
+      right: 1em;
+      top: 1em;
+    }
+    .comment__info {
+      color: #535353;
+      font-size: 0.9em;
+      @include at-breakpoint($tab) {
+        clear: left;
+        color: #333;
+        float: left;
+        font-size: 1em;
+        margin-right: -15%;
+        margin-top: 1em;
+        width: 15%;
+      }
+      .comment__author,
+      .comment__post-date {
+        display: inline-block;
+        @include at-breakpoint($tab) {
+          display: block;
+        }
+      }
+      .comment__author:after {
+        content: " - ";
+        @include at-breakpoint($tab) {
+          content: "";
+        }
+      }
+      .comment__post-date {
+        font-size: 0.9em;
+      }
+    }
+    .comment__content-wrapper {
+      position: relative;
+      width: 100%;
+      @include at-breakpoint($tab) {
+        float: right;
+        margin-left: 15%;
+        padding: 1em;
+        width: 85%;
+      }
+      p {
+        margin: 0 0 1em;
+      }
+    }
+    .links {
+      li {
+        float: right;
+        margin: 0 0 0 1em;
+        a {
+          @extend .button;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

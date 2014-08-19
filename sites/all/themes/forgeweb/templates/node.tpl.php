@@ -87,6 +87,10 @@
   global $base_url;
   
   $share_url = $base_url . $node_url;
+  
+  if($type == 'bulletin_board_item') {
+    $content['links']['comment']['#links']['comment-add']['title'] = t('Reply');
+  }
 ?>
 <article<?php print $attributes; ?>>
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
