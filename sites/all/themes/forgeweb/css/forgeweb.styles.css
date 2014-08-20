@@ -1,15 +1,15 @@
 .large-header, .front .l-middle_content .block--block .block__title, .view-what-why-blocks .view-content .forge-web-block-body-wrapper h2, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after, .block--views-feed-block .block__title {
-  font-size: 30px;
+  font-size: 28px;
   text-transform: none;
 }
 @media (min-width: 44em) {
   .large-header, .front .l-middle_content .block--block .block__title, .view-what-why-blocks .view-content .forge-web-block-body-wrapper h2, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after, .block--views-feed-block .block__title {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 @media (min-width: 70em) {
   .large-header, .front .l-middle_content .block--block .block__title, .view-what-why-blocks .view-content .forge-web-block-body-wrapper h2, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li a, .block--quicktabs-partners-or-people .ui-tabs .ui-tabs-nav li:first-child:after, .block--views-feed-block .block__title {
-    font-size: 72px;
+    font-size: 42px;
   }
 }
 
@@ -64,7 +64,7 @@ body {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
 }
 
 h1, h2, h3, .node-type-service-offering .block--quicktabs .views-label,
@@ -1468,16 +1468,16 @@ html[lang=fi] .site-name a {
 }
 .front .l-middle_content .block {
   background-color: #fff;
-  margin-bottom: 6em;
+  margin-bottom: 3em;
 }
 @media (min-width: 44em) {
   .front .l-middle_content .block {
-    margin-bottom: 7em;
+    margin-bottom: 4em;
   }
 }
 @media (min-width: 70em) {
   .front .l-middle_content .block {
-    margin-bottom: 10em;
+    margin-bottom: 5em;
   }
 }
 .front .l-middle_content .block:last-child {
@@ -2471,6 +2471,9 @@ img {
 .view-feed .views-exposed-form .views-exposed-widget > label {
   display: none;
 }
+.view-feed .views-exposed-form .views-exposed-widget .form-checkboxes {
+  margin: 0;
+}
 .view-feed .views-exposed-form .views-exposed-widget .form-item {
   display: block;
   width: 100%;
@@ -2932,6 +2935,9 @@ form.fivestar-widget {
   .block--views-faq-block .view-faq {
     max-width: 100%;
   }
+}
+.block--views-faq-block .view-faq .view-content {
+  padding-bottom: 3em;
 }
 .block--views-faq-block .view-faq .question {
   font-size: 1.3em;

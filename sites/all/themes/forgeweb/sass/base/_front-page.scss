@@ -298,12 +298,12 @@ only screen and (min-resolution: 192dpi) {
   }
   .block {
     background-color: #fff;
-    margin-bottom: 6em;
+    margin-bottom: 3em;
     @include at-breakpoint($tab) {
-      margin-bottom: 7em;
+      margin-bottom: 4em;
     }
     @include at-breakpoint($desk) {
-      margin-bottom: 10em;
+      margin-bottom: 5em;
     }
     &:last-child {
       margin-bottom: 0;
