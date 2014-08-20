@@ -195,6 +195,25 @@
     }
   };
   
+  Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
+    attach: function (context, settings) {
+      
+      $('.flexslider').flexslider({
+        start: function(slider) {
+          $('.flex-next, .flex-prev').click(function(event){
+            event.preventDefault();
+            $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
+              var video = $(this).attr("src");
+              $(this).attr("src","");
+              $(this).attr("src",video);
+            });
+          });
+        }
+      });
+    }
+  };
+  
+
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
