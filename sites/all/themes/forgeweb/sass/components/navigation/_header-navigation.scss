@@ -74,6 +74,7 @@
         li {
           background: none;
           display: none;
+          margin-left: 10px;
           padding: 0;
           a {
             padding-left: 5%;
@@ -92,6 +93,12 @@
           li {
             display: block;
           }
+        }
+        &.language-switcher.first {
+          border-top: 4px solid $active-link-color;
+        }
+        &.language-switcher.last {
+          border-bottom: 4px solid $active-link-color;
         }
       }
     }
