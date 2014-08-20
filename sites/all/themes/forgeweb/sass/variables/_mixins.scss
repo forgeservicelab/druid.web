@@ -13,13 +13,13 @@ $horz-spacing-unit: 1em;
 
 // Front page large header
 .large-header {
-  font-size: 30px;
+  font-size: 28px;
   text-transform: none;
   @include at-breakpoint($tab) {
-    font-size: 48px;
+    font-size: 36px;
   }
   @include at-breakpoint($desk) {
-    font-size: 72px;
+    font-size: 42px;
   }
 }
 

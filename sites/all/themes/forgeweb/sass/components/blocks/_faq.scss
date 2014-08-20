@@ -43,6 +43,9 @@
     @include at-breakpoint($desk) {
       max-width: 100%;
     }
+    .view-content {
+      padding-bottom: 3em;
+    }
     .question {
       font-size: 1.3em;
       text-transform: none;
