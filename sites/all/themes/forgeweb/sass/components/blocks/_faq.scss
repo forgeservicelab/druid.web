@@ -35,17 +35,6 @@
       width: 362px;
     }
   }
-  h2 {
-    @extend .large-header;
-    margin: 0 0 0.5em;
-    @include at-breakpoint($tab) {
-      margin: 0 auto 0.5em;
-      max-width: 530px;
-    }
-    @include at-breakpoint($desk) {
-      max-width: 100%;
-    }
-  }
   .view-faq {
     @include at-breakpoint($tab) {
       margin: 0 auto;
@@ -53,9 +42,6 @@
     }
     @include at-breakpoint($desk) {
       max-width: 100%;
-    }
-    .view-header {
-      @extend .large-caption;
     }
     .question {
       font-size: 1.3em;

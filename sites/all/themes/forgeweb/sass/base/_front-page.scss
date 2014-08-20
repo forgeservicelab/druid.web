@@ -309,6 +309,37 @@ only screen and (min-resolution: 192dpi) {
       margin-bottom: 0;
     }
   }
+  
+  .block--block {
+    margin: 0 auto;
+    max-width: 330px;
+    @include at-breakpoint($tab) {
+      @include suffix(4, 12);
+
+      max-width: 100%;
+    }
+    @include at-breakpoint($desk) {
+      @include suffix(6, 16);
+
+      max-width: 100%;
+    }
+    .block__title {
+      @extend .large-header;
+    }
+    .block__title,
+    .block__content {
+      @include at-breakpoint($tab) {
+        margin: 0 auto;
+        max-width: 530px;
+      }
+      @include at-breakpoint($desk) {
+        max-width: 100%;
+      }
+    }
+    .block__content {
+      @extend .large-caption;
+    }
+  }
 }
 
 
