@@ -104,6 +104,12 @@ function forge_web_faq_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'liftup' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -115,6 +121,9 @@ function forge_web_faq_strongarm() {
         ),
         'language' => array(
           'weight' => '0',
+        ),
+        'metatags' => array(
+          'weight' => '40',
         ),
       ),
       'display' => array(),
