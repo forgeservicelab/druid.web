@@ -199,12 +199,17 @@
     attach: function (context, settings) {
       var mobile_nav_width = 801;
       var win_width = $(window).width();
+      $(window).resize(function() {
+        if ($(window).width() <= mobile_nav_width) {
+          $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
+          $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
+        }
+      });
       if (win_width <= mobile_nav_width) {
-        //console.log($('#block-menu-menu-log-in-menu').attr('class'));
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
-        //responsive-menus-simple
       }
+      
     }
   };
 
