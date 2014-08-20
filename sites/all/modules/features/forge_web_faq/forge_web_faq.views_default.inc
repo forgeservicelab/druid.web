@@ -87,6 +87,10 @@ function forge_web_faq_views_default_views() {
     'field_page_title' => 0,
     'field_answer' => 0,
   );
+  /* Sort criterion: Content: Weight (field_faq_weight) */
+  $handler->display->display_options['sorts']['field_faq_weight_value']['id'] = 'field_faq_weight_value';
+  $handler->display->display_options['sorts']['field_faq_weight_value']['table'] = 'field_data_field_faq_weight';
+  $handler->display->display_options['sorts']['field_faq_weight_value']['field'] = 'field_faq_weight_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -170,7 +174,11 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['handler'] = 'draggableviews_handler_fieldapi';
   $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['draggableviews_handler_fieldapi'] = array(
+    'field' => 'field_data_field_faq_weight:field_faq_weight_value',
+  );
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -210,12 +218,10 @@ function forge_web_faq_views_default_views() {
     'field_answer' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Draggableviews: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'self';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
+  /* Sort criterion: Content: Weight (field_faq_weight) */
+  $handler->display->display_options['sorts']['field_faq_weight_value']['id'] = 'field_faq_weight_value';
+  $handler->display->display_options['sorts']['field_faq_weight_value']['table'] = 'field_data_field_faq_weight';
+  $handler->display->display_options['sorts']['field_faq_weight_value']['field'] = 'field_faq_weight_value';
   $handler->display->display_options['path'] = 'admin/content/faq-ordering';
   $translatables['faq'] = array(
     t('Master'),
