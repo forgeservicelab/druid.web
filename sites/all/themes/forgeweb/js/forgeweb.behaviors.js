@@ -83,20 +83,24 @@
 
   Drupal.behaviors.smoothScrolling = {
     attach: function (context, settings) {
+      var scrollToTab = function(el, offset) {
+        $('html, body').animate({
+          scrollTop: el.offset().top - offset
+        }, 500);
+      };
+      var hash = window.location.hash;
+      var el = $(hash);
+      if (hash !== '') {
+        scrollToTab(el, -50);
+      }
       $("#rm-no-id>li>ul>li.active").removeClass("active");
       $("#rm-no-id>li>ul>li>a.active").removeClass("active");
       $('#block-menu-block-1 a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
-          $(this)
           target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
           if (target.length) {
-            var top = (parseInt(target.offset().top));
-            var scrollTop = top - 100;
-            
-            $('html,body').animate({
-              scrollTop: scrollTop
-            }, 1000);
+            scrollToTab(target, 100)
             return false;
           }
         }
@@ -190,5 +194,16 @@
       }
     }
   };
+  
+  // Masonry configuration
+  Drupal.behaviors.masonry = {
+    attach: function (context) {
+      var msnry = new Masonry( '.masonry-wrapper', {
+        // options
+        columnWidth: '.masonry-item',
+        itemSelector: '.masonry-item'
+      });
+    }
+  }
 
 })(jQuery);

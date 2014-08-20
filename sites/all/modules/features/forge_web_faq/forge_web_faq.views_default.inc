@@ -22,7 +22,6 @@ function forge_web_faq_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'FAQ';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'time';
@@ -40,20 +39,12 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['style_options']['autoheight'] = 0;
   $handler->display->display_options['style_options']['disableifone'] = 1;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
   $handler->display->display_options['fields']['counter']['field'] = 'counter';
   $handler->display->display_options['fields']['counter']['label'] = '';
   $handler->display->display_options['fields']['counter']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['counter']['element_type'] = 'h3';
   $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
   /* Field: Content: Page title */
@@ -96,12 +87,6 @@ function forge_web_faq_views_default_views() {
     'field_page_title' => 0,
     'field_answer' => 0,
   );
-  /* Sort criterion: Draggableviews: Weight */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'draggableviews_structure';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_view'] = 'faq:page_1';
-  $handler->display->display_options['sorts']['weight']['draggableviews_setting_new_items_bottom_list'] = 1;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -234,14 +219,12 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['path'] = 'admin/content/faq-ordering';
   $translatables['faq'] = array(
     t('Master'),
-    t('FAQ'),
     t('more'),
     t('Apply'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('We truly value openness, interaction and feedback – and every question we are being asked helps us to further develop FORGE Service Lab and the dialogue with our audience. <a href="/contact-us">Please get in touch!</a>'),
     t('[counter] [field_page_title]'),
     t('Block'),
     t('Page'),

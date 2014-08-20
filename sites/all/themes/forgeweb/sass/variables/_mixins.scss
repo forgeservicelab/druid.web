@@ -56,7 +56,12 @@ $horz-spacing-unit: 1em;
   background-color: $button-color;
   border: 1px solid darken($button-color, 10);
   color: $text-color;
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 22px;
   padding: 5px 25px;
+  &.button__blue {
+    background-color: $link-blue;
+    border: 1px solid lighten($link-blue, 10);
+    color: #fff;
+  }
 }

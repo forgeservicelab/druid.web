@@ -62,23 +62,48 @@
  $formatted_created = format_date($comment->created, 'custom', 'j.n.Y');
  $unlinked_title = $comment->subject;
 ?>
+<?php if($content['comment_body']['#object']->node_type == 'comment_node_bulletin_board_item'): ?>
+  <div class="bulletin-board__item-reply-form">
+<?php endif;?>
+
 <article<?php print $attributes; ?>>
-  <?php print render($title_prefix); ?>
-  <?php if ($new): ?>
-    <mark class="new"><?php print $new; ?></mark>
+  <?php if($node->type === 'bulletin_board_item'): ?>
+    <header class="comment__info">
+      <div class="comment__author"><?php print $author; ?></div>
+      <div class="comment__post-date"><?php print $formatted_created; ?></div>
+    </header>
   <?php endif; ?>
-  <h3<?php print $title_attributes; ?>><?php print $unlinked_title; ?></h3>
-  <?php print render($title_suffix); ?>
+  
+  <div class="comment__content-wrapper">
+    <?php print render($title_prefix); ?>
+    <?php if ($new): ?>
+      <mark class="new"><?php print $new; ?></mark>
+    <?php endif; ?>
+    <?php if($node->type != 'bulletin_board_item'): ?>
+      <h3<?php print $title_attributes; ?>><?php print $unlinked_title; ?></h3>
+    <?php endif; ?>
+    <?php print render($title_suffix); ?>
 
-  <div<?php print $content_attributes; ?>>
-    <?php
-      // We hide the links now so that we can render them later.
-      hide($content['links']);
-      print render($content);
-    ?>
+    <div<?php print $content_attributes; ?>>
+      <?php
+        // We hide the links now so that we can render them later.
+        hide($content['links']);
+        print render($content);
+      ?>
+      <?php 
+        if($node->type === 'bulletin_board_item') {
+          print render($content['links']);
+        }
+      ?>
+    </div>
   </div>
-
-  <footer class="comment__info">
-    <p class="submitted comment__submitted"><?php print $author; ?> <?php print $formatted_created; ?></p>
-  </footer>
+  <?php if($node->type != 'bulletin_board_item'): ?>
+    <footer class="comment__info">
+      <p class="submitted comment__submitted"><?php print $author; ?> <?php print $formatted_created; ?></p>
+    </footer>
+  <?php endif; ?>
 </article>
+
+<?php if($content['comment_body']['#object']->node_type == 'comment_node_bulletin_board_item'): ?>
+  </div>
+<?php endif; ?>

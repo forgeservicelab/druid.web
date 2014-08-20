@@ -25,4 +25,12 @@
       text-align: center;
     }
   }
+  .views-exposed-form-feed-page {
+    margin: 1em 0 0;
+    .views-exposed-widgets,
+    .form-checkboxes {
+      margin: 0;
+      overflow: hidden;
+    }
+  }
 }
