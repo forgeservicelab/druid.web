@@ -3854,6 +3854,11 @@ form.fivestar-widget {
   border-bottom: 1px solid #e4e4e4;
 }
 
+.front .tabs.tabs--primary > li > a {
+  font-size: 0.8em;
+  padding: 1em;
+}
+
 .horizontal-tabs {
   display: relative;
 }
