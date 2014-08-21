@@ -154,23 +154,11 @@ only screen and (min-resolution: 192dpi) {
     margin: 0 auto;
     max-width: 330px;
     padding: 12px 0 0;
-    &:after {
-      @extend .flower-sprite;
-    }
     @include at-breakpoint($tab) {
       max-width: 885px;
     }
     @include at-breakpoint($desk) {
       max-width: 1070px;
-      position: relative;
-      &:after {
-        background-position: -641px 0;
-        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
-        height: 1182px;
-        left: -590px;
-        position: absolute;
-        width: 535px;
-      }
     }
     > .block {
       background: url('../images/decoration_edge_down.png') repeat-x -2px bottom transparent;
@@ -356,37 +344,11 @@ only screen and (min-resolution: 192dpi) {
   }
   .l-after_content_helper {
     max-width: 330px;
-    &:before,
-    &:after {
-      @extend .flower-sprite;
-    }
     @include at-breakpoint($tab) {
       max-width: 880px;
     }
     @include at-breakpoint($desk) {
       max-width: 1090px;
-      position: relative;
-      &:before {
-        background-position: 0 -1182px;
-        left: -730px;
-        top: 100px;
-      }
-      &:after {
-        background-position: -649px -1182px;
-        right: -730px;
-        top: 1100px;
-      }
-      &:before,
-      &:after {
-        content: "";
-        display: block;
-        height: 385px;
-        position: absolute;
-        width: 649px;
-      }
-    }
-    .l-region {
-      overflow: hidden;
     }
   }
   .block--views-feed-block {
