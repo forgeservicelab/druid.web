@@ -93,8 +93,8 @@
       if (hash !== '') {
         scrollToTab(el, -50);
       }
-      $("#rm-no-id>li>ul>li.active").removeClass("active");
-      $("#rm-no-id>li>ul>li>a.active").removeClass("active");
+      $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li.active").removeClass("active");
+      $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li > a.active").removeClass("active");
       $('#block-menu-block-1 a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -202,8 +202,7 @@
       if (win_width <= mobile_nav_width) {
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
-      }
-      
+      } 
     }
   };
 
