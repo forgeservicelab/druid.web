@@ -50,9 +50,9 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'middle_content',
           'weight' => '-9',
         ),
-        'quicktabs-partners_or_people' => array(
-          'module' => 'quicktabs',
-          'delta' => 'partners_or_people',
+        'views-partners_people-block' => array(
+          'module' => 'views',
+          'delta' => 'partners_people-block',
           'region' => 'middle_content',
           'weight' => '-8',
         ),
