@@ -207,17 +207,6 @@
     }
   };
 
-  // Masonry configuration
-  Drupal.behaviors.masonry = {
-    attach: function (context) {
-      var msnry = new Masonry( '.masonry-wrapper', {
-        // options
-        columnWidth: '.masonry-item',
-        itemSelector: '.masonry-item'
-      });
-    }
-  }
-  
   Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
     attach: function (context, settings) {
       
@@ -235,5 +224,16 @@
       });
     }
   };
+
+  // Masonry configuration
+  Drupal.behaviors.masonry = {
+    attach: function (context) {
+      var msnry = new Masonry( '.masonry-wrapper', {
+        // options
+        columnWidth: '.masonry-item',
+        itemSelector: '.masonry-item'
+      });
+    }
+  }
 
 })(jQuery);

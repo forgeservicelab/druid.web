@@ -154,23 +154,11 @@ only screen and (min-resolution: 192dpi) {
     margin: 0 auto;
     max-width: 330px;
     padding: 12px 0 0;
-    &:after {
-      @extend .flower-sprite;
-    }
     @include at-breakpoint($tab) {
       max-width: 885px;
     }
     @include at-breakpoint($desk) {
       max-width: 1070px;
-      position: relative;
-      &:after {
-        background-position: -641px 0;
-        bottom: -100px; // Same as vertical spacing units in forge_web_front_page.layout.scss
-        height: 1182px;
-        left: -590px;
-        position: absolute;
-        width: 535px;
-      }
     }
     > .block {
       background: url('../images/decoration_edge_down.png') repeat-x -2px bottom transparent;
@@ -298,15 +286,46 @@ only screen and (min-resolution: 192dpi) {
   }
   .block {
     background-color: #fff;
-    margin-bottom: 6em;
+    margin-bottom: 3em;
     @include at-breakpoint($tab) {
-      margin-bottom: 7em;
+      margin-bottom: 4em;
     }
     @include at-breakpoint($desk) {
-      margin-bottom: 10em;
+      margin-bottom: 5em;
     }
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+  
+  .block--block {
+    margin: 0 auto;
+    max-width: 330px;
+    @include at-breakpoint($tab) {
+      @include suffix(4, 12);
+
+      max-width: 100%;
+    }
+    @include at-breakpoint($desk) {
+      @include suffix(6, 16);
+
+      max-width: 100%;
+    }
+    .block__title {
+      @extend .large-header;
+    }
+    .block__title,
+    .block__content {
+      @include at-breakpoint($tab) {
+        margin: 0 auto;
+        max-width: 530px;
+      }
+      @include at-breakpoint($desk) {
+        max-width: 100%;
+      }
+    }
+    .block__content {
+      @extend .large-caption;
     }
   }
 }
@@ -325,37 +344,11 @@ only screen and (min-resolution: 192dpi) {
   }
   .l-after_content_helper {
     max-width: 330px;
-    &:before,
-    &:after {
-      @extend .flower-sprite;
-    }
     @include at-breakpoint($tab) {
       max-width: 880px;
     }
     @include at-breakpoint($desk) {
       max-width: 1090px;
-      position: relative;
-      &:before {
-        background-position: 0 -1182px;
-        left: -730px;
-        top: 100px;
-      }
-      &:after {
-        background-position: -649px -1182px;
-        right: -730px;
-        top: 1100px;
-      }
-      &:before,
-      &:after {
-        content: "";
-        display: block;
-        height: 385px;
-        position: absolute;
-        width: 649px;
-      }
-    }
-    .l-region {
-      overflow: hidden;
     }
   }
   .block--views-feed-block {
@@ -453,7 +446,7 @@ only screen and (min-resolution: 192dpi) {
 
 // Front page Partners & People -block styles
 
-.block--quicktabs-partners-or-people {
+.block--views-partners-people-block {
   margin-left: auto;
   margin-right: auto;
   max-width: 330px;
@@ -464,12 +457,12 @@ only screen and (min-resolution: 192dpi) {
     max-width: 100%;
   }
   .block__title {
-    display: none;
+    @extend .large-header;
   }
-  .view-partners,
-  .view-people {
-    position: relative;
+  .view-partners-people {
     @include at-breakpoint($tab) {
+      background: url('../images/partners_default.png') no-repeat top left transparent;
+      background-size: 40% auto;
       min-height: 525px;
       padding-left: 45%;
     }
@@ -477,41 +470,50 @@ only screen and (min-resolution: 192dpi) {
       min-height: 730px;
     }
     .views-row {
-      margin: 0 0 2em;
+      margin: 0 0 1.5em;
       @include at-breakpoint($tab) {
-        margin: 0 0 2em;
+        margin: 0 0 1em;
       }
       @include at-breakpoint($desk) {
-        margin: 0 0 4em;
+        margin: 0 0 1.5em;
       }
       &.views-row-last {
         margin-bottom: 0;
       }
-      .short-desc,
-      .long-desc {
+      .short-desc {
+        overflow: hidden;
+        > a {
+          color: $text-color;
+          display: table;
+          height: 100%;
+          vertical-align: middle;
+        }
+        .short-desc__img,
+        .short-desc__text {
+          display: table-cell;
+          vertical-align: middle;
+        }
         h3,
         p {
           margin: 0.5em 0;
           text-transform: none;
+          a {
+            color: $link-color;
+          }
         }
         h3 {
+          margin: 0;
           @include at-breakpoint($tab) {
-            font-size: 1.4em;
-          }
-          @include at-breakpoint($desk) {
-            font-size: 1.7em;
+            font-size: 1.3em;
           }
         }
         p:last-child {
           margin-bottom: 0;
         }
-      }
-      .short-desc {
-        overflow: hidden;
         img {
           float: right;
           display: block;
-          margin: 0 10px 0 0;
+          margin: 0 20px 0 0;
           width: 100px;
           @include at-breakpoint($tab) {
             float: left;
@@ -522,96 +524,6 @@ only screen and (min-resolution: 192dpi) {
             height: auto;
             width: 180px;
           }
-        }
-      }
-      .long-desc {
-        @include box-shadow(0 5px 10px rgba(0,0,0,.8));
-        background-color: #FFFFFF;
-        display: none;
-        min-height: 100%;
-        left: 0;
-        position: absolute;
-        padding: 1em;
-        top: 0;
-        width: 100%;
-        z-index: 99;
-        @include at-breakpoint($tab) {
-          @include box-shadow(0 0 0 transparent);
-          padding: 0;
-        }
-        img {
-          @include at-breakpoint($tab) {
-            float: left;
-            width: 40%;
-          }
-        }
-      }
-    }
-  }
-  .view-partners {
-    @include at-breakpoint($tab) {
-      background: url('../images/partners_default.png') no-repeat top left transparent;
-      background-size: 40% auto;
-    }
-    .views-row {
-      .short-desc,
-      .long-desc {
-        h3,
-        p {
-          margin: 0.5em 110px 0.5em 0;
-          @include at-breakpoint($tab) {
-            margin-left: 130px;
-            margin-right: 0;
-          }
-          @include at-breakpoint($desk) {
-            margin-left: 260px;
-          }
-        }
-      }
-      .long-desc {
-        h3,
-        p {
-          margin-left: 0;
-          @include at-breakpoint($tab) {
-            margin-left: 41.2%;
-          }
-        }
-      }
-    }
-  }
-  .view-people {
-    @include at-breakpoint($tab) {
-      background: url('../images/people_default.png') no-repeat top left transparent;
-      background-size: 40% auto;
-    }
-  }
-  
-  .ui-tabs .ui-tabs-nav {
-    margin-bottom: 2em;
-    li {
-      color: $text-color;
-      margin-right: 5px;
-      @include at-breakpoint($tab) {
-        margin-right: 7px;
-      }
-      @include at-breakpoint($desk) {
-        margin-right: 10px;
-      }
-      a {
-        @extend .large-header;
-      }
-      &.ui-state-active a {
-        color: $text-color;
-      }
-      &:first-child:after {
-        content: "&";
-        @extend .large-header;
-        margin-left: 5px;
-        @include at-breakpoint($tab) {
-          margin-left: 7px;
-        }
-        @include at-breakpoint($desk) {
-          margin-left: 10px;
         }
       }
     }

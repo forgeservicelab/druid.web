@@ -48,19 +48,25 @@ function forge_landing_pages_context_default_contexts() {
           'module' => 'views',
           'delta' => 'what_why_blocks-block_1',
           'region' => 'middle_content',
+          'weight' => '-9',
+        ),
+        'views-partners_people-block' => array(
+          'module' => 'views',
+          'delta' => 'partners_people-block',
+          'region' => 'middle_content',
           'weight' => '-8',
         ),
-        'quicktabs-partners_or_people' => array(
-          'module' => 'quicktabs',
-          'delta' => 'partners_or_people',
+        'block-9' => array(
+          'module' => 'block',
+          'delta' => '9',
           'region' => 'middle_content',
-          'weight' => '-6',
+          'weight' => '-7',
         ),
         'views-faq-block' => array(
           'module' => 'views',
           'delta' => 'faq-block',
           'region' => 'middle_content',
-          'weight' => '-5',
+          'weight' => '-6',
         ),
         'views-feed-block' => array(
           'module' => 'views',
