@@ -1,0 +1,11 @@
+name = Forge web Onnistuu.fi integration
+core = 7.x
+package = Forge web
+dependencies[] = ctools
+dependencies[] = onnistuufi
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = onnistuufi_crypt_key
+features[variable][] = onnistuufi_customer_id
+project path = sites/all/modules/features
