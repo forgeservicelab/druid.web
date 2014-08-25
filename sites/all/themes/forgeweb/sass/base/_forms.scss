@@ -550,7 +550,7 @@ only screen and (min-resolution: 192dpi) {
 // Search form styles
 
 .search form,
-.block--views-exp-search-page,
+form.views-exposed-form-search-page,
 .view-own-content form {
   margin: 1em 0 2em;
   text-align: center;
@@ -589,6 +589,7 @@ only screen and (min-resolution: 192dpi) {
     
     .views-exposed-widget,
     .views-submit-button {
+      margin: 0;
       padding: 0;
     }
     

@@ -208,19 +208,20 @@
 
   Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
     attach: function (context, settings) {
-      
-      $('.flexslider').flexslider({
-        start: function(slider) {
-          $('.flex-next, .flex-prev').click(function(event){
-            event.preventDefault();
-            $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
-              var video = $(this).attr("src");
-              $(this).attr("src","");
-              $(this).attr("src",video);
+      if ($.isFunction($.flexslider)) {
+        $('.flexslider').flexslider({
+          start: function(slider) {
+            $('.flex-next, .flex-prev').click(function(event){
+              event.preventDefault();
+              $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
+                var video = $(this).attr("src");
+                $(this).attr("src","");
+                $(this).attr("src",video);
+              });
             });
-          });
-        }
-      });
+          }
+        });
+      }
     }
   };
 
@@ -231,6 +232,21 @@
         // options
         columnWidth: '.masonry-item',
         itemSelector: '.masonry-item'
+      });
+    }
+  }
+  
+  // Search toggle
+  Drupal.behaviors.searchToggle = {
+    attach: function (context) {
+      var searchToggle = $('.block--views-exp-search-page');
+      
+      searchToggle.click(function() {
+        $(this).find('form').slideToggle('fast');
+        $(this).find('form').click(function(event){
+          event.stopPropagation();
+        });
+        $(this).toggleClass('active');
       });
     }
   }
