@@ -1,0 +1,283 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function onnistuufi_menu() {
+  $items['admin/config/services/onnistuufi'] = array(
+    'title' => t('Onnistuu.fi configuration'),
+    'description' => 'Onnistuu.fi API conficuration',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('onnistuufi_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'includes/onnistuufi.admin.inc',
+  );
+  
+  $items['onnistuufi/success'] = array(
+    'title' => t('Success'),
+    'page callback' => 'onnistuufi_return_success',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  $items['onnistuufi/error'] = array(
+    'title' => t('Error'),
+    'page callback' => 'onnistuufi_return_error',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  $items['onnistuufi/sign'] = array(
+    'title' => t('Sign the document'),
+    'page callback' => 'onnistuufi_sign',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+  
+  return $items;
+}
+
+function _onnistuufi_steps() {
+  return array(
+    1 => array(
+      'form' => 'onnistuufi_sign_form_step1',
+    ),
+    2 => array(
+      'form' => 'onnistuufi_sign_form_step2',
+    ),
+  );
+}
+
+function onnistuufi_sign() {
+  return drupal_get_form('onnistuufi_sign_form');
+}
+
+/**
+ * Form constructor for the sign form.
+ */
+function onnistuufi_sign_form($form, &$form_state) {
+  
+  // Initialize a description of the steps for the wizard.
+  if (empty($form_state['step'])) {
+    $form_state['step'] = 1;
+
+    // This array contains the function to be called at each step to get the
+    // relevant form elements. It will also store state information for each
+    // step.
+    $form_state['step_information'] = _onnistuufi_steps();
+  }
+  $step = &$form_state['step'];
+  drupal_set_title(t('Sign the document: Step @step', array('@step' => $step)));
+  $function = $form_state['step_information'][$step]['form'];
+  
+  $form = $function($form, $form_state);
+
+  // Show the Next button only if there are more steps defined.
+  if ($step < count($form_state['step_information'])) {
+    // The Next button should be included on every step.
+    $form['next'] = array(
+      '#type' => 'submit',
+      '#value' => t('Next'),
+      '#name' => 'next',
+      '#submit' => array('onnistuufi_sign_form_next_submit'),
+    );
+  }
+  else {
+    // Just in case there are no more steps, we use the default submit handler
+    // of the form wizard. Call this button Finish, Submit, or whatever you
+    // want to show. When this button is clicked, the
+    // form_example_wizard_submit handler will be called.
+    $form['#action'] = url('https://www.onnistuu.fi/external/entry/');
+    $form['finish'] = array(
+      '#type' => 'submit',
+      '#value' => t('Sign'),
+    );
+  }
+
+  // Include each validation function defined for the different steps.
+  if (function_exists($form_state['step_information'][$step]['form'] . '_validate')) {
+    $form['next']['#validate'] = array($form_state['step_information'][$step]['form'] . '_validate');
+  }
+
+  return $form;
+}
+
+/**
+ * Submit handler for the 'next' button.
+ *
+ * This function:
+ * - Saves away $form_state['values']
+ * - Increments the step count.
+ * - Replace $form_state['values'] from the last time we were at this page
+ *   or with array() if we haven't been here before.
+ * - Force form rebuild.
+ *
+ */
+function onnistuufi_sign_form_next_submit($form, &$form_state) {
+  $current_step = &$form_state['step'];
+  $form_state['step_information'][$current_step]['stored_values'] = $form_state['values'];
+  
+  if ($current_step < count($form_state['step_information'])) {
+    if (!empty($form_state['step_information'][$current_step]['stored_values'])) {
+      $form_state['values'] = $form_state['step_information'][$current_step]['stored_values'];
+    }
+    else {
+      $form_state['values'] = array();
+    }
+    $current_step++;
+    
+    // Force rebuild with next step.
+    $form_state['rebuild'] = TRUE;
+    return;
+  }
+}
+
+
+function onnistuufi_sign_form_step1($form, &$form_state) {
+  // TODO: in this step we need to offer all different cases for signing the document 
+  $form['identifier'] = array(
+    '#title' => 'Identifier',
+    '#type' => 'textfield',
+    '#default_value' => '',
+    '#description' => t('Give your Personal ID.')
+  );
+  
+  
+  if(empty($_GET['document'])) {
+    drupal_set_message(t('You need to define document for signing.'));
+    //'https://forgeservicelab.fi/sites/default/files/FORGE%20Service%20Lab%20SDA%20v%200.4.pdf'
+  }
+  else {
+    // document url from guery
+    $doc = _onnistuufi_check_document_uri($_GET['document']);
+  }
+  
+  $form['document'] = array(
+    '#type' => 'hidden',
+    '#value' => $doc,
+  );
+  $form['markup'] = array(
+    '#markup' => t('<p>You can check here document for digital signature: <a href="@doc">@doc</a></p>', array('@doc' => $doc)),
+  );
+  return $form;
+}
+
+function onnistuufi_sign_form_step2($form, &$form_state) {
+  
+  $client = onnistuufi_init();
+  
+  $stamp = time();
+  $id = $form_state['values']['identifier'];
+  $requirements = array (
+    array(
+      'type' => 'person',
+      'identifier' => "$id",
+    )
+  );
+  
+  $doc = $form_state['values']['document'];
+  
+  $encrypted = $client->encryptRequest(
+    array(
+      'stamp' => "$stamp",
+      'return_success' => 'http://local.forge-web.fi:8082/onnistuufi/success',
+      'document' => "$doc",
+      'requirements' => $requirements
+    )
+  );
+  
+  $form['markup'] = array(
+    '#markup' => t('<p>Please check your information and sign the document.</p><p>Personal ID: @id</p><p>Document: <a href="@doc">@doc</a></p>', array('@id' => $id, '@doc' => $doc)),
+  );
+  
+  $form['return_failure'] = array(
+    '#type' => 'hidden',
+    '#value' => 'http://local.forge-web.fi:8082/onnistuufi/error',
+  );
+  $form['customer'] = array(
+    '#type' => 'hidden',
+    '#value' => variable_get('onnistuufi_customer_id', ''),
+  );
+  $form['data'] = array(
+    '#type' => 'hidden',
+    '#value' => $encrypted['data'],
+  );
+  $form['iv'] = array(
+    '#type' => 'hidden',
+    '#value' => $encrypted['iv'],
+  );
+  
+  return $form;
+}
+
+function onnistuufi_init() {
+  module_load_include('inc', 'onnistuufi', 'includes/client');
+  $client = new onnistuu_external_client(
+    variable_get('onnistuufi_customer_id', ''),
+    variable_get('onnistuufi_crypt_key', '')
+  );
+  return $client;
+}
+
+function onnistuufi_return_success() {
+  $data = $_GET['data'];
+  $iv = $_GET['iv'];
+  $client = onnistuufi_init();
+  $decrypt_data = $client->decryptReturn($data, $iv);
+  $doc = $decrypt_data->document;
+  
+  $text = t('Signed document is available here: <a href="@url">'.$doc.'</a>', array('@url' => url($doc)));
+  return $text;
+}
+
+function onnistuufi_return_error() {
+  $message = $_GET['onnistuu_message'].'.';
+  //$message .= onnistuufi_error_handling($_GET['onnistuu_error']);
+  $text = t('<p>Error occured while signing. Error message: <br/> @message</p><p>Please contact site administrator.</p>', array('@message' => $message));
+  return $text;
+}
+
+function _onnistuufi_check_document_uri($uri) {
+  // encode path and put all together manually
+  // TODO: I didn't use http_build_url because it didn't work for some reason
+  $error = false;
+  $parts = parse_url($uri);
+  $path = drupal_encode_path($parts['path']);
+  
+  if(empty($parts['scheme'])) {
+    $error = true;
+    $message = t('Missing scheme from document url.');
+  }
+  else {
+    $doc = $parts['scheme'].'://';
+  }
+  if(empty($parts['host'])) {
+    $error = true;
+    $message = t('Missing host from document url.');
+  }
+  else {
+    $doc .= $parts['host'];
+  }
+  
+  if(!empty($parts['port'])) {
+    $doc .= ':'.$parts['port'].'/';
+  }
+  else {
+    $doc .= '/';
+  }
+  
+  if(!empty($parts['path'])) {
+    $doc .= ltrim($path, '/');
+  }
+  
+  if(!empty($parts['query'])) {
+    $doc .= '?'.$parts['query'];
+  }
+  
+  if($error) {
+    drupal_set_message($message, 'error');
+  }
+  
+  return $doc;
+}
