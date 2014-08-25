@@ -3322,6 +3322,11 @@ form.fivestar-widget {
 .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.language-switcher.last {
   border-bottom: 4px solid #c7da2b;
 }
+.l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple .views-exposed-form-search-page {
+  border-top: 4px solid #c7da2b;
+  margin: 0;
+  padding: 10px 10px 2px;
+}
 .l-navigation-wrapper .responsive-menus.responsified span.toggler {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

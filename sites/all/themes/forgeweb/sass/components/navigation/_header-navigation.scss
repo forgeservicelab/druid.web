@@ -101,6 +101,11 @@
           border-bottom: 4px solid $active-link-color;
         }
       }
+      .views-exposed-form-search-page {
+        border-top: 4px solid $active-link-color;
+        margin: 0;
+        padding: 10px 10px 2px;
+      }
     }
     span.toggler {
       @include border-radius(0);

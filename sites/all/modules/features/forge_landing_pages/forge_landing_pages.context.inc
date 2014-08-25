@@ -131,6 +131,12 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-9',
         ),
+        'views--exp-search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-search-page',
+          'region' => 'navigation',
+          'weight' => '-8',
+        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
