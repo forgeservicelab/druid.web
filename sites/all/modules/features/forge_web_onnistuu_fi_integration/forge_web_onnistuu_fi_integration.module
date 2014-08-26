@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web Onnistuu.fi integration feature.
+ */
+
+include_once 'forge_web_onnistuu_fi_integration.features.inc';
