@@ -135,7 +135,7 @@ a.active {
 .fivestar-average-stars div.fivestar-widget .star > a, .fivestar-average-stars div.fivestar-widget-static .star.on > a,
 .fivestar-average-stars div.fivestar-widget .star.on > a, .fivestar-average-stars div.fivestar-widget-static .star.hover > a,
 .fivestar-average-stars div.fivestar-widget .star.hover > a, .fivestar-average-stars div.fivestar-widget-static .cancel a,
-.fivestar-average-stars div.fivestar-widget .cancel a, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler {
+.fivestar-average-stars div.fivestar-widget .cancel a, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler, .l-navigation-wrapper .block--views-exp-search-page:before {
   background-color: transparent;
   background-image: url("../images/icon_sprite.png");
   background-repeat: no-repeat;
@@ -149,7 +149,7 @@ a.active {
   .fivestar-average-stars div.fivestar-widget .star > a, .fivestar-average-stars div.fivestar-widget-static .star.on > a,
   .fivestar-average-stars div.fivestar-widget .star.on > a, .fivestar-average-stars div.fivestar-widget-static .star.hover > a,
   .fivestar-average-stars div.fivestar-widget .star.hover > a, .fivestar-average-stars div.fivestar-widget-static .cancel a,
-  .fivestar-average-stars div.fivestar-widget .cancel a, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler {
+  .fivestar-average-stars div.fivestar-widget .cancel a, .flexslider .flex-direction-nav a, .l-navigation-wrapper ul li:hover.expanded > a:after, .l-navigation-wrapper .responsive-menus.responsified span.toggler, .l-navigation-wrapper .block--views-exp-search-page:before {
     background-size: 103px auto;
   }
 }
@@ -1109,13 +1109,13 @@ html.js .form-autocomplete.throbbing {
   }
 }
 .search form,
-.block--views-exp-search-page,
+form.views-exposed-form-search-page,
 .view-own-content form {
   margin: 1em 0 2em;
   text-align: center;
 }
 .search form form,
-.block--views-exp-search-page form,
+form.views-exposed-form-search-page form,
 .view-own-content form form {
   line-height: 0;
   margin: 0;
@@ -1123,56 +1123,57 @@ html.js .form-autocomplete.throbbing {
 .search form .form-select,
 .search form .form-checkboxes,
 .search form .form-radios,
-.block--views-exp-search-page .form-select,
-.block--views-exp-search-page .form-checkboxes,
-.block--views-exp-search-page .form-radios,
+form.views-exposed-form-search-page .form-select,
+form.views-exposed-form-search-page .form-checkboxes,
+form.views-exposed-form-search-page .form-radios,
 .view-own-content form .form-select,
 .view-own-content form .form-checkboxes,
 .view-own-content form .form-radios {
   margin: 0 0 0 10px;
 }
 .search form .views-exposed-widgets,
-.block--views-exp-search-page .views-exposed-widgets,
+form.views-exposed-form-search-page .views-exposed-widgets,
 .view-own-content form .views-exposed-widgets {
   margin: 0;
   padding-right: 110px;
   position: relative;
 }
 .search form .views-exposed-widgets .views-exposed-widget,
-.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget,
+form.views-exposed-form-search-page .views-exposed-widgets .views-exposed-widget,
 .view-own-content form .views-exposed-widgets .views-exposed-widget {
   margin: 5px 1.5em;
 }
 .search form .views-exposed-widgets .views-exposed-widget label,
 .search form .views-exposed-widgets .views-exposed-widget .views-widget,
-.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget label,
-.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget .views-widget,
+form.views-exposed-form-search-page .views-exposed-widgets .views-exposed-widget label,
+form.views-exposed-form-search-page .views-exposed-widgets .views-exposed-widget .views-widget,
 .view-own-content form .views-exposed-widgets .views-exposed-widget label,
 .view-own-content form .views-exposed-widgets .views-exposed-widget .views-widget {
   display: inline-block;
 }
 .search form .views-exposed-widgets .views-exposed-widget label,
-.block--views-exp-search-page .views-exposed-widgets .views-exposed-widget label,
+form.views-exposed-form-search-page .views-exposed-widgets .views-exposed-widget label,
 .view-own-content form .views-exposed-widgets .views-exposed-widget label {
   font-weight: 300;
   margin: 0;
   text-transform: uppercase;
 }
 .search form .views-exposed-form,
-.block--views-exp-search-page .views-exposed-form,
+form.views-exposed-form-search-page .views-exposed-form,
 .view-own-content form .views-exposed-form {
   display: inline-block;
 }
 .search form .views-exposed-form .views-exposed-widget,
 .search form .views-exposed-form .views-submit-button,
-.block--views-exp-search-page .views-exposed-form .views-exposed-widget,
-.block--views-exp-search-page .views-exposed-form .views-submit-button,
+form.views-exposed-form-search-page .views-exposed-form .views-exposed-widget,
+form.views-exposed-form-search-page .views-exposed-form .views-submit-button,
 .view-own-content form .views-exposed-form .views-exposed-widget,
 .view-own-content form .views-exposed-form .views-submit-button {
+  margin: 0;
   padding: 0;
 }
 .search form .views-exposed-form .views-submit-button,
-.block--views-exp-search-page .views-exposed-form .views-submit-button,
+form.views-exposed-form-search-page .views-exposed-form .views-submit-button,
 .view-own-content form .views-exposed-form .views-submit-button {
   margin: 0;
   position: absolute;
@@ -1180,14 +1181,14 @@ html.js .form-autocomplete.throbbing {
   top: 0;
 }
 .search form .views-exposed-form .views-submit-button input,
-.block--views-exp-search-page .views-exposed-form .views-submit-button input,
+form.views-exposed-form-search-page .views-exposed-form .views-submit-button input,
 .view-own-content form .views-exposed-form .views-submit-button input {
   margin: 0;
   padding: 5px 0;
   width: 100px;
 }
 .search form .views-exposed-form .form-item,
-.block--views-exp-search-page .views-exposed-form .form-item,
+form.views-exposed-form-search-page .views-exposed-form .form-item,
 .view-own-content form .views-exposed-form .form-item {
   padding: 0;
 }
@@ -3321,6 +3322,11 @@ form.fivestar-widget {
 .l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple li.language-switcher.last {
   border-bottom: 4px solid #c7da2b;
 }
+.l-navigation-wrapper .responsive-menus.responsified.absolute .responsive-menus-simple .views-exposed-form-search-page {
+  border-top: 4px solid #c7da2b;
+  margin: 0;
+  padding: 10px 10px 2px;
+}
 .l-navigation-wrapper .responsive-menus.responsified span.toggler {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -3370,7 +3376,7 @@ form.fivestar-widget {
   .l-navigation-wrapper ul li a {
     color: black;
     display: block;
-    font-size: 1.15em;
+    font-size: 1em;
     font-weight: 400;
     text-transform: uppercase;
   }
@@ -3431,7 +3437,7 @@ form.fivestar-widget {
 }
 .l-navigation-wrapper .block--menu-menu-log-in-menu {
   display: none;
-  padding-right: 20px;
+  padding-right: 44px;
   position: absolute;
   right: 0;
   top: 0;
@@ -3481,6 +3487,68 @@ form.fivestar-widget {
 .l-navigation-wrapper .block--locale-language ul li.last a:after {
   content: "";
 }
+.l-navigation-wrapper .block--views-exp-search-page:before {
+  background-color: #f7f7f7;
+  background-position: 15px -1258px;
+  content: "";
+  display: none;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44px;
+  z-index: 101;
+}
+@media (min-width: 801px) {
+  .l-navigation-wrapper .block--views-exp-search-page:before {
+    display: block;
+  }
+}
+@media (min-width: 70em) {
+  .l-navigation-wrapper .block--views-exp-search-page:before {
+    background-position: -28px -1252px;
+    height: 100px;
+  }
+}
+.l-navigation-wrapper .block--views-exp-search-page.active:before {
+  background-color: #000;
+  background-position: 15px -1414px;
+  cursor: pointer;
+}
+@media (min-width: 70em) {
+  .l-navigation-wrapper .block--views-exp-search-page.active:before {
+    background-position: -28px -1408px;
+  }
+}
+.l-navigation-wrapper .block--views-exp-search-page:hover:before {
+  cursor: pointer;
+}
+.l-navigation-wrapper .block--views-exp-search-page .views-exposed-form {
+  display: block;
+  line-height: 0;
+  margin: 0 10px;
+}
+.l-navigation-wrapper .block--views-exp-search-page .views-exposed-form .views-exposed-widget {
+  float: none;
+}
+.l-navigation-wrapper .block--views-exp-search-page .views-exposed-form .views-exposed-widget .views-widget {
+  display: block;
+}
+.l-navigation-wrapper .block--views-exp-search-page form {
+  background-color: #000;
+  display: none;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  padding: 10px 0;
+  top: 80px;
+  width: 100%;
+}
+@media (min-width: 70em) {
+  .l-navigation-wrapper .block--views-exp-search-page form {
+    top: 100px;
+  }
+}
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
   .l-navigation-wrapper .responsive-menus.responsified span.toggler {
@@ -3496,6 +3564,27 @@ form.fivestar-widget {
     background-position: 0 -337px;
   }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
+  .l-navigation-wrapper .block--views-exp-search-page:before {
+    background-position: -33px -612px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
+  .l-navigation-wrapper .block--views-exp-search-page:before {
+    background-position: -71px -606px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
+  .l-navigation-wrapper .block--views-exp-search-page:hover:before {
+    background-position: -33px -690px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 70em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 70em), only screen and (min-device-pixel-ratio: 2) and (min-width: 70em), only screen and (min-resolution: 192dpi) and (min-width: 70em) {
+  .l-navigation-wrapper .block--views-exp-search-page:hover:before {
+    background-position: -71px -684px;
+  }
+}
+
 .ui-tabs {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;

@@ -101,6 +101,11 @@
           border-bottom: 4px solid $active-link-color;
         }
       }
+      .views-exposed-form-search-page {
+        border-top: 4px solid $active-link-color;
+        margin: 0;
+        padding: 10px 10px 2px;
+      }
     }
     span.toggler {
       @include border-radius(0);
@@ -158,7 +163,7 @@
         a {
           color: $menu-link-color;
           display: block;
-          font-size: 1.15em;
+          font-size: 1em;
           font-weight: 400;
           text-transform: uppercase;
           @include at-breakpoint($desk) {
@@ -210,7 +215,7 @@
   // Log in menu styles
   .block--menu-menu-log-in-menu {
     display: none;
-    padding-right: 20px;
+    padding-right: 44px;
     position: absolute;
     right: 0;
     top: 0;
@@ -260,6 +265,67 @@
       }
     }
   }
+  
+  // Search menu styles
+  .block--views-exp-search-page {
+    // Search icon
+    &:before {
+      @extend .icon-sprite;
+      
+      background-color: #f7f7f7;
+      background-position: 15px -1258px;
+      content: "";
+      display: none;
+      height: 80px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 44px;
+      z-index: 101;
+      @include at-breakpoint($mobile_nav) {
+        display: block;
+      }
+      @include at-breakpoint($desk) {
+        background-position: -28px -1252px;
+        height: 100px;
+      }
+    }
+    &.active:before {
+      background-color: #000;
+      background-position: 15px -1414px;
+      cursor: pointer;
+      @include at-breakpoint($desk) {
+        background-position: -28px -1408px;
+      }
+    }
+    &:hover:before {
+      cursor: pointer;
+    }
+    .views-exposed-form {
+      display: block;
+      line-height: 0;
+      margin: 0 10px;
+      .views-exposed-widget {
+        float: none;
+        .views-widget {
+          display: block;
+        }
+      }
+    }
+    form {
+      background-color: #000;
+      display: none;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      padding: 10px 0;
+      top: 80px;
+      width: 100%;
+      @include at-breakpoint($desk) {
+        top: 100px;
+      }
+    }
+  }
 }
 
 
@@ -287,6 +353,25 @@ only screen and (min-resolution: 192dpi) {
         position: relative;
         &:after {
           background-position: 0 -337px;
+        }
+      }
+    }
+    // Search icon style
+    .block--views-exp-search-page {
+      &:before {
+        @include at-breakpoint($tab) {
+          background-position: -33px -612px;
+        }
+        @include at-breakpoint($desk) {
+          background-position: -71px -606px;
+        }
+      }
+      &:hover:before {
+        @include at-breakpoint($tab) {
+          background-position: -33px -690px;
+        }
+        @include at-breakpoint($desk) {
+          background-position: -71px -684px;
         }
       }
     }

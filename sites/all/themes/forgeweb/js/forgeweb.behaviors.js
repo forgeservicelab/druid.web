@@ -202,25 +202,27 @@
       if (win_width <= mobile_nav_width) {
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
         $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
-      } 
+        $('.l-navigation-wrapper .block--views-exp-search-page form').clone().appendTo($('.responsive-menus-0-0-0 ul.responsive-menus-simple'));
+      }
     }
   };
 
   Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
     attach: function (context, settings) {
-      
-      $('.flexslider').flexslider({
-        start: function(slider) {
-          $('.flex-next, .flex-prev').click(function(event){
-            event.preventDefault();
-            $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
-              var video = $(this).attr("src");
-              $(this).attr("src","");
-              $(this).attr("src",video);
+      if ($.isFunction($.flexslider)) {
+        $('.flexslider').flexslider({
+          start: function(slider) {
+            $('.flex-next, .flex-prev').click(function(event){
+              event.preventDefault();
+              $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
+                var video = $(this).attr("src");
+                $(this).attr("src","");
+                $(this).attr("src",video);
+              });
             });
-          });
-        }
-      });
+          }
+        });
+      }
     }
   };
 
@@ -231,6 +233,21 @@
         // options
         columnWidth: '.masonry-item',
         itemSelector: '.masonry-item'
+      });
+    }
+  }
+  
+  // Search toggle
+  Drupal.behaviors.searchToggle = {
+    attach: function (context) {
+      var searchToggle = $('.block--views-exp-search-page');
+      
+      searchToggle.click(function() {
+        $(this).find('form').slideToggle('fast');
+        $(this).find('form').click(function(event){
+          event.stopPropagation();
+        });
+        $(this).toggleClass('active');
       });
     }
   }
