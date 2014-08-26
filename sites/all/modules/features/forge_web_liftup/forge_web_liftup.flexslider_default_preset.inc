@@ -57,7 +57,7 @@ function forge_web_liftup_flexslider_default_presets() {
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,
     'pauseOnAction' => 1,
-    'pauseOnHover' => 0,
+    'pauseOnHover' => 1,
     'manualControls' => '',
   );
   $export['liftup'] = $preset;
