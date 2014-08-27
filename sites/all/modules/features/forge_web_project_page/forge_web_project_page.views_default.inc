@@ -110,10 +110,12 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_organization']['table'] = 'field_data_field_responsible_organization';
   $handler->display->display_options['fields']['field_responsible_organization']['field'] = 'field_responsible_organization';
   $handler->display->display_options['fields']['field_responsible_organization']['label'] = 'Organization';
-  $handler->display->display_options['fields']['field_responsible_organization']['element_class'] = 'sidebar-block__item-content';
+  $handler->display->display_options['fields']['field_responsible_organization']['element_class'] = 'sidebar-block__item-content no-list-style';
   $handler->display->display_options['fields']['field_responsible_organization']['element_label_class'] = 'sidebar-block__item-label';
   $handler->display->display_options['fields']['field_responsible_organization']['element_wrapper_class'] = 'sidebar-block__item';
   $handler->display->display_options['fields']['field_responsible_organization']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_responsible_organization']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_responsible_organization']['multi_type'] = 'ul';
   /* Field: Content: Starting date */
   $handler->display->display_options['fields']['field_starting_date']['id'] = 'field_starting_date';
   $handler->display->display_options['fields']['field_starting_date']['table'] = 'field_data_field_starting_date';

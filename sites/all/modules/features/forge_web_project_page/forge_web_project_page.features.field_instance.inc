@@ -347,6 +347,7 @@ function forge_web_project_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'field_responsible_organization',
     'label' => 'Responsible organization',
     'required' => 0,

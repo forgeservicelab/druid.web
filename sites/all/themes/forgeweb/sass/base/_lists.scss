@@ -38,3 +38,14 @@
 .listing-title {
   margin: 0 0 1em;
 }
+
+.no-list-style {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style-type: none;
+      list-style-image: none;
+    }
+  }
+}
