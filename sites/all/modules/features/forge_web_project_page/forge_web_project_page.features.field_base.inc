@@ -13,10 +13,13 @@ function forge_web_project_page_field_default_field_bases() {
   // Exported field_base: 'field_responsible_organization'
   $field_bases['field_responsible_organization'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_responsible_organization',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(

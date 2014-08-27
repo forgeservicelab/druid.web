@@ -1840,6 +1840,15 @@ html[lang=fi] .site-name a {
   margin: 0 0 1em;
 }
 
+.no-list-style ul {
+  margin: 0;
+  padding: 0;
+}
+.no-list-style ul li {
+  list-style-type: none;
+  list-style-image: none;
+}
+
 img, media {
   max-width: 100%;
 }
