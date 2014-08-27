@@ -1684,10 +1684,26 @@ html[lang=fi] .site-name a {
   height: 100%;
   vertical-align: middle;
 }
-.block--views-partners-people-block .view-partners-people .views-row .short-desc .short-desc__img,
+.block--views-partners-people-block .view-partners-people .views-row .short-desc > a > span,
 .block--views-partners-people-block .view-partners-people .views-row .short-desc .short-desc__text {
   display: table-cell;
   vertical-align: middle;
+}
+.block--views-partners-people-block .view-partners-people .views-row .short-desc > a > span,
+.block--views-partners-people-block .view-partners-people .views-row .short-desc .short-desc__img {
+  width: 120px;
+}
+@media (min-width: 44em) {
+  .block--views-partners-people-block .view-partners-people .views-row .short-desc > a > span,
+  .block--views-partners-people-block .view-partners-people .views-row .short-desc .short-desc__img {
+    width: 130px;
+  }
+}
+@media (min-width: 70em) {
+  .block--views-partners-people-block .view-partners-people .views-row .short-desc > a > span,
+  .block--views-partners-people-block .view-partners-people .views-row .short-desc .short-desc__img {
+    width: 230px;
+  }
 }
 .block--views-partners-people-block .view-partners-people .views-row .short-desc h3, .block--views-partners-people-block .view-partners-people .views-row .short-desc .node-type-service-offering .block--quicktabs .views-label, .node-type-service-offering .block--quicktabs .block--views-partners-people-block .view-partners-people .views-row .short-desc .views-label,
 .block--views-partners-people-block .view-partners-people .views-row .short-desc .node-type-offering .block--quicktabs .views-label,
@@ -2220,33 +2236,44 @@ img {
   margin-bottom: 3em;
   overflow: hidden;
 }
-.view-feed .views-exposed-form .views-exposed-widget {
+.view-feed .views-exposed-form .views-exposed-widgets {
+  margin: 0 -3% 0 0;
+}
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget {
   float: none;
   padding: 0;
 }
-.view-feed .views-exposed-form .views-exposed-widget > label {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget > label {
   display: none;
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-checkboxes {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-radios {
   margin: 0;
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-item {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item {
   display: block;
   width: 100%;
 }
 @media (min-width: 44em) {
-  .view-feed .views-exposed-form .views-exposed-widget .form-item {
+  .view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item {
     float: left;
-    width: 33.33%;
+    width: 30.33%;
   }
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-item input {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item.form-type-radio {
+  margin: 0 3% 0 0;
+}
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item:first-child,
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item input {
   display: none;
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-item label {
-  background-color: #000;
-  border-bottom: 2px solid #e4e4e4;
-  color: #fff;
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+  color: #ababab;
   display: block;
   font-size: 0.9em;
   margin: 0;
@@ -2254,23 +2281,29 @@ img {
   text-align: center;
 }
 @media (min-width: 44em) {
-  .view-feed .views-exposed-form .views-exposed-widget .form-item label {
+  .view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label {
     border-bottom: 0 none;
-    border-right: 2px solid #e4e4e4;
   }
 }
 @media (min-width: 70em) {
-  .view-feed .views-exposed-form .views-exposed-widget .form-item label {
+  .view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label {
     font-size: 1.2em;
   }
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-item label.checked {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label:hover {
+  background-color: #c4c4c4;
+  cursor: pointer;
+  color: black;
+}
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.checked {
+  color: #c7da2b;
+  background-color: #000;
+}
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item label.checked:hover {
+  background-color: #333333;
   color: #c7da2b;
 }
-.view-feed .views-exposed-form .views-exposed-widget .form-item label:hover {
-  cursor: pointer;
-}
-.view-feed .views-exposed-form .views-exposed-widget .form-item:last-child label {
+.view-feed .views-exposed-form .views-exposed-widgets .views-exposed-widget .form-item:last-child label {
   border-bottom: 0 none;
   border-right: 0 none;
 }
