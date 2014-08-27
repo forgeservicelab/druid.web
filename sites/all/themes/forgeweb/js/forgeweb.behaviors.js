@@ -56,7 +56,7 @@
         $(this).find('> ul').slideUp('fast');
       }
     }
-  }
+  };
 
   // FAQ page scroll to clicked item
   Drupal.behaviors.scrollToFaqQuestion = {
@@ -235,7 +235,7 @@
         itemSelector: '.masonry-item'
       });
     }
-  }
+  };
   
   // Search toggle
   Drupal.behaviors.searchToggle = {
@@ -250,6 +250,34 @@
         $(this).toggleClass('active');
       });
     }
-  }
-
+  };
+  
+  // Feed block filtering functionality
+  Drupal.behaviors.feedFiltering = {
+    attach: function (context) {
+      $('form#views-exposed-form-feed-block, form#views-exposed-form-feed-page').once('feed-filtering', function() {
+        var $labels =  $(this).find('label.option').slice(1);
+        
+        $labels.click(function(e) {
+          var $input = $(this).prev();
+          
+          if($input.attr('checked') === true) {
+            $(this).siblings().removeAttr('checked');
+            $('#edit-type-all').attr('checked', 'checked');
+            $('#edit-submit-feed').trigger('click');
+            e.preventDefault();
+          }
+        });
+      });
+    }
+  };
+  
+  Drupal.behaviors.forgeCheckedCheckboxesBehavior = {
+    attach: function (context) {
+      // Add checked class for input labels.
+      $('div#block-views-feed-block').find('input:checked').next().addClass("checked");
+      $('form#views-exposed-form-feed-page').find('input:checked').next().addClass("checked");
+    }
+  };
+  
 })(jQuery);

@@ -52,6 +52,7 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['fields']['field_small_image']['label'] = '';
   $handler->display->display_options['fields']['field_small_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_small_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_small_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_small_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_small_image']['type'] = 'picture';
   $handler->display->display_options['fields']['field_small_image']['settings'] = array(
@@ -73,7 +74,7 @@ function forge_web_partners_and_people_views_default_views() {
   $handler->display->display_options['fields']['field_short_description']['field'] = 'field_short_description';
   $handler->display->display_options['fields']['field_short_description']['label'] = '';
   $handler->display->display_options['fields']['field_short_description']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_short_description']['alter']['text'] = '<div class="short-desc__img">[field_small_image]</div>
+  $handler->display->display_options['fields']['field_short_description']['alter']['text'] = '[field_small_image]
 <div class="short-desc__text"><h3>[field_page_title]</h3>
 [field_short_description]</div>';
   $handler->display->display_options['fields']['field_short_description']['alter']['make_link'] = TRUE;
@@ -155,7 +156,7 @@ function forge_web_partners_and_people_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('<div class="short-desc__img">[field_small_image]</div>
+    t('[field_small_image]
 <div class="short-desc__text"><h3>[field_page_title]</h3>
 [field_short_description]</div>'),
     t('Block'),

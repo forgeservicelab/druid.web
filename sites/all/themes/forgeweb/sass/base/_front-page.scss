@@ -488,10 +488,20 @@ only screen and (min-resolution: 192dpi) {
           height: 100%;
           vertical-align: middle;
         }
-        .short-desc__img,
+        > a > span,
         .short-desc__text {
           display: table-cell;
           vertical-align: middle;
+        }
+        > a > span,
+        .short-desc__img {
+          width: 120px;
+          @include at-breakpoint ($tab) {
+            width: 130px;
+          }
+          @include at-breakpoint ($desk) {
+            width: 230px;
+          }
         }
         h3,
         p {
