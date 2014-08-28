@@ -1751,6 +1751,15 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'filter',
   );
 
+  // Exported permission: 'view any unpublished content'.
+  $permissions['view any unpublished content'] = array(
+    'name' => 'view any unpublished content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'view_unpublished',
+  );
+
   // Exported permission: 'view field_company_contact_details_fo'.
   $permissions['view field_company_contact_details_fo'] = array(
     'name' => 'view field_company_contact_details_fo',
