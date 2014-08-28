@@ -1832,7 +1832,11 @@ function forge_web_acl_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
