@@ -210,7 +210,7 @@
   Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
     attach: function (context, settings) {
       if ($.isFunction($.flexslider)) {
-        $('.flexslider').flexslider({
+        $('.front .flexslider').flexslider({
           start: function(slider) {
             $('.flex-next, .flex-prev').click(function(event){
               event.preventDefault();
