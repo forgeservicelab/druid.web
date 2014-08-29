@@ -6,17 +6,17 @@
 }
 
 .large-header {
-  font-size: 30px;
+  font-size: 28px;
   text-transform: none;
 }
 @media (min-width: 44em) {
   .large-header {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 @media (min-width: 70em) {
   .large-header {
-    font-size: 72px;
+    font-size: 42px;
   }
 }
 
@@ -65,7 +65,7 @@ body {
   font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {

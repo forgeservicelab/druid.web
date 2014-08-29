@@ -56,7 +56,7 @@
         $(this).find('> ul').slideUp('fast');
       }
     }
-  }
+  };
 
   // FAQ page scroll to clicked item
   Drupal.behaviors.scrollToFaqQuestion = {
@@ -93,8 +93,8 @@
       if (hash !== '') {
         scrollToTab(el, -50);
       }
-      $("#rm-no-id>li>ul>li.active").removeClass("active");
-      $("#rm-no-id>li>ul>li>a.active").removeClass("active");
+      $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li.active").removeClass("active");
+      $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li > a.active").removeClass("active");
       $('#block-menu-block-1 a[href*=#]:not([href=#])').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -194,16 +194,90 @@
       }
     }
   };
+  
+  Drupal.behaviors.mergeMobileNavigation = {
+    attach: function (context, settings) {
+      var mobile_nav_width = 801;
+      var win_width = $(window).width();
+      if (win_width <= mobile_nav_width) {
+        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
+        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
+        $('.l-navigation-wrapper .block--views-exp-search-page form').clone().appendTo($('.responsive-menus-0-0-0 ul.responsive-menus-simple'));
+      }
+    }
+  };
+
+  Drupal.behaviors.pauseVideoWhenClickedNextPrevInflexslider = {
+    attach: function (context, settings) {
+      if ($.isFunction($.flexslider)) {
+        $('.front .flexslider').flexslider({
+          start: function(slider) {
+            $('.flex-next, .flex-prev').click(function(event){
+              event.preventDefault();
+              $("#flexslider-1 iframe[src*=youtube]").each(function(index) {
+                var video = $(this).attr("src");
+                $(this).attr("src","");
+                $(this).attr("src",video);
+              });
+            });
+          }
+        });
+      }
+    }
+  };
 
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
-      var msnry = new Masonry('.masonry-wrapper', {
+      var msnry = new Masonry( '.masonry-wrapper', {
         // options
         columnWidth: '.masonry-item',
         itemSelector: '.masonry-item'
       });
     }
-  }
-
+  };
+  
+  // Search toggle
+  Drupal.behaviors.searchToggle = {
+    attach: function (context) {
+      var searchToggle = $('.block--views-exp-search-page');
+      
+      searchToggle.click(function() {
+        $(this).find('form').slideToggle('fast');
+        $(this).find('form').click(function(event){
+          event.stopPropagation();
+        });
+        $(this).toggleClass('active');
+      });
+    }
+  };
+  
+  // Feed block filtering functionality
+  Drupal.behaviors.feedFiltering = {
+    attach: function (context) {
+      $('form#views-exposed-form-feed-block, form#views-exposed-form-feed-page').once('feed-filtering', function() {
+        var $labels =  $(this).find('label.option').slice(1);
+        
+        $labels.click(function(e) {
+          var $input = $(this).prev();
+          
+          if($input.attr('checked') === true) {
+            $(this).siblings().removeAttr('checked');
+            $('#edit-type-all').attr('checked', 'checked');
+            $('#edit-submit-feed').trigger('click');
+            e.preventDefault();
+          }
+        });
+      });
+    }
+  };
+  
+  Drupal.behaviors.forgeCheckedCheckboxesBehavior = {
+    attach: function (context) {
+      // Add checked class for input labels.
+      $('div#block-views-feed-block').find('input:checked').next().addClass("checked");
+      $('form#views-exposed-form-feed-page').find('input:checked').next().addClass("checked");
+    }
+  };
+  
 })(jQuery);

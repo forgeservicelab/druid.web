@@ -134,6 +134,17 @@
   @extend %tabs;
 }
 
+.front {
+  .tabs {
+    &.tabs--primary {
+      > li > a {
+        font-size: 0.8em;
+        padding: 1em;
+      }
+    }
+    } 
+}
+
 .not-front .ui-tabs .ui-tabs-nav,
 .horizontal-tabs ul {
   @extend %tabs;

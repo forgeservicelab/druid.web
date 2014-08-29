@@ -16,7 +16,6 @@ stylesheets[all][] = css/forgeweb.no-query.css
 ; ========================================
 ; Scripts
 ; ========================================
-scripts[] = js/checked-checkboxes.js
 scripts[] = js/equal-heights.js
 scripts[] = js/forgeweb.behaviors.js
 scripts[] = js/jquery.hoverIntent.minified.js

@@ -4,49 +4,66 @@
   .views-exposed-form {
     margin-bottom: 3em;
     overflow: hidden;
-    .views-exposed-widget {
-      float: none;
-      padding: 0;
-      > label {
-        display: none;
-      }
-      .form-item {
-        display: block;
-        width: 100%;
-        @include at-breakpoint($tab) {
-          float: left;
-          width: 33.33%;
-        }
-        input {
+    .views-exposed-widgets {
+      margin: 0 -3% 0 0;
+      .views-exposed-widget {
+        float: none;
+        padding: 0;
+        > label {
           display: none;
         }
-        label {
-          background-color: #000;
-          border-bottom: 2px solid $border-color;
-          color: #fff;
-          display: block;
-          font-size: 0.9em;
+        .form-radios {
           margin: 0;
-          padding: 1em 0;
-          text-align: center;
-          @include at-breakpoint($tab) {
-            border-bottom: 0 none;
-            border-right: 2px solid $border-color;
-          }
-          @include at-breakpoint($desk) {
-            font-size: 1.2em;
-          }
-          &.checked {
-            color: $active-link-color;
-          }
-          &:hover {
-            cursor: pointer;
-          }
         }
-        &:last-child {
+        .form-item {
+          display: block;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            float: left;
+            width: 30.33%;
+          }
+          &.form-type-radio {
+            margin: 0 3% 0 0;
+          }
+          &:first-child,
+          input {
+            display: none;
+          }
           label {
-            border-bottom: 0 none;
-            border-right: 0 none;
+            @include border-radius(10px);
+            
+            background-color: #ddd;
+            color: #ababab;
+            display: block;
+            font-size: 0.9em;
+            margin: 0;
+            padding: 1em 0;
+            text-align: center;
+            @include at-breakpoint($tab) {
+              border-bottom: 0 none;
+            }
+            @include at-breakpoint($desk) {
+              font-size: 1.2em;
+            }
+            &:hover {
+              background-color: darken(#ddd, 10);
+              cursor: pointer;
+              color: $text-color;
+            }
+            &.checked {
+              color: $active-link-color;
+              background-color: #000;
+              &:hover {
+                background-color: lighten(#000, 20);
+                color: $active-link-color;
+              }
+            }
+          }
+          &:last-child {
+            label {
+              border-bottom: 0 none;
+              border-right: 0 none;
+            }
           }
         }
       }

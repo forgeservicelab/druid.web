@@ -78,7 +78,7 @@ function forgeweb_theme_registry_alter(&$registry) {
  * Replace the search field label with a placeholder
  */
 function forgeweb_form_alter(&$form, &$form_state, $form_id){
-  if($form_id == "views_exposed_form"){
+  if ($form_id == "views_exposed_form") {
     if (isset($form['keyword'])) {
       // Get the label value from search form
       $label_value = $form['#info']['filter-search_api_views_fulltext']['label'];
@@ -95,6 +95,9 @@ function forgeweb_form_alter(&$form, &$form_state, $form_id){
       // Hide the original label
       $form['#info']['filter-field_page_title_value']['label'] = '';
     }
+  }
+  if ($form['#id'] == "views-exposed-form-feed-block" || $form['#id'] == 'views-exposed-form-feed-page') {
+    $form['#attributes']['autocomplete'][0] = 'off';
   }
 }
 

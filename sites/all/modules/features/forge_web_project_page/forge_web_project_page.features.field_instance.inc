@@ -308,7 +308,7 @@ function forge_web_project_page_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_page_title',
     'label' => 'Page title',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -347,6 +347,7 @@ function forge_web_project_page_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'exclude_cv' => 0,
     'field_name' => 'field_responsible_organization',
     'label' => 'Responsible organization',
     'required' => 0,
@@ -392,7 +393,7 @@ function forge_web_project_page_field_default_field_instances() {
     'exclude_cv' => 0,
     'field_name' => 'field_short_project_desc',
     'label' => 'Short description',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
