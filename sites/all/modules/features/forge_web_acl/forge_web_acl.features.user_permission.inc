@@ -932,6 +932,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
     ),
     'module' => 'node',
   );
