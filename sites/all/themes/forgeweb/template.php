@@ -101,3 +101,23 @@ function forgeweb_form_alter(&$form, &$form_state, $form_id){
   }
 }
 
+// Unset module/system javascript
+function forgeweb_js_alter(&$javascript){
+
+  // Move all javascript to footer
+  foreach ($javascript as $key => $val) {
+    if ($javascript[$key]['scope'] == 'force-header') {
+      $javascript[$key]['scope'] = 'header';
+    }
+    else {
+      $javascript[$key]['scope'] = 'footer';
+    }
+  }
+
+  // $javascript['misc/drupal.js']['scope'] = 'header';
+  // $javascript['misc/jquery.js']['scope'] = 'header';
+  // $javascript['misc/jquery.once.js']['scope'] = 'header';
+}
+
+
+
