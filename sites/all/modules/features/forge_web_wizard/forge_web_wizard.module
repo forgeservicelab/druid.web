@@ -7,6 +7,195 @@
 include_once 'forge_web_wizard.features.inc';
 
 /**
+* Implements hook_block_info().
+*/
+function forge_web_wizard_block_info() {
+  $blocks = array();
+  $blocks['forge_web_wizard_templates'] = array(
+    'info' => t('Forge Web wizard: Templates'),
+  );
+
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function forge_web_wizard_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'forge_web_wizard_templates' :
+    $block['content'] = forge_web_wizard_block_output();
+    break;
+  }
+
+  return $block;
+}
+
+/**
+* Implements hook_block_configure().
+*/
+function forge_web_wizard_block_configure($delta='') {
+  $form = array();
+
+  switch($delta) {
+    case 'forge_web_wizard_templates' :
+      // Text field form element
+      $form['forge_web_wizard_template_text_body'] = array(
+        '#type' => 'text_format',
+        '#title' => t('Body'),
+        '#default_value' => variable_get('forge_web_wizard_template_text_body',''),
+       );
+
+      // File selection form element
+      $form['forge_web_wizard_template_sda'] = array(
+        '#name' => 'block_image',
+        '#type' => 'managed_file',
+        '#title' => t('Service Developer Contract (SDA)'),
+        '#description' => t('Select a PDF template for the Service Developer Contract. Only pdf allowed.'),
+        '#default_value' => variable_get('forge_web_wizard_template_sda_fid', ''),
+        '#upload_location' => 'public://forge_web_wizard_templates/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('pdf'),
+        ),
+      );
+      
+      // File selection form element
+      $form['forge_web_wizard_template_partner'] = array(
+        '#name' => 'block_image',
+        '#type' => 'managed_file',
+        '#title' => t('Forge Partner Contract'),
+        '#description' => t('Select a PDF template for the Forge Partner Contract. Only pdf allowed.'),
+        '#default_value' => variable_get('forge_web_wizard_template_partner_fid', ''),
+        '#upload_location' => 'public://forge_web_wizard_templates/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('pdf'),
+        ),
+      );
+      
+      // File selection form element
+      $form['forge_web_wizard_template_cra'] = array(
+        '#name' => 'block_image',
+        '#type' => 'managed_file',
+        '#title' => t('Computing capasity Contract (CRA)'),
+        '#description' => t('Select a PDF template for the Computing capasity Contract. Only pdf allowed.'),
+        '#default_value' => variable_get('forge_web_wizard_template_cra_fid', ''),
+        '#upload_location' => 'public://forge_web_wizard_templates/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('pdf'),
+        ),
+      ); 
+        // File selection form element
+      $form['forge_web_wizard_template_tc'] = array(
+        '#name' => 'block_image',
+        '#type' => 'managed_file',
+        '#title' => t('Terms and Conditions'),
+        '#description' => t('Select a PDF template for Terms and Conditions. Only pdf allowed.'),
+        '#default_value' => variable_get('forge_web_wizard_template_tc_fid', ''),
+        '#upload_location' => 'public://forge_web_wizard_templates/',
+        '#upload_validators' => array(
+          'file_validate_extensions' => array('pdf'),
+        ),
+      );
+    break;
+  }
+  return $form;
+}
+
+/**
+* Implements hook_block_save().
+*/
+function forge_web_wizard_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'forge_web_wizard_templates' :
+      // Saving the WYSIWYG text
+      variable_set('forge_web_wizard_template_text_body', $edit['forge_web_wizard_template_text_body']['value']);
+
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file_sda = file_load($edit['forge_web_wizard_template_sda']);
+      $file_sda->status = FILE_STATUS_PERMANENT;
+      file_save($file_sda);
+      $block = block_load('forge_web_wizard', $delta);
+      file_usage_add($file_sda, 'forge_web_wizard', 'block', $block->bid);
+      variable_set('forge_web_wizard_template_sda_fid', $file_sda->fid);
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file_partner = file_load($edit['forge_web_wizard_template_partner']);
+      $file_partner->status = FILE_STATUS_PERMANENT;
+      file_save($file_partner);
+      $block = block_load('forge_web_wizard', $delta);
+      file_usage_add($file_partner, 'forge_web_wizard', 'block', $block->bid);
+      variable_set('forge_web_wizard_template_partner_fid', $file_partner->fid);
+      
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file_cra = file_load($edit['forge_web_wizard_template_cra']);
+      $file_cra->status = FILE_STATUS_PERMANENT;
+      file_save($file_cra);
+      $block = block_load('forge_web_wizard', $delta);
+      file_usage_add($file_cra, 'forge_web_wizard', 'block', $block->bid);
+      variable_set('forge_web_wizard_template_cra_fid', $file_cra->fid);
+      
+      // Saving the file, setting it to a permanent state, setting a FID variable
+      $file_tc = file_load($edit['forge_web_wizard_template_tc']);
+      $file_tc->status = FILE_STATUS_PERMANENT;
+      file_save($file_tc);
+      $block = block_load('forge_web_wizard', $delta);
+      file_usage_add($file_cra, 'forge_web_wizard', 'block', $block->bid);
+      variable_set('forge_web_wizard_template_tc_fid', $file_tc->fid);
+    break;
+  }
+}
+
+function forge_web_wizard_block_output() {
+  $block = array();
+  if(!$_GET['role']) {
+    return;
+  }
+  $role = $_GET['role'];
+  
+  if($role == 'SDA') {
+    // Capture the image file path and form into HTML with attributes
+    $file_sda = file_load(variable_get('forge_web_wizard_template_sda_fid', ''));
+    $file_sda_url = file_create_url($file_sda->uri);
+    $files = l('Service Developer Contract', $file_sda_url).'<br/>';
+  }
+  
+  if(strstr($role, 'partner')) {
+    $file_partner = file_load(variable_get('forge_web_wizard_template_partner_fid', ''));
+    $file_partner_url = file_create_url($file_partner->uri);
+    $files .= l('Forge Partner Contract', $file_partner_url).'<br/>';
+  }
+  
+  if($role == 'partner_fsl_fpa_cra') {
+    $file_cra = file_load(variable_get('forge_web_wizard_template_cra_fid', ''));
+    $file_cra_url = file_create_url($file_cra->uri);
+    $files .= l('Partner addendum for computing capacity Contract', $file_cra_url).'<br/>';
+  }
+  
+  $file_tc = file_load(variable_get('forge_web_wizard_template_tc_fid', ''));
+  $file_tc_url = file_create_url($file_tc->uri);
+  $files .= l('Forge servicelab Terms and conditions', $file_tc_url).'<br/>';
+  
+  
+  $continue_link = '<p>'.l(t('Fill in the application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button'))).'</p>';
+  
+  // Capture WYSIWYG text from the variable
+  $text = '<p>'.variable_get('forge_web_wizard_template_text_body', '').'</p>'.$files.$continue_link;
+
+  // Block output in HTML with div wrapper
+  $block = array(
+    'template_links' => array(
+      '#prefix' => '
+      ',
+      '#type' => 'markup',
+      '#markup' => $text,
+    )
+  );
+
+  return $block;
+}
+ 
+/**
 * Implements hook_token_info().
 */
 function forge_web_wizard_token_info() {
