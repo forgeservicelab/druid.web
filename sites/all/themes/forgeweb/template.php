@@ -25,8 +25,12 @@
  }
  
 function forgeweb_preprocess_node(&$vars) {
+  
   if(!empty($_GET['fw'])) {
-    $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role'])), array('attributes' => array('class' => 'back-to-wizard')));
+    // need store value to session
+    $_SESSION['forge_web_wizard_role'] = $_GET['role'];
+    $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
+    $vars['fill_in_application'] = l(t('Fill in application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
   }
 }
 
