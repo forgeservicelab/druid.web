@@ -7,6 +7,8 @@
 (function($) {
 Drupal.behaviors.myBehavior = {
   attach: function (context, settings) {
+    $('#webform-client-form-4 .webform-next').hide();  
+    
     $("#edit-submitted-other-contract-information-the-value-of-development-project").blur(function() {
       val = parseInt($("#edit-submitted-other-contract-information-the-value-of-development-project").val());
       calculated_value = Math.round(val*0.05);
@@ -29,21 +31,17 @@ Drupal.behaviors.myBehavior = {
     
     $("input[name$='submitted[role]']").click(function() {
       var val = $(this).val();
-      if(val == 'subcontractor' || val == 'several_of_these') {
-        $(".form-submit").hide();  
-      }
-      else {
-        $(".form-submit").show();
-        var _href = $(this).parent().next('fieldset').find('.learn-more-link').attr('href');
-        $(this).parent().next('fieldset').find('.learn-more-link').attr("href", _href + '&role=' + val);
-      }
+      var _href = $(this).parent().next('fieldset').find('.learn-more-link').attr('href');
+      $(this).parent().next('fieldset').find('.learn-more-link').attr("href", _href + '&role=' + val);
     });
+    
     // move info elements inside radiobutton selection
     $("input[name$='submitted[role]']").each(function() {
       var idVal = $(this).attr("id");
       // use label text to search roght DOM element
       var label = $("label[for='"+idVal+"']").text();
       $(this).parent().after(($("span:contains('"+$.trim(label)+"')").parent().parent()));
+      $("span:contains('"+$.trim(label)+"')").hide();
     });
   }
 };

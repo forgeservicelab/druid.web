@@ -147,22 +147,15 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
   elseif ($form_id == 'user_register_form') {
     $submission = array();
     $form['#submit'][] = 'forge_web_wizard_user_registration_submit';
-    module_load_include('inc', 'webform', 'includes/webform.submissions');
     
-    // user registration form is on wizard/registration/%/% page
-    // see this module hook_menu
-    $nid = arg(2);
-    $sid = arg(3);
-    if(is_numeric($nid) && is_numeric($sid)) {
-      $submission = webform_get_submission($nid, $sid);
-    }
-    if(!empty($submission)) {
+    if(!empty($_SESSION['forge_web_wizard_role'])) {
+      $role = $_SESSION['forge_web_wizard_role'];
       $form['forge_web_role'] = array(
         '#type' => 'value', 
-        '#value' => $submission->data[5][0]
+        '#value' => $role
       );
       $need_computing_capasity = FALSE;
-      if($submission->data[5][0] == 'partner_fsl_fpa_cra') {
+      if($role == 'partner_fsl_fpa_cra') {
         $need_computing_capasity = 'cra';
       }
       $form['forge_web_need_cloud_computing_capasity'] = array(
@@ -224,9 +217,9 @@ function forge_web_wizard_menu() {
     'type' => MENU_CALLBACK,
     'title' => 'Registration',
   );
-  $items['wizard/registration/%/%'] = array(
+  $items['wizard/registration'] = array(
     'page callback' => 'forge_web_wizard_registration',
-    'page arguments' => array(2,3),
+    //'page arguments' => array(2,3),
     'access arguments' => array("access content"),
     'type' => MENU_CALLBACK,
     'title' => 'Registration',
@@ -350,16 +343,15 @@ function forge_web_wizard_cra_contract_submit($nid, $sid) {
  * menu callback
  * print only registaration form
  */
-function forge_web_wizard_registration($nid, $sid) {
+function forge_web_wizard_registration() {
+  
   global $user;
   if(!user_is_anonymous()) {
-    module_load_include('inc', 'webform', 'includes/webform.submissions');
-    $submission = webform_get_submission($nid, $sid);
+    //module_load_include('inc', 'webform', 'includes/webform.submissions');
+    //$submission = webform_get_submission($nid, $sid);
     
-    // TODO: is there better way to get value?
-    // data index 5 = role selection webform component
-    if(!empty($submission->data[5][0])) {
-      $role = $submission->data[5][0];
+    if(!empty($_GET['role'])) {
+      $role = $_GET['role'];
       if($role == 'partner_fsl_fpa_cra') {
         $need_cloud_computing_capasity = 'cra';
         cache_set('forge_web_wizard_user_data_'.$user->uid.':need_cloud_computing_capasity', $need_cloud_computing_capasity);
@@ -370,6 +362,10 @@ function forge_web_wizard_registration($nid, $sid) {
     drupal_goto($redir);
   }
   $form = drupal_get_form('user_register_form');
+  $form['wizard_markup'] = array(
+    '#markup' => t('<p>You need to register before to fill in application.</p>'),
+    '#weight' => -100,
+  );
   return drupal_render($form);
 }
 
@@ -435,6 +431,11 @@ function forge_web_wizard_confirmation($nid, $sid) {
   if(!empty($sda_pdf_id)) {
     $sda_link = l(t('Download Service Developer Contract'), 'fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $sda_user_data['sid']))); 
     $output .= $sda_link.'<br/>';
+  }
+  if(module_exists('onnistuufi')) {
+    global $base_url;
+    $doc_url = url($base_url.'/fillpdf', array('query' => array('fid' => $sda_pdf_id, 'webform[nid]' => $sda_user_data['nid'], 'webform[sid]' => $sda_user_data['sid'])));
+    $output .= l(t('Sign document'), 'onnistuufi/sign', array('query' => array('document' => $doc_url)));
   }
   $token_data['user'] = $user;
   $token_data['current-user'] = $user;
@@ -562,7 +563,7 @@ function _forge_web_wizard_embed_filter_replace($match) {
       $body = field_get_items('node', $node, 'body');
     }
     $summary = $body[0]['summary'];
-    $summary .= '<p>'.l(t('Learn more'), 'node/'.$node->nid, array('query' => array('fw' => '1'), 'attributes' => array('class' => 'learn-more-link'))).'</p>';
+    $summary .= '<p>'.l(t('Continue >'), 'node/'.$node->nid, array('query' => array('fw' => '1'), 'attributes' => array('class' => 'learn-more-link button'))).'</p>';
     return $summary;
   }
   else {
