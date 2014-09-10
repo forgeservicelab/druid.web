@@ -132,6 +132,9 @@
   <?php if (!empty($back_to_wizard)): ?>
     <?php print $back_to_wizard; ?>
   <?php endif; ?>
+  <?php if (!empty($fill_in_application)): ?>
+    <?php print $fill_in_application; ?>
+  <?php endif; ?>
   <?php print render($content['links']); ?>
   <?php print render($content['comments']); ?>
 </article>
