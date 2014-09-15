@@ -65,7 +65,7 @@ function ldap_forge_admin_settings($form, &$form_state) {
 
 /**
  * Handles settings saving
- */
+ **/
 function ldap_forge_admin_settings_submit($form, &$form_state) {
   $settings = array();
   foreach($form_state['groups'] as $gid => $group_info) {
