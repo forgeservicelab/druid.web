@@ -176,9 +176,16 @@ function forge_web_wizard_block_output() {
   $file_tc_url = file_create_url($file_tc->uri);
   $files .= l('Forge servicelab Terms and conditions', $file_tc_url).'<br/>';
   
+  $attr = array(
+    'attributes' => array(
+      'class' => array('button')
+    ), 
+    'query' => array(
+      'role' => $_GET['role']
+    ) 
+  );
   
-  $continue_link = '<p>'.l(t('Fill in the application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button'))).'</p>';
-  
+  $continue_link = '<p>'.l(t('Fill in the application'), 'wizard/registration', $attr).'</p>';
   // Capture WYSIWYG text from the variable
   $text = '<p>'.variable_get('forge_web_wizard_template_text_body', '').'</p>'.$files.$continue_link;
 
@@ -339,6 +346,7 @@ function forge_web_wizard_form_alter(&$form, &$form_state, $form_id) {
     
     if(!empty($_SESSION['forge_web_wizard_role'])) {
       $role = $_SESSION['forge_web_wizard_role'];
+      
       $form['forge_web_role'] = array(
         '#type' => 'value', 
         '#value' => $role

@@ -279,7 +279,9 @@ function forge_web_wizard_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'forge_web_wizard_email_body';
   $strongarm->value = 'Here is your prefilled contract link(s):
-[current-user:fillpdf_link]';
+[current-user:fillpdf_link]
+
+Please print the contract document, sign it, scan it and send to forge-contracts@digile.fi.';
   $export['forge_web_wizard_email_body'] = $strongarm;
 
   $strongarm = new stdClass();
