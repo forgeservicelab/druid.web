@@ -1,0 +1,3 @@
+core = "7.x"
+description = "Handles settings and user data handling that are specific for Forge"
+name = "LDAP Forge"
