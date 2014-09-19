@@ -531,6 +531,53 @@ function forge_web_blog_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = '';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Content: Blog title */
+  $handler->display->display_options['fields']['field_blog_title']['id'] = 'field_blog_title';
+  $handler->display->display_options['fields']['field_blog_title']['table'] = 'field_data_field_blog_title';
+  $handler->display->display_options['fields']['field_blog_title']['field'] = 'field_blog_title';
+  $handler->display->display_options['fields']['field_blog_title']['label'] = '';
+  $handler->display->display_options['fields']['field_blog_title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_blog_title']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_blog_title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_blog_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_blog_title']['element_default_classes'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_class'] = 'blog-description';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '600',
+  );
+  /* Field: Content: Blog image */
+  $handler->display->display_options['fields']['field_blog_image']['id'] = 'field_blog_image';
+  $handler->display->display_options['fields']['field_blog_image']['table'] = 'field_data_field_blog_image';
+  $handler->display->display_options['fields']['field_blog_image']['field'] = 'field_blog_image';
+  $handler->display->display_options['fields']['field_blog_image']['label'] = '';
+  $handler->display->display_options['fields']['field_blog_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_blog_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_blog_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_blog_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_blog_image']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
   $handler->display->display_options['path'] = 'blogs';
   $translatables['blog_listing'] = array(
     t('Master'),
@@ -883,7 +930,7 @@ function forge_web_blog_views_default_views() {
   $handler->display->display_options['style_options']['optionset'] = 'slideshow';
   $handler->display->display_options['style_options']['captionfield'] = 'field_main_images_1';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Main images */
+  /* Field: Content: Screenshots */
   $handler->display->display_options['fields']['field_main_images']['id'] = 'field_main_images';
   $handler->display->display_options['fields']['field_main_images']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images']['field'] = 'field_main_images';
@@ -899,7 +946,7 @@ function forge_web_blog_views_default_views() {
   );
   $handler->display->display_options['fields']['field_main_images']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_main_images']['delta_offset'] = '0';
-  /* Field: Content: Main images */
+  /* Field: Content: Screenshots */
   $handler->display->display_options['fields']['field_main_images_1']['id'] = 'field_main_images_1';
   $handler->display->display_options['fields']['field_main_images_1']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['fields']['field_main_images_1']['field'] = 'field_main_images';
@@ -942,7 +989,7 @@ function forge_web_blog_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
   );
-  /* Filter criterion: Content: Main images (field_main_images:fid) */
+  /* Filter criterion: Content: Screenshots (field_main_images:fid) */
   $handler->display->display_options['filters']['field_main_images_fid']['id'] = 'field_main_images_fid';
   $handler->display->display_options['filters']['field_main_images_fid']['table'] = 'field_data_field_main_images';
   $handler->display->display_options['filters']['field_main_images_fid']['field'] = 'field_main_images_fid';
