@@ -85,13 +85,19 @@
     attach: function (context, settings) {
       var scrollToTab = function(el, offset) {
         $('html, body').animate({
-          scrollTop: el.offset().top - offset
+          scrollTop: Math.round(el.offset().top) - offset
         }, 500);
       };
       var hash = window.location.hash;
       var el = $(hash);
       if (hash !== '') {
-        scrollToTab(el, -50);
+        var ua = window.navigator.userAgent;
+        var firefox = ua.indexOf("Firefox");
+        var offset = -100;
+        if (firefox > 0) {
+          offset = 150;
+        }
+        scrollToTab(el, offset);
       }
       $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li.active").removeClass("active");
       $(".l-navigation-wrapper .responsive-menus > ul > li > ul > li > a.active").removeClass("active");
