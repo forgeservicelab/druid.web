@@ -739,20 +739,21 @@ function forge_web_offering_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_basegroup';
   $field_group->data = array(
-    'label' => 'Spesifications',
+    'label' => 'Specification',
     'weight' => '4',
     'children' => array(
       0 => 'field_spesifications',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'Specification',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-spesifications field-group-htab',
         'required_fields' => 1,
         'id' => '',
+        'classes' => 'group-spesifications field-group-htab',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_spesifications|node|offering|form'] = $field_group;
