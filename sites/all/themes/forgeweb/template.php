@@ -121,7 +121,13 @@ function forgeweb_js_alter(&$javascript){
   // $javascript['misc/drupal.js']['scope'] = 'header';
   // $javascript['misc/jquery.js']['scope'] = 'header';
   // $javascript['misc/jquery.once.js']['scope'] = 'header';
+}	
+
+
+function forgeweb_preprocess_menu_link(&$vars) {
+  if($vars['element']['#title'] == 'Join Forge' && !user_is_anonymous()) {
+    $vars['element']['#title'] = 'My Forge';
+    $vars['element']['#href'] = 'welcome-forge-service-lab';
+  }
 }
-
-
-
+ 
