@@ -88,7 +88,7 @@ function ldap_forge_groups() {
     // Get first server.
     $ldap_server = current($ldap_servers);
     // Search for posixGroups which is the baseclass of forge group entry
-    if (($results = $ldap_server->search(ldap_forge_group_binding(), 'objectClass=posixGroup')) && isset($results['count']) && $results['count'] > 0)
+    if (($results = $ldap_server->search(ldap_forge_group_binding())) && isset($results['count']) && $results['count'] > 0)
       for($n = 0; $n < $results['count']; $n++)
         $groups[$results[$n]['gidnumber'][0]] = $results[$n];
     else
