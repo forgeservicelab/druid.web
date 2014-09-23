@@ -32,7 +32,7 @@ function ldap_forge_permission() {
 function ldap_forge_admin_settings($form, &$form_state) {
   $form = array(
     'info' => array(
-      '#markup' => '<h1>forge LDAP settings</h1><p>These settings will apply to users that auth through LDAP. Settings are applied on every login, in order to keep access rights in place.</p>',
+      '#markup' => '<h1>FORGE LDAP settings</h1><p>These settings will apply to users that auth through LDAP. Settings are applied on every login, in order to keep access rights in place.</p>',
     ),
     'groups' => array(),
   );
