@@ -175,6 +175,32 @@ function forge_web_tutorial_views_default_views() {
   $handler->display->display_options['filters']['field_link_to_video_url']['table'] = 'field_data_field_link_to_video';
   $handler->display->display_options['filters']['field_link_to_video_url']['field'] = 'field_link_to_video_url';
   $handler->display->display_options['filters']['field_link_to_video_url']['operator'] = 'not empty';
+
+  /* Display: Tools */
+  $handler = $view->new_display('block', 'Tools', 'block_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Tools';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Tools */
+  $handler->display->display_options['fields']['field_tools']['id'] = 'field_tools';
+  $handler->display->display_options['fields']['field_tools']['table'] = 'field_data_field_tools';
+  $handler->display->display_options['fields']['field_tools']['field'] = 'field_tools';
+  $handler->display->display_options['fields']['field_tools']['label'] = '';
+  $handler->display->display_options['fields']['field_tools']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_tools']['element_wrapper_class'] = 'sidebar-block__item';
+  $handler->display->display_options['fields']['field_tools']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_tools']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['operator'] = 'OR';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'OR',
+  );
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Tools (field_tools:url) */
+  $handler->display->display_options['filters']['field_tools_url']['id'] = 'field_tools_url';
+  $handler->display->display_options['filters']['field_tools_url']['table'] = 'field_data_field_tools';
+  $handler->display->display_options['filters']['field_tools_url']['field'] = 'field_tools_url';
+  $handler->display->display_options['filters']['field_tools_url']['operator'] = 'not empty';
   $translatables['tutorial_sidebar_block'] = array(
     t('Master'),
     t('Attachments'),
@@ -186,6 +212,7 @@ function forge_web_tutorial_views_default_views() {
     t('Desc'),
     t('All'),
     t('Videos'),
+    t('Tools'),
   );
   $export['tutorial_sidebar_block'] = $view;
 
