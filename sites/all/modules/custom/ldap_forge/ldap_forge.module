@@ -73,10 +73,6 @@ function ldap_forge_admin_settings_submit($form, &$form_state) {
     foreach($form_state['values'][$gid]['roles'] as $rid => $assign)
       if($assign != 0)
         $roles[$rid] = $rid;
-    $settings[$gid] = array(
-      'roles' => $roles,
-      'organizer' => !empty($form_state['values'][$gid]['organizer_nid']) ? $form_state['values'][$gid]['organizer_nid']: FALSE,
-    );
   }
   variable_set('ldap_forge_settings', $settings);
   drupal_set_message('Settings saved', 'success');
