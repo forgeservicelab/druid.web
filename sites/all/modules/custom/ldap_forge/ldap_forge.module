@@ -122,7 +122,7 @@ function ldap_forge_group_settings($gid) {
 }
 
 function ldap_forge_group_binding() {
-  return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forge,dc=lan');
+  return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forgeservicelab,dc=fi');
 }
 
 function ldap_forge_group_binding_set($binding) {
