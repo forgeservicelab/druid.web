@@ -53,6 +53,12 @@ function forge_web_tutorial_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
+        'views-tutorial_sidebar_block-block_2' => array(
+          'module' => 'views',
+          'delta' => 'tutorial_sidebar_block-block_2',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
       ),
     ),
   );
