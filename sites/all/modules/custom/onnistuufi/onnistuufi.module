@@ -13,28 +13,28 @@ function onnistuufi_menu() {
     'type' => MENU_CALLBACK,
     'file' => 'includes/onnistuufi.admin.inc',
   );
-  
+
   $items['onnistuufi/success'] = array(
     'title' => t('Success'),
     'page callback' => 'onnistuufi_return_success',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
-  
+
   $items['onnistuufi/error'] = array(
     'title' => t('Error'),
     'page callback' => 'onnistuufi_return_error',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
-  
+
   $items['onnistuufi/sign'] = array(
     'title' => t('Sign the document'),
     'page callback' => 'onnistuufi_sign',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
-  
+
   return $items;
 }
 
@@ -57,7 +57,7 @@ function onnistuufi_sign() {
  * Form constructor for the sign form.
  */
 function onnistuufi_sign_form($form, &$form_state) {
-  
+
   // Initialize a description of the steps for the wizard.
   if (empty($form_state['step'])) {
     $form_state['step'] = 1;
@@ -83,7 +83,7 @@ function onnistuufi_sign_form($form, &$form_state) {
       '#submit' => array('onnistuufi_sign_form_next_submit'),
     );
   }
-  elseif(!empty($form)) {
+  elseif (!empty($form)) {
     // Just in case there are no more steps, we use the default submit handler
     // of the form wizard. Call this button Finish, Submit, or whatever you
     // want to show. When this button is clicked, the
@@ -112,12 +112,11 @@ function onnistuufi_sign_form($form, &$form_state) {
  * - Replace $form_state['values'] from the last time we were at this page
  *   or with array() if we haven't been here before.
  * - Force form rebuild.
- *
  */
 function onnistuufi_sign_form_next_submit($form, &$form_state) {
   $current_step = &$form_state['step'];
   $form_state['step_information'][$current_step]['stored_values'] = $form_state['values'];
-  
+
   if ($current_step < count($form_state['step_information'])) {
     if (!empty($form_state['step_information'][$current_step]['stored_values'])) {
       $form_state['values'] = $form_state['step_information'][$current_step]['stored_values'];
@@ -126,7 +125,7 @@ function onnistuufi_sign_form_next_submit($form, &$form_state) {
       $form_state['values'] = array();
     }
     $current_step++;
-    
+
     // Force rebuild with next step.
     $form_state['rebuild'] = TRUE;
     return;
@@ -135,120 +134,119 @@ function onnistuufi_sign_form_next_submit($form, &$form_state) {
 
 
 function onnistuufi_sign_form_step1($form, &$form_state) {
-  
-  if(empty($_GET['document'])) {
+
+  if (empty($_GET['document'])) {
     drupal_set_message(t('You need to define document for signing.'), 'error');
     return;
   }
-  
+
   $signing_options = variable_get('onnistuufi_signing_options', '');
-  
-  if($signing_options['Personal ID']) {
+
+  if ($signing_options['Personal ID']) {
     $form['personal_id'] = array(
       '#title' => 'Personal ID',
       '#type' => 'textfield',
       '#default_value' => '',
-      '#description' => t('Give your Personal ID for signing.')
+      '#description' => t('Give your Personal ID for signing.'),
     );
   }
-  
-  if($signing_options['Company ID']) {
+
+  if ($signing_options['Company ID']) {
     $form['company_id'] = array(
       '#title' => 'Company ID',
       '#type' => 'textfield',
       '#default_value' => '',
-      '#description' => t('Give Company ID for signing.')
+      '#description' => t('Give Company ID for signing.'),
     );
   }
-  
-  if($signing_options['Email invitation']) {
+
+  if ($signing_options['Email invitation']) {
     $form['email_invitation'] = array(
       '#title' => 'Email invitation',
       '#type' => 'textarea',
       '#default_value' => '',
-      '#description' => t('List of emails for signing. Personal ID|email address on one line. Example: 1234567-123E|address.to@invite.com')
+      '#description' => t('List of emails for signing. Personal ID|email address on one line. Example: 1234567-123E|address.to@invite.com'),
     );
   }
-  
+
   $doc = _onnistuufi_check_document_uri($_GET['document']);
-  
+
   $form['document'] = array(
     '#type' => 'hidden',
     '#value' => $doc,
   );
-  
-  if(!empty($_GET['document'])) {
+
+  if (!empty($_GET['document'])) {
     $form['markup'] = array(
       '#markup' => t('<p>You can check here document for digital signature: <a href="@doc">@doc</a></p>', array('@doc' => $doc)),
     );
   }
-  
+
   return $form;
 }
 
 function onnistuufi_sign_form_step2($form, &$form_state) {
   global $base_url;
-  
+
   $client = onnistuufi_init();
-  
+
   $stamp = time();
-  
-  if(!empty($form_state['values']['personal_id'])) {
+
+  if (!empty($form_state['values']['personal_id'])) {
     $id = $form_state['values']['personal_id'];
-    $requirements = array (
+    $requirements = array(
       array(
         'type' => 'person',
         'identifier' => "$id",
       )
     );
   }
-  
-  if(!empty($form_state['values']['company_id'])) {
+
+  if (!empty($form_state['values']['company_id'])) {
     $id = $form_state['values']['company_id'];
-    $requirements += array (
+    $requirements += array(
       array(
         'type' => 'company',
         'identifier' => "$id",
-      )
+      ),
     );
   }
-  
-  if(!empty($form_state['values']['email_invitation'])) {
-    
+
+  if (!empty($form_state['values']['email_invitation'])) {
     $emails = explode("\r\n", $form_state['values']['email_invitation']);
-    if(is_array($emails)) {
-      foreach($emails as $row) {
+    if (is_array($emails)) {
+      foreach ($emails as $row) {
         $row_arr = explode("|", $row);
         $id = $row_arr[0];
         $email = $row_arr[1];
         $requirements_emails[] = array(
-            'type' => 'email',
-            'identifier' => "$id",
-            'email' => $email,
+          'type' => 'email',
+          'identifier' => "$id",
+          'email' => $email,
         );
       }
     }
   }
   $requirements = array_merge($requirements, $requirements_emails);
- 
+
   $doc = $form_state['values']['document'];
-   
+
   $encrypted = $client->encryptRequest(
     array(
       'stamp' => "$stamp",
-      'return_success' => $base_url.'/onnistuufi/success',
+      'return_success' => $base_url . '/onnistuufi/success',
       'document' => "$doc",
-      'requirements' => $requirements
+      'requirements' => $requirements,
     )
   );
-  
+
   $form['markup'] = array(
     '#markup' => t('<p>Please check your information and sign the document.</p><p>Document: <a href="@doc">@doc</a></p>', array('@id' => $id, '@doc' => $doc)),
   );
-  
+
   $form['return_failure'] = array(
     '#type' => 'hidden',
-    '#value' => $base_url.'/onnistuufi/error',
+    '#value' => $base_url . '/onnistuufi/error',
   );
   $form['customer'] = array(
     '#type' => 'hidden',
@@ -262,7 +260,7 @@ function onnistuufi_sign_form_step2($form, &$form_state) {
     '#type' => 'hidden',
     '#value' => $encrypted['iv'],
   );
-  
+
   return $form;
 }
 
@@ -281,58 +279,58 @@ function onnistuufi_return_success() {
   $client = onnistuufi_init();
   $decrypt_data = $client->decryptReturn($data, $iv);
   $doc = $decrypt_data->document;
-  
-  $text = t('Signed document is available here: <a href="@url">'.$doc.'</a>', array('@url' => url($doc)));
+
+  $text = t('Signed document is available here: <a href="@url">' . $doc . '</a>', array('@url' => url($doc)));
   return $text;
 }
 
 function onnistuufi_return_error() {
-  $message = $_GET['onnistuu_message'].'.';
+  $message = $_GET['onnistuu_message'] . '.';
   //$message .= onnistuufi_error_handling($_GET['onnistuu_error']);
   $text = t('<p>Error occured while signing. Error message: <br/> @message</p><p>Please contact site administrator.</p>', array('@message' => $message));
   return $text;
 }
 
 function _onnistuufi_check_document_uri($uri) {
-  // encode path and put all together manually
+  // Encode path and put all together manually.
   // TODO: I didn't use http_build_url because it didn't work for some reason
-  $error = false;
+  $error = FALSE;
   $parts = parse_url($uri);
   $path = drupal_encode_path($parts['path']);
-  
-  if(empty($parts['scheme'])) {
-    $error = true;
+
+  if (empty($parts['scheme'])) {
+    $error = TRUE;
     $message = t('Missing scheme from document url.');
   }
   else {
-    $doc = $parts['scheme'].'://';
+    $doc = $parts['scheme'] . '://';
   }
-  if(empty($parts['host'])) {
-    $error = true;
+  if (empty($parts['host'])) {
+    $error = TRUE;
     $message = t('Missing host from document url.');
   }
   else {
     $doc .= $parts['host'];
   }
-  
-  if(!empty($parts['port'])) {
-    $doc .= ':'.$parts['port'].'/';
+
+  if (!empty($parts['port'])) {
+    $doc .= ':' . $parts['port'] . '/';
   }
   else {
     $doc .= '/';
   }
-  
-  if(!empty($parts['path'])) {
+
+  if (!empty($parts['path'])) {
     $doc .= ltrim($path, '/');
   }
-  
-  if(!empty($parts['query'])) {
-    $doc .= '?'.$parts['query'];
+
+  if (!empty($parts['query'])) {
+    $doc .= '?' . $parts['query'];
   }
-  
-  if($error) {
+
+  if ($error) {
     drupal_set_message($message, 'error');
   }
-  
+
   return $doc;
 }
