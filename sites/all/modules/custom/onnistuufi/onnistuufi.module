@@ -5,7 +5,7 @@
  */
 function onnistuufi_menu() {
   $items['admin/config/services/onnistuufi'] = array(
-    'title' => t('Onnistuu.fi configuration'),
+    'title' => 'Onnistuu.fi configuration',
     'description' => 'Onnistuu.fi API conficuration',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('onnistuufi_admin_settings'),
@@ -15,21 +15,21 @@ function onnistuufi_menu() {
   );
 
   $items['onnistuufi/success'] = array(
-    'title' => t('Success'),
+    'title' => 'Success',
     'page callback' => 'onnistuufi_return_success',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
 
   $items['onnistuufi/error'] = array(
-    'title' => t('Error'),
+    'title' => 'Error',
     'page callback' => 'onnistuufi_return_error',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
 
   $items['onnistuufi/sign'] = array(
-    'title' => t('Sign the document'),
+    'title' => 'Sign the document',
     'page callback' => 'onnistuufi_sign',
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
@@ -266,7 +266,7 @@ function onnistuufi_sign_form_step2($form, &$form_state) {
 
 function onnistuufi_init() {
   module_load_include('inc', 'onnistuufi', 'includes/client');
-  $client = new onnistuu_external_client(
+  $client = new OnnistuuExternalClient(
     variable_get('onnistuufi_customer_id', ''),
     variable_get('onnistuufi_crypt_key', '')
   );
@@ -280,7 +280,10 @@ function onnistuufi_return_success() {
   $decrypt_data = $client->decryptReturn($data, $iv);
   $doc = $decrypt_data->document;
 
-  $text = t('Signed document is available here: <a href="@url">' . $doc . '</a>', array('@url' => url($doc)));
+  $text = t('Signed document is available here: <a href="@url">@doc</a>', array(
+    '@url' => url($doc),
+    '@doc' => $doc,
+  ));
   return $text;
 }
 
