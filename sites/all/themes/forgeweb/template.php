@@ -32,6 +32,13 @@ function forgeweb_preprocess_node(&$vars) {
     $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
     $vars['fill_in_application'] = l(t('Fill in application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
   }
+  
+  if($vars['type'] == 'tweet') {
+    if(!empty($vars['content']['field_tweet_body'][0]['#markup'])) {
+      $vars['field_tweet_body'][0]['format'] = 'full_html';
+      $vars['content']['field_tweet_body'][0]['#markup'] = 'asdasdas'.preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1" target="_blank">$1</a>', $vars['content']['field_tweet_body'][0]['#markup']); 
+    }
+  }
 }
 
 /**
