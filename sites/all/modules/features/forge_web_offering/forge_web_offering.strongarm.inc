@@ -44,7 +44,7 @@ function forge_web_offering_strongarm() {
   $strongarm->name = 'ant_service_offering';
   $strongarm->value = '1';
   $export['ant_service_offering'] = $strongarm;
-  
+
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;

@@ -52,17 +52,17 @@ function forge_web_offering_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-forge-member-navigation_add-service-offering:node/add/service-offering
-  $menu_links['menu-forge-member-navigation_add-service-offering:node/add/service-offering'] = array(
+  // Exported menu link: menu-forge-member-navigation_add-service-offering-julkict:node/add/service-offering-julkict
+  $menu_links['menu-forge-member-navigation_add-service-offering-julkict:node/add/service-offering-julkict'] = array(
     'menu_name' => 'menu-forge-member-navigation',
-    'link_path' => 'node/add/service-offering',
+    'link_path' => 'node/add/service-offering-julkict',
     'router_path' => 'node/add',
-    'link_title' => 'Add service offering',
+    'link_title' => 'Add service offering JulkICT',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-forge-member-navigation_add-service-offering:node/add/service-offering',
+      'identifier' => 'menu-forge-member-navigation_add-service-offering-julkict:node/add/service-offering-julkict',
       'alter' => TRUE,
     ),
     'module' => 'menu',
@@ -74,16 +74,16 @@ function forge_web_offering_menu_default_menu_links() {
     'customized' => 1,
   );
   // Exported menu link: menu-forge-member-navigation_add-service-offering:node/add/service-offering
-  $menu_links['menu-forge-member-navigation_add-service-offering-julkict:node/add/service-offering-julkict'] = array(
+  $menu_links['menu-forge-member-navigation_add-service-offering:node/add/service-offering'] = array(
     'menu_name' => 'menu-forge-member-navigation',
-    'link_path' => 'node/add/service-offering-julkict',
+    'link_path' => 'node/add/service-offering',
     'router_path' => 'node/add',
-    'link_title' => 'Add service offering JulkICT',
+    'link_title' => 'Add service offering',
     'options' => array(
       'attributes' => array(
         'title' => '',
       ),
-      'identifier' => 'menu-forge-member-navigation_add-service-offering-julkict:node/add/service-offering-julkict',
+      'identifier' => 'menu-forge-member-navigation_add-service-offering:node/add/service-offering',
       'alter' => TRUE,
     ),
     'module' => 'menu',
