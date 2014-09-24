@@ -69,14 +69,14 @@ function ldap_forge_admin_settings($form, &$form_state) {
 }
 
 /**
- * Handles settings saving
+ * Handles settings saving.
  */
 function ldap_forge_admin_settings_submit($form, &$form_state) {
   $settings = array();
   foreach ($form_state['groups'] as $gid => $group_info) {
     $roles = array();
     foreach ($form_state['values'][$gid]['roles'] as $rid => $assign) {
-      if($assign != 0){
+      if ($assign != 0) {
         $roles[$rid] = $rid;
       }
     }
@@ -101,7 +101,7 @@ function ldap_forge_groups() {
     $ldap_server = current($ldap_servers);
     // Search for posixGroups which is the baseclass of forge group entry.
     if (($results = $ldap_server->search(ldap_forge_group_binding(), 'objectClass=posixGroup')) && isset($results['count']) && $results['count'] > 0) {
-      for($n = 0; $n < $results['count']; $n++){
+      for ($n = 0; $n < $results['count']; $n++) {
         $groups[$results[$n]['gidnumber'][0]] = $results[$n];
       }
     }
@@ -122,9 +122,9 @@ function ldap_forge_user_presave(&$edit, $account, $category) {
     if (isset($group['organizer']) && $group['organizer']) {
       $edit['field_organizer_ref'][LANGUAGE_NONE][0] = array('target_id' => $group['organizer']);
     }
-    if (isset($group['roles'])){
-      foreach($group['roles'] as $rid){
-        if(!isset($account->roles[$rid])){
+    if (isset($group['roles'])) {
+      foreach ($group['roles'] as $rid) {
+        if (!isset($account->roles[$rid])) {
           $edit['roles'][$rid] = $rid;
         }
       }

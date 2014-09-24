@@ -70,7 +70,7 @@ function onnistuufi_sign_form($form, &$form_state) {
   $step = &$form_state['step'];
   drupal_set_title(t('Sign the document: Step @step', array('@step' => $step)));
   $function = $form_state['step_information'][$step]['form'];
-  
+
   $form = $function($form, $form_state);
 
   // Show the Next button only if there are more steps defined.
@@ -198,7 +198,7 @@ function onnistuufi_sign_form_step2($form, &$form_state) {
       array(
         'type' => 'person',
         'identifier' => "$id",
-      )
+      ),
     );
   }
 
@@ -293,7 +293,7 @@ function onnistuufi_return_error() {
 
 function _onnistuufi_check_document_uri($uri) {
   // Encode path and put all together manually.
-  // TODO: I didn't use http_build_url because it didn't work for some reason
+  // TODO: I didn't use http_build_url because it didn't work for some reason.
   $error = FALSE;
   $parts = parse_url($uri);
   $path = drupal_encode_path($parts['path']);

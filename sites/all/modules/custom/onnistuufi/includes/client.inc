@@ -60,8 +60,10 @@ class onnistuu_external_client {
 
   /**
    *
-   * @param string $customerId Customer ID provided by Onnistuu.fi
-   * @param string $cryptKey Crypt key base64 encoded provided by Onnistuu.fi
+   * @param string $customerId
+   *   Customer ID provided by Onnistuu.fi
+   * @param string $cryptKey
+   *   Crypt key base64 encoded provided by Onnistuu.fi
    */
   public function __construct($customerId, $cryptKey) {
     $this->_customer_id = $customerId;
@@ -148,10 +150,13 @@ class onnistuu_external_client {
   /**
    * Decrypts a return message from Onnistuu.fi.
    *
-   * @param string $data The base64 encoded data returned by Onnistuu.fi
-   * @param string $iv The base64 encoded iv returned by Onnistuu.fi
+   * @param string $data
+   *   The base64 encoded data returned by Onnistuu.fi
+   * @param string $iv
+   *   The base64 encoded iv returned by Onnistuu.fi
    *
-   * @return array The decrypted return values array
+   * @return array
+   *   The decrypted return values array
    */
   public function decryptReturn($data, $iv) {
     return json_decode(trim(mcrypt_decrypt(
