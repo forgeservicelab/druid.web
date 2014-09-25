@@ -36,7 +36,7 @@ function forgeweb_preprocess_node(&$vars) {
   if($vars['type'] == 'tweet') {
     if(!empty($vars['content']['field_tweet_body'][0]['#markup'])) {
       $vars['field_tweet_body'][0]['format'] = 'full_html';
-      $vars['content']['field_tweet_body'][0]['#markup'] = 'asdasdas'.preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1" target="_blank">$1</a>', $vars['content']['field_tweet_body'][0]['#markup']); 
+      $vars['content']['field_tweet_body'][0]['#markup'] = preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1" target="_blank">$1</a>', $vars['content']['field_tweet_body'][0]['#markup']); 
     }
   }
 }
