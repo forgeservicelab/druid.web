@@ -194,7 +194,7 @@
       }
     }
   };
-  
+
   Drupal.behaviors.mergeMobileNavigation = {
     attach: function (context, settings) {
       var mobile_nav_width = 801;
@@ -229,19 +229,19 @@
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
-      var msnry = new Masonry( '.masonry-wrapper', {
+      var msnry = new Masonry('.masonry-wrapper', {
         // options
         columnWidth: '.masonry-item',
         itemSelector: '.masonry-item'
       });
     }
   };
-  
+
   // Search toggle
   Drupal.behaviors.searchToggle = {
     attach: function (context) {
       var searchToggle = $('.block--views-exp-search-page');
-      
+
       searchToggle.click(function() {
         $(this).find('form').slideToggle('fast');
         $(this).find('form').click(function(event){
@@ -251,16 +251,16 @@
       });
     }
   };
-  
+
   // Feed block filtering functionality
   Drupal.behaviors.feedFiltering = {
     attach: function (context) {
       $('form#views-exposed-form-feed-block, form#views-exposed-form-feed-page').once('feed-filtering', function() {
-        var $labels =  $(this).find('label.option').slice(1);
-        
+        var $labels = $(this).find('label.option').slice(1);
+
         $labels.click(function(e) {
           var $input = $(this).prev();
-          
+
           if($input.attr('checked') === true) {
             $(this).siblings().removeAttr('checked');
             $('#edit-type-all').attr('checked', 'checked');
@@ -271,7 +271,7 @@
       });
     }
   };
-  
+
   Drupal.behaviors.forgeCheckedCheckboxesBehavior = {
     attach: function (context) {
       // Add checked class for input labels.
@@ -279,5 +279,5 @@
       $('form#views-exposed-form-feed-page').find('input:checked').next().addClass("checked");
     }
   };
-  
+
 })(jQuery);

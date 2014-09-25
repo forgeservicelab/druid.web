@@ -1,6 +1,6 @@
 <?php
-
 /**
+ * @file
  * Tested with PHP 5.3 on a linux host.
  *
  * Written to use version 0.6 of the Onnistuu.fi API.
@@ -36,6 +36,7 @@
  *
  * @version OnnistuuAPI-0.6-Client-0.3
  */
+
 class onnistuu_external_client {
   /**
    * @var string Customer ID provided by Onnistuu.fi
@@ -58,8 +59,11 @@ class onnistuu_external_client {
   protected $_mcrypt_mode = MCRYPT_MODE_CBC;
 
   /**
-   * @param string $customerId Customer ID provided by Onnistuu.fi
-   * @param string $cryptKey Crypt key base64 encoded provided by Onnistuu.fi
+   *
+   * @param string $customerId
+   *   Customer ID provided by Onnistuu.fi
+   * @param string $cryptKey
+   *   Crypt key base64 encoded provided by Onnistuu.fi
    */
   public function __construct($customerId, $cryptKey) {
     $this->_customer_id = $customerId;
@@ -83,6 +87,7 @@ class onnistuu_external_client {
    * return_failure, auth_service (when using as a button straight to a bank)
    *
    * @param array $request
+   *
    * @return array
    */
   public function encryptRequest($request) {
@@ -126,6 +131,7 @@ class onnistuu_external_client {
    * Does the actual work of encrypting the request.
    *
    * @param array $request
+   *
    * @return array
    */
   protected function _encryptRequest($request) {
@@ -144,9 +150,13 @@ class onnistuu_external_client {
   /**
    * Decrypts a return message from Onnistuu.fi.
    *
-   * @param string $data The base64 encoded data returned by Onnistuu.fi
-   * @param string $iv The base64 encoded iv returned by Onnistuu.fi
-   * @return array The decrypted return values array
+   * @param string $data
+   *   The base64 encoded data returned by Onnistuu.fi
+   * @param string $iv
+   *   The base64 encoded iv returned by Onnistuu.fi
+   *
+   * @return array
+   *   The decrypted return values array
    */
   public function decryptReturn($data, $iv) {
     return json_decode(trim(mcrypt_decrypt(
@@ -189,4 +199,3 @@ class onnistuu_external_client {
     ));
   }
 }
-
