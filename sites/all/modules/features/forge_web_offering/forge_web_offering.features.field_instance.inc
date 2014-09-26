@@ -1400,7 +1400,7 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_spesifications',
-    'label' => 'Spesifications',
+    'label' => 'Specification',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1602,7 +1602,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_cancellation_refund_policy',
     'label' => 'Cancellation / refund policy',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -2160,7 +2160,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_offering_address',
     'label' => 'Contact person / Address',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -2671,7 +2671,7 @@ function forge_web_offering_field_default_field_instances() {
   t('Product family title');
   t('Provider');
   t('Screenshots');
-  t('Spesifications');
+  t('Specification');
   t('Tags');
   t('Terms and conditions');
   t('Terms and conditions in production environment');
