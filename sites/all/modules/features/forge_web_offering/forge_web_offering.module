@@ -10,7 +10,7 @@ include_once 'forge_web_offering.features.inc';
  * Implementation of hook_form_alter
  */
 function forge_web_offering_form_alter(&$form, &$form_state, $form_id) {
-  if($form_id == 'offering_node_form') {
+  if($form_id == 'offering_node_form' || $form_id == 'service_offering_node_form') {
     $form['#validate'][] = 'forge_web_offering_custom_validation';
   }
 }
@@ -20,7 +20,7 @@ function forge_web_offering_form_alter(&$form, &$form_state, $form_id) {
  */
 function forge_web_offering_custom_validation($form, &$form_state) {
   foreach($form_state['values']['field_pricing_information'] as $value) {
-    if(!preg_match('/\d/', $value['0']['value'])) {
+    if(!preg_match('/[A-Za-z]/', $value[0]['value']) || !preg_match('/[0-9]/', $value[0]['value'])) {
       form_set_error('field_pricing_information', t('Pricing information must contains letters and at least one number.'));
     }
   }
