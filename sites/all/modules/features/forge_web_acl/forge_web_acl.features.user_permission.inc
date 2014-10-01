@@ -616,6 +616,16 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_pricing_free_of_charge'.
+  $permissions['create field_pricing_free_of_charge'] = array(
+    'name' => 'create field_pricing_free_of_charge',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create forge_role_information content'.
   $permissions['create forge_role_information content'] = array(
     'name' => 'create forge_role_information content',
@@ -689,6 +699,16 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create service_offering content'.
   $permissions['create service_offering content'] = array(
     'name' => 'create service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create service_offering_julkict content'.
+  $permissions['create service_offering_julkict content'] = array(
+    'name' => 'create service_offering_julkict content',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
@@ -849,6 +869,15 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any service_offering_julkict content'.
+  $permissions['delete any service_offering_julkict content'] = array(
+    'name' => 'delete any service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any tutorial content'.
   $permissions['delete any tutorial content'] = array(
     'name' => 'delete any tutorial content',
@@ -977,6 +1006,15 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own service_offering content'.
   $permissions['delete own service_offering content'] = array(
     'name' => 'delete own service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own service_offering_julkict content'.
+  $permissions['delete own service_offering_julkict content'] = array(
+    'name' => 'delete own service_offering_julkict content',
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
@@ -1180,6 +1218,15 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any service_offering_julkict content'.
+  $permissions['edit any service_offering_julkict content'] = array(
+    'name' => 'edit any service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any tutorial content'.
   $permissions['edit any tutorial content'] = array(
     'name' => 'edit any tutorial content',
@@ -1233,6 +1280,15 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit field_pricing_information'.
   $permissions['edit field_pricing_information'] = array(
     'name' => 'edit field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_pricing_free_of_charge'.
+  $permissions['edit field_pricing_free_of_charge'] = array(
+    'name' => 'edit field_pricing_free_of_charge',
     'roles' => array(
       'Content admin' => 'Content admin',
     ),
@@ -1315,6 +1371,16 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_pricing_free_of_charge'.
+  $permissions['edit own field_pricing_free_of_charge'] = array(
+    'name' => 'edit own field_pricing_free_of_charge',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own forge_role_information content'.
   $permissions['edit own forge_role_information content'] = array(
     'name' => 'edit own forge_role_information content',
@@ -1388,6 +1454,16 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own service_offering content'.
   $permissions['edit own service_offering content'] = array(
     'name' => 'edit own service_offering content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own service_offering_julkict content'.
+  $permissions['edit own service_offering_julkict content'] = array(
+    'name' => 'edit own service_offering_julkict content',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
@@ -1801,6 +1877,18 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_pricing_free_of_charge'.
+  $permissions['view field_pricing_free_of_charge'] = array(
+    'name' => 'view field_pricing_free_of_charge',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
+      'Service developer' => 'Service developer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view own field_company_contact_details_fo'.
   $permissions['view own field_company_contact_details_fo'] = array(
     'name' => 'view own field_company_contact_details_fo',
@@ -1831,6 +1919,16 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'view own field_pricing_information'.
   $permissions['view own field_pricing_information'] = array(
     'name' => 'view own field_pricing_information',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pricing_free_of_charge'.
+  $permissions['view own field_pricing_free_of_charge'] = array(
+    'name' => 'view own field_pricing_free_of_charge',
     'roles' => array(
       'Content admin' => 'Content admin',
       'Partner' => 'Partner',
