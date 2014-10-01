@@ -85,6 +85,7 @@
 
 
 .node-type-service-offering,
+.node-type-service-offering-julkict,
 .node-type-offering,
 .node-type-company {
   article,
@@ -117,6 +118,7 @@
 
 .node--project.node-teaser,
 .node--service-offering.node-teaser,
+.node--service-offering-julkict.node-teaser,
 .node--offering.node-teaser {
   margin-bottom: 1em;
   overflow: hidden;
@@ -173,6 +175,7 @@
 }
 
 .block--quicktabs-service-offering-quicktab-mobile,
+.block--quicktabs-service-offering-julkict-quicktab-mobile,
 .block--quicktabs-product-page-quicktab-mobile {
   display: block;
   @include at-breakpoint($tab) {
@@ -181,6 +184,7 @@
 }
 
 .block--quicktabs-service-offering-quicktab,
+.block--quicktabs-service-offering-julkict-quicktab,
 .block--quicktabs-product-page-quicktab {
   display: none;
   @include at-breakpoint($tab) {

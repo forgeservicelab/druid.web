@@ -91,6 +91,14 @@ function forge_web_offering_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'service_offering_julkict' => array(
+      'name' => t('Service offering JulkICT'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   return $items;
 }
