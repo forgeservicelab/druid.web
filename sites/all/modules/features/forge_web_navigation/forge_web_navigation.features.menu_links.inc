@@ -124,7 +124,7 @@ function forge_web_navigation_menu_default_menu_links() {
     'router_path' => '',
     'link_title' => 'Partners & People',
     'options' => array(
-      'fragment' => 'block-quicktabs-partners-or-people',
+      'fragment' => 'block-views-partners-people-block',
       'attributes' => array(
         'title' => '',
       ),
