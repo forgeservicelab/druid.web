@@ -1801,9 +1801,9 @@ html[lang=fi] .site-name a {
 }
 .l-listing .view-content {
   *zoom: 1;
-  max-width: 1070px;
-  padding-left: 10px;
-  padding-right: 10px;
+  max-width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0;
@@ -1817,7 +1817,7 @@ html[lang=fi] .site-name a {
 
 @media (min-width: 44em) {
   .l-listing .view-content {
-    max-width: 1070px;
+    max-width: 59em;
   }
   .l-listing .view-content .views-row {
     width: 49.15254%;
@@ -1831,7 +1831,7 @@ html[lang=fi] .site-name a {
 }
 @media (min-width: 70em) {
   .l-listing .view-content {
-    max-width: 1070px;
+    max-width: 79em;
   }
   .l-listing .view-content .views-row {
     width: 32.20339%;
@@ -3860,7 +3860,7 @@ form.fivestar-widget {
 }
 @media (min-width: 44em) {
   .block--menu-menu-tutorial-menu .menu {
-    max-width: 1070px;
+    max-width: 59em;
     height: 212px;
     margin: 0 auto;
   }
@@ -4029,7 +4029,7 @@ form.fivestar-widget {
 }
 @media (min-width: 70em) {
   .company-offerings > .view-content {
-    max-width: 1070px;
+    max-width: 79em;
   }
   .company-offerings > .view-content .views-row {
     width: 49.15254%;
@@ -4344,9 +4344,9 @@ form.fivestar-widget {
 }
 .node-type-tutorial .l-region--hero .view-tutorial-highlighted {
   *zoom: 1;
-  max-width: 1070px;
-  padding-left: 10px;
-  padding-right: 10px;
+  max-width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
   margin-left: auto;
   margin-right: auto;
   margin: 0 auto;
@@ -4358,7 +4358,7 @@ form.fivestar-widget {
 }
 @media (min-width: 44em) {
   .node-type-tutorial .l-region--hero .view-tutorial-highlighted {
-    max-width: 1070px;
+    max-width: 59em;
   }
 }
 .node-type-tutorial .l-region--hero .view-tutorial-highlighted h2 {

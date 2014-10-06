@@ -6,6 +6,13 @@
  ******************************************************************************/
 @import "../../variables/**/*";
 
+// Grid & Susy setting overrides
+// Define Susy grid variables mobile first.
+$total-columns: 4;
+$grid-padding: 10px;
+// Container max width
+$container-width: 1090px;
+
 .l-content {
   @include container; // Define these elements as the grid containers.
   margin-bottom: $vert-spacing-unit / 3;

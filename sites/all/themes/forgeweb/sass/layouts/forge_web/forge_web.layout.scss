@@ -7,8 +7,12 @@
 @import "../../variables/**/*";
 
 // Grid & Susy setting overrides
+// Set consistent vertical and horizontal spacing units.
 $vert-spacing-unit: 40px;
+// Define Susy grid variables mobile first.
+$total-columns: 4;
 $grid-padding: 20px;
+// Container max width
 $container-width: 1200px;
 
 .l-main {
