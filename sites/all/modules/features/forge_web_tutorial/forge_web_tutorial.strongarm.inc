@@ -94,15 +94,15 @@ function forge_web_tutorial_strongarm() {
   $strongarm->value = array(
     'view_own' => array(
       0 => 2,
-      1 => 4,
-      2 => 3,
-      3 => 5,
+      1 => 7,
+      2 => 8,
+      3 => 4,
     ),
     'view' => array(
       0 => 2,
-      1 => 4,
-      2 => 3,
-      3 => 5,
+      1 => 7,
+      2 => 8,
+      3 => 4,
     ),
   );
   $export['content_access_tutorial'] = $strongarm;
