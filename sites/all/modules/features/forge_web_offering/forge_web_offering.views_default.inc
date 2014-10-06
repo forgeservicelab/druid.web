@@ -112,9 +112,14 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'service_offering_julkict' => 'service_offering_julkict',
     'offering' => 'offering',
     'service_offering' => 'service_offering',
   );
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   /* Filter criterion: Content: Category (field_category) */
   $handler->display->display_options['filters']['field_category_tid']['id'] = 'field_category_tid';
   $handler->display->display_options['filters']['field_category_tid']['table'] = 'field_data_field_category';
@@ -180,6 +185,7 @@ function forge_web_offering_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Type'),
     t('Category'),
     t('Tags'),
     t('Block'),
