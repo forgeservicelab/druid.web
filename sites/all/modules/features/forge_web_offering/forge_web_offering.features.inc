@@ -92,7 +92,7 @@ function forge_web_offering_node_info() {
       'help' => '',
     ),
     'service_offering_julkict' => array(
-      'name' => t('Service offering JulkICT'),
+      'name' => t('Free of charge offering'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
