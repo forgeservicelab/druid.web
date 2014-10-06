@@ -22,6 +22,12 @@ function forge_web_acl_user_default_roles() {
     'weight' => 4,
   );
 
+  // Exported role: JulkICT.
+  $roles['JulkICT'] = array(
+    'name' => 'JulkICT',
+    'weight' => 6,
+  );
+
   // Exported role: Partner.
   $roles['Partner'] = array(
     'name' => 'Partner',
@@ -31,6 +37,12 @@ function forge_web_acl_user_default_roles() {
   // Exported role: Service developer.
   $roles['Service developer'] = array(
     'name' => 'Service developer',
+    'weight' => 5,
+  );
+
+  // Exported role: developers.
+  $roles['developers'] = array(
+    'name' => 'developers',
     'weight' => 5,
   );
 
