@@ -301,10 +301,14 @@
     &:hover:before {
       cursor: pointer;
     }
+    // When logged in, this class is added and it sets position relative, we dont want that
+    &.contextual-links-region {
+      position: initial;
+    }
     .views-exposed-form {
       display: block;
       line-height: 0;
-      margin: 0 10px;
+      margin: 0 4px;
       .views-exposed-widget {
         float: none;
         .views-widget {
@@ -318,11 +322,14 @@
       left: 0;
       margin: 0;
       position: absolute;
-      padding: 10px 0;
+      padding: 4px 0;
       top: 80px;
       width: 100%;
       @include at-breakpoint($desk) {
         top: 100px;
+        right: 0;
+        left: auto;
+        width: 25%;
       }
     }
   }

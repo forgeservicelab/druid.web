@@ -1,0 +1,57 @@
+diff --git a/styles/ResponsiveMultiLevelMenu/js/responsive_menus_codrops_responsive_multi.js b/styles/ResponsiveMultiLevelMenu/js/responsive_menus_codrops_responsive_multi.js
+index 3d0c225..ebd244b 100644
+--- a/styles/ResponsiveMultiLevelMenu/js/responsive_menus_codrops_responsive_multi.js
++++ b/styles/ResponsiveMultiLevelMenu/js/responsive_menus_codrops_responsive_multi.js
+@@ -6,7 +6,7 @@
+   Drupal.behaviors.responsive_menus_codrops_responsive_multi = {
+     attach: function (context, settings) {
+       settings.responsive_menus = settings.responsive_menus || {};
+-      var $windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
++      var $windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+       $.each(settings.responsive_menus, function(ind, iteration) {
+         if (iteration.responsive_menus_style != 'codrops_responsive_multi') {
+           return true;
+diff --git a/styles/responsive_menus_simple/js/responsive_menus_simple.js b/styles/responsive_menus_simple/js/responsive_menus_simple.js
+index e8016d0..9d30284 100644
+--- a/styles/responsive_menus_simple/js/responsive_menus_simple.js
++++ b/styles/responsive_menus_simple/js/responsive_menus_simple.js
+@@ -88,7 +88,7 @@
+           $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
+         }
+         // Window width with legacy browsers.
+-        var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
++        var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+         $.each(settings.responsive_menus, function(ind, iteration) {
+           if (iteration.responsive_menus_style != 'responsive_menus_simple') {
+             return true;
+@@ -178,7 +178,7 @@
+         // Handle window resizing.
+         $(window).resize(function() {
+           // Window width with legacy browsers.
+-          windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
++          windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+           $('.responsive-menus').each(function(menuIndex, menuValue) {
+             var mediasize = $(this).data('mediasize') || 768;
+             // Prevent menu from going off the screen.  This only happens in
+diff --git a/styles/sidr/js/responsive_menus_sidr.js b/styles/sidr/js/responsive_menus_sidr.js
+index ffccd82..f76a6a8 100644
+--- a/styles/sidr/js/responsive_menus_sidr.js
++++ b/styles/sidr/js/responsive_menus_sidr.js
+@@ -48,7 +48,7 @@
+   Drupal.behaviors.responsive_menus_sidr = {
+     attach: function (context, settings) {
+       settings.responsive_menus = settings.responsive_menus || {};
+-      var $windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
++      var $windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+       $.each(settings.responsive_menus, function(ind, iteration) {
+         if (iteration.responsive_menus_style != 'sidr') {
+           return true;
+@@ -80,7 +80,7 @@
+       // Handle window resizing.
+       $(window).resize(function() {
+         // Window width with legacy browsers.
+-        $windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
++        $windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+         $.each(settings.responsive_menus, function(ind, iteration) {
+           if (iteration.responsive_menus_style != 'sidr') {
+             return true;
