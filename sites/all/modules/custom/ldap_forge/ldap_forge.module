@@ -99,7 +99,6 @@ function ldap_forge_groups() {
         $groups[md5($results[$n]['dn'])] = $results[$n];
     else
       drupal_set_message(t('No results.'));
-    }
   }
   else {
     drupal_set_message(t('LDAP connection error. Please contact an Administrator.'));
