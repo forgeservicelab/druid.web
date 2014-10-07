@@ -64,4 +64,5 @@ features[variable][] = cas_uri
 features[variable][] = cas_user_register
 features[variable][] = cas_version
 features[variable][] = ldap_authentication_conf
+features[variable][] = ldap_forge_settings
 features[variable][] = ldap_user_conf
