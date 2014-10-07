@@ -1,13 +1,13 @@
 <?php
-
 /**
+ * @file
  * Tested with PHP 5.3 on a linux host.
  *
  * Written to use version 0.6 of the Onnistuu.fi API.
  *
  * Usage example:
  * // include library / use autoloader
- * $client = new Onnistuu_External_Client(
+ * $client = new OnnistuuExternalClient(
  *     'ede412ec-5a86-4cf5-8f9d-25e6b6dfae9d',
  *     'sE1RdFPXZXaDrIpZ3XiFYdEQlF63Yt9GaEtVFCBQmcU='
  * );
@@ -36,34 +36,39 @@
  *
  * @version OnnistuuAPI-0.6-Client-0.3
  */
-class onnistuu_external_client {
+
+class OnnistuuExternalClient {
   /**
    * @var string Customer ID provided by Onnistuu.fi
    */
-  protected $_customer_id;
+  protected $customerId;
 
   /**
    * @var string Crypt key base64 encoded provided by Onnistuu.fi
    */
-  protected $_crypt_key;
+  protected $cryptKey;
 
   /**
    * @var string A cipher supported by the php mcrypt module.
    */
-  protected $_mcrypt_cipher = MCRYPT_RIJNDAEL_256;
+  protected $mcryptCipher = MCRYPT_RIJNDAEL_256;
 
   /**
    * @var string A mode supported by the selected cipher.
    */
-  protected $_mcrypt_mode = MCRYPT_MODE_CBC;
+  protected $mcryptMode = MCRYPT_MODE_CBC;
 
   /**
-   * @param string $customerId Customer ID provided by Onnistuu.fi
-   * @param string $cryptKey Crypt key base64 encoded provided by Onnistuu.fi
+   *
+   *
+   * @param string $customer_id
+   *   Customer ID provided by Onnistuu.fi
+   * @param string $crypt_key
+   *   Crypt key base64 encoded provided by Onnistuu.fi
    */
-  public function __construct($customerId, $cryptKey) {
-    $this->_customer_id = $customerId;
-    $this->_crypt_key = $cryptKey;
+  public function __construct($customer_id, $crypt_key) {
+    $this->customerId = $customer_id;
+    $this->cryptKey = $crypt_key;
   }
 
   /**
@@ -83,6 +88,7 @@ class onnistuu_external_client {
    * return_failure, auth_service (when using as a button straight to a bank)
    *
    * @param array $request
+   *
    * @return array
    */
   public function encryptRequest($request) {
@@ -119,22 +125,23 @@ class onnistuu_external_client {
       }
     }
 
-    return $this->_encryptRequest($request);
+    return $this->doEncryptRequest($request);
   }
 
   /**
    * Does the actual work of encrypting the request.
    *
    * @param array $request
+   *
    * @return array
    */
-  protected function _encryptRequest($request) {
-    $iv = $this->_createIv();
+  protected function doEncryptRequest($request) {
+    $iv = $this->createIv();
     $data = base64_encode(mcrypt_encrypt(
-      $this->_mcrypt_cipher,
-      base64_decode($this->_crypt_key),
+      $this->mcryptCipher,
+      base64_decode($this->cryptKey),
       json_encode($request),
-      $this->_mcrypt_mode,
+      $this->mcryptMode,
       $iv
     ));
 
@@ -144,16 +151,20 @@ class onnistuu_external_client {
   /**
    * Decrypts a return message from Onnistuu.fi.
    *
-   * @param string $data The base64 encoded data returned by Onnistuu.fi
-   * @param string $iv The base64 encoded iv returned by Onnistuu.fi
-   * @return array The decrypted return values array
+   * @param string $data
+   *   The base64 encoded data returned by Onnistuu.fi
+   * @param string $iv
+   *   The base64 encoded iv returned by Onnistuu.fi
+   *
+   * @return array
+   *   The decrypted return values array
    */
   public function decryptReturn($data, $iv) {
     return json_decode(trim(mcrypt_decrypt(
-      $this->_mcrypt_cipher,
-      base64_decode($this->_crypt_key),
+      $this->mcryptCipher,
+      base64_decode($this->cryptKey),
       base64_decode($data),
-      $this->_mcrypt_mode,
+      $this->mcryptMode,
       base64_decode($iv)
     )));
   }
@@ -164,8 +175,8 @@ class onnistuu_external_client {
    * At least prior to PHP 5.3.0, this will not work on windows hosts.
    * Consider MCRYPT_RAND instead of MCRYPT_DEV_URANDOM.
    */
-  protected function _createIv($source = MCRYPT_DEV_URANDOM) {
-    $size = mcrypt_get_iv_size($this->_mcrypt_cipher, $this->_mcrypt_mode);
+  protected function createIv($source = MCRYPT_DEV_URANDOM) {
+    $size = mcrypt_get_iv_size($this->mcryptCipher, $this->mcryptMode);
     return mcrypt_create_iv($size, $source);
   }
 
@@ -185,8 +196,7 @@ class onnistuu_external_client {
    */
   public function getAuthServices() {
     return json_decode(file_get_contents(
-      'https://www.onnistuu.fi/external/auth-services/customer/' . $this->_customer_id
+      'https://www.onnistuu.fi/external/auth-services/customer/' . $this->customerId
     ));
   }
 }
-

@@ -1,5 +1,10 @@
 <?php
 /**
+ * @file
+ * Module to handle authorization integration with FORGE LDAP
+ */
+
+/**
  * Implements hook_menu().
  */
 function ldap_forge_menu() {
@@ -9,7 +14,7 @@ function ldap_forge_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ldap_forge_admin_settings'),
     'access arguments' => array('administer ldap forge'),
-    'type' => MENU_LOCAL_TASK
+    'type' => MENU_LOCAL_TASK,
   );
   return $items;
 }
@@ -27,16 +32,16 @@ function ldap_forge_permission() {
 }
 
 /**
- * Creates settings form where you can define which view modes can be used
+ * Creates settings form where you can define which view modes can be used.
  */
 function ldap_forge_admin_settings($form, &$form_state) {
   $form = array(
     'info' => array(
-      '#markup' => '<h1>FORGE LDAP settings</h1><p>These settings will apply to users that auth through LDAP. Settings are applied on every login, in order to keep access rights in place.</p>',
+      '#markup' => '<h1>forge LDAP settings</h1><p>These settings will apply to users that auth through LDAP. Settings are applied on every login, in order to keep access rights in place.</p>',
     ),
     'groups' => array(),
   );
-  // Get roles
+  // Get roles.
   $roles = user_roles(TRUE);
   $settings = variable_get('ldap_forge_settings', array());
   $groups = ldap_forge_groups();
@@ -48,7 +53,7 @@ function ldap_forge_admin_settings($form, &$form_state) {
       '#collapsible' => TRUE,
       '#collapsed' => FALSE,
       '#tree' => TRUE,
-      // Roles
+      // Roles.
       'roles' => array(
         '#title' => 'Auto assigned roles for group',
         '#type' => 'checkboxes',
@@ -65,8 +70,8 @@ function ldap_forge_admin_settings($form, &$form_state) {
 }
 
 /**
- * Handles settings saving
- **/
+ * Handles settings saving.
+ */
 function ldap_forge_admin_settings_submit($form, &$form_state) {
   $settings = array();
   foreach($form_state['groups'] as $group_dn_hash => $group_info) {
@@ -95,8 +100,9 @@ function ldap_forge_groups() {
     else
       drupal_set_message(t('No results.'));
   }
-  else
+  else {
     drupal_set_message(t('LDAP connection error. Please contact an Administrator.'));
+  }
   return $groups;
 }
 
@@ -137,7 +143,7 @@ function ldap_forge_group_settings($group_dn_hash) {
  * LDAP binding for groups
  */
 function ldap_forge_group_binding() {
-  return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forgeservicelab,dc=fi');
+  return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forge,dc=lan');
 }
 
 /**
