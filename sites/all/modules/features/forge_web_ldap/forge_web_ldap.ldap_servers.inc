@@ -17,7 +17,7 @@ function forge_web_ldap_default_ldap_servers() {
   $ldap_servers_conf->name = 'Forge LDAP server';
   $ldap_servers_conf->status = TRUE;
   $ldap_servers_conf->ldap_type = 'default';
-  $ldap_servers_conf->address = 'auth.forgeservicelab.fi';
+  $ldap_servers_conf->address = 'ldaps://ldapproxy.forgeservicelab.fi';
   $ldap_servers_conf->port = 636;
   $ldap_servers_conf->tls = FALSE;
   $ldap_servers_conf->followrefs = FALSE;
@@ -25,7 +25,7 @@ function forge_web_ldap_default_ldap_servers() {
   $ldap_servers_conf->binddn = 'cn=authenticator,ou=services,dc=forgeservicelab,dc=fi';
   $ldap_servers_conf->bindpw = 'ms3kaUnb';
   $ldap_servers_conf->basedn = array(
-    0 => 'ou=people,dc=forgeservicelab,dc=fi',
+    0 => 'dc=forgeservicelab,dc=fi',
   );
   $ldap_servers_conf->user_attr = 'cn';
   $ldap_servers_conf->account_name_attr = '';
