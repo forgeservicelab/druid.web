@@ -1018,6 +1018,8 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own service_offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
+      'Partner' => 'Partner',
     ),
     'module' => 'node',
   );
