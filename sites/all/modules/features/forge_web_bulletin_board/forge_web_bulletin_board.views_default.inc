@@ -39,12 +39,6 @@ function forge_web_bulletin_board_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'masonry-item';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Header: Global: Unfiltered text */
-  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<a href="/node/add/bulletin-board-item" class="button button__blue">Create new topic</a>';
   /* Relationship: Content: Author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
@@ -131,7 +125,6 @@ function forge_web_bulletin_board_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('<a href="/node/add/bulletin-board-item" class="button button__blue">Create new topic</a>'),
     t('author'),
     t('Announcement'),
     t('.'),

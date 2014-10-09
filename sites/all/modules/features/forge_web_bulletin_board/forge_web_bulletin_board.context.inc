@@ -26,11 +26,17 @@ function forge_web_bulletin_board_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-10' => array(
+          'module' => 'block',
+          'delta' => '10',
+          'region' => 'under_content',
+          'weight' => '-10',
+        ),
         'views-bulletin_board-block_1' => array(
           'module' => 'views',
           'delta' => 'bulletin_board-block_1',
-          'region' => 'content',
-          'weight' => '1',
+          'region' => 'under_content',
+          'weight' => '-9',
         ),
       ),
     ),
