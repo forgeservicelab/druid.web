@@ -2681,52 +2681,6 @@ function forge_web_offering_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offering_julkict-body'
-  $field_instances['node-service_offering_julkict-body'] = array(
-    'bundle' => 'service_offering_julkict',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 23,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 21,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 58,
-    ),
-  );
-
   // Exported field_instance: 'node-service_offering_julkict-field_brief_overview_description'
   $field_instances['node-service_offering_julkict-field_brief_overview_description'] = array(
     'bundle' => 'service_offering_julkict',
@@ -3925,7 +3879,6 @@ function forge_web_offering_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Attachment');
   t('Available support');
-  t('Body');
   t('Brief indication about price. You can provide more detailed information below. Pricing information is only visible to those who have logged in to FORGE.');
   t('Brief overview description');
   t('Cancellation / refund policy');

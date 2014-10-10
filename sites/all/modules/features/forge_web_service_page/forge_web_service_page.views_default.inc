@@ -104,6 +104,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'service_offering_julkict' => 'service_offering_julkict',
     'service_offering' => 'service_offering',
   );
 
@@ -193,6 +194,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'service_offering_julkict' => 'service_offering_julkict',
     'service_offering' => 'service_offering',
   );
   /* Filter criterion: Content: Detailed description (field_detailed_description) */
@@ -282,6 +284,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'service_offering_julkict' => 'service_offering_julkict',
     'service_offering' => 'service_offering',
   );
   /* Filter criterion: Content: Pricing description (field_pricing_description) */
@@ -437,6 +440,7 @@ function forge_web_service_page_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'service_offering_julkict' => 'service_offering_julkict',
     'service_offering' => 'service_offering',
   );
 
