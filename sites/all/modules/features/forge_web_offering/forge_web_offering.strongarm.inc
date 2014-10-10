@@ -368,11 +368,25 @@ function forge_web_offering_strongarm() {
   $strongarm->value = array(
     'view_own' => array(
       0 => 1,
-      1 => 4,
+      1 => 2,
+      2 => 3,
+      3 => 5,
+      4 => 6,
+      5 => 7,
+      6 => 8,
+      7 => 9,
+      8 => 4,
     ),
     'view' => array(
       0 => 1,
-      1 => 4,
+      1 => 2,
+      2 => 3,
+      3 => 5,
+      4 => 6,
+      5 => 7,
+      6 => 8,
+      7 => 9,
+      8 => 4,
     ),
   );
   $export['content_access_service_offering_julkict'] = $strongarm;
