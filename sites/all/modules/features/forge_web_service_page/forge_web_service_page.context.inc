@@ -20,6 +20,7 @@ function forge_web_service_page_context_default_contexts() {
     'node' => array(
       'values' => array(
         'service_offering' => 'service_offering',
+        'service_offering_julkict' => 'service_offering_julkict',
       ),
       'options' => array(
         'node_form' => '0',
