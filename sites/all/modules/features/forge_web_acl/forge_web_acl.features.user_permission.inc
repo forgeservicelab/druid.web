@@ -718,7 +718,10 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'create service_offering_julkict content'.
   $permissions['create service_offering_julkict content'] = array(
     'name' => 'create service_offering_julkict content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
+    ),
     'module' => 'node',
   );
 
@@ -878,7 +881,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete any service_offering_julkict content'.
   $permissions['delete any service_offering_julkict content'] = array(
     'name' => 'delete any service_offering_julkict content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1027,7 +1032,10 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'delete own service_offering_julkict content'.
   $permissions['delete own service_offering_julkict content'] = array(
     'name' => 'delete own service_offering_julkict content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
+    ),
     'module' => 'node',
   );
 
@@ -1231,7 +1239,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit any service_offering_julkict content'.
   $permissions['edit any service_offering_julkict content'] = array(
     'name' => 'edit any service_offering_julkict content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
     'module' => 'node',
   );
 
@@ -1477,7 +1487,10 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'edit own service_offering_julkict content'.
   $permissions['edit own service_offering_julkict content'] = array(
     'name' => 'edit own service_offering_julkict content',
-    'roles' => array(),
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
+    ),
     'module' => 'node',
   );
 
