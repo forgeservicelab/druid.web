@@ -55,6 +55,8 @@ function forge_web_bulletin_board_user_default_permissions() {
     'name' => 'edit own bulletin_board_item content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'Forge member' => 'Forge member',
+      'Partner' => 'Partner',
     ),
     'module' => 'node',
   );
