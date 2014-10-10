@@ -927,8 +927,8 @@ function forge_web_offering_field_group_info() {
     'weight' => '17',
     'children' => array(
       0 => 'field_pricing_description',
-      1 => 'field_pricing_information',
-      2 => 'field_pricing_free_of_charge',
+      1 => 'field_pricing_free_of_charge',
+      2 => 'field_pricing_information',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -1022,8 +1022,8 @@ function forge_web_offering_field_group_info() {
     'weight' => '1',
     'children' => array(
       0 => 'field_live_demo_url',
-      1 => 'field_organizer',
-      2 => 'field_made_in_julkict_lab',
+      1 => 'field_made_in_julkict_lab',
+      2 => 'field_organizer',
       3 => 'group_offering_contact',
     ),
     'format_type' => 'div',

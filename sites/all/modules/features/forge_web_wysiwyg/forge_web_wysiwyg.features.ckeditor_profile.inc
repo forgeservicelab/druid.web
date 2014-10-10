@@ -22,6 +22,7 @@ function forge_web_wysiwyg_ckeditor_profile_defaults() {
     [\'NumberedList\',\'BulletedList\',\'Link\',\'Unlink\',\'Anchor\',\'Table\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteFromWord\',\'-\',\'SpellChecker\', \'Scayt\'],
     [\'Undo\',\'Redo\'],
+    [\'Indent\',\'Outdent\'],
     [\'Source\']
 ]
     ',
