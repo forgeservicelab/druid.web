@@ -132,7 +132,14 @@ function forgeweb_js_alter(&$javascript){
 
 
 function forgeweb_preprocess_menu_link(&$vars) {
-  if($vars['element']['#title'] == 'Join Forge' && !user_is_anonymous()) {
+  global $user;
+  $change_link = false;
+  foreach($user->roles as $role) {
+    if($role == "Service developer") {
+      $change_link = true;
+    }
+  }
+  if($vars['element']['#title'] == 'Join Forge' && $change_link) {
     $vars['element']['#title'] = 'My Forge';
     $vars['element']['#href'] = 'welcome-forge-service-lab';
   }
