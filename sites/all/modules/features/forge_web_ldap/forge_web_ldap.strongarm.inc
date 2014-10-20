@@ -50,7 +50,7 @@ function forge_web_ldap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cas_check_first';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['cas_check_first'] = $strongarm;
 
   $strongarm = new stdClass();
