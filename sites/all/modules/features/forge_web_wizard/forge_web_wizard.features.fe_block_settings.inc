@@ -30,7 +30,7 @@ function forge_web_wizard_default_fe_block_settings() {
         'weight' => 0,
       ),
       'forgeweb' => array(
-        'region' => 'content',
+        'region' => '',
         'status' => 1,
         'theme' => 'forgeweb',
         'weight' => 0,

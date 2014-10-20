@@ -16,8 +16,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'admin_menu',
   );
@@ -28,8 +30,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'system',
   );
@@ -54,7 +58,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
+      'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'comment',
   );
@@ -91,7 +98,9 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access devel information'.
   $permissions['access devel information'] = array(
     'name' => 'access devel information',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'devel',
   );
 
@@ -200,13 +209,6 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'administer breakpoints',
     'roles' => array(),
     'module' => 'breakpoints',
-  );
-
-  // Exported permission: 'administer cas'.
-  $permissions['administer cas'] = array(
-    'name' => 'administer cas',
-    'roles' => array(),
-    'module' => 'cas',
   );
 
   // Exported permission: 'administer ckeditor'.
@@ -511,8 +513,10 @@ function forge_web_acl_user_default_permissions() {
       'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'honeypot',
   );
@@ -557,8 +561,10 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create company content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'node',
   );
@@ -584,6 +590,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create field_company_contact_details_fo',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'field_permissions',
@@ -601,8 +608,16 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'create field_pricing_free_of_charge'.
+  $permissions['create field_pricing_free_of_charge'] = array(
+    'name' => 'create field_pricing_free_of_charge',
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -611,6 +626,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create field_pricing_information',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'field_permissions',
@@ -644,6 +660,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -672,6 +689,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create product_family content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -691,7 +709,18 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'create service_offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create service_offering_julkict content'.
+  $permissions['create service_offering_julkict content'] = array(
+    'name' => 'create service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
     ),
     'module' => 'node',
   );
@@ -849,6 +878,15 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any service_offering_julkict content'.
+  $permissions['delete any service_offering_julkict content'] = array(
+    'name' => 'delete any service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any tutorial content'.
   $permissions['delete any tutorial content'] = array(
     'name' => 'delete any tutorial content',
@@ -871,8 +909,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'node',
   );
@@ -882,8 +922,10 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own company content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'node',
   );
@@ -932,6 +974,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -960,6 +1003,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own product_family content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -979,6 +1023,18 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'delete own service_offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
+      'Partner' => 'Partner',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own service_offering_julkict content'.
+  $permissions['delete own service_offering_julkict content'] = array(
+    'name' => 'delete own service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
     ),
     'module' => 'node',
   );
@@ -1180,6 +1236,15 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any service_offering_julkict content'.
+  $permissions['edit any service_offering_julkict content'] = array(
+    'name' => 'edit any service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any tutorial content'.
   $permissions['edit any tutorial content'] = array(
     'name' => 'edit any tutorial content',
@@ -1230,6 +1295,13 @@ function forge_web_acl_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit field_pricing_free_of_charge'.
+  $permissions['edit field_pricing_free_of_charge'] = array(
+    'name' => 'edit field_pricing_free_of_charge',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit field_pricing_information'.
   $permissions['edit field_pricing_information'] = array(
     'name' => 'edit field_pricing_information',
@@ -1245,8 +1317,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'comment',
   );
@@ -1256,8 +1330,10 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own company content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'node',
   );
@@ -1283,6 +1359,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own field_company_contact_details_fo',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'field_permissions',
@@ -1300,8 +1377,16 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_pricing_free_of_charge'.
+  $permissions['edit own field_pricing_free_of_charge'] = array(
+    'name' => 'edit own field_pricing_free_of_charge',
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1310,6 +1395,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own field_pricing_information',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'field_permissions',
@@ -1343,6 +1429,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -1371,6 +1458,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own product_family content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'node',
@@ -1390,7 +1478,18 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'edit own service_offering content',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own service_offering_julkict content'.
+  $permissions['edit own service_offering_julkict content'] = array(
+    'name' => 'edit own service_offering_julkict content',
+    'roles' => array(
+      'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
     ),
     'module' => 'node',
   );
@@ -1557,8 +1656,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'comment',
   );
@@ -1620,8 +1721,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'comment',
   );
@@ -1734,8 +1837,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'filter',
   );
@@ -1746,8 +1851,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'filter',
   );
@@ -1783,9 +1890,18 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_pricing_free_of_charge'.
+  $permissions['view field_pricing_free_of_charge'] = array(
+    'name' => 'view field_pricing_free_of_charge',
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1795,8 +1911,10 @@ function forge_web_acl_user_default_permissions() {
     'roles' => array(
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'field_permissions',
   );
@@ -1806,6 +1924,7 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'view own field_company_contact_details_fo',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
     'module' => 'field_permissions',
@@ -1823,8 +1942,16 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'view own field_pricing_description',
     'roles' => array(
       'Content admin' => 'Content admin',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
     ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pricing_free_of_charge'.
+  $permissions['view own field_pricing_free_of_charge'] = array(
+    'name' => 'view own field_pricing_free_of_charge',
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -1845,8 +1972,10 @@ function forge_web_acl_user_default_permissions() {
       'Blogger' => 'Blogger',
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
+      'JulkICT' => 'JulkICT',
       'Partner' => 'Partner',
       'Service developer' => 'Service developer',
+      'developers' => 'developers',
     ),
     'module' => 'node',
   );

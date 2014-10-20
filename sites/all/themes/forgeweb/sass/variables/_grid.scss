@@ -1,0 +1,13 @@
+//@warn "#{$total-columns} | #{$column-width} | #{$gutter-width} | #{$grid-padding} | #{$container-style} | #{$container-width}";
+// Set consistent vertical and horizontal spacing units.
+$vert-spacing-unit: 100px;
+$horz-spacing-unit: 1em;
+
+// Define Susy grid variables mobile first.
+$total-columns: 12;
+$column-width: 4em;
+$gutter-width: $horz-spacing-unit;
+$grid-padding: $horz-spacing-unit;
+
+$container-style: magic;
+$container-width: false;

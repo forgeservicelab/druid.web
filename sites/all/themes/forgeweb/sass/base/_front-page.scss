@@ -84,7 +84,6 @@ only screen and (min-resolution: 192dpi) {
 
 
 // Front page navigation exceptions (fixed on the top of the page)
-
 .front .l-navigation-wrapper {
   @include at-breakpoint($mobile_nav) {
     left: 0;
