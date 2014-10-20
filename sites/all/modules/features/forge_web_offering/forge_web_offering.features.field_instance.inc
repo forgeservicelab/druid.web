@@ -977,7 +977,7 @@ function forge_web_offering_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_offering_address',
     'label' => 'Contact person / Address',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -1518,48 +1518,6 @@ function forge_web_offering_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_page_title',
-    'label' => 'Product family title',
-    'required' => 1,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'exclude_cv' => FALSE,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 1,
-    ),
-  );
-
-  // Exported field_instance: 'node-product_family-field_product_family_title'
-  $field_instances['node-product_family-field_product_family_title'] = array(
-    'bundle' => 'product_family',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_product_family_title',
     'label' => 'Product family title',
     'required' => 1,
     'settings' => array(
