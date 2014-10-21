@@ -9,6 +9,7 @@ dependencies[] = advagg_js_cdn
 dependencies[] = advagg_js_compress
 dependencies[] = advagg_mod
 dependencies[] = advagg_validator
+dependencies[] = memcache
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[variable][] = advagg_cache_level
