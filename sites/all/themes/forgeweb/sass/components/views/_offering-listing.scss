@@ -1,0 +1,8 @@
+.view-offering-listing {
+	// We need to take over the whole screen because the filters
+	// are still active while content is being loaded via ajax
+	.form-overlay,
+	.forge-throbber {
+		position: fixed;
+	}
+}

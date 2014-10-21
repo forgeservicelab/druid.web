@@ -4467,6 +4467,11 @@ form.fivestar-widget {
   }
 }
 
+.view-offering-listing .form-overlay,
+.view-offering-listing .forge-throbber {
+  position: fixed;
+}
+
 .l-branding,
 .l-content {
   margin: 0 auto;
