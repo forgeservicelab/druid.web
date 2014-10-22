@@ -98,9 +98,7 @@ function forge_web_acl_user_default_permissions() {
   // Exported permission: 'access devel information'.
   $permissions['access devel information'] = array(
     'name' => 'access devel information',
-    'roles' => array(
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'devel',
   );
 
