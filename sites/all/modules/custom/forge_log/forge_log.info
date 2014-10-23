@@ -1,0 +1,3 @@
+name = Drush file log
+description = Log drush output to its own log file
+core = 7.x
