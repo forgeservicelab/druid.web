@@ -113,6 +113,8 @@ function forgeweb_form_alter(&$form, &$form_state, $form_id){
 }
 
 // Unset module/system javascript
+/*
+BREAKS CKEDITOR :(), lets do this stuff in advagg
 function forgeweb_js_alter(&$javascript){
 
   // Move all javascript to footer
@@ -130,7 +132,7 @@ function forgeweb_js_alter(&$javascript){
   $javascript['misc/jquery.once.js']['scope'] = 'header';
   $javascript['sites/all/libraries/ckeditor/ckeditor.js']['scope'] = 'header';
 }	
-
+*/
 
 function forgeweb_preprocess_menu_link(&$vars) {
   global $user;
