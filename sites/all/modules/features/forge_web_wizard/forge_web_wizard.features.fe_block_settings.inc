@@ -23,12 +23,6 @@ function forge_web_wizard_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'forgeweb' => array(
         'region' => '',
         'status' => 1,
