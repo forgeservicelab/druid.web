@@ -1848,11 +1848,6 @@ function forge_web_acl_user_default_permissions() {
     'name' => 'use text format filtered_html',
     'roles' => array(
       'Content admin' => 'Content admin',
-      'Forge member' => 'Forge member',
-      'JulkICT' => 'JulkICT',
-      'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
-      'developers' => 'developers',
     ),
     'module' => 'filter',
   );
