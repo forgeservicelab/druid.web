@@ -23,7 +23,9 @@ function forge_web_wizard_default_fe_block_boxes() {
   $fe_block_boxes->info = 'All contracts';
   $fe_block_boxes->format = 'filtered_html';
   $fe_block_boxes->machine_name = 'join_forge_sidebar';
-  $fe_block_boxes->body = '<p><a href="/all-contracts">FORGE Service Lab contractual framework including all contract documents</a></p>
+  $fe_block_boxes->body = '<p><a href="/all-contracts">FORGE Service Lab contractual framework including all contract documents</a><br />
+<br />
+<a href="/rekisteriseloste">Personal data file description (In Finnish)</a></p>
 ';
 
   $export['join_forge_sidebar'] = $fe_block_boxes;
