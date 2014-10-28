@@ -44,6 +44,7 @@ features[picture_mapping][] = mobile_and_tablet
 features[picture_mapping][] = offering_logo_retina
 features[picture_mapping][] = slideshow_main_retina
 features[picture_mapping][] = slideshow_thumb_retina
+features[variable][] = cron_safe_threshold
 features[variable][] = honeypot_element_name
 features[variable][] = honeypot_form_blog_node_form
 features[variable][] = honeypot_form_blog_post_node_form
