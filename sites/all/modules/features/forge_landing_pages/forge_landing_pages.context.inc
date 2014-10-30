@@ -68,18 +68,6 @@ function forge_landing_pages_context_default_contexts() {
           'region' => 'middle_content',
           'weight' => '-6',
         ),
-        'views-feed-block' => array(
-          'module' => 'views',
-          'delta' => 'feed-block',
-          'region' => 'after_content',
-          'weight' => '-10',
-        ),
-        'fb_likebox-0' => array(
-          'module' => 'fb_likebox',
-          'delta' => '0',
-          'region' => 'after_content',
-          'weight' => '-9',
-        ),
         'block-3' => array(
           'module' => 'block',
           'delta' => '3',

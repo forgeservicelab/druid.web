@@ -20,7 +20,6 @@ features[menu_custom][] = main-menu
 features[menu_custom][] = menu-log-in-menu
 features[menu_links][] = main-menu_about-forge:<front>
 features[menu_links][] = main-menu_faq:<front>
-features[menu_links][] = main-menu_feed:<front>
 features[menu_links][] = main-menu_feed:feed
 features[menu_links][] = main-menu_forge-plaza:node/61
 features[menu_links][] = main-menu_partners--people:<front>
