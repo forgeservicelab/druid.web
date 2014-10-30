@@ -43,6 +43,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -86,6 +87,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -132,6 +134,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'max' => '',
       'min' => '',
       'prefix' => '',
@@ -178,6 +181,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -222,6 +226,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -266,6 +271,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
@@ -310,6 +316,7 @@ function forge_web_ldap_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
       'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
