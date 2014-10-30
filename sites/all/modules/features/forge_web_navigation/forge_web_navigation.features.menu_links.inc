@@ -54,29 +54,6 @@ function forge_web_navigation_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_about-forge:<front>',
   );
-  // Exported menu link: main-menu_feed:<front>
-  $menu_links['main-menu_feed:<front>'] = array(
-    'menu_name' => 'main-menu',
-    'link_path' => '<front>',
-    'router_path' => '',
-    'link_title' => 'Feed',
-    'options' => array(
-      'fragment' => 'block-views-feed-block',
-      'attributes' => array(
-        'title' => '',
-      ),
-      'alter' => TRUE,
-      'identifier' => 'main-menu_feed:<front>',
-    ),
-    'module' => 'menu',
-    'hidden' => 0,
-    'external' => 1,
-    'has_children' => 0,
-    'expanded' => 0,
-    'weight' => -46,
-    'customized' => 1,
-    'parent_identifier' => 'main-menu_about-forge:<front>',
-  );
   // Exported menu link: main-menu_feed:feed
   $menu_links['main-menu_feed:feed'] = array(
     'menu_name' => 'main-menu',
