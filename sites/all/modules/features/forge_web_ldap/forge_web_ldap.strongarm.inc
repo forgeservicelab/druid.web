@@ -22,11 +22,10 @@ function forge_web_ldap_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'cas_auto_assigned_role';
   $strongarm->value = array(
-    5 => 5,
+    5 => 0,
     2 => TRUE,
     4 => 0,
     3 => 0,
-    5 => 0,
     6 => 0,
     7 => 0,
   );
@@ -248,7 +247,7 @@ function forge_web_ldap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ldap_forge_settings';
-  $strongarm->value = array (
+  $strongarm->value = array(
     '05a2bfdf274edc7740382af4060135d9' => array(
       2 => 2,
       5 => 5,
