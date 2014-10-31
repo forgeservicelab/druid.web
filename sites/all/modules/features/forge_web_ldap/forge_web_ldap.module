@@ -5,3 +5,15 @@
  */
 
 include_once 'forge_web_ldap.features.inc';
+
+/*
+ * Implementation of hook_menu_alter()
+ */
+function forge_web_ldap_menu_alter(&$items) {
+  // change user/password page callback for redirect it to external
+  $items['user/password']['page callback'] = '_forge_web_ldap_redirect_password_reset';
+}
+
+function _forge_web_ldap_redirect_password_reset() {
+  drupal_goto('https://support.forgeservicelab.fi/password/');
+}
