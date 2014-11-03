@@ -23,6 +23,7 @@ features[context][] = dashboard
 features[context][] = offering_page
 features[context][] = plaza
 features[context][] = plaza_front_page
+features[context][] = product_family
 features[ctools][] = context:context:3
 features[ctools][] = field_group:field_group:1
 features[ctools][] = flexslider:flexslider_default_preset:1

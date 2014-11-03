@@ -501,6 +501,9 @@ function forge_web_offering_strongarm() {
         'language' => array(
           'weight' => '2',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
