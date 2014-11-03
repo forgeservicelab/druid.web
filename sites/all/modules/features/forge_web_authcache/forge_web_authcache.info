@@ -1,0 +1,16 @@
+name = Forge web authcache
+description = Authcache feature
+core = 7.x
+package = Forge backend
+version = 7.x-1.0
+project = forge_web_authcache
+dependencies[] = authcache
+dependencies[] = authcache_p13n
+dependencies[] = authcache_views
+dependencies[] = ctools
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[variable][] = authcache_mimetype
+features[variable][] = authcache_pagecaching
+features[variable][] = authcache_roles
