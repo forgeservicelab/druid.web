@@ -102,7 +102,7 @@ function forge_web_offering_taxonomy_default_vocabularies() {
       ),
     ),
     'tags_offerings' => array(
-      'name' => 'Tags',
+      'name' => 'Offering Tags',
       'machine_name' => 'tags_offerings',
       'description' => 'Tags for offerings',
       'hierarchy' => 0,
