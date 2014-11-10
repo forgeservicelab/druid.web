@@ -183,6 +183,19 @@ function forge_web_feeds_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['authcache'] = array(
+    'status' => '1',
+    'lifespan' => '3600',
+    'peruser' => '1',
+    'perpage' => '1',
+    'clients' => array(
+      'authcache_ajax' => array(
+        'status' => '1',
+        'weight' => '0',
+      ),
+    ),
+    'fallback' => 'cancel',
+  );
   $handler->display->display_options['path'] = 'feed';
 
   /* Display: Block */

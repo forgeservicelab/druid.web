@@ -18,6 +18,7 @@ function forge_web_authcache_strongarm() {
     'status' => '1',
     'lifespan' => '3600',
     'peruser' => '1',
+    'perpage' => '1',
     'clients' => array(
       'authcache_ajax' => array(
         'status' => '1',
@@ -25,9 +26,27 @@ function forge_web_authcache_strongarm() {
       ),
     ),
     'fallback' => 'cancel',
-    'perpage' => 0,
   );
   $export['authcache_block-block-9'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'authcache_block-fb_likebox-0';
+  $strongarm->value = array(
+    'status' => '1',
+    'lifespan' => '3600',
+    'peruser' => '1',
+    'perpage' => '1',
+    'clients' => array(
+      'authcache_ajax' => array(
+        'status' => '1',
+        'weight' => '0',
+      ),
+    ),
+    'fallback' => 'cancel',
+  );
+  $export['authcache_block-fb_likebox-0'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -120,6 +139,7 @@ js/admin_menu/cache/*
       'roles' => array(
         'custom' => '1',
         'roles' => array(
+          1 => '1',
           2 => '2',
           4 => '4',
           3 => '3',
@@ -138,6 +158,7 @@ js/admin_menu/cache/*
   $strongarm->api_version = 1;
   $strongarm->name = 'authcache_roles';
   $strongarm->value = array(
+    1 => '1',
     2 => '2',
     4 => '4',
     3 => '3',
