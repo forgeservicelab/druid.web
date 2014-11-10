@@ -8,7 +8,6 @@ dependencies[] = authcache
 dependencies[] = authcache_ajax
 dependencies[] = authcache_block
 dependencies[] = authcache_builtin
-dependencies[] = authcache_debug
 dependencies[] = authcache_form
 dependencies[] = authcache_menu
 dependencies[] = authcache_p13n
