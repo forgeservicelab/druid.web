@@ -893,6 +893,20 @@ function forge_web_blog_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['authcache'] = array(
+    'status' => '1',
+    'lifespan' => '3600',
+    'peruser' => '1',
+    'clients' => array(
+      'authcache_ajax' => array(
+        'status' => '1',
+        'weight' => '0',
+      ),
+    ),
+    'fallback' => 'cancel',
+    'perpage' => 0,
+  );
+  $handler->display->display_options['block_caching'] = '2';
   $translatables['blog_sidebar_block'] = array(
     t('Master'),
     t('more'),
