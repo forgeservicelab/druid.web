@@ -112,7 +112,7 @@ function ldap_forge_cas_user_presave(&$edit, $account) {
   // Go through the groups and look for occupant
   foreach($groups as $group_dn_hash => $group) {
     // When found, add into roles array
-    if(in_array('cn=' . $edit['cas_user']['name'] . ',' . ldap_forge_people_binding(), $group['member']))
+    if(!empty($settings[$group_dn_hash]) && in_array('cn=' . $edit['cas_user']['name'] . ',' . ldap_forge_people_binding(), $group['member']))
       $roles += $settings[$group_dn_hash];
   }
   $edit['roles'] = $roles;

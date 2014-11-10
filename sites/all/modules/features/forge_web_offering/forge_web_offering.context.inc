@@ -197,5 +197,40 @@ function forge_web_offering_context_default_contexts() {
   t('Forge Plaza');
   $export['plaza_front_page'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'product_family';
+  $context->description = '';
+  $context->tag = 'Offering';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'product_family' => 'product_family',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-offerings_in_same_family-block' => array(
+          'module' => 'views',
+          'delta' => 'offerings_in_same_family-block',
+          'region' => 'under_content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Offering');
+  $export['product_family'] = $context;
+
   return $export;
 }
