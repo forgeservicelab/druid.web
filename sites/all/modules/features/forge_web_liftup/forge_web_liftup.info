@@ -16,6 +16,7 @@ features[features_api][] = api:2
 features[flexslider_optionset][] = liftup
 features[image][] = liftup_image
 features[views_view][] = liftup_block
+features[views_view][] = what_why_blocks
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][image] = image
 project path = sites/all/modules/features
