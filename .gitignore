@@ -4,3 +4,15 @@ sites/*/settings*.php
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+# Ignore xcache admin
+xcache-admin/
+
+# OS X
+.DS_Store
+._.DS_store
+
+# IDE
+.idea/
+*.sublime-workspace
+*.sublime-project
