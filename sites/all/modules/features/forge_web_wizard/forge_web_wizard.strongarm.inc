@@ -245,7 +245,7 @@ function forge_web_wizard_strongarm() {
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
