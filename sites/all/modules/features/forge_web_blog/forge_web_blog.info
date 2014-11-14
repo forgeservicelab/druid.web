@@ -14,6 +14,7 @@ dependencies[] = forge_web_news
 dependencies[] = forge_web_page
 dependencies[] = insert
 dependencies[] = node
+dependencies[] = node_comment_block
 dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = video_embed_field

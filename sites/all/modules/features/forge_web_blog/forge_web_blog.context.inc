@@ -128,6 +128,12 @@ function forge_web_blog_context_default_contexts() {
           'region' => 'content',
           'weight' => '1',
         ),
+        'node_comment_block-node_comments' => array(
+          'module' => 'node_comment_block',
+          'delta' => 'node_comments',
+          'region' => 'under_content',
+          'weight' => '-10',
+        ),
         'views-blog_sidebar_block-block' => array(
           'module' => 'views',
           'delta' => 'blog_sidebar_block-block',
