@@ -235,6 +235,8 @@
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
+      if($('.masonry-wrapper').length == 0)
+        return;
       var msnry = new Masonry('.masonry-wrapper', {
         // options
         columnWidth: '.masonry-item',
