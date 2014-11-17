@@ -195,6 +195,7 @@ function forge_web_search_views_default_views() {
     'news' => 'news',
     'company' => 'company',
     'page' => 'page',
+    'product_family' => 'product_family',
     'offering' => 'offering',
     'project' => 'project',
     'service_offering' => 'service_offering',
