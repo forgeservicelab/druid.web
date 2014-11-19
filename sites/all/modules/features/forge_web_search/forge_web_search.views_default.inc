@@ -192,6 +192,7 @@ function forge_web_search_views_default_views() {
     'blog_post' => 'blog_post',
     'contact_us' => 'contact_us',
     'faq_item' => 'faq_item',
+    'service_offering_julkict' => 'service_offering_julkict',
     'news' => 'news',
     'company' => 'company',
     'page' => 'page',
