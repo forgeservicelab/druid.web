@@ -190,6 +190,7 @@ function forge_web_search_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'blog_post' => 'blog_post',
+    'bulletin_board_item' => 'bulletin_board_item',
     'contact_us' => 'contact_us',
     'faq_item' => 'faq_item',
     'service_offering_julkict' => 'service_offering_julkict',
