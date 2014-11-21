@@ -41,7 +41,7 @@ function forge_web_offering_node_insert($node) {
 }
 
 function _forge_web_offering_flush_cache($node) {
-  if($node->type == 'offering' || $node->type == 'service_offering_julkict' || $node->type == 'service-offering') {
+  if($node->type == 'offering' || $node->type == 'service_offering_julkict' || $node->type == 'service_offering') {
     cache_clear_all('offering_listing:', 'cache_views_data', TRUE);
   }
 }
