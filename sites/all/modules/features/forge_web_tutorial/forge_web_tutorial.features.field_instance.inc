@@ -273,7 +273,7 @@ function forge_web_tutorial_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_method',
     'label' => 'Method',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
@@ -355,7 +355,7 @@ function forge_web_tutorial_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_tools',
     'label' => 'Tools',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'attributes' => array(
         'class' => '',
