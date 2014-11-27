@@ -116,19 +116,6 @@ function forge_web_faq_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['authcache'] = array(
-    'status' => '1',
-    'lifespan' => '3600',
-    'peruser' => '1',
-    'clients' => array(
-      'authcache_ajax' => array(
-        'status' => '1',
-        'weight' => '0',
-      ),
-    ),
-    'fallback' => 'cancel',
-    'perpage' => 0,
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -179,7 +166,7 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Broken/missing handler */
+  /* Field: Draggableviews: Content */
   $handler->display->display_options['fields']['draggableviews']['id'] = 'draggableviews';
   $handler->display->display_options['fields']['draggableviews']['table'] = 'node';
   $handler->display->display_options['fields']['draggableviews']['field'] = 'draggableviews';
@@ -187,6 +174,11 @@ function forge_web_faq_views_default_views() {
   $handler->display->display_options['fields']['draggableviews']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['draggableviews']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['handler'] = 'draggableviews_handler_fieldapi';
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['ajax'] = 0;
+  $handler->display->display_options['fields']['draggableviews']['draggableviews']['draggableviews_handler_fieldapi'] = array(
+    'field' => 'field_data_field_faq_weight:field_faq_weight_value',
+  );
   /* Field: Global: View result counter */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';

@@ -4,6 +4,7 @@ core = 7.x
 package = Forge web
 version = 7.x-1.0
 project = forge_web_faq
+dependencies[] = draggableviews
 dependencies[] = fe_block
 dependencies[] = forge_web_page
 dependencies[] = number
