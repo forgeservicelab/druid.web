@@ -407,11 +407,6 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_collection_target_id']['id'] = 'field_collection_target_id';
-  $handler->display->display_options['relationships']['field_collection_target_id']['table'] = 'field_data_field_collection';
-  $handler->display->display_options['relationships']['field_collection_target_id']['field'] = 'field_collection_target_id';
-  $handler->display->display_options['relationships']['field_collection_target_id']['required'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -452,6 +447,42 @@ function forge_web_offering_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_collection_target_id']['id'] = 'field_collection_target_id';
+  $handler->display->display_options['relationships']['field_collection_target_id']['table'] = 'field_data_field_collection';
+  $handler->display->display_options['relationships']['field_collection_target_id']['field'] = 'field_collection_target_id';
+  $handler->display->display_options['relationships']['field_collection_target_id']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['id'] = 'reverse_field_collection_node';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['field'] = 'reverse_field_collection_node';
+  $handler->display->display_options['relationships']['reverse_field_collection_node']['relationship'] = 'field_collection_target_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_collection_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['arguments']['nid_1']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid_1']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid_1']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid_1']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid_1']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid_1']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['nid_1']['not'] = TRUE;
 
   /* Display: Embed for own content list */
   $handler = $view->new_display('block', 'Embed for own content list', 'block_1');
@@ -461,6 +492,12 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_collection_target_id']['id'] = 'field_collection_target_id';
+  $handler->display->display_options['relationships']['field_collection_target_id']['table'] = 'field_data_field_collection';
+  $handler->display->display_options['relationships']['field_collection_target_id']['field'] = 'field_collection_target_id';
+  $handler->display->display_options['relationships']['field_collection_target_id']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -476,17 +513,17 @@ function forge_web_offering_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_collection_target_id';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'product_family' => 'product_family',
   );
-  $handler->display->display_options['arguments']['nid']['not'] = TRUE;
+  $handler->display->display_options['block_description'] = 'List of offerings in same family';
   $translatables['offerings_in_same_family'] = array(
     t('Master'),
     t('In same collection:'),
@@ -496,10 +533,12 @@ function forge_web_offering_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Content entity referenced from field_collection'),
     t('All'),
     t('Block'),
+    t('Content entity referenced from field_collection'),
+    t('Content referencing Content from field_collection'),
     t('Embed for own content list'),
+    t('List of offerings in same family'),
   );
   $export['offerings_in_same_family'] = $view;
 
