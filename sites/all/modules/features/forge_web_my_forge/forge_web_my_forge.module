@@ -5,3 +5,19 @@
  */
 
 include_once 'forge_web_my_forge.features.inc';
+
+/**
+ * Implements hook_user_login
+ */
+function forge_web_my_forge_user_login(&$edit, $account) {
+  global $user;
+  // if user has developer role it will always go to welcome-forge-service-lab
+  // no matter if user has other roles as well
+  if (in_array('Service developer', $user->roles) || in_array('developers', $user->roles)) {
+    drupal_goto('welcome-forge-service-lab');
+  }
+  // if user has partner role it will go to plaza
+  if (in_array('Partner', $user->roles)) {
+    drupal_goto('plaza');
+  }
+}
