@@ -6,7 +6,7 @@ sites/*/files
 sites/*/private
 
 # Ignore xcache admin
-xcache-admin/
+xcache-admin
 
 # OS X
 .DS_Store

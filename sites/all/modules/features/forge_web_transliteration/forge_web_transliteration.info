@@ -1,0 +1,5 @@
+name = Forge web transliteration
+description = Feature for transliteration and a bit of pretty urls
+core = 7.x
+package = Forge backend
+features[features_api][] = api:2

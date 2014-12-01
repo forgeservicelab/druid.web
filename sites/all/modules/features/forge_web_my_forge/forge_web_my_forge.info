@@ -10,7 +10,6 @@ dependencies[] = ctools
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = forge_web_navigation
-dependencies[] = login_destination
 dependencies[] = menu
 dependencies[] = menu_item_visibility
 dependencies[] = strongarm
