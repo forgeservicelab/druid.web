@@ -184,7 +184,6 @@ function forge_web_feeds_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['authcache'] = array(
-    'status' => '1',
     'lifespan' => '3600',
     'peruser' => '1',
     'perpage' => '1',
@@ -195,6 +194,7 @@ function forge_web_feeds_views_default_views() {
       ),
     ),
     'fallback' => 'cancel',
+    'status' => 0,
   );
   $handler->display->display_options['path'] = 'feed';
 
