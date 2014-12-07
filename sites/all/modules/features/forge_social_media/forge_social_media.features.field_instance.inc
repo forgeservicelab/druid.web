@@ -223,10 +223,9 @@ function forge_social_media_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 1,
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'liftup' => array(
         'label' => 'hidden',
