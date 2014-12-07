@@ -130,7 +130,7 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['fields']['field_starting_date']['element_wrapper_class'] = 'sidebar-block__item';
   $handler->display->display_options['fields']['field_starting_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_starting_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'long_wo_day',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
