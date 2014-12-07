@@ -4327,6 +4327,11 @@ form.fivestar-widget {
   }
 }
 
+.field-name-field-cancellation-refund-policy .form-required {
+  float: right;
+  padding-left: 2px;
+}
+
 .node--project .field--name-body {
   clear: both;
 }
