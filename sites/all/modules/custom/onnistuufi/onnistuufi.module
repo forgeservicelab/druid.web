@@ -38,6 +38,9 @@ function onnistuufi_menu() {
   return $items;
 }
 
+/**
+ * Defines steps.
+ */
 function _onnistuufi_steps() {
   return array(
     1 => array(
@@ -49,6 +52,9 @@ function _onnistuufi_steps() {
   );
 }
 
+/**
+ * Get sign form.
+ */
 function onnistuufi_sign() {
   return drupal_get_form('onnistuufi_sign_form');
 }
@@ -132,7 +138,9 @@ function onnistuufi_sign_form_next_submit($form, &$form_state) {
   }
 }
 
-
+/**
+ * Implementation of step1
+ */
 function onnistuufi_sign_form_step1($form, &$form_state) {
 
   if (empty($_GET['document'])) {
@@ -185,6 +193,9 @@ function onnistuufi_sign_form_step1($form, &$form_state) {
   return $form;
 }
 
+/**
+ * Implementation of step2.
+ */
 function onnistuufi_sign_form_step2($form, &$form_state) {
   global $base_url;
 
@@ -264,6 +275,9 @@ function onnistuufi_sign_form_step2($form, &$form_state) {
   return $form;
 }
 
+/**
+ * Implements hook_init.
+ */
 function onnistuufi_init() {
   module_load_include('inc', 'onnistuufi', 'includes/client');
   $client = new OnnistuuExternalClient(
@@ -273,6 +287,9 @@ function onnistuufi_init() {
   return $client;
 }
 
+/**
+ * Return is everything went correctly.
+ */
 function onnistuufi_return_success() {
   $data = $_GET['data'];
   $iv = $_GET['iv'];
@@ -287,6 +304,9 @@ function onnistuufi_return_success() {
   return $text;
 }
 
+/**
+ * Return if fail.
+ */
 function onnistuufi_return_error() {
   $message = $_GET['onnistuu_message'] . '.';
   //$message .= onnistuufi_error_handling($_GET['onnistuu_error']);
@@ -294,6 +314,9 @@ function onnistuufi_return_error() {
   return $text;
 }
 
+/**
+ * Validates document uri.
+ */
 function _onnistuufi_check_document_uri($uri) {
   // Encode path and put all together manually.
   // TODO: I didn't use http_build_url because it didn't work for some reason.
