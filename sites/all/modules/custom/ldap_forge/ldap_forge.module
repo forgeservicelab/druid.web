@@ -27,7 +27,7 @@ function ldap_forge_permission() {
 }
 
 /**
- * Creates settings form where you can define which view modes can be used
+ * Creates settings form where you can define which view modes can be used.
  */
 function ldap_forge_admin_settings($form, &$form_state) {
   $form = array(
@@ -36,11 +36,11 @@ function ldap_forge_admin_settings($form, &$form_state) {
     ),
     'groups' => array(),
   );
-  // Get roles
+  // Get roles.
   $roles = user_roles(TRUE);
   $settings = variable_get('ldap_forge_settings', array());
   $groups = ldap_forge_groups();
-  foreach($groups as $group_dn_hash => $group) {
+  foreach ($groups as $group_dn_hash => $group) {
     $dn_splitted = explode(',', $group['dn']);
     $form['groups'][$group_dn_hash] = array(
       '#type' => 'fieldset',
@@ -48,7 +48,7 @@ function ldap_forge_admin_settings($form, &$form_state) {
       '#collapsible' => TRUE,
       '#collapsed' => FALSE,
       '#tree' => TRUE,
-      // Roles
+      // Roles.
       'roles' => array(
         '#title' => 'Auto assigned roles for group',
         '#type' => 'checkboxes',
@@ -65,14 +65,14 @@ function ldap_forge_admin_settings($form, &$form_state) {
 }
 
 /**
- * Handles settings saving
- **/
+ * Handles settings saving.
+ */
 function ldap_forge_admin_settings_submit($form, &$form_state) {
   $settings = array();
-  foreach($form_state['groups'] as $group_dn_hash => $group_info) {
+  foreach ($form_state['groups'] as $group_dn_hash => $group_info) {
     $roles = array();
-    foreach($form_state['values'][$group_dn_hash]['roles'] as $rid => $assign)
-      if($assign != 0)
+    foreach ($form_state['values'][$group_dn_hash]['roles'] as $rid => $assign)
+      if ($assign != 0)
         $roles[$rid] = $rid;
     $settings[$group_dn_hash] = $roles;
   }
@@ -81,16 +81,16 @@ function ldap_forge_admin_settings_submit($form, &$form_state) {
 }
 
 /**
- * Fetches groups from ldap
+ * Fetches groups from ldap.
  */
 function ldap_forge_groups() {
   $groups = array();
   if ($ldap_servers = ldap_servers_get_servers(NULL, 'enabled')) {
     // Get first server.
     $ldap_server = current($ldap_servers);
-    // Search for organizationalRole which is the baseclass of forge group entry
+    // Search for organizationalRole which is the baseclass of forge group entry.
     if (($results = $ldap_server->search(ldap_forge_group_binding(), 'objectClass=groupOfNames')) && isset($results['count']) && $results['count'] > 0)
-      for($n = 0; $n < $results['count']; $n++)
+      for ($n = 0; $n < $results['count']; $n++)
         $groups[md5($results[$n]['dn'])] = $results[$n];
     else
       drupal_set_message(t('No results.'));
@@ -102,16 +102,16 @@ function ldap_forge_groups() {
 
 /**
  * Implements hook_cas_user_presave().
- * Handles adding and removing roles for users according the settings
+ * Handles adding and removing roles for users according the settings.
  */
 function ldap_forge_cas_user_presave(&$edit, $account) {
   $settings = variable_get('ldap_forge_settings', array());
   $groups = ldap_forge_groups();
-  // Put in the default authed user role
+  // Put in the default authed user role.
   $roles = array(2 => 'authenticated user');
-  // Go through the groups and look for occupant
+  // Go through the groups and look for occupant.
   foreach($groups as $group_dn_hash => $group) {
-    // When found, add into roles array
+    // When found, add into roles array.
     if(!empty($settings[$group_dn_hash]) && in_array('cn=' . $edit['cas_user']['name'] . ',' . ldap_forge_people_binding(), $group['member']))
       $roles += $settings[$group_dn_hash];
   }
@@ -119,14 +119,14 @@ function ldap_forge_cas_user_presave(&$edit, $account) {
 }
 
 /**
- * LDAP binding for people
+ * LDAP binding for people.
  */
 function ldap_forge_people_binding() {
   return variable_get('ldap_forge_people_binding', 'ou=people,dc=forgeservicelab,dc=fi');
 }
 
 /**
- * Get group settings
+ * Get group settings.
  */
 function ldap_forge_group_settings($group_dn_hash) {
   $settings = variable_get('ldap_forge_settings', array());
@@ -134,14 +134,14 @@ function ldap_forge_group_settings($group_dn_hash) {
 }
 
 /**
- * LDAP binding for groups
+ * LDAP binding for groups.
  */
 function ldap_forge_group_binding() {
   return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forgeservicelab,dc=fi');
 }
 
 /**
- * Set LDAP binding for groups
+ * Set LDAP binding for groups.
  */
 function ldap_forge_group_binding_set($binding) {
   return variable_set('ldap_forge_group_binding', $binding);
