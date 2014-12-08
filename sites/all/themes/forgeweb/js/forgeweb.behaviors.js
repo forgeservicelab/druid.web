@@ -202,7 +202,7 @@
   };
 
   Drupal.behaviors.mergeMobileNavigation = {
-    attach: function (context, settings) {
+    attach: function (context) {
       $('div.l-region--navigation', context).once('merge-mobile-navigation', function() {
         var $this = $(this);
         var $mobileMenu = $this.find('div.responsive-menus-0-0-0');
@@ -211,8 +211,8 @@
 
         if (winWidth <= mobileNavWidth) {
           $mobileMenu.find('ul.responsive-menus-simple')
-            .append($this.find('div#block--locale-language-content ul li').addClass('language-switcher')
-              .add($this.find('div#block-menu-menu-log-in-menu ul li'))
+            .append($this.find('div#block-locale-language-content ul li').addClass('language-switcher')
+              .add($this.find('nav#block-menu-menu-log-in-menu ul li'))
               .add($this.find('form#views-exposed-form-search-page').clone()));
         }
       });
