@@ -1330,6 +1330,7 @@ html[lang=fi] .site-name a {
 .front .l-highlighted {
   background: url("../images/liftup_bg.jpg") no-repeat center center black;
   background-size: auto 100%;
+  min-height: 400px;
 }
 .front .l-highlighted .l-region--highlighted {
   background: url("../images/decoration_edge_up.png") repeat-x -2px 0 transparent;

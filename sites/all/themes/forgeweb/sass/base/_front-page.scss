@@ -147,6 +147,7 @@ only screen and (min-resolution: 192dpi) {
 .front .l-highlighted {
   background: url('../images/liftup_bg.jpg') no-repeat center center #000;
   background-size: auto 100%;
+  min-height: 400px;
   .l-region--highlighted {
     background: url('../images/decoration_edge_up.png') repeat-x -2px 0 transparent;
     background-size: auto 12px;
