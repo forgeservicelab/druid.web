@@ -251,24 +251,24 @@
     }
   };
 
-// Search toggle
-Drupal.behaviors.searchToggle = {
-  attach: function (context) {
-    $('div#block-views-exp-search-page', context).once('search-toggle', function() {
-      var $this = $(this);
-      var $form = $this.find('form');
+  // Search toggle
+  Drupal.behaviors.searchToggle = {
+    attach: function (context) {
+      $('div#block-views-exp-search-page', context).once('search-toggle', function() {
+        var $this = $(this);
+        var $form = $this.find('form');
 
-      $form.click(function(event) {
-        event.stopPropagation();
-      });
+        $form.click(function(event) {
+          event.stopPropagation();
+        });
 
-      $this.click(function() {
-        $this.toggleClass('active');
-        $form.slideToggle('fast');
+        $this.click(function() {
+          $this.toggleClass('active');
+          $form.slideToggle('fast');
+        });
       });
-    });
-  }
-};
+    }
+  };
 
   // Feed block filtering functionality
   Drupal.behaviors.feedFiltering = {
