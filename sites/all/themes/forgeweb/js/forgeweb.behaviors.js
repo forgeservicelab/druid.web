@@ -254,14 +254,18 @@
   // Search toggle
   Drupal.behaviors.searchToggle = {
     attach: function (context) {
-      var searchToggle = $('.block--views-exp-search-page');
+      $('div#block-views-exp-search-page', context).once('search-toggle', function() {
+        var $this = $(this);
+        var $form = $this.find('form');
 
-      searchToggle.click(function() {
-        $(this).find('form').slideToggle('fast');
-        $(this).find('form').click(function(event){
+        $form.click(function(event) {
           event.stopPropagation();
         });
-        $(this).toggleClass('active');
+
+        $this.click(function() {
+          $this.toggleClass('active');
+          $form.slideToggle('fast');
+        });
       });
     }
   };
