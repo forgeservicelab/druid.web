@@ -202,14 +202,20 @@
   };
 
   Drupal.behaviors.mergeMobileNavigation = {
-    attach: function (context, settings) {
-      var mobile_nav_width = 801;
-      var win_width = $(window).width();
-      if (win_width <= mobile_nav_width) {
-        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--locale-language-content ul.language-switcher-locale-url > li').slice(0).addClass('language-switcher'));
-        $('.responsive-menus-0-0-0 ul.responsive-menus-simple').append($('.block--menu-menu-log-in-menu ul.menu > li').slice(0));
-        $('.l-navigation-wrapper .block--views-exp-search-page form').clone().appendTo($('.responsive-menus-0-0-0 ul.responsive-menus-simple'));
-      }
+    attach: function (context) {
+      $('div.l-region--navigation', context).once('merge-mobile-navigation', function() {
+        var $this = $(this);
+        var $mobileMenu = $this.find('div.responsive-menus-0-0-0');
+        var mobileNavWidth = $mobileMenu.data('mediasize');
+        var winWidth = $(window).width();
+
+        if (winWidth <= mobileNavWidth) {
+          $mobileMenu.find('ul.responsive-menus-simple')
+            .append($this.find('div#block-locale-language-content ul li').addClass('language-switcher')
+              .add($this.find('nav#block-menu-menu-log-in-menu ul li'))
+              .add($this.find('form#views-exposed-form-search-page').clone()));
+        }
+      });
     }
   };
 
@@ -248,14 +254,18 @@
   // Search toggle
   Drupal.behaviors.searchToggle = {
     attach: function (context) {
-      var searchToggle = $('.block--views-exp-search-page');
+      $('div#block-views-exp-search-page', context).once('search-toggle', function() {
+        var $this = $(this);
+        var $form = $this.find('form');
 
-      searchToggle.click(function() {
-        $(this).find('form').slideToggle('fast');
-        $(this).find('form').click(function(event){
+        $form.click(function(event) {
           event.stopPropagation();
         });
-        $(this).toggleClass('active');
+
+        $this.click(function() {
+          $this.toggleClass('active');
+          $form.slideToggle('fast');
+        });
       });
     }
   };
