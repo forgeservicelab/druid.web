@@ -1,0 +1,73 @@
+<?php
+/**
+ * Implements hook_form_alter().
+ */
+function required_data_behind_tabs_form_alter(&$form, &$form_state, $form_id) {
+  switch ($form_id) {
+    case "service_offering_node_form":
+      $form['#validate'][] = 'service_offer_form_validate';
+      break;
+    case "offering_node_form":
+      $form['#validate'][] = 'product_offer_form_validate';
+      break;
+    case "service_offering_julkict_node_form":
+      $form['#validate'][] = 'free_of_charge_form_validate';
+      break;
+  }
+}
+
+/**
+ * Custom validation handler for service offers.
+ */
+function service_offer_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['field_pricing_information']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under pricing tab'), error); 
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_inside']['und'][0]['field_terms_and_conditions_text']['und'][0]['value'])) { 
+    drupal_set_message(t('Required fields under terms and conditions'), error);
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_prod']['und'][0]['field_terms_conditions_text_2']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under terms and conditions'), error); 
+  }  
+  else {
+    drupal_set_message('Node created succesfully');
+  }
+}
+
+/**
+ * Custom validation handler for product offers.
+ */
+function product_offer_form_validate($form, &$form_state {
+  if (empty($form_state['values']['field_pricing_information']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under pricing tab'), error); 
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_inside']['und'][0]['field_terms_and_conditions_text']['und'][0]['value'])) { 
+    drupal_set_message(t('Required fields under terms and conditions'), error);
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_prod']['und'][0]['field_terms_conditions_text_2']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under terms and conditions'), error); 
+  }  
+  else {
+    drupal_set_message('Node created succesfully');
+  }  
+}
+
+
+/**
+ * Custom validation handler for free of charge offers.
+ */
+function free_of_charge_form_validate($form, &$form_state) {
+  if (empty($form_state['values']['field_pricing_information']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under pricing tab'), error); 
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_inside']['und'][0]['field_terms_and_conditions_text']['und'][0]['value'])) { 
+    drupal_set_message(t('Required fields under terms and conditions'), error);
+  }
+  elseif (empty($form_state['values']['field_terms_conditions_prod']['und'][0]['field_terms_conditions_text_2']['und'][0]['value'])) {
+    drupal_set_message(t('Required fields under terms and conditions'), error); 
+  }  
+  else {
+    drupal_set_message('Node created succesfully');
+  }
+}
+
