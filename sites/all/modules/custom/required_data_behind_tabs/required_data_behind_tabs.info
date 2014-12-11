@@ -1,0 +1,3 @@
+name = required data behind tabs
+description = show error messages to users, when required data is not filled behind tabs
+core = 7.x
