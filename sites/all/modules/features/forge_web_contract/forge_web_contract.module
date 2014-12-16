@@ -49,7 +49,10 @@ function forge_web_contract_node_insert($node) {
  * implementation hook_node_view_alter
  */
 function forge_web_contract_preprocess_node(&$vars) {
-  $vars['pdf_contract_link'] = l(t('Contract'), 'forge-web-contract/'.$vars['nid']);
+  $vars['pdf_contract_link'] = l(t('View Contract'), 'forge-web-contract/'.$vars['nid']);
+  if(module_exists('onnistuufi')) {
+    $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => 'http://local.forge-web.fi:8082/forge-web-contract/'.$vars['nid'])));
+  }
 }
 
 function forge_web_contract_node_update($node) {
