@@ -1,0 +1,354 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web contract feature.
+ */
+
+include_once 'forge_web_contract.features.inc';
+/**
+ * @file
+ */
+
+require_once('MPDF/mpdf.php');
+
+/**
+ * 
+ * Implements hook_menu 
+ */
+function forge_web_contract_menu() {
+  $items['forge-web-contract/%node'] = array(
+    'page callback' => 'forge_web_contract_print_pdf',
+    'page arguments' => array(1),
+    'access arguments' => array("access content"),
+    'type' => MENU_CALLBACK,
+    'title' => '',
+  );
+  return $items;
+}
+
+/*
+ * implementation hook_form_alter
+ * for prepopulate fields for date from insightly CRM
+ */
+function forge_web_contract_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'contract_node_form' && $form['nid']['#value'] === null) {
+    $insightly_data = _forge_web_contract_get_data();
+    dsm('asasd');
+    // TODO: prefill fields with data from insightly CRM
+  }
+}
+
+/*
+ * implementation hook_node_insert
+ */
+function forge_web_contract_node_insert($node) {
+  
+}
+
+/*
+ * implementation hook_node_view_alter
+ */
+function forge_web_contract_preprocess_node(&$vars) {
+  $vars['pdf_contract_link'] = l(t('Contract'), 'forge-web-contract/'.$vars['nid']);
+}
+
+function forge_web_contract_node_update($node) {
+  forge_web_contract_node_insert($node);
+}
+
+function forge_web_contract_print_pdf($node) {
+  if(strstr($node->type, 'contract')) {
+    $tokens = _forge_web_contract_create_tokens($node);
+    print _forge_web_contract_class_instance($tokens, $node->type);
+  }
+}
+/*
+ * get data from insighly and return data array
+ */
+function _forge_web_contract_get_data($insightly_id = null) {
+  $data = array();
+  if(!empty($insightly_id)) {
+    // TODO: API call here
+  }
+  return $data;
+}
+
+/*
+ * helper for populate tokens for html templates
+ */
+function _forge_web_contract_create_tokens($node) {
+  $tokens = array();
+  $field_collection_array = array();
+  foreach($node AS $key => $value) {
+    if(strstr($key, 'field') && is_array($value)) {
+      $field_values = field_get_items('node', $node, $key);
+      $rows = '';
+      // multiple field handling
+      if(count($field_values) > 1) {
+        $temp_token = '';
+        $company_information = array();
+        foreach ($field_values AS $field_key => $field_value) {
+          // field collection handling
+          if(array_key_exists('revision_id',$field_value)) {
+            $field_collection_array = _forge_web_contract_field_collection_loader($field_value);
+          }
+          else {
+            $rows .= _forge_web_contract_replace_tokens_in_templates($tokens, $key.'_row');//'<li>'.$field_value['value']. '</li>';
+          }
+          // special treatment for company information field collection
+          if(array_key_exists('field_company_information', $field_collection_array) && array_key_exists('field_administrative_contact', $field_collection_array)) {
+            $company_information[] = array_merge($field_collection_array['field_company_information'], $field_collection_array['field_administrative_contact']);
+          }
+          else {
+            foreach ($field_collection_array as $f_c_key => $f_c_value) {
+              foreach ($f_c_value as $f_c_value_key => $f_c_value_value) {
+                $row_token['['.strtoupper($f_c_value_key).']'] = $f_c_value_value;
+              }
+              $rows .= _forge_web_contract_replace_tokens_in_templates($row_token, $f_c_key.'_row');//'<ul>'.$temp_token.'</ul>';
+            } 
+          }
+        }
+        // special treatment for company information field collection
+        if(count($company_information) > 0) {
+          $tokens = _forge_web_contract_company_information_field_handling($company_information);
+        }
+        else {
+          $row_token['[ROWS]'] = $rows;
+          $tokens['['.strtoupper($key).']'] = _forge_web_contract_replace_tokens_in_templates($row_token, $key);//'<ul>'.$temp_token.'</ul>';
+        }
+      }
+      else {
+        $company_information = array();
+        // field collection handling
+        if(array_key_exists('revision_id',$field_values[0])) {
+          $field_collection_array = _forge_web_contract_field_collection_loader($field_values[0]);
+          // special treatment for company information field collection
+          if(array_key_exists('field_company_information', $field_collection_array) && array_key_exists('field_administrative_contact', $field_collection_array)) {
+            $company_information[] = array_merge($field_collection_array['field_company_information'], $field_collection_array['field_administrative_contact']);
+          }
+          else {
+            foreach ($field_collection_array as $f_c_key => $f_c_value) {
+              foreach ($f_c_value as $f_c_value_key => $f_c_value_value) {
+                $row_token['['.strtoupper($f_c_value_key).']'] = $f_c_value_value;
+              }
+              $rows .= _forge_web_contract_replace_tokens_in_templates($row_token, $f_c_key.'_row');//'<ul>'.$temp_token.'</ul>';
+            } 
+          }
+          // special treatment for company information field collection
+          if(count($company_information) > 0) {
+            $tokens = _forge_web_contract_company_information_field_handling($company_information);
+          }
+          else {
+            $row_token['[ROWS]'] = $rows;
+            $tokens['['.strtoupper($key).']'] = _forge_web_contract_replace_tokens_in_templates($row_token, $key);//'<ul>'.$temp_token.'</ul>';
+          }
+        }
+        else {
+          if(array_key_exists('email', $field_values[0])) {
+            $tokens['['.strtoupper($key).']'] = $field_values[0]['email'];
+          }
+          else {
+            $tokens['['.strtoupper($key).']'] = $field_values[0]['value'];
+          }
+        }
+      }
+    }
+  }
+  dsm($tokens);
+  return $tokens;
+}
+
+/*
+ * helper for handling company information field collection
+ */
+function _forge_web_contract_company_information_field_handling($company_information) {
+  foreach($company_information AS $c_i_key => $c_i_value) {
+    if(is_array($c_i_value)) {
+      foreach ($c_i_value as $c_i_key => $c_i_value) {
+        $rows['['.strtoupper($c_i_key).']'] = $c_i_value;
+      }
+      $row_token['FIELD_COMPANY_INFORMATION']['[ROWS]'] .= _forge_web_contract_replace_tokens_in_templates($rows, 'field_company_information_row');//'<ul>'.$temp_token.'</ul>';
+      $row_token['FIELD_ADMINISTRATIVE_CONTACT']['[ROWS]'] .= _forge_web_contract_replace_tokens_in_templates($rows, 'field_administrative_contact_row');//'<ul>'.$temp_token.'</ul>';
+    }
+  }
+  $tokens['[FIELD_COMPANY_INFORMATION]'] = _forge_web_contract_replace_tokens_in_templates($row_token['FIELD_COMPANY_INFORMATION'], 'field_company_information');//'<ul>'.$temp_token.'</ul>';
+  $tokens['[FIELD_ADMINISTRATIVE_CONTACT]'] = _forge_web_contract_replace_tokens_in_templates($row_token['FIELD_ADMINISTRATIVE_CONTACT'], 'field_administrative_contact');//'<ul>'.$temp_token.'</ul>';
+  
+  return $tokens;
+}
+
+/*
+ * helper for handling field collections
+ */
+function _forge_web_contract_field_collection_loader($field_value, $tokens = array()) {
+  // load field colection entity
+  $field_coll = entity_load('field_collection_item', array($field_value['value']));
+  //dsm($field_coll);
+  foreach($field_coll AS $field_coll_key => $field_coll_obj) {
+    // loop thru field collection entity data so we can find fields
+    // TODO: maybe there is better way to get fields from entity
+    foreach($field_coll_obj AS $field_coll_obj_key => $field_coll_obj_values) {
+      if(strstr($field_coll_obj_key, 'field') && is_array($field_coll_obj_values)) {
+        $field_coll_obj_field_values = field_get_items('field_collection_item', $field_coll_obj, $field_coll_obj_key);
+        // field collection handling
+        if(array_key_exists('revision_id',$field_coll_obj_field_values[0])) {
+          //dsm($field_coll_obj_key);
+          //$tokens[$field_coll_obj->field_name][$field_coll_obj_key] = $field_coll_obj_field_values[0];
+          $tokens = _forge_web_contract_field_collection_loader($field_coll_obj_field_values[0], $tokens);
+        }
+        else {
+          //dsm($field_coll_obj_key);
+
+          //dsm($field_coll_obj_key);
+          //dsm($field_coll_obj_field_values);
+          // TODO: list template need to add here
+          //$tokens['[' .strtoupper($field_coll_obj_key) . ']'] = $field_coll_obj_field_values[0]['value'];
+          //dsm($field_coll_obj_field_values);
+          if(array_key_exists('email', $field_coll_obj_field_values[0])) {
+            $tokens[$field_coll_obj->field_name][$field_coll_obj_key] = $field_coll_obj_field_values[0]['email'];
+          }
+          else {
+            $tokens[$field_coll_obj->field_name][$field_coll_obj_key] = $field_coll_obj_field_values[0]['value'];
+          }
+        }
+      }
+    }
+    //dsm($field_coll_obj->field_name.'_row');
+    //$temp_token = _forge_web_contract_replace_tokens_in_templates($tokens, $field_coll_obj->field_name.'_row');
+    //dsm($temp_token);
+  
+  }
+  //dsm($tokens);
+        
+  return $tokens;
+}
+
+/*
+ * helper for replace tokens in templates
+ */
+function _forge_web_contract_replace_tokens_in_templates($tokens, $file_name) {
+  $html = _forge_web_contract_load_template_html($file_name . '.html');
+  if($html) {
+    return str_replace(array_keys($tokens), array_values($tokens), $html);
+  }
+  return FALSE;
+}
+
+/*
+ * helper for load templates html
+ */
+function _forge_web_contract_load_template_html($file_name) {
+  if(empty($file_name) || !is_string($file_name)) {
+    return FALSE;
+  }
+  // TODO: cache here
+  if (!isset($html)) {
+    
+    $mask = '/\.html$/';
+    $module_path = drupal_get_path('module', 'forge_web_contract');
+    $templates_dir = variable_get('forge_web_contract_template_dir', $module_path.'/templates');
+    $files = file_scan_directory($templates_dir, $mask);
+    foreach($files as $file) {
+      if($file->filename == $file_name) {
+        $file_realpath = drupal_realpath($file->uri);
+        $html = file_get_contents($file_realpath);
+      }
+    }
+  }
+  if($html) {
+    return $html;
+  }
+  return FALSE;
+}
+
+
+/*
+ * set tokens in place in templates and return generated pdf
+ */
+function _forge_web_contract_class_instance($tokens = array(), $type) {
+  if(forge_web_contract_library_exist()) {
+    $module_path = drupal_get_path('module', 'forge_web_contract');
+    // Instantiate pdf class
+    $pdf = new ContractPDF('','A4', 0, '', 15, 15, 30, 15, 9, 9);
+    $pdf->AddTokens($tokens);
+    // Look for header
+    $header_file = $type.'_header.html';
+    if($header = _forge_web_contract_load_template_html($header_file)) {
+      $pdf->SetHTMLHeader($header);
+    }
+    dsm($tokens);
+    // Look for content
+    $content_file = $type.'_content.html';
+    //dsm($content_file);
+    if(!$content = _forge_web_contract_load_template_html($content_file)) {
+      $content = '<h1>Content not set</h1>';
+    }
+    // Output actual content
+    $pdf->WriteHTML($pdf->ReplaceTokens($content));
+    
+    $pdf->Output();
+  }
+  else {
+    drupal_set_message('mpdf not found.');
+  }
+}
+
+/**
+ * Function to check existence of mPDF library.
+ *
+ * @return bool
+ *   TRUE if mPDF library path exists and FALSE if it isn't.
+ */
+function forge_web_contract_library_exist() {
+  $tools = array();
+
+  // Search for mpdf tool first.
+  $pattern = '/^mpdf.php$/';
+  /*
+  // Libraries module to detect mPDF library in case of multisite installation.
+  $tools = array_keys(file_scan_directory(libraries_get_path('mpdf'), $pattern));
+  */
+  // mPDF library looked for in the module directory itself.
+  $tools = array_merge($tools, array_keys(file_scan_directory(drupal_get_path('module', 'forge_web_contract'), $pattern)));
+  if (isset($tools[0])) {
+    require_once $tools[0];
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/* 
+ * Class for generate PDF extent mpdf 
+ */
+class ContractPDF extends mPDF {
+  private $tokens = array();
+
+  function __construct($mode='',$format='A4',$default_font_size=0,$default_font='',$mgl=15,$mgr=15,$mgt=16,$mgb=16,$mgh=9,$mgf=9, $orientation='P') {
+    parent::mPDF($mode,$format,$default_font_size,$default_font,$mgl,$mgr,$mgt,$mgb,$mgh,$mgf, $orientation);
+  }
+
+  function SetHTMLHeader($header='',$OE='',$write=false) {
+    parent::SetHTMLHeader($this->ReplaceTokens($header), $OE, $write);
+  }
+
+  // CUSTOM
+  // Replace tokens from given content
+  public function ReplaceTokens($content) {
+    return str_replace(array_keys($this->tokens), array_values($this->tokens), $content);
+  }
+
+  // Set tokens
+  public function AddTokens($tokens) {
+    // We will just add tokens at this point
+    foreach($tokens as $token => $value)
+      $this->SetToken($token, $value);
+  }
+
+  // Set single token with wrapping characters
+  public function SetToken($token, $value) {
+    $this->tokens[strtoupper($token)] = $value;
+  }
+
+}
