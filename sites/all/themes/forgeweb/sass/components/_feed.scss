@@ -76,9 +76,13 @@
     margin: 0 0 3em;
     @include at-breakpoint($tab) {
       margin: 0 0 4em;
+      width: 50%;
+      float: left;
     }
     @include at-breakpoint($desk) {
       margin: 0 0 5em;
+      width: 33%;
+      float: left;
     }
     &.views-row-last {
       margin: 0;

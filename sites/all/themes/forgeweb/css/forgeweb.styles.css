@@ -2341,11 +2341,15 @@ img {
 @media (min-width: 44em) {
   .view-feed .views-row {
     margin: 0 0 4em;
+    width: 50%;
+    float: left;
   }
 }
 @media (min-width: 70em) {
   .view-feed .views-row {
     margin: 0 0 5em;
+    width: 33%;
+    float: left;
   }
 }
 .view-feed .views-row.views-row-last {
