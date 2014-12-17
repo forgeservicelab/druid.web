@@ -9,8 +9,6 @@ include_once 'forge_web_contract.features.inc';
  * @file
  */
 
-require_once('MPDF/mpdf.php');
-
 /**
  * 
  * Implements hook_menu 
@@ -50,7 +48,8 @@ function forge_web_contract_node_insert($node) {
 function forge_web_contract_preprocess_node(&$vars) {
   $vars['pdf_contract_link'] = l(t('View Contract'), 'forge-web-contract/'.$vars['nid']);
   if(module_exists('onnistuufi')) {
-    $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => 'http://local.forge-web.fi:8082/forge-web-contract/'.$vars['nid'])));
+    global $base_url;
+    $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => $base_url.'/forge-web-contract/'.$vars['nid'])));
   }
 }
 
@@ -255,6 +254,7 @@ function _forge_web_contract_load_template_html($file_name) {
  */
 function _forge_web_contract_class_instance($tokens = array(), $type) {
   if(forge_web_contract_library_exist()) {
+    module_load_include('inc', 'forge_web_contract', 'contractpdf');
     $module_path = drupal_get_path('module', 'forge_web_contract');
     // Instantiate pdf class
     $pdf = new ContractPDF('','A4', 0, '', 15, 15, 30, 15, 9, 9);
@@ -289,15 +289,15 @@ function _forge_web_contract_class_instance($tokens = array(), $type) {
  */
 function forge_web_contract_library_exist() {
   $tools = array();
-
   // Search for mpdf tool first.
   $pattern = '/^mpdf.php$/';
-  /*
+  
   // Libraries module to detect mPDF library in case of multisite installation.
   $tools = array_keys(file_scan_directory(libraries_get_path('mpdf'), $pattern));
-  */
+  
   // mPDF library looked for in the module directory itself.
   $tools = array_merge($tools, array_keys(file_scan_directory(drupal_get_path('module', 'forge_web_contract'), $pattern)));
+    
   if (isset($tools[0])) {
     require_once $tools[0];
     return TRUE;
@@ -307,36 +307,3 @@ function forge_web_contract_library_exist() {
   }
 }
 
-/* 
- * Class for generate PDF extent mpdf 
- */
-class ContractPDF extends mPDF {
-  private $tokens = array();
-
-  function __construct($mode='',$format='A4',$default_font_size=0,$default_font='',$mgl=15,$mgr=15,$mgt=16,$mgb=16,$mgh=9,$mgf=9, $orientation='P') {
-    parent::mPDF($mode,$format,$default_font_size,$default_font,$mgl,$mgr,$mgt,$mgb,$mgh,$mgf, $orientation);
-  }
-
-  function SetHTMLHeader($header='',$OE='',$write=false) {
-    parent::SetHTMLHeader($this->ReplaceTokens($header), $OE, $write);
-  }
-
-  // CUSTOM
-  // Replace tokens from given content
-  public function ReplaceTokens($content) {
-    return str_replace(array_keys($this->tokens), array_values($this->tokens), $content);
-  }
-
-  // Set tokens
-  public function AddTokens($tokens) {
-    // We will just add tokens at this point
-    foreach($tokens as $token => $value)
-      $this->SetToken($token, $value);
-  }
-
-  // Set single token with wrapping characters
-  public function SetToken($token, $value) {
-    $this->tokens[strtoupper($token)] = $value;
-  }
-
-}
