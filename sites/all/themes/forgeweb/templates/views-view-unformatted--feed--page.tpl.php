@@ -11,7 +11,7 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-  <div class="masonry-wrapper <?php if ($classes_array[$id]) { print $classes_array[$id];  } ?>">
+  <div class="feed_items <?php if ($classes_array[$id]) { print $classes_array[$id];  } ?>">
     <?php print $row; ?>
   </div>
 <?php endforeach; ?>

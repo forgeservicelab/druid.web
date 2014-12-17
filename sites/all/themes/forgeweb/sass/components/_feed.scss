@@ -3,15 +3,19 @@
 .view-feed {
   .view-content {
     position: relative;
+    margin-left: -0.715em;
   }
   .views-row {
-    margin: 0 1.429em 1.429em 0;
+    margin: 0 0.715em 1.429em 0.715em;
     @include at-breakpoint($tab) {
       width: 47%;
       float: left;
     }
+    a {
+      display: block;
+    }
     @include at-breakpoint($desk) {
-      width: 22%;
+      width: 23%;
       float: left;
     }
     &.views-row-last {
@@ -54,7 +58,12 @@
       .field__item {
       }
     }
-    
+    .field--name-field-main-images {
+      a {
+        display: block;
+        line-height: 0;
+      }
+    }
     .field--name-body {
       margin: 0;
       padding: 0 1em;

@@ -2212,9 +2212,10 @@ img {
 
 .view-feed .view-content {
   position: relative;
+  margin-left: -0.715em;
 }
 .view-feed .views-row {
-  margin: 0 1.429em 1.429em 0;
+  margin: 0 0.715em 1.429em 0.715em;
 }
 @media (min-width: 44em) {
   .view-feed .views-row {
@@ -2222,9 +2223,12 @@ img {
     float: left;
   }
 }
+.view-feed .views-row a {
+  display: block;
+}
 @media (min-width: 70em) {
   .view-feed .views-row {
-    width: 22%;
+    width: 23%;
     float: left;
   }
 }
@@ -2265,6 +2269,10 @@ img {
   .view-feed .views-row .field--name-field-link {
     font-size: 1.2em;
   }
+}
+.view-feed .views-row .field--name-field-main-images a {
+  display: block;
+  line-height: 0;
 }
 .view-feed .views-row .field--name-body {
   margin: 0;
