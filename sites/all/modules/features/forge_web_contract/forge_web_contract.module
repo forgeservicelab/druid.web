@@ -33,7 +33,6 @@ function forge_web_contract_menu() {
 function forge_web_contract_form_alter(&$form, &$form_state, $form_id) {
   if($form_id == 'contract_node_form' && $form['nid']['#value'] === null) {
     $insightly_data = _forge_web_contract_get_data();
-    dsm('asasd');
     // TODO: prefill fields with data from insightly CRM
   }
 }
@@ -186,7 +185,6 @@ function _forge_web_contract_company_information_field_handling($company_informa
 function _forge_web_contract_field_collection_loader($field_value, $tokens = array()) {
   // load field colection entity
   $field_coll = entity_load('field_collection_item', array($field_value['value']));
-  //dsm($field_coll);
   foreach($field_coll AS $field_coll_key => $field_coll_obj) {
     // loop thru field collection entity data so we can find fields
     // TODO: maybe there is better way to get fields from entity
@@ -200,13 +198,6 @@ function _forge_web_contract_field_collection_loader($field_value, $tokens = arr
           $tokens = _forge_web_contract_field_collection_loader($field_coll_obj_field_values[0], $tokens);
         }
         else {
-          //dsm($field_coll_obj_key);
-
-          //dsm($field_coll_obj_key);
-          //dsm($field_coll_obj_field_values);
-          // TODO: list template need to add here
-          //$tokens['[' .strtoupper($field_coll_obj_key) . ']'] = $field_coll_obj_field_values[0]['value'];
-          //dsm($field_coll_obj_field_values);
           if(array_key_exists('email', $field_coll_obj_field_values[0])) {
             $tokens[$field_coll_obj->field_name][$field_coll_obj_key] = $field_coll_obj_field_values[0]['email'];
           }
@@ -216,13 +207,7 @@ function _forge_web_contract_field_collection_loader($field_value, $tokens = arr
         }
       }
     }
-    //dsm($field_coll_obj->field_name.'_row');
-    //$temp_token = _forge_web_contract_replace_tokens_in_templates($tokens, $field_coll_obj->field_name.'_row');
-    //dsm($temp_token);
-  
   }
-  //dsm($tokens);
-        
   return $tokens;
 }
 
