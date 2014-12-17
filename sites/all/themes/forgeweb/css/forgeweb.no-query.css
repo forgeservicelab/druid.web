@@ -559,41 +559,17 @@ form .form-checkboxes .category.main > .form-item.expandable .toggle, form .fiel
 
 @media (min-width: 44em) {
   .page-feed .view-feed {
-    width: 49.15254%;
+    width: 100%;
     float: left;
     margin-right: 1.69492%;
   }
 }
 @media (min-width: 70em) {
   .page-feed .view-feed {
-    width: 66.10169%;
+    width: 100%;
     float: left;
     margin-right: 1.69492%;
   }
-}
-.page-feed .block--fb-likebox {
-  margin: 2em 0;
-}
-@media (min-width: 44em) {
-  .page-feed .block--fb-likebox {
-    width: 49.15254%;
-    float: right;
-    margin-right: 0;
-    margin: 0;
-  }
-}
-@media (min-width: 70em) {
-  .page-feed .block--fb-likebox {
-    width: 32.20339%;
-    float: right;
-    margin-right: 0;
-  }
-}
-.page-feed .block--fb-likebox .block__title {
-  display: none;
-}
-.page-feed .block--fb-likebox .block__content {
-  text-align: center;
 }
 .page-feed .views-exposed-form-feed-page {
   margin: 1em 0 0;
@@ -2348,7 +2324,7 @@ img {
 @media (min-width: 70em) {
   .view-feed .views-row {
     margin: 0 0 5em;
-    width: 33%;
+    width: 25%;
     float: left;
   }
 }
