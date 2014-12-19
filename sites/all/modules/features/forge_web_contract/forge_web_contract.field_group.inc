@@ -13,6 +13,68 @@ function forge_web_contract_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_comp_info|node|partner_contract|form';
+  $field_group->group_name = 'group_comp_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'partner_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Company information',
+    'weight' => '47',
+    'children' => array(
+      0 => 'field_partner_contract_org_name',
+      1 => 'field_partner_contract_bid',
+      2 => 'field_partner_contract_attention',
+      3 => 'field_partner_contract_address',
+      4 => 'field_partner_offering_desc',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Company information',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-comp-info field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_comp_info|node|partner_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_cost_payment|node|partner_contract|form';
+  $field_group->group_name = 'group_cost_payment';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'partner_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Cost, payment',
+    'weight' => '48',
+    'children' => array(
+      0 => 'field_service_fee_in_euros',
+      1 => 'field_due_payable_number_of_days',
+      2 => 'field_duration_of_contract',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Cost, payment',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-cost-payment field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_cost_payment|node|partner_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_description_service|node|service_developer_contract|form';
   $field_group->group_name = 'group_description_service';
   $field_group->entity_type = 'node';

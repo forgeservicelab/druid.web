@@ -21,6 +21,14 @@ function forge_web_contract_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function forge_web_contract_node_info() {
   $items = array(
+    'partner_contract' => array(
+      'name' => t('Partner Contract'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'service_developer_contract' => array(
       'name' => t('Service developer contract'),
       'base' => 'node_content',

@@ -36,13 +36,6 @@ function forge_web_contract_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /*
- * implementation hook_node_insert
- */
-function forge_web_contract_node_insert($node) {
-  
-}
-
-/*
  * implementation hook_node_view_alter
  */
 function forge_web_contract_preprocess_node(&$vars) {
@@ -51,10 +44,6 @@ function forge_web_contract_preprocess_node(&$vars) {
     global $base_url;
     $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => $base_url.'/forge-web-contract/'.$vars['nid'])));
   }
-}
-
-function forge_web_contract_node_update($node) {
-  forge_web_contract_node_insert($node);
 }
 
 function forge_web_contract_print_pdf($node) {
@@ -192,8 +181,6 @@ function _forge_web_contract_field_collection_loader($field_value, $tokens = arr
         $field_coll_obj_field_values = field_get_items('field_collection_item', $field_coll_obj, $field_coll_obj_key);
         // field collection handling
         if(array_key_exists('revision_id',$field_coll_obj_field_values[0])) {
-          //dsm($field_coll_obj_key);
-          //$tokens[$field_coll_obj->field_name][$field_coll_obj_key] = $field_coll_obj_field_values[0];
           $tokens = _forge_web_contract_field_collection_loader($field_coll_obj_field_values[0], $tokens);
         }
         else {
@@ -264,10 +251,8 @@ function _forge_web_contract_class_instance($tokens = array(), $type) {
     if($header = _forge_web_contract_load_template_html($header_file)) {
       $pdf->SetHTMLHeader($header);
     }
-    dsm($tokens);
     // Look for content
     $content_file = $type.'_content.html';
-    //dsm($content_file);
     if(!$content = _forge_web_contract_load_template_html($content_file)) {
       $content = '<h1>Content not set</h1>';
     }
