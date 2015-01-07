@@ -71,9 +71,11 @@ function ldap_forge_admin_settings_submit($form, &$form_state) {
   $settings = array();
   foreach ($form_state['groups'] as $group_dn_hash => $group_info) {
     $roles = array();
-    foreach ($form_state['values'][$group_dn_hash]['roles'] as $rid => $assign)
-      if ($assign != 0)
+    foreach ($form_state['values'][$group_dn_hash]['roles'] as $rid => $assign) {
+      if ($assign != 0) {
         $roles[$rid] = $rid;
+      }
+    }
     $settings[$group_dn_hash] = $roles;
   }
   variable_set('ldap_forge_settings', $settings);
@@ -89,9 +91,11 @@ function ldap_forge_groups() {
     // Get first server.
     $ldap_server = current($ldap_servers);
     // Search for organizationalRole which is the baseclass of forge group entry.
-    if (($results = $ldap_server->search(ldap_forge_group_binding(), 'objectClass=groupOfNames')) && isset($results['count']) && $results['count'] > 0)
-      for ($n = 0; $n < $results['count']; $n++)
+    if (($results = $ldap_server->search(ldap_forge_group_binding(), 'objectClass=groupOfNames')) && isset($results['count']) && $results['count'] > 0) {
+      for ($n = 0; $n < $results['count']; $n++) {
         $groups[md5($results[$n]['dn'])] = $results[$n];
+      }
+    }
     else
       drupal_set_message(t('No results.'));
   }
@@ -112,8 +116,9 @@ function ldap_forge_cas_user_presave(&$edit, $account) {
   // Go through the groups and look for occupant.
   foreach($groups as $group_dn_hash => $group) {
     // When found, add into roles array.
-    if(!empty($settings[$group_dn_hash]) && in_array('cn=' . $edit['cas_user']['name'] . ',' . ldap_forge_people_binding(), $group['member']))
+    if(!empty($settings[$group_dn_hash]) && in_array('cn=' . $edit['cas_user']['name'] . ',' . ldap_forge_people_binding(), $group['member'])) {
       $roles += $settings[$group_dn_hash];
+    }
   }
   $edit['roles'] = $roles;
 }

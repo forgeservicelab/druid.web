@@ -23,6 +23,7 @@ function forge_web_feeds_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Feed';
+  $handler->display->display_options['css_class'] = 'bulletin-board';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'Show more';
@@ -39,11 +40,12 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'masonry-item';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
   /* Sort criterion: Content: Post date */
@@ -51,6 +53,14 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Promoted to front page */
+  $handler->display->display_options['sorts']['promote']['id'] = 'promote';
+  $handler->display->display_options['sorts']['promote']['table'] = 'node';
+  $handler->display->display_options['sorts']['promote']['field'] = 'promote';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -62,124 +72,6 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'node';
-  $handler->display->display_options['filters']['type']['field'] = 'type';
-  $handler->display->display_options['filters']['type']['value'] = array(
-    'blog_post' => 'blog_post',
-  );
-  $handler->display->display_options['filters']['type']['group'] = 2;
-  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
-  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
-  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    3 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
-  $handler->display->display_options['filters']['type']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['type']['group_info']['label'] = 'Type';
-  $handler->display->display_options['filters']['type']['group_info']['identifier'] = 'type';
-  $handler->display->display_options['filters']['type']['group_info']['widget'] = 'radios';
-  $handler->display->display_options['filters']['type']['group_info']['default_group_multiple'] = array(
-    1 => '1',
-    2 => '2',
-    3 => '3',
-  );
-  $handler->display->display_options['filters']['type']['group_info']['group_items'] = array(
-    1 => array(
-      'title' => 'News',
-      'operator' => 'in',
-      'value' => array(
-        'news' => 'news',
-        'all' => 0,
-        'blog' => 0,
-        'blog_post' => 0,
-        'bulletin_board_item' => 0,
-        'contact_us' => 0,
-        'faq_item' => 0,
-        'forge_role_information' => 0,
-        'forge_webform' => 0,
-        'company' => 0,
-        'page' => 0,
-        'partners_and_people' => 0,
-        'product_family' => 0,
-        'offering' => 0,
-        'project' => 0,
-        'service_offering' => 0,
-        'tutorial' => 0,
-        'tweet' => 0,
-        'webform' => 0,
-      ),
-    ),
-    2 => array(
-      'title' => 'Blog',
-      'operator' => 'in',
-      'value' => array(
-        'blog_post' => 'blog_post',
-        'all' => 0,
-        'blog' => 0,
-        'bulletin_board_item' => 0,
-        'contact_us' => 0,
-        'faq_item' => 0,
-        'forge_role_information' => 0,
-        'forge_webform' => 0,
-        'news' => 0,
-        'company' => 0,
-        'page' => 0,
-        'partners_and_people' => 0,
-        'product_family' => 0,
-        'offering' => 0,
-        'project' => 0,
-        'service_offering' => 0,
-        'tutorial' => 0,
-        'tweet' => 0,
-        'webform' => 0,
-      ),
-    ),
-    3 => array(
-      'title' => 'Twitter',
-      'operator' => 'in',
-      'value' => array(
-        'tweet' => 'tweet',
-        'all' => 0,
-        'blog' => 0,
-        'blog_post' => 0,
-        'bulletin_board_item' => 0,
-        'contact_us' => 0,
-        'faq_item' => 0,
-        'forge_role_information' => 0,
-        'forge_webform' => 0,
-        'news' => 0,
-        'company' => 0,
-        'page' => 0,
-        'partners_and_people' => 0,
-        'product_family' => 0,
-        'offering' => 0,
-        'project' => 0,
-        'service_offering' => 0,
-        'tutorial' => 0,
-        'webform' => 0,
-      ),
-    ),
-  );
-  /* Filter criterion: Content: Type */
-  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
-  $handler->display->display_options['filters']['type_1']['table'] = 'node';
-  $handler->display->display_options['filters']['type_1']['field'] = 'type';
-  $handler->display->display_options['filters']['type_1']['value'] = array(
-    'blog_post' => 'blog_post',
-    'news' => 'news',
-    'tweet' => 'tweet',
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -220,7 +112,6 @@ function forge_web_feeds_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Type'),
     t('Page'),
     t('more'),
     t('Block'),
