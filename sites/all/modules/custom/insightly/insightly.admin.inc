@@ -26,3 +26,16 @@ function insightly_admin_settings_form($form_state) {
 
   return system_settings_form($form);
 }
+
+/**
+ * Validate the API key
+ *
+ * @param $form
+ * @param $form_state
+ */
+function insightly_admin_settings_form_validate($form, &$form_state) {
+  // Check for whitespace, substring length and correct location of dashes
+  if (!preg_match('/\S{8}-\S{4}-\S{4}-\S{4}-\S{12}/', $form_state['values']['insightly_key'])) {
+    form_set_error('insightly_key', t('The key seems to be invalid. Keys are 36 characters long and look like this: <pre>ac9a2292-f25a-4483-9d54-000000000000</pre>'));
+  }
+}
