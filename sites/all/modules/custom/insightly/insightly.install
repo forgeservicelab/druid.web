@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ *
+ * Installation of the Insightly API module
+ */
+
+/**
+ * Implements hook_install().
+ */
+function insightly_install() {
+  variable_set('insightly_key', 0);
+}
+
+
+/**
+ * Implements hook_uninstall().
+ */
+function insightly_uninstall() {
+  variable_del('insightly_key');
+}
