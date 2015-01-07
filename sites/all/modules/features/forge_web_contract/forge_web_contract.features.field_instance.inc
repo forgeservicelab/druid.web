@@ -848,49 +848,698 @@ function forge_web_contract_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-body'
-  $field_instances['node-partner_fsl_fpa_cra_contract-body'] = array(
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cost_of_cra'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cost_of_cra'] = array(
     'bundle' => 'partner_fsl_fpa_cra_contract',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 15,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
+    'exclude_cv' => 0,
+    'field_name' => 'field_cost_of_cra',
+    'label' => 'Cost of CRA',
+    'required' => 1,
     'settings' => array(
-      'display_summary' => TRUE,
       'entity_translation_sync' => FALSE,
       'exclude_cv' => FALSE,
-      'text_processing' => 1,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'number',
+      'weight' => 55,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_email'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_email'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_email',
+    'label' => 'Email',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 47,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_invoicing_addr'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_invoicing_addr'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_invoicing_addr',
+    'label' => 'Invoicing address',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
       ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'type' => 'text_textfield',
+      'weight' => 49,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_mobile'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_mobile'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_mobile',
+    'label' => 'Mobile (SMS capable)',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 46,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_name'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_name'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_name',
+    'label' => 'Name',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 44,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_other_means'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_other_means'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_other_means',
+    'label' => 'Other means of contact',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 48,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_admin_title'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_admin_title'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_admin_title',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 45,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_business_id'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_business_id'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_business_id',
+    'label' => 'Business ID',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_expiration'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_expiration'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Number of months.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_expiration',
+    'label' => 'Expiration',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'number',
+      'weight' => 57,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_partner_agreement_date'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_partner_agreement_date'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_partner_agreement_date',
+    'label' => 'FORGE Partner agreement date',
+    'required' => 1,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_tech_email'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_tech_email'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_tech_email',
+    'label' => 'Email',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 53,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_tech_mobile'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_tech_mobile'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_tech_mobile',
+    'label' => 'Mobile (SMS capable)',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 52,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_tech_name'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_tech_name'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_tech_name',
+    'label' => 'Name',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 50,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_tech_other_means'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_tech_other_means'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_tech_other_means',
+    'label' => 'Other means of contact',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 54,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_cra_tech_title'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_cra_tech_title'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_cra_tech_title',
+    'label' => 'Title',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 51,
     ),
   );
 
@@ -935,7 +1584,58 @@ function forge_web_contract_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 41,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_fsl_fpa_cra_contract-field_total_amount_in_euros'
+  $field_instances['node-partner_fsl_fpa_cra_contract-field_total_amount_in_euros'] = array(
+    'bundle' => 'partner_fsl_fpa_cra_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_total_amount_in_euros',
+    'label' => 'Total amount in euros',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'number',
+      'weight' => 56,
     ),
   );
 
@@ -1515,16 +2215,18 @@ function forge_web_contract_field_default_field_instances() {
   t('Administrative Contact');
   t('Amount in euros');
   t('Attention');
-  t('Body');
   t('Business ID');
   t('Company information');
   t('Company name');
   t('Concise description of the service developed');
   t('Contract termination');
+  t('Cost of CRA');
   t('DIGILE service fee');
   t('Due payable in number of days ');
   t('Duration of contract');
   t('Email');
+  t('Expiration');
+  t('FORGE Partner agreement date');
   t('International format');
   t('Invoicing address');
   t('Mobile (SMS capable');
@@ -1533,6 +2235,7 @@ function forge_web_contract_field_default_field_instances() {
   t('Name of the project');
   t('Number of days');
   t('Number of months');
+  t('Number of months.');
   t('Organization name');
   t('Other means of contact');
   t('Other means of contact ');
@@ -1542,6 +2245,7 @@ function forge_web_contract_field_default_field_instances() {
   t('The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.');
   t('The value of the development project concerning Developed Service');
   t('Title');
+  t('Total amount in euros');
   t('Use the registered organization name in contracts.');
 
   return $field_instances;

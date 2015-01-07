@@ -29,6 +29,14 @@ function forge_web_contract_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'partner_fsl_fpa_cra_contract' => array(
+      'name' => t('FORGE Partner CRA Addendum'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'service_developer_contract' => array(
       'name' => t('Service developer contract'),
       'base' => 'node_content',

@@ -13,6 +13,68 @@ function forge_web_contract_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_administrative_contract|node|partner_fsl_fpa_cra_contract|form';
+  $field_group->group_name = 'group_administrative_contract';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'partner_fsl_fpa_cra_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Administrative contract',
+    'weight' => '6',
+    'children' => array(
+      0 => 'field_cra_admin_name',
+      1 => 'field_cra_admin_title',
+      2 => 'field_cra_admin_mobile',
+      3 => 'field_cra_admin_email',
+      4 => 'field_cra_admin_other_means',
+      5 => 'field_cra_admin_invoicing_addr',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Administrative contract',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-administrative-contract field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_administrative_contract|node|partner_fsl_fpa_cra_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_annual_service_fee|node|partner_fsl_fpa_cra_contract|form';
+  $field_group->group_name = 'group_annual_service_fee';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'partner_fsl_fpa_cra_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Annual service fee',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_cost_of_cra',
+      1 => 'field_total_amount_in_euros',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Annual service fee',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-annual-service-fee field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_annual_service_fee|node|partner_fsl_fpa_cra_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_comp_info|node|partner_contract|form';
   $field_group->group_name = 'group_comp_info';
   $field_group->entity_type = 'node';
@@ -187,6 +249,38 @@ function forge_web_contract_field_group_info() {
     ),
   );
   $export['group_service_devs_sub_c_c|node|service_developer_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_technical_contact|node|partner_fsl_fpa_cra_contract|form';
+  $field_group->group_name = 'group_technical_contact';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'partner_fsl_fpa_cra_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Technical contact',
+    'weight' => '7',
+    'children' => array(
+      0 => 'field_cra_tech_name',
+      1 => 'field_cra_tech_title',
+      2 => 'field_cra_tech_mobile',
+      3 => 'field_cra_tech_email',
+      4 => 'field_cra_tech_other_means',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Technical contact',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-technical-contact field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_technical_contact|node|partner_fsl_fpa_cra_contract|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
