@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * @file API module to integrate with Insightly - https://www.insightly.com
+ * 
+ */
+
+// Require the original Insightly class to be able to extend it
+require_once 'sites/all/libraries/insightly/insightly.php';
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * Define the Insightly external library
+ */
+function insightly_libraries_info() {
+  $libraries['insightly'] = array(
+    'name' => 'Insightly',
+    'vendor url' => 'https://www.insightly.com',
+    'download url' => 'https://github.com/Insightly/php/archive/master.zip',
+    'files' => array(
+      'php' => array('insightly.php'),
+    ),
+    'version' => insightly_version_number(),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Look up Insightly library version number
+ *
+ * @return mixed
+ */
+function insightly_version_number() {
+  // The Composer file should have the correct lib version number
+  $composer_path = libraries_get_path('insightly') . "/composer.json";
+  $file = drupal_json_decode(file_get_contents($composer_path));
+
+  return $file['version'];
+}
+
+/**
+ * Class DrupalInsightly extends the Insightly base class
+ */
+class DrupalInsightly extends Insightly {
+  /**
+   * Class constructor using the API key from the module
+   *
+   * @param string $secret_key
+   */
+  public function __construct() {
+    $secret_key = variable_get('insightly_key');
+    parent::__construct($secret_key);
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function insightly_menu() {
+  $items['admin/config/system/insightly'] = array(
+    'title' => 'Insightly',
+    'description' => 'Add API key to access Insightly',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('insightly_admin_settings_form'),
+    'access arguments' => array('administer content'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'insightly.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function insightly_permission() {
+  return array(
+    'administer insightly' => array(
+      'title' => t('Administer Insightly'),
+      'description' => t('Add, change or remove the Insightly API key.'),
+    )
+  );
+}
