@@ -64,7 +64,7 @@ function insightly_menu() {
     'description' => 'Add API key to access Insightly',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('insightly_admin_settings_form'),
-    'access arguments' => array('administer content'),
+    'access arguments' => array('administer insightly'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'insightly.admin.inc',
   );
