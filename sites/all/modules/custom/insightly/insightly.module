@@ -83,3 +83,18 @@ function insightly_permission() {
     )
   );
 }
+
+/**
+ * Example code snippet for accessing the Insightly API
+ *
+ * @return bool|mixed
+ */
+function example_insightly_api_call() {
+  // The Insightly object will have the API key
+  $i = new DrupalInsightly();
+
+  // For more get methods see the lib file or {@link https://api.insight.ly/v2.1/Help/Introduction API doc}
+  $contacts = $i->getContacts();
+
+  return $contacts;
+}
