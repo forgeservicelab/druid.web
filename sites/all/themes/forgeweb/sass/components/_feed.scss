@@ -1,78 +1,271 @@
-// Feed styles
+/**
+ * Feed styles
+ */
 
-.view-feed {
-  .view-content {
-    position: relative;
-    margin-left: -0.715em;
-  }
-  .views-row {
-    margin: 0 0.715em 1.429em 0.715em;
-    @include at-breakpoint($tab) {
-      width: 47%;
-      float: left;
+// Typography styles used on the feed items
+.feed-share-style {
+  font-family: 'Georgia Italic', 'Georgia';
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.feed-header-style {
+  font-family: 'Helvetica Light', 'Helvetica';
+  font-weight: 200;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+// Feed styling
+.feed {
+  .feed-item {
+    background-color: $feed-item-bg;
+    margin-bottom: 20px;
+    padding: 20px;
+
+    @include at-breakpoint($tab){
+      margin: 2%;
+      width: 46%;
     }
-    a {
-      display: block;
-    }
-    @include at-breakpoint($desk) {
+    @include at-breakpoint($desk){
+      margin: 1%;
       width: 23%;
-      float: left;
-    }
-    &.views-row-last {
-      margin: 0;
     }
 
-    .page-title {
-      margin: 0;
-      padding: 0.25em 1em;
-      font-size: 0.8em;
-      font-weight: 200;
-      text-transform: none;
-      background: #459FD8;
-      color: #FFFFFF;
-      @include at-breakpoint($desk) {
-        font-size: 1.4em;
-      }
-    }
-    .field--type-text-long {
-      margin: 0;
-      img {
-        height: auto !important;
-      }
-    }
-    .field--type-video-embed-field {
-      max-width: 480px;
-    }
-    
-    .node--tweet {
-       .page-title {
-          background: #f2f2f2;
-          color: #000000;
-       }
-    }
-    .field--name-field-link {
-      word-break: break-all;
-      @include at-breakpoint($tab) {
-        font-size: 1.2em;
-      }
-      .field__item {
-      }
-    }
-    .field--name-field-main-images {
-      a {
+    .social-icons-wrapper {
+      @extend .feed-share-style;
+      color: #fff;
+      display: block;
+      float: right;
+      margin: 10px 0 0;
+      width: 50%;
+
+      .social-icons-toggle {
+        background-color: $active-link-color;
         display: block;
-        line-height: 0;
+        float: right;
+        line-height: 28px;
+        margin-right: -20px;
+        margin-top: 2px;
+        padding: 0 15px 0 28px;
+        position: relative;
+
+        &:after {
+          border-style: solid;
+          border-width: 14px 0 14px 20px;
+          border-color: transparent transparent transparent $feed-item-bg;
+          content: "";
+          height: 0;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .social-icons {
+        display: none;
       }
     }
-    .field--name-body {
-      margin: 0;
-      padding: 0 1em;
-      background: #f2f2f2;
+
+    .field {
+      margin: 1em 0 0;
+
+      p {
+        margin: 1em 0 0;
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+
+      &.field--name-field-tags {
+        @extend .feed-share-style;
+      }
     }
   }
-  
+
+  .feed-item-media {
+    line-height: 0;
+    margin: -20px -20px 20px;
+    .field {
+      margin: 0;
+    }
+  }
+
+  .feed-item-title {
+    @extend .feed-header-style;
+    background-color: $link-color;
+    color: #fff;
+    margin: -20px -20px 0;
+    padding: 20px;
+    text-transform: none;
+  }
+
+  .feed-item-title-link {
+    display: block;
+    color: #fff;
+  }
+
+  .feed-item-type {
+    @extend .feed-share-style;
+    color: #aeaeae;
+    float: left;
+    display: block;
+    line-height: 30px;
+    margin: 10px 0 0;
+    min-height: 30px;
+    padding-left: 35px;
+    position: relative;
+    width: 50%;
+
+    &:before {
+      background: url(../images/feed_sprite.png) no-repeat 0 -180px transparent;
+      content: "";
+      display: block;
+      height: 30px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 30px;
+    }
+  }
+
+  .feed-item--tweet {
+    font-size: 1.3em;
+    line-height: 1.3em;
+
+    .feed-item-type:before {
+      background-position: 0 -210px;
+    }
+
+    .field {
+      margin: 0;
+    }
+  }
+
+  .feed-item--article {
+    .feed-item-type {
+      line-height: 25px;
+      padding-left: 30px;
+
+      &:before {
+        background-position: 0 -240px;
+      }
+    }
+  }
+
   // Hide drupal default throbber.
   .ajax-progress {
     display: none !important;
   }
 }
+
+
+// Feed retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .feed {
+    .feed-item-type {
+      &:before {
+        background-position: 0 0;
+        background-size: 30px auto;
+      }
+    }
+
+    .feed-item--tweet {
+      .feed-item-type:before {
+        background-position: 0 -30px;
+      }
+    }
+
+    .feed-item--article {
+      .feed-item-type {
+        &:before {
+          background-position: 0 -60px;
+        }
+      }
+    }
+  }
+}
+//.view-feed {
+//  .view-content {
+//    position: relative;
+//    margin-left: -0.715em;
+//  }
+//  .views-row {
+//    margin: 0 0.715em 1.429em 0.715em;
+//    @include at-breakpoint($tab) {
+//      width: 47%;
+//      float: left;
+//    }
+//    a {
+//      display: block;
+//    }
+//    @include at-breakpoint($desk) {
+//      width: 23%;
+//      float: left;
+//    }
+//    &.views-row-last {
+//      margin: 0;
+//    }
+
+//    .page-title {
+//      margin: 0;
+//      padding: 0.25em 1em;
+//      font-size: 0.8em;
+//      font-weight: 200;
+//      text-transform: none;
+//      background: #459FD8;
+//      color: #FFFFFF;
+//      @include at-breakpoint($desk) {
+//        font-size: 1.4em;
+//      }
+//    }
+//    .field--type-text-long {
+//      margin: 0;
+//      img {
+//        height: auto !important;
+//      }
+//    }
+//    .field--type-video-embed-field {
+//      max-width: 480px;
+//    }
+//
+//    .node--tweet {
+//       .page-title {
+//          background: #f2f2f2;
+//          color: #000000;
+//       }
+//    }
+//    .field--name-field-link {
+//      word-break: break-all;
+//      @include at-breakpoint($tab) {
+//        font-size: 1.2em;
+//      }
+//      .field__item {
+//      }
+//    }
+//    .field--name-field-main-images {
+//      a {
+//        display: block;
+//        line-height: 0;
+//      }
+//    }
+//    .field--name-body {
+//      margin: 0;
+//      padding: 0 1em;
+//      background: #f2f2f2;
+//    }
+//  }
+//
