@@ -299,4 +299,20 @@
     }
   };
 
+  Drupal.behaviors.forgeToggleShareBehavior = {
+    attach: function (context) {
+      var socialToggle = $('span.social-icons-toggle');
+
+      $('.feed-item').mouseleave(function(){
+        $(this).addClass('has-social-icons-toggle');
+        $(this).removeClass('has-social-icons');
+      });
+
+      $(socialToggle).click(function(){
+        $(this).parentsUntil('div.feed-item').addClass('has-social-icons');
+        $(this).parentsUntil('div.feed-item').removeClass('has-social-icons-toggle');
+      });
+    }
+  };
+
 })(jQuery);

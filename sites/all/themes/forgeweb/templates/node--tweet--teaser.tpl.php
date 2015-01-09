@@ -79,7 +79,7 @@
  */
 
 ?>
-<article class="feed-item feed-item--tweet masonry-item <?php print $classes; ?>" role="article">
+<article class="feed-item feed-item--tweet masonry-item has-social-icons-toggle <?php print $classes; ?>" role="article">
 
   <div<?php print $content_attributes; ?>>
     <?php

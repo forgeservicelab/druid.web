@@ -78,7 +78,7 @@
  * @see template_process()
  */
 ?>
-<article class="feed-item feed-item--article masonry-item <?php print $classes; ?>" role="article">
+<article class="feed-item feed-item--article masonry-item has-social-icons-toggle <?php print $classes; ?>" role="article">
   <?php if (!empty($title_prefix) || !empty($title_suffix) || !$page): ?>
     <header>
       <?php if ($content['field_liftup_image'] || $content['field_news_liftup_video']): ?>

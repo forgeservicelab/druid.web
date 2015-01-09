@@ -34,27 +34,44 @@
       width: 23%;
     }
 
+    &.has-social-icons {
+      .social-icons {
+        display: block;
+      }
+      .social-icons-toggle {
+        display: none;
+      }
+    }
+
+    &.has-social-icons-toggle {
+      .social-icons {
+        display: none;
+      }
+      .social-icons-toggle {
+        display: block;
+      }
+    }
+
     .social-icons-wrapper {
       @extend .feed-share-style;
       color: #fff;
       display: block;
       float: right;
-      margin: 10px 0 0;
-      width: 50%;
+      margin: 10px -20px 0 0;
+      width: 55%;
 
+      .social-icons,
       .social-icons-toggle {
         background-color: $active-link-color;
-        display: block;
         float: right;
-        line-height: 28px;
-        margin-right: -20px;
+        line-height: 30px;
         margin-top: 2px;
         padding: 0 15px 0 28px;
         position: relative;
 
         &:after {
           border-style: solid;
-          border-width: 14px 0 14px 20px;
+          border-width: 15px 0 15px 20px;
           border-color: transparent transparent transparent $feed-item-bg;
           content: "";
           height: 0;
@@ -63,13 +80,39 @@
           top: 0;
           width: 0;
         }
+      }
+      .social-icons {
+        padding-left: 20px;
+        padding-right: 5px;
 
+        .social-icon {
+          background: url(../images/feed_sprite.png) no-repeat 0 -270px transparent;
+          margin: 0;
+        }
+
+        .social-icon__facebook {
+          background-position: -2.5px -270px;
+          height: 30px;
+          width: 25px;
+        }
+        .social-icon__twitter {
+          background-position: 0 -300px;
+          height: 30px;
+          margin-bottom: 0;
+          width: 30px;
+        }
+        .social-icon__linkedin {
+          background-position: 0 -330px;
+          height: 30px;
+          margin-right: 0;
+          width: 30px;
+        }
+      }
+
+      .social-icons-toggle {
         &:hover {
           cursor: pointer;
         }
-      }
-      .social-icons {
-        display: none;
       }
     }
 
@@ -122,7 +165,7 @@
     min-height: 30px;
     padding-left: 35px;
     position: relative;
-    width: 50%;
+    width: 45%;
 
     &:before {
       background: url(../images/feed_sprite.png) no-repeat 0 -180px transparent;
@@ -176,6 +219,28 @@ only screen and (-o-min-device-pixel-ratio: 2/1),
 only screen and (min-device-pixel-ratio: 2),
 only screen and (min-resolution: 192dpi) {
   .feed {
+    .feed-item {
+      .social-icons-wrapper {
+        .social-icons {
+          .social-icon {
+            background-size: 30px auto;
+          }
+
+          .social-icon__facebook {
+            background-position: -2.5px -180px;
+          }
+
+          .social-icon__twitter {
+            background-position: 0 -210px;
+          }
+
+          .social-icon__linkedin {
+            background-position: 0 -240px;
+          }
+        }
+      }
+    }
+
     .feed-item-type {
       &:before {
         background-position: 0 0;
@@ -198,74 +263,3 @@ only screen and (min-resolution: 192dpi) {
     }
   }
 }
-//.view-feed {
-//  .view-content {
-//    position: relative;
-//    margin-left: -0.715em;
-//  }
-//  .views-row {
-//    margin: 0 0.715em 1.429em 0.715em;
-//    @include at-breakpoint($tab) {
-//      width: 47%;
-//      float: left;
-//    }
-//    a {
-//      display: block;
-//    }
-//    @include at-breakpoint($desk) {
-//      width: 23%;
-//      float: left;
-//    }
-//    &.views-row-last {
-//      margin: 0;
-//    }
-
-//    .page-title {
-//      margin: 0;
-//      padding: 0.25em 1em;
-//      font-size: 0.8em;
-//      font-weight: 200;
-//      text-transform: none;
-//      background: #459FD8;
-//      color: #FFFFFF;
-//      @include at-breakpoint($desk) {
-//        font-size: 1.4em;
-//      }
-//    }
-//    .field--type-text-long {
-//      margin: 0;
-//      img {
-//        height: auto !important;
-//      }
-//    }
-//    .field--type-video-embed-field {
-//      max-width: 480px;
-//    }
-//
-//    .node--tweet {
-//       .page-title {
-//          background: #f2f2f2;
-//          color: #000000;
-//       }
-//    }
-//    .field--name-field-link {
-//      word-break: break-all;
-//      @include at-breakpoint($tab) {
-//        font-size: 1.2em;
-//      }
-//      .field__item {
-//      }
-//    }
-//    .field--name-field-main-images {
-//      a {
-//        display: block;
-//        line-height: 0;
-//      }
-//    }
-//    .field--name-body {
-//      margin: 0;
-//      padding: 0 1em;
-//      background: #f2f2f2;
-//    }
-//  }
-//
