@@ -21,7 +21,7 @@ function forge_web_contract_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Administrative contract',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_cra_admin_name',
       1 => 'field_cra_admin_title',
@@ -54,7 +54,7 @@ function forge_web_contract_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Annual service fee',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
       0 => 'field_cost_of_cra',
       1 => 'field_total_amount_in_euros',
@@ -261,7 +261,7 @@ function forge_web_contract_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Technical contact',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_cra_tech_name',
       1 => 'field_cra_tech_title',

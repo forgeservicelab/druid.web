@@ -144,7 +144,6 @@ function _forge_web_contract_create_tokens($node) {
       }
     }
   }
-  dsm($tokens);
   return $tokens;
 }
 
