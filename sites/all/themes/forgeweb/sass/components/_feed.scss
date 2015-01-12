@@ -23,6 +23,7 @@
   .feed-item {
     background-color: $feed-item-bg;
     margin-bottom: 20px;
+    max-width: 100%;
     padding: 20px;
 
     @include at-breakpoint($tab){

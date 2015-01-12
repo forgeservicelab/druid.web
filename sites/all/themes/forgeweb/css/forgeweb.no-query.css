@@ -2231,6 +2231,7 @@ img {
 .feed .feed-item {
   background-color: #f2f2f2;
   margin-bottom: 20px;
+  max-width: 100%;
   padding: 20px;
 }
 @media (min-width: 44em) {
