@@ -34,13 +34,13 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="bulletin-board__header">
+    <div class="feed__header">
       <?php print $header; ?>
     </div>
   <?php endif; ?>
 
   <?php if ($exposed): ?>
-    <div class="bulletin-board__filters">
+    <div class="feed__filters">
       <?php print $exposed; ?>
     </div>
   <?php endif; ?>
@@ -52,11 +52,11 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content bulletin-board__content masonry-wrapper">
+    <div class="view-content feed__content masonry-wrapper">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
-    <div class="bulletin-board__empty">
+    <div class="feed__empty">
       <?php print $empty; ?>
     </div>
   <?php endif; ?>
@@ -78,7 +78,7 @@
   <?php endif; ?>
 
   <?php if ($footer): ?>
-    <div class="bulletin-board__footer">
+    <div class="feed__footer">
       <?php print $footer; ?>
     </div>
   <?php endif; ?>
