@@ -241,7 +241,7 @@
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
-      $(window).load(function(){
+      $.each('.masonry-wrapper', function (context) {
         $('.masonry-wrapper').once('.masonry-wrapper', function(){
           var msnry = new Masonry( this, {
             columnWidth: '.masonry-item',
