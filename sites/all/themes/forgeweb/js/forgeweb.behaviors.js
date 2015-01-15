@@ -241,14 +241,12 @@
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
-      $.each('.masonry-wrapper', function (context) {
         $('.masonry-wrapper').once('.masonry-wrapper', function(){
           var msnry = new Masonry( this, {
             columnWidth: '.masonry-item',
             itemSelector: '.masonry-item'
           });
         });
-      });
     }
   };
 
