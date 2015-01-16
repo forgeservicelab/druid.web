@@ -1,0 +1,4 @@
+name = Feed stickyfix
+description = Change the order of sticky elements in the Forge feed view.
+core = 7.x
+package = Forge
