@@ -84,10 +84,12 @@ function forge_web_contract_get_salt() {
  * implementation hook_node_view_alter
  */
 function forge_web_contract_preprocess_node(&$vars) {
-  $vars['pdf_contract_link'] = l(t('View Contract'), 'forge-web-contract/'.$vars['nid']);
+  $hash = forge_web_contract_get_hash($vars['nid'], forge_web_contract_get_salt());
+
+  $vars['pdf_contract_link'] = l(t('View Contract'), 'pdf/'. $hash . '/' . $vars['nid']);
   if(module_exists('onnistuufi')) {
     global $base_url;
-    $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => $base_url.'/forge-web-contract/'.$vars['nid'])));
+    $vars['pdf_contract_link'] .= '<br/>'.l(t('Sign the contract'), 'onnistuufi/sign', array('query' => array('document' => $base_url.'/pdf/'. $hash . '/' . $vars['nid'])));
   }
 }
 
