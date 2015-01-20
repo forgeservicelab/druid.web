@@ -36,6 +36,27 @@ function forge_web_contract_form_alter(&$form, &$form_state, $form_id) {
 }
 
 /**
+ * Access control for PDF paths.
+ *
+ * Compare the hash of the node id in the path and the correct hash that is
+ * recalculated.
+ *
+ * @return bool
+ */
+function forge_web_contract_access_check() {
+  $path_parts = explode('/', $_GET['q']);
+
+  $hash_recalculated = forge_web_contract_get_hash($path_parts[2]);
+
+  if ($path_parts[1] == $hash_recalculated) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+/**
  * Calculate the sha256 hash based on node id and the salt.
  *
  * This method provides reasonable security and doesn't allow attackers to
