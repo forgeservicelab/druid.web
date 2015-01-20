@@ -80,8 +80,10 @@ function forge_web_contract_get_salt() {
   return 'The salt string. This could also be read from a file, if concerned..';
 }
 
-/*
- * implementation hook_node_view_alter
+/**
+ * Implement template_preprocess_node(&$variables)
+ *
+ * Add the PDF and Onnistuu.fi signature links to the page template.
  */
 function forge_web_contract_preprocess_node(&$vars) {
   $hash = forge_web_contract_get_hash($vars['nid'], forge_web_contract_get_salt());
