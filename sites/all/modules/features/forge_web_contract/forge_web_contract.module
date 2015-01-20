@@ -14,10 +14,10 @@ include_once 'forge_web_contract.features.inc';
  * Implements hook_menu 
  */
 function forge_web_contract_menu() {
-  $items['forge-web-contract/%node'] = array(
+  $items['pdf/%/%node'] = array(
     'page callback' => 'forge_web_contract_print_pdf',
-    'page arguments' => array(1),
-    'access arguments' => array("access content"),
+    'page arguments' => array(2),
+    'access callback' => 'forge_web_contract_access_check',
     'type' => MENU_CALLBACK,
     'title' => '',
   );
