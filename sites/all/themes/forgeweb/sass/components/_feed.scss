@@ -1,134 +1,266 @@
-// Feed styles
+/**
+ * Feed styles
+ */
 
-.view-feed {
-  .views-exposed-form {
-    margin-bottom: 3em;
-    overflow: hidden;
-    .views-exposed-widgets {
-      margin: 0 -3% 0 0;
-      .views-exposed-widget {
-        float: none;
-        padding: 0;
-        > label {
-          display: none;
+// Typography styles used on the feed items
+.feed-share-style {
+  font-family: 'Georgia Italic', 'Georgia';
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.feed-header-style {
+  font-family: 'Helvetica Light', 'Helvetica';
+  font-weight: 200;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+// Feed styling
+.feed {
+  .feed-item {
+    background-color: $feed-item-bg;
+    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 20px;
+
+    @include at-breakpoint($tab){
+      margin: 2%;
+      width: 46%;
+    }
+    @include at-breakpoint($desk){
+      margin: 1%;
+      width: 23%;
+    }
+
+    &.has-social-icons {
+      .social-icons {
+        display: block;
+      }
+      .social-icons-toggle {
+        display: none;
+      }
+    }
+
+    &.has-social-icons-toggle {
+      .social-icons {
+        display: none;
+      }
+      .social-icons-toggle {
+        display: block;
+      }
+    }
+
+    .social-icons-wrapper {
+      @extend .feed-share-style;
+      color: #fff;
+      display: block;
+      float: right;
+      margin: 10px -20px 0 0;
+      width: 55%;
+
+      .social-icons,
+      .social-icons-toggle {
+        background-color: $active-link-color;
+        float: right;
+        line-height: 30px;
+        margin-top: 2px;
+        padding: 0 15px 0 28px;
+        position: relative;
+
+        &:after {
+          border-style: solid;
+          border-width: 15px 0 15px 20px;
+          border-color: transparent transparent transparent $feed-item-bg;
+          content: "";
+          height: 0;
+          left: 0;
+          position: absolute;
+          top: 0;
+          width: 0;
         }
-        .form-radios {
+      }
+      .social-icons {
+        padding-left: 20px;
+        padding-right: 5px;
+
+        .social-icon {
+          background: url(../images/feed_sprite.png) no-repeat 0 -270px transparent;
           margin: 0;
         }
-        .form-item {
-          display: block;
-          width: 100%;
-          @include at-breakpoint($tab) {
-            float: left;
-            width: 30.33%;
-          }
-          &.form-type-radio {
-            margin: 0 3% 0 0;
-          }
-          &:first-child,
-          input {
-            display: none;
-          }
-          label {
-            @include border-radius(10px);
-            
-            background-color: #ddd;
-            color: #ababab;
-            display: block;
-            font-size: 0.9em;
-            margin: 0;
-            padding: 1em 0;
-            text-align: center;
-            @include at-breakpoint($tab) {
-              border-bottom: 0 none;
-            }
-            @include at-breakpoint($desk) {
-              font-size: 1.2em;
-            }
-            &:hover {
-              background-color: darken(#ddd, 10);
-              cursor: pointer;
-              color: $text-color;
-            }
-            &.checked {
-              color: $active-link-color;
-              background-color: #000;
-              &:hover {
-                background-color: lighten(#000, 20);
-                color: $active-link-color;
-              }
-            }
-          }
-          &:last-child {
-            label {
-              border-bottom: 0 none;
-              border-right: 0 none;
-            }
-          }
+
+        .social-icon__facebook {
+          background-position: -2.5px -270px;
+          height: 30px;
+          width: 25px;
+        }
+        .social-icon__twitter {
+          background-position: 0 -300px;
+          height: 30px;
+          margin-bottom: 0;
+          width: 30px;
+        }
+        .social-icon__linkedin {
+          background-position: 0 -330px;
+          height: 30px;
+          margin-right: 0;
+          width: 30px;
+        }
+      }
+
+      .social-icons-toggle {
+        &:hover {
+          cursor: pointer;
         }
       }
     }
+
+    .field {
+      margin: 1em 0 0;
+
+      p {
+        margin: 1em 0 0;
+
+        &:first-child {
+          margin: 0;
+        }
+      }
+
+      &.field--name-field-tags {
+        @extend .feed-share-style;
+      }
+    }
   }
-  .view-content {
+
+  .feed-item-media {
+    line-height: 0;
+    margin: -20px -20px 20px;
+    .field {
+      margin: 0;
+    }
+  }
+
+  .feed-item-title {
+    @extend .feed-header-style;
+    background-color: $link-color;
+    color: #fff;
+    margin: -20px -20px 0;
+    padding: 20px;
+    text-transform: none;
+  }
+
+  .feed-item-title-link {
+    display: block;
+    color: #fff;
+  }
+
+  .feed-item-type {
+    @extend .feed-share-style;
+    color: #aeaeae;
+    float: left;
+    display: block;
+    line-height: 30px;
+    margin: 10px 0 0;
+    min-height: 30px;
+    padding-left: 35px;
     position: relative;
+    width: 45%;
+
+    &:before {
+      background: url(../images/feed_sprite.png) no-repeat 0 -180px transparent;
+      content: "";
+      display: block;
+      height: 30px;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 30px;
+    }
   }
-  .views-row {
-    margin: 0 0 3em;
-    @include at-breakpoint($tab) {
-      margin: 0 0 4em;
-    }
-    @include at-breakpoint($desk) {
-      margin: 0 0 5em;
-    }
-    &.views-row-last {
-      margin: 0;
-    }
-    .node__title {
-      font-size: 1.2em;
-      font-weight: 300;
-      text-transform: none;
-      @include at-breakpoint($desk) {
-        font-size: 1.4em;
-      }
-    }
-    .field--type-text-long {
-      margin: 0;
-      img {
-        height: auto !important;
-      }
-    }
-    .field--type-video-embed-field {
-      max-width: 480px;
+
+  .feed-item--tweet {
+    font-size: 1.3em;
+    line-height: 1.3em;
+
+    .feed-item-type:before {
+      background-position: 0 -210px;
     }
 
-    .field--type-video-embed-field,
-    .field--name-field-main-images {
-      margin: 1.5em 0;
-      .field__item {
-        line-height: 0;
-      }
+    .field {
+      margin: 0;
     }
-    .field--name-field-link {
-      margin: 1.5em 0;
-      word-break: break-all;
-      @include at-breakpoint($tab) {
-        font-size: 1.2em;
-      }
-      .field__item {
-        margin: 0 0 1em;
-      }
-    }
+  }
 
-    .easy_social_box {
-      margin: 1.5em 0;
-      .easy_social-widget {
-        margin-right: 1em;
+  .feed-item--article {
+    .feed-item-type {
+      line-height: 25px;
+      padding-left: 30px;
+
+      &:before {
+        background-position: 0 -240px;
       }
     }
   }
-  
+
   // Hide drupal default throbber.
   .ajax-progress {
     display: none !important;
+  }
+}
+
+
+// Feed retina styles
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  .feed {
+    .feed-item {
+      .social-icons-wrapper {
+        .social-icons {
+          .social-icon {
+            background-size: 30px auto;
+          }
+
+          .social-icon__facebook {
+            background-position: -2.5px -180px;
+          }
+
+          .social-icon__twitter {
+            background-position: 0 -210px;
+          }
+
+          .social-icon__linkedin {
+            background-position: 0 -240px;
+          }
+        }
+      }
+    }
+
+    .feed-item-type {
+      &:before {
+        background-position: 0 0;
+        background-size: 30px auto;
+      }
+    }
+
+    .feed-item--tweet {
+      .feed-item-type:before {
+        background-position: 0 -30px;
+      }
+    }
+
+    .feed-item--article {
+      .feed-item-type {
+        &:before {
+          background-position: 0 -60px;
+        }
+      }
+    }
   }
 }
