@@ -13,25 +13,6 @@ function forge_web_authcache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'authcache_block-block-9';
-  $strongarm->value = array(
-    'status' => '1',
-    'lifespan' => '3600',
-    'peruser' => '1',
-    'perpage' => '1',
-    'clients' => array(
-      'authcache_ajax' => array(
-        'status' => '1',
-        'weight' => '0',
-      ),
-    ),
-    'fallback' => 'cancel',
-  );
-  $export['authcache_block-block-9'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'authcache_block-fb_likebox-0';
   $strongarm->value = array(
     'status' => '1',
@@ -47,25 +28,6 @@ function forge_web_authcache_strongarm() {
     'fallback' => 'cancel',
   );
   $export['authcache_block-fb_likebox-0'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'authcache_block-views-what_why_blocks-block';
-  $strongarm->value = array(
-    'status' => '1',
-    'lifespan' => '3600',
-    'peruser' => '1',
-    'perpage' => '1',
-    'clients' => array(
-      'authcache_ajax' => array(
-        'status' => '1',
-        'weight' => '0',
-      ),
-    ),
-    'fallback' => 'cancel',
-  );
-  $export['authcache_block-views-what_why_blocks-block'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -147,6 +109,7 @@ js/admin_menu/cache/*
           6 => '6',
           7 => '7',
           8 => '8',
+          9 => '9',
         ),
       ),
     ),
@@ -166,15 +129,9 @@ js/admin_menu/cache/*
     6 => '6',
     7 => '7',
     8 => '8',
+    9 => '9',
   );
   $export['authcache_roles'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'authcache_su';
-  $strongarm->value = 1;
-  $export['authcache_su'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
