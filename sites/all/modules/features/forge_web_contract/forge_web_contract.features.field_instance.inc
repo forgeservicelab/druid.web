@@ -577,6 +577,51 @@ function forge_web_contract_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-partner_contract-field_partner_admin_contact'
+  $field_instances['node-partner_contract-field_partner_admin_contact'] = array(
+    'bundle' => 'partner_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_partner_admin_contact',
+    'label' => 'Administrative Contact',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 42,
+    ),
+  );
+
   // Exported field_instance: 'node-partner_contract-field_partner_contract_address'
   $field_instances['node-partner_contract-field_partner_contract_address'] = array(
     'bundle' => 'partner_contract',
@@ -617,7 +662,7 @@ function forge_web_contract_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 43,
+      'weight' => 44,
     ),
   );
 
@@ -661,7 +706,7 @@ function forge_web_contract_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 44,
+      'weight' => 48,
     ),
   );
 
@@ -705,7 +750,97 @@ function forge_web_contract_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 42,
+      'weight' => 43,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_contract-field_partner_contract_city'
+  $field_instances['node-partner_contract-field_partner_contract_city'] = array(
+    'bundle' => 'partner_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_partner_contract_city',
+    'label' => 'City',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 46,
+    ),
+  );
+
+  // Exported field_instance: 'node-partner_contract-field_partner_contract_country'
+  $field_instances['node-partner_contract-field_partner_contract_country'] = array(
+    'bundle' => 'partner_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_partner_contract_country',
+    'label' => 'Country',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 47,
     ),
   );
 
@@ -753,6 +888,51 @@ function forge_web_contract_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-partner_contract-field_partner_contract_postalc'
+  $field_instances['node-partner_contract-field_partner_contract_postalc'] = array(
+    'bundle' => 'partner_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_partner_contract_postalc',
+    'label' => 'Postal code',
+    'required' => 1,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 45,
+    ),
+  );
+
   // Exported field_instance: 'node-partner_contract-field_partner_offering_desc'
   $field_instances['node-partner_contract-field_partner_offering_desc'] = array(
     'bundle' => 'partner_contract',
@@ -795,7 +975,7 @@ function forge_web_contract_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 45,
+      'weight' => 49,
     ),
   );
 
@@ -2222,11 +2402,13 @@ function forge_web_contract_field_default_field_instances() {
   t('Amount in euros');
   t('Attention');
   t('Business ID');
+  t('City');
   t('Company information');
   t('Company name');
   t('Concise description of the service developed');
   t('Contract termination');
   t('Cost of CRA');
+  t('Country');
   t('DIGILE service fee');
   t('Due payable in number of days ');
   t('Duration of contract');
@@ -2246,6 +2428,7 @@ function forge_web_contract_field_default_field_instances() {
   t('Other means of contact');
   t('Other means of contact ');
   t('Partner offering description');
+  t('Postal code');
   t('Service fee in euros');
   t('The Service Fee is due payable within');
   t('The annual fee for participating in FORGE Plaza is 200€. During ramp-up of the service the fee is 0€.');
