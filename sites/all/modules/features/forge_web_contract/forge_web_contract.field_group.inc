@@ -90,6 +90,10 @@ function forge_web_contract_field_group_info() {
       2 => 'field_partner_contract_attention',
       3 => 'field_partner_contract_address',
       4 => 'field_partner_offering_desc',
+      5 => 'field_partner_contract_postalc',
+      6 => 'field_partner_contract_city',
+      7 => 'field_partner_contract_country',
+      8 => 'field_partner_admin_contact',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
