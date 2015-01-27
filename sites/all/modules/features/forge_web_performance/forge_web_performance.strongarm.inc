@@ -48,34 +48,6 @@ function forge_web_performance_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'cache_flush_cache_advagg_aggregates';
-  $strongarm->value = 0;
-  $export['cache_flush_cache_advagg_aggregates'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cache_flush_cache_advagg_info';
-  $strongarm->value = 0;
-  $export['cache_flush_cache_advagg_info'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cache_flush_cache_authcache_key';
-  $strongarm->value = 1415175164;
-  $export['cache_flush_cache_authcache_key'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'cache_flush_cache_authcache_p13n';
-  $strongarm->value = 1415175164;
-  $export['cache_flush_cache_authcache_p13n'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'cache_flush_cache_block';
   $strongarm->value = 1422344720;
   $export['cache_flush_cache_block'] = $strongarm;
