@@ -88,7 +88,7 @@
     hide($content['links']);
     print render($content);
     ?>
-    <div class="feed-item-type">Twitter</div>
+    <div class="feed-item-type">Facebook</div>
     <div class="social-icons-wrapper">
       <span class="social-icons-toggle"><?php print t('Share'); ?></span>
       <div class="social-icons">
