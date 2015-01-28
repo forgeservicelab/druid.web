@@ -77,6 +77,7 @@ function forge_web_feeds_views_default_views() {
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'blog_post' => 'blog_post',
+    'facebook_post' => 'facebook_post',
     'news' => 'news',
     'tweet' => 'tweet',
   );
