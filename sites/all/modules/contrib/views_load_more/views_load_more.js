@@ -60,7 +60,21 @@
     // Update the pager
     // Find both for the wrapper as the newly loaded content the direct child
     // .item-list in case of nested pagers
-    wrapper.find(pager_selector).replaceWith(new_content.find(pager_selector));
+
+    // Grab the pager number from the html of the pager
+    var old = wrapper.find(pager_selector).html();
+    var new_pager = wrapper.find(pager_selector).html();
+    old = old.substr(old.indexOf("page=") + 5);
+    old = old.substring(0, old.indexOf('"'));
+
+    // @todo: change this to regexp to make the rewrite more general
+    var new_pager = '<ul class="pager pager-load-more"><li class="pager-next"><a href="/en/feed?page='.concat(++old, '" class="">Load more</a></li></ul>');
+
+    // @todo: invent a more global solution that works for any content and any pagers
+    // The following replacement didn't work depending on content
+    // wrapper.find(pager_selector).replaceWith(new_content.find(pager_selector));
+    // A simpler replacement of "page=x" is used
+    wrapper.find(pager_selector).replaceWith(new_pager);
 
     // Add the new content to the page.
     wrapper.find(content_query)[method](new_content.find(content_query).children());
