@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_enable().
+ */
+function forge_cleanup_enable() {
+  // List of unnecessary tables
+  $tables_to_drop = ['field_data_field_attachment', 'field_revision_field_attachment'];
+
+  watchdog('info', 'Running updates on the forge_cleanup_enable hook!');
+
+  foreach ($tables_to_drop as $table) {
+    if (db_drop_table($table)) {
+      watchdog('info', 'Removed table: ' . $table);
+    }
+  }
+}
