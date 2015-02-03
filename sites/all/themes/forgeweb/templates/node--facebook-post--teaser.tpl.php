@@ -101,7 +101,7 @@
       <div class="social-icons">
         <a href="<?php print $share_fb_url; ?>" class="social-icon social-icon--invert social-icon__facebook" target="_blank"><span><?php print t('Share on Facebook'); ?></span></a>
         <a href="https://twitter.com/home?status=<?php print $shared_text; ?>%20%7C%20<?php print $share_fb_url; ?>" class="social-icon social-icon--invert social-icon__twitter" target="_blank"><span><?php print t('Share on Twitter'); ?></span></a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $share_url; ?>&title=<?php print render($title_value); ?>&summary=&source=" class="social-icon social-icon--invert social-icon__linkedin" target="_blank"><span><?php print t('Share on LinkedIn'); ?></span></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $share_fb_url; ?>&title=<?php print $shared_text; ?>&summary=&source=" class="social-icon social-icon--invert social-icon__linkedin" target="_blank"><span><?php print t('Share on LinkedIn'); ?></span></a>
       </div>
     </div>
   </div>
