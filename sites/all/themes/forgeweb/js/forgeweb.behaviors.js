@@ -241,13 +241,12 @@
   // Masonry configuration
   Drupal.behaviors.masonry = {
     attach: function (context) {
-      if($('.masonry-wrapper').length == 0)
-        return;
-      var msnry = new Masonry('.masonry-wrapper', {
-        // options
-        columnWidth: '.masonry-item',
-        itemSelector: '.masonry-item'
-      });
+        $('.masonry-wrapper').once('.masonry-wrapper', function(){
+          var msnry = new Masonry( this, {
+            columnWidth: '.masonry-item',
+            itemSelector: '.masonry-item'
+          });
+        });
     }
   };
 
@@ -295,6 +294,22 @@
       // Add checked class for input labels.
       $('div#block-views-feed-block').find('input:checked').next().addClass("checked");
       $('form#views-exposed-form-feed-page').find('input:checked').next().addClass("checked");
+    }
+  };
+
+  Drupal.behaviors.forgeToggleShareBehavior = {
+    attach: function (context) {
+      var socialToggle = $('span.social-icons-toggle');
+
+      $('.feed-item').mouseleave(function(){
+        $(this).addClass('has-social-icons-toggle');
+        $(this).removeClass('has-social-icons');
+      });
+
+      $(socialToggle).click(function(){
+        $(this).parentsUntil('div.feed-item').addClass('has-social-icons');
+        $(this).parentsUntil('div.feed-item').removeClass('has-social-icons-toggle');
+      });
     }
   };
 

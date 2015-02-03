@@ -226,7 +226,7 @@ function forge_web_blog_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '3',
+            'weight' => '4',
             'visible' => FALSE,
           ),
         ),

@@ -44,6 +44,10 @@ function forgeweb_preprocess_node(&$vars) {
       $vars['content']['field_tweet_body'][0]['#markup'] = html_entity_decode(preg_replace('@(https?://([-\w\.]+[-\w])+(:\d+)?(/([\w/_\.#-]*(\?\S+)?[^\.\s])?)?)@', '<a href="$1" target="_blank">$1</a>', $vars['content']['field_tweet_body'][0]['#markup'])); 
     }
   }
+
+  if($vars['view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['node']->type . '__teaser';
+  }
 }
 
 /**

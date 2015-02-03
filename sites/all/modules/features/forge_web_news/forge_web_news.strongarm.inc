@@ -138,7 +138,7 @@ function forge_web_news_strongarm() {
             'visible' => TRUE,
           ),
           'teaser' => array(
-            'weight' => '5',
+            'weight' => '7',
             'visible' => FALSE,
           ),
         ),
