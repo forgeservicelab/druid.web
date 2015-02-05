@@ -100,15 +100,16 @@
       hide($content['field_news_liftup_video']);
       hide($content['comments']);
       hide($content['links']);
+      $share_post_url = url('node/' . $node->nid, array('absolute' => true));
       print render($content);
     ?>
     <div class="feed-item-type"><?php print format_date($created, 'custom', 'j.n.Y'); ?></div>
     <div class="social-icons-wrapper">
       <span class="social-icons-toggle"><?php print t('Share'); ?></span>
       <div class="social-icons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $share_url; ?>" class="social-icon social-icon--invert social-icon__facebook" target="_blank"><span><?php print t('Share on Facebook'); ?></span></a>
-        <a href="https://twitter.com/home?status=<?php print render($title_value); ?>%20%7C%20<?php print $share_url; ?>" class="social-icon social-icon--invert social-icon__twitter" target="_blank"><span><?php print t('Share on Twitter'); ?></span></a>
-        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $share_url; ?>&title=<?php print render($title_value); ?>&summary=&source=" class="social-icon social-icon--invert social-icon__linkedin" target="_blank"><span><?php print t('Share on LinkedIn'); ?></span></a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $share_post_url; ?>" class="social-icon social-icon--invert social-icon__facebook" target="_blank"><span><?php print t('Share on Facebook'); ?></span></a>
+        <a href="https://twitter.com/home?status=<?php print $node->title; ?>%20%7C%20<?php print $share_post_url; ?>" class="social-icon social-icon--invert social-icon__twitter" target="_blank"><span><?php print t('Share on Twitter'); ?></span></a>
+        <a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php print $share_post_url; ?>&title=<?php print $node->title; ?>" class="social-icon social-icon--invert social-icon__linkedin" target="_blank"><span><?php print t('Share on LinkedIn'); ?></span></a>
       </div>
     </div>
   </div>

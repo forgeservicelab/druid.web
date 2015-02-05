@@ -64,7 +64,7 @@ function forge_social_media_feeds_importer_default() {
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
         'expire' => '-1',
-        'author' => 0,
+        'author' => '1',
         'authorize' => 1,
         'mappings' => array(
           0 => array(
@@ -103,7 +103,7 @@ function forge_social_media_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '1',
+        'update_existing' => '0',
         'input_format' => 'plain_text',
         'skip_hash_check' => 1,
         'bundle' => 'tweet',
