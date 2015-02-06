@@ -116,6 +116,7 @@ function forge_web_faq_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['block_caching'] = '8';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');

@@ -216,11 +216,11 @@ function forge_web_offering_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-offerings_in_same_family-block' => array(
+        'views-0ced0199449ca6155ba49de1fdbe033c' => array(
           'module' => 'views',
-          'delta' => 'offerings_in_same_family-block',
+          'delta' => '0ced0199449ca6155ba49de1fdbe033c',
           'region' => 'under_content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),

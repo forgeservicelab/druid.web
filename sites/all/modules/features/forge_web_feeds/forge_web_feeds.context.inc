@@ -23,18 +23,7 @@ function forge_web_feeds_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'fb_likebox-0' => array(
-          'module' => 'fb_likebox',
-          'delta' => '0',
-          'region' => 'content',
-          'weight' => '1',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 0;
   $export['feed'] = $context;
 
