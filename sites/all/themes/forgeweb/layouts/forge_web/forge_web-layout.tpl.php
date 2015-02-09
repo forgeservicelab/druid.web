@@ -30,7 +30,7 @@
   <?php endif; ?>
   
   <div class="l-main">
-    <?php if ($title && !$node): ?>
+    <?php if ($title && !isset($node)): ?>
       <h1 class="page-title">
         <?php print $title; ?>
       </h1>

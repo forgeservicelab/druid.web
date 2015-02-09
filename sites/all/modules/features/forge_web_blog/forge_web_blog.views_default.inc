@@ -957,7 +957,7 @@ function forge_web_blog_views_default_views() {
   $handler->display->display_options['fields']['field_main_images_1']['alter']['text'] = '[field_main_images_1-title]';
   $handler->display->display_options['fields']['field_main_images_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_main_images_1']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'retina_flexslider_full_custom_user_retina_display_2x',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_main_images_1']['group_rows'] = FALSE;

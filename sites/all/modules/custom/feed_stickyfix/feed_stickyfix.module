@@ -1,0 +1,64 @@
+<?php
+
+/**
+ * @file
+ * Modify sticky behavior in the feed view
+ */
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Sticky behavior is changed just before rendering. The original sticky way is
+ * to list sticky items first, even if they are older than the rest of the items
+ * on the first pager page.
+ */
+function feed_stickyfix_views_pre_render(&$view) {
+  // For the moment restrict this to the feed view, though it might be useful in other views, too
+  if ($view->name == 'feed') {
+
+    // Create the order array to figure out the desired order of listed nodes
+    foreach ($view->result as $result) {
+      $order[] = $result->node_created;
+    }
+
+    // The correct order doesn't list sticky first if it's not first by date
+    asort($order, TRUE);
+    $order = array_reverse($order, TRUE);
+
+    $n = 0;
+    // Create a new result array for the view with correct element order
+    foreach ($view->result as $result) {
+      // The $n-th key of the $order array
+      $index = nth_key($order, $n);
+
+      // Add array element to new array based on new order
+      $new_result[$index] = $view->result[$n];
+
+      $n++;
+    }
+
+    // First remove the result array
+    $view->result = NULL;
+
+    // Make sure the keys are in consecutive order
+    ksort($new_result);
+
+    // Add the correctly ordered results back to the view
+    $view->result = $new_result;
+  }
+}
+
+// Find the n-th key of the array - as in this case the array keys are not in consecutive order
+function nth_key($a, $nth) {
+  $n = 0;
+
+  foreach ($a as $key => $value) {
+    if ($key != $nth) {
+      $n++;
+    } else {
+      break;
+    }
+  }
+
+  return $n;
+}

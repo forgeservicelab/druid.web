@@ -148,7 +148,6 @@ function forge_web_partners_and_people_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['authcache'] = array(
-    'status' => '1',
     'lifespan' => '3600',
     'peruser' => '1',
     'clients' => array(
@@ -158,6 +157,7 @@ function forge_web_partners_and_people_views_default_views() {
       ),
     ),
     'fallback' => 'cancel',
+    'status' => 0,
     'perpage' => 0,
   );
   $handler->display->display_options['block_caching'] = '8';
