@@ -173,14 +173,14 @@ function login_destination_validate($form, &$form_state) {
       }
       break;
   }
-  
+
   // Fix the current page in case of 403 page.
   if ($form['#form_id'] == 'user_login') {
     if(drupal_get_http_header('Status') == '403 Forbidden') {
       $_GET['current'] = $_GET['destination'];
     }
   }
-    
+
 }
 
 /**
@@ -329,15 +329,30 @@ function login_destination_get_destination($trigger = '', $current = NULL) {
     if (!empty($data->disabled)) {
       continue;
     }
+
     // try to match the subsequent rule
+    // Note: Matching rule with empty destination will cancel redirect!
     if (_login_destination_match_rule($data, $trigger, $current)) {
-      // Note: Matching rule with empty destination will cancel redirect.
-      return _login_destination_evaluate_rule($data, $trigger);
+
+      // To be able to consider rule weights, let's collect all relevant ones
+      $return_rule[] = _login_destination_evaluate_rule($data, $trigger);
+
+      // Store the destination-weight pairs, so we can look up priorities later
+      $priority[$data->destination] = $data->weight;
     }
   }
 
-  // no rule matched
-  return FALSE;
+  asort($priority);
+  $k = key($priority);
+
+  // find which return rule has the highest priority based on $priority
+  foreach ($return_rule as $rule) {
+    if ($k == $rule[0]) {
+      return $rule;
+    }
+  }
+
+  return false;
 }
 
 /**
