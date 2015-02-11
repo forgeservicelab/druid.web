@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * This function should be called as 'drush ev "print_r(forge_cleanup_analyze());"'
+ */
+function forge_cleanup_analyze() {
+  // Select modules which are off or missing but had once their schema installed (schema_version is not -1)
+  // Remember that this yields correct results only after 'drush updb'
+  $q = 'SELECT * FROM system WHERE status = 0 AND schema_version >= 0 ORDER BY name';
+
+  $result = db_query($q);
+
+  foreach ($result as $record) {
+    if (strstr($record->filename, 'sites/')) {
+      // We are mainly concerned about the contributed modules, as they have to be added again
+      print_r('Missing module: ' . $record->name . ' (' . $record->filename . ')'. "\n");
+      watchdog('info', 'Missing module: ' . $record->name . ' (' . $record->filename . ')');
+    } else {
+      print_r('Uninstall core module: ' . $record->name . ' (' . $record->filename . ')'. "\n");
+      watchdog('info', 'Uninstall core module: ' . $record->name . ' (' . $record->filename . ')');
+    }
+  }
+}
