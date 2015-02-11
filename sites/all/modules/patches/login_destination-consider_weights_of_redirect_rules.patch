@@ -1,0 +1,59 @@
+Index: sites/all/modules/contrib/login_destination/login_destination.module
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sites/all/modules/contrib/login_destination/login_destination.module	(revision ea425213f122230696579d92756b4d9b10e8aced)
++++ sites/all/modules/contrib/login_destination/login_destination.module	(revision )
+@@ -173,14 +173,14 @@
+       }
+       break;
+   }
+-  
++
+   // Fix the current page in case of 403 page.
+   if ($form['#form_id'] == 'user_login') {
+     if(drupal_get_http_header('Status') == '403 Forbidden') {
+       $_GET['current'] = $_GET['destination'];
+     }
+   }
+-    
++
+ }
+ 
+ /**
+@@ -329,15 +329,30 @@
+     if (!empty($data->disabled)) {
+       continue;
+     }
++
+     // try to match the subsequent rule
++    // Note: Matching rule with empty destination will cancel redirect!
+     if (_login_destination_match_rule($data, $trigger, $current)) {
+-      // Note: Matching rule with empty destination will cancel redirect.
+-      return _login_destination_evaluate_rule($data, $trigger);
++
++      // To be able to consider rule weights, let's collect all relevant ones
++      $return_rule[] = _login_destination_evaluate_rule($data, $trigger);
++
++      // Store the destination-weight pairs, so we can look up priorities later
++      $priority[$data->destination] = $data->weight;
+     }
+   }
+ 
+-  // no rule matched
+-  return FALSE;
++  asort($priority);
++  $k = key($priority);
++
++  // find which return rule has the highest priority based on $priority
++  foreach ($return_rule as $rule) {
++    if ($k == $rule[0]) {
++      return $rule;
++    }
++  }
++
++  return false;
+ }
+ 
+ /**
