@@ -90,7 +90,7 @@
     // For the moment the Twitter post's direct URL is shared
     $share_twitter_url = 'https://twitter.com/ForgeFriends/status/' . $node->field_tweet_id['und'][0]['safe_value'];
 
-    print render($content);
+    print render($node->title);
     ?>
     <div class="feed-item-type">Twitter</div>
     <div class="social-icons-wrapper">
