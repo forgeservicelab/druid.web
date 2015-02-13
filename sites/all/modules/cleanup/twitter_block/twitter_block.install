@@ -78,6 +78,17 @@ function twitter_block_uninstall() {
 }
 
 /**
+ *
+ * Implements hook_disable()
+ */
+function twitter_block_disable() {
+  // Remove the cache directory
+  // This function is not available during uninstall, as it's in the module file,
+  // that's why hook_disable is used.
+  twitter_block_clear_js_cache();
+}
+
+/**
  * Remove any old Twitter Block blocks and install the new Twitter Block schema.
  */
 function twitter_block_update_7200() {
