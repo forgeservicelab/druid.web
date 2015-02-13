@@ -7,6 +7,7 @@ dependencies[] = date
 dependencies[] = easy_social
 dependencies[] = fb_likebox
 dependencies[] = fe_block
+dependencies[] = feed_stickyfix
 dependencies[] = feeds
 dependencies[] = feeds_jsonpath_parser
 dependencies[] = feeds_oauth
