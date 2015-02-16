@@ -25,13 +25,14 @@
  }
  
 function forgeweb_preprocess_node(&$vars) {
-  
+
+/* @todo: when we implement the new contact form with roles then possibly reuse this code
   if(!empty($_GET['fw'])) {
     // need store value to session
     $_SESSION['forge_web_wizard_role'] = $_GET['role'];
     $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
     $vars['fill_in_application'] = l(t('Fill in the application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
-  }
+  }*/
   
   if($vars['type'] == 'tweet') {
     // I'm not sure if this is best way to do this, but in tweet title has html entities like &amp;
