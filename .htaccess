@@ -5,7 +5,8 @@
 # Allow CORS from nagios
 <Files git_info.php>
   <IfModule mod_headers.c>
-    Header set Access-Control-Allow-Origin "http://nagios.forgeservicelab.fi"
+    SetEnvIf Origin "^(http[s]{0,1}://nagios\.forgeservicelab\.fi)" NAGIOS_ORIGIN=$1
+    Header set Access-Control-Allow-Origin "%{NAGIOS_ORIGIN}e" env=NAGIOS_ORIGIN
   </IfModule>
 </Files>
 
