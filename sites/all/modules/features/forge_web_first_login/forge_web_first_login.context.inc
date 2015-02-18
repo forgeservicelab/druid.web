@@ -26,11 +26,17 @@ function forge_web_first_login_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'forge_web_first_login-academy' => array(
+          'module' => 'forge_web_first_login',
+          'delta' => 'academy',
+          'region' => 'under_content',
+          'weight' => '-55',
+        ),
         'views-first_time-block' => array(
           'module' => 'views',
           'delta' => 'first_time-block',
           'region' => 'under_content',
-          'weight' => '-10',
+          'weight' => '-54',
         ),
       ),
     ),
