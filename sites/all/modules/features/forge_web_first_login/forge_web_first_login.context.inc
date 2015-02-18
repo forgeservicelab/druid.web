@@ -19,7 +19,7 @@ function forge_web_first_login_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'node/467' => 'node/467',
+        'welcome-to-forge' => 'welcome-to-forge',
       ),
     ),
   );
