@@ -5,3 +5,33 @@
  */
 
 include_once 'forge_web_first_login.features.inc';
+
+/**
+ * Implements hook_block_info().
+ *
+ * This block has a link to the FORGE Academy
+ */
+function forge_web_first_login_block_info() {
+  $blocks['academy'] = array(
+    'info' => t('FORGE Academy'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function forge_web_first_login_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'academy':
+      $block['class'] = 'academy_link';
+      $block['content'] = l(t('FORGE Academy'), 'forge-academy', array('attributes' => array('class' => array('forge_academy_link'))));
+      break;
+  }
+
+  return $block;
+}
