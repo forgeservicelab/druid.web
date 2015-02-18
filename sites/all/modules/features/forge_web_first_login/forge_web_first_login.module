@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Forge web first login feature.
+ */
+
+include_once 'forge_web_first_login.features.inc';
