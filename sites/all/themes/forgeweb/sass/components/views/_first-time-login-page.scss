@@ -1,0 +1,57 @@
+.view-id-first_time {
+  .view-header {
+    text-align: center;
+    font-size: 16px;
+  }
+  .view-content {
+    background-color: #e4e4e4;
+    float: left;
+    &:before {
+      width: 100%;
+    }
+  }
+  .views-row {
+    float: left;
+    height: 300px;
+    max-width: 100%;
+    margin: 25px;
+    background-color: #ffffff;
+    @include at-breakpoint($tab){
+      margin: 2%;
+      width: 46%;
+    }
+    @include at-breakpoint($desk){
+      margin: 50px 25px 25px 25px;
+      width: 300px;
+    }
+    .views-field {
+
+    }
+    .views-field-field-forge-service-image {
+      margin: 20px 0 0 60px;
+    }
+    .views-field-body {
+      text-align: center;
+      font-weight: 200;
+      margin: 0 10px 10px 10px;
+    }
+    // Style the buttons.
+    .views-field-field-forge-service-link {
+      width: 150px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #aeaeae;
+      margin: 0 auto;
+    }
+    .views-field-field-forge-service-link a {
+      text-align: center;
+      display: block;
+      font-size: 13px;
+      color: white;
+      padding: 0.7em 0 0 0;
+    }
+    .views-field-field-forge-service-link a:hover {
+      color: c7dc03;
+    }
+  }
+}
