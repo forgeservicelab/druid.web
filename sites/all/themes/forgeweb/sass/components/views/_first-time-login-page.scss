@@ -33,7 +33,7 @@
           width: 45%;
         }
         @include at-breakpoint($desk){
-          margin: 50px 25px 25px 25px;
+          margin: 50px 25px 25px;
           width: 300px;
         }
         .views-field-field-forge-service-image {
@@ -42,7 +42,7 @@
         .views-field-body {
           text-align: center;
           font-weight: 200;
-          margin: 0 10px 10px 10px;
+          margin: 0 10px 10px;
         }
         // Style the buttons.
         .views-field-field-forge-service-link {
@@ -54,7 +54,7 @@
           display: block;
           font-size: 13px;
           color: white;
-          padding: 0.8em 0 0 0;
+          padding: 0.9em 0 0;
           background-color: #aeaeae;
           height: 40px;
           border-radius: 4px;
