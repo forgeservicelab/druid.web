@@ -4542,14 +4542,14 @@ form.fivestar-widget {
   }
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
-  margin: 30px 0 0 60px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
   position: absolute;
-  top: 8%;
+  top: 20%;
+  left: 22%;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
   text-align: center;
