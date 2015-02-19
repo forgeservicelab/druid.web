@@ -17,6 +17,9 @@
   .block--views-first-time-block {
     max-width: 1120px;
     margin: auto;
+    .block__content {
+      padding-top: 50px;
+    }
     .view-id-first_time {
       .view-header {
         text-align: center;
@@ -28,26 +31,31 @@
         height: 300px;
         margin: 1%;
         background-color: #ffffff;
+        position: relative;
         @include at-breakpoint($tab){
           margin: 2%;
           width: 45%;
         }
         @include at-breakpoint($desk){
-          margin: 50px 25px 25px;
+          margin: 0 25px 50px;
           width: 300px;
         }
         .views-field-field-forge-service-image {
-          margin: 20px 0 0 60px;
+          margin: 30px 0 0 60px;
+          @include translateY(-50%);
+          position: absolute;
+          top: 8%;
         }
         .views-field-body {
           text-align: center;
           font-weight: 200;
           margin: 0 10px 10px;
+          overflow: hidden;
+          position: absolute;
+          top: 100px;
         }
         // Style the buttons.
         .views-field-field-forge-service-link {
-          width: 150px;
-          margin: 0 auto;
         }
         .views-field-field-forge-service-link a {
           text-align: center;
@@ -58,6 +66,10 @@
           background-color: #aeaeae;
           height: 40px;
           border-radius: 4px;
+          width: 150px;
+          position: absolute;
+          bottom: 25px;
+          left: 25%
         }
         .views-field-field-forge-service-link a:hover {
           background-color: #c7dc03;
