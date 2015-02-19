@@ -4492,6 +4492,77 @@ form.fivestar-widget {
   }
 }
 
+.section-welcome-forge {
+  font-family: 'Helvetica Light', 'Helvetica';
+}
+.section-welcome-forge .l-footer {
+  clear: both;
+}
+.section-welcome-forge .page-title {
+  text-align: center;
+  font-size: 54px;
+  font-family: 'Helvetica Light', 'Helvetica';
+}
+.section-welcome-forge p {
+  text-align: center;
+}
+
+.l-after_content {
+  background-color: #e4e4e4;
+}
+.l-after_content .block--views-first-time-block {
+  max-width: 1120px;
+  margin: auto;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .view-header {
+  text-align: center;
+  font-size: 16px;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row {
+  display: inline-block;
+  vertical-align: top;
+  height: 300px;
+  margin: 1%;
+  background-color: #ffffff;
+}
+@media (min-width: 44em) {
+  .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
+    margin: 2%;
+    width: 45%;
+  }
+}
+@media (min-width: 70em) {
+  .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
+    margin: 50px 25px 25px 25px;
+    width: 300px;
+  }
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
+  margin: 20px 0 0 60px;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
+  text-align: center;
+  font-weight: 200;
+  margin: 0 10px 10px 10px;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link {
+  width: 150px;
+  margin: 0 auto;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
+  text-align: center;
+  display: block;
+  font-size: 13px;
+  color: white;
+  padding: 0.8em 0 0 0;
+  background-color: #aeaeae;
+  height: 40px;
+  border-radius: 4px;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
+  background-color: #c7dc03;
+}
+
 .view-offering-listing .form-overlay,
 .view-offering-listing .forge-throbber {
   position: fixed;
