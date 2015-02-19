@@ -47,7 +47,7 @@ function forge_web_first_login_views_default_views() {
   $handler->display->display_options['fields']['field_forge_service_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_forge_service_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_forge_service_image']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'service-logo',
     'image_link' => '',
   );
   /* Field: Content: Body */
