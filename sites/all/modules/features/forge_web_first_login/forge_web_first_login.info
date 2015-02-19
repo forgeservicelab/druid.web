@@ -25,6 +25,7 @@ features[field_base][] = field_forge_service_link
 features[field_instance][] = node-forge_service-body
 features[field_instance][] = node-forge_service-field_forge_service_image
 features[field_instance][] = node-forge_service-field_forge_service_link
+features[image][] = service-logo
 features[node][] = forge_service
 features[user_permission][] = create forge_service content
 features[user_permission][] = delete any forge_service content
