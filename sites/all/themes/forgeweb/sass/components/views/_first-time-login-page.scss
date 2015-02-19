@@ -1,8 +1,8 @@
 .section-welcome-forge {
+  font-family: 'Helvetica Light', 'Helvetica';
   .l-footer {
     clear: both;
   }
-  font-family: 'Helvetica Light', 'Helvetica';
   .page-title {
     text-align: center;
     font-size: 54px;
@@ -22,8 +22,6 @@
         text-align: center;
         font-size: 16px;
       }
-      .view-content {
-      }
       .views-row {
         display: inline-block;
         vertical-align: top;
@@ -37,9 +35,6 @@
         @include at-breakpoint($desk){
           margin: 50px 25px 25px 25px;
           width: 300px;
-        }
-        .views-field {
-
         }
         .views-field-field-forge-service-image {
           margin: 20px 0 0 60px;
@@ -71,4 +66,3 @@
     }
   }
 }
-
