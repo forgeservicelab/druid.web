@@ -23,13 +23,15 @@
       font-size: 24px;
       font-weight: lighter;
       line-height: initial;
+      p {
+        margin-top: 0.5em;
+      }
     }
     .summary-body {
       display: block;
       width: 66%;
       float: right;
       margin-right: 30px;
-      font-weight: light;
       line-height: 150%
     }
   }
@@ -58,6 +60,7 @@
         height: 300px;
         background-color: #ffffff;
         position: relative;
+        margin-right: 30px;
         @include at-breakpoint($tab){
           width: 45%;
         }
