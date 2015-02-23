@@ -121,21 +121,6 @@ function forge_web_project_page_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_organization']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_responsible_organization']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_responsible_organization']['multi_type'] = 'ul';
-  /* Field: Content: Starting date */
-  $handler->display->display_options['fields']['field_starting_date']['id'] = 'field_starting_date';
-  $handler->display->display_options['fields']['field_starting_date']['table'] = 'field_data_field_starting_date';
-  $handler->display->display_options['fields']['field_starting_date']['field'] = 'field_starting_date';
-  $handler->display->display_options['fields']['field_starting_date']['element_class'] = 'sidebar-block__item-content';
-  $handler->display->display_options['fields']['field_starting_date']['element_label_class'] = 'sidebar-block__item-label';
-  $handler->display->display_options['fields']['field_starting_date']['element_wrapper_class'] = 'sidebar-block__item';
-  $handler->display->display_options['fields']['field_starting_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_starting_date']['settings'] = array(
-    'format_type' => 'long_wo_day',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -177,7 +162,6 @@ function forge_web_project_page_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Organization'),
-    t('Starting date'),
     t('All'),
     t('Block'),
   );

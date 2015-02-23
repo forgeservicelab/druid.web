@@ -79,7 +79,15 @@ function forge_web_wysiwyg_filter_default_formats() {
     'cache' => 1,
     'status' => 1,
     'weight' => 0,
-    'filters' => array(),
+    'filters' => array(
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(
+          'filter_url_length' => 72,
+        ),
+      ),
+    ),
   );
 
   return $formats;

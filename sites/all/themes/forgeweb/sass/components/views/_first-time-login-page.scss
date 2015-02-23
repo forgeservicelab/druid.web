@@ -1,0 +1,80 @@
+.section-welcome-forge {
+  font-family: 'Helvetica Light', 'Helvetica';
+  .l-footer {
+    clear: both;
+  }
+  .page-title {
+    text-align: center;
+    font-size: 54px;
+    font-family: 'Helvetica Light', 'Helvetica';
+  }
+  p {
+    text-align: center;
+  }
+}
+.l-after_content {
+  background-color: #e4e4e4;
+  .block--views-first-time-block {
+    max-width: 1120px;
+    margin: auto;
+    .block__content {
+      padding-top: 50px;
+    }
+    .view-id-first_time {
+      .view-header {
+        text-align: center;
+        font-size: 16px;
+      }
+      .views-row {
+        display: inline-block;
+        vertical-align: top;
+        height: 300px;
+        margin: 1%;
+        background-color: #ffffff;
+        position: relative;
+        @include at-breakpoint($tab){
+          margin: 2%;
+          width: 45%;
+        }
+        @include at-breakpoint($desk){
+          margin: 0 25px 50px;
+          width: 300px;
+        }
+        .views-field-field-forge-service-image {
+          @include translateY(-50%);
+          position: absolute;
+          top: 20%;
+          left: 22%
+        }
+        .views-field-body {
+          text-align: center;
+          font-weight: 200;
+          margin: 0 10px 10px;
+          overflow: hidden;
+          position: absolute;
+          top: 100px;
+        }
+        // Style the buttons.
+        .views-field-field-forge-service-link {
+        }
+        .views-field-field-forge-service-link a {
+          text-align: center;
+          display: block;
+          font-size: 13px;
+          color: white;
+          padding: 0.9em 0 0;
+          background-color: #aeaeae;
+          height: 40px;
+          border-radius: 4px;
+          width: 150px;
+          position: absolute;
+          bottom: 25px;
+          left: 25%
+        }
+        .views-field-field-forge-service-link a:hover {
+          background-color: #c7dc03;
+        }
+      }
+    }
+  }
+}
