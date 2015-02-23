@@ -4502,7 +4502,7 @@ form.fivestar-widget {
   max-width: 1010px;
 }
 .section-welcome-forge .l-main .field--name-body {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid #c9c9c9;
 }
 .section-welcome-forge .page-title {
   font-size: 50px;
@@ -4512,14 +4512,21 @@ form.fivestar-widget {
 }
 .section-welcome-forge .welcome-body-wrapper {
   margin-top: 30px;
+  margin-right: 0;
+  margin-left: 0;
 }
 .section-welcome-forge .welcome-body-wrapper .welcome-summary {
-  width: 25%;
+  width: 100%;
   float: left;
   margin: 0 2% 0 0;
   height: 100%;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
+}
+@media (min-width: 70em) {
+  .section-welcome-forge .welcome-body-wrapper .welcome-summary {
+    width: 25%;
+  }
 }
 .section-welcome-forge .welcome-body-wrapper .welcome-summary p {
   margin-top: 0.5em;
@@ -4528,10 +4535,24 @@ form.fivestar-widget {
   display: block;
   font-size: 16px;
   line-height: 24px;
-  width: 66%;
+  width: 100%;
   float: right;
   margin-right: 30px;
   line-height: 150%;
+}
+@media (min-width: 70em) {
+  .section-welcome-forge .welcome-body-wrapper .summary-body {
+    width: 66%;
+    margin: 0;
+  }
+}
+.section-welcome-forge .welcome-body-wrapper p {
+  margin: 0;
+}
+@media (min-width: 70em) {
+  .section-welcome-forge .welcome-body-wrapper p {
+    margin: 1em 0;
+  }
 }
 
 .l-after_content .block--views-first-time-block {
@@ -4544,7 +4565,7 @@ form.fivestar-widget {
   font-weight: 200;
 }
 .l-after_content .block--views-first-time-block .block__content {
-  border-top: 1px solid #ececec;
+  border-top: 1px solid #c9c9c9;
   margin-top: 30px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .view-header {
@@ -4556,8 +4577,9 @@ form.fivestar-widget {
   vertical-align: top;
   height: 300px;
   background-color: #ffffff;
-  position: relative;
   margin-right: 30px;
+  width: 100%;
+  margin-top: 30px;
 }
 @media (min-width: 44em) {
   .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
@@ -4569,31 +4591,26 @@ form.fivestar-widget {
     width: 300px;
   }
 }
-.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: absolute;
-  top: 20%;
-}
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
   font-weight: 200;
   overflow: hidden;
-  position: absolute;
-  top: 100px;
+  font-size: 16px;
+  line-height: 22px;
+}
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body p {
+  margin-top: 0.3em;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
   border: 1px solid #b075ae;
-  padding: 10px;
+  border-radius: 0;
+  transition: border-radius 0.45s;
+  padding: 10px 12px;
   color: #b075ae;
-  font-size: 18px;
-  position: absolute;
-  bottom: 20px;
+  font-size: 16px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
-  border-radius: 8px;
+  border-radius: 16px;
+  transition: border-radius 0.33s;
 }
 
 .view-offering-listing .form-overlay,
