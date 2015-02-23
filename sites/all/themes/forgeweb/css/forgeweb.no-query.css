@@ -4492,30 +4492,53 @@ form.fivestar-widget {
   }
 }
 
-.section-welcome-forge {
-  font-family: 'Helvetica Light', 'Helvetica';
-}
 .section-welcome-forge .l-footer {
   clear: both;
 }
-.section-welcome-forge .page-title {
-  text-align: center;
-  font-size: 54px;
-  font-family: 'Helvetica Light', 'Helvetica';
+.section-welcome-forge .l-main {
+  max-width: 1010px;
 }
-.section-welcome-forge p {
-  text-align: center;
+.section-welcome-forge .l-main .field--name-body {
+  border-top: 1px solid #ececec;
+}
+.section-welcome-forge .page-title {
+  font-size: 46px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+.section-welcome-forge .welcome-body-wrapper {
+  margin-top: 30px;
+}
+.section-welcome-forge .welcome-body-wrapper .welcome-summary {
+  width: 25%;
+  float: left;
+  margin: 0 2% 0 0;
+  height: 100%;
+  font-size: 24px;
+  font-weight: lighter;
+  line-height: initial;
+}
+.section-welcome-forge .welcome-body-wrapper .summary-body {
+  display: block;
+  width: 66%;
+  float: right;
+  margin-right: 30px;
+  font-weight: light;
+  line-height: 150%;
 }
 
-.l-after_content {
-  background-color: #e4e4e4;
-}
 .l-after_content .block--views-first-time-block {
-  max-width: 1120px;
+  max-width: 1010px;
   margin: auto;
 }
+.l-after_content .block--views-first-time-block .block__title {
+  font-size: 46px;
+  margin-bottom: 30px;
+  font-weight: 200;
+}
 .l-after_content .block--views-first-time-block .block__content {
-  padding-top: 50px;
+  border-top: 1px solid #ececec;
+  margin-top: 30px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .view-header {
   text-align: center;
@@ -4525,19 +4548,16 @@ form.fivestar-widget {
   display: inline-block;
   vertical-align: top;
   height: 300px;
-  margin: 1%;
   background-color: #ffffff;
   position: relative;
 }
 @media (min-width: 44em) {
   .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
-    margin: 2%;
     width: 45%;
   }
 }
 @media (min-width: 70em) {
   .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
-    margin: 0 25px 50px;
     width: 300px;
   }
 }
@@ -4549,29 +4569,16 @@ form.fivestar-widget {
   transform: translateY(-50%);
   position: absolute;
   top: 20%;
-  left: 22%;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
-  text-align: center;
   font-weight: 200;
-  margin: 0 10px 10px;
   overflow: hidden;
   position: absolute;
   top: 100px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
-  text-align: center;
-  display: block;
-  font-size: 13px;
-  color: white;
-  padding: 0.9em 0 0;
-  background-color: #aeaeae;
-  height: 40px;
-  border-radius: 4px;
-  width: 150px;
   position: absolute;
-  bottom: 25px;
-  left: 25%;
+  bottom: 35px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
   background-color: #c7dc03;
