@@ -4518,8 +4518,8 @@ form.fivestar-widget {
   float: left;
   margin: 0 2% 0 0;
   height: 100%;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
 }
 .section-welcome-forge .welcome-body-wrapper .welcome-summary p {
   margin-top: 0.5em;
@@ -4582,7 +4582,7 @@ form.fivestar-widget {
   font-weight: 200;
   overflow: hidden;
   position: absolute;
-  top: 100px;
+  top: 80px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
   border: 1px solid #b075ae;
@@ -4590,7 +4590,7 @@ form.fivestar-widget {
   color: #b075ae;
   font-size: 18px;
   position: absolute;
-  bottom: 20px;
+  bottom: 60px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
   border-radius: 8px;
