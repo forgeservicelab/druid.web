@@ -6,7 +6,7 @@
   .l-main {
     max-width: 1010px;
     .field--name-body {
-      border-top: 1px solid #ececec;
+      border-top: 1px solid #c9c9c9;
     }
   }
   .page-title {
@@ -17,8 +17,13 @@
   }
   .welcome-body-wrapper {
     margin-top: 30px;
+    margin-right: 0;
+    margin-left: 0;
     .welcome-summary {
-      width: 25%;
+      width: 100%;
+      @include at-breakpoint($desk) {
+        width: 25%;
+      }
       float: left;
       margin: 0 2% 0 0;
       height: 100%;
@@ -32,10 +37,20 @@
       display: block;
       font-size: 16px;
       line-height: 24px;
-      width: 66%;
+      width: 100%;
+      @include at-breakpoint($desk) {
+        width: 66%;
+        margin: 0;
+      }
       float: right;
       margin-right: 30px;
       line-height: 150%
+    }
+    p {
+      margin: 0;
+      @include at-breakpoint($desk) {
+        margin: 1em 0;
+      }
     }
   }
 }
@@ -49,7 +64,7 @@
       font-weight: 200;
     }
     .block__content {
-      border-top: 1px solid #ececec;
+      border-top: 1px solid #c9c9c9;
       margin-top: 30px;
     }
     .view-id-first_time {
@@ -62,8 +77,9 @@
         vertical-align: top;
         height: 300px;
         background-color: #ffffff;
-        position: relative;
         margin-right: 30px;
+        width: 100%;
+        margin-top: 30px;
         @include at-breakpoint($tab){
           width: 45%;
         }
@@ -71,27 +87,28 @@
           width: 300px;
         }
         .views-field-field-forge-service-image {
-          @include translateY(-50%);
-          position: absolute;
-          top: 20%;
         }
         .views-field-body {
           font-weight: 200;
           overflow: hidden;
-          position: absolute;
-          top: 85px;
+          font-size: 16px;
+          line-height: 22px;
+          p {
+            margin-top: 0.3em;
+          }
         }
         // Style the buttons.
         .views-field-field-forge-service-link a {
           border: 1px solid #b075ae;
-          padding: 10px;
+          border-radius: 0;
+          transition: border-radius 0.45s;
+          padding: 10px 12px;
           color: #b075ae;
-          font-size: 18px;
-          position: absolute;
-          bottom: 55px;
+          font-size: 16px;
         }
         .views-field-field-forge-service-link a:hover {
-          border-radius: 8px
+          border-radius: 16px;
+          transition: border-radius 0.33s;
         }
       }
     }
