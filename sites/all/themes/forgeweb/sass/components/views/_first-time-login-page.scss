@@ -1,4 +1,5 @@
 .section-welcome-forge {
+  font-family: 'Gotham Narrow Light', 'Helvetica';
   .l-footer {
     clear: both;
   }
@@ -9,9 +10,10 @@
     }
   }
   .page-title {
-    font-size: 46px;
-    font-weight: 200;
+    font-size: 50px;
     margin-bottom: 30px;
+    font-family: 'Gotham Narrow Light', 'Helvetica';
+    font-weight: 100;
   }
   .welcome-body-wrapper {
     margin-top: 30px;
@@ -21,14 +23,15 @@
       margin: 0 2% 0 0;
       height: 100%;
       font-size: 24px;
-      font-weight: lighter;
-      line-height: initial;
+      line-height: 32px;
       p {
         margin-top: 0.5em;
       }
     }
     .summary-body {
       display: block;
+      font-size: 16px;
+      line-height: 24px;
       width: 66%;
       float: right;
       margin-right: 30px;
@@ -79,14 +82,16 @@
           top: 100px;
         }
         // Style the buttons.
-        .views-field-field-forge-service-link {
-        }
         .views-field-field-forge-service-link a {
+          border: 1px solid #b075ae;
+          padding: 10px;
+          color: #b075ae;
+          font-size: 18px;
           position: absolute;
-          bottom: 35px;
+          bottom: 20px;
         }
         .views-field-field-forge-service-link a:hover {
-          background-color: #c7dc03;
+          border-radius: 8px
         }
       }
     }
