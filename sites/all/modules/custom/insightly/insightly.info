@@ -1,0 +1,7 @@
+name = Insightly
+description = Insightly API module to integrate with the Insightly service
+package = CRM
+core = 7.x
+version = 7.x-0.1
+configure = admin/config/system/insightly
+files[] = insigthly.admin.inc

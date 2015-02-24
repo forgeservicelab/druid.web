@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ */
+function service_contract_menu() {
+  $items['service-contract/add'] = array(
+    'title' => t('Pre-fill service contract'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('service_contract_list_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['opportunities/list'] = array(
+    'title' => t('List of opportunities'),
+    'page callback' => 'opportunities_list',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['organisations/list'] = array(
+    'title' => t('List of organisations'),
+    'page callback' => 'organisations_list',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Pre-fill service contract form.
+ */
+function service_contract_list_form() {
+  $form['opportunities'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title of opportunity'),
+    '#description' => t('Start typing the name of the opportunity if you think it\'s in Insightly.'),
+    '#autocomplete_path' => 'opportunities/list',
+    '#maxlength' => 128,
+    '#size' => 128,
+  );
+
+  $form['submit_1'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pre-fill contract with opportunity details'),
+    '#submit' => array('service_contract_list_form_submit_1'),
+  );
+
+  $form['organisations'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name of organisation'),
+    '#description' => t('Start typing the name of the organisation if you think it\'s in Insightly.'),
+    '#autocomplete_path' => 'organisations/list',
+    '#maxlength' => 128,
+    '#size' => 128,
+  );
+
+  $form['submit_2'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pre-fill contract with organisation details'),
+    '#submit' => array('service_contract_list_form_submit_2'),
+  );
+
+  return $form;
+}
+
+/**
+ * Access the Insightly API and provide a list of all opportunities to the form.
+ */
+function opportunities_list() {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // The method provides the list of all the organisations
+  $opportunities = $i->getOpportunities();
+
+  $opportunities_list = array();
+
+  // Since organisations have a lot of metadata, let's limit the array to names
+  foreach ($opportunities as $opportunity) {
+    $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+  }
+
+  // The list provided as JSON for the autocomplete form
+  drupal_json_output($opportunities_list);
+}
+
+/**
+ * Access the Insightly API and provide a list of all organisations to the form.
+ */
+function organisations_list() {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // The method provides the list of all the organisations
+  $organisations = $i->getorganizations();
+
+  $organisation_list = array();
+
+  // Since organisations have a lot of metadata, let's limit the array to names
+  foreach ($organisations as $organisation) {
+    $organisation_list[$organisation->ORGANISATION_NAME] = $organisation->ORGANISATION_NAME;
+  }
+
+  // The list provided as JSON for the autocomplete form
+  drupal_json_output($organisation_list);
+}
+
+/**
+ * Custom submit for the pre-fill service contract form with an opportunity.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function service_contract_list_form_submit_1($form, &$form_state) {
+  $selected_opportunity = $form_state['input']['opportunities'];
+
+  // Construct the path query with data for filling in the node edit form
+  // This can be extended with as many fields as necessary
+  $query = array('field_name_of_the_project' => $selected_opportunity);
+
+  // Redirect to the node add form of the Service developer contract content type
+  // and add the field values obtained from the to the query
+  drupal_goto('node/add/service-developer-contract', array('query' => $query));
+}
+
+/**
+ * Custom submit for the pre-fill service contract form with an organisation.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function service_contract_list_form_submit_2($form, &$form_state) {
+  $selected_organisation = $form_state['input']['organisations'];
+
+  // Construct the path query with data for filling in the node edit form
+  // This can be extended with as many fields as necessary
+  $query = array('field_company_name' => $selected_organisation);
+
+  // Redirect to the node add form of the Service developer contract content type
+  // and add the field values obtained from the to the query
+  drupal_goto('node/add/service-developer-contract', array('query' => $query));
+}
+
+/**
+ * Pre-fill the node edit form for the Service developer content type
+ *
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function service_contract_form_service_developer_contract_node_form_alter(&$form, &$form_state, $form_id) {
+  // Get the URI and parse the query
+  $parsed_query = drupal_parse_url(request_uri());
+
+  // Pre-fill the field with company name
+  if (isset($parsed_query['query']['field_company_name'])) {
+    $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
+  }
+
+  // Pre-fill opportunity title in project name field
+  if (isset($parsed_query['query']['field_name_of_the_project'])) {
+    $form['field_name_of_the_project']['und'][0]['value']['#default_value'] = $parsed_query['query']['field_name_of_the_project'];
+  }
+}
