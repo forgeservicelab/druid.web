@@ -26,6 +26,21 @@ function service_contract_menu() {
  * Pre-fill service contract form.
  */
 function service_contract_list_form() {
+  $form['opportunities'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Title of opportunity'),
+    '#description' => t('Start typing the name of the opportunity if you think it\'s in Insightly.'),
+    '#autocomplete_path' => 'organisations/list',
+    '#maxlength' => 128,
+    '#size' => 128,
+  );
+
+  $form['submit_1'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pre-fill contract with opportunity details'),
+    '#submit' => array('service_contract_list_form_submit_1'),
+  );
+
   $form['organisations'] = array(
     '#type' => 'textfield',
     '#title' => t('Name of organisation'),
@@ -35,9 +50,10 @@ function service_contract_list_form() {
     '#size' => 128,
   );
 
-  $form['submit'] = array(
+  $form['submit_2'] = array(
     '#type' => 'submit',
-    '#value' => t('Pre-fill contract'),
+    '#value' => t('Pre-fill contract with organisation details'),
+    '#submit' => array('service_contract_list_form_submit_2'),
   );
 
   return $form;
@@ -70,7 +86,25 @@ function organisations_list() {
  * @param $form
  * @param $form_state
  */
-function service_contract_list_form_submit($form, &$form_state) {
+function service_contract_list_form_submit_1($form, &$form_state) {
+  $selected_organisation = $form_state['input']['organisations'];
+
+  // Construct the path query with data for filling in the node edit form
+  // This can be extended with as many fields as necessary
+  $query = array('field_company_name' => $selected_organisation);
+
+  // Redirect to the node add form of the Service developer contract content type
+  // and add the field values obtained from the to the query
+  drupal_goto('node/add/service-developer-contract', array('query' => $query));
+}
+
+/**
+ * Custom submit for the pre-fill service contract form.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function service_contract_list_form_submit_2($form, &$form_state) {
   $selected_organisation = $form_state['input']['organisations'];
 
   // Construct the path query with data for filling in the node edit form
