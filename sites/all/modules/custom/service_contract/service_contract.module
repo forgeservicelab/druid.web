@@ -37,7 +37,7 @@ function service_contract_list_form() {
     '#type' => 'textfield',
     '#title' => t('Title of opportunity'),
     '#description' => t('Start typing the name of the opportunity if you think it\'s in Insightly.'),
-    '#autocomplete_path' => 'organisations/list',
+    '#autocomplete_path' => 'opportunities/list',
     '#maxlength' => 128,
     '#size' => 128,
   );
@@ -64,6 +64,27 @@ function service_contract_list_form() {
   );
 
   return $form;
+}
+
+/**
+ * Access the Insightly API and provide a list of all opportunities to the form.
+ */
+function opportunities_list() {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // The method provides the list of all the organisations
+  $opportunities = $i->getOpportunities();
+
+  $opportunities_list = array();
+
+  // Since organisations have a lot of metadata, let's limit the array to names
+  foreach ($opportunities as $opportunity) {
+    $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+  }
+
+  // The list provided as JSON for the autocomplete form
+  drupal_json_output($opportunities_list);
 }
 
 /**
