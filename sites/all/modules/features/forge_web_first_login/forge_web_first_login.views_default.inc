@@ -22,17 +22,14 @@ function forge_web_first_login_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Services';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
     7 => '7',
     8 => '8',
   );
-  $handler->display->display_options['cache']['type'] = 'time';
-  $handler->display->display_options['cache']['results_lifespan'] = '3600';
-  $handler->display->display_options['cache']['results_lifespan_custom'] = '0';
-  $handler->display->display_options['cache']['output_lifespan'] = '3600';
-  $handler->display->display_options['cache']['output_lifespan_custom'] = '0';
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
@@ -56,6 +53,10 @@ function forge_web_first_login_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '300',
+  );
   /* Field: Content: Service link */
   $handler->display->display_options['fields']['field_forge_service_link']['id'] = 'field_forge_service_link';
   $handler->display->display_options['fields']['field_forge_service_link']['table'] = 'field_data_field_forge_service_link';
@@ -86,6 +87,7 @@ function forge_web_first_login_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block');
   $translatables['first_time'] = array(
     t('Master'),
+    t('Services'),
     t('more'),
     t('Apply'),
     t('Reset'),
