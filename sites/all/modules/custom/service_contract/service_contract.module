@@ -53,13 +53,13 @@ function organizations_list() {
   $i = new DrupalInsightly();
 
   // The method provides the list of all the organizations
-  $orgs = $i->getOrganizations();
+  $organizations = $i->getOrganizations();
 
   $organization_list = array();
 
   // Since organizations have a lot of metadata, let's limit the array to names
-  foreach ($orgs as $org) {
-    $organization_list[$org->ORGANISATION_NAME] = $org->ORGANISATION_NAME;
+  foreach ($organizations as $organization) {
+    $organization_list[$organization->ORGANISATION_NAME] = $organization->ORGANISATION_NAME;
   }
 
   // The list provided as JSON for the autocomplete form
