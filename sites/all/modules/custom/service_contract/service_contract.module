@@ -109,17 +109,17 @@ function organisations_list() {
 }
 
 /**
- * Custom submit for the pre-fill service contract form.
+ * Custom submit for the pre-fill service contract form with an opportunity.
  *
  * @param $form
  * @param $form_state
  */
 function service_contract_list_form_submit_1($form, &$form_state) {
-  $selected_organisation = $form_state['input']['organisations'];
+  $selected_opportunity = $form_state['input']['opportunities'];
 
   // Construct the path query with data for filling in the node edit form
   // This can be extended with as many fields as necessary
-  $query = array('field_company_name' => $selected_organisation);
+  $query = array('field_name_of_the_project' => $selected_opportunity);
 
   // Redirect to the node add form of the Service developer contract content type
   // and add the field values obtained from the to the query
@@ -127,7 +127,7 @@ function service_contract_list_form_submit_1($form, &$form_state) {
 }
 
 /**
- * Custom submit for the pre-fill service contract form.
+ * Custom submit for the pre-fill service contract form with an organisation.
  *
  * @param $form
  * @param $form_state
@@ -155,4 +155,7 @@ function service_contract_form_service_developer_contract_node_form_alter(&$form
 
   // Pre-fill the field with company name
   $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
+
+  // Pre-fill opportunity title in project name field
+  $form['field_name_of_the_project']['und'][0]['value']['#default_value'] = $parsed_query['query']['field_name_of_the_project'];
 }
