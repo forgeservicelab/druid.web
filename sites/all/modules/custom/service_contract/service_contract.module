@@ -12,6 +12,13 @@ function service_contract_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['opportunities/list'] = array(
+    'title' => t('List of opportunities'),
+    'page callback' => 'opportunities_list',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
   $items['organisations/list'] = array(
     'title' => t('List of organisations'),
     'page callback' => 'organisations_list',
