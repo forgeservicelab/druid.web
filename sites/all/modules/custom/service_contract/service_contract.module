@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ *
+ * @todo: fix permissions
+ */
+function service_contract_menu() {
+  $items['service-contract/add'] = array(
+    'title' => t('Pre-fill service contract'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('service_contract_list_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['organizations/list'] = array(
+    'title' => t('List of organizations'),
+    'page callback' => 'organizations_list',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Pre-fill service contract form.
+ */
+function service_contract_list_form() {
+  $form['organizations'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name of organization'),
+    '#description' => t('Start typing the name of the organization if you think it\'s in Insightly.'),
+    '#autocomplete_path' => 'organizations/list',
+    '#maxlength' => 128,
+    '#size' => 128,
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Pre-fill contract'),
+  );
+
+  return $form;
+}
+
+/**
+ * Access the Insightly API and provide a list of all organizations to the form.
+ */
+function organizations_list() {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // The method provides the list of all the organizations
+  $orgs = $i->getOrganizations();
+
+  $organization_list = array();
+
+  // Since organizations have a lot of metadata, let's limit the array to names
+  foreach ($orgs as $org) {
+    $organization_list[$org->ORGANISATION_NAME] = $org->ORGANISATION_NAME;
+  }
+
+  // The list provided as JSON for the autocomplete form
+  drupal_json_output($organization_list);
+}
+
+/**
+ * Custom submit for the pre-fill service contract form.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function service_contract_list_form_submit($form, &$form_state) {
+  $selected_organization = $form_state['input']['organizations'];
+
+  // Construct the path query with data for filling in the node edit form
+  // This can be extended with as many fields as necessary
+  $query = array('field_company_name' => $selected_organization);
+
+  // Redirect to the node add form of the Service developer contract content type
+  // and add the field values obtained from the to the query
+  drupal_goto('node/add/service-developer-contract', array('query' => $query));
+}
