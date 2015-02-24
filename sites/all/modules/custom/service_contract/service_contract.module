@@ -51,7 +51,7 @@ function organisations_list() {
   $i = new DrupalInsightly();
 
   // The method provides the list of all the organisations
-  $organisations = $i->getorganisations();
+  $organisations = $i->getorganizations();
 
   $organisation_list = array();
 
