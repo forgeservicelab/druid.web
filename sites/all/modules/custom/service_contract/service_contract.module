@@ -83,3 +83,16 @@ function service_contract_list_form_submit($form, &$form_state) {
   // and add the field values obtained from the to the query
   drupal_goto('node/add/service-developer-contract', array('query' => $query));
 }
+
+/**
+ * Pre-fill the node edit form for the Service developer content type
+ *
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function service_contract_form_service_developer_contract_node_form_alter(&$form, &$form_state, $form_id) {
+  // Get the URI and parse the query
+  $parsed_query = drupal_parse_url(request_uri());
+
+  // Pre-fill the field with company name
+  $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
+}
