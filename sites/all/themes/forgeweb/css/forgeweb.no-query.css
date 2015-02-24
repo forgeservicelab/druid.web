@@ -4517,6 +4517,7 @@ form.fivestar-widget {
 }
 .section-welcome-forge .welcome-body-wrapper .welcome-summary {
   width: 100%;
+  margin-bottom: 15px;
   float: left;
   margin: 0 2% 0 0;
   height: 100%;
@@ -4535,7 +4536,7 @@ form.fivestar-widget {
   display: block;
   font-size: 16px;
   line-height: 24px;
-  width: 100%;
+  width: auto;
   float: right;
   margin-right: 30px;
   line-height: 150%;
@@ -4557,12 +4558,18 @@ form.fivestar-widget {
 
 .l-after_content .block--views-first-time-block {
   max-width: 1010px;
-  margin: auto;
+  margin: 20px;
+}
+@media (min-width: 70em) {
+  .l-after_content .block--views-first-time-block {
+    margin: auto;
+  }
 }
 .l-after_content .block--views-first-time-block .block__title {
   font-size: 46px;
   margin-bottom: 30px;
   font-weight: 200;
+  test-transform: none;
 }
 .l-after_content .block--views-first-time-block .block__content {
   border-top: 1px solid #c9c9c9;
@@ -4580,6 +4587,7 @@ form.fivestar-widget {
   margin-right: 30px;
   width: 100%;
   margin-top: 30px;
+  position: relative;
 }
 @media (min-width: 44em) {
   .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
@@ -4596,6 +4604,8 @@ form.fivestar-widget {
   overflow: hidden;
   font-size: 16px;
   line-height: 22px;
+  position: absolute;
+  top: 75px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body p {
   margin-top: 0.3em;
@@ -4606,14 +4616,16 @@ form.fivestar-widget {
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
   border: 1px solid #b075ae;
   border-radius: 0;
-  transition: border-radius 0.45s;
+  transition: border-radius 0.6s;
   padding: 10px 12px;
   color: #b075ae;
   font-size: 16px;
+  position: absolute;
+  bottom: 45px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
-  border-radius: 16px;
-  transition: border-radius 0.33s;
+  border-radius: 24px;
+  transition: border-radius 0.5s;
 }
 
 .view-offering-listing .form-overlay,
