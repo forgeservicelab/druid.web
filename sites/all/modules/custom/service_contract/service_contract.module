@@ -69,7 +69,7 @@ function service_contract_list_form() {
 /**
  * Access the Insightly API and provide a list of all opportunities to the form.
  */
-function opportunities_list() {
+function opportunities_list($string) {
   // This instance represents the connection to the API
   $i = new DrupalInsightly();
 
@@ -78,9 +78,12 @@ function opportunities_list() {
 
   $opportunities_list = array();
 
-  // Since organisations have a lot of metadata, let's limit the array to names
+  // Since organisations have a lot of metadata, let's limit the array to names...
   foreach ($opportunities as $opportunity) {
-    $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+    // ... and make sure only those are listed which include the form value
+    if (strstr(strtolower($opportunity->OPPORTUNITY_NAME), strtolower($string))) {
+      $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+    }
   }
 
   // The list provided as JSON for the autocomplete form
@@ -90,7 +93,7 @@ function opportunities_list() {
 /**
  * Access the Insightly API and provide a list of all organisations to the form.
  */
-function organisations_list() {
+function organisations_list($string) {
   // This instance represents the connection to the API
   $i = new DrupalInsightly();
 
@@ -99,9 +102,12 @@ function organisations_list() {
 
   $organisation_list = array();
 
-  // Since organisations have a lot of metadata, let's limit the array to names
+  // Since organisations have a lot of metadata, let's limit the array to names...
   foreach ($organisations as $organisation) {
-    $organisation_list[$organisation->ORGANISATION_NAME] = $organisation->ORGANISATION_NAME;
+    // ... and make sure only those are listed which include the form value
+    if (strstr(strtolower($organisation->ORGANISATION_NAME), strtolower($string))) {
+      $organisation_list[$organisation->ORGANISATION_NAME] = $organisation->ORGANISATION_NAME;
+    }
   }
 
   // The list provided as JSON for the autocomplete form
