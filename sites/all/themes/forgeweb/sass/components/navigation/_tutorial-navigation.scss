@@ -20,7 +20,7 @@
     margin: 0 auto;
     > li {
       @include span-columns(2, 14); // Span 6 out of 14 columns.
-      @include nth-omega(6n);
+      @include nth-omega(7n);
     }
   }
 
