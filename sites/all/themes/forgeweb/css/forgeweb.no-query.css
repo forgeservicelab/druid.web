@@ -3864,6 +3864,11 @@ form.fivestar-widget {
   display: none;
 }
 
+.block--menu-menu-tutorial-menu {
+  overflow: hidden;
+  *zoom: 1;
+  padding-bottom: 40px;
+}
 .block--menu-menu-tutorial-menu .menu {
   margin: 0;
   padding: 0;
