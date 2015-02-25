@@ -3869,9 +3869,10 @@ form.fivestar-widget {
   padding: 0;
   text-align: center;
   white-space: nowrap;
+  position: relative;
 }
 .block--menu-menu-tutorial-menu .menu > li {
-  display: inline-block;
+  display: block;
   list-style-image: none;
   list-style-type: none;
   margin-bottom: 0;
@@ -3881,127 +3882,61 @@ form.fivestar-widget {
 @media (min-width: 44em) {
   .block--menu-menu-tutorial-menu .menu {
     max-width: 59em;
-    height: 212px;
     margin: 0 auto;
   }
   .block--menu-menu-tutorial-menu .menu > li {
-    width: 15.25424%;
+    width: 13.04348%;
     float: left;
-    margin-right: 1.69492%;
-    display: block;
+    margin-right: 1.44928%;
   }
   .block--menu-menu-tutorial-menu .menu > li:nth-child(6n) {
     float: right;
     margin-right: 0;
   }
-  .block--menu-menu-tutorial-menu .menu > li.active-trail {
-    border: 1px solid #fff;
-    position: relative;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.active-trail:before, .block--menu-menu-tutorial-menu .menu > li.active-trail:after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent;
-    border-bottom: 0;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.active-trail:before {
-    border-top-color: #FFFFFF;
-    border-width: 12px;
-    bottom: -12px;
-    left: 50%;
-    margin-left: -12px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.active-trail:after {
-    border-top-color: #f7f7f7;
-    border-width: 10px;
-    bottom: -9px;
-    left: 50%;
-    margin-left: -10px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.next-from-active a {
-    background-position: center -67px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-from-active a {
-    background-position: center -199px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-last-from-active a {
-    background-position: center -331px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-last-last-from-active a {
-    background-position: center -464px;
-  }
 }
 .block--menu-menu-tutorial-menu .menu a {
+  position: relative;
   color: black;
+  font-family: 'Gotham Narrow Light', 'Helvetica';
   display: block;
-  padding: 10px 3px;
-}
-.block--menu-menu-tutorial-menu .menu a.active {
-  background-color: #e2e2e2;
+  padding-top: 33px;
+  display: block;
+  border: 2px solid #c9c9c9;
+  height: 85px;
+  width: 85px;
+  border-radius: 50%;
+  font-size: 15px;
+  text-transform: none;
+  opacity: 0.4;
 }
 @media (min-width: 44em) {
   .block--menu-menu-tutorial-menu .menu a {
-    background-image: url("../images/tutorial_sprite.png");
-    background-repeat: no-repeat;
-    background-size: 112px auto;
-    background-position: center -595px;
-    height: 210px;
-    padding: 40px 0 150px;
-    text-transform: uppercase;
+    text-transform: none;
   }
   .block--menu-menu-tutorial-menu .menu a.active {
-    background-position: center 76px;
-    background-color: #f7f7f7;
-    border: 1px solid #e4e4e4;
-    position: relative;
+    border: 4px solid #b075ae;
+    opacity: initial;
+    height: 85px;
+    width: 85px;
+    border-radius: 50%;
   }
   .block--menu-menu-tutorial-menu .menu a.active:before, .block--menu-menu-tutorial-menu .menu a.active:after {
-    content: "";
+    content: '';
     position: absolute;
-    width: 0;
-    height: 0;
     border-style: solid;
-    border-color: transparent;
-    border-bottom: 0;
-  }
-  .block--menu-menu-tutorial-menu .menu a.active:after {
-    border-top-color: #e4e4e4;
-    border-width: 11px;
-    bottom: -11px;
+    border-width: 15px 15px 0;
+    border-color: #b075ae transparent;
+    display: block;
+    width: 0;
+    z-index: 1;
+    margin-left: -15px;
+    bottom: -15px;
     left: 50%;
-    margin-left: -11px;
   }
 }
 @media (min-width: 70em) {
   .block--menu-menu-tutorial-menu .menu a {
-    font-size: 1.3em;
-  }
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
-  .block--menu-menu-tutorial-menu .menu > li.next-from-active a {
-    background-position: center -520px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-from-active a {
-    background-position: center -655px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-last-from-active a {
-    background-position: center -792px;
-  }
-  .block--menu-menu-tutorial-menu .menu > li.last-last-last-from-active a {
-    background-position: center -929px;
-  }
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min--moz-device-pixel-ratio: 2) and (min-width: 44em), only screen and (-o-min-device-pixel-ratio: 2 / 1) and (min-width: 44em), only screen and (min-device-pixel-ratio: 2) and (min-width: 44em), only screen and (min-resolution: 192dpi) and (min-width: 44em) {
-  .block--menu-menu-tutorial-menu .menu a {
-    background-size: 56px auto;
-    background-position: center -1067px;
-  }
-  .block--menu-menu-tutorial-menu .menu a.active {
-    background-position: center -373px;
+    font-size: 15px;
   }
 }
 
@@ -4517,9 +4452,8 @@ form.fivestar-widget {
 }
 .section-welcome-forge .welcome-body-wrapper .welcome-summary {
   width: 100%;
-  margin-bottom: 15px;
   float: left;
-  margin: 0 2% 0 0;
+  margin: 0 2% 2% 0;
   height: 100%;
   font-size: 20px;
   line-height: 28px;
