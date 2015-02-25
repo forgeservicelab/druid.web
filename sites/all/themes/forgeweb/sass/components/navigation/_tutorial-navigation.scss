@@ -1,30 +1,32 @@
 // Tutorial navigation block
 
-.block--menu-menu-tutorial-menu .menu {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  white-space: nowrap;
-  position: relative;
-  > li {
-    display: /*inline- */block;
-    list-style-image: none;
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-top: 0;
+.block--menu-menu-tutorial-menu {
+  @include clearfix;
+  padding-bottom: 40px;
+  .menu {
+    margin: 0;
+    padding: 0;
     text-align: center;
-  }
-
-  @include at-breakpoint($tab) {
-    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
-    margin: 0 auto;
+    white-space: nowrap;
+    position: relative;
     > li {
-      @include span-columns(2, 14); // Span 6 out of 14 columns.
-      @include nth-omega(7n);
+      display: /*inline- */block;
+      list-style-image: none;
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-align: center;
     }
-  }
 
-  a {
+    @include at-breakpoint($tab) {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      margin: 0 auto;
+      > li {
+        @include span-columns(2, 14); // Span 6 out of 14 columns.
+        @include nth-omega(7n);
+      }
+    }
+    a {
     position: relative;
     color: $text-color;
     font-family: 'Gotham Narrow Light', 'Helvetica';
@@ -69,6 +71,10 @@
     }
   }
 }
+}
+
+
+
 
 // Tutorial retina styles
 
