@@ -26,6 +26,12 @@ function forge_web_first_login_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu-menu-tutorial-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-tutorial-menu',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
         'views-first_time-block' => array(
           'module' => 'views',
           'delta' => 'first_time-block',
