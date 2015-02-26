@@ -184,3 +184,27 @@ function service_contract_form_service_developer_contract_node_form_alter(&$form
     $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
   }
 }
+
+/**
+ * Call the Insightly update function when creating the contract
+ *
+ * Implements hook_node_insert().
+ */
+function service_contract_node_insert($node) {
+  // if service contract AND the Insightly opportunity ID is filled in
+  if (($node->type == 'service_developer_contract') && (isset($node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value']))) {
+    update_insightly($node);
+  }
+}
+
+/**
+ * Call the Insightly update function when updating the contract
+ *
+ * Implements hook_node_update().
+ */
+function service_contract_node_update($node) {
+  // if service contract AND the Insightly opportunity ID is filled in
+  if (($node->type == 'service_developer_contract') && (isset($node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value']))) {
+    update_insightly($node);
+  }
+}
