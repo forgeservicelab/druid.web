@@ -208,3 +208,26 @@ function service_contract_node_update($node) {
     update_insightly($node);
   }
 }
+
+/**
+ * Diff the node content and the API content, update if there is a difference
+ */
+function update_insightly($node) {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // This was filled in in the node form, should be correct
+  $opportunity_id = $node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value'];
+
+  // Get Insightly record: based on ID
+  $opportunity = $i->getOpportunity($opportunity_id);
+
+  // Compare Insightly data with node data
+  if ($node->field_name_of_the_project['und'][0]['value'] != $opportunity->OPPORTUNITY_NAME) {
+    // Update Insightly opportunity with new name
+    $opportunity->OPPORTUNITY_NAME = $node->field_name_of_the_project['und'][0]['value'];
+
+    // Since the opportunity ID is provided this will be a PUT / update
+    $i->addOpportunity($opportunity);
+  }
+}
