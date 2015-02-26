@@ -69,7 +69,7 @@ function service_contract_list_form() {
 /**
  * Access the Insightly API and provide a list of all opportunities to the form.
  */
-function opportunities_list() {
+function opportunities_list($string) {
   // This instance represents the connection to the API
   $i = new DrupalInsightly();
 
@@ -78,9 +78,12 @@ function opportunities_list() {
 
   $opportunities_list = array();
 
-  // Since organisations have a lot of metadata, let's limit the array to names
+  // Since organisations have a lot of metadata, let's limit the array to names...
   foreach ($opportunities as $opportunity) {
-    $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+    // ... and make sure only those are listed which include the form value
+    if (strstr(strtolower($opportunity->OPPORTUNITY_NAME), strtolower($string))) {
+      $opportunities_list[$opportunity->OPPORTUNITY_NAME . ' (Opportunity ID: ' . $opportunity->OPPORTUNITY_ID . ')'] = $opportunity->OPPORTUNITY_NAME . ' (Opportunity ID: ' . $opportunity->OPPORTUNITY_ID . ')';
+    }
   }
 
   // The list provided as JSON for the autocomplete form
@@ -90,7 +93,7 @@ function opportunities_list() {
 /**
  * Access the Insightly API and provide a list of all organisations to the form.
  */
-function organisations_list() {
+function organisations_list($string) {
   // This instance represents the connection to the API
   $i = new DrupalInsightly();
 
@@ -99,9 +102,12 @@ function organisations_list() {
 
   $organisation_list = array();
 
-  // Since organisations have a lot of metadata, let's limit the array to names
+  // Since organisations have a lot of metadata, let's limit the array to names...
   foreach ($organisations as $organisation) {
-    $organisation_list[$organisation->ORGANISATION_NAME] = $organisation->ORGANISATION_NAME;
+    // ... and make sure only those are listed which include the form value
+    if (strstr(strtolower($organisation->ORGANISATION_NAME), strtolower($string))) {
+      $organisation_list[$organisation->ORGANISATION_NAME] = $organisation->ORGANISATION_NAME;
+    }
   }
 
   // The list provided as JSON for the autocomplete form
@@ -115,11 +121,21 @@ function organisations_list() {
  * @param $form_state
  */
 function service_contract_list_form_submit_1($form, &$form_state) {
-  $selected_opportunity = $form_state['input']['opportunities'];
+  // Extract the Opportunity ID from the string
+  preg_match("/\(Opportunity ID: \d+/", $form_state['input']['opportunities'], $opportunity_id);
+
+  // Done in two steps, just in case there are weird characters in the opportunity name
+  preg_match("/\d+/", $opportunity_id[0], $opportunity_id);
+
+  // Removing the Opportunity ID from the string, leaving the name only
+  $opportunity_name = substr($form_state['input']['opportunities'], 0, stripos($form_state['input']['opportunities'], ' ('));
 
   // Construct the path query with data for filling in the node edit form
   // This can be extended with as many fields as necessary
-  $query = array('field_name_of_the_project' => $selected_opportunity);
+  $query = array(
+    'field_insightly_opportunity_id' => $opportunity_id[0],
+    'field_name_of_the_project' => $opportunity_name,
+  );
 
   // Redirect to the node add form of the Service developer contract content type
   // and add the field values obtained from the to the query
@@ -153,13 +169,65 @@ function service_contract_form_service_developer_contract_node_form_alter(&$form
   // Get the URI and parse the query
   $parsed_query = drupal_parse_url(request_uri());
 
+  // Pre-fill opportunity ID
+  if (isset($parsed_query['query']['field_insightly_opportunity_id'])) {
+    $form['field_insightly_opportunity_id'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_insightly_opportunity_id'];
+  }
+
+  // Pre-fill the field with opportunity / project name
+  if (isset($parsed_query['query']['field_name_of_the_project'])) {
+    $form['field_name_of_the_project'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_name_of_the_project'];
+  }
+
   // Pre-fill the field with company name
   if (isset($parsed_query['query']['field_company_name'])) {
     $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
   }
+}
 
-  // Pre-fill opportunity title in project name field
-  if (isset($parsed_query['query']['field_name_of_the_project'])) {
-    $form['field_name_of_the_project']['und'][0]['value']['#default_value'] = $parsed_query['query']['field_name_of_the_project'];
+/**
+ * Call the Insightly update function when creating the contract
+ *
+ * Implements hook_node_insert().
+ */
+function service_contract_node_insert($node) {
+  // if service contract AND the Insightly opportunity ID is filled in
+  if (($node->type == 'service_developer_contract') && (isset($node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value']))) {
+    update_insightly($node);
+  }
+}
+
+/**
+ * Call the Insightly update function when updating the contract
+ *
+ * Implements hook_node_update().
+ */
+function service_contract_node_update($node) {
+  // if service contract AND the Insightly opportunity ID is filled in
+  if (($node->type == 'service_developer_contract') && (isset($node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value']))) {
+    update_insightly($node);
+  }
+}
+
+/**
+ * Diff the node content and the API content, update if there is a difference
+ */
+function update_insightly($node) {
+  // This instance represents the connection to the API
+  $i = new DrupalInsightly();
+
+  // This was filled in in the node form, should be correct
+  $opportunity_id = $node->field_insightly_opportunity_id[LANGUAGE_NONE][0]['value'];
+
+  // Get Insightly record: based on ID
+  $opportunity = $i->getOpportunity($opportunity_id);
+
+  // Compare Insightly data with node data
+  if ($node->field_name_of_the_project[LANGUAGE_NONE][0]['value'] != $opportunity->OPPORTUNITY_NAME) {
+    // Update Insightly opportunity with new name
+    $opportunity->OPPORTUNITY_NAME = $node->field_name_of_the_project[LANGUAGE_NONE][0]['value'];
+
+    // Since the opportunity ID is provided this will be a PUT / update
+    $i->addOpportunity($opportunity);
   }
 }

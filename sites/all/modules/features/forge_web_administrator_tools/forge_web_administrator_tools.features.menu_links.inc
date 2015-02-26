@@ -31,6 +31,27 @@ function forge_web_administrator_tools_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+  // Exported menu link: menu-administrator-tools_add-service-developer-contract:service-contract/add
+  $menu_links['menu-administrator-tools_add-service-developer-contract:service-contract/add'] = array(
+    'menu_name' => 'menu-administrator-tools',
+    'link_path' => 'service-contract/add',
+    'router_path' => 'service-contract/add',
+    'link_title' => 'Add service developer contract',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'alter' => TRUE,
+      'identifier' => 'menu-administrator-tools_add-service-developer-contract:service-contract/add',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+  );
   // Exported menu link: menu-administrator-tools_adminstrate-comments:admin/content/comments
   $menu_links['menu-administrator-tools_adminstrate-comments:admin/content/comments'] = array(
     'menu_name' => 'menu-administrator-tools',
@@ -96,6 +117,7 @@ function forge_web_administrator_tools_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add service developer contract');
   t('Adminstrate comments');
   t('Adminstrate content');
   t('FAQ-management');
