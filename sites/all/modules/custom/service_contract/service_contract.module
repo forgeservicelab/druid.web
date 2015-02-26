@@ -169,13 +169,13 @@ function service_contract_form_service_developer_contract_node_form_alter(&$form
   // Get the URI and parse the query
   $parsed_query = drupal_parse_url(request_uri());
 
+  // Pre-fill opportunity ID
+  if (isset($parsed_query['query']['field_name_of_the_project'])) {
+    $form['field_insightly_opportunity_id']['und'][0]['value']['#default_value'] = $parsed_query['query']['field_insightly_opportunity_id'];
+  }
+
   // Pre-fill the field with company name
   if (isset($parsed_query['query']['field_company_name'])) {
     $form['field_company_information'][LANGUAGE_NONE][0]['field_company_name'][LANGUAGE_NONE][0]['value']['#default_value'] = $parsed_query['query']['field_company_name'];
-  }
-
-  // Pre-fill opportunity title in project name field
-  if (isset($parsed_query['query']['field_name_of_the_project'])) {
-    $form['field_name_of_the_project']['und'][0]['value']['#default_value'] = $parsed_query['query']['field_name_of_the_project'];
   }
 }
