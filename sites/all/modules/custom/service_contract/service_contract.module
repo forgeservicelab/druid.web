@@ -82,7 +82,7 @@ function opportunities_list($string) {
   foreach ($opportunities as $opportunity) {
     // ... and make sure only those are listed which include the form value
     if (strstr(strtolower($opportunity->OPPORTUNITY_NAME), strtolower($string))) {
-      $opportunities_list[$opportunity->OPPORTUNITY_NAME] = $opportunity->OPPORTUNITY_NAME;
+      $opportunities_list[$opportunity->OPPORTUNITY_NAME . ' (Opportunity ID: ' . $opportunity->OPPORTUNITY_ID . ')'] = $opportunity->OPPORTUNITY_NAME . ' (Opportunity ID: ' . $opportunity->OPPORTUNITY_ID . ')';
     }
   }
 
@@ -121,11 +121,21 @@ function organisations_list($string) {
  * @param $form_state
  */
 function service_contract_list_form_submit_1($form, &$form_state) {
-  $selected_opportunity = $form_state['input']['opportunities'];
+  // Extract the Opportunity ID from the string
+  preg_match("/\(Opportunity ID: \d+/", $form_state['input']['opportunities'], $opportunity_id);
+
+  // Done in two steps, just in case there are weird characters in the opportunity name
+  preg_match("/\d+/", $opportunity_id[0], $opportunity_id);
+
+  // Removing the Opportunity ID from the string, leaving the name only
+  $opportunity_name = substr($form_state['input']['opportunities'], 0, stripos($form_state['input']['opportunities'], ' ('));
 
   // Construct the path query with data for filling in the node edit form
   // This can be extended with as many fields as necessary
-  $query = array('field_name_of_the_project' => $selected_opportunity);
+  $query = array(
+    'field_insightly_opportunity_id' => $opportunity_id[0],
+    'field_name_of_the_project' => $opportunity_name,
+  );
 
   // Redirect to the node add form of the Service developer contract content type
   // and add the field values obtained from the to the query
