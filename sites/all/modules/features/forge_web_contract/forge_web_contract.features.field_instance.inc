@@ -2002,6 +2002,51 @@ function forge_web_contract_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-service_developer_contract-field_insightly_opportunity_id'
+  $field_instances['node-service_developer_contract-field_insightly_opportunity_id'] = array(
+    'bundle' => 'service_developer_contract',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'exclude_cv' => 0,
+    'field_name' => 'field_insightly_opportunity_id',
+    'label' => 'Insightly opportunity ID',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'exclude_cv' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'maxlength_js' => 0,
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 32,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-service_developer_contract-field_name_of_the_project'
   $field_instances['node-service_developer_contract-field_name_of_the_project'] = array(
     'bundle' => 'service_developer_contract',
@@ -2415,6 +2460,7 @@ function forge_web_contract_field_default_field_instances() {
   t('Email');
   t('Expiration');
   t('FORGE Partner agreement date');
+  t('Insightly opportunity ID');
   t('International format');
   t('Invoicing address');
   t('Mobile (SMS capable');
