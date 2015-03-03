@@ -248,81 +248,65 @@ function forge_web_ldap_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ldap_forge_settings';
   $strongarm->value = array(
-    '05a2bfdf274edc7740382af4060135d9' => array(
-      2 => 2,
-      5 => 5,
-    ),
-    'cb30d26d9a23cf539bc685f7cee71547' => array(
+    'fa657fc9a515642d26d463cbd19a8f3e' => array(),
+    '2f1cc5940d2ed85d75d2198aecae1d9f' => array(),
+    '2e717846b31740d1baffeae514571549' => array(),
+    '3fa5005723528eab0bdb51a658332702' => array(),
+    'd76bb4dd2cb68bf19e45320a388d7448' => array(),
+    'e485e212e7aa42bccb9619dfea105130' => array(),
+    '2c9c6e172d1f48f99a10d069d299eb37' => array(),
+    '8b165ff12a78888d4433c7ed4b7563ff' => array(),
+    'b5782688c5981e97d6f5f2393eb0bc8d' => array(),
+    '98bb9085da97bf6386eccf2f5f4ddccc' => array(),
+    '1e6d6ae4c5d7c1ec4a77b2d80ec25625' => array(),
+    '63eec88fe7815078198f69bdb200ace4' => array(),
+    '66966582a23fc34d35b70dd1422a878f' => array(),
+    '2a1da5d786dee0a36f53225c0c08eadb' => array(),
+    '99624a72b2c9eca6da44082693fbe67f' => array(
       2 => 2,
       4 => 4,
-      5 => 5,
     ),
-    '3f2672190861680e14f9d013a813d212' => array(
-      2 => 2,
-      5 => 5,
-    ),
-    '66e04068d40f27e8446ca382d7dbce57' => array(),
-    'd0863ed39fad52faffd75cbfabeea762' => array(),
-    '49a5b3e69efe1b93b8c53f2b92813c31' => array(),
-    'd07e3ea7b690daf5b742377958fcb89f' => array(),
-    '3b5d8c9a14e90a6f1d72168f995de4e4' => array(),
-    '218e62fe46d94c06b3d0d241e501f7bb' => array(
-      2 => 2,
-      5 => 5,
-      6 => 6,
-    ),
-    '106effece1edddf9d3e7c58ee8867b67' => array(
-      8 => 8,
-    ),
-    'fa3960a9890af2f96db6a55be90e12ca' => array(
-      8 => 8,
-    ),
-    '4fbdcc8565c5e4ac0ebb3b191c83af69' => array(),
-    '831b8b6642e436f85877fe4ebe6047dd' => array(),
-    'eabc064a2800b9b17039bbaf2137c34e' => array(),
-    '20f07b764f809dd47b24f43209a55409' => array(
+    '7689de42ab5314e405662c2cf6ddecad' => array(),
+    '48d8aff6948c39640a2aa89b847d5ca1' => array(),
+    '6185642d40c2ed4e8fe12aa4fefb7038' => array(
       2 => 2,
       9 => 9,
-      7 => 7,
     ),
-    '0067fe82a64a0d8fb2422f9098839176' => array(
-      2 => 2,
-      5 => 5,
-    ),
-    'b2f9aa47cb1a770c57df9b75b42ca142' => array(
-      2 => 2,
-      6 => 6,
-    ),
-    '375c3378af89c84360b0b97cb194bc0c' => array(),
-    'f554e6cb71a88d1696b07a626dab5a0e' => array(),
-    'a75af22fdc144b6df3c43cad178a4087' => array(),
-    '96b665395c2d4fbf30d16ea9fb9c0278' => array(),
-    'e784e48944f57ba4b1a4e941f90dcff6' => array(),
-    '607b7740a77875a66c4ad247d394cbe8' => array(),
-    'e1976ae8c00a3cf19d5cd0b4d9cb9672' => array(),
-    '81350dc5bf2d3eb8a8adcab8d3c9bc75' => array(),
-    'd1890baf3ea93f0a874d3353b8ff0cdc' => array(),
-    '52ccb99db5fd163f8ee1e1a6be23c4e6' => array(),
-    '4f758cda0934f78565f007e645136f18' => array(),
-    '64971a5bcc42b2d6c9cd8e118a3b20dd' => array(),
-    '268b7788b8f7327bee34e06fe1b1f5e9' => array(
+    '5e4a205beb5942976f3eaacacfd42173' => array(),
+    '0be79ee8818c8c2580c3b260ac58322e' => array(),
+    '04f4c61b361d2964d02a6429bdcd77c4' => array(
       2 => 2,
       4 => 4,
     ),
-    'b1712f5ab126e372ebd496b76c2de764' => array(
+    'd75ccd790b1e24613a17cd378d4fa5a9' => array(
+      2 => 2,
+      4 => 4,
+    ),
+    '0d4c0f321b18c4be001bfc33a8a91f44' => array(
+      2 => 2,
+      4 => 4,
+    ),
+    '76b070e70531bd3c5650288acf49bc2b' => array(
+      2 => 2,
+      4 => 4,
+    ),
+    'd050f99e6035d4c76319eb1ca70e22f2' => array(),
+    '4e7c9413c31abe090089b46bec79daef' => array(
+      2 => 2,
+      7 => 7,
       8 => 8,
     ),
-    '6887fa2cf5f7e2636aaf4a649e272728' => array(),
-    'c6cd5dd383455731a14cd649b6adb4b6' => array(),
-    '93b9c82d09dff5c443e28f34a505e93a' => array(),
-    '1d384e95e9fcd04d1f0ac918848dde87' => array(),
-    '25b91e35069784baa56a4162c9f64501' => array(),
-    'c2ea18988c3ec84defa1317dfccf2e57' => array(),
-    '2611e88beeba2aa9fc50fda051ef16db' => array(),
-    'cc1ea8785b1c003a7886421e71cbe874' => array(),
-    'f2c5e9587f80397f8cb87278ec6e6660' => array(),
-    'ae2cd687da20ba2e25e448bd6e150d03' => array(),
-    '97f66a478c9088537c1e05f427753901' => array(),
+    'b04c56599f37b3ff27bae58934170b48' => array(
+      5 => 5,
+    ),
+    '2fb413ddd11cd6f0bacfa6369aa5960f' => array(
+      2 => 2,
+      5 => 5,
+    ),
+    '6be137fad7d0d6b47e124ab29559690a' => array(
+      2 => 2,
+      6 => 6,
+    ),
   );
   $export['ldap_forge_settings'] = $strongarm;
 
