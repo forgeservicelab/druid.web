@@ -1,6 +1,7 @@
 name = Forge web contract
 core = 7.x
 package = Forge web
+dependencies[] = insightly
 dependencies[] = service_contract
 dependencies[] = text
 features[ctools][] = field_group:field_group:1
