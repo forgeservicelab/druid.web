@@ -1,0 +1,27 @@
+diff --git a/sites/all/modules/contrib/login_destination/login_destination.module b/sites/all/modules/contrib/login_destination/login_destination.module
+index e76c702..d0ecc0a 100644
+--- a/sites/all/modules/contrib/login_destination/login_destination.module
++++ b/sites/all/modules/contrib/login_destination/login_destination.module
+@@ -342,13 +342,15 @@ function login_destination_get_destination($trigger = '', $current = NULL) {
+     }
+   }
+ 
+-  asort($priority);
+-  $k = key($priority);
+-
+-  // find which return rule has the highest priority based on $priority
+-  foreach ($return_rule as $rule) {
+-    if ($k == $rule[0]) {
+-      return $rule;
++  if (isset($return_rule )) {
++    asort($priority);
++    $k = key($priority);
++
++    // find which return rule has the highest priority based on $priority
++    foreach ($return_rule as $rule) {
++      if ($k == $rule[0]) {
++        return $rule;
++      }
+     }
+   }
+ 
