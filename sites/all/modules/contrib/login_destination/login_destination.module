@@ -342,13 +342,15 @@ function login_destination_get_destination($trigger = '', $current = NULL) {
     }
   }
 
-  asort($priority);
-  $k = key($priority);
+  if (isset($return_rule )) {
+    asort($priority);
+    $k = key($priority);
 
-  // find which return rule has the highest priority based on $priority
-  foreach ($return_rule as $rule) {
-    if ($k == $rule[0]) {
-      return $rule;
+    // find which return rule has the highest priority based on $priority
+    foreach ($return_rule as $rule) {
+      if ($k == $rule[0]) {
+        return $rule;
+      }
     }
   }
 
