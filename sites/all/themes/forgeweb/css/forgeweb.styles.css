@@ -3898,50 +3898,12 @@ form.fivestar-widget {
     float: right;
     margin-right: 0;
   }
-}
-.block--menu-menu-tutorial-menu .menu a {
-  position: relative;
-  color: black;
-  font-family: 'Gotham Narrow Light', 'Helvetica';
-  display: block;
-  padding-top: 33px;
-  display: block;
-  border: 2px solid #c9c9c9;
-  height: 85px;
-  width: 85px;
-  border-radius: 50%;
-  font-size: 15px;
-  text-transform: none;
-  opacity: 0.4;
-}
-@media (min-width: 44em) {
   .block--menu-menu-tutorial-menu .menu a {
-    text-transform: none;
+    color: black;
   }
-  .block--menu-menu-tutorial-menu .menu a.active {
-    border: 4px solid #b075ae;
-    opacity: initial;
-    height: 85px;
-    width: 85px;
-    border-radius: 50%;
-  }
-  .block--menu-menu-tutorial-menu .menu a.active:before, .block--menu-menu-tutorial-menu .menu a.active:after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 15px 15px 0;
-    border-color: #b075ae transparent;
-    display: block;
-    width: 0;
-    z-index: 1;
-    margin-left: -15px;
-    bottom: -15px;
-    left: 50%;
-  }
-}
-@media (min-width: 70em) {
-  .block--menu-menu-tutorial-menu .menu a {
-    font-size: 15px;
+  .block--menu-menu-tutorial-menu .menu a:hover, .block--menu-menu-tutorial-menu .menu a.active {
+    color: #b7006a;
+    border-bottom: 3px solid #b7006a;
   }
 }
 
