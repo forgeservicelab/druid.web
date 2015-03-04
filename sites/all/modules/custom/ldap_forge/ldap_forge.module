@@ -127,7 +127,7 @@ function ldap_forge_cas_user_presave(&$edit, $account) {
  * LDAP binding for people.
  */
 function ldap_forge_people_binding() {
-  return variable_get('ldap_forge_people_binding', 'ou=people,dc=forgeservicelab,dc=fi');
+  return variable_get('ldap_forge_people_binding', 'ou=accounts,dc=forgeservicelab,dc=fi');
 }
 
 /**
@@ -142,7 +142,7 @@ function ldap_forge_group_settings($group_dn_hash) {
  * LDAP binding for groups.
  */
 function ldap_forge_group_binding() {
-  return variable_get('ldap_forge_group_binding', 'ou=groups,dc=forgeservicelab,dc=fi');
+  return variable_get('ldap_forge_group_binding', 'ou=roles,dc=forgeservicelab,dc=fi');
 }
 
 /**
