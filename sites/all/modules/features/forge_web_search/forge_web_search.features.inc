@@ -81,7 +81,7 @@ function forge_web_search_default_search_api_index() {
         "field_organizer" : { "type" : "integer", "entity_type" : "node" },
         "field_pricing_description:value" : { "type" : "text" },
         "field_pricing_information" : { "type" : "text" },
-        "field_responsible_organization" : { "type" : "text" },
+        "field_responsible_organization" : { "type" : "list\\u003Ctext\\u003E" },
         "field_tweet_body" : { "type" : "text" },
         "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
@@ -174,7 +174,7 @@ function forge_web_search_default_search_api_server() {
           },
           "field_responsible_organization" : {
             "table" : "search_api_db_default_node_index_text",
-            "type" : "text",
+            "type" : "list\\u003Ctext\\u003E",
             "boost" : "1.0"
           },
           "field_cancellation_refund_policy" : {
