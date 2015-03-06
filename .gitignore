@@ -16,3 +16,6 @@ xcache-admin
 .idea/
 *.sublime-workspace
 *.sublime-project
+
+# boost cache folder
+cache/
