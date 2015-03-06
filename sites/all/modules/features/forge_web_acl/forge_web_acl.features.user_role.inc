@@ -33,7 +33,7 @@ function forge_web_acl_user_default_roles() {
     'name' => 'Partner',
     'weight' => 4,
   );
-  
+
   // Exported role: developers.
   $roles['developers'] = array(
     'name' => 'developers',
