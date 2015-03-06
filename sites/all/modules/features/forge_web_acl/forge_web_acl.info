@@ -284,7 +284,6 @@ features[user_role][] = Content admin
 features[user_role][] = Forge member
 features[user_role][] = JulkICT
 features[user_role][] = Partner
-features[user_role][] = Service developer
 features[user_role][] = developers
 features_exclude[dependencies][edit] = edit
 features_exclude[dependencies][auto_nodetitle] = auto_nodetitle

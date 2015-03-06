@@ -17,7 +17,6 @@ function forge_web_bulletin_board_user_default_permissions() {
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );
@@ -36,7 +35,6 @@ function forge_web_bulletin_board_user_default_permissions() {
       'Content admin' => 'Content admin',
       'Forge member' => 'Forge member',
       'Partner' => 'Partner',
-      'Service developer' => 'Service developer',
     ),
     'module' => 'node',
   );

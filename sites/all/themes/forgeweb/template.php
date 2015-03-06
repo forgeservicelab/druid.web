@@ -148,7 +148,7 @@ function forgeweb_preprocess_menu_link(&$vars) {
   global $user;
   $change_link = false;
   foreach($user->roles as $role) {
-    if($role == "Service developer") {
+    if($role == "developers") {
       $change_link = true;
     }
   }
