@@ -36,6 +36,12 @@ function forge_web_first_login_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Forge cloud service platform is an R & D & I environment. Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. ';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   /* Field: Content: Service icon */
   $handler->display->display_options['fields']['field_forge_service_image']['id'] = 'field_forge_service_image';
   $handler->display->display_options['fields']['field_forge_service_image']['table'] = 'field_data_field_forge_service_image';
@@ -94,6 +100,7 @@ function forge_web_first_login_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('Forge cloud service platform is an R & D & I environment. Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem. Proin interdum maecenas massa turpis sagittis in, interdum non lobortis vitae massa. '),
     t('Block'),
   );
   $export['first_time'] = $view;
