@@ -35,12 +35,6 @@ function forge_web_tutorial_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-10',
         ),
-        'views-tutorial_highlighted-block' => array(
-          'module' => 'views',
-          'delta' => 'tutorial_highlighted-block',
-          'region' => 'hero',
-          'weight' => '-10',
-        ),
         'views-tutorial_sidebar_block-block' => array(
           'module' => 'views',
           'delta' => 'tutorial_sidebar_block-block',
