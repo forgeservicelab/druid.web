@@ -22,25 +22,11 @@
   .field--name-body p {
     margin: 0 1em 1em;
     line-height: 24px;
+    font-size: 16px;
     @include at-breakpoint($desk) {
       margin: 0 0 1em 0;
     }
   }
-  .welcome-body-wrapper {
-    }
-    .summary-body {
-      display: block;
-      font-size: 16px;
-      line-height: 24px;
-      width: auto;
-      @include at-breakpoint($desk) {
-        width: 66%;
-        margin: 0;
-      }
-      float: right;
-      margin-right: 30px;
-      line-height: 150%
-    }
 }
 .l-after_content {
   .block--views-first-time-block {
