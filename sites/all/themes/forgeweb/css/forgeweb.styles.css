@@ -4552,7 +4552,6 @@ form.fivestar-widget {
   margin-bottom: 30px;
   font-family: 'Gotham Narrow Light', 'Helvetica';
   font-weight: 100;
-  width: 100%;
   margin: 0 1em 1em;
 }
 @media (min-width: 70em) {
@@ -4589,6 +4588,7 @@ form.fivestar-widget {
 
 .l-after_content .block--views-first-time-block {
   max-width: 1010px;
+  margin: 20px;
 }
 @media (min-width: 70em) {
   .l-after_content .block--views-first-time-block {
@@ -4596,17 +4596,18 @@ form.fivestar-widget {
   }
 }
 .l-after_content .block--views-first-time-block .block__title {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 200;
   text-transform: none;
-  margin-bottom: 0;
-  margin-top: 0;
-  width: 100%;
 }
 @media (min-width: 70em) {
   .l-after_content .block--views-first-time-block .block__title {
+    width: 100%;
+    font-size: 32px;
     width: 33%;
     float: left;
+    margin-bottom: 0;
+    margin-top: 0;
   }
 }
 .l-after_content .block--views-first-time-block .view-header {
@@ -4667,7 +4668,7 @@ form.fivestar-widget {
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
   border: 1px solid #b075ae;
-  border-radius: 0;
+  border-radius: 3px;
   transition: border-radius 0.6s;
   padding: 10px 12px;
   color: #b075ae;
