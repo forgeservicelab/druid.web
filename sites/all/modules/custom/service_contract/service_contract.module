@@ -26,12 +26,11 @@ function service_contract_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  // @todo: fix access arguments
   $items['extend_membership/%/%'] = array(
     'title' => t('Extend your membership'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('service_contract_extend_membership_form'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('extend membership'),
     'type' => MENU_NORMAL_ITEM,
   );
 
@@ -313,4 +312,16 @@ function membership_expiry_email() {
  */
 function membership_confirmed_successfully() {
   //drupal_mail();
+}
+
+/**
+ * Permission for changing membership extension
+ */
+function service_contract_permission() {
+  return array(
+    'extend membership' => array(
+      'title' => t('Extend membership'),
+      'description' => t('Allow user to submit a membership extension form.'),
+    ),
+  );
 }
