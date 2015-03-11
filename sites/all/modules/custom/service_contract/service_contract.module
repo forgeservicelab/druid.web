@@ -26,6 +26,15 @@ function service_contract_menu() {
     'type' => MENU_CALLBACK,
   );
 
+  // @todo: fix access arguments
+  $items['extend_membership/%/%'] = array(
+    'title' => t('Extend your membership'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('service_contract_extend_membership_form'),
+    'access arguments' => array('access content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
   return $items;
 }
 
@@ -230,4 +239,78 @@ function update_insightly($node) {
     // Since the opportunity ID is provided this will be a PUT / update
     $i->addOpportunity($opportunity);
   }
+}
+
+/**
+ * Extend membership form
+ */
+function service_contract_extend_membership_form() {
+  // @todo: remove if unnecessary
+  $path_args = explode('/', $_GET['q']);
+
+  // @todo: Check the hash, report error if any
+
+  // @todo: Check if membership was confirmed already
+
+  $form['membership_extension'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Yes, I want to extend my membership'),
+    '#description' => t('Tick the checkbox and click submit if you want to extend your membership'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Extend membership'),
+    '#submit' => array('service_contract_membership_submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Custom submit handler for the membership extension form
+ */
+function service_contract_membership_submit($form, &$form_state) {
+  if ($form_state['input']['membership_extension']) {
+    // The checkbox is ticked, take action
+    // @todo: remove if unnecessary
+    $path_args = explode('/', $_GET['q']);
+
+    // @todo: If correct hash/path then confirm membership through API and/or DB table
+
+    // @todo: If successfully confirmed then show message
+    drupal_set_message(t('Your membership was successfully confirmed'), 'status');
+
+    // Redirect to either front page or somewhere, since the submit form is irrelevant
+    drupal_goto('<front>');
+  } else {
+    // Checkbox is left unchecked, warn the user and do nothing
+    drupal_set_message(t('You need to check the box and then click the submit button. Try again!'), 'warning');
+  }
+}
+
+// @todo: function that returns a correct path with hashes, also used for checking
+/**
+ * Generate path for membership confirmation form
+ */
+// @todo: specify and add arguments
+function membership_confirmation_path() {
+  // @todo: calculate the hash for the given function arguments
+  return hash('sha256', 'the salt' . 'and this to-be-hashed');
+}
+
+// @todo: function that sends out an email with hashed path
+/**
+ * Send out membership extension email with calculated hash
+ */
+function membership_expiry_email() {
+  //drupal_mail();
+}
+
+// @todo: function that sends out an email after confirmation
+/**
+ * Send out confirmation if the membership was successfully updated
+ */
+function membership_confirmed_successfully() {
+  //drupal_mail();
 }
