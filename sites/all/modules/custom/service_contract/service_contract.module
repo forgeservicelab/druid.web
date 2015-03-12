@@ -26,7 +26,7 @@ function service_contract_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  $items['extend_membership/%/%'] = array(
+  $items['extend_membership'] = array(
     'title' => t('Extend your membership'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('service_contract_extend_membership_form'),
