@@ -341,7 +341,6 @@ function service_contract_mail($key, &$message, $params) {
   $data['user'] = $params['account'];
   $options['language'] = $message['language'];
   $lang_code = $message['language']->language;
-  user_mail_tokens($variables, $data, $options);
 
   switch($key) {
     case 'membership_ask_user':
