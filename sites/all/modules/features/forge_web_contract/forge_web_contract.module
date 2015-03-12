@@ -339,4 +339,3 @@ function forge_web_contract_library_exist() {
     return FALSE;
   }
 }
-

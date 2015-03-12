@@ -26,6 +26,14 @@ function service_contract_menu() {
     'type' => MENU_CALLBACK,
   );
 
+  $items['extend_membership'] = array(
+    'title' => t('Extend your membership'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('service_contract_extend_membership_form'),
+    'access arguments' => array('extend membership'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
   return $items;
 }
 
@@ -229,5 +237,123 @@ function update_insightly($node) {
 
     // Since the opportunity ID is provided this will be a PUT / update
     $i->addOpportunity($opportunity);
+  }
+}
+
+/**
+ * Extend membership form
+ */
+function service_contract_extend_membership_form() {
+  // @todo: remove if unnecessary
+  $path_args = explode('/', $_GET['q']);
+
+  // @todo: Check the hash, report error if any
+
+  // @todo: Check if membership was confirmed already
+
+  $form['membership_extension'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Yes, I want to extend my membership'),
+    '#description' => t('Tick the checkbox and click submit if you want to extend your membership'),
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Extend membership'),
+    '#submit' => array('service_contract_membership_submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Custom submit handler for the membership extension form
+ */
+function service_contract_membership_submit($form, &$form_state) {
+  if ($form_state['input']['membership_extension']) {
+    global $user;
+    // The checkbox is ticked, take action
+    // @todo: remove if unnecessary
+    $path_args = explode('/', $_GET['q']);
+
+    // @todo: If correct hash/path then confirm membership through API and/or DB table
+
+    // Send out an email with confirmation message
+    $account_to_notify = user_load($user->uid);
+    membership_confirmed_successfully($account_to_notify);
+
+    // @todo: If successfully confirmed then show message
+    drupal_set_message(t('Your membership was successfully confirmed'), 'status');
+
+    // Redirect to either front page or somewhere, since the submit form is irrelevant
+    drupal_goto('<front>');
+  } else {
+    // Checkbox is left unchecked, warn the user and do nothing
+    drupal_set_message(t('You need to check the box and then click the submit button. Try again!'), 'warning');
+  }
+}
+
+/**
+ * Generate path for membership confirmation form
+ */
+// @todo: specify and add arguments
+function membership_confirmation_path() {
+  // @todo: calculate the hash for the given function arguments
+  return hash('sha256', 'the salt' . 'and this to-be-hashed');
+}
+
+/**
+ * Send out membership extension email with calculated hash
+ */
+function membership_expiry_email($account) {
+  $params['account'] = $account;
+  drupal_mail('service_contract', 'membership_ask_user', $account->mail, user_preferred_language($account), $params);
+}
+
+/**
+ * Permission for changing membership extension
+ */
+function service_contract_permission() {
+  return array(
+    'extend membership' => array(
+      'title' => t('Extend membership'),
+      'description' => t('Allow user to submit a membership extension form.'),
+    ),
+  );
+}
+
+/**
+ * Send out confirmation if the membership was successfully updated
+ */
+function membership_confirmed_successfully($account) {
+  $params['account'] = $account;
+  drupal_mail('service_contract', 'membership_extended', $account->mail, user_preferred_language($account), $params);
+}
+
+/**
+ * Implements hook_mail()
+ *
+ * Configures the email sent when membership is expiring or is confirmed.
+ */
+function service_contract_mail($key, &$message, $params) {
+  global $base_url;
+
+  $data['user'] = $params['account'];
+  $options['language'] = $message['language'];
+  $lang_code = $message['language']->language;
+  $variables = array(
+    '!username' => $params['account']->name,
+    '!extend_url' => url($base_url . '/' . $lang_code . '/extend_membership'),
+  );
+
+  switch($key) {
+    case 'membership_ask_user':
+      $message['subject'] = t('Extend your FORGE membership now', $variables, array('langcode' => $lang_code));
+      $message['body'][] = t("Dear !username \n\n Your membership is expiring in two months. You can renew it now at: !extend_url \n\n The FORGE Team\n\n", $variables, array('langcode' => $lang_code));
+      break;
+    case 'membership_extended':
+      $message['subject'] = t('Thank you for extending your FORGE membership', $variables, array('langcode' => $lang_code));
+      $message['body'][] = t("Dear !username \n\n Your membership was successfully extended, thank you for doing business with us! \n\n The FORGE Team\n\n", $variables, array('langcode' => $lang_code));
+      break;
   }
 }
