@@ -277,6 +277,9 @@ function service_contract_membership_submit($form, &$form_state) {
 
     // @todo: If correct hash/path then confirm membership through API and/or DB table
 
+    // Send out an email with confirmation message
+    membership_confirmed_successfully();
+
     // @todo: If successfully confirmed then show message
     drupal_set_message(t('Your membership was successfully confirmed'), 'status');
 
@@ -306,14 +309,6 @@ function membership_expiry_email() {
   //drupal_mail();
 }
 
-// @todo: function that sends out an email after confirmation
-/**
- * Send out confirmation if the membership was successfully updated
- */
-function membership_confirmed_successfully() {
-  //drupal_mail();
-}
-
 /**
  * Permission for changing membership extension
  */
@@ -324,4 +319,32 @@ function service_contract_permission() {
       'description' => t('Allow user to submit a membership extension form.'),
     ),
   );
+}
+
+// @todo: function that sends out an email after confirmation
+/**
+ * Send out confirmation if the membership was successfully updated
+ */
+function membership_confirmed_successfully() {
+  global $user;
+  //drupal_mail('service_contract_success', 'notice', $user->mail, user_preferred_language($account), $params);
+  drupal_mail('service_contract', 'membership_extended', $user->mail, $user->language);
+}
+
+/**
+ * Implements hook_mail()
+ *
+ * Configures the email sent when membership is successfully confirmed.
+ */
+function service_contract_mail($key, &$message, $params) {
+  switch($key) {
+    case 'membership_ask_user':
+      break;
+    case 'membership_extended':
+      $lang_code = $message['language']->language;
+      $message['subject'] = t('Extend your FORGE membership now');
+      //$message['body'][] = t("Dear !username\n\nYour membership will expire in 2 months, please extend it now.", $variables, array('langcode' => $lang_code));
+      $message['body'][] = t("the new email rules...");
+      break;
+  }
 }
