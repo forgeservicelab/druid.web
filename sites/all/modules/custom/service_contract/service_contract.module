@@ -271,6 +271,7 @@ function service_contract_extend_membership_form() {
  */
 function service_contract_membership_submit($form, &$form_state) {
   if ($form_state['input']['membership_extension']) {
+    global $user;
     // The checkbox is ticked, take action
     // @todo: remove if unnecessary
     $path_args = explode('/', $_GET['q']);
@@ -278,7 +279,8 @@ function service_contract_membership_submit($form, &$form_state) {
     // @todo: If correct hash/path then confirm membership through API and/or DB table
 
     // Send out an email with confirmation message
-    membership_confirmed_successfully();
+    $account_to_notify = user_load($user->uid);
+    membership_confirmed_successfully($account_to_notify);
 
     // @todo: If successfully confirmed then show message
     drupal_set_message(t('Your membership was successfully confirmed'), 'status');
@@ -325,26 +327,28 @@ function service_contract_permission() {
 /**
  * Send out confirmation if the membership was successfully updated
  */
-function membership_confirmed_successfully() {
-  global $user;
-  //drupal_mail('service_contract_success', 'notice', $user->mail, user_preferred_language($account), $params);
-  drupal_mail('service_contract', 'membership_extended', $user->mail, $user->language);
+function membership_confirmed_successfully($account) {
+  $params['account'] = $account;
+  drupal_mail('service_contract', 'membership_extended', $account->mail, user_preferred_language($account), $params);
 }
 
 /**
  * Implements hook_mail()
  *
- * Configures the email sent when membership is successfully confirmed.
+ * Configures the email sent when membership is expiring or is confirmed.
  */
 function service_contract_mail($key, &$message, $params) {
+  $data['user'] = $params['account'];
+  $options['language'] = $message['language'];
+  $lang_code = $message['language']->language;
+  user_mail_tokens($variables, $data, $options);
+
   switch($key) {
     case 'membership_ask_user':
       break;
     case 'membership_extended':
-      $lang_code = $message['language']->language;
-      $message['subject'] = t('Extend your FORGE membership now');
-      //$message['body'][] = t("Dear !username\n\nYour membership will expire in 2 months, please extend it now.", $variables, array('langcode' => $lang_code));
-      $message['body'][] = t("the new email rules...");
+      $message['subject'] = t('Extend your FORGE membership now', $variables, array('langcode' => $lang_code));
+      $message['body'][] = t("Dear !username \n\n Your membership was successfully extended, thank you for doing business with us! \n\n The FORGE Team\n\n", $variables, array('langcode' => $lang_code));
       break;
   }
 }
