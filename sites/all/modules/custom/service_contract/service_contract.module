@@ -293,7 +293,6 @@ function service_contract_membership_submit($form, &$form_state) {
   }
 }
 
-// @todo: function that returns a correct path with hashes, also used for checking
 /**
  * Generate path for membership confirmation form
  */
