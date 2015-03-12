@@ -303,12 +303,12 @@ function membership_confirmation_path() {
   return hash('sha256', 'the salt' . 'and this to-be-hashed');
 }
 
-// @todo: function that sends out an email with hashed path
 /**
  * Send out membership extension email with calculated hash
  */
-function membership_expiry_email() {
-  //drupal_mail();
+function membership_expiry_email($account) {
+  $params['account'] = $account;
+  drupal_mail('service_contract', 'membership_ask_user', $account->mail, user_preferred_language($account), $params);
 }
 
 /**
@@ -323,7 +323,6 @@ function service_contract_permission() {
   );
 }
 
-// @todo: function that sends out an email after confirmation
 /**
  * Send out confirmation if the membership was successfully updated
  */
@@ -338,16 +337,23 @@ function membership_confirmed_successfully($account) {
  * Configures the email sent when membership is expiring or is confirmed.
  */
 function service_contract_mail($key, &$message, $params) {
+  global $base_url;
+
   $data['user'] = $params['account'];
   $options['language'] = $message['language'];
   $lang_code = $message['language']->language;
-  $variables = array('!username' => $params['account']->name);
+  $variables = array(
+    '!username' => $params['account']->name,
+    '!extend_url' => url($base_url . '/' . $lang_code . '/extend_membership'),
+  );
 
   switch($key) {
     case 'membership_ask_user':
+      $message['subject'] = t('Extend your FORGE membership now', $variables, array('langcode' => $lang_code));
+      $message['body'][] = t("Dear !username \n\n Your membership is expiring in two months. You can renew it now at: !extend_url \n\n The FORGE Team\n\n", $variables, array('langcode' => $lang_code));
       break;
     case 'membership_extended':
-      $message['subject'] = t('Extend your FORGE membership now', $variables, array('langcode' => $lang_code));
+      $message['subject'] = t('Thank you for extending your FORGE membership', $variables, array('langcode' => $lang_code));
       $message['body'][] = t("Dear !username \n\n Your membership was successfully extended, thank you for doing business with us! \n\n The FORGE Team\n\n", $variables, array('langcode' => $lang_code));
       break;
   }
