@@ -192,6 +192,9 @@ function forge_web_tutorial_strongarm() {
         'path' => array(
           'weight' => '8',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(),
     ),
