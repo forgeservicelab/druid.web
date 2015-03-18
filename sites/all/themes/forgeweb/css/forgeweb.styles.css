@@ -4575,6 +4575,7 @@ form.fivestar-widget {
 .l-after_content .block--views-first-time-block {
   max-width: 1010px;
   margin: 20px;
+  padding-bottom: 50px;
 }
 @media (min-width: 70em) {
   .l-after_content .block--views-first-time-block {
@@ -4619,38 +4620,30 @@ form.fivestar-widget {
   clear: both;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
-  display: inline-block;
-  vertical-align: top;
-  height: 300px;
-  background-color: #ffffff;
-  margin-right: 30px;
-  width: 100%;
-  margin-top: 30px;
-  position: relative;
-}
-@media (min-width: 44em) {
-  .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
-    width: 45%;
-  }
+  overflow: hidden;
+  *zoom: 1;
+  padding: 10px;
+  border-top: 1px solid #d5d5d5;
 }
 @media (min-width: 70em) {
   .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
-    width: 300px;
+    margin-left: 33%;
   }
 }
-.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
-  font-weight: 200;
-  overflow: hidden;
-  font-size: 16px;
-  line-height: 22px;
-  position: absolute;
-  top: 75px;
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
+  width: 33%;
+  display: inline-block;
+  vertical-align: middle;
 }
-.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body p {
-  margin-top: 0.3em;
+.l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
+  display: inline-block;
+  vertical-align: middle;
+  width: 32%;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link {
-  padding-top: 8px;
+  width: 33%;
+  display: inline-block;
+  vertical-align: middle;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a {
   border: 1px solid #b075ae;
@@ -4659,8 +4652,6 @@ form.fivestar-widget {
   padding: 10px 12px;
   color: #b075ae;
   font-size: 16px;
-  position: absolute;
-  bottom: 130px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link a:hover {
   border-radius: 24px;
