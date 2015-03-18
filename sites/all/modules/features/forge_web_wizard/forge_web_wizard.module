@@ -147,6 +147,8 @@ function forge_web_wizard_block_save($delta = '', $edit = array()) {
 }
 
 function forge_web_wizard_block_output() {
+  global $language;
+
   $block = array();
   if(!$_GET['role']) {
     return;
@@ -184,8 +186,17 @@ function forge_web_wizard_block_output() {
       'role' => $_GET['role']
     ) 
   );
-  
-  $continue_link = '<p>'.l(t('Fill in the application'), 'wizard/registration', $attr).'</p>';
+
+  // The contact form has a Finnish version
+  ($language->language == 'fi') ? ($contact_page = 'ota-yhteytta') : ($contact_page = 'contact-us');
+
+/* Go to the Contact us page in the current language.
+  For the moment it's the basic contact form only, no selected role is used to pre-fill it.
+  @see: template.php: forgeweb_preprocess_node(&$vars); */
+
+  //$continue_link = '<p>'.l(t('Fill in the ...'), 'wizard/registration', $attr).'</p>';
+  $continue_link = '<p>'.l(t('Contact us'), $contact_page, array('attributes' => array('class' => 'button'))).'</p>';
+
   // Capture WYSIWYG text from the variable
   $text = '<p>'.variable_get('forge_web_wizard_template_text_body', '').'</p>'.$files.$continue_link;
 
