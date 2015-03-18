@@ -746,8 +746,6 @@ function forge_web_wizard_menu_alter(&$items) {
  *   String
  */
 function _forge_web_wizard_embed_filter_replace($match) {
-  global $language;
-
   if (!empty($match[1])) {
     $path = $match[1];
     $normal_path = drupal_get_normal_path($path);
@@ -762,16 +760,7 @@ function _forge_web_wizard_embed_filter_replace($match) {
       $body = field_get_items('node', $node, 'body');
     }
     $summary = $body[0]['summary'];
-/*
-    @todo: this link can provide the role info argument for possibly filling in the new contact form. If not used then remove eventually.
     $summary .= '<p>'.l(t('Continue >'), 'node/'.$node->nid, array('query' => array('fw' => '1'), 'attributes' => array('class' => 'learn-more-link button'))).'</p>';
- */
-    // The wizard is LANGUAGE_NONE, but the path of the Contact us page depends on the current language
-    ($language->language == 'fi') ? ($contact_page = 'ota-yhteytta') : ($contact_page = 'contact-us');
-
-    // Go to the Contact us page in current language.
-    // For the moment it's the basic contact form only, no selected role is used to fill it in.
-    $summary .= '<p>'.l(t('Continue >'), $contact_page, array('attributes' => array('class' => 'button'))).'</p>';
     return $summary;
   }
   else {
