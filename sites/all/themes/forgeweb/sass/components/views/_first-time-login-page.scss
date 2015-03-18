@@ -69,7 +69,7 @@
         margin-bottom: 25px;
       }
       .view-content {
-        margin-top: 75px;
+        padding-top: 35px;
         clear: both;
       }
       .views-row {
@@ -80,18 +80,21 @@
           margin-left: 33%
         }
         .views-field-field-forge-service-image {
-          width: 33%;
           display: inline-block;
           vertical-align: middle;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            width: 33%;
+            padding: 10px 0;
+          }
         }
         .views-field-body {
           display: inline-block;
           vertical-align: middle;
-          width: 32%;
+          width: 45%;
         }
         // Style the buttons.
         .views-field-field-forge-service-link {
-          width: 33%;
           display: inline-block;
           vertical-align: middle;
         }

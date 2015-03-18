@@ -4616,7 +4616,7 @@ form.fivestar-widget {
   margin-bottom: 25px;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .view-content {
-  margin-top: 75px;
+  padding-top: 35px;
   clear: both;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row {
@@ -4631,17 +4631,22 @@ form.fivestar-widget {
   }
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
-  width: 33%;
   display: inline-block;
   vertical-align: middle;
+  width: 100%;
+}
+@media (min-width: 44em) {
+  .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-image {
+    width: 33%;
+    padding: 10px 0;
+  }
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-body {
   display: inline-block;
   vertical-align: middle;
-  width: 32%;
+  width: 45%;
 }
 .l-after_content .block--views-first-time-block .view-id-first_time .views-row .views-field-field-forge-service-link {
-  width: 33%;
   display: inline-block;
   vertical-align: middle;
 }
