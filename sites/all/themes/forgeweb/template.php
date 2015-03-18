@@ -25,12 +25,22 @@
  }
  
 function forgeweb_preprocess_node(&$vars) {
-  
+  global $language;
+
   if(!empty($_GET['fw'])) {
     // need store value to session
     $_SESSION['forge_web_wizard_role'] = $_GET['role'];
     $vars['back_to_wizard'] = l(t('Back to role selection'), 'wizard/join-forge-service-lab', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
-    $vars['fill_in_application'] = l(t('Fill in the application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
+
+    // This option is removed, but might be necessary in the future, so it is left here for a while as commented out
+    //$vars['fill_in_application'] = l(t('Fill in the application'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
+
+    // The contact form has a Finnish version
+    ($language->language == 'fi') ? ($contact_page = 'ota-yhteytta') : ($contact_page = 'contact-us');
+
+    // Go to the Contact us page in the current language.
+    // For the moment it's the basic contact form only, no selected role is used to pre-fill it.
+    $vars['fill_in_application'] = l(t('Contact us'), $contact_page, array('attributes' => array('class' => 'button'))); //l(t('Contact us'), 'wizard/registration', array('query' => array('role' => $_GET['role']), 'attributes' => array('class' => 'learn-more-link button')));
   }
   
   if($vars['type'] == 'tweet') {
