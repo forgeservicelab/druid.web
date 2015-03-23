@@ -149,10 +149,10 @@ function forge_web_contract_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description of Developed Service',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_name_of_the_project',
-      1 => 'field_concise_description_of_the',
+      0 => 'field_concise_description_of_the',
+      1 => 'field_name_of_the_project',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -170,6 +170,33 @@ function forge_web_contract_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_insightly|node|service_developer_contract|form';
+  $field_group->group_name = 'group_insightly';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'service_developer_contract';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Insightly records',
+    'weight' => '0',
+    'children' => array(
+      0 => 'field_insightly_opportunity_id',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-insightly field-group-fieldset',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_insightly|node|service_developer_contract|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_other_contract_information|node|service_developer_contract|form';
   $field_group->group_name = 'group_other_contract_information';
   $field_group->entity_type = 'node';
@@ -180,10 +207,10 @@ function forge_web_contract_field_group_info() {
     'label' => 'Other contract information',
     'weight' => '8',
     'children' => array(
-      0 => 'field_value_dev_project',
+      0 => 'field_contract_termination',
       1 => 'field_digile_service_fee',
       2 => 'field_service_fee_is_due_payable',
-      3 => 'field_contract_termination',
+      3 => 'field_value_dev_project',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -209,7 +236,7 @@ function forge_web_contract_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Parties involved',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_company_information',
     ),
@@ -299,10 +326,10 @@ function forge_web_contract_field_group_info() {
     'label' => 'Technical Contact',
     'weight' => '6',
     'children' => array(
-      0 => 'field_tech_contact_name',
-      1 => 'field_tech_contact_title',
-      2 => 'field_tech_mobile_sms_capable',
-      3 => 'field_tech_contact_email',
+      0 => 'field_tech_contact_email',
+      1 => 'field_tech_contact_name',
+      2 => 'field_tech_contact_title',
+      3 => 'field_tech_mobile_sms_capable',
       4 => 'field_tech_other_means_contact',
     ),
     'format_type' => 'fieldset',

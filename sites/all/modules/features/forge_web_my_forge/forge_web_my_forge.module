@@ -12,7 +12,7 @@ include_once 'forge_web_my_forge.features.inc';
 function forge_web_my_forge_user_login(&$edit, $account) {
   // if user has developer role it will always go to welcome-forge-service-lab
   // no matter if user has other roles as well
-  if (in_array('Service developer', $account->roles) || in_array('developers', $account->roles)) {
+  if (in_array('developers', $account->roles)) {
     drupal_goto('welcome-forge-service-lab');
   }
   // if user has partner role it will go to plaza

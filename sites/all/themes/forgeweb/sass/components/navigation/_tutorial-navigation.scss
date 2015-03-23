@@ -1,149 +1,192 @@
 // Tutorial navigation block
+.section-welcome-forge {
+  .block--menu-menu-tutorial-menu {
+    @include clearfix;
+    padding-bottom: 40px;
+    .menu {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      white-space: nowrap;
+      position: relative;
+      > li {
+        display: /*inline- */block;
+        list-style-image: none;
+        list-style-type: none;
+        margin-bottom: 0;
+        margin-top: 0;
+        text-align: center;
+      }
 
-.block--menu-menu-tutorial-menu .menu {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  white-space: nowrap;
-  > li {
-    display: inline-block;
-    list-style-image: none;
-    list-style-type: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    text-align: center;
-  }
-  
-  @include at-breakpoint($tab) {
-    @include set-container-width; // Reset only the container width (elements have already been declared as containers).
-    height: 212px;
-    margin: 0 auto;
-    > li {
-      @include span-columns(2, 12); // Span 6 out of 12 columns.
-      @include nth-omega(6n);
-      display: block;
-      &.active-trail {
-        border: 1px solid #fff;
-        position: relative;
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-color: transparent;
-          border-bottom: 0;
+      @include at-breakpoint($tab) {
+        @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+        margin: 0 auto;
+        > li {
+          @include span-columns(2, 14); // Span 6 out of 14 columns.
+          @include nth-omega(7n);
         }
-        // Border
-        &:before {
-          border-top-color: #FFFFFF;
-          border-width: 12px;
-          bottom: -12px;
-          left: 50%;
-          margin-left: -12px;
-        }
-        // Fill
-        &:after {
-          border-top-color: $tab-active;
-          border-width: 10px;
-          bottom: -9px;
-          left: 50%;
-          margin-left: -10px;
+        a {
+          color: black;
+          &:hover,
+          &.active {
+            color: #b7006a;
+            border-bottom: 3px solid #b7006a;
+          }
+          &.active {
+            font-weight: bold;
+          }
         }
       }
-      &.next-from-active a {
-        background-position: center -67px;
-      }
-      &.last-from-active a {
-        background-position: center -199px;
-      }
-      &.last-last-from-active a {
-        background-position: center -331px;
-      }
-      &.last-last-last-from-active a {
-        background-position: center -464px;
-      }
-    }
-  }
-  
-  a {
-    color: $text-color;
-    display: block;
-    padding: 10px 3px;
-    &.active {
-      background-color: #e2e2e2;
-    }
-    
-    @include at-breakpoint($tab) {
-      background-image: url('../images/tutorial_sprite.png');
-      background-repeat: no-repeat;
-      background-size: 112px auto;
-      background-position: center -595px;
-      height: 210px;
-      padding: 40px 0 150px;
-      text-transform: uppercase;
-      &.active {
-        background-position: center 76px;
-        background-color: $tab-active;
-        border: 1px solid $border-color;
-        position: relative;
-        &:before,
-        &:after {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 0;
-          border-style: solid;
-          border-color: transparent;
-          border-bottom: 0;
-        }
-        // Fill
-        &:after {
-          border-top-color: $border-color;
-          border-width: 11px;
-          bottom: -11px;
-          left: 50%;
-          margin-left: -11px;
-        }
-      }
-    }
-    
-    @include at-breakpoint($desk) {
-      font-size: 1.3em;
     }
   }
 }
-
-// Tutorial retina styles
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi) {
+// Styles for tutorial menu in actual dashboard.
+.node-type-tutorial {
   .block--menu-menu-tutorial-menu .menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    white-space: nowrap;
     > li {
-      &.next-from-active a {
-        background-position: center -520px;
-      }
-      &.last-from-active a {
-        background-position: center -655px;
-      }
-      &.last-last-from-active a {
-        background-position: center -792px;
-      }
-      &.last-last-last-from-active a {
-        background-position: center -929px;
+      display: inline-block;
+      list-style-image: none;
+      list-style-type: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      text-align: center;
+    }
+
+    @include at-breakpoint($tab) {
+      @include set-container-width; // Reset only the container width (elements have already been declared as containers).
+      height: 212px;
+      margin: 0 auto;
+      > li {
+        @include span-columns(2, 14); // Span 6 out of 12 columns.
+        @include nth-omega(7n);
+        display: block;
+        &.active-trail {
+          border: 1px solid #fff;
+          position: relative;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-bottom: 0;
+          }
+          // Border
+          &:before {
+            border-top-color: #FFFFFF;
+            border-width: 12px;
+            bottom: -12px;
+            left: 50%;
+            margin-left: -12px;
+          }
+          // Fill
+          &:after {
+            border-top-color: $tab-active;
+            border-width: 10px;
+            bottom: -9px;
+            left: 50%;
+            margin-left: -10px;
+          }
+        }
+        &.next-from-active a {
+          background-position: center -67px;
+        }
+        &.last-from-active a {
+          background-position: center -199px;
+        }
+        &.last-last-from-active a {
+          background-position: center -331px;
+        }
+        &.last-last-last-from-active a {
+          background-position: center -464px;
+        }
       }
     }
+
     a {
+      color: $text-color;
+      display: block;
+      padding: 10px 3px;
+      &.active {
+        background-color: #e2e2e2;
+      }
+
       @include at-breakpoint($tab) {
-        background-size: 56px auto;
-        background-position: center -1067px;
+        background-image: url('../images/tutorial_sprite.png');
+        background-repeat: no-repeat;
+        background-size: 112px auto;
+        background-position: center -595px;
+        height: 210px;
+        padding: 40px 0 150px;
+        text-transform: uppercase;
         &.active {
-          background-position: center -373px;
+          background-position: center 76px;
+          background-color: $tab-active;
+          border: 1px solid $border-color;
+          position: relative;
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-color: transparent;
+            border-bottom: 0;
+          }
+          // Fill
+          &:after {
+            border-top-color: $border-color;
+            border-width: 11px;
+            bottom: -11px;
+            left: 50%;
+            margin-left: -11px;
+          }
+        }
+      }
+
+      @include at-breakpoint($desk) {
+        font-size: 1.3em;
+      }
+    }
+  }
+
+  // Tutorial retina styles
+
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi) {
+    .block--menu-menu-tutorial-menu .menu {
+      > li {
+        &.next-from-active a {
+          background-position: center -520px;
+        }
+        &.last-from-active a {
+          background-position: center -655px;
+        }
+        &.last-last-from-active a {
+          background-position: center -792px;
+        }
+        &.last-last-last-from-active a {
+          background-position: center -929px;
+        }
+      }
+      a {
+        @include at-breakpoint($tab) {
+          background-size: 56px auto;
+          background-position: center -1067px;
+          &.active {
+            background-position: center -373px;
+          }
         }
       }
     }

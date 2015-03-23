@@ -1,6 +1,7 @@
 name = Forge web performance
 core = 7.x
 package = Forge backend
+dependencies[] = boost
 dependencies[] = memcache
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2

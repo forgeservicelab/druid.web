@@ -1,0 +1,116 @@
+.section-welcome-forge {
+  font-family: 'Gotham Narrow Light', 'Helvetica';
+  .l-footer {
+    clear: both;
+  }
+  .l-main {
+    max-width: 1010px;
+    padding: 0;
+  }
+  .page-title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-family: 'Gotham Narrow Light', 'Helvetica';
+    font-weight: 100;
+    margin: 0 1em 1em;
+    @include at-breakpoint($desk) {
+      width: 33%;
+      float: left;
+      margin: 0;
+    }
+  }
+  .field--name-body p {
+    margin: 0 1em 1em;
+    line-height: 24px;
+    font-size: 16px;
+    @include at-breakpoint($desk) {
+      margin: 0 0 1em 0;
+    }
+  }
+}
+.l-after_content {
+  .block--views-first-time-block {
+    max-width: 1010px;
+    margin: 20px;
+    padding-bottom: 50px;
+    @include at-breakpoint($desk) {
+      margin: auto;
+    }
+    .block__title {
+      font-size: 24px;
+      font-weight: 200;
+      text-transform: none;
+      @include at-breakpoint($tab) {
+      }
+      @include at-breakpoint($desk) {
+        width: 100%;
+        font-size: 32px;
+        width: 33%;
+        float: left;
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+    }
+    .view-header {
+      width: 100%;
+      float: right;
+      @include at-breakpoint($desk) {
+        width: 67%;
+        float: left;
+      }
+      p {
+        margin: 0 0 1em 0;
+        line-height: 24px;
+      }
+    }
+    .view-id-first_time {
+      .view-header {
+        font-size: 16px;
+        margin-bottom: 25px;
+      }
+      .view-content {
+        padding-top: 35px;
+        clear: both;
+      }
+      .views-row {
+        @include clearfix;
+        padding: 10px;
+        border-top: 1px solid #d5d5d5;
+        @include at-breakpoint($desk) {
+          margin-left: 33%
+        }
+        .views-field-field-forge-service-image {
+          display: inline-block;
+          vertical-align: middle;
+          width: 100%;
+          @include at-breakpoint($tab) {
+            width: 33%;
+            padding: 10px 0;
+          }
+        }
+        .views-field-body {
+          display: inline-block;
+          vertical-align: middle;
+          width: 45%;
+        }
+        // Style the buttons.
+        .views-field-field-forge-service-link {
+          display: inline-block;
+          vertical-align: middle;
+        }
+        .views-field-field-forge-service-link a {
+          border: 1px solid #b075ae;
+          border-radius: 3px;
+          transition: border-radius 0.6s;
+          padding: 10px 12px;
+          color: #b075ae;
+          font-size: 16px;
+        }
+        .views-field-field-forge-service-link a:hover {
+          border-radius: 24px;
+          transition: border-radius 0.5s;
+        }
+      }
+    }
+  }
+}
