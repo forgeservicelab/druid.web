@@ -182,7 +182,7 @@ function forge_web_ldap_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cas_server';
-  $strongarm->value = 'auth2.forgeservicelab.fi';
+  $strongarm->value = 'auth.forgeservicelab.fi';
   $export['cas_server'] = $strongarm;
 
   $strongarm = new stdClass();
